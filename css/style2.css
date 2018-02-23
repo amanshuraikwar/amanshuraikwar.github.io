@@ -1,0 +1,110 @@
+body {
+  font-family: 'Roboto Mono', monospace;
+  margin: 0 auto; 
+  padding: 12px;
+  box-sizing: border-box;
+  color: rgba(0, 0, 0, 0.93);
+  overflow: auto;
+  background: #6dedad;
+}
+
+body, html {
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.93);
+  border-bottom: 3px solid #F06292;
+}
+
+a:hover {
+  color: #F06292;
+  font-weight: bold;
+}
+
+p {
+  font-weight: 200;
+  font-size: 20px;
+}
+
+.wrapper {
+  box-sizing: border-box;
+  height: 100%;
+  overflow: auto;
+}
+
+.name {
+  font-size: 54px;
+  font-weight: normal;
+  text-transform: uppercase;
+  color: #004D40;
+  display: inline-block;
+  margin-left: 180px;
+  margin-top: 120px;
+}
+
+.container {
+  width: 700px;
+  overflow: auto;
+  line-height: 2em;
+  margin-left: 180px;
+}
+
+article {
+  padding-right: 60px;
+}
+
+hr {
+  border-bottom: 3px solid #0068FF;
+}
+
+.font-small-caps {
+  font-feature-settings: "smcp" 1;
+}
+
+.text-highlight {
+  background-color: #64FFDA;
+}
+
+.text-color-primary {
+  color: rgba(0, 0, 0, 0.93);
+}
+
+.meta {
+  font-size: 14px;
+  letter-spacing: .15em;
+}
+
+.meta a:hover {
+  color: #d95f7c;
+}
+
+.inline-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.inline-list li {
+  display: inline-block;
+}
+
+footer .inline-list li {
+  margin-right: 20px;
+  margin-left: 20px; 
+}
+
+footer a {
+  border: none;
+  color: #004D40;
+  font-weight: 900;
+}
+
+footer {
+  margin: auto;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  padding: 24px;
+}
