@@ -1,0 +1,352 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"a",
+				"auto"
+			],
+			[
+				"mar",
+				"margin"
+			],
+			[
+				"ba",
+				"ball"
+			],
+			[
+				"br",
+				"brickColor"
+			],
+			[
+				"ball",
+				"balColor"
+			],
+			[
+				"brick",
+				"bricks"
+			],
+			[
+				"dr",
+				"drawBricks"
+			],
+			[
+				"h",
+				"height"
+			],
+			[
+				"gap",
+				"gapLR"
+			],
+			[
+				"ga",
+				"gapBtwn"
+			],
+			[
+				"r",
+				"row"
+			],
+			[
+				"dra",
+				"drawPaddle"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"get",
+				"getElementById"
+			],
+			[
+				"in",
+				"input\tTag"
+			],
+			[
+				"wi",
+				"willYaDoSomethingClassy"
+			],
+			[
+				"w",
+				"willYaDoSomething"
+			],
+			[
+				"add",
+				"addEventListener"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 1419,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/C++/C++ Single File.sublime-build",
+				"Run"
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 95.0,
+		"last_filter": "theme",
+		"selected_items":
+		[
+			[
+				"theme",
+				"UI: Select Theme"
+			],
+			[
+				"color",
+				"UI: Select Color Scheme"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"th",
+				"UI: Select Theme"
+			],
+			[
+				"ains",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"brose",
+				"Preferences: Browse Packages"
+			],
+			[
+				"package",
+				"Package Control: Discover Packages"
+			],
+			[
+				"broe",
+				"Preferences: Browse Packages"
+			],
+			[
+				"packa",
+				"Install Package Control"
+			]
+		],
+		"width": 416.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/amanshuraikwar/projects/portfolio",
+		"/Users/amanshuraikwar/projects/portfolio/files"
+	],
+	"file_history":
+	[
+		"/Users/amanshuraikwar/projects/hello/css/style2.css",
+		"/Users/amanshuraikwar/projects/hello/index.html",
+		"/Users/amanshuraikwar/projects/hello/css/style.css",
+		"/Users/amanshuraikwar/learn/js/game.js",
+		"/Users/amanshuraikwar/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/amanshuraikwar/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/Users/amanshuraikwar/Downloads/ug.pac",
+		"/Users/amanshuraikwar/AndroidStudioProjects/UmmSplash/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml",
+		"/Users/amanshuraikwar/Library/Logs/AndroidStudio3.0/idea.log",
+		"/usr/include/php/Zend/zend_ast.h",
+		"/Users/amanshuraikwar/Documents/code/learn/first.py"
+	],
+	"find":
+	{
+		"height": 27.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1419,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								931,
+								931
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 35.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 193.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "portfolio.sublime-project",
+	"replace":
+	{
+		"height": 50.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 285.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
