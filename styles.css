@@ -1,6 +1,7 @@
 body {
   font-family: 'Roboto Mono', monospace;
 }
+
 body::before {
     background-size: cover;
     background-attachment: fixed;
@@ -13,16 +14,47 @@ body::before {
     top: 0;
     position: fixed;
 }
+
 body::before {
-  background: #6dedad;
+  background: #a8d4de;
 }
 
 .name {
   font-family: 'Roboto Mono', monospace;
   font-size: 54px;
   font-weight: normal;
-  color: #004D40;
+  color: #607D8B;
   display: inline-block;
+}
+
+.grid-header {
+  font-family: 'Roboto Condensed', condensed; 
+  color: #607D8B;
+  display: inline-block;
+  padding-top: 60px;
+}
+
+.color-text-pink {
+  color: #d95f7c;
+}
+
+.color-text-neutral-green {
+  color: #b09f84;
+}
+
+.project-splash {
+  /*background: #f7a8b8;*/
+  background: #f2f1ed;
+}
+
+.project-cassette {
+  /*background: #6dedad;*/
+  background: #f2f1ed;
+}
+
+.project-name {
+  font-family: 'Roboto Mono', monospace;
+  font-weight: bold;
 }
 
 a {
@@ -478,7 +510,7 @@ body .demo-blog {
 .demo-blog .minilogo {
   width: 44px;
   height: 44px;
-  background-image: url('images/me.jpg');
+  background-image: url('images/me-square.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100%;
@@ -527,6 +559,30 @@ body .demo-blog {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  background: #6dedad;
+  background: #a8d4de;
   box-sizing: border-box;
+}
+
+.empty-grid-card {
+  background: #a8d4de;
+}
+
+.photo-1 {
+  background: url('images/photo-1.jpg') center / cover;
+}
+
+.photo-2 {
+  background: url('images/photo-2.jpg') center / cover;
+}
+
+.photo-3 {
+  background: url('images/photo-3.jpg') center / cover;
+}
+
+.photo-4 {
+  background: url('images/photo-4.jpg') center / cover;
+}
+
+.mdl-card {
+  cursor: pointer;
 }
