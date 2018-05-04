@@ -1,3 +1,4 @@
+
 p {
   font-size: 18px;
 }
@@ -35,7 +36,7 @@ body::before {
   font-family: 'Roboto Slab', serif;
   color: #757575;
   display: inline-block;
-  padding-top: 60px;
+  margin-top: 60px;
 }
 
 .color-text-pink {
@@ -51,17 +52,31 @@ body::before {
 }
 
 .project-splash {
-  background: #FAFAFA;
+  background: #fff;
 }
 
+
+
 .project-cassette {
-  background: #FAFAFA;
+  background: #fff;
 }
 
 .project-name {
   font-family: 'Roboto Slab', serif;
-  font-weight: bold;
 }
+
+.amazing {
+  border-left: 4px solid #F5F5F5;
+}
+
+.amazing:hover {
+  border-left: 6px solid #E0E0E0;
+}
+
+/*.project-name:hover {
+  border-bottom: 4px solid #000;
+  font-weight: bold;
+}*/
 
 a {
   text-decoration: none;
@@ -81,11 +96,11 @@ a:hover {
 }
 
 .android {
-  border-bottom: 2px solid #8BC34A;
+  border-bottom: 2px solid #a4c639;
 }
 
 .android:hover {
-  color: #8BC34A;
+  color: #a4c639;
 }
 
 .iit-mandi {
@@ -113,27 +128,103 @@ a:hover {
 }
 
 .photos {
-  border-bottom: 2px solid #FFEB3B;
+  border-bottom: 2px solid #FF6F00;
 }
 
 .photos:hover {
-  color: #FFEB3B;
+  color: #FF6F00;
 }
 
 .mint {
-  border-bottom: 2px solid #00C853;
+  border-bottom: 2px solid #1db954;
 }
 
 .mint:hover {
-  color: #00C853;
+  color: #1db954;
+}
+
+.linkedin {
+  border-bottom: 2px solid #0077b5;
+  margin-right: 24px;
+  margin-top: 24px;
+}
+
+.linkedin:hover {
+  color: #0077b5;
+}
+
+.unsplash {
+  border-bottom: 2px solid #000000;
+  margin-right: 24px;
+  margin-top: 24px;
+}
+
+.unsplash:hover {
+  color: #000000;
+}
+
+.github {
+  border-bottom: 2px solid #333;
+  margin-right: 24px;
+  margin-top: 24px;
+}
+
+.github:hover {
+  color: #333;
+}
+
+.instagram {
+  border-bottom: 2px solid #e1306c;
+  margin-right: 24px;
+  margin-top: 24px;
+}
+
+.instagram:hover {
+  color: #e1306c;
+}
+
+.twitter {
+  border-bottom: 2px solid #1da1f2;
+  margin-right: 24px;
+  margin-top: 24px;
+}
+
+.twitter:hover {
+  color: #1da1f2;
+}
+
+.play-store {
+  border-bottom: 2px solid #9CCC65;
+  margin-right: 24px;
+  margin-top: 24px;
+}
+
+.play-store:hover {
+  color: #9CCC65;
 }
 
 .link-button {
   font-family: 'Slabo 13px', serif;
   font-weight: bold;
+  font-size: 18px;
 }
+
 .link-button:hover {
   font-family: 'Roboto Slab', serif;
+}
+
+.project-button {
+  font-family: 'Slabo 13px', serif;
+  color: #000;
+}
+
+.project-button:hover {
+  font-size: 18px;
+  color: #000;
+}
+
+.project-actions {
+  background: #f5f5f5
 }
 
 /*@media (max-width: 512px)  and (-webkit-min-device-pixel-ratio: 1.5),
