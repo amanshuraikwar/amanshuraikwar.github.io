@@ -1,10 +1,6 @@
-
-p {
-  font-size: 18px;
-}
-
 body {
-  font-family: 'Slabo 13px', serif;
+  font-family: 'Roboto Mono', monospace;
+  padding-left: 16px;
 }
 
 body::before {
@@ -21,15 +17,102 @@ body::before {
 }
 
 body::before {
-  background: #ffffff;
+  background: #fff;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+  background: #212121;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+a:hover {
+  font-weight: bold;
+  background: #E53935;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+p {
+  font-size: 18px;
+  padding-right: 16px;
+  line-height: 32px;
+}
+
+.links {
+  line-height: 48px;
+}
+
+.color-brand-red {
+  color: #E53935;
+}
+
+.color-brand-black {
+  color: #212121;
+}
+
+.background-brand-black {
+  background: #212121;
+}
+
+.background-brand-red {
+  background: #E53935;
+}
+
+.initials {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 128px;
+  font-weight: normal;
+  display: inline-block;
+}
+
+#myClock {
+  color: #E0E0E0;
+  font-size: 72px;
+  font-weight: normal;
+  display: inline-block;
 }
 
 .name {
-  font-family: 'Roboto Slab', serif;
-  font-size: 54px;
-  font-weight: normal;
-  color: #757575;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 24px;
+  font-weight: bold;
   display: inline-block;
+}
+
+.iit-mandi:hover {
+  background: #03A9F4;
+}
+
+.resume:hover {
+  background: #3F51B5;
+}
+
+.instagram:hover {
+  background: #e1306c;
+}
+
+.github:hover {
+  background: #333;
+  margin-bottom: 8px;
+}
+
+.linkedin:hover {
+  background: #0077b5;
+}
+
+.unsplash:hover {
+  background: #000000;
+}
+
+.twitter:hover {
+  background: #1da1f2;
+}
+
+.play-store:hover {
+  background: #9CCC65;
 }
 
 .grid-header {
@@ -55,8 +138,6 @@ body::before {
   background: #fff;
 }
 
-
-
 .project-cassette {
   background: #fff;
 }
@@ -78,45 +159,20 @@ body::before {
   font-weight: bold;
 }*/
 
-a {
-  text-decoration: none;
-  color: rgba(0, 0, 0, 0.93);
-  border-bottom: 2px solid #00BCD4;
-  font-weight: bold;
-}
+
 
 .mdl-mini-footer__link-list a {
   color: rgba(0, 0, 0, 1);
 }
 
-a:hover {
-  color: #00BCD4;
-  font-weight: bold;
-  font-family: 'Roboto Slab', serif;
-}
-
 .android {
-  border-bottom: 2px solid #a4c639;
+  background: #a4c639;
+  color: #fff;
 }
 
 .android:hover {
-  color: #a4c639;
-}
-
-.iit-mandi {
-  border-bottom: 2px solid #03A9F4;
-}
-
-.iit-mandi:hover {
-  color: #03A9F4;
-}
-
-.resume {
-  border-bottom: 2px solid #3F51B5;
-}
-
-.resume:hover {
-  color: #3F51B5;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 
 .mail {
@@ -141,66 +197,6 @@ a:hover {
 
 .mint:hover {
   color: #1db954;
-}
-
-.linkedin {
-  border-bottom: 2px solid #0077b5;
-  margin-right: 24px;
-  margin-top: 24px;
-}
-
-.linkedin:hover {
-  color: #0077b5;
-}
-
-.unsplash {
-  border-bottom: 2px solid #000000;
-  margin-right: 24px;
-  margin-top: 24px;
-}
-
-.unsplash:hover {
-  color: #000000;
-}
-
-.github {
-  border-bottom: 2px solid #333;
-  margin-right: 24px;
-  margin-top: 24px;
-}
-
-.github:hover {
-  color: #333;
-}
-
-.instagram {
-  border-bottom: 2px solid #e1306c;
-  margin-right: 24px;
-  margin-top: 24px;
-}
-
-.instagram:hover {
-  color: #e1306c;
-}
-
-.twitter {
-  border-bottom: 2px solid #1da1f2;
-  margin-right: 24px;
-  margin-top: 24px;
-}
-
-.twitter:hover {
-  color: #1da1f2;
-}
-
-.play-store {
-  border-bottom: 2px solid #9CCC65;
-  margin-right: 24px;
-  margin-top: 24px;
-}
-
-.play-store:hover {
-  color: #9CCC65;
 }
 
 .link-button {
