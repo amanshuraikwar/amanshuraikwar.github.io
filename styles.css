@@ -91,7 +91,7 @@ p {
 .initials {
   font-family: 'Roboto Mono', monospace;
   font-size: 128px;
-  font-weight: normal;
+  font-weight: 400;
   display: inline-block;
 }
 
@@ -233,4 +233,42 @@ p {
 .demo-navigation .mdl-navigation__link .material-icons {
   font-size: 24px;
   margin-right: 32px;
+}
+
+.blog {
+  background: #FAFAFA;
+  cursor: pointer;
+}
+
+.blog:hover {
+  box-shadow: 0px 2px 8px #E0E0E0;
+}
+
+.blog-title {
+  min-height: 128px;
+}
+
+.blog-title-text {
+  font-size: 64px;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 100;
+  color: #212121;
+  margin-top: 64px;
+}
+
+.blog-text {
+  /*font-family: 'IBM Plex Sans', sans-serif;*/
+  font-family: 'IBM Plex Serif', serif;
+
+}
+
+.blog-date {
+  text-align:right;
+}
+
+.blog-date-text {
+  font-family: 'Roboto Mono', monospace;
+  background: #EEEEEE;
+  color: #9E9E9E;
+  font-size: 12px;
 }
