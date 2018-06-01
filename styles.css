@@ -140,13 +140,12 @@ p {
 }
 
 .demo-blog .demo-blog__posts {
-  max-width: 900px; 
+  max-width: 900px;
   padding-left: 64px;
-  padding-right: 16px;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: 100%;
+  /*width: 100%;*/
   margin: 0 auto;
   -webkit-flex-shrink: 0;
       -ms-flex-negative: 0;
