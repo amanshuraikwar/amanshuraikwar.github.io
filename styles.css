@@ -41,6 +41,14 @@ p {
   line-height: 32px;
 }
 
+.tagline {
+  font-size: 12px;
+  padding-right: 16px;
+  line-height: 24px;
+  color: #9E9E9E;
+  font-style: italic;
+}
+
 .links {
   line-height: 48px;
 }
