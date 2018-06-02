@@ -66,7 +66,7 @@
             <span class="navigation__link">Home</span>
           </a>
           
-          <a class="mdl-navigation__link background-orange" href="">
+          <a class="mdl-navigation__link background-orange" href="blog.html">
             
             <i class="material-icons navigation__link-selected" role="presentation">dashboard</i>
             
@@ -90,35 +90,43 @@
 
           <div class="mdl-cell mdl-cell--12-col">
 
-            <h1 class="initials"><span class="color-brand-black">B</span><span class="color-orange">g</span></h1>
+            <div class="initials-small">
+
+              <span class="color-brand-black">B</span><span class="color-orange">g</span>
+            </div>
+
+            <h2 class="blog-title-text">Welcome to my blog.</p>
           </div>
+
+          <div class="mdl-cell mdl-cell--12-col blog-meta">
+
+            <div class="blog-date-big">
+              <p>
+                <span class="blog-date-text-big">2 JUNE 2018</span>
+              </p>
+            </div>
+          </div>
+
           <div class="mdl-cell mdl-cell--12-col">
 
-            <article>
+            <article class="blog-main-text">
 
-              <p class="text-color-primary">
-                This is my personal <span class="name color-orange"> Blog</span>.</p>
+              <p>
+                Hello! I am Amanshu Raikwar and this is my personal Blog. For a long time, I have wanted to make a website of my own, which reflects me as a person and as a professional. This is my take on it.
+              </p>
+
+              <p>
+                Design of this website is kept minimal and bold. The main navigation of this website is distributed across three colors - <span class="color-brand-red">red</span>, <span class="color-orange">orange</span> and <span class="color-green">green</span>. This gives a sense to the user what page he/she is currently on. Basic design of this website is kept minimal and sometimes a little too bold. White color is used as a background to give a feel that the user is reading on a real paper. I have experimented with various shades of Gray to know about the limits of using the shades of a single color. I have also experimented with typography to create a heirarchy of importance of text.
+              </p>
+
+              <p>
+                Although this is not perfect but I will keep experimenting to keep the design clean. This is my playground where I can play without rules. I hope you enjoy my work.
+              </p>
+
+              <p class="blog-author">
+                - Amanshu Raikwar
+              </p>
             </article>
-          </div>
-
-          <div class="mdl-cell mdl-cell--12-col">
-            <h3 class="grid-header"></h2>
-          </div>
-
-          <div class="mdl-card mdl-cell mdl-cell--6-col blog" href="welcome-blog.html">
-
-            <div class="mdl-card__title blog-title">
-
-              <h2 class="mdl-card__title-text blog-title-text">W<span class="color-orange">l</span></h2>
-            </div>
-            
-            <div class="mdl-card__supporting-text blog-text">
-              Welcome to my blog.
-            </div>
-
-            <div class="mdl-card__supporting-text blog-date">
-              <span class="blog-date-text">2 JUNE 2018</span>
-            </div>
           </div>
 
           <div class="mdl-cell mdl-cell--12-col">
@@ -136,20 +144,5 @@
     </div>
 
     <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-    
-    <script type="text/javascript">
-      
-      Array.prototype.forEach.call(document.querySelectorAll('.blog'), function(el) {
-      
-        var target = el.getAttribute('href');
-        
-        if(!target) {
-          return;
-        }
-        el.addEventListener('click', function() {
-          location.href = target;
-        });
-      });
-    </script>
   </body>
 </html>

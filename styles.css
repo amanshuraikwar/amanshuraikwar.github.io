@@ -91,6 +91,13 @@ p {
 .initials {
   font-family: 'Roboto Mono', monospace;
   font-size: 128px;
+  font-weight: 100;
+  display: inline-block;
+}
+
+.initials-small {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 18px;
   font-weight: 400;
   display: inline-block;
 }
@@ -153,7 +160,7 @@ p {
 }
 
 .demo-blog.mdl-layout .mdl-layout__content {
-  padding-top: 60px;
+  padding-top: 0px;
   position: relative;
   -webkit-overflow-scrolling: touch;
 }
@@ -256,6 +263,15 @@ p {
   margin-top: 64px;
 }
 
+.blog-main-text {
+  padding-top: 60px;
+  font-family: 'IBM Plex Serif', serif;
+}
+
+.blog-main-text p {
+  font-size: 20px;
+}
+
 .blog-text {
   /*font-family: 'IBM Plex Sans', sans-serif;*/
   font-family: 'IBM Plex Serif', serif;
@@ -266,9 +282,32 @@ p {
   text-align:right;
 }
 
+.blog-date-big {
+  text-align:right;
+  padding-top: 16px;
+}
+.blog-meta {
+  text-align:right;
+}
+
+.blog-author {
+  text-align:right;
+  font-size: 24px;
+  font-style: italic;
+  padding-top: 30px;
+  font-family: 'Roboto Mono', monospace;
+}
+
 .blog-date-text {
   font-family: 'Roboto Mono', monospace;
   background: #EEEEEE;
   color: #9E9E9E;
   font-size: 12px;
+}
+
+.blog-date-text-big {
+  font-family: 'Roboto Mono', monospace;
+  background: #EEEEEE;
+  color: #9E9E9E;
+  font-size: 14px;
 }
