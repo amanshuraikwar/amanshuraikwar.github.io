@@ -242,44 +242,44 @@ p {
   margin-right: 32px;
 }
 
-.blog {
-  background: #FAFAFA;
+.blog, .work{
+  /*background: #FAFAFA;*/
   cursor: pointer;
 }
 
-.blog:hover {
+.blog:hover, .work:hover {
   box-shadow: 0px 2px 8px #E0E0E0;
 }
 
-.blog-title {
+.blog-title, .work-title {
   min-height: 128px;
 }
 
-.blog-title-text {
+.blog-title-text, .work-title-text {
   font-size: 64px;
   font-family: 'Roboto Mono', monospace;
   font-weight: 100;
   color: #212121;
   margin-top: 64px;
-  line-height: 72px;
+  line-height: 80px;
 }
 
 .blog-main-text {
   padding-top: 60px;
-  font-family: 'IBM Plex Serif', serif;
+  /*font-family: 'IBM Plex Serif', serif;*/
+  font-family: 'Titillium Web', sans-serif;
 }
 
 .blog-main-text p {
   font-size: 20px;
 }
 
-.blog-text {
-  /*font-family: 'IBM Plex Sans', sans-serif;*/
+.blog-text, .work-text {
   font-family: 'IBM Plex Serif', serif;
 
 }
 
-.blog-date {
+.blog-date, .work-duration {
   text-align:right;
 }
 
@@ -287,6 +287,7 @@ p {
   text-align:right;
   padding-top: 16px;
 }
+
 .blog-meta {
   text-align:right;
 }
@@ -299,7 +300,7 @@ p {
   font-family: 'Roboto Mono', monospace;
 }
 
-.blog-date-text {
+.blog-date-text, .work-date-text {
   font-family: 'Roboto Mono', monospace;
   background: #EEEEEE;
   color: #9E9E9E;
@@ -311,4 +312,15 @@ p {
   background: #EEEEEE;
   color: #9E9E9E;
   font-size: 14px;
+}
+
+.work-year {
+  padding-top: 30px;
+}
+
+.work-year-text {
+  font-size: 24px;
+  font-family: 'Roboto Mono', monospace;
+  color: #9E9E9E;
+  background: #eee;
 }
