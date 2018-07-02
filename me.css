@@ -1,0 +1,13 @@
+body::before {
+	background: linear-gradient(#274B6D, #2F3A46, #313237);
+}
+
+.avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 48px;
+}
+
+p {
+	color: #fff;
+}

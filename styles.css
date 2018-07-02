@@ -64,8 +64,20 @@ p {
   color: #F57C00;
 }
 
+.color-white {
+  color: #fff;
+}
+
+.color-navyblue {
+  color: #2B3F4F;
+}
+
 .color-green {
   color: #4aa87a;
+}
+
+.color-brick {
+  color: #A3969D;
 }
 
 .background-brand-black {
@@ -86,6 +98,10 @@ p {
 
 .background-white {
   background: #fff;
+}
+
+.background-navyblue {
+  background: #20576D;
 }
 
 .initials {
