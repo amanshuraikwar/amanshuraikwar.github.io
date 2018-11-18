@@ -45,6 +45,12 @@
     line-height: 1.6em;
 }
 
+.limit_width {
+	max-width: 750px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
 .mdl-grid {
 	padding: 0px;
 }
