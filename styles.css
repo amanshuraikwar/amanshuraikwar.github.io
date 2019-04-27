@@ -3,7 +3,7 @@
 }
 
 .my-name {
-	font-weight: 500;
+	font-weight: 700;
 	font-feature-settings: "smcp" 1, "onum" 1;
 	font-family: 'Roboto Mono', monospace;
 }
@@ -21,6 +21,13 @@
 	background-color: #fff;
 }
 
+.normal-text {
+	font-family: 'Rubik', sans-serif;
+	font-size: 16px;
+    letter-spacing: .02em;
+    line-height: 1.6em;
+}
+
 .quick-links, .career-intro, .clicked-photo {
 	padding-left: 32px;
 	padding-right: 32px;
@@ -29,10 +36,6 @@
 .quick-links {
 	background: #ECEFF1;
 	padding-bottom: 24px;
-}
-
-.career-intro {
-    text-align: center;
 }
 
 .career-intro p {
@@ -81,23 +84,21 @@ a.link {
 	text-decoration: none;
 	color: #212121;
 	background: #ECEFF1;
-	padding-left: 2px;
-	padding-right: 2px;
-	font-family: 'Roboto Condensed', sans-serif;
-	font-size: 20px;
+	font-family: 'Rubik', sans-serif;
+	font-size: 16px;
+    letter-spacing: .02em;
+	line-height: 1.6em;
+	padding-left: 4px;
+	padding-right: 4px;
+	margin-right: 8px;
 }
 
 a.link:hover {
 	font-weight: 700;
-	background: #81D4FA;
+	background: #ddd;
 	padding-left: 4px;
 	padding-right: 4px;
 	color: #000;
-}
-
-.link {
-	margin-right: 8px;
-	margin-left: 8px;
 }
 
 .links {
