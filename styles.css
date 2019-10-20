@@ -4,13 +4,13 @@
 
 .my-name {
 	font-weight: 700;
-	font-feature-settings: "smcp" 1, "onum" 1;
-	font-family: 'Roboto Mono', monospace;
+	font-feature-settings: "smcp", "onum";
+	font-family: 'Roboto', monospace;
 }
 
-.my-name:hover {
+/* .my-name:hover {
 	color: #40C4FF;
-}
+} */
 
 .normal-text {
 	font-family: 'Rubik', sans-serif;
@@ -50,7 +50,7 @@ a.link {
 
 a.link:hover {
 	font-weight: 700;
-	background: #40C4FF;
+	background: #212121;
 	padding-left: 4px;
 	padding-right: 4px;
 	color: #fff;
@@ -67,4 +67,28 @@ a.link:hover {
 	flex-shrink: 0;
 	box-sizing: border-box;
 	align-items: center;
+}
+
+.material-icons {
+	font-size:20px;
+	color: #555;
+}
+
+.mdl-snackbar__text {
+	color: #ECEFF1;
+	font-weight: 500;
+	font-feature-settings: "smcp";
+	font-family: 'Roboto', monospace;
+	font-size: 16px;
+}
+
+.mdl-snackbar {
+	background: #212121;
+}
+
+.last-updated {
+	color: #555;
+	font-weight: 700;
+	font-feature-settings: "smcp", "onum";
+	font-family: 'Roboto', monospace;
 }
