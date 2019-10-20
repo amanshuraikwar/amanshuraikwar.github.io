@@ -71,7 +71,7 @@
                     <div class="empty-header-element"></div>
 
                     <div class="layout__header-row limit_width mdl-layout-title my-name">
-                        my links
+                        social
                     </div>
 
                     <div class="empty-header-element"></div>
@@ -190,6 +190,48 @@
 
                     <div class="empty-header-element"></div>
 
+                    <div class="layout__header-row limit_width mdl-layout-title my-name">
+                        projects
+                    </div>
+
+                    <div class="empty-header-element"></div>
+
+                    <div class="layout__header-row limit_width normal-text">
+                        <a class="link" href="https://github.com/amanshuraikwar/howmuch" target="blank">
+                            HowMuch
+                        </a>
+                        <button class="mdl-button mdl-js-button mdl-button--icon" 
+                        onclick="copy('https:\/\/github.com/amanshuraikwar/howmuch', 'link to project howmuch')">
+                            <i class="material-icons">filter_none</i>
+                        </button>
+                        <button class="mdl-button mdl-js-button mdl-button--icon" 
+                        onclick="openLink('https:\/\/play.google.com/store/apps/details?id=io.github.amanshuraikwar.howmuch.release')">
+                            <i class="material-icons">play_arrow</i>
+                        </button>
+                    </div>
+
+                    <div class="empty-header-element"></div>
+
+                    <div class="layout__header-row limit_width normal-text">
+                        <a class="link" href="https://github.com/amanshuraikwar/splash/tree/0.0.5" target="blank">
+                            Splash
+                        </a>
+                        <button class="mdl-button mdl-js-button mdl-button--icon" 
+                        onclick="copy('https:\/\/github.com/amanshuraikwar/splash/tree/0.0.5', 'link to project splash')">
+                            <i class="material-icons">filter_none</i>
+                        </button>
+                        <button class="mdl-button mdl-js-button mdl-button--icon" 
+                        onclick="openLink('https:\/\/amanshuraikwar.github.io/assets/splash/splash-0.0.5.apk')">
+                            <i class="material-icons">play_arrow</i>
+                        </button>
+                    </div>
+                    
+                    <div class="empty-header-element"></div>
+
+                    <hr />
+
+                    <div class="empty-header-element"></div>
+
                     <div class="layout__header-row limit_width normal-text last-updated">
                         last updated on 20 october 2019
                     </div>
@@ -218,6 +260,10 @@
                 var data = {message: what+' copied to clipboard!'};
                 snackbarContainer.MaterialSnackbar.showSnackbar(data);
             }
+
+            function openLink(link) { 
+                window.open(link, "_new"); 
+            } 
         </script>
     </body>
 </html>

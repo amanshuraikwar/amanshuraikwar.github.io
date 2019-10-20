@@ -87,8 +87,8 @@ a.link:hover {
 }
 
 .last-updated {
-	color: #555;
-	font-weight: 700;
+	color: #777;
+	font-weight: 500;
 	font-feature-settings: "smcp", "onum";
 	font-family: 'Roboto', monospace;
 }
