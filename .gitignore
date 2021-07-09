@@ -1,0 +1,5 @@
+compose-web-project/.idea
+compose-web-project/build
+compose-web-project/local.properties
+compose-web-project/.gradle
+.DS_Store
