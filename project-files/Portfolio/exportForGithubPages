@@ -1,0 +1,4 @@
+./gradlew :web:jsBrowserDistribution
+rm -rf ../../website-root/*
+mkdir ../../website-root
+cp -R web/build/distributions/ ../../website-root/
