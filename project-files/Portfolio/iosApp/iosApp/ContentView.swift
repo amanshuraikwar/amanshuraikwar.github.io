@@ -2,10 +2,10 @@ import SwiftUI
 import shared
 
 struct ContentView: View {
-	let greet = Greeting().greeting()
+	let homePageDataList = PortfolioRepository().getHomePageDataList()
 
-	var body: some View {
-		Text(greet)
+    var body: some View {
+        HomePageView(homePageDataList: homePageDataList)
 	}
 }
 
