@@ -13,6 +13,7 @@
 		A506BBDB269C830700F1C1CF /* HomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A506BBDA269C830700F1C1CF /* HomePageView.swift */; };
 		A506BBDF269C895800F1C1CF /* HeadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A506BBDE269C895800F1C1CF /* HeadingView.swift */; };
 		A506BBE1269DA81500F1C1CF /* PortfolioLinkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A506BBE0269DA81500F1C1CF /* PortfolioLinkButton.swift */; };
+		A53E56E026A002D500FE1997 /* PortfolioLinksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53E56DF26A002D500FE1997 /* PortfolioLinksView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		A506BBDA269C830700F1C1CF /* HomePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageView.swift; sourceTree = "<group>"; };
 		A506BBDE269C895800F1C1CF /* HeadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadingView.swift; sourceTree = "<group>"; };
 		A506BBE0269DA81500F1C1CF /* PortfolioLinkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioLinkButton.swift; sourceTree = "<group>"; };
+		A53E56DF26A002D500FE1997 /* PortfolioLinksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioLinksView.swift; sourceTree = "<group>"; };
 		B5B9F962B8569E56A6E3E91D /* Pods_iosApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iosApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B937C53F5CBED218B466025B /* Pods-iosApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosApp.debug.xcconfig"; path = "Target Support Files/Pods-iosApp/Pods-iosApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -76,6 +78,7 @@
 				A506BBDA269C830700F1C1CF /* HomePageView.swift */,
 				A506BBDE269C895800F1C1CF /* HeadingView.swift */,
 				A506BBE0269DA81500F1C1CF /* PortfolioLinkButton.swift */,
+				A53E56DF26A002D500FE1997 /* PortfolioLinksView.swift */,
 			);
 			path = iosApp;
 			sourceTree = "<group>";
@@ -187,6 +190,7 @@
 				A506BBDB269C830700F1C1CF /* HomePageView.swift in Sources */,
 				7555FF83242A565900829871 /* ContentView.swift in Sources */,
 				A506BBDF269C895800F1C1CF /* HeadingView.swift in Sources */,
+				A53E56E026A002D500FE1997 /* PortfolioLinksView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

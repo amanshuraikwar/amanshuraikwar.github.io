@@ -13,29 +13,32 @@ struct HomePageView: View {
     var homePageDataList: [HomePageData]
     
     var body: some View {
-        List {
-            ForEach(homePageDataList, id: \.hash) { data in
-                if data is HomePageData.Heading {
-                    HeadingView(data: data as! HomePageData.Heading)
-                } else if data is HomePageData.MyLinks {
-                    let myLinks = data as! HomePageData.MyLinks
-                    Section(header: Text(myLinks.heading)) {
-                        ForEach(myLinks.linkDataList, id: \.hash) { linkData in
-                            PortfolioLinkButton(
-                                name: linkData.name,
-                                url: linkData.url
-                            )
+        let item = homePageDataList.first(where: { $0 is HomePageData.Heading })
+        
+        NavigationView {
+            List {
+                ForEach(homePageDataList, id: \.hash) { data in
+                    if data is HomePageData.Heading {
+                        HeadingView(data: data as! HomePageData.Heading)
+                    } else if data is HomePageData.MyLinks {
+                        let myLinks = data as! HomePageData.MyLinks
+                        PortfolioLinksView(
+                            heading: myLinks.heading,
+                            links: myLinks.linkDataList
+                        )
+                    } else if data is HomePageData.LastUpdated {
+                        Section {
+                            Text((data as! HomePageData.LastUpdated).message)
+                        }
+                    } else if data is HomePageData.MadeWith {
+                        Section {
+                            Text((data as! HomePageData.MadeWith).message)
                         }
                     }
-                } else if data is HomePageData.LastUpdated {
-                    Text((data as! HomePageData.LastUpdated).message)
-                } else if data is HomePageData.MadeWith {
-                    Text((data as! HomePageData.MadeWith).message)
-                        .font(.caption)
-                        .padding(.bottom, 2)
                 }
             }
+            .listStyle(InsetGroupedListStyle())
+            .navigationBarTitle((item as! HomePageData.Heading).name)
         }
-        .listStyle(InsetGroupedListStyle())
     }
 }
