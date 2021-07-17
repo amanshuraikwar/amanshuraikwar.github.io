@@ -16,7 +16,7 @@ object WtTexts : StyleSheet(AppStylesheet) {
         property("line-height", 64.px)
         property("line-height", AppCSSVariables.wtHeroLineHeight.value(64.px))
 
-        media(maxWidth(640.px)) {
+        media(maxWidth(750.px)) {
             self style {
                 AppCSSVariables.wtHeroFontSize(42.px)
                 AppCSSVariables.wtHeroLineHeight(48.px)
@@ -38,7 +38,7 @@ object WtTexts : StyleSheet(AppStylesheet) {
         property("line-height", 40.px)
         property("line-height", AppCSSVariables.wtSubtitle2LineHeight.value(40.px))
 
-        media(maxWidth(640.px)) {
+        media(maxWidth(750.px)) {
             self style {
                 AppCSSVariables.wtSubtitle2FontSize(24.px)
                 AppCSSVariables.wtSubtitle2LineHeight(32.px)
@@ -121,11 +121,11 @@ object WtTexts : StyleSheet(AppStylesheet) {
         fontSize(31.px)
         property("font-size", AppCSSVariables.wtH2FontSize.value(31.px))
         property("letter-spacing", (-.5).px)
-        property("font-weight", 300)
+        property("font-weight", 800)
         property("line-height", 40.px)
         property("line-height", 40.px)
 
-        media(maxWidth(640.px)) {
+        media(maxWidth(750.px)) {
             self style {
                 AppCSSVariables.wtH2FontSize(24.px)
                 AppCSSVariables.wtH2LineHeight(32.px)
@@ -230,7 +230,7 @@ object WtTexts : StyleSheet(AppStylesheet) {
             property("border-radius", "24px")
         }
 
-        media(maxWidth(640.px)) {
+        media(maxWidth(750.px)) {
             self style {
                 property("margin-right", 8.px)
                 property("margin-left", 8.px)

@@ -28,14 +28,16 @@ object AppCSSVariables : CSSVariables {
 
 object AppStylesheet : StyleSheet() {
 
-    init {
-        data class ColorPalette(
-            val colorBackground: Color,
-            val colorOnBackground: Color,
-            val colorPrimary: Color,
-            val colorOnPrimary: Color,
-        )
+    fun updateColors(colorPalette: ColorPalette) {
+        CSSSelector.Universal style {
+            AppCSSVariables.colorBackground(colorPalette.colorBackground)
+            AppCSSVariables.colorOnBackground(colorPalette.colorOnBackground)
+            AppCSSVariables.colorPrimary(colorPalette.colorPrimary)
+            AppCSSVariables.colorOnPrimary(colorPalette.colorOnPrimary)
+        }
+    }
 
+    init {
         val colorPaletteList = listOf(
             ColorPalette(
                 colorBackground = Color("#212121"),
@@ -51,12 +53,16 @@ object AppStylesheet : StyleSheet() {
             )
         )
 
+        updateColors(
+            colorPalette = colorPaletteList.random()
+        )
+
         CSSSelector.Universal style {
-            val colorPalette = colorPaletteList.random()
-            AppCSSVariables.colorBackground(colorPalette.colorBackground)
-            AppCSSVariables.colorOnBackground(colorPalette.colorOnBackground)
-            AppCSSVariables.colorPrimary(colorPalette.colorPrimary)
-            AppCSSVariables.colorOnPrimary(colorPalette.colorOnPrimary)
+//            val colorPalette = colorPaletteList.random()
+//            AppCSSVariables.colorBackground(colorPalette.colorBackground)
+//            AppCSSVariables.colorOnBackground(colorPalette.colorOnBackground)
+//            AppCSSVariables.colorPrimary(colorPalette.colorPrimary)
+//            AppCSSVariables.colorOnPrimary(colorPalette.colorOnPrimary)
             AppCSSVariables.wtOffsetTopUnit(24.px)
 
             margin(0.px)

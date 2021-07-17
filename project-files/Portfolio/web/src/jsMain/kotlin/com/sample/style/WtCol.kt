@@ -26,6 +26,10 @@ fun CSSBuilder.forMaxWidth(value: CSSUnitValue, builder: CSSBuilder.() -> Unit) 
 }
 
 object WtCols : StyleSheet(AppStylesheet) {
+    val wtCol0 by style {
+        AppCSSVariables.wtColCount(0)
+    }
+
     val wtCol2 by style {
         AppCSSVariables.wtColCount(2)
     }
@@ -46,12 +50,20 @@ object WtCols : StyleSheet(AppStylesheet) {
         AppCSSVariables.wtColCount(6)
     }
 
+    val wtCol8 by style {
+        AppCSSVariables.wtColCount(8)
+    }
+
     val wtCol9 by style {
         AppCSSVariables.wtColCount(9)
     }
 
     val wtCol10 by style {
         AppCSSVariables.wtColCount(10)
+    }
+
+    val wtCol12 by style {
+        AppCSSVariables.wtColCount(12)
     }
 
     val wtColMd3 by style {
@@ -103,19 +115,31 @@ object WtCols : StyleSheet(AppStylesheet) {
     }
 
     val wtColSm12 by style {
-        forMaxWidth(640.px) {
+        forMaxWidth(750.px) {
             AppCSSVariables.wtColCount(12)
         }
     }
 
-    val wtColLg6 by style {
+    val wtColSm4 by style {
+        forMaxWidth(750.px) {
+            AppCSSVariables.wtColCount(4)
+        }
+    }
+
+    val wtColSm0 by style {
+        forMaxWidth(750.px) {
+            AppCSSVariables.wtColCount(0)
+        }
+    }
+
+        val wtColLg6 by style {
         forMaxWidth(1276.px) {
             AppCSSVariables.wtColCount(6)
         }
     }
 
     val wtColSmAutoFill by style {
-        forMaxWidth(640.px) {
+        forMaxWidth(750.px) {
             AppCSSVariables.wtColCount(0)
             flexGrow(1)
             property("max-width", 100.percent)

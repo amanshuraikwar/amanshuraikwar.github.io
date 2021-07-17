@@ -13,7 +13,9 @@ struct HeadingView: View {
     let data: HomePageData.Heading
     
     var body: some View {
-        Section {
+        Section(
+            header: Text("About me")
+        ) {
             Text(data.intro)
         }
     }
