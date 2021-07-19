@@ -8,7 +8,9 @@ import org.jetbrains.compose.web.css.value
 import org.jetbrains.compose.web.dom.*
 
 @Composable
-fun NextBus() {
+fun NextBus(
+    onMadeByClick: () -> Unit,
+) {
     Section {
         Div(
             attrs = {
@@ -157,6 +159,12 @@ fun NextBus() {
                         ) {
                             Text("PLAY STORE")
                         }
+                    }
+
+                    com.sample.components.Button(
+                        onClick = onMadeByClick
+                    ) {
+                        Text("Made by Amanshu Raikwar")
                     }
                 }
             }

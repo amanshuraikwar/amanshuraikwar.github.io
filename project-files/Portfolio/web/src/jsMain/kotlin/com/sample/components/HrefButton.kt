@@ -55,3 +55,32 @@ fun HrefButton(
         content = content
     )
 }
+
+@Composable
+fun Button(
+    fillWidth: Boolean = false,
+    onClick: () -> Unit,
+    content: ContentBuilder<HTMLAnchorElement>,
+) {
+    A(
+        attrs = {
+            classes(
+                WtTexts.wtButton,
+                WtOffsets.wtRightOffset24,
+            )
+            target(ATarget.Blank)
+            if (fillWidth) {
+                style {
+                    width(100.percent)
+                }
+            }
+            onClick {
+                onClick()
+            }
+            style {
+                property("cursor", "pointer")
+            }
+        },
+        content = content
+    )
+}

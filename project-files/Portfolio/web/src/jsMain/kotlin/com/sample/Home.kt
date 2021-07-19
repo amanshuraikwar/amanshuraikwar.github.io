@@ -2,7 +2,10 @@ package com.sample
 
 import androidx.compose.runtime.Composable
 import com.sample.content.*
+import com.sample.style.WtOffsets
+import com.sample.style.WtRows
 import io.github.amanshuraikwar.portfolio.model.HomePageData
+import org.jetbrains.compose.web.dom.Div
 
 @Composable
 fun Home(
@@ -23,11 +26,11 @@ fun Home(
                     links = homePageData.linkDataList
                 )
 
-//                MyApps {
-//                    if (it == "nextbus") {
-//                        onNextBusClick()
-//                    }
-//                }
+                MyApps {
+                    if (it == "nextbus") {
+                        onNextBusClick()
+                    }
+                }
             }
             is HomePageData.LastUpdated -> {
                 LastUpdated(homePageData.message)
@@ -37,4 +40,14 @@ fun Home(
             }
         }
     }
+
+    Div(
+        attrs = {
+            classes(
+                WtRows.wtRow,
+                WtRows.wtRowSizeM,
+                WtOffsets.wtTopOffset48,
+            )
+        }
+    ) {}
 }

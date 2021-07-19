@@ -3,6 +3,7 @@ package com.sample
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
+import androidx.compose.runtime.LaunchedEffect
 import com.sample.components.Layout
 import com.sample.style.AppStylesheet
 import com.sample.style.ColorPalette
@@ -32,7 +33,7 @@ val colorPaletteList = listOf(
 )
 
 val nextBusColorPalette = ColorPalette(
-    colorBackground = Color("#000000"),
+    colorBackground = Color("#212121"),
     colorOnBackground = Color("#eef0f2"),
     colorPrimary = Color("#64B5F6"),
     colorOnPrimary = Color("#212121"),
@@ -45,11 +46,20 @@ fun main() {
 
     renderComposable(rootElementId = "root") {
         Style(AppStylesheet)
+        LaunchedEffect(key1 = navigationDestination) {
+            when (navigationDestination) {
+                NavigationDestination.Home -> {
+                    AppStylesheet.updateColors(colorPalette = colorPaletteList.random())
+                }
+                NavigationDestination.NextBus -> {
+                    AppStylesheet.updateColors(colorPalette = nextBusColorPalette)
+                }
+            }
+        }
 
         Layout {
             when (navigationDestination) {
                 NavigationDestination.Home -> {
-                    AppStylesheet.updateColors(colorPalette = colorPaletteList.random())
                     Home(
                         portfolioRepository.getHomePageDataList(),
                         onNextBusClick = {
@@ -58,8 +68,9 @@ fun main() {
                     )
                 }
                 NavigationDestination.NextBus -> {
-                    AppStylesheet.updateColors(colorPalette = nextBusColorPalette)
-                    NextBus()
+                    NextBus {
+                        navigationDestination = NavigationDestination.Home
+                    }
                 }
             }
         }

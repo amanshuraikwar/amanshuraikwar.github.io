@@ -7,6 +7,9 @@ import com.sample.style.WtOffsets
 import com.sample.style.WtRows
 import com.sample.style.WtTexts
 import io.github.amanshuraikwar.portfolio.model.LinkData
+import com.sample.components.Button
+import org.jetbrains.compose.web.css.percent
+import org.jetbrains.compose.web.css.width
 import org.jetbrains.compose.web.dom.*
 
 @Composable
@@ -30,17 +33,21 @@ fun MyApps(
                     )
                 }
             ) {
-                H2(attrs = { classes(WtTexts.wtH2) }) {
+                H2(
+                    attrs = {
+                        classes(WtTexts.wtH2)
+                        style {
+                            width(100.percent)
+                        }
+                    }
+                ) {
                     Text(heading)
                 }
 
                 P {
                     Button(
-                        attrs = {
-                            onClick {
-                                onAppClick("nextbus")
-                            }
-                            classes(WtTexts.wtButton)
+                        onClick = {
+                            onAppClick("nextbus")
                         }
                     ) {
                         Text("Next Bus SG")
