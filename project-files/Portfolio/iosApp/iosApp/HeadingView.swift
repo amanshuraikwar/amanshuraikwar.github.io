@@ -13,16 +13,10 @@ struct HeadingView: View {
     let data: HomePageData.Heading
     
     var body: some View {
-        VStack {
-            Text(data.name)
-                .font(.largeTitle)
-                .frame(maxWidth: .infinity, alignment: .leading))
-            
+        Section(
+            header: Text("About me")
+        ) {
             Text(data.intro)
-                .font(.body)
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.top, 2)
-                .padding(.bottom, 2)
         }
     }
 }

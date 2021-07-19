@@ -18,6 +18,8 @@ struct PortfolioLinkButton: View {
         } label: {
             HStack {
                 Text(name)
+                    .fontWeight(.medium)
+                    .foregroundColor(.primary)
                 Spacer()
                 Image(systemName: "chevron.right")
             }
