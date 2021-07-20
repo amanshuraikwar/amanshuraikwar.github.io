@@ -6,6 +6,9 @@ object Libs {
     const val androidGradlePlugin = "com.android.tools.build:gradle:7.0.0-beta04"
     const val threeTenAbp = "com.jakewharton.threetenabp:threetenabp:1.2.4"
 
+    const val multiplatformSettings = "com.russhwolf:multiplatform-settings:0.7.7"
+    const val multiplatformSettingsNoArg = "com.russhwolf:multiplatform-settings-no-arg:0.7.7"
+
     object Google {
         const val material = "com.google.android.material:material:1.4.0-rc01"
         const val analytics = "com.google.firebase:firebase-analytics:17.4.0"

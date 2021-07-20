@@ -13,10 +13,10 @@ import kotlinx.coroutines.launch
 private const val TAG = "HomeViewModel"
 
 class HomeViewModel : ViewModel() {
-    private val _isDarkTheme = MutableStateFlow(listOf(true, false).random())
-    val isDarkTheme = _isDarkTheme as StateFlow<Boolean>
-
     private val portfolioRepository = PortfolioRepository()
+
+    private val _isDarkTheme = MutableStateFlow(portfolioRepository.isDarkThemeEnabled())
+    val isDarkTheme = _isDarkTheme as StateFlow<Boolean>
 
     private val _screenState = MutableStateFlow<HomeScreenState>(HomeScreenState.Fetching)
     val screenState = _screenState as StateFlow<HomeScreenState>
@@ -36,5 +36,10 @@ class HomeViewModel : ViewModel() {
                 portfolioRepository.getHomePageDataList()
             )
         }
+    }
+
+    fun setDarkThemeEnabled(enabled: Boolean) {
+        portfolioRepository.setDarkThemeEnabled(enabled)
+        _isDarkTheme.value = enabled
     }
 }

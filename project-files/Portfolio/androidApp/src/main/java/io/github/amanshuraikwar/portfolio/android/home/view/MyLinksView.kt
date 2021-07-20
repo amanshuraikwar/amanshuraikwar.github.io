@@ -22,7 +22,7 @@ fun MyLinksView(
     ) {
         Text(
             modifier = Modifier
-                .padding(top = 48.dp),
+                .padding(top = 48.dp, bottom = 16.dp),
             text = heading,
             color = MaterialTheme.colors.onBackground,
             style = MaterialTheme.typography.h6,
@@ -31,7 +31,7 @@ fun MyLinksView(
         links.forEach { linkData ->
             PortfolioLinkButton(
                 modifier = Modifier.padding(
-                    top = 16.dp,
+                    bottom = 4.dp,
                 ),
                 text = linkData.name,
                 onClick = {

@@ -18,12 +18,14 @@ sealed class NavigationDestination {
 }
 
 val colorPaletteList = listOf(
+    // dark
     ColorPalette(
         colorBackground = Color("#212121"),
         colorOnBackground = Color("#ffffff"),
         colorPrimary = Color("#FFCDD2"),
         colorOnPrimary = Color("#4E342E"),
     ),
+    // light
     ColorPalette(
         colorBackground = Color("#FFF2CA"),
         colorOnBackground = Color("#52403A"),
@@ -43,13 +45,20 @@ fun main() {
     val portfolioRepository = PortfolioRepository()
 
     var navigationDestination: NavigationDestination by mutableStateOf(NavigationDestination.Home)
+    var isDarkTheme: Boolean by mutableStateOf(portfolioRepository.isDarkThemeEnabled())
 
     renderComposable(rootElementId = "root") {
         Style(AppStylesheet)
-        LaunchedEffect(key1 = navigationDestination) {
+        LaunchedEffect(key1 = navigationDestination, key2 = isDarkTheme) {
             when (navigationDestination) {
                 NavigationDestination.Home -> {
-                    AppStylesheet.updateColors(colorPalette = colorPaletteList.random())
+                    AppStylesheet.updateColors(
+                        colorPalette = if (isDarkTheme) {
+                            colorPaletteList[0]
+                        } else {
+                            colorPaletteList[1]
+                        }
+                    )
                 }
                 NavigationDestination.NextBus -> {
                     AppStylesheet.updateColors(colorPalette = nextBusColorPalette)
@@ -64,6 +73,11 @@ fun main() {
                         portfolioRepository.getHomePageDataList(),
                         onNextBusClick = {
                             navigationDestination = NavigationDestination.NextBus
+                        },
+                        isDarkTheme = isDarkTheme,
+                        onThemeBtnClick = {
+                            portfolioRepository.setDarkThemeEnabled(!isDarkTheme)
+                            isDarkTheme = !isDarkTheme
                         }
                     )
                 }

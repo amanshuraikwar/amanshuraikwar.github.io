@@ -19,8 +19,6 @@ fun HeadingView(
             .padding(horizontal = 16.dp)
     ) {
         Text(
-            modifier = Modifier
-                .padding(top = 48.dp),
             text = name,
             color = MaterialTheme.colors.primary,
             style = MaterialTheme.typography.h4,
