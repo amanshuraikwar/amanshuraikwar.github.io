@@ -6,6 +6,6 @@ sealed class HomeScreenState {
     object Fetching : HomeScreenState()
 
     data class Success(
-        val homePageDataList: List<HomePageData>
+        val homePageDataList: List<HomePageData>,
     ) : HomeScreenState()
 }

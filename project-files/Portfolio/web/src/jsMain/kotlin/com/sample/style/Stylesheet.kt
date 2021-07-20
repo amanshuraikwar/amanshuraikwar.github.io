@@ -58,17 +58,12 @@ object AppStylesheet : StyleSheet() {
         )
 
         CSSSelector.Universal style {
-//            val colorPalette = colorPaletteList.random()
-//            AppCSSVariables.colorBackground(colorPalette.colorBackground)
-//            AppCSSVariables.colorOnBackground(colorPalette.colorOnBackground)
-//            AppCSSVariables.colorPrimary(colorPalette.colorPrimary)
-//            AppCSSVariables.colorOnPrimary(colorPalette.colorOnPrimary)
             AppCSSVariables.wtOffsetTopUnit(24.px)
 
             margin(0.px)
         }
 
-        "body" style  {
+        "body" style {
             backgroundColor(AppCSSVariables.colorBackground.value())
         }
 

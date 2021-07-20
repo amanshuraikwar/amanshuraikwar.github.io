@@ -8,12 +8,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun FetchingView() {
+fun FetchingView(
+    modifier: Modifier = Modifier,
+) {
     Text(
         text = "Compiling...",
         color = MaterialTheme.colors.onBackground,
         style = MaterialTheme.typography.h6,
-        modifier = Modifier
+        modifier = modifier
             .padding(
                 horizontal = 16.dp,
                 vertical = 48.dp
