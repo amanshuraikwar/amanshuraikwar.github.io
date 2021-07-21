@@ -33,7 +33,7 @@ fun MyLinksView(
                 modifier = Modifier.padding(
                     bottom = 4.dp,
                 ),
-                text = linkData.name,
+                text = linkData.title,
                 onClick = {
                     onLinkClick(linkData.url)
                 }

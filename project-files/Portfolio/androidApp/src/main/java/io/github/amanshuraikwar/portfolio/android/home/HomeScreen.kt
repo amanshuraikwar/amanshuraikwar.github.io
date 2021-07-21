@@ -1,14 +1,14 @@
 package io.github.amanshuraikwar.portfolio.android.home
 
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.google.accompanist.insets.LocalWindowInsets
 import com.google.accompanist.insets.rememberInsetsPaddingValues
-import io.github.amanshuraikwar.portfolio.android.home.view.*
-import io.github.amanshuraikwar.portfolio.model.PortfolioData
+import io.github.amanshuraikwar.portfolio.android.home.view.FetchingView
+import io.github.amanshuraikwar.portfolio.android.home.view.HeadingView
+import io.github.amanshuraikwar.portfolio.android.home.view.MyLinksView
 
 @Composable
 fun HomeScreen(
@@ -31,46 +31,19 @@ fun HomeScreen(
                     additionalBottom = 48.dp
                 )
             ) {
-                items(
-                    items = screenState.homePageDataList,
-                ) { item ->
-                    item {
-                        HeadingView(
-                            name = screenState.portfolioData.name,
-                            intro = screenState.portfolioData.intro,
-                        )
-                    }
+                item {
+                    HeadingView(
+                        name = screenState.portfolioData.name,
+                        intro = screenState.portfolioData.intro,
+                    )
+                }
 
-                    item {
-                        MyLinksView(
-                            heading = "You can find me at...",
-                            links = screenState.portfolioData.links,
-                            onLinkClick = onLinkClick
-                        )
-                    }
-
-
-//                    when (item) {
-//                        is HomePageData.Heading -> {
-//                            HeadingView(
-//                                name = item.name,
-//                                intro = item.intro
-//                            )
-//                        }
-//                        is HomePageData.LastUpdated -> {
-//                            LastUpdatedView(message = item.message)
-//                        }
-//                        is HomePageData.MadeWith -> {
-//                            MadeWithView(message = item.message)
-//                        }
-//                        is HomePageData.MyLinks -> {
-//                            MyLinksView(
-//                                heading = item.heading,
-//                                links = item.linkDataList,
-//                                onLinkClick = onLinkClick
-//                            )
-//                        }
-//                    }
+                item {
+                    MyLinksView(
+                        heading = "You can find me at...",
+                        links = screenState.portfolioData.links,
+                        onLinkClick = onLinkClick
+                    )
                 }
             }
         }
