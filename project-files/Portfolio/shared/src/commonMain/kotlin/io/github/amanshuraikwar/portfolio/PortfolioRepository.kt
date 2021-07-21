@@ -3,8 +3,17 @@ package io.github.amanshuraikwar.portfolio
 import com.russhwolf.settings.Settings
 import io.github.amanshuraikwar.portfolio.model.HomePageData
 import io.github.amanshuraikwar.portfolio.model.LinkData
+import io.github.amanshuraikwar.portfolio.model.AppData
+import io.github.amanshuraikwar.portfolio.model.PortfolioData
+import io.github.amanshuraikwar.portfolio.network.PortfolioApi
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 
 class PortfolioRepository {
+    private val portfolioApi = PortfolioApi(
+        client = PortfolioApi.createHttpClient(enableNetworkLogs = true)
+    )
+
     private val settings = Settings()
     private var isDarkThemeEnabled =
         settings.getBoolean(PREFS_DARK_THEME_ENABLED, true)
@@ -40,40 +49,57 @@ class PortfolioRepository {
         )
     }
 
+    suspend fun getPortfolioData(): PortfolioData {
+        return withContext(Dispatchers.Default) {
+            portfolioApi.getPortfolioData().let { response ->
+                PortfolioData(
+                    name = response.name,
+                    intro = response.intro,
+                    links = response.links.map { (title, url) ->
+                        LinkData(title, url)
+                    },
+                    apps = response.apps.map { (id, title) ->
+                        AppData(id, title)
+                    }
+                )
+            }
+        }
+    }
+
     companion object {
         private const val PREFS_DARK_THEME_ENABLED = "dark_theme_enabled"
 
         private val links = listOf(
             LinkData(
-                name = "RESUME",
+                title = "RESUME",
                 url = "https://amanshuraikwar.github.io/assets/resume/Resume-7-Aug-2019.pdf",
             ),
             LinkData(
-                name = "GITHUB",
+                title = "GITHUB",
                 url = "https://github.com/amanshuraikwar",
             ),
             LinkData(
-                name = "LINKEDIN",
+                title = "LINKEDIN",
                 url = "https://www.linkedin.com/in/amanshu-raikwar-36b534103/",
             ),
             LinkData(
-                name = "MEDIUM",
+                title = "MEDIUM",
                 url = "https://medium.com/@amanshuraikwar.in/",
             ),
             LinkData(
-                name = "PLAY STORE",
+                title = "PLAY STORE",
                 url = "https://play.google.com/store/apps/developer?id=Amanshu%20Raikwar&hl=en",
             ),
             LinkData(
-                name = "INSTAGRAM",
+                title = "INSTAGRAM",
                 url = "https://instagram.com/amanshuraikwar",
             ),
             LinkData(
-                name = "UNSPLASH",
+                title = "UNSPLASH",
                 url = "https://unsplash.com/@amanshuraikwar",
             ),
             LinkData(
-                name = "TWITTER",
+                title = "TWITTER",
                 url = "https://twitter.com/amanshuraikwar_",
             ),
         )

@@ -33,7 +33,7 @@ class HomeViewModel : ViewModel() {
     private fun fetchData() {
         viewModelScope.launch(coroutineContext) {
             _screenState.value = HomeScreenState.Success(
-                portfolioRepository.getHomePageDataList()
+                portfolioRepository.getPortfolioData()
             )
         }
     }

@@ -1,0 +1,20 @@
+{
+  "name": "Amanshu Raikwar",
+  "intro": "I'm a Software Engineer, building stuff for the lil green droid.",
+  "links": [
+    {
+      "title": "Resume",
+      "url": "https://amanshuraikwar.github.io/assets/resume/Resume-7-Aug-2019.pdf"
+    },
+    {
+      "title": "Github",
+      "url": "https://github.com/amanshuraikwar"
+    }
+  ],
+  "apps": [
+    {
+      "id": "nextbus",
+      "title":  "Next Bus SG"
+    }
+  ]
+}

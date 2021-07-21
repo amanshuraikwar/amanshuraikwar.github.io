@@ -37,6 +37,17 @@ kotlin {
         val commonMain by getting {
             dependencies {
                 implementation(Libs.multiplatformSettingsNoArg)
+
+                with(Libs.Ktor) {
+                    implementation(clientCore)
+                    implementation(clientJson)
+                    implementation(clientLogging)
+                    implementation(clientSerialization)
+                }
+
+                with(Libs.Kotlinx) {
+                    implementation(serializationCore)
+                }
             }
         }
         val commonTest by getting {
@@ -45,16 +56,28 @@ kotlin {
                 implementation(kotlin("test-annotations-common"))
             }
         }
-        val androidMain by getting
+        val androidMain by getting {
+            dependencies {
+                implementation(Libs.Ktor.clientAndroid)
+            }
+        }
         val androidTest by getting {
             dependencies {
                 implementation(kotlin("test-junit"))
                 implementation("junit:junit:4.13.2")
             }
         }
-        val iosMain by getting
+        val iosMain by getting {
+            dependencies {
+                implementation(Libs.Ktor.clientIos)
+            }
+        }
         val iosTest by getting
-        val jsMain by getting
+        val jsMain by getting {
+            dependencies {
+                implementation(Libs.Ktor.clientJs)
+            }
+        }
     }
 }
 

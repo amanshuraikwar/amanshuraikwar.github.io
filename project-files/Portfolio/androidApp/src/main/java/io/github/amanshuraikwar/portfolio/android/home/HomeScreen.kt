@@ -8,7 +8,7 @@ import androidx.compose.ui.unit.dp
 import com.google.accompanist.insets.LocalWindowInsets
 import com.google.accompanist.insets.rememberInsetsPaddingValues
 import io.github.amanshuraikwar.portfolio.android.home.view.*
-import io.github.amanshuraikwar.portfolio.model.HomePageData
+import io.github.amanshuraikwar.portfolio.model.PortfolioData
 
 @Composable
 fun HomeScreen(
@@ -34,27 +34,43 @@ fun HomeScreen(
                 items(
                     items = screenState.homePageDataList,
                 ) { item ->
-                    when (item) {
-                        is HomePageData.Heading -> {
-                            HeadingView(
-                                name = item.name,
-                                intro = item.intro
-                            )
-                        }
-                        is HomePageData.LastUpdated -> {
-                            LastUpdatedView(message = item.message)
-                        }
-                        is HomePageData.MadeWith -> {
-                            MadeWithView(message = item.message)
-                        }
-                        is HomePageData.MyLinks -> {
-                            MyLinksView(
-                                heading = item.heading,
-                                links = item.linkDataList,
-                                onLinkClick = onLinkClick
-                            )
-                        }
+                    item {
+                        HeadingView(
+                            name = screenState.portfolioData.name,
+                            intro = screenState.portfolioData.intro,
+                        )
                     }
+
+                    item {
+                        MyLinksView(
+                            heading = "You can find me at...",
+                            links = screenState.portfolioData.links,
+                            onLinkClick = onLinkClick
+                        )
+                    }
+
+
+//                    when (item) {
+//                        is HomePageData.Heading -> {
+//                            HeadingView(
+//                                name = item.name,
+//                                intro = item.intro
+//                            )
+//                        }
+//                        is HomePageData.LastUpdated -> {
+//                            LastUpdatedView(message = item.message)
+//                        }
+//                        is HomePageData.MadeWith -> {
+//                            MadeWithView(message = item.message)
+//                        }
+//                        is HomePageData.MyLinks -> {
+//                            MyLinksView(
+//                                heading = item.heading,
+//                                links = item.linkDataList,
+//                                onLinkClick = onLinkClick
+//                            )
+//                        }
+//                    }
                 }
             }
         }

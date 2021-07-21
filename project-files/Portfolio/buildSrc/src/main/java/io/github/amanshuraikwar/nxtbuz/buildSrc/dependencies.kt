@@ -9,6 +9,23 @@ object Libs {
     const val multiplatformSettings = "com.russhwolf:multiplatform-settings:0.7.7"
     const val multiplatformSettingsNoArg = "com.russhwolf:multiplatform-settings-no-arg:0.7.7"
 
+    object Ktor {
+        private const val version = "1.6.1"
+        const val clientCore = "io.ktor:ktor-client-core:$version"
+        const val clientJson = "io.ktor:ktor-client-json:$version"
+        const val clientLogging = "io.ktor:ktor-client-logging:$version"
+        const val clientSerialization = "io.ktor:ktor-client-serialization:$version"
+        const val clientAndroid = "io.ktor:ktor-client-android:$version"
+        const val clientApache = "io.ktor:ktor-client-apache:$version}"
+        const val clientIos = "io.ktor:ktor-client-ios:$version"
+        const val clientCio = "io.ktor:ktor-client-cio:$version"
+        const val clientJs = "io.ktor:ktor-client-js:$version"
+    }
+
+    object Kotlinx {
+        const val serializationCore = "org.jetbrains.kotlinx:kotlinx-serialization-core:1.2.1"
+    }
+
     object Google {
         const val material = "com.google.android.material:material:1.4.0-rc01"
         const val analytics = "com.google.firebase:firebase-analytics:17.4.0"
