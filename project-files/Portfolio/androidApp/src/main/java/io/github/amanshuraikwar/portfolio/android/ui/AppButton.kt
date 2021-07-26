@@ -83,15 +83,21 @@ fun AppButton(
                     style = MaterialTheme.typography.body1
                 )
 
-                LazyRow {
+                LazyRow(
+                    modifier = Modifier
+                        .align(Alignment.End),
+                    contentPadding = PaddingValues(
+                        top = 4.dp
+                    )
+                ) {
                     links.forEach { appLink ->
                         item {
                             when (appLink) {
                                 is AppLink.Github -> {
                                     AppLinkButton(
                                         modifier = Modifier
-                                            .padding(2.dp),
-                                        text = appLink.repoUrl,
+                                            .padding(4.dp),
+                                        text = "Source Code",
                                         icon = painterResource(R.drawable.ic_github_24),
                                         onClick = {
                                             onAppLinkClick(appLink.repoUrl)
@@ -101,8 +107,8 @@ fun AppButton(
                                 is AppLink.Other -> {
                                     AppLinkButton(
                                         modifier = Modifier
-                                            .padding(2.dp),
-                                        text = appLink.url,
+                                            .padding(4.dp),
+                                        text = "More Info",
                                         icon = rememberVectorPainter(image = Icons.Rounded.Link),
                                         onClick = {
                                             onAppLinkClick(appLink.url)
@@ -112,8 +118,8 @@ fun AppButton(
                                 is AppLink.PlayStore -> {
                                     AppLinkButton(
                                         modifier = Modifier
-                                            .padding(2.dp),
-                                        text = appLink.playStoreListingUrl,
+                                            .padding(4.dp),
+                                        text = "Play Store",
                                         icon = painterResource(R.drawable.ic_google_play_24),
                                         onClick = {
                                             onAppLinkClick(appLink.playStoreListingUrl)

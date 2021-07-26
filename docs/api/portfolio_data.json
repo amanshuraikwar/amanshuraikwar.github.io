@@ -50,12 +50,19 @@
       "description": "A beautiful bus timing app for Singapore built with Jetpack Compose",
       "appLinks": [
         {
-          "type": "github",
-          "url": "https://www.github.com/amanshuraikwar/nxtbuz"
-        },
-        {
           "type": "playstore",
           "url": "https://play.google.com/store/apps/details?id=io.github.amanshuraikwar.nxtbuz.release"
+        }
+      ]
+    },
+    {
+      "id": "splash",
+      "title":  "Splash",
+      "description": "A minimal android client for Unsplash",
+      "appLinks": [
+        {
+          "type": "github",
+          "url": "https://github.com/amanshuraikwar/splash"
         }
       ]
     }

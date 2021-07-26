@@ -74,10 +74,9 @@ fun HomeScreen(
                     item {
                         MyAppsView(
                             heading = "My Apps",
-                            apps = screenState.portfolioData.apps
-                        ) {
-
-                        }
+                            apps = screenState.portfolioData.apps,
+                            onAppLinkClick = onLinkClick
+                        )
                     }
                 }
             }

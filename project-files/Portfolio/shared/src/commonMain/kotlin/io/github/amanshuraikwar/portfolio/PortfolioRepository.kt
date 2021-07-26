@@ -55,12 +55,12 @@ class PortfolioRepository {
                     links = response.links.map { (id, title, url) ->
                         LinkData(id, title, url)
                     },
-                    apps = response.apps.map { (id, title, description, appLinks) ->
+                    apps = response.apps.map { appDataResponse ->
                         AppData(
-                            id,
-                            title,
-                            description,
-                            appLinks.map {
+                            appDataResponse.id,
+                            appDataResponse.title,
+                            appDataResponse.description,
+                            appDataResponse.appLinks.map {
                                 when (it.type) {
                                     "github" -> AppLink.Github(it.url)
                                     "playstore" -> AppLink.PlayStore(it.url)

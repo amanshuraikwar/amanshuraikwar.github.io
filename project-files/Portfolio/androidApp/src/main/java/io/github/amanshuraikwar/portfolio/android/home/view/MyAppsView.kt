@@ -20,7 +20,7 @@ import io.github.amanshuraikwar.portfolio.model.AppData
 fun MyAppsView(
     heading: String,
     apps: List<AppData>,
-    onClick: () -> Unit,
+    onAppLinkClick: (url: String) -> Unit,
 ) {
     Column(
         modifier = Modifier
@@ -39,12 +39,13 @@ fun MyAppsView(
                 "nextbus" -> painterResource(R.drawable.ic_nextbus_74)
                 else -> rememberVectorPainter(image = Icons.Rounded.Link)
             }
+
             AppButton(
                 icon = painter,
                 title = appData.title,
                 description = appData.description,
-                onClick = {
-                }
+                links = appData.appLinks,
+                onAppLinkClick = onAppLinkClick
             )
         }
     }

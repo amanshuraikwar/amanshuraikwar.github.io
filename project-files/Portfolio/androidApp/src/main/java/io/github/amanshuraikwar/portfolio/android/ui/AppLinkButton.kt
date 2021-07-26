@@ -26,7 +26,6 @@ fun AppLinkButton(
         modifier = modifier,
         shape = MaterialTheme.shapes.small,
         color = MaterialTheme.colors.primary,
-        elevation = 2.dp
     ) {
         Row(
             modifier = modifier
@@ -35,7 +34,7 @@ fun AppLinkButton(
             Text(
                 modifier = Modifier
                     .align(Alignment.CenterVertically)
-                    .padding(horizontal = 8.dp, vertical = 8.dp),
+                    .padding(horizontal = 4.dp, vertical = 4.dp),
                 text = text
                     .replaceFirstChar {
                         if (it.isLowerCase())
@@ -49,9 +48,10 @@ fun AppLinkButton(
 
             Icon(
                 modifier = Modifier
-                    .padding(8.dp)
-                    .padding(start = 8.dp)
-                    .size(16.dp),
+                    .align(Alignment.CenterVertically)
+                    .padding(2.dp)
+                    .padding(start = 2.dp)
+                    .size(20.dp),
                 painter = icon,
                 contentDescription = text,
                 tint = MaterialTheme.colors.onPrimary
