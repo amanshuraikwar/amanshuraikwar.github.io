@@ -1,10 +1,7 @@
 package io.github.amanshuraikwar.portfolio
 
 import com.russhwolf.settings.Settings
-import io.github.amanshuraikwar.portfolio.model.HomePageData
-import io.github.amanshuraikwar.portfolio.model.LinkData
-import io.github.amanshuraikwar.portfolio.model.AppData
-import io.github.amanshuraikwar.portfolio.model.PortfolioData
+import io.github.amanshuraikwar.portfolio.model.*
 import io.github.amanshuraikwar.portfolio.network.PortfolioApi
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -58,8 +55,19 @@ class PortfolioRepository {
                     links = response.links.map { (id, title, url) ->
                         LinkData(id, title, url)
                     },
-                    apps = response.apps.map { (id, title) ->
-                        AppData(id, title)
+                    apps = response.apps.map { (id, title, description, appLinks) ->
+                        AppData(
+                            id,
+                            title,
+                            description,
+                            appLinks.map {
+                                when (it.type) {
+                                    "github" -> AppLink.Github(it.url)
+                                    "playstore" -> AppLink.PlayStore(it.url)
+                                    else -> AppLink.Other(it.url)
+                                }
+                            }
+                        )
                     }
                 )
             }

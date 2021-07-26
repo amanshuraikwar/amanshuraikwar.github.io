@@ -5,18 +5,21 @@ import androidx.compose.animation.core.TweenSpec
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.gestures.Orientation
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.CornerSize
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.DarkMode
 import androidx.compose.material.icons.filled.LightMode
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.geometry.CornerRadius
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.BlendMode
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.graphics.drawscope.translate
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.rememberVectorPainter
 import androidx.compose.ui.unit.dp
@@ -111,21 +114,24 @@ fun ThemeSwitch(
                 height = (handleSize + padding * 2).dp
             ),
     ) {
-        drawRect(
+        drawRoundRect(
             color = backgroundColor,
             topLeft = Offset.Zero,
-            size = size
+            size = size,
+            cornerRadius = CornerRadius(8.dp.toPx(), 8.dp.toPx())
         )
 
-        drawRect(
+        drawRoundRect(
             color = handleColor,
             topLeft = Offset(
                 (swipeableState.offset.value + padding).dp.toPx(),
                 padding.dp.toPx()
             ),
-            size = Size(handleSize.dp.toPx(), handleSize.dp.toPx())
+            size = Size(handleSize.dp.toPx(), handleSize.dp.toPx()),
+            cornerRadius = CornerRadius(6.dp.toPx(), 6.dp.toPx())
         )
 
+        //MaterialTheme.shapes.large
         translate(
             (swipeableState.offset.value + padding * 2).dp.toPx(),
             (padding * 2).dp.toPx()

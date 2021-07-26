@@ -6,8 +6,8 @@ import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.twotone.DarkMode
-import androidx.compose.material.icons.twotone.LightMode
+import androidx.compose.material.icons.rounded.DarkMode
+import androidx.compose.material.icons.rounded.LightMode
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
 import androidx.compose.ui.Modifier
@@ -57,8 +57,8 @@ fun MyNameCollapsingHeader(
                     } else {
                         ThemeSwitchValue.LIGHT
                     },
-                    lightThemeIcon = Icons.TwoTone.LightMode,
-                    darkThemeIcon = Icons.TwoTone.DarkMode,
+                    lightThemeIcon = Icons.Rounded.LightMode,
+                    darkThemeIcon = Icons.Rounded.DarkMode,
                     onValueChange = { newValue ->
                         when (newValue) {
                             ThemeSwitchValue.DARK -> {
@@ -106,8 +106,8 @@ fun MyNameCollapsingHeader(
                         } else {
                             ThemeSwitchValue.LIGHT
                         },
-                        lightThemeIcon = Icons.TwoTone.LightMode,
-                        darkThemeIcon = Icons.TwoTone.DarkMode,
+                        lightThemeIcon = Icons.Rounded.LightMode,
+                        darkThemeIcon = Icons.Rounded.DarkMode,
                         onValueChange = { newValue ->
                             when (newValue) {
                                 ThemeSwitchValue.DARK -> {

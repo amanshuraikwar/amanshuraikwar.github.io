@@ -151,21 +151,6 @@ fun CollapsingHeaderLayout(
         content = {
             content()
             header()
-//            Surface(
-//                color = MaterialTheme.colors.surface,
-//                elevation = 8.dp
-//            ) {
-//                MyNameCollapsingHeader(
-//                    modifier = Modifier
-//                        .statusBarsPadding(),
-//                    name = "namenamae",
-//                    intro = "introintrointrointrointro introintrointro introintrointrointro introintrointrointro introintrointrointro",
-//                    expandFraction = if (expandedHeight.value == collapsedHeight.value) 1f else 1f - (expandedHeight.value - swipeableState.offset.value) / (expandedHeight.value - collapsedHeight.value),
-//                    headerHeight = headerHeight,
-//                    collapsedHeight = collapsedHeight,
-//                    expandedHeight = expandedHeight,
-//                )
-//            }
         },
     ) { measurables, constraints ->
         val headerPlaceable =
