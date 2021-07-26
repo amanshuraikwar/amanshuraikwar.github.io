@@ -55,8 +55,8 @@ class PortfolioRepository {
                 PortfolioData(
                     name = response.name,
                     intro = response.intro,
-                    links = response.links.map { (title, url) ->
-                        LinkData(title, url)
+                    links = response.links.map { (id, title, url) ->
+                        LinkData(id, title, url)
                     },
                     apps = response.apps.map { (id, title) ->
                         AppData(id, title)
@@ -69,39 +69,39 @@ class PortfolioRepository {
     companion object {
         private const val PREFS_DARK_THEME_ENABLED = "dark_theme_enabled"
 
-        private val links = listOf(
-            LinkData(
-                title = "RESUME",
-                url = "https://amanshuraikwar.github.io/assets/resume/Resume-7-Aug-2019.pdf",
-            ),
-            LinkData(
-                title = "GITHUB",
-                url = "https://github.com/amanshuraikwar",
-            ),
-            LinkData(
-                title = "LINKEDIN",
-                url = "https://www.linkedin.com/in/amanshu-raikwar-36b534103/",
-            ),
-            LinkData(
-                title = "MEDIUM",
-                url = "https://medium.com/@amanshuraikwar.in/",
-            ),
-            LinkData(
-                title = "PLAY STORE",
-                url = "https://play.google.com/store/apps/developer?id=Amanshu%20Raikwar&hl=en",
-            ),
-            LinkData(
-                title = "INSTAGRAM",
-                url = "https://instagram.com/amanshuraikwar",
-            ),
-            LinkData(
-                title = "UNSPLASH",
-                url = "https://unsplash.com/@amanshuraikwar",
-            ),
-            LinkData(
-                title = "TWITTER",
-                url = "https://twitter.com/amanshuraikwar_",
-            ),
+        private val links = listOf<LinkData>(
+//            LinkData(
+//                title = "RESUME",
+//                url = "https://amanshuraikwar.github.io/assets/resume/Resume-7-Aug-2019.pdf",
+//            ),
+//            LinkData(
+//                title = "GITHUB",
+//                url = "https://github.com/amanshuraikwar",
+//            ),
+//            LinkData(
+//                title = "LINKEDIN",
+//                url = "https://www.linkedin.com/in/amanshu-raikwar-36b534103/",
+//            ),
+//            LinkData(
+//                title = "MEDIUM",
+//                url = "https://medium.com/@amanshuraikwar.in/",
+//            ),
+//            LinkData(
+//                title = "PLAY STORE",
+//                url = "https://play.google.com/store/apps/developer?id=Amanshu%20Raikwar&hl=en",
+//            ),
+//            LinkData(
+//                title = "INSTAGRAM",
+//                url = "https://instagram.com/amanshuraikwar",
+//            ),
+//            LinkData(
+//                title = "UNSPLASH",
+//                url = "https://unsplash.com/@amanshuraikwar",
+//            ),
+//            LinkData(
+//                title = "TWITTER",
+//                url = "https://twitter.com/amanshuraikwar_",
+//            ),
         )
     }
 }

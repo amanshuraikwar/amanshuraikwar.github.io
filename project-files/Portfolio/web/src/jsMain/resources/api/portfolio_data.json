@@ -3,12 +3,44 @@
   "intro": "I'm a Software Engineer, building stuff for the lil green droid.",
   "links": [
     {
+      "id": "resume",
       "title": "Resume",
       "url": "https://amanshuraikwar.github.io/assets/resume/Resume-7-Aug-2019.pdf"
     },
     {
+      "id": "github",
       "title": "Github",
       "url": "https://github.com/amanshuraikwar"
+    },
+    {
+      "id": "linkedin",
+      "title": "Linkedin",
+      "url": "https://www.linkedin.com/in/amanshu-raikwar-36b534103/"
+    },
+    {
+      "id": "medium",
+      "title": "Medium",
+      "url": "https://medium.com/@amanshuraikwar.in/"
+    },
+    {
+      "id": "playstore",
+      "title": "Play Store",
+      "url": "https://play.google.com/store/apps/developer?id=Amanshu%20Raikwar&hl=en"
+    },
+    {
+      "id": "instagram",
+      "title": "Instagram",
+      "url": "https://instagram.com/amanshuraikwar"
+    },
+    {
+      "id": "unsplash",
+      "title": "Unsplash",
+      "url": "https://unsplash.com/@amanshuraikwar"
+    },
+    {
+      "id": "twitter",
+      "title": "Twitter",
+      "url": "https://twitter.com/amanshuraikwar_"
     }
   ],
   "apps": [
