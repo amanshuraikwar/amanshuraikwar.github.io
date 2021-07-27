@@ -7,10 +7,7 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.rounded.Article
-import androidx.compose.material.icons.rounded.CameraAlt
-import androidx.compose.material.icons.rounded.Landscape
-import androidx.compose.material.icons.rounded.Link
+import androidx.compose.material.icons.rounded.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
@@ -126,13 +123,14 @@ fun HomeScreen(
                             val painter: Painter = when (appData.id) {
                                 "nextbus" -> painterResource(R.drawable.ic_nextbus_74)
                                 "splash" -> rememberVectorPainter(image = Icons.Rounded.Landscape)
+                                "howmuch" -> rememberVectorPainter(image = Icons.Rounded.BubbleChart)
                                 else -> rememberVectorPainter(image = Icons.Rounded.Link)
                             }
 
                             AppButton(
                                 Modifier
                                     .padding(bottom = 8.dp)
-                                    .padding(horizontal = 16.dp),
+                                    .padding(horizontal = 8.dp),
                                 icon = painter,
                                 title = appData.title,
                                 description = appData.description,

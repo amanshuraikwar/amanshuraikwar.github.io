@@ -58,11 +58,26 @@
     {
       "id": "splash",
       "title":  "Splash",
-      "description": "A minimal android client for Unsplash",
+      "description": "A minimal android client for Unsplash\n[NOT MAINTAINED ANYMORE]",
       "appLinks": [
         {
           "type": "github",
           "url": "https://github.com/amanshuraikwar/splash"
+        },
+        {
+          "type": "download",
+          "url": "https://amanshuraikwar.github.io/assets/splash/splash-0.0.5.apk"
+        }
+      ]
+    },
+    {
+      "id": "howmuch",
+      "title":  "How Much",
+      "description": "A expense tracked which uses google sheets as a DB\n[NOT MAINTAINED ANYMORE]",
+      "appLinks": [
+        {
+          "type": "github",
+          "url": "https://github.com/amanshuraikwar/howmuch"
         }
       ]
     }

@@ -29,7 +29,7 @@ fun PortfolioLinkButton(
         modifier = modifier
             .fillMaxWidth(),
         shape = MaterialTheme.shapes.medium,
-        color = MaterialTheme.colors.primary.copy(alpha = 0.02f)
+        color = MaterialTheme.colors.primary.copy(alpha = 0.08f)
     ) {
         FillFirstRow(
             modifier = Modifier

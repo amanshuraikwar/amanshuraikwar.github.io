@@ -64,6 +64,7 @@ class PortfolioRepository {
                                 when (it.type) {
                                     "github" -> AppLink.Github(it.url)
                                     "playstore" -> AppLink.PlayStore(it.url)
+                                    "download" -> AppLink.Download(it.url)
                                     else -> AppLink.Other(it.url)
                                 }
                             }

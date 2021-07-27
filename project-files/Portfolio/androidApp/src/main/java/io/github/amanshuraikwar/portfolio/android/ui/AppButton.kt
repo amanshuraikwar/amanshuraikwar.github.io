@@ -2,12 +2,12 @@ package io.github.amanshuraikwar.portfolio.android.ui
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.rounded.Download
 import androidx.compose.material.icons.rounded.Link
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -15,6 +15,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.graphics.vector.rememberVectorPainter
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import io.github.amanshuraikwar.portfolio.R
 import io.github.amanshuraikwar.portfolio.model.AppLink
@@ -33,7 +34,7 @@ fun AppButton(
         modifier = modifier
             .fillMaxWidth(),
         shape = MaterialTheme.shapes.medium,
-        color = MaterialTheme.colors.primary.copy(alpha = 0.02f)
+        color = MaterialTheme.colors.primary.copy(alpha = 0.08f)
     ) {
         Row(
             modifier = Modifier
@@ -43,9 +44,9 @@ fun AppButton(
             Surface(
                 modifier = Modifier
                     .align(Alignment.Top)
-                    .padding(8.dp)
+                    .padding(horizontal = 16.dp, vertical = 16.dp)
                     .size(72.dp),
-                shape = MaterialTheme.shapes.medium,
+                shape = MaterialTheme.shapes.small,
                 elevation = 2.dp,
                 color = MaterialTheme.colors.primary
             ) {
@@ -62,7 +63,8 @@ fun AppButton(
             Column(
                 modifier = Modifier
                     .align(Alignment.Top)
-                    .padding(horizontal = 8.dp, vertical = 8.dp),
+                    .padding(vertical = 16.dp)
+                    .padding(end = 16.dp),
             ) {
                 Text(
                     text = title
@@ -73,61 +75,47 @@ fun AppButton(
                                 it.toString()
                         },
                     color = MaterialTheme.colors.onSurface,
-                    style = MaterialTheme.typography.h6
+                    style = MaterialTheme.typography.h5,
+                    fontWeight = FontWeight.Bold
                 )
 
                 Text(
-                    modifier = Modifier.padding(top = 4.dp),
+                    modifier = Modifier.padding(top = 8.dp),
                     text = description,
                     color = MaterialTheme.colors.onSurface,
                     style = MaterialTheme.typography.body1
                 )
 
-                LazyRow(
+                Row(
                     modifier = Modifier
-                        .align(Alignment.End),
-                    contentPadding = PaddingValues(
-                        top = 4.dp
-                    )
+                        .align(Alignment.End)
+                        .padding(top = 8.dp),
                 ) {
                     links.forEach { appLink ->
-                        item {
-                            when (appLink) {
-                                is AppLink.Github -> {
-                                    AppLinkButton(
-                                        modifier = Modifier
-                                            .padding(4.dp),
-                                        text = "Go to Source Code",
-                                        icon = painterResource(R.drawable.ic_github_24),
-                                        onClick = {
-                                            onAppLinkClick(appLink.repoUrl)
-                                        }
-                                    )
-                                }
-                                is AppLink.Other -> {
-                                    AppLinkButton(
-                                        modifier = Modifier
-                                            .padding(4.dp),
-                                        text = "More Info",
-                                        icon = rememberVectorPainter(image = Icons.Rounded.Link),
-                                        onClick = {
-                                            onAppLinkClick(appLink.url)
-                                        }
-                                    )
-                                }
-                                is AppLink.PlayStore -> {
-                                    AppLinkButton(
-                                        modifier = Modifier
-                                            .padding(4.dp),
-                                        text = "Install from Play Store",
-                                        icon = painterResource(R.drawable.ic_google_play_24),
-                                        onClick = {
-                                            onAppLinkClick(appLink.playStoreListingUrl)
-                                        }
-                                    )
+                        AppLinkButton(
+                            icon = when (appLink) {
+                                is AppLink.Github ->
+                                    painterResource(R.drawable.ic_github_24)
+                                is AppLink.Other ->
+                                    rememberVectorPainter(image = Icons.Rounded.Link)
+                                is AppLink.PlayStore ->
+                                    painterResource(R.drawable.ic_google_play_24)
+                                is AppLink.Download ->
+                                    rememberVectorPainter(image = Icons.Rounded.Download)
+                            },
+                            onClick = {
+                                when (appLink) {
+                                    is AppLink.Github ->
+                                        onAppLinkClick(appLink.repoUrl)
+                                    is AppLink.Other ->
+                                        onAppLinkClick(appLink.url)
+                                    is AppLink.PlayStore ->
+                                        onAppLinkClick(appLink.playStoreListingUrl)
+                                    is AppLink.Download ->
+                                        onAppLinkClick(appLink.downloadUrl)
                                 }
                             }
-                        }
+                        )
                     }
                 }
             }

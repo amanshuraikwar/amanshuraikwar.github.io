@@ -7,7 +7,7 @@ import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 
-private val DarkColorPalette = darkColors(
+private val DarkColorPalettePink = darkColors(
     primary = pinkLight,
     primaryVariant = pinkLight,
     secondary = pinkLight,
@@ -22,7 +22,7 @@ private val DarkColorPalette = darkColors(
     onError = brownDark
 )
 
-private val LightColorPalette = lightColors(
+private val LightColorPaletteOrange = lightColors(
     primary = orange,
     primaryVariant = orange,
     secondary = orange,
@@ -47,9 +47,9 @@ val Colors.rippleColor: Color
 @Composable
 fun PortfolioTheme(darkTheme: Boolean, content: @Composable () -> Unit) {
     val colors = if (darkTheme) {
-        DarkColorPalette
+        DarkColorPalettePink
     } else {
-        LightColorPalette
+        LightColorPaletteOrange
     }
 
     MaterialTheme(
