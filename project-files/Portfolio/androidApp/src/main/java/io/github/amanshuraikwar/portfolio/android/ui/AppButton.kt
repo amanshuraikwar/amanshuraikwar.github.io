@@ -93,6 +93,7 @@ fun AppButton(
                 ) {
                     links.forEach { appLink ->
                         AppLinkButton(
+                            modifier = Modifier.padding(start = 8.dp),
                             icon = when (appLink) {
                                 is AppLink.Github ->
                                     painterResource(R.drawable.ic_github_24)

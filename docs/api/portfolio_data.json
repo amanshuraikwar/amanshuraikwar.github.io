@@ -58,7 +58,7 @@
     {
       "id": "splash",
       "title":  "Splash",
-      "description": "A minimal android client for Unsplash\n[NOT MAINTAINED ANYMORE]",
+      "description": "A minimal android client for Unsplash",
       "appLinks": [
         {
           "type": "github",
@@ -73,7 +73,7 @@
     {
       "id": "howmuch",
       "title":  "How Much",
-      "description": "A expense tracked which uses google sheets as a DB\n[NOT MAINTAINED ANYMORE]",
+      "description": "A expense tracked which uses google sheets as a DB",
       "appLinks": [
         {
           "type": "github",
