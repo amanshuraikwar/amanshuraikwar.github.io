@@ -11,6 +11,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.ui.ExperimentalComposeUiApi
 import io.github.amanshuraikwar.portfolio.android.ui.FillFirstColumn
 import io.github.amanshuraikwar.portfolio.android.ui.PortfolioApp
 import io.github.amanshuraikwar.portfolio.android.util.setupSystemBars
@@ -19,6 +20,7 @@ import kotlinx.coroutines.launch
 class HomeActivity : AppCompatActivity() {
     private val vm: HomeViewModel by viewModels()
 
+    @ExperimentalComposeUiApi
     @ExperimentalMaterialApi
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

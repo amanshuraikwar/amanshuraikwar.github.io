@@ -1,22 +1,31 @@
 package io.github.amanshuraikwar.portfolio.android.home
 
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
+import androidx.compose.material.Text
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.rounded.Article
+import androidx.compose.material.icons.rounded.CameraAlt
+import androidx.compose.material.icons.rounded.Landscape
+import androidx.compose.material.icons.rounded.Link
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.painter.Painter
+import androidx.compose.ui.graphics.vector.rememberVectorPainter
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.google.accompanist.insets.LocalWindowInsets
 import com.google.accompanist.insets.rememberInsetsPaddingValues
 import com.google.accompanist.insets.statusBarsPadding
+import io.github.amanshuraikwar.portfolio.R
 import io.github.amanshuraikwar.portfolio.android.home.view.FetchingView
-import io.github.amanshuraikwar.portfolio.android.home.view.MyAppsView
-import io.github.amanshuraikwar.portfolio.android.home.view.MyLinksView
-import io.github.amanshuraikwar.portfolio.android.ui.CollapsingHeaderLayout
-import io.github.amanshuraikwar.portfolio.android.ui.MyNameCollapsingHeader
-import io.github.amanshuraikwar.portfolio.android.ui.rememberCollapsingHeaderState
+import io.github.amanshuraikwar.portfolio.android.ui.*
 
+@ExperimentalComposeUiApi
 @ExperimentalMaterialApi
 @Composable
 fun HomeScreen(
@@ -64,19 +73,73 @@ fun HomeScreen(
                     )
                 ) {
                     item {
-                        MyLinksView(
-                            heading = "You can find me at...",
-                            links = screenState.portfolioData.links,
-                            onLinkClick = onLinkClick
+                        Text(
+                            modifier = Modifier
+                                .padding(top = 32.dp, bottom = 16.dp)
+                                .padding(horizontal = 16.dp),
+                            text = "My Links",
+                            color = MaterialTheme.colors.onBackground,
+                            style = MaterialTheme.typography.h6,
                         )
                     }
 
+                    screenState.portfolioData.links.forEach { linkData ->
+                        item {
+                            val painter: Painter = when (linkData.id) {
+                                "resume" -> rememberVectorPainter(image = Icons.Rounded.Article)
+                                "playstore" -> painterResource(R.drawable.ic_google_play_24)
+                                "unsplash" -> rememberVectorPainter(image = Icons.Rounded.CameraAlt)
+                                "github" -> painterResource(R.drawable.ic_github_24)
+                                "linkedin" -> painterResource(R.drawable.ic_linkedin_24)
+                                "medium" -> painterResource(R.drawable.ic_medium_24)
+                                "twitter" -> painterResource(R.drawable.ic_twitter_24)
+                                "instagram" -> painterResource(R.drawable.ic_instagram_24)
+                                else -> rememberVectorPainter(image = Icons.Rounded.Link)
+                            }
+
+                            PortfolioLinkButton(
+                                modifier = Modifier
+                                    .padding(horizontal = 16.dp)
+                                    .padding(bottom = 8.dp),
+                                icon = painter,
+                                text = linkData.title,
+                                onClick = {
+                                    onLinkClick(linkData.url)
+                                }
+                            )
+                        }
+                    }
+
                     item {
-                        MyAppsView(
-                            heading = "My Apps",
-                            apps = screenState.portfolioData.apps,
-                            onAppLinkClick = onLinkClick
+                        Text(
+                            modifier = Modifier
+                                .padding(top = 32.dp, bottom = 16.dp)
+                                .padding(horizontal = 16.dp),
+                            text = "My Apps",
+                            color = MaterialTheme.colors.onBackground,
+                            style = MaterialTheme.typography.h6,
                         )
+                    }
+
+                    screenState.portfolioData.apps.forEach { appData ->
+                        item {
+                            val painter: Painter = when (appData.id) {
+                                "nextbus" -> painterResource(R.drawable.ic_nextbus_74)
+                                "splash" -> rememberVectorPainter(image = Icons.Rounded.Landscape)
+                                else -> rememberVectorPainter(image = Icons.Rounded.Link)
+                            }
+
+                            AppButton(
+                                Modifier
+                                    .padding(bottom = 8.dp)
+                                    .padding(horizontal = 16.dp),
+                                icon = painter,
+                                title = appData.title,
+                                description = appData.description,
+                                links = appData.appLinks,
+                                onAppLinkClick = onLinkClick
+                            )
+                        }
                     }
                 }
             }

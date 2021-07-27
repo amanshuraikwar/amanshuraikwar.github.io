@@ -33,10 +33,10 @@ fun AppButton(
         modifier = modifier
             .fillMaxWidth(),
         shape = MaterialTheme.shapes.medium,
-        color = MaterialTheme.colors.surface
+        color = MaterialTheme.colors.primary.copy(alpha = 0.02f)
     ) {
         Row(
-            modifier = modifier
+            modifier = Modifier
                 .fillMaxWidth()
                 .clickable(onClick = { })
         ) {
@@ -45,7 +45,7 @@ fun AppButton(
                     .align(Alignment.Top)
                     .padding(8.dp)
                     .size(72.dp),
-                shape = MaterialTheme.shapes.small,
+                shape = MaterialTheme.shapes.medium,
                 elevation = 2.dp,
                 color = MaterialTheme.colors.primary
             ) {
@@ -62,7 +62,7 @@ fun AppButton(
             Column(
                 modifier = Modifier
                     .align(Alignment.Top)
-                    .padding(horizontal = 16.dp, vertical = 8.dp),
+                    .padding(horizontal = 8.dp, vertical = 8.dp),
             ) {
                 Text(
                     text = title
@@ -97,7 +97,7 @@ fun AppButton(
                                     AppLinkButton(
                                         modifier = Modifier
                                             .padding(4.dp),
-                                        text = "Source Code",
+                                        text = "Go to Source Code",
                                         icon = painterResource(R.drawable.ic_github_24),
                                         onClick = {
                                             onAppLinkClick(appLink.repoUrl)
@@ -119,7 +119,7 @@ fun AppButton(
                                     AppLinkButton(
                                         modifier = Modifier
                                             .padding(4.dp),
-                                        text = "Play Store",
+                                        text = "Install from Play Store",
                                         icon = painterResource(R.drawable.ic_google_play_24),
                                         onClick = {
                                             onAppLinkClick(appLink.playStoreListingUrl)

@@ -5,19 +5,20 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.rounded.DarkMode
-import androidx.compose.material.icons.rounded.LightMode
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
+import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.layout.Layout
+import androidx.compose.ui.res.animatedVectorResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import io.github.amanshuraikwar.portfolio.R
 import kotlin.math.roundToInt
 
+@ExperimentalComposeUiApi
 @ExperimentalMaterialApi
 @Composable
 fun MyNameCollapsingHeader(
@@ -57,8 +58,8 @@ fun MyNameCollapsingHeader(
                     } else {
                         ThemeSwitchValue.LIGHT
                     },
-                    lightThemeIcon = Icons.Rounded.LightMode,
-                    darkThemeIcon = Icons.Rounded.DarkMode,
+                    avdIcon = animatedVectorResource(id = R.drawable.avd_theme_switch_24),
+                    avdEndValue = ThemeSwitchValue.LIGHT,
                     onValueChange = { newValue ->
                         when (newValue) {
                             ThemeSwitchValue.DARK -> {
@@ -106,8 +107,8 @@ fun MyNameCollapsingHeader(
                         } else {
                             ThemeSwitchValue.LIGHT
                         },
-                        lightThemeIcon = Icons.Rounded.LightMode,
-                        darkThemeIcon = Icons.Rounded.DarkMode,
+                        avdIcon = animatedVectorResource(id = R.drawable.avd_theme_switch_24),
+                        avdEndValue = ThemeSwitchValue.LIGHT,
                         onValueChange = { newValue ->
                             when (newValue) {
                                 ThemeSwitchValue.DARK -> {

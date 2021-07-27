@@ -5,12 +5,12 @@ import androidx.compose.animation.core.TweenSpec
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.gestures.Orientation
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.shape.CornerSize
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.DarkMode
 import androidx.compose.material.icons.filled.LightMode
 import androidx.compose.runtime.*
+import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.CornerRadius
 import androidx.compose.ui.geometry.Offset
@@ -19,7 +19,7 @@ import androidx.compose.ui.graphics.BlendMode
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.graphics.drawscope.translate
-import androidx.compose.ui.graphics.graphicsLayer
+import androidx.compose.ui.graphics.vector.AnimatedImageVector
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.rememberVectorPainter
 import androidx.compose.ui.unit.dp
@@ -72,6 +72,8 @@ internal fun <T : Any> rememberSwipeableStateFor(
     return swipeableState
 }
 
+
+@ExperimentalComposeUiApi
 @ExperimentalMaterialApi
 @Composable
 fun ThemeSwitch(
@@ -93,7 +95,7 @@ fun ThemeSwitch(
         TweenSpec(durationMillis = 100)
     )
     val iconPainter = rememberVectorPainter(
-        if (swipeableState.offset.value >= 24) {
+        if (swipeableState.offset.value >= handleSize / 2f) {
             darkThemeIcon
         } else {
             lightThemeIcon
@@ -131,12 +133,93 @@ fun ThemeSwitch(
             cornerRadius = CornerRadius(6.dp.toPx(), 6.dp.toPx())
         )
 
-        //MaterialTheme.shapes.large
         translate(
             (swipeableState.offset.value + padding * 2).dp.toPx(),
             (padding * 2).dp.toPx()
         ) {
             with(iconPainter) {
+                draw(
+                    size = Size(
+                        (handleSize - padding * 2).dp.toPx(),
+                        (handleSize - padding * 2).dp.toPx()
+                    ),
+                    colorFilter = ColorFilter.tint(iconTint, BlendMode.SrcIn)
+                )
+            }
+        }
+    }
+}
+
+@ExperimentalComposeUiApi
+@ExperimentalMaterialApi
+@Composable
+fun ThemeSwitch(
+    modifier: Modifier = Modifier,
+    value: ThemeSwitchValue,
+    backgroundColor: Color = MaterialTheme.colors.primary,
+    handleColor: Color = MaterialTheme.colors.onPrimary,
+    iconTint: Color = MaterialTheme.colors.primary,
+    avdIcon: AnimatedImageVector,
+    avdEndValue: ThemeSwitchValue,
+    onValueChange: (newValue: ThemeSwitchValue) -> Unit = {},
+) {
+    val handleSize = 28f
+    val padding = 2f
+
+    val swipeableState = rememberSwipeableStateFor(
+        value = value,
+        onValueChange = onValueChange,
+        TweenSpec(durationMillis = 100)
+    )
+
+    val anchors = mapOf(0f to ThemeSwitchValue.LIGHT, handleSize to ThemeSwitchValue.DARK)
+
+    val avdPainter = avdIcon.painterFor(
+        atEnd = when (avdEndValue) {
+            ThemeSwitchValue.DARK -> {
+                swipeableState.offset.value >= handleSize / 2f
+            }
+            ThemeSwitchValue.LIGHT -> {
+                swipeableState.offset.value <= handleSize / 2f
+            }
+        }
+    )
+
+    Canvas(
+        modifier = modifier
+            .swipeable(
+                state = swipeableState,
+                anchors = anchors,
+                thresholds = { _, _ -> FractionalThreshold(0.5f) },
+                orientation = Orientation.Horizontal
+            )
+            .size(
+                width = ((handleSize + padding) * 2).dp,
+                height = (handleSize + padding * 2).dp
+            ),
+    ) {
+        drawRoundRect(
+            color = backgroundColor,
+            topLeft = Offset.Zero,
+            size = size,
+            cornerRadius = CornerRadius(8.dp.toPx(), 8.dp.toPx())
+        )
+
+        drawRoundRect(
+            color = handleColor,
+            topLeft = Offset(
+                (swipeableState.offset.value + padding).dp.toPx(),
+                padding.dp.toPx()
+            ),
+            size = Size(handleSize.dp.toPx(), handleSize.dp.toPx()),
+            cornerRadius = CornerRadius(6.dp.toPx(), 6.dp.toPx())
+        )
+
+        translate(
+            (swipeableState.offset.value + padding * 2).dp.toPx(),
+            (padding * 2).dp.toPx()
+        ) {
+            with(avdPainter) {
                 draw(
                     size = Size(
                         (handleSize - padding * 2).dp.toPx(),
