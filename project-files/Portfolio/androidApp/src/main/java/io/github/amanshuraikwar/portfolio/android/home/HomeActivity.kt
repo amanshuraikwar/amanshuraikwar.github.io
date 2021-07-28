@@ -7,10 +7,7 @@ import androidx.activity.compose.setContent
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.material.ExperimentalMaterialApi
-import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.*
 import androidx.compose.ui.ExperimentalComposeUiApi
 import io.github.amanshuraikwar.portfolio.android.ui.FillFirstColumn
 import io.github.amanshuraikwar.portfolio.android.ui.PortfolioApp
@@ -53,7 +50,7 @@ class HomeActivity : AppCompatActivity() {
                         isDarkTheme = isDarkTheme,
                         onThemeSwitchValueChange = { newValue ->
                             vm.setDarkThemeEnabled(newValue)
-                        }
+                        },
                     )
                 }
             }

@@ -1,3 +1,5 @@
+@file:Suppress("KDocUnresolvedReference")
+
 package io.github.amanshuraikwar.portfolio.android.ui
 
 import androidx.compose.animation.core.AnimationSpec
@@ -19,7 +21,7 @@ import androidx.compose.ui.graphics.BlendMode
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.graphics.drawscope.translate
-import androidx.compose.ui.graphics.vector.AnimatedImageVector
+//import androidx.compose.ui.graphics.vector.AnimatedImageVector
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.rememberVectorPainter
 import androidx.compose.ui.unit.dp
@@ -150,6 +152,10 @@ fun ThemeSwitch(
     }
 }
 
+/*
+TODO-amanshuraikwar (28 Jul 2021 05:27:11 PM):
+ commenting out until animatedVectorDrawable is added back to compose
+
 @ExperimentalComposeUiApi
 @ExperimentalMaterialApi
 @Composable
@@ -231,3 +237,4 @@ fun ThemeSwitch(
         }
     }
 }
+ */

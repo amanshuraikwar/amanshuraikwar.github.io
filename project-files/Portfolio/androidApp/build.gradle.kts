@@ -88,4 +88,6 @@ dependencies {
     with(Libs.Accompanist) {
         implementation(insets)
     }
+
+    implementation(Libs.coilCompose)
 }
