@@ -11,6 +11,7 @@ import androidx.compose.material.ripple.rememberRipple
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.unit.dp
 
@@ -18,6 +19,8 @@ import androidx.compose.ui.unit.dp
 fun AppLinkButton(
     modifier: Modifier = Modifier,
     icon: Painter,
+    bgColor: Color = MaterialTheme.colors.onSurface.copy(alpha = 0.13f),
+    iconTint: Color = MaterialTheme.colors.onSurface,
     onClick: () -> Unit
 ) {
     CompositionLocalProvider(
@@ -26,7 +29,7 @@ fun AppLinkButton(
         Surface(
             modifier = modifier,
             shape = MaterialTheme.shapes.small,
-            color = MaterialTheme.colors.onSurface.copy(alpha = 0.13f),
+            color = bgColor,
         ) {
             Icon(
                 modifier = Modifier
@@ -35,7 +38,7 @@ fun AppLinkButton(
                     .size(24.dp),
                 painter = icon,
                 contentDescription = "app-link-icon",
-                tint = MaterialTheme.colors.onSurface
+                tint = iconTint
             )
         }
     }

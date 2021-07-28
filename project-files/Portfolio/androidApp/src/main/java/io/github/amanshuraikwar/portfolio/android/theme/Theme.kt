@@ -52,6 +52,21 @@ private val LightColorPalettePink = lightColors(
     onError = gray900
 )
 
+private val LightColorPaletteRed = lightColors(
+    primary = redMkbhd,
+    primaryVariant = redMkbhd,
+    secondary = redMkbhd,
+    secondaryVariant = redMkbhd,
+    background = lightGrey,
+    surface = lightGrey,
+    error = redLight,
+    onPrimary = pinkLight,
+    onSecondary = pinkLight,
+    onBackground = gray900,
+    onSurface = gray900,
+    onError = gray900
+)
+
 val Colors.rippleColor: Color
     get() = if (isLight) {
         brown
@@ -64,7 +79,7 @@ fun PortfolioTheme(darkTheme: Boolean, content: @Composable () -> Unit) {
     val colors = if (darkTheme) {
         DarkColorPalettePink
     } else {
-        LightColorPalettePink
+        LightColorPaletteRed
     }
 
     MaterialTheme(

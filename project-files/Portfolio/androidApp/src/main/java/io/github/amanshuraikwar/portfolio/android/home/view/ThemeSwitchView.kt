@@ -17,7 +17,6 @@ import androidx.compose.ui.unit.dp
 import io.github.amanshuraikwar.portfolio.android.ui.FillFirstRow
 import io.github.amanshuraikwar.portfolio.android.ui.ThemeSwitch
 import io.github.amanshuraikwar.portfolio.android.ui.ThemeSwitchValue
-import java.util.*
 
 @ExperimentalMaterialApi
 @ExperimentalComposeUiApi
@@ -69,13 +68,7 @@ fun ThemeSwitchView(
                     modifier = Modifier
                         .align(Alignment.CenterVertically)
                         .padding(horizontal = 16.dp, vertical = 12.dp),
-                    text = "App Theme"
-                        .replaceFirstChar {
-                            if (it.isLowerCase())
-                                it.titlecase(Locale.getDefault())
-                            else
-                                it.toString()
-                        },
+                    text = "App Theme",
                     color = MaterialTheme.colors.onSurface,
                     style = MaterialTheme.typography.subtitle1
                 )

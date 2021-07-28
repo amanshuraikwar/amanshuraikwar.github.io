@@ -19,19 +19,10 @@ import com.google.accompanist.insets.rememberInsetsPaddingValues
 import io.github.amanshuraikwar.portfolio.R
 import io.github.amanshuraikwar.portfolio.android.home.view.FetchingView
 import io.github.amanshuraikwar.portfolio.android.home.view.HeadingView
+import io.github.amanshuraikwar.portfolio.android.home.view.IntroView
 import io.github.amanshuraikwar.portfolio.android.home.view.ThemeSwitchView
 import io.github.amanshuraikwar.portfolio.android.ui.AppButton
 import io.github.amanshuraikwar.portfolio.android.ui.PortfolioLinkButton
-
-private val imageUrlList = listOf(
-    "https://images.unsplash.com/photo-1513232457641-78faae852ad1?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=amanshu-raikwar-RTkejO7v2R8-unsplash.jpg",
-    "https://images.unsplash.com/photo-1541769938-ea699dc083c0?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=amanshu-raikwar-bxaVhi3CJOs-unsplash.jpg",
-    "https://images.unsplash.com/photo-1506757171859-d7ba4a0c9a94?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=amanshu-raikwar-yHwVM2em7Nw-unsplash.jpg",
-    "https://images.unsplash.com/photo-1502342556579-b648d39eea0d?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=amanshu-raikwar-quA2agQuFyo-unsplash.jpg",
-    "https://images.unsplash.com/photo-1501067486956-e9a0bd9c2b46?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=amanshu-raikwar-ZHrbVmVu3Qc-unsplash.jpg",
-    "https://images.unsplash.com/photo-1500903443203-462f7a15fc65?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=amanshu-raikwar-Mb4KB_XzF3g-unsplash.jpg",
-    "https://images.unsplash.com/photo-1491938833905-38e9abfe92db?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=amanshu-raikwar-cSsgcUMUESU-unsplash.jpg",
-)
 
 @ExperimentalComposeUiApi
 @ExperimentalMaterialApi
@@ -48,19 +39,29 @@ fun HomeScreen(
             FetchingView(modifier)
         }
         is HomeScreenState.Success -> {
-            val url = imageUrlList.random()
-
             LazyColumn(
                 modifier,
                 contentPadding = rememberInsetsPaddingValues(
-                    insets = LocalWindowInsets.current.navigationBars,
+                    insets = LocalWindowInsets.current.systemBars,
                     additionalBottom = 128.dp
                 )
             ) {
                 item {
                     HeadingView(
+                        modifier = Modifier
+                            .padding(horizontal = 16.dp)
+                            .padding(top = 16.dp),
                         name = screenState.portfolioData.name,
-                        url = url,
+                        onUrlClick = onLinkClick
+                    )
+                }
+
+                item {
+                    IntroView(
+                        modifier = Modifier
+                            .padding(horizontal = 16.dp)
+                            .padding(top = 32.dp),
+                        text = screenState.portfolioData.intro
                     )
                 }
 
