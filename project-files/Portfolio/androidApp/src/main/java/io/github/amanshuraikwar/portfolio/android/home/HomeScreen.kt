@@ -145,6 +145,15 @@ fun HomeScreen(
                         )
                     }
                 }
+
+                item {
+                    GenericTextView(
+                        modifier = Modifier
+                            .padding(horizontal = 16.dp)
+                            .padding(top = 32.dp),
+                        text = screenState.portfolioData.madeWith
+                    )
+                }
             }
         }
     }
