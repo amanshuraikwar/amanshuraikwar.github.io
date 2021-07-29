@@ -8,10 +8,10 @@
     "onErrorColor": "#FF4E342E"
   },
   "lightTheme": {
-    "primaryColor": "#ff9FD3C7",
-    "onPrimaryColor": "#FF385170",
-    "surfaceColor": "#ffECECEC",
-    "onSurfaceColor": "#FF142D4C",
+    "primaryColor": "#ffF05454",
+    "onPrimaryColor": "#FFE8E8E8",
+    "surfaceColor": "#ffffffff",
+    "onSurfaceColor": "#FF222831",
     "errorColor": "#FFE57373",
     "onErrorColor": "#FF212121"
   }
