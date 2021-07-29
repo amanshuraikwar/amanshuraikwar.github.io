@@ -125,7 +125,7 @@ class PortfolioRepository {
                     )
                 )
                 themeData.value = newThemeData
-                settings.putString(PREFS_THEME_DATA, Json.encodeToString(themeData))
+                settings.putString(PREFS_THEME_DATA, Json.encodeToString(newThemeData))
             }
         }
         return themeData
