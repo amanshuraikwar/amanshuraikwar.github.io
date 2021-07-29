@@ -1,6 +1,7 @@
 package io.github.amanshuraikwar.portfolio.network
 
 import io.github.amanshuraikwar.portfolio.network.model.PortfolioDataResponse
+import io.github.amanshuraikwar.portfolio.network.model.ThemeDataResponse
 import io.ktor.client.*
 import io.ktor.client.features.json.*
 import io.ktor.client.features.json.serializer.*
@@ -17,6 +18,9 @@ class PortfolioApi(
 
     suspend fun getAppData(appId: String,) =
         client.get<PortfolioDataResponse>("$baseUrl/app_data_$appId.json")
+
+    suspend fun getThemeData() =
+        client.get<ThemeDataResponse>("$baseUrl/theme.json")
 
     companion object {
         fun createHttpClient(

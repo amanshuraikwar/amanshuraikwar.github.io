@@ -48,6 +48,7 @@ kotlin {
 
                 with(Libs.Kotlinx) {
                     implementation(serializationCore)
+                    implementation(serializationJson)
                 }
             }
         }

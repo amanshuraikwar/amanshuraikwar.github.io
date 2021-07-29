@@ -28,6 +28,7 @@ class HomeActivity : AppCompatActivity() {
 
         setContent {
             val isDarkTheme by vm.isDarkTheme.collectAsState()
+            val themeState by vm.themeState.collectAsState()
 
             LaunchedEffect(key1 = isDarkTheme) {
                 launch {
@@ -37,7 +38,10 @@ class HomeActivity : AppCompatActivity() {
                 }
             }
 
-            PortfolioApp(isDark = isDarkTheme) {
+            PortfolioApp(
+                isDark = isDarkTheme,
+                themeState = themeState,
+            ) {
                 val coroutineScope = rememberCoroutineScope()
                 val screenState by vm.screenState.collectAsState()
 

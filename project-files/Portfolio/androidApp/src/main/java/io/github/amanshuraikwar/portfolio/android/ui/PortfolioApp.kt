@@ -10,14 +10,19 @@ import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.Modifier
 import com.google.accompanist.insets.ProvideWindowInsets
 import io.github.amanshuraikwar.portfolio.android.theme.PortfolioTheme
+import io.github.amanshuraikwar.portfolio.android.theme.ThemeState
 import io.github.amanshuraikwar.portfolio.android.theme.rippleColor
 
 @Composable
 fun PortfolioApp(
     isDark: Boolean,
+    themeState: ThemeState,
     content: @Composable () -> Unit,
 ) {
-    PortfolioTheme(isDark) {
+    PortfolioTheme(
+        isDark = isDark,
+        themeState = themeState
+    ) {
         ProvideWindowInsets {
             Surface(
                 modifier = Modifier.fillMaxSize(),

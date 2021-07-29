@@ -3,10 +3,19 @@ package io.github.amanshuraikwar.portfolio
 import com.russhwolf.settings.Settings
 import io.github.amanshuraikwar.portfolio.model.*
 import io.github.amanshuraikwar.portfolio.network.PortfolioApi
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.withContext
+import kotlinx.coroutines.*
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.serialization.decodeFromString
+import kotlinx.serialization.encodeToString
+import kotlinx.serialization.json.Json
 
 class PortfolioRepository {
+    private val errorHandler = CoroutineExceptionHandler { _, th ->
+        // do nothing
+    }
+    private val repositoryScope = MainScope() + Dispatchers.Default + errorHandler
+
     private val portfolioApi = PortfolioApi(
         client = PortfolioApi.createHttpClient(enableNetworkLogs = true)
     )
@@ -14,6 +23,24 @@ class PortfolioRepository {
     private val settings = Settings()
     private var isDarkThemeEnabled =
         settings.getBoolean(PREFS_DARK_THEME_ENABLED, true)
+
+    private val themeData = MutableStateFlow(
+        settings
+            .getString(
+                PREFS_THEME_DATA,
+                ""
+            )
+            .takeIf {
+                it.isNotEmpty()
+            }
+            ?.let {
+                Json.decodeFromString<ThemeData>(
+                    it
+                )
+            }
+            ?:
+            DEFAULT_THEME_DATA
+    )
 
     fun isDarkThemeEnabled(): Boolean {
         return isDarkThemeEnabled
@@ -76,8 +103,56 @@ class PortfolioRepository {
         }
     }
 
+    fun getThemeData(): StateFlow<ThemeData> {
+        repositoryScope.launch {
+            portfolioApi.getThemeData().let { response ->
+                val newThemeData = ThemeData(
+                    darkTheme = ThemeColorsData(
+                        primaryColor = response.darkTheme.primaryColor,
+                        onPrimaryColor = response.darkTheme.onPrimaryColor,
+                        surfaceColor = response.darkTheme.surfaceColor,
+                        onSurfaceColor = response.darkTheme.onSurfaceColor,
+                        errorColor = response.darkTheme.errorColor,
+                        onErrorColor = response.darkTheme.onErrorColor,
+                    ),
+                    lightTheme = ThemeColorsData(
+                        primaryColor = response.lightTheme.primaryColor,
+                        onPrimaryColor = response.lightTheme.onPrimaryColor,
+                        surfaceColor = response.lightTheme.surfaceColor,
+                        onSurfaceColor = response.lightTheme.onSurfaceColor,
+                        errorColor = response.lightTheme.errorColor,
+                        onErrorColor = response.lightTheme.onErrorColor,
+                    )
+                )
+                themeData.value = newThemeData
+                settings.putString(PREFS_THEME_DATA, Json.encodeToString(themeData))
+            }
+        }
+        return themeData
+    }
+
     companion object {
         private const val PREFS_DARK_THEME_ENABLED = "dark_theme_enabled"
+        private const val PREFS_THEME_DATA = "theme_data"
+
+        private val DEFAULT_THEME_DATA = ThemeData(
+            darkTheme = ThemeColorsData(
+                primaryColor = "#FFFFCDD2",
+                onPrimaryColor = "#FF4E342E",
+                surfaceColor = "#FF212121",
+                onSurfaceColor = "#FFffffff",
+                errorColor = "#FFE57373",
+                onErrorColor = "#FF4E342E",
+            ),
+            lightTheme = ThemeColorsData(
+                primaryColor = "#ffBD4B4B",
+                onPrimaryColor = "#FFFFCDD2",
+                surfaceColor = "#ffEEEEEE",
+                onSurfaceColor = "#FF212121",
+                errorColor = "#FFE57373",
+                onErrorColor = "#FF212121",
+            )
+        )
 
         private val links = listOf<LinkData>(
 //            LinkData(

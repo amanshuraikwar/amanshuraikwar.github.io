@@ -26,6 +26,7 @@ object Libs {
 
     object Kotlinx {
         const val serializationCore = "org.jetbrains.kotlinx:kotlinx-serialization-core:1.2.1"
+        const val serializationJson = "org.jetbrains.kotlinx:kotlinx-serialization-json:1.2.1"
     }
 
     object Google {
