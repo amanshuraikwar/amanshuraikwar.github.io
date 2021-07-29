@@ -69,7 +69,8 @@ class PortfolioRepository {
                                 }
                             }
                         )
-                    }
+                    },
+                    madeWith = response.madeWith
                 )
             }
         }

@@ -17,53 +17,15 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
-import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shadow
 import androidx.compose.ui.graphics.vector.rememberVectorPainter
-import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.layout.ScaleFactor
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import coil.compose.rememberImagePainter
 import io.github.amanshuraikwar.portfolio.android.ui.AppLinkButton
-import kotlin.math.max
-
-fun crop(x: Float) = object : ContentScale {
-    override fun computeScaleFactor(srcSize: Size, dstSize: Size): ScaleFactor =
-        computeFillMaxDimension(srcSize, dstSize).let {
-            ScaleFactor(it * x, it * x)
-        }
-}
-
-private fun computeFillMaxDimension(srcSize: Size, dstSize: Size): Float {
-    val widthScale = computeFillWidth(srcSize, dstSize)
-    val heightScale = computeFillHeight(srcSize, dstSize)
-    return max(widthScale, heightScale)
-}
-
-private fun computeFillWidth(srcSize: Size, dstSize: Size): Float =
-    dstSize.width / srcSize.width
-
-private fun computeFillHeight(srcSize: Size, dstSize: Size): Float =
-    dstSize.height / srcSize.height
-
-private val imageUrlList = listOf(
-    "https://images.unsplash.com/photo-1513232457641-78faae852ad1?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=amanshu-raikwar-RTkejO7v2R8-unsplash.jpg",
-    "https://images.unsplash.com/photo-1541769938-ea699dc083c0?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=amanshu-raikwar-bxaVhi3CJOs-unsplash.jpg",
-    "https://images.unsplash.com/photo-1506757171859-d7ba4a0c9a94?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=amanshu-raikwar-yHwVM2em7Nw-unsplash.jpg",
-    "https://images.unsplash.com/photo-1502342556579-b648d39eea0d?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=amanshu-raikwar-quA2agQuFyo-unsplash.jpg",
-    "https://images.unsplash.com/photo-1501067486956-e9a0bd9c2b46?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=amanshu-raikwar-ZHrbVmVu3Qc-unsplash.jpg",
-    "https://images.unsplash.com/photo-1500903443203-462f7a15fc65?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=amanshu-raikwar-Mb4KB_XzF3g-unsplash.jpg",
-    "https://images.unsplash.com/photo-1491938833905-38e9abfe92db?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=amanshu-raikwar-cSsgcUMUESU-unsplash.jpg",
-    "https://images.unsplash.com/photo-1579419937634-b87791f5ea76?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=amanshu-raikwar-hD1JFI6oFTk-unsplash.jpg",
-    "https://images.unsplash.com/photo-1626622244039-9d47ab5ded20?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=amanshu-raikwar-lWRXSkOEFvs-unsplash.jpg",
-    "https://images.unsplash.com/photo-1539527360263-a95d6f4ffb6a?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=amanshu-raikwar-qCTi9NWTel0-unsplash.jpg",
-    "https://images.unsplash.com/photo-1534473137053-538415f7f534?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=amanshu-raikwar-AmijovYKbn8-unsplash.jpg",
-    "https://images.unsplash.com/photo-1507729490900-eaad637d462b?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=amanshu-raikwar-nZv1QdQ8vwM-unsplash.jpg",
-    "https://images.unsplash.com/photo-1512235761740-a609c3565912?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=amanshu-raikwar-vbsz5wF43Pg-unsplash.jpg"
-)
+import io.github.amanshuraikwar.portfolio.android.util.crop
 
 @Composable
 fun HeadingView(
@@ -77,7 +39,7 @@ fun HeadingView(
         mutableStateOf(imageUrlList.random())
     }
 
-    var x: Float by remember {
+    var scaleFactor: Float by remember {
         mutableStateOf(1.6f)
     }
 
@@ -86,16 +48,16 @@ fun HeadingView(
             1.6f,
             1f,
             animationSpec = tween(10000)
-        ) { v, _ ->
-            x = v
+        ) { value, _ ->
+            scaleFactor = value
         }
 
         animate(
             1f,
             0f,
             animationSpec = tween(900)
-        ) { v, _ ->
-            x = v
+        ) { value, _ ->
+            scaleFactor = value
         }
 
         var newUrl: String
@@ -125,7 +87,7 @@ fun HeadingView(
                         1f,
                         matchHeightConstraintsFirst = false
                     ),
-                contentScale = crop(x)
+                contentScale = crop(scaleFactor)
             )
 
             Box(
@@ -148,7 +110,7 @@ fun HeadingView(
                     shadow = Shadow(
                         Color(0XFF212121).copy(alpha = 0.84f),
                         offset = Offset(1f, 1f),
-                        blurRadius = 4f
+                        blurRadius = 2f
                     )
                 ),
                 textAlign = TextAlign.End
@@ -186,3 +148,19 @@ fun HeadingView(
         }
     }
 }
+
+private val imageUrlList = listOf(
+    "https://images.unsplash.com/photo-1513232457641-78faae852ad1?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=amanshu-raikwar-RTkejO7v2R8-unsplash.jpg",
+    "https://images.unsplash.com/photo-1541769938-ea699dc083c0?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=amanshu-raikwar-bxaVhi3CJOs-unsplash.jpg",
+    "https://images.unsplash.com/photo-1506757171859-d7ba4a0c9a94?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=amanshu-raikwar-yHwVM2em7Nw-unsplash.jpg",
+    "https://images.unsplash.com/photo-1502342556579-b648d39eea0d?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=amanshu-raikwar-quA2agQuFyo-unsplash.jpg",
+    "https://images.unsplash.com/photo-1501067486956-e9a0bd9c2b46?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=amanshu-raikwar-ZHrbVmVu3Qc-unsplash.jpg",
+    "https://images.unsplash.com/photo-1500903443203-462f7a15fc65?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=amanshu-raikwar-Mb4KB_XzF3g-unsplash.jpg",
+    "https://images.unsplash.com/photo-1491938833905-38e9abfe92db?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=amanshu-raikwar-cSsgcUMUESU-unsplash.jpg",
+    "https://images.unsplash.com/photo-1579419937634-b87791f5ea76?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=amanshu-raikwar-hD1JFI6oFTk-unsplash.jpg",
+    "https://images.unsplash.com/photo-1626622244039-9d47ab5ded20?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=amanshu-raikwar-lWRXSkOEFvs-unsplash.jpg",
+    "https://images.unsplash.com/photo-1539527360263-a95d6f4ffb6a?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=amanshu-raikwar-qCTi9NWTel0-unsplash.jpg",
+    "https://images.unsplash.com/photo-1534473137053-538415f7f534?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=amanshu-raikwar-AmijovYKbn8-unsplash.jpg",
+    "https://images.unsplash.com/photo-1507729490900-eaad637d462b?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=amanshu-raikwar-nZv1QdQ8vwM-unsplash.jpg",
+    "https://images.unsplash.com/photo-1512235761740-a609c3565912?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=amanshu-raikwar-vbsz5wF43Pg-unsplash.jpg"
+)

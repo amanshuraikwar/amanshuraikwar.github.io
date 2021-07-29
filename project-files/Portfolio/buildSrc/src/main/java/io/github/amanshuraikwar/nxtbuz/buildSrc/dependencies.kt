@@ -9,7 +9,7 @@ object Libs {
     const val multiplatformSettings = "com.russhwolf:multiplatform-settings:0.7.7"
     const val multiplatformSettingsNoArg = "com.russhwolf:multiplatform-settings-no-arg:0.7.7"
 
-    const val coilCompose = "io.coil-kt:coil-compose:1.3.0"
+    const val coilCompose = "io.coil-kt:coil-compose:1.3.1"
 
     object Ktor {
         private const val version = "1.6.1"
@@ -85,7 +85,7 @@ object Libs {
         }
 
         object Compose {
-            const val version = "1.0.0-rc02"
+            const val version = "1.0.0"
             const val ui = "androidx.compose.ui:ui:$version"
             const val uiTooling = "androidx.compose.ui:ui-tooling:$version"
             const val foundation = "androidx.compose.foundation:foundation:$version"
@@ -127,6 +127,6 @@ object Libs {
     }
 
     object Accompanist {
-        const val insets = "com.google.accompanist:accompanist-insets:0.12.0"
+        const val insets = "com.google.accompanist:accompanist-insets:0.15.0"
     }
 }

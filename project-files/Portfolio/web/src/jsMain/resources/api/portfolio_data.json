@@ -81,5 +81,6 @@
         }
       ]
     }
-  ]
+  ],
+  "madeWith": "Made with Kotlin Multiplatform Mobile, Jetpack Compose & Swift UI"
 }

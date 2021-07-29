@@ -14,7 +14,7 @@ import androidx.compose.ui.unit.dp
 @ExperimentalMaterialApi
 @ExperimentalComposeUiApi
 @Composable
-fun IntroView(
+fun GenericTextView(
     modifier: Modifier = Modifier,
     text: String,
 ) {

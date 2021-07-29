@@ -19,7 +19,7 @@ import com.google.accompanist.insets.rememberInsetsPaddingValues
 import io.github.amanshuraikwar.portfolio.R
 import io.github.amanshuraikwar.portfolio.android.home.view.FetchingView
 import io.github.amanshuraikwar.portfolio.android.home.view.HeadingView
-import io.github.amanshuraikwar.portfolio.android.home.view.IntroView
+import io.github.amanshuraikwar.portfolio.android.home.view.GenericTextView
 import io.github.amanshuraikwar.portfolio.android.home.view.ThemeSwitchView
 import io.github.amanshuraikwar.portfolio.android.ui.AppButton
 import io.github.amanshuraikwar.portfolio.android.ui.PortfolioLinkButton
@@ -57,7 +57,7 @@ fun HomeScreen(
                 }
 
                 item {
-                    IntroView(
+                    GenericTextView(
                         modifier = Modifier
                             .padding(horizontal = 16.dp)
                             .padding(top = 32.dp),
