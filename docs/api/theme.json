@@ -9,7 +9,7 @@
   },
   "lightTheme": {
     "primaryColor": "#ffF95959",
-    "onPrimaryColor": "#FF455D7A",
+    "onPrimaryColor": "#FFffffff",
     "surfaceColor": "#ffffffff",
     "onSurfaceColor": "#FF212121",
     "errorColor": "#FFE57373",
