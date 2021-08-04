@@ -1,7 +1,7 @@
 {
   "darkTheme": {
-    "primaryColor": "#FFFFCDD2",
-    "onPrimaryColor": "#FF4E342E",
+    "primaryColor": "#FFffffff",
+    "onPrimaryColor": "#FF212121",
     "surfaceColor": "#FF212121",
     "onSurfaceColor": "#FFffffff",
     "errorColor": "#FFE57373",
