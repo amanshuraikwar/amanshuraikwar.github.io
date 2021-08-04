@@ -1,5 +1,6 @@
 package com.sample.style
 
+import io.github.amanshuraikwar.portfolio.model.ThemeColorsData
 import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.css.selectors.CSSSelector
 
@@ -8,6 +9,8 @@ object AppCSSVariables : CSSVariables {
     val colorOnBackground by variable<Color>()
     val colorPrimary by variable<Color>()
     val colorOnPrimary by variable<Color>()
+    val colorCardBg by variable<Color>()
+    val colorAppLinkBtnBg by variable<Color>()
 
     val wtOffsetTopUnit by variable<CSSUnitValue>()
     val wtHorizontalLayoutGutter by variable<CSSUnitValue>()
@@ -25,38 +28,25 @@ object AppCSSVariables : CSSVariables {
     val wtColCount by variable<StylePropertyNumber>()
 }
 
+fun String.dropAlphaHex(): String {
+    return "#${drop(3)}"
+}
 
 object AppStylesheet : StyleSheet() {
 
-    fun updateColors(colorPalette: ColorPalette) {
+    fun updateColors(themeColorsData: ThemeColorsData) {
         CSSSelector.Universal style {
-            AppCSSVariables.colorBackground(colorPalette.colorBackground)
-            AppCSSVariables.colorOnBackground(colorPalette.colorOnBackground)
-            AppCSSVariables.colorPrimary(colorPalette.colorPrimary)
-            AppCSSVariables.colorOnPrimary(colorPalette.colorOnPrimary)
+            console.log(themeColorsData.toString())
+            AppCSSVariables.colorBackground(Color(themeColorsData.surfaceColor.dropAlphaHex()))
+            AppCSSVariables.colorOnBackground(Color(themeColorsData.onSurfaceColor.dropAlphaHex()))
+            AppCSSVariables.colorPrimary(Color(themeColorsData.primaryColor.dropAlphaHex()))
+            AppCSSVariables.colorOnPrimary(Color(themeColorsData.onPrimaryColor.dropAlphaHex()))
+            AppCSSVariables.colorCardBg(Color(themeColorsData.primaryColor.dropAlphaHex()).copy(alpha = 0.08f))
+            AppCSSVariables.colorAppLinkBtnBg(Color(themeColorsData.onSurfaceColor.dropAlphaHex()).copy(alpha = 0.13f))
         }
     }
 
     init {
-        val colorPaletteList = listOf(
-            ColorPalette(
-                colorBackground = Color("#212121"),
-                colorOnBackground = Color("#ffffff"),
-                colorPrimary = Color("#FFCDD2"),
-                colorOnPrimary = Color("#4E342E"),
-            ),
-            ColorPalette(
-                colorBackground = Color("#FFF2CA"),
-                colorOnBackground = Color("#52403A"),
-                colorPrimary = Color("#F57C00"),
-                colorOnPrimary = Color("#4E342E"),
-            )
-        )
-
-        updateColors(
-            colorPalette = colorPaletteList.random()
-        )
-
         CSSSelector.Universal style {
             AppCSSVariables.wtOffsetTopUnit(24.px)
 

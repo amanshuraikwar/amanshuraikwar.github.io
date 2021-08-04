@@ -8,12 +8,18 @@ import com.sample.components.Layout
 import com.sample.style.AppStylesheet
 import com.sample.style.ColorPalette
 import io.github.amanshuraikwar.portfolio.PortfolioRepository
+import io.github.amanshuraikwar.portfolio.model.PortfolioData
+import io.github.amanshuraikwar.portfolio.model.ThemeData
+import kotlinx.coroutines.MainScope
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.launch
 import org.jetbrains.compose.web.css.Color
 import org.jetbrains.compose.web.css.Style
 import org.jetbrains.compose.web.renderComposable
 
 sealed class NavigationDestination {
-    object Home : NavigationDestination()
+    object Fetching : NavigationDestination()
+    data class Home(val portfolioData: PortfolioData) : NavigationDestination()
     object NextBus : NavigationDestination()
 }
 
@@ -43,47 +49,61 @@ val nextBusColorPalette = ColorPalette(
 
 fun main() {
     val portfolioRepository = PortfolioRepository()
+    val coroutineScope = MainScope()
 
-    var navigationDestination: NavigationDestination by mutableStateOf(NavigationDestination.Home)
+    var navigationDestination: NavigationDestination by mutableStateOf(NavigationDestination.Fetching)
     var isDarkTheme: Boolean by mutableStateOf(portfolioRepository.isDarkThemeEnabled())
+    var themeData: ThemeData by mutableStateOf(portfolioRepository.getThemeData().value)
+
+    coroutineScope.launch {
+        navigationDestination = NavigationDestination.Home(portfolioRepository.getPortfolioData())
+    }
+
+    coroutineScope.launch {
+        portfolioRepository
+            .getThemeData()
+            .collect {
+                themeData = it
+            }
+    }
 
     renderComposable(rootElementId = "root") {
         Style(AppStylesheet)
         LaunchedEffect(key1 = navigationDestination, key2 = isDarkTheme) {
             when (navigationDestination) {
-                NavigationDestination.Home -> {
+                is NavigationDestination.Home -> {
                     AppStylesheet.updateColors(
-                        colorPalette = if (isDarkTheme) {
-                            colorPaletteList[0]
+                        if (isDarkTheme) {
+                            themeData.darkTheme
                         } else {
-                            colorPaletteList[1]
+                            themeData.lightTheme
                         }
                     )
                 }
                 NavigationDestination.NextBus -> {
-                    AppStylesheet.updateColors(colorPalette = nextBusColorPalette)
+                    //AppStylesheet.updateColors(colorPalette = nextBusColorPalette)
                 }
             }
         }
 
         Layout {
             when (navigationDestination) {
-                NavigationDestination.Home -> {
+                is NavigationDestination.Home -> {
                     Home(
-                        portfolioRepository.getHomePageDataList(),
+                        (navigationDestination as NavigationDestination.Home).portfolioData,
                         onNextBusClick = {
                             navigationDestination = NavigationDestination.NextBus
                         },
                         isDarkTheme = isDarkTheme,
                         onThemeBtnClick = {
-                            portfolioRepository.setDarkThemeEnabled(!isDarkTheme)
-                            isDarkTheme = !isDarkTheme
+                            portfolioRepository.setDarkThemeEnabled(it)
+                            isDarkTheme = it
                         }
                     )
                 }
                 NavigationDestination.NextBus -> {
                     NextBus {
-                        navigationDestination = NavigationDestination.Home
+                        //navigationDestination = NavigationDestination.Home
                     }
                 }
             }
