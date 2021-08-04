@@ -8,26 +8,10 @@ object WtRows : StyleSheet(AppStylesheet) {
         AppCSSVariables.wtHorizontalLayoutGutter(0.px)
         display(DisplayStyle.Flex)
         flexWrap(FlexWrap.Wrap)
-
-        property(
-            "margin-right",
-            "calc(-1*${AppCSSVariables.wtHorizontalLayoutGutter.value()})"
-        )
-        property(
-            "margin-left",
-            "calc(-1*${AppCSSVariables.wtHorizontalLayoutGutter.value()})"
-        )
         property("box-sizing", "border-box")
     }
 
     val wtRowSizeM by style {
-        AppCSSVariables.wtHorizontalLayoutGutter(16.px)
-
-        media(maxWidth(750.px)) {
-            self style {
-                AppCSSVariables.wtHorizontalLayoutGutter(8.px)
-            }
-        }
     }
 
     val wtRowSizeXs by style {

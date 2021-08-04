@@ -6,13 +6,14 @@ import org.jetbrains.compose.web.css.selectors.hover
 import org.jetbrains.compose.web.css.selectors.plus
 
 object WtTexts : StyleSheet(AppStylesheet) {
+    const val libreBaskervillaFontStr = "Libre Baskerville,Rubik,system-ui,-apple-system,Arial,serif,sans-serif"
+    const val latoFontStr = "lato,Rubik,system-ui,-apple-system,Arial,serif,sans-serif"
 
     val wtHero by style {
         color(AppCSSVariables.colorOnBackground.value())
         fontSize(60.px)
         property("font-size", AppCSSVariables.wtHeroFontSize.value(60.px))
-        property("letter-spacing", (-1.5).px)
-        property("font-weight", 500)
+        property("font-weight", 700)
         property("line-height", 64.px)
         property("line-height", AppCSSVariables.wtHeroLineHeight.value(64.px))
 
@@ -25,7 +26,7 @@ object WtTexts : StyleSheet(AppStylesheet) {
 
         property(
             "font-family",
-            "Rubik,system-ui,-apple-systemArial,sans-serif"
+            libreBaskervillaFontStr
         )
     }
 
@@ -60,7 +61,7 @@ object WtTexts : StyleSheet(AppStylesheet) {
 
         property(
             "font-family",
-            "Rubik,system-ui,-apple-systemArial,sans-serif"
+            latoFontStr
         )
     }
 
@@ -77,7 +78,7 @@ object WtTexts : StyleSheet(AppStylesheet) {
 
         property(
             "font-family",
-            "Rubik,system-ui,-apple-systemArial,sans-serif"
+            latoFontStr
         )
     }
 
@@ -106,23 +107,12 @@ object WtTexts : StyleSheet(AppStylesheet) {
         color(Color.RGBA(255, 255, 255, 0.6))
     }
 
-    val wtLink by style {
-        property("border-bottom", "1px solid transparent")
-        property("text-decoration", "none")
-        color("#167dff")
-
-        hover(self) style {
-            property("border-bottom-color", "#167dff")
-        }
-    }
 
     val wtH2 by style {
         color(AppCSSVariables.colorOnBackground.value())
         fontSize(31.px)
         property("font-size", AppCSSVariables.wtH2FontSize.value(31.px))
-        property("letter-spacing", (-.5).px)
-        property("font-weight", 800)
-        property("line-height", 40.px)
+        property("font-weight", 700)
         property("line-height", 40.px)
 
         media(maxWidth(750.px)) {
@@ -134,7 +124,7 @@ object WtTexts : StyleSheet(AppStylesheet) {
 
         property(
             "font-family",
-            "Rubik,system-ui,-apple-systemArial,sans-serif"
+            libreBaskervillaFontStr
         )
     }
 
@@ -143,18 +133,25 @@ object WtTexts : StyleSheet(AppStylesheet) {
     }
 
     val wtH3 by style {
-        color("#27282c")
+        color(AppCSSVariables.colorOnBackground.value())
         fontSize(21.px)
-        property("font-size", AppCSSVariables.wtH3FontSize.value(20.px))
+        property("font-size", AppCSSVariables.wtH3FontSize.value(24.px))
         property("letter-spacing", "normal")
         property("font-weight", 700)
         property("line-height", 28.px)
-        property("line-height", AppCSSVariables.wtH3LineHeight.value(28.px))
+        property("line-height", AppCSSVariables.wtH3LineHeight.value(32.px))
 
         property(
             "font-family",
-            "system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Droid Sans,Helvetica Neue,Arial,sans-serif"
+            latoFontStr
         )
+
+        media(maxWidth(750.px)) {
+            self style {
+                AppCSSVariables.wtH2FontSize(20.px)
+                AppCSSVariables.wtH2LineHeight(28.px)
+            }
+        }
     }
 
     val wtH3ThemeDark by style {
@@ -162,33 +159,49 @@ object WtTexts : StyleSheet(AppStylesheet) {
     }
 
     val wtButton by style {
-        color(AppCSSVariables.colorBackground.value())
-        backgroundColor(AppCSSVariables.colorOnBackground.value())
+        color(AppCSSVariables.colorOnBackground.value())
+        backgroundColor(AppCSSVariables.colorCardBg.value())
         fontSize(18.px)
         display(DisplayStyle.InlineBlock)
         property("text-decoration", "none")
-        property("padding", "4px 4px")
+        property("line-height", 24.px)
+        property("font-weight", 400)
+        property("width", "fit-content")
+        property("transition", "0.3s")
+        property(
+            "font-family",
+            latoFontStr
+        )
+
+        hover(self) style {
+            backgroundColor(AppCSSVariables.colorOnBackground.value())
+            color(AppCSSVariables.colorBackground.value())
+        }
+
+        active(self) style {
+            backgroundColor(AppCSSVariables.colorPrimary.value())
+            color(AppCSSVariables.colorOnPrimary.value())
+        }
+    }
+
+    val wtLink by style {
+        color(AppCSSVariables.colorOnBackground.value())
+        fontSize(18.px)
+        display(DisplayStyle.InlineBlock)
+        property("text-decoration", "none")
         property("line-height", 24.px)
         property("font-weight", 400)
         property("width", "fit-content")
 
         property(
             "font-family",
-            "Rubik,system-ui,-apple-systemArial,sans-serif"
+            latoFontStr
         )
 
         hover(self) style {
-            property("padding", "4px 8px")
-            property("font-weight", 700)
-            backgroundColor(AppCSSVariables.colorPrimary.value())
-            color(AppCSSVariables.colorOnPrimary.value())
         }
 
         active(self) style {
-            property("padding", "2px 4px")
-            property("font-weight", 700)
-            backgroundColor(AppCSSVariables.colorPrimary.value())
-            color(AppCSSVariables.colorOnPrimary.value())
         }
     }
 
