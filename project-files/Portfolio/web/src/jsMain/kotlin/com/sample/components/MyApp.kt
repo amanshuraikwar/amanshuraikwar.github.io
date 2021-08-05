@@ -83,7 +83,7 @@ fun MyApp(
                 attrs = {
                     style {
                         property("flex", 1)
-                        marginLeft(16.px)
+                        marginLeft(24.px)
                         display(DisplayStyle.Flex)
                         flexDirection(FlexDirection.Column)
 
