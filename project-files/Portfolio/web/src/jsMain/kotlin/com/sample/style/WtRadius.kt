@@ -19,6 +19,10 @@ object WtRadius : StyleSheet(AppStylesheet) {
         borderRadius(8.px)
     }
 
+    val wtRadius10 by style {
+        borderRadius(10.px)
+    }
+
     val wtRadius8Sm by style {
         media(maxWidth(750.px)) {
             self style {

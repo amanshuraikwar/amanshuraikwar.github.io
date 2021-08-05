@@ -36,14 +36,12 @@ fun MyApp(
                     display(DisplayStyle.Flex)
                     property("flex", 1)
                     alignItems(AlignItems.Start)
-                    backgroundColor(AppCSSVariables.colorCardBg.value())
                 }
 
                 classes(
                     WtRadius.wtRadius16,
                     WtRadius.wtRadius8Sm,
                     WtPadding.wtPadding8,
-                    WtPadding.wtPaddingSm8,
                 )
             }
         ) {
@@ -65,9 +63,9 @@ fun MyApp(
                 },
                 attrs = {
                     style {
-                        width(72.px)
-                        height(72.px)
-                        padding(16.px)
+                        width(48.px)
+                        height(48.px)
+                        padding(8.px)
                         property(
                             "box-shadow",
                             "0.5px 0.5px 4px 2px rgba(0, 0, 0, 0.2)"
@@ -108,7 +106,7 @@ fun MyApp(
                             WtTexts.wtText1
                         )
                         style {
-                            marginTop(8.px)
+//                            marginTop(4.px)
                         }
                     }
                 ) {

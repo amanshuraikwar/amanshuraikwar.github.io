@@ -8,10 +8,10 @@ import com.sample.content.MyIntro
 import com.sample.content.MyName
 import com.sample.style.*
 import io.github.amanshuraikwar.portfolio.model.PortfolioData
-import org.jetbrains.compose.web.css.padding
-import org.jetbrains.compose.web.css.px
+import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.H2
+import org.jetbrains.compose.web.dom.Hr
 import org.jetbrains.compose.web.dom.Text
 
 @Composable
@@ -116,37 +116,87 @@ fun Home(
             attrs = {
                 classes(
                     WtRows.wtRow,
-                    WtOffsets.wtTopOffset24,
-                    WtOffsets.wtTopOffsetSm16
+                    WtOffsets.wtTopOffset16,
+                    WtOffsets.wtTopOffsetSm8
                 )
             }
         ) {
 
             if (isDarkTheme) {
-                porfolioData.apps.forEach {
+                porfolioData.apps.forEachIndexed { index, appData ->
                     MyApp(
                         attrs = {
-                            classes(WtCols.wtCol12, WtCols.wtColSm12)
-                            style {
-                                padding(4.px)
-                            }
+                            classes(
+                                WtCols.wtCol12,
+                                WtCols.wtColSm12,
+                                WtOffsets.wtTopOffset24,
+                                WtOffsets.wtTopOffsetSm16
+                            )
                         },
-                        appData = it,
+                        appData = appData,
                         isDarkTheme = true
                     )
+
+                    if (index != porfolioData.apps.size - 1) {
+                        Hr(
+                            attrs = {
+                                classes(
+                                    WtCols.wtCol12,
+                                    WtCols.wtColSm12,
+                                    WtOffsets.wtTopOffset16,
+                                    WtOffsets.wtTopOffsetSm8
+                                )
+                                style {
+                                    border {
+                                        width = 2.px
+                                        style = LineStyle.Solid
+                                        color = AppCSSVariables.colorCardBg.value()
+                                    }
+                                    style {
+                                        borderRadius(2.px)
+                                    }
+                                }
+                            }
+                        )
+                    }
                 }
             } else {
-                porfolioData.apps.forEach {
+                porfolioData.apps.forEachIndexed { index, appData ->
                     MyApp(
                         attrs = {
-                            classes(WtCols.wtCol12, WtCols.wtColSm12)
-                            style {
-                                padding(4.px)
-                            }
+                            classes(
+                                WtCols.wtCol12,
+                                WtCols.wtColSm12,
+                                WtOffsets.wtTopOffset24,
+                                WtOffsets.wtTopOffsetSm16
+                            )
                         },
-                        appData = it,
+                        appData = appData,
                         isDarkTheme = false
                     )
+
+                    if (index != porfolioData.apps.size - 1) {
+                        Hr(
+                            attrs = {
+                                classes(
+                                    WtCols.wtCol12,
+                                    WtCols.wtColSm12,
+                                    WtOffsets.wtTopOffset16,
+                                    WtOffsets.wtTopOffsetSm8
+                                )
+                                style {
+                                    border {
+                                        width = 2.px
+                                        style = LineStyle.Solid
+                                        color = AppCSSVariables.colorCardBg.value()
+                                    }
+                                    style {
+                                        borderRadius(2.px)
+                                    }
+                                }
+                            }
+                        )
+                    }
                 }
             }
         }

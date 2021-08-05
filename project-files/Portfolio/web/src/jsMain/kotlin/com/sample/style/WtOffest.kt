@@ -19,6 +19,14 @@ object WtOffsets : StyleSheet(AppStylesheet) {
         )
     }
 
+    val wtTopOffset16 by style {
+        marginTop(16.px)
+        property(
+            "margin-top",
+            "calc(1*${AppCSSVariables.wtOffsetTopUnit.value(16.px)})"
+        )
+    }
+
     val wtRightOffset24 by style {
         marginTop(24.px)
         property(
@@ -38,6 +46,15 @@ object WtOffsets : StyleSheet(AppStylesheet) {
             }
         }
     }
+
+    val wtTopOffsetSm8 by style {
+        media(maxWidth(750.px)) {
+            self style {
+                marginTop(8.px)
+            }
+        }
+    }
+
 
     val wtTopOffsetSm16 by style {
         media(maxWidth(750.px)) {

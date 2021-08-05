@@ -6,14 +6,14 @@ import org.jetbrains.compose.web.css.selectors.hover
 import org.jetbrains.compose.web.css.selectors.plus
 
 object WtTexts : StyleSheet(AppStylesheet) {
-    const val libreBaskervillaFontStr = "Libre Baskerville,Rubik,system-ui,-apple-system,Arial,serif,sans-serif"
-    const val latoFontStr = "lato,Rubik,system-ui,-apple-system,Arial,serif,sans-serif"
+    const val libreBaskervillaFontStr = "Merriweather,Vollkorn,Libre Baskerville,Rubik,system-ui,-apple-system,Arial,serif,sans-serif"
+    const val latoFontStr = "Nunito,Lato,Rubik,system-ui,-apple-system,Arial,serif,sans-serif"
 
     val wtHero by style {
         color(AppCSSVariables.colorOnBackground.value())
         fontSize(60.px)
         property("font-size", AppCSSVariables.wtHeroFontSize.value(60.px))
-        property("font-weight", 700)
+        property("font-weight", 900)
         property("line-height", 64.px)
         property("line-height", AppCSSVariables.wtHeroLineHeight.value(64.px))
 
@@ -137,7 +137,7 @@ object WtTexts : StyleSheet(AppStylesheet) {
         fontSize(21.px)
         property("font-size", AppCSSVariables.wtH3FontSize.value(24.px))
         property("letter-spacing", "normal")
-        property("font-weight", 700)
+        property("font-weight", 800)
         property("line-height", 28.px)
         property("line-height", AppCSSVariables.wtH3LineHeight.value(32.px))
 

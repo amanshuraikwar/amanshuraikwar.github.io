@@ -86,16 +86,16 @@ fun ThemeSwitch(
             Div(
                 attrs = {
                     style {
-                        width(56.px)
-                        height(28.px)
-                        padding(4.px)
+                        width(48.px)
+                        height(24.px)
+                        padding(2.px)
                         backgroundColor(AppCSSVariables.colorPrimary.value())
                         display(DisplayStyle.Flex)
                     }
 
                     classes(
                         WtRadius.wtRadius12,
-                        WtRadius.wtRadius8Sm,
+                        //WtRadius.wtRadius4Sm,
                     )
                 }
             ) {
@@ -118,8 +118,8 @@ fun ThemeSwitch(
                             }
 
                             classes(
-                                WtRadius.wtRadius8,
-                                WtRadius.wtRadius4Sm,
+                                WtRadius.wtRadius10,
+                                //WtRadius.wtRadius4Sm,
                             )
                         }
                     ) {
@@ -134,8 +134,8 @@ fun ThemeSwitch(
                             }
 
                             classes(
-                                WtRadius.wtRadius8,
-                                WtRadius.wtRadius4Sm,
+                                WtRadius.wtRadius10,
+                                //WtRadius.wtRadius4Sm,
                             )
                         }
                     ) {
