@@ -23,23 +23,6 @@ sealed class NavigationDestination {
     object NextBus : NavigationDestination()
 }
 
-val colorPaletteList = listOf(
-    // dark
-    ColorPalette(
-        colorBackground = Color("#212121"),
-        colorOnBackground = Color("#ffffff"),
-        colorPrimary = Color("#FFCDD2"),
-        colorOnPrimary = Color("#4E342E"),
-    ),
-    // light
-    ColorPalette(
-        colorBackground = Color("#FFF2CA"),
-        colorOnBackground = Color("#52403A"),
-        colorPrimary = Color("#F57C00"),
-        colorOnPrimary = Color("#4E342E"),
-    )
-)
-
 val nextBusColorPalette = ColorPalette(
     colorBackground = Color("#212121"),
     colorOnBackground = Color("#eef0f2"),

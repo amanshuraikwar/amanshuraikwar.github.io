@@ -8,5 +8,6 @@ data class PortfolioDataResponse(
     val intro: String,
     val links: List<LinkDataResponse>,
     val apps: List<AppDataResponse>,
+    val experience: List<ExperienceDataResponse>,
     val madeWith: String,
 )

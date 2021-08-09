@@ -38,8 +38,7 @@ class PortfolioRepository {
                     it
                 )
             }
-            ?:
-            DEFAULT_THEME_DATA
+            ?: DEFAULT_THEME_DATA
     )
 
     fun isDarkThemeEnabled(): Boolean {
@@ -87,6 +86,8 @@ class PortfolioRepository {
                             appDataResponse.id,
                             appDataResponse.title,
                             appDataResponse.description,
+                            appDataResponse.maintained,
+                            appDataResponse.art,
                             appDataResponse.appLinks.map {
                                 when (it.type) {
                                     "github" -> AppLink.Github(it.url)
@@ -95,6 +96,14 @@ class PortfolioRepository {
                                     else -> AppLink.Other(it.url)
                                 }
                             }
+                        )
+                    },
+                    experience = response.experience.map {
+                        ExperienceData(
+                            title = it.title,
+                            location = it.location,
+                            dateRange = it.dateRange,
+                            content = it.content
                         )
                     },
                     madeWith = response.madeWith

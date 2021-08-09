@@ -5,5 +5,6 @@ data class PortfolioData(
     val intro: String,
     val links: List<LinkData>,
     val apps: List<AppData>,
+    val experience: List<ExperienceData>,
     val madeWith: String,
 )
