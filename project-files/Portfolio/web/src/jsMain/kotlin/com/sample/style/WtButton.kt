@@ -12,7 +12,7 @@ object WtButton : StyleSheet(AppStylesheet) {
         border {
             width = 2.px
             style = LineStyle.Solid
-            color = AppCSSVariables.colorPrimary.value()
+            color = AppCSSVariables.colorOnBackground.value()
         }
         color(AppCSSVariables.colorOnBackground.value())
     }

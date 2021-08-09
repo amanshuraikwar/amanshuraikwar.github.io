@@ -1,7 +1,9 @@
 package com.sample.components
 
 import androidx.compose.runtime.Composable
+import com.sample.style.FontWeight
 import com.sample.style.WtTexts
+import com.sample.style.fontWeight
 import io.github.amanshuraikwar.portfolio.model.ExperienceData
 import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.dom.AttrBuilderContext
@@ -29,6 +31,9 @@ fun ExperienceItem(
         Div(
             attrs = {
                 classes(WtTexts.wtH5)
+                style {
+                    fontWeight(FontWeight.SemiBold)
+                }
             }
         ) {
             Text(data.title)

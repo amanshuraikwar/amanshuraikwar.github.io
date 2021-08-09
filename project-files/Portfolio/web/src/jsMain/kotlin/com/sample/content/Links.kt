@@ -57,9 +57,7 @@ fun Links(
                     ImgHrefButton(
                         attrs = {
                             style {
-                                if (index != 0) {
-                                    marginLeft(16.px)
-                                }
+                                margin(8.px)
                             }
                         },
                         src = getLinkIconUrl(linkData.id, false),
