@@ -92,7 +92,7 @@
     {
       "title": "Software Engineer at Shopee",
       "location": "Singapore",
-      "dataRange": "January, 2020 - Present",
+      "dateRange": "January, 2020 - Present",
       "content": [
         "Working on the Shopee Android App :)"
       ]
@@ -100,7 +100,7 @@
     {
       "title": "Software Engineer at Khosla Labs",
       "location": "Bangalore, India",
-      "dataRange": "July, 2018 - December 2019",
+      "dateRange": "July, 2018 - December 2019",
       "content": [
         "Worked in a team to develop a physical identity document scanner which classifies if the correct document is being scanned and extracts the person's details (key-value pairs) from the document by running OCR on the document image and later parsing it.",
         "Lead the development of a challenge based selfie capturer which captures the selfie of a person while ensuring that the person is live by asking the person to perform random challenges like blink eyes, turn face left, turn face right.",
