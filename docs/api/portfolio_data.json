@@ -112,7 +112,7 @@
     {
       "title": "Teaching Assistant at IIT Mandi",
       "location": "Mandi, Himachal Pradesh, India",
-      "dataRange": "February, 2018 - June 2018",
+      "dateRange": "February, 2018 - June 2018",
       "content": [
         "I was a teaching assistant in course Software Design Patterns under professor Bansidhar Choudhary.",
         "My work was to design assignments and projects along with the professor and evaluate the submissions, observe, and suggest improvements in the course content and structure."
@@ -121,7 +121,7 @@
     {
       "title": "Software Engineering Intern at Khosla Labs",
       "location": "Bangalore, India",
-      "dataRange": "December, 2016 - February 2017",
+      "dateRange": "December, 2016 - February 2017",
       "content": [
         "Improved performance, UI, UX and added new features to an Android App."
       ]
@@ -129,7 +129,7 @@
     {
       "title": "Android 7 Web Intern at Spiderz Lab",
       "location": "Remote, India",
-      "dataRange": "June, 2015 - August 2015",
+      "dateRange": "June, 2015 - August 2015",
       "content": [
         "Developed Android Apps using Android Studio, Parse Android API, Google Maps API, Google Location Services API, Google Geocoder API.",
         "Developed a Website using JavaScript, Parse JS API, Google Maps Embed API."
