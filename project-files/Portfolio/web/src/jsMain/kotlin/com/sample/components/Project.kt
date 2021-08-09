@@ -32,6 +32,9 @@ fun Project(
             attrs = {
                 style {
                     borderRadius(16.px)
+                    // to fix the weird image stretch safari issue
+                    // https://github.com/neptunian/react-photo-gallery/issues/174
+                    width(100.percent)
                 }
             }
         )
