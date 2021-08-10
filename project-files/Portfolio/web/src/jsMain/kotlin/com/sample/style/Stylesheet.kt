@@ -7,12 +7,16 @@ import org.jetbrains.compose.web.css.selectors.CSSSelector
 object AppCSSVariables : CSSVariables {
     val colorBackground by variable<Color>()
     val colorOnBackground by variable<Color>()
+    val colorOnBackgroundSecondary by variable<Color>()
     val colorOnBackgroundDisabled by variable<Color>()
     val colorPrimary by variable<Color>()
     val colorOnPrimary by variable<Color>()
 
     val colorChipBg by variable<Color>()
     val colorHr by variable<Color>()
+
+    val outlineBtnBgHover by variable<Color>()
+    val outlineBtnBgActive by variable<Color>()
 
     val wtOffsetTopUnit by variable<CSSUnitValue>()
     val wtHorizontalLayoutGutter by variable<CSSUnitValue>()
@@ -51,11 +55,14 @@ object AppStylesheet : StyleSheet() {
             console.log(themeColorsData.toString())
             AppCSSVariables.colorBackground(Color(themeColorsData.surfaceColor.dropAlphaHex()))
             AppCSSVariables.colorOnBackground(Color(themeColorsData.onSurfaceColor.dropAlphaHex()))
-            AppCSSVariables.colorOnBackgroundDisabled(Color(themeColorsData.onSurfaceColor.dropAlphaHex()).copy(alpha = 0.34f))
+            AppCSSVariables.colorOnBackgroundSecondary(Color(themeColorsData.onSurfaceColor.dropAlphaHex()).copy(alpha = 0.80f))
+            AppCSSVariables.colorOnBackgroundDisabled(Color(themeColorsData.onSurfaceColor.dropAlphaHex()).copy(alpha = 0.38f))
             AppCSSVariables.colorPrimary(Color(themeColorsData.primaryColor.dropAlphaHex()))
             AppCSSVariables.colorOnPrimary(Color(themeColorsData.onPrimaryColor.dropAlphaHex()))
             AppCSSVariables.colorChipBg(Color(themeColorsData.onSurfaceColor.dropAlphaHex()).copy(alpha = 0.08f))
             AppCSSVariables.colorHr(Color(themeColorsData.onSurfaceColor.dropAlphaHex()).copy(alpha = 0.08f))
+            AppCSSVariables.outlineBtnBgHover(Color(themeColorsData.onSurfaceColor.dropAlphaHex()).copy(alpha = 0.08f))
+            AppCSSVariables.outlineBtnBgActive(Color(themeColorsData.onSurfaceColor.dropAlphaHex()).copy(alpha = 0.16f))
         }
     }
 

@@ -39,7 +39,6 @@ fun Experience(
                     classes(WtCols.wtCol12)
                     classes(
                         WtOffsets.wtTopOffset48,
-                        WtOffsets.wtTopOffsetSm24
                     )
                 },
                 data = experienceData,
@@ -51,7 +50,6 @@ fun Experience(
             attrs = {
                 classes(
                     WtCols.wtCol12,
-                    WtOffsets.wtTopOffsetSm24,
                     WtOffsets.wtTopOffset48
                 )
                 style {

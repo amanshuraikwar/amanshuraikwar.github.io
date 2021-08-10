@@ -31,6 +31,7 @@ fun Chip(
                 style {
                     width(16.px)
                     height(16.px)
+                    marginLeft(4.px)
                 }
             }
         )
@@ -40,7 +41,7 @@ fun Chip(
                 classes(WtTexts.wtCaption)
                 style {
                     marginLeft(8.px)
-                    marginRight(4.px)
+                    marginRight(6.px)
                 }
             }
         ) {

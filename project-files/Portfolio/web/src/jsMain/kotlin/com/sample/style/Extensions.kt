@@ -2,6 +2,8 @@ package com.sample.style
 
 import org.jetbrains.compose.web.css.CSSNumeric
 import org.jetbrains.compose.web.css.StyleBuilder
+import org.jetbrains.compose.web.css.selectors.CSSSelector
+import org.jetbrains.compose.web.css.selectors.plus
 
 fun StyleBuilder.flex(value: Int) {
     property("flex", value)
@@ -42,3 +44,10 @@ fun StyleBuilder.paddingLeft(value: CSSNumeric) {
 fun StyleBuilder.paddingTop(value: CSSNumeric) {
     property("padding-top", value)
 }
+
+fun StyleBuilder.transition(value: String) {
+    property("transition", value)
+}
+
+fun active() = CSSSelector.PseudoClass.active
+fun active(selector: CSSSelector) = selector + active()

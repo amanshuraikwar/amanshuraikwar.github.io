@@ -32,7 +32,7 @@ fun ExperienceItem(
             attrs = {
                 classes(WtTexts.wtH5)
                 style {
-                    fontWeight(FontWeight.SemiBold)
+                    fontWeight(FontWeight.Bold)
                 }
             }
         ) {
@@ -41,7 +41,7 @@ fun ExperienceItem(
 
         Div(
             attrs = {
-                classes(WtTexts.wtH6)
+                classes(WtTexts.wtBody)
                 style {
                     display(DisplayStyle.Flex)
                     alignItems(AlignItems.Center)
@@ -57,8 +57,8 @@ fun ExperienceItem(
                 },
                 attrs = {
                     style {
-                        width(20.px)
-                        height(20.px)
+                        width(18.px)
+                        height(18.px)
                     }
                 }
             )
@@ -94,8 +94,8 @@ fun ExperienceItem(
                 },
                 attrs = {
                     style {
-                        width(20.px)
-                        height(20.px)
+                        width(18.px)
+                        height(18.px)
                     }
                 }
             )
@@ -141,8 +141,8 @@ fun ExperienceItem(
                         },
                         attrs = {
                             style {
-                                width(20.px)
-                                height(20.px)
+                                width(18.px)
+                                height(18.px)
                             }
                         }
                     )

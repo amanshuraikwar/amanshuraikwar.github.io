@@ -60,10 +60,20 @@ fun Home(
                 )
             }
         }
-
+        
         Projects(
             isDarkTheme = isDarkTheme,
             apps = porfolioData.apps
+        )
+
+        Hr(
+            attrs = {
+                classes(
+                    WtContent.sectionDividerHr,
+                    WtOffsets.wtTopOffset96,
+                    WtOffsets.wtTopOffsetSm48,
+                )
+            }
         )
 
         Experience(

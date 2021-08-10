@@ -36,19 +36,17 @@ fun Hero(
                     }
                 }
             ) {
-                Text(name.split(" ")[0])
-                Br()
-                Text(name.split(" ")[1])
+                Text(name)
             }
 
             Div(
                 attrs = {
                     classes(
-                        WtTexts.wtH5,
+                        WtTexts.wtBody,
                         WtContent.jobTitle
                     )
                     style {
-                        color(AppCSSVariables.colorOnBackground.value())
+                        color(AppCSSVariables.colorOnBackgroundSecondary.value())
                     }
                 }
             ) {

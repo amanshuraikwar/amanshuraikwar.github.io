@@ -40,7 +40,7 @@ object WtContent : StyleSheet(AppStylesheet) {
     }
 
     val projectRightPadding by style {
-        paddingRight(8.px)
+        paddingRight(12.px)
 
         media(maxWidth(750.px)) {
             self style {
@@ -50,7 +50,7 @@ object WtContent : StyleSheet(AppStylesheet) {
     }
 
     val projectLeftPadding by style {
-        paddingLeft(8.px)
+        paddingLeft(12.px)
 
         media(maxWidth(750.px)) {
             self style {
@@ -88,4 +88,6 @@ object WtContent : StyleSheet(AppStylesheet) {
             }
         }
     }
+
+    val projectArt by style {}
 }

@@ -17,6 +17,8 @@ object FontWeight {
 object WtTexts : StyleSheet(AppStylesheet) {
     const val rubikFontStr = "Rubik,Nunito,system-ui,-apple-system,Arial,serif,sans-serif"
     const val nunitoFontStr = "Nunito,Rubik,system-ui,-apple-system,Arial,serif,sans-serif"
+    const val nunitoSansFontStr = "Nunito Sans,Rubik,system-ui,-apple-system,Arial,serif,sans-serif"
+    const val sourceCodeProFontStr = "Source Code Pro,Rubik,system-ui,-apple-system,Arial,serif,sans-serif"
 
     val wtH1 by style {
         color(AppCSSVariables.colorOnBackground.value())
@@ -112,23 +114,16 @@ object WtTexts : StyleSheet(AppStylesheet) {
         color(AppCSSVariables.colorOnBackground.value())
         fontSize(AppCSSVariables.wtH6FontSize.value(20.px))
         fontWeight(FontWeight.Normal)
-        lineHeight(AppCSSVariables.wtH6LineHeight.value(22.px))
+        lineHeight(AppCSSVariables.wtH6LineHeight.value(24.px))
         fontFamily(nunitoFontStr)
-
-        media(maxWidth(750.px)) {
-            self style {
-                AppCSSVariables.wtH6FontSize(18.px)
-                AppCSSVariables.wtH6LineHeight(20.px)
-            }
-        }
     }
 
     val wtBody by style {
-        color(AppCSSVariables.colorOnBackground.value())
-        fontSize(AppCSSVariables.wtBodyFontSize.value(16.px))
+        color(AppCSSVariables.colorOnBackgroundSecondary.value())
+        fontSize(AppCSSVariables.wtBodyFontSize.value(18.px))
         fontWeight(FontWeight.Normal)
-        lineHeight(AppCSSVariables.wtBodyLineHeight.value(20.px))
-        fontFamily(nunitoFontStr)
+        lineHeight(AppCSSVariables.wtBodyLineHeight.value(24.px))
+        fontFamily(nunitoSansFontStr)
     }
 
     val wtButton by style {
@@ -141,9 +136,9 @@ object WtTexts : StyleSheet(AppStylesheet) {
 
     val wtCaption by style {
         color(AppCSSVariables.colorOnBackground.value())
-        fontSize(AppCSSVariables.wtCaptionFontSize.value(10.px))
-        fontWeight(FontWeight.Bold)
+        fontSize(AppCSSVariables.wtCaptionFontSize.value(12.px))
+        fontWeight(FontWeight.Medium)
         lineHeight(AppCSSVariables.wtCaptionLineHeight.value(16.px))
-        fontFamily(nunitoFontStr)
+        fontFamily(sourceCodeProFontStr)
     }
 }

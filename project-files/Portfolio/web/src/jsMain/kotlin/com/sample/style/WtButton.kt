@@ -1,11 +1,21 @@
 package com.sample.style
 
 import org.jetbrains.compose.web.css.*
+import org.jetbrains.compose.web.css.selectors.hover
 
 object WtButton : StyleSheet(AppStylesheet) {
     val wtButtonSolid by style {
         backgroundColor(AppCSSVariables.colorPrimary.value())
         color(AppCSSVariables.colorOnPrimary.value())
+        transition("all 0.2s")
+
+        hover(self) style {
+            property("transform", "scale(1.2)")
+        }
+
+        active(self) style {
+            property("transform", "scale(0.98)")
+        }
     }
 
     val wtButtonOutline by style {
@@ -15,6 +25,17 @@ object WtButton : StyleSheet(AppStylesheet) {
             color = AppCSSVariables.colorOnBackground.value()
         }
         color(AppCSSVariables.colorOnBackground.value())
+        transition("all 0.2s")
+
+        hover(self) style {
+            property("transform", "scale(1.2)")
+            backgroundColor(AppCSSVariables.outlineBtnBgHover.value())
+        }
+
+        active(self) style {
+            property("transform", "scale(0.98)")
+            backgroundColor(AppCSSVariables.outlineBtnBgActive.value())
+        }
     }
 
     val wtTextButtonNormal by style {

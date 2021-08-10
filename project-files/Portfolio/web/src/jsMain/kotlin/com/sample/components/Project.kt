@@ -1,6 +1,7 @@
 package com.sample.components
 
 import androidx.compose.runtime.Composable
+import com.sample.style.WtContent
 import com.sample.style.WtTexts
 import io.github.amanshuraikwar.portfolio.model.AppData
 import io.github.amanshuraikwar.portfolio.model.AppLink
@@ -30,6 +31,7 @@ fun Project(
         Img(
             src = appData.artUrl,
             attrs = {
+                classes(WtContent.projectArt)
                 style {
                     borderRadius(16.px)
                     // to fix the weird image stretch safari issue
@@ -45,7 +47,7 @@ fun Project(
                     WtTexts.wtH4
                 )
                 style {
-                    marginTop(16.px)
+                    marginTop(24.px)
                 }
             }
         ) {
