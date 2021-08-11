@@ -86,6 +86,19 @@
       ],
       "maintained": false,
       "art": "https://amanshuraikwar.github.io/assets/howmuch_art_3_2.png"
+    },
+    {
+      "id": "materialstepper",
+      "title": "Material Stepper",
+      "description": "Android library which provides a View as an implementation for Material Stepper design pattern. As this provides a view and not an Activity/Fragment to extend from, it works out of the box unlike any other alternative at that time.",
+      "appLinks": [
+        {
+          "type": "github",
+          "url": "https://github.com/amanshuraikwar/MaterialStepper"
+        }
+      ],
+      "maintained": false,
+      "art": "https://amanshuraikwar.github.io/assets/generic_art_3_2.png"
     }
   ],
   "experience": [
