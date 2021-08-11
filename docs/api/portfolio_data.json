@@ -99,6 +99,19 @@
       ],
       "maintained": false,
       "art": "https://amanshuraikwar.github.io/assets/generic_art_3_2.png"
+    },
+    {
+      "id": "cassette",
+      "title": "Cassette Music Player",
+      "description": "A Material Designed Music Player for Android. My initial attempts to apply and learn dependency injection, software design patterns and SOLID principles. In this project, I used RxJava, Dagger-2, and MVP architectural design pattern. Encountered the complexities of a large codebase and fell in love with software design.",
+      "appLinks": [
+        {
+          "type": "github",
+          "url": "https://github.com/amanshuraikwar/musicplayer"
+        }
+      ],
+      "maintained": false,
+      "art": "https://amanshuraikwar.github.io/assets/generic_art_3_2.png"
     }
   ],
   "experience": [
