@@ -45,8 +45,21 @@
   ],
   "apps": [
     {
+      "id": "portfolio",
+      "title": "My Portfolio",
+      "description": "This beautiful webpage you are on right now. Built using KMM.",
+      "appLinks": [
+        {
+          "type": "github",
+          "url": "https://github.com/amanshuraikwar/amanshuraikwar.github.io"
+        }
+      ],
+      "maintained": true,
+      "art": "https://amanshuraikwar.github.io/assets/portfolio_art_3_2.png"
+    },
+    {
       "id": "nextbus",
-      "title":  "Next Bus SG",
+      "title": "Next Bus SG",
       "description": "A beautiful bus timing app for Singapore built with Jetpack Compose",
       "appLinks": [
         {
@@ -59,7 +72,7 @@
     },
     {
       "id": "splash",
-      "title":  "Splash",
+      "title": "Splash",
       "description": "A minimal android client for Unsplash",
       "appLinks": [
         {
@@ -76,8 +89,8 @@
     },
     {
       "id": "howmuch",
-      "title":  "How Much",
-      "description": "A expense tracked which uses google sheets as a DB",
+      "title": "How Much",
+      "description": "A expense tracker which uses google sheets as a DB",
       "appLinks": [
         {
           "type": "github",
@@ -90,7 +103,7 @@
     {
       "id": "materialstepper",
       "title": "Material Stepper",
-      "description": "Android library which provides a View as an implementation for Material Stepper design pattern. As this provides a view and not an Activity/Fragment to extend from, it works out of the box unlike any other alternative at that time.",
+      "description": "Android library which provides a View as an implementation for Material Stepper.",
       "appLinks": [
         {
           "type": "github",
@@ -103,7 +116,7 @@
     {
       "id": "cassette",
       "title": "Cassette Music Player",
-      "description": "A Material Designed Music Player for Android. My initial attempts to apply and learn dependency injection, software design patterns and SOLID principles. In this project, I used RxJava, Dagger-2, and MVP architectural design pattern. Encountered the complexities of a large codebase and fell in love with software design.",
+      "description": "A Material Designed Music Player for Android.",
       "appLinks": [
         {
           "type": "github",

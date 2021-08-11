@@ -60,7 +60,7 @@ fun Home(
                 )
             }
         }
-        
+
         Projects(
             isDarkTheme = isDarkTheme,
             apps = porfolioData.apps
