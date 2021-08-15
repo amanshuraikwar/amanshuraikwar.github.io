@@ -1,29 +1,55 @@
 package io.github.amanshuraikwar.portfolio.android.home
 
+import androidx.compose.animation.core.animateDpAsState
+import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.LazyListState
+import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.rounded.*
+import androidx.compose.material.icons.rounded.Article
+import androidx.compose.material.icons.rounded.CameraAlt
+import androidx.compose.material.icons.rounded.Link
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.derivedStateOf
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.graphics.vector.rememberVectorPainter
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.google.accompanist.insets.LocalWindowInsets
 import com.google.accompanist.insets.rememberInsetsPaddingValues
+import com.google.accompanist.insets.statusBarsPadding
 import io.github.amanshuraikwar.portfolio.R
-import io.github.amanshuraikwar.portfolio.android.home.view.FetchingView
-import io.github.amanshuraikwar.portfolio.android.home.view.HeadingView
-import io.github.amanshuraikwar.portfolio.android.home.view.GenericTextView
-import io.github.amanshuraikwar.portfolio.android.home.view.ThemeSwitchView
-import io.github.amanshuraikwar.portfolio.android.ui.AppButton
+import io.github.amanshuraikwar.portfolio.android.home.view.*
+import io.github.amanshuraikwar.portfolio.android.theme.disabled
 import io.github.amanshuraikwar.portfolio.android.ui.PortfolioLinkButton
 
+@Composable
+fun rememberStickyHeaderElevation(
+    index: Int,
+    lazyListState: LazyListState
+): Dp {
+    val isSticking by derivedStateOf { lazyListState.firstVisibleItemIndex >= index }
+    val elevation by animateDpAsState(
+        targetValue = if (isSticking) {
+            4.dp
+        } else {
+            0.dp
+        }
+    )
+    return elevation
+}
+
+@ExperimentalFoundationApi
 @ExperimentalComposeUiApi
 @ExperimentalMaterialApi
 @Composable
@@ -39,51 +65,118 @@ fun HomeScreen(
             FetchingView(modifier)
         }
         is HomeScreenState.Success -> {
+            val listState = rememberLazyListState()
+
             LazyColumn(
                 modifier,
+                state = listState,
                 contentPadding = rememberInsetsPaddingValues(
                     insets = LocalWindowInsets.current.systemBars,
                     additionalBottom = 128.dp
                 )
             ) {
                 item {
-                    HeadingView(
+                    HeroView(
                         modifier = Modifier
                             .padding(horizontal = 16.dp)
                             .padding(top = 16.dp),
                         name = screenState.portfolioData.name,
-                        onUrlClick = onLinkClick
+                        onUrlClick = onLinkClick,
+                        intro = screenState.portfolioData.intro,
                     )
                 }
 
-                item {
-                    GenericTextView(
-                        modifier = Modifier
-                            .padding(horizontal = 16.dp)
-                            .padding(top = 32.dp),
-                        text = screenState.portfolioData.intro
-                    )
+                stickyHeader("projects") {
+                    Surface(
+                        modifier = Modifier.fillMaxWidth(),
+                        color = MaterialTheme.colors.surface,
+                        elevation = rememberStickyHeaderElevation(1, listState)
+                    ) {
+                        SectionHeaderView(
+                            modifier = Modifier
+                                .padding(
+                                    horizontal = 16.dp
+                                )
+                                .statusBarsPadding()
+                                .padding(
+                                    top = 16.dp,
+                                    bottom = 16.dp
+                                ),
+                            heading = "Projects"
+                        )
+                    }
                 }
 
-                item {
-                    ThemeSwitchView(
-                        modifier = Modifier
-                            .padding(horizontal = 16.dp)
-                            .padding(top = 32.dp),
-                        isDarkTheme = isDarkTheme,
-                        onThemeSwitchValueChange = onThemeSwitchValueChange
-                    )
+                screenState.portfolioData.apps.forEach { appData ->
+                    item {
+                        ProjectView(
+                            Modifier
+                                .padding(vertical = 16.dp)
+                                .padding(horizontal = 16.dp),
+                            appData = appData,
+                            onAppLinkClick = onLinkClick
+                        )
+                    }
                 }
 
-                item {
-                    Text(
-                        modifier = Modifier
-                            .padding(top = 32.dp, bottom = 16.dp)
-                            .padding(horizontal = 16.dp),
-                        text = "My Links",
-                        color = MaterialTheme.colors.onBackground,
-                        style = MaterialTheme.typography.h6,
-                    )
+                stickyHeader("experience") {
+                    Surface(
+                        modifier = Modifier.fillMaxWidth(),
+                        color = MaterialTheme.colors.surface,
+                        elevation = rememberStickyHeaderElevation(
+                            screenState.portfolioData.apps.size + 2,
+                            listState
+                        )
+                    ) {
+                        SectionHeaderView(
+                            modifier = Modifier
+                                .padding(
+                                    horizontal = 16.dp
+                                )
+                                .statusBarsPadding()
+                                .padding(
+                                    top = 16.dp,
+                                    bottom = 16.dp
+                                ),
+                            heading = "Experience"
+                        )
+                    }
+                }
+
+                screenState.portfolioData.experience.forEach { experienceData ->
+                    item {
+                        ExperienceItemView(
+                            modifier = Modifier
+                                .padding(horizontal = 16.dp)
+                                .padding(vertical = 16.dp),
+                            experienceData = experienceData,
+                        )
+                    }
+                }
+
+                stickyHeader("mylinks") {
+                    Surface(
+                        modifier = Modifier.fillMaxWidth(),
+                        color = MaterialTheme.colors.surface,
+                        elevation = rememberStickyHeaderElevation(
+                            screenState.portfolioData.experience.size +
+                                    screenState.portfolioData.apps.size + 3,
+                            listState
+                        )
+                    ) {
+                        SectionHeaderView(
+                            modifier = Modifier
+                                .padding(
+                                    horizontal = 16.dp
+                                )
+                                .statusBarsPadding()
+                                .padding(
+                                    top = 16.dp,
+                                    bottom = 16.dp
+                                ),
+                            heading = "My Links"
+                        )
+                    }
                 }
 
                 screenState.portfolioData.links.forEach { linkData ->
@@ -103,7 +196,7 @@ fun HomeScreen(
                         PortfolioLinkButton(
                             modifier = Modifier
                                 .padding(horizontal = 16.dp)
-                                .padding(bottom = 8.dp),
+                                .padding(top = 16.dp),
                             icon = painter,
                             text = linkData.title,
                             onClick = {
@@ -114,44 +207,23 @@ fun HomeScreen(
                 }
 
                 item {
-                    Text(
+                    ThemeSwitchView(
                         modifier = Modifier
-                            .padding(top = 32.dp, bottom = 16.dp)
-                            .padding(horizontal = 16.dp),
-                        text = "My Apps",
-                        color = MaterialTheme.colors.onBackground,
-                        style = MaterialTheme.typography.h6,
+                            .padding(16.dp)
+                            .statusBarsPadding(),
+                        isDarkTheme = isDarkTheme,
+                        onThemeSwitchValueChange = onThemeSwitchValueChange
                     )
                 }
 
-                screenState.portfolioData.apps.forEach { appData ->
-                    item {
-                        val painter: Painter = when (appData.id) {
-                            "nextbus" -> painterResource(R.drawable.ic_nextbus_74)
-                            "splash" -> rememberVectorPainter(image = Icons.Rounded.Landscape)
-                            "howmuch" -> rememberVectorPainter(image = Icons.Rounded.BubbleChart)
-                            else -> rememberVectorPainter(image = Icons.Rounded.Link)
-                        }
-
-                        AppButton(
-                            Modifier
-                                .padding(bottom = 8.dp)
-                                .padding(horizontal = 8.dp),
-                            icon = painter,
-                            title = appData.title,
-                            description = appData.description,
-                            links = appData.appLinks,
-                            onAppLinkClick = onLinkClick
-                        )
-                    }
-                }
-
                 item {
-                    GenericTextView(
+                    Text(
+                        text = screenState.portfolioData.madeWith,
                         modifier = Modifier
-                            .padding(horizontal = 16.dp)
-                            .padding(top = 32.dp),
-                        text = screenState.portfolioData.madeWith
+                            .padding(16.dp)
+                            .statusBarsPadding(),
+                        style = MaterialTheme.typography.h3,
+                        color = MaterialTheme.colors.onSurface.disabled
                     )
                 }
             }

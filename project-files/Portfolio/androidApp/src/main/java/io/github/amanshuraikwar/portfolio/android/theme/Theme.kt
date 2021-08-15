@@ -9,6 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.graphics.Color
 
+@Deprecated("use from remote")
 private val DarkColorPalettePink = darkColors(
     primary = pinkLight,
     primaryVariant = pinkLight,
@@ -24,6 +25,7 @@ private val DarkColorPalettePink = darkColors(
     onError = brownDark
 )
 
+@Deprecated("use from remote")
 private val LightColorPaletteOrange = lightColors(
     primary = orange,
     primaryVariant = orange,
@@ -39,6 +41,7 @@ private val LightColorPaletteOrange = lightColors(
     onError = orangeLight
 )
 
+@Deprecated("use from remote")
 private val LightColorPalettePink = lightColors(
     primary = pinkLight,
     primaryVariant = pinkLight,
@@ -54,6 +57,7 @@ private val LightColorPalettePink = lightColors(
     onError = gray900
 )
 
+@Deprecated("use from remote")
 private val LightColorPaletteRed = lightColors(
     primary = redMkbhd,
     primaryVariant = redMkbhd,
@@ -75,6 +79,12 @@ val Colors.rippleColor: Color
     } else {
         pink
     }
+
+val Color.secondary: Color
+    get() = copy(alpha = 0.8f)
+
+val Color.disabled: Color
+    get() = copy(alpha = 0.38f)
 
 fun Color(color: String): Color {
     return Color(value = android.graphics.Color.parseColor(color).toULong() shl 32)

@@ -16,7 +16,7 @@ import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun AppLinkButton(
+fun ProjectLinkButton(
     modifier: Modifier = Modifier,
     icon: Painter,
     bgColor: Color = MaterialTheme.colors.onSurface.copy(alpha = 0.13f),

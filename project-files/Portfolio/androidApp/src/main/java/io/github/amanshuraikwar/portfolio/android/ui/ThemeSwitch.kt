@@ -2,6 +2,7 @@
 
 package io.github.amanshuraikwar.portfolio.android.ui
 
+//import androidx.compose.ui.graphics.vector.AnimatedImageVector
 import androidx.compose.animation.core.AnimationSpec
 import androidx.compose.animation.core.TweenSpec
 import androidx.compose.foundation.Canvas
@@ -14,14 +15,9 @@ import androidx.compose.material.icons.filled.LightMode
 import androidx.compose.runtime.*
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.geometry.CornerRadius
-import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
-import androidx.compose.ui.graphics.BlendMode
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.ColorFilter
+import androidx.compose.ui.graphics.*
 import androidx.compose.ui.graphics.drawscope.translate
-//import androidx.compose.ui.graphics.vector.AnimatedImageVector
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.rememberVectorPainter
 import androidx.compose.ui.unit.dp
@@ -86,6 +82,8 @@ fun ThemeSwitch(
     iconTint: Color = MaterialTheme.colors.primary,
     lightThemeIcon: ImageVector = Icons.Default.LightMode,
     darkThemeIcon: ImageVector = Icons.Default.DarkMode,
+    backgroundShape: Shape = MaterialTheme.shapes.small,
+    handleShape: Shape = backgroundShape,
     onValueChange: (newValue: ThemeSwitchValue) -> Unit = {},
 ) {
     val handleSize = 28f
@@ -96,6 +94,7 @@ fun ThemeSwitch(
         onValueChange = onValueChange,
         TweenSpec(durationMillis = 100)
     )
+
     val iconPainter = rememberVectorPainter(
         if (swipeableState.offset.value >= handleSize / 2f) {
             darkThemeIcon
@@ -103,6 +102,7 @@ fun ThemeSwitch(
             lightThemeIcon
         }
     )
+
     val anchors = mapOf(0f to ThemeSwitchValue.LIGHT, handleSize to ThemeSwitchValue.DARK)
 
     Canvas(
@@ -118,22 +118,30 @@ fun ThemeSwitch(
                 height = (handleSize + padding * 2).dp
             ),
     ) {
-        drawRoundRect(
+        // TODO-amanshuraikwar (15 Aug 2021 04:02:28 PM): cache outline
+        drawOutline(
+            outline = backgroundShape.createOutline(
+                size = size,
+                layoutDirection = layoutDirection,
+                this
+            ),
             color = backgroundColor,
-            topLeft = Offset.Zero,
-            size = size,
-            cornerRadius = CornerRadius(8.dp.toPx(), 8.dp.toPx())
         )
 
-        drawRoundRect(
-            color = handleColor,
-            topLeft = Offset(
-                (swipeableState.offset.value + padding).dp.toPx(),
-                padding.dp.toPx()
-            ),
-            size = Size(handleSize.dp.toPx(), handleSize.dp.toPx()),
-            cornerRadius = CornerRadius(6.dp.toPx(), 6.dp.toPx())
-        )
+        translate(
+            top = padding.dp.toPx(),
+            left = (swipeableState.offset.value + padding).dp.toPx(),
+        ) {
+            // TODO-amanshuraikwar (15 Aug 2021 04:02:28 PM): cache outline
+            drawOutline(
+                outline = handleShape.createOutline(
+                    size = Size(handleSize.dp.toPx(), handleSize.dp.toPx()),
+                    layoutDirection = layoutDirection,
+                    this
+                ),
+                color = handleColor,
+            )
+        }
 
         translate(
             (swipeableState.offset.value + padding * 2).dp.toPx(),

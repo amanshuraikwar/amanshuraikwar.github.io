@@ -21,6 +21,11 @@ val PortfolioTypography = Typography(
         fontSize = 48.sp,
         letterSpacing = 0.sp
     ),
+    h5 = TextStyle(
+        fontWeight = FontWeight.Bold,
+        fontSize = 24.sp,
+        letterSpacing = 0.sp
+    ),
     subtitle1 = TextStyle(
         fontWeight = FontWeight.Medium,
         fontSize = 16.sp,

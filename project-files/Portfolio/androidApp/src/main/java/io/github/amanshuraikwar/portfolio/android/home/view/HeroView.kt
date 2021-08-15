@@ -4,10 +4,7 @@ import androidx.compose.animation.core.animate
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.aspectRatio
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.*
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
@@ -24,13 +21,15 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import coil.compose.rememberImagePainter
-import io.github.amanshuraikwar.portfolio.android.ui.AppLinkButton
+import io.github.amanshuraikwar.portfolio.android.theme.secondary
+import io.github.amanshuraikwar.portfolio.android.ui.ProjectLinkButton
 import io.github.amanshuraikwar.portfolio.android.util.crop
 
 @Composable
-fun HeadingView(
+fun HeroView(
     modifier: Modifier = Modifier,
     name: String,
+    intro: String,
     onUrlClick: (url: String) -> Unit
 ) {
     val scrimColor = Color(0XFF212121).copy(alpha = 0.48f)
@@ -102,10 +101,10 @@ fun HeadingView(
 
             Text(
                 modifier = Modifier
-                    .align(Alignment.TopEnd)
+                    .align(Alignment.TopStart)
                     .padding(16.dp),
                 text = "PHOTO FROM\nUNSPLASH",
-                color = Color.White,
+                color = Color.White.secondary,
                 style = MaterialTheme.typography.overline.copy(
                     shadow = Shadow(
                         Color(0XFF212121).copy(alpha = 0.84f),
@@ -113,28 +112,12 @@ fun HeadingView(
                         blurRadius = 2f
                     )
                 ),
-                textAlign = TextAlign.End
+                textAlign = TextAlign.Start
             )
 
-            Text(
+            ProjectLinkButton(
                 modifier = Modifier
-                    .align(Alignment.BottomStart)
-                    .padding(16.dp),
-                text = name.replace(" ", "\n"),
-                color = Color.White,
-                style = MaterialTheme.typography.h3.copy(
-                    shadow = Shadow(
-                        Color(0XFF212121).copy(alpha = 0.84f),
-                        offset = Offset(2f, 2f),
-                        blurRadius = 4f
-                    )
-                ),
-                fontWeight = FontWeight.Medium,
-            )
-
-            AppLinkButton(
-                modifier = Modifier
-                    .align(Alignment.BottomEnd)
+                    .align(Alignment.TopEnd)
                     .padding(16.dp),
                 icon = rememberVectorPainter(
                     image = Icons.Rounded.Download
@@ -145,6 +128,39 @@ fun HeadingView(
                 bgColor = Color.White.copy(alpha = 0.13f),
                 iconTint = Color.White
             )
+
+            Column(
+                modifier = Modifier
+                    .align(Alignment.BottomStart)
+                    .padding(16.dp)
+            ) {
+                Text(
+                    text = name.replace(" ", "\n"),
+                    color = Color.White,
+                    style = MaterialTheme.typography.h3.copy(
+                        shadow = Shadow(
+                            Color(0XFF212121).copy(alpha = 0.84f),
+                            offset = Offset(2f, 2f),
+                            blurRadius = 4f
+                        )
+                    ),
+                    fontWeight = FontWeight.Medium,
+                )
+
+                Text(
+                    modifier = Modifier
+                        .padding(top = 16.dp),
+                    text = intro,
+                    color = Color.White.secondary,
+                    style = MaterialTheme.typography.body1.copy(
+                        shadow = Shadow(
+                            Color(0XFF212121).copy(alpha = 0.84f),
+                            offset = Offset(2f, 2f),
+                            blurRadius = 4f
+                        )
+                    ),
+                )
+            }
         }
     }
 }

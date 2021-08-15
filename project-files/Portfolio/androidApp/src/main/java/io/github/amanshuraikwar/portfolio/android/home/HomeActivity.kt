@@ -6,6 +6,7 @@ import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.runtime.*
 import androidx.compose.ui.ExperimentalComposeUiApi
@@ -17,6 +18,7 @@ import kotlinx.coroutines.launch
 class HomeActivity : AppCompatActivity() {
     private val vm: HomeViewModel by viewModels()
 
+    @ExperimentalFoundationApi
     @ExperimentalComposeUiApi
     @ExperimentalMaterialApi
     override fun onCreate(savedInstanceState: Bundle?) {
