@@ -175,5 +175,5 @@
       ]
     }
   ],
-  "madeWith": "Made with Kotlin Multiplatform, Jetpack Compose & Swift UI"
+  "madeWith": "Made with Jetpack Compose & KMM"
 }
