@@ -112,6 +112,13 @@ class PortfolioRepository {
         }
     }
 
+    // to be called from Kotlin/Native client
+    fun getPortfolioData(callback: (PortfolioData) -> Unit) {
+        repositoryScope.launch {
+            callback(getPortfolioData())
+        }
+    }
+
     fun getThemeData(): StateFlow<ThemeData> {
         repositoryScope.launch {
             portfolioApi.getThemeData().let { response ->

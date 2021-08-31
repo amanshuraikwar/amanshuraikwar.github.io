@@ -19,7 +19,7 @@ struct PortfolioLinksView: View {
         ) {
             ForEach(links, id: \.hash) { linkData in
                 PortfolioLinkButton(
-                    name: linkData.name,
+                    name: linkData.title,
                     url: linkData.url
                 )
             }
