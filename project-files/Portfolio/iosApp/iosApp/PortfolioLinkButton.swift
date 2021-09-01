@@ -23,6 +23,10 @@ struct PortfolioLinkButton: View {
                 Spacer()
                 Image(systemName: "chevron.right")
             }
+            .padding(.horizontal)
+            .padding(.vertical, 8)
+            .background(Color(.systemGray5))
+            .clipShape(RoundedRectangle(cornerSize: CGSize(width: 12.0, height: 12.0), style: .circular))
         }
     }
 }

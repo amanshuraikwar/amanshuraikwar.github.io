@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,7 +13,13 @@
 		A506BBDB269C830700F1C1CF /* HomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A506BBDA269C830700F1C1CF /* HomePageView.swift */; };
 		A506BBDF269C895800F1C1CF /* HeadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A506BBDE269C895800F1C1CF /* HeadingView.swift */; };
 		A506BBE1269DA81500F1C1CF /* PortfolioLinkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A506BBE0269DA81500F1C1CF /* PortfolioLinkButton.swift */; };
-		A53E56E026A002D500FE1997 /* PortfolioLinksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53E56DF26A002D500FE1997 /* PortfolioLinksView.swift */; };
+		A56F477326CB88C10052858A /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56F477226CB88C10052858A /* ViewModel.swift */; };
+		A56F477526CB8B0A0052858A /* ScreenState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56F477426CB8B0A0052858A /* ScreenState.swift */; };
+		A56F477C26CBDA590052858A /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = A56F477B26CBDA590052858A /* URLImage */; };
+		A5775EF426DE7D390031FB78 /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5775EF326DE7D390031FB78 /* SectionHeader.swift */; };
+		A5775EF626DF85C50031FB78 /* ProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5775EF526DF85C50031FB78 /* ProjectView.swift */; };
+		A5775EF826DF86D80031FB78 /* ProjectMaintainedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5775EF726DF86D80031FB78 /* ProjectMaintainedView.swift */; };
+		A5775EFA26DFAE080031FB78 /* ExperienceItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5775EF926DFAE080031FB78 /* ExperienceItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +31,12 @@
 		A506BBDA269C830700F1C1CF /* HomePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageView.swift; sourceTree = "<group>"; };
 		A506BBDE269C895800F1C1CF /* HeadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadingView.swift; sourceTree = "<group>"; };
 		A506BBE0269DA81500F1C1CF /* PortfolioLinkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioLinkButton.swift; sourceTree = "<group>"; };
-		A53E56DF26A002D500FE1997 /* PortfolioLinksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioLinksView.swift; sourceTree = "<group>"; };
+		A56F477226CB88C10052858A /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		A56F477426CB8B0A0052858A /* ScreenState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenState.swift; sourceTree = "<group>"; };
+		A5775EF326DE7D390031FB78 /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
+		A5775EF526DF85C50031FB78 /* ProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectView.swift; sourceTree = "<group>"; };
+		A5775EF726DF86D80031FB78 /* ProjectMaintainedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectMaintainedView.swift; sourceTree = "<group>"; };
+		A5775EF926DFAE080031FB78 /* ExperienceItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceItemView.swift; sourceTree = "<group>"; };
 		B5B9F962B8569E56A6E3E91D /* Pods_iosApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iosApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B937C53F5CBED218B466025B /* Pods-iosApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosApp.debug.xcconfig"; path = "Target Support Files/Pods-iosApp/Pods-iosApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -35,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A56F477C26CBDA590052858A /* URLImage in Frameworks */,
 				2E5D810089BA8073F62F7239 /* Pods_iosApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -78,7 +90,12 @@
 				A506BBDA269C830700F1C1CF /* HomePageView.swift */,
 				A506BBDE269C895800F1C1CF /* HeadingView.swift */,
 				A506BBE0269DA81500F1C1CF /* PortfolioLinkButton.swift */,
-				A53E56DF26A002D500FE1997 /* PortfolioLinksView.swift */,
+				A56F477226CB88C10052858A /* ViewModel.swift */,
+				A56F477426CB8B0A0052858A /* ScreenState.swift */,
+				A5775EF326DE7D390031FB78 /* SectionHeader.swift */,
+				A5775EF526DF85C50031FB78 /* ProjectView.swift */,
+				A5775EF726DF86D80031FB78 /* ProjectMaintainedView.swift */,
+				A5775EF926DFAE080031FB78 /* ExperienceItemView.swift */,
 			);
 			path = iosApp;
 			sourceTree = "<group>";
@@ -108,6 +125,9 @@
 			dependencies = (
 			);
 			name = iosApp;
+			packageProductDependencies = (
+				A56F477B26CBDA590052858A /* URLImage */,
+			);
 			productName = iosApp;
 			productReference = 7555FF7B242A565900829871 /* iosApp.app */;
 			productType = "com.apple.product-type.application";
@@ -136,6 +156,9 @@
 				Base,
 			);
 			mainGroup = 7555FF72242A565900829871;
+			packageReferences = (
+				A56F477A26CBDA590052858A /* XCRemoteSwiftPackageReference "url-image" */,
+			);
 			productRefGroup = 7555FF7C242A565900829871 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -185,12 +208,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5775EF826DF86D80031FB78 /* ProjectMaintainedView.swift in Sources */,
+				A5775EFA26DFAE080031FB78 /* ExperienceItemView.swift in Sources */,
 				A506BBE1269DA81500F1C1CF /* PortfolioLinkButton.swift in Sources */,
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
+				A5775EF626DF85C50031FB78 /* ProjectView.swift in Sources */,
 				A506BBDB269C830700F1C1CF /* HomePageView.swift in Sources */,
 				7555FF83242A565900829871 /* ContentView.swift in Sources */,
 				A506BBDF269C895800F1C1CF /* HeadingView.swift in Sources */,
-				A53E56E026A002D500FE1997 /* PortfolioLinksView.swift in Sources */,
+				A5775EF426DE7D390031FB78 /* SectionHeader.swift in Sources */,
+				A56F477526CB8B0A0052858A /* ScreenState.swift in Sources */,
+				A56F477326CB88C10052858A /* ViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,6 +403,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A56F477A26CBDA590052858A /* XCRemoteSwiftPackageReference "url-image" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dmytro-anokhin/url-image";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A56F477B26CBDA590052858A /* URLImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A56F477A26CBDA590052858A /* XCRemoteSwiftPackageReference "url-image" */;
+			productName = URLImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7555FF73242A565900829871 /* Project object */;
 }
