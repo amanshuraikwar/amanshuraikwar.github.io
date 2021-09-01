@@ -23,11 +23,20 @@ struct SectionHeader: View {
                 )
             
             Spacer()
-                .frame(width: 48, height: 4)
+                .frame(height: 2)
+            
+            Spacer()
+                .frame(width: 48, height: 2)
                 .background(Color(.systemBlue))
                 .clipShape(Capsule())
-                .padding(.top, 1)
         }
+        .frame(
+            maxWidth: .infinity,
+            alignment: .leading
+        )
+        .padding(.horizontal)
+        .padding(.vertical, 8)
+        .background(Color(.systemGray6))
     }
 }
 
