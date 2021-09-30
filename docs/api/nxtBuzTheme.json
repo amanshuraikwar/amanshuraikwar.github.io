@@ -2,13 +2,13 @@
   "ios": {
     "darkThemeColors": {
       "accent": "#FFff758f",
-      "primary": "#FFffffff",
-      "secondary": "#FFBDBDBD"
+      "primary": "#FFfff0f3",
+      "secondary": "#FFffb3c1"
     },
     "lightThemeColors": {
-      "accent": "#ff186CE6",
-      "primary": "#FF212121",
-      "secondary": "#ff424242"
+      "accent": "#ffc9184a",
+      "primary": "#FF590d22",
+      "secondary": "#ff800f2f"
     }
   },
   "android": {
