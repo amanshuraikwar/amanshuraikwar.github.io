@@ -1,0 +1,16 @@
+{
+  "ios": {
+    "darkThemeColors": {
+      "accent": "#FFFFCDD2",
+      "primary": "#FF4E342E",
+      "secondary": "#FF212121"
+    },
+    "lightThemeColors": {
+      "accent": "#ffEA5C5A",
+      "primary": "#FFffffff",
+      "secondary": "#ffCDECF9"
+    }
+  },
+  "android": {
+  }
+}
