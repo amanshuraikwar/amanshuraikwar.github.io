@@ -1,12 +1,12 @@
 {
   "ios": {
     "darkThemeColors": {
-      "accent": "#Ffee6c4d",
+      "accent": "#Ff1BB3F3",
       "primary": "#FFeef0f2",
       "secondary": "#FFB0BEC5"
     },
     "lightThemeColors": {
-      "accent": "#FF52b69a",
+      "accent": "#FF186CE6",
       "primary": "#FF263238",
       "secondary": "#ff455A64"
     }
