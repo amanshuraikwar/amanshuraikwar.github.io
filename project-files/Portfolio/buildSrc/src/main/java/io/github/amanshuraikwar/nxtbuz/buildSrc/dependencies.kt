@@ -18,7 +18,7 @@ object Libs {
         const val clientLogging = "io.ktor:ktor-client-logging:$version"
         const val clientSerialization = "io.ktor:ktor-client-serialization:$version"
         const val clientAndroid = "io.ktor:ktor-client-android:$version"
-        const val clientApache = "io.ktor:ktor-client-apache:$version}"
+        const val clientApache = "io.ktor:ktor-client-apache:$version"
         const val clientIos = "io.ktor:ktor-client-ios:$version"
         const val clientCio = "io.ktor:ktor-client-cio:$version"
         const val clientJs = "io.ktor:ktor-client-js:$version"
@@ -44,7 +44,7 @@ object Libs {
     }
 
     object Kotlin {
-        private const val version = "1.5.10"
+        private const val version = "1.5.31"
         const val stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$version"
         const val gradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$version"
         const val extensions = "org.jetbrains.kotlin:kotlin-android-extensions:$version"

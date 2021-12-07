@@ -1,7 +1,6 @@
 package com.sample.style
 
 import org.jetbrains.compose.web.css.*
-import org.jetbrains.compose.web.css.selectors.hover
 
 object WtButton : StyleSheet(AppStylesheet) {
     val wtButtonSolid by style {
@@ -13,7 +12,8 @@ object WtButton : StyleSheet(AppStylesheet) {
             property("transform", "scale(1.2)")
         }
 
-        active(self) style {
+
+        self + active style {
             property("transform", "scale(0.98)")
         }
     }
@@ -32,7 +32,7 @@ object WtButton : StyleSheet(AppStylesheet) {
             backgroundColor(AppCSSVariables.outlineBtnBgHover.value())
         }
 
-        active(self) style {
+        self + active style {
             property("transform", "scale(0.98)")
             backgroundColor(AppCSSVariables.outlineBtnBgActive.value())
         }
@@ -43,7 +43,7 @@ object WtButton : StyleSheet(AppStylesheet) {
         borderRadius(16.px)
         cursor("pointer")
 
-        media(maxWidth(750.px)) {
+        media(mediaMaxWidth(750.px)) {
             self style {
                 padding(12.px)
                 borderRadius(12.px)
@@ -64,7 +64,7 @@ object WtButton : StyleSheet(AppStylesheet) {
         borderRadius(16.px)
         cursor("pointer")
 
-        media(maxWidth(750.px)) {
+        media(mediaMaxWidth(750.px)) {
             self style {
                 padding(8.px)
                 width(20.px)

@@ -1,19 +1,17 @@
 package com.sample
 
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
-import androidx.compose.runtime.LaunchedEffect
 import com.sample.components.Layout
 import com.sample.style.AppStylesheet
-import com.sample.style.ColorPalette
 import io.github.amanshuraikwar.portfolio.PortfolioRepository
 import io.github.amanshuraikwar.portfolio.model.PortfolioData
 import io.github.amanshuraikwar.portfolio.model.ThemeData
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
-import org.jetbrains.compose.web.css.Color
 import org.jetbrains.compose.web.css.Style
 import org.jetbrains.compose.web.renderComposable
 
@@ -22,13 +20,6 @@ sealed class NavigationDestination {
     data class Home(val portfolioData: PortfolioData) : NavigationDestination()
     object NextBus : NavigationDestination()
 }
-
-val nextBusColorPalette = ColorPalette(
-    colorBackground = Color("#212121"),
-    colorOnBackground = Color("#eef0f2"),
-    colorPrimary = Color("#64B5F6"),
-    colorOnPrimary = Color("#212121"),
-)
 
 fun main() {
     val portfolioRepository = PortfolioRepository()

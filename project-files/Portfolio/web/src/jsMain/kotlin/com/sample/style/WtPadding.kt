@@ -16,7 +16,7 @@ object WtPadding : StyleSheet(AppStylesheet) {
     }
 
     val wtPaddingSm8 by style {
-        media(maxWidth(750.px)) {
+        media(mediaMaxWidth(750.px)) {
             self style {
                 padding(8.px)
             }

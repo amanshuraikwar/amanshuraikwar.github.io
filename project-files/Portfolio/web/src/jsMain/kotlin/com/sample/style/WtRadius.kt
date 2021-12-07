@@ -24,7 +24,7 @@ object WtRadius : StyleSheet(AppStylesheet) {
     }
 
     val wtRadius8Sm by style {
-        media(maxWidth(750.px)) {
+        media(mediaMaxWidth(750.px)) {
             self style {
                 borderRadius(8.px)
             }
@@ -32,7 +32,7 @@ object WtRadius : StyleSheet(AppStylesheet) {
     }
 
     val wtRadius4Sm by style {
-        media(maxWidth(750.px)) {
+        media(mediaMaxWidth(750.px)) {
             self style {
                 borderRadius(4.px)
             }
@@ -40,7 +40,7 @@ object WtRadius : StyleSheet(AppStylesheet) {
     }
 
     val wtRadius12Sm by style {
-        media(maxWidth(750.px)) {
+        media(mediaMaxWidth(750.px)) {
             self style {
                 borderRadius(12.px)
             }
@@ -48,7 +48,7 @@ object WtRadius : StyleSheet(AppStylesheet) {
     }
 
     val wtRadius16Sm by style {
-        media(maxWidth(750.px)) {
+        media(mediaMaxWidth(750.px)) {
             self style {
                 borderRadius(16.px)
             }
@@ -56,7 +56,7 @@ object WtRadius : StyleSheet(AppStylesheet) {
     }
 
     val wtRadius20Sm by style {
-        media(maxWidth(750.px)) {
+        media(mediaMaxWidth(750.px)) {
             self style {
                 borderRadius(20.px)
             }
