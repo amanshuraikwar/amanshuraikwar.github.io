@@ -2,11 +2,15 @@ package io.github.amanshuraikwar.portfolio.network
 
 import io.github.amanshuraikwar.portfolio.network.model.PortfolioDataResponse
 import io.github.amanshuraikwar.portfolio.network.model.ThemeDataResponse
-import io.ktor.client.*
-import io.ktor.client.features.json.*
-import io.ktor.client.features.json.serializer.*
-import io.ktor.client.features.logging.*
-import io.ktor.client.request.*
+import io.ktor.client.HttpClient
+import io.ktor.client.features.json.JsonFeature
+import io.ktor.client.features.json.serializer.KotlinxSerializer
+import io.ktor.client.features.logging.DEFAULT
+import io.ktor.client.features.logging.LogLevel
+import io.ktor.client.features.logging.Logger
+import io.ktor.client.features.logging.Logging
+import io.ktor.client.request.get
+import io.ktor.utils.io.core.withBuffer
 import kotlinx.serialization.json.Json
 
 class PortfolioApi(
@@ -16,11 +20,14 @@ class PortfolioApi(
     suspend fun getPortfolioData() =
         client.get<PortfolioDataResponse>("$baseUrl/portfolio_data.json")
 
-    suspend fun getAppData(appId: String,) =
+    suspend fun getAppData(appId: String) =
         client.get<PortfolioDataResponse>("$baseUrl/app_data_$appId.json")
 
     suspend fun getThemeData() =
         client.get<ThemeDataResponse>("$baseUrl/theme.json")
+
+    suspend fun getBlog() =
+        client.get<ByteArray>("$baseUrl/blog.md")
 
     companion object {
         fun createHttpClient(

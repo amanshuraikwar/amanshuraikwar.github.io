@@ -1,10 +1,13 @@
 package com.sample.components
 
 import androidx.compose.runtime.Composable
+import com.sample.style.AppCSSVariables
 import com.sample.style.WtButton
 import com.sample.style.WtTexts
 import org.jetbrains.compose.web.attributes.ATarget
 import org.jetbrains.compose.web.attributes.target
+import org.jetbrains.compose.web.css.color
+import org.jetbrains.compose.web.css.value
 import org.jetbrains.compose.web.dom.*
 import org.w3c.dom.HTMLAnchorElement
 
@@ -95,5 +98,44 @@ fun ImgHrefButton(
                 }
             }
         )
+    }
+}
+
+@Composable
+fun TextHrefButton(
+    attrs: AttrBuilderContext<HTMLAnchorElement>? = null,
+    text: String,
+    href: String,
+    buttonStyle: ButtonStyle = ButtonStyle.SOLID,
+    buttonSize: ButtonSize = ButtonSize.NORMAL,
+) {
+    A(
+        attrs = {
+            attrs?.invoke(this)
+            classes(
+                WtTexts.wtButton
+            )
+            target(ATarget.Blank)
+            style {
+                color(AppCSSVariables.colorOnPrimary.value())
+            }
+        },
+        href = href,
+    ) {
+        Div(
+            attrs = {
+                classes(WtTexts.wtButton)
+                when (buttonStyle) {
+                    ButtonStyle.SOLID -> classes(WtButton.wtButtonSolid)
+                    ButtonStyle.OUTLINE -> classes(WtButton.wtButtonOutline)
+                }
+                when (buttonSize) {
+                    ButtonSize.NORMAL -> classes(WtButton.wtTextButtonNormal)
+                    ButtonSize.SMALL -> classes(WtButton.wtTextButtonSmall)
+                }
+            }
+        ) {
+            Text(text.uppercase())
+        }
     }
 }

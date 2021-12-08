@@ -7,6 +7,7 @@ import androidx.compose.runtime.setValue
 import com.sample.components.Layout
 import com.sample.style.AppStylesheet
 import io.github.amanshuraikwar.portfolio.PortfolioRepository
+import io.github.amanshuraikwar.portfolio.markdown.MdNode
 import io.github.amanshuraikwar.portfolio.model.PortfolioData
 import io.github.amanshuraikwar.portfolio.model.ThemeData
 import kotlinx.coroutines.MainScope
@@ -17,7 +18,12 @@ import org.jetbrains.compose.web.renderComposable
 
 sealed class NavigationDestination {
     object Fetching : NavigationDestination()
-    data class Home(val portfolioData: PortfolioData) : NavigationDestination()
+
+    data class Home(
+        val portfolioData: PortfolioData,
+        val blogData: List<MdNode>,
+    ) : NavigationDestination()
+
     object NextBus : NavigationDestination()
 }
 
@@ -30,7 +36,10 @@ fun main() {
     var themeData: ThemeData by mutableStateOf(portfolioRepository.getThemeData().value)
 
     coroutineScope.launch {
-        navigationDestination = NavigationDestination.Home(portfolioRepository.getPortfolioData())
+        navigationDestination = NavigationDestination.Home(
+            portfolioRepository.getPortfolioData(),
+            portfolioRepository.getBlogData()
+        )
     }
 
     coroutineScope.launch {
@@ -65,6 +74,7 @@ fun main() {
                 is NavigationDestination.Home -> {
                     Home(
                         (navigationDestination as NavigationDestination.Home).portfolioData,
+                        (navigationDestination as NavigationDestination.Home).blogData,
                         onNextBusClick = {
                             navigationDestination = NavigationDestination.NextBus
                         },
@@ -72,7 +82,7 @@ fun main() {
                         onThemeBtnClick = {
                             portfolioRepository.setDarkThemeEnabled(it)
                             isDarkTheme = it
-                        }
+                        },
                     )
                 }
                 NavigationDestination.NextBus -> {

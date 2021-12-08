@@ -76,6 +76,11 @@ object AppStylesheet : StyleSheet() {
             backgroundColor(AppCSSVariables.colorBackground.value())
         }
 
+        "a" style {
+            textDecoration("none")
+            color(AppCSSVariables.colorPrimary.value())
+        }
+
         media(mediaMaxWidth(649.px)) {
             universal style {
                 AppCSSVariables.wtOffsetTopUnit(16.px)

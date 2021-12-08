@@ -99,13 +99,13 @@ object WtTexts : StyleSheet(AppStylesheet) {
         color(AppCSSVariables.colorOnBackground.value())
         fontSize(AppCSSVariables.wtH5FontSize.value(24.px))
         fontWeight(FontWeight.Normal)
-        lineHeight(AppCSSVariables.wtH5LineHeight.value(24.px))
+        lineHeight(AppCSSVariables.wtH5LineHeight.value(28.px))
         fontFamily(nunitoFontStr)
 
         media(mediaMaxWidth(750.px)) {
             self style {
                 AppCSSVariables.wtH5FontSize(18.px)
-                AppCSSVariables.wtH5LineHeight(18.px)
+                AppCSSVariables.wtH5LineHeight(22.px)
             }
         }
     }
@@ -116,6 +116,13 @@ object WtTexts : StyleSheet(AppStylesheet) {
         fontWeight(FontWeight.Normal)
         lineHeight(AppCSSVariables.wtH6LineHeight.value(24.px))
         fontFamily(nunitoFontStr)
+
+        media(mediaMaxWidth(750.px)) {
+            self style {
+                AppCSSVariables.wtH5FontSize(14.px)
+                AppCSSVariables.wtH5LineHeight(20.px)
+            }
+        }
     }
 
     val wtBody by style {
