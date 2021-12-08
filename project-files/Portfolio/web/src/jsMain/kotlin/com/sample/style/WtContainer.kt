@@ -11,7 +11,7 @@ object WtContainer : StyleSheet(AppStylesheet) {
         property("padding-right", 22.px)
         property("max-width", 750.px)
 
-        media(maxWidth(750.px)) {
+        media(mediaMaxWidth(750.px)) {
             self style {
                 property("max-width", 100.percent)
                 property("padding-left", 48.px)
@@ -29,7 +29,7 @@ object WtContainer : StyleSheet(AppStylesheet) {
         property("max-width", 750.px)
         property("width", 750.px)
 
-        media(maxWidth(750.px)) {
+        media(mediaMaxWidth(750.px)) {
             self style {
                 property("max-width", 100.percent)
                 property("padding-left", 12.px)

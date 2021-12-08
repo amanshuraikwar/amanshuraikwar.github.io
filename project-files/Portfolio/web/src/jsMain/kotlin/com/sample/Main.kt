@@ -1,34 +1,31 @@
 package com.sample
 
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
-import androidx.compose.runtime.LaunchedEffect
 import com.sample.components.Layout
 import com.sample.style.AppStylesheet
-import com.sample.style.ColorPalette
 import io.github.amanshuraikwar.portfolio.PortfolioRepository
+import io.github.amanshuraikwar.portfolio.markdown.MdNode
 import io.github.amanshuraikwar.portfolio.model.PortfolioData
 import io.github.amanshuraikwar.portfolio.model.ThemeData
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
-import org.jetbrains.compose.web.css.Color
 import org.jetbrains.compose.web.css.Style
 import org.jetbrains.compose.web.renderComposable
 
 sealed class NavigationDestination {
     object Fetching : NavigationDestination()
-    data class Home(val portfolioData: PortfolioData) : NavigationDestination()
+
+    data class Home(
+        val portfolioData: PortfolioData,
+        val blogData: List<MdNode>,
+    ) : NavigationDestination()
+
     object NextBus : NavigationDestination()
 }
-
-val nextBusColorPalette = ColorPalette(
-    colorBackground = Color("#212121"),
-    colorOnBackground = Color("#eef0f2"),
-    colorPrimary = Color("#64B5F6"),
-    colorOnPrimary = Color("#212121"),
-)
 
 fun main() {
     val portfolioRepository = PortfolioRepository()
@@ -39,7 +36,10 @@ fun main() {
     var themeData: ThemeData by mutableStateOf(portfolioRepository.getThemeData().value)
 
     coroutineScope.launch {
-        navigationDestination = NavigationDestination.Home(portfolioRepository.getPortfolioData())
+        navigationDestination = NavigationDestination.Home(
+            portfolioRepository.getPortfolioData(),
+            portfolioRepository.getBlogData()
+        )
     }
 
     coroutineScope.launch {
@@ -74,6 +74,7 @@ fun main() {
                 is NavigationDestination.Home -> {
                     Home(
                         (navigationDestination as NavigationDestination.Home).portfolioData,
+                        (navigationDestination as NavigationDestination.Home).blogData,
                         onNextBusClick = {
                             navigationDestination = NavigationDestination.NextBus
                         },
@@ -81,7 +82,7 @@ fun main() {
                         onThemeBtnClick = {
                             portfolioRepository.setDarkThemeEnabled(it)
                             isDarkTheme = it
-                        }
+                        },
                     )
                 }
                 NavigationDestination.NextBus -> {

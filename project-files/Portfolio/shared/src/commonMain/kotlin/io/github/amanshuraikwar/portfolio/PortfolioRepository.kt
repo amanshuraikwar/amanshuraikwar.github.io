@@ -1,11 +1,24 @@
 package io.github.amanshuraikwar.portfolio
 
 import com.russhwolf.settings.Settings
-import io.github.amanshuraikwar.portfolio.model.*
+import io.github.amanshuraikwar.portfolio.markdown.MdNode
+import io.github.amanshuraikwar.portfolio.model.AppData
+import io.github.amanshuraikwar.portfolio.model.AppLink
+import io.github.amanshuraikwar.portfolio.model.ExperienceData
+import io.github.amanshuraikwar.portfolio.model.HomePageData
+import io.github.amanshuraikwar.portfolio.model.LinkData
+import io.github.amanshuraikwar.portfolio.model.PortfolioData
+import io.github.amanshuraikwar.portfolio.model.ThemeColorsData
+import io.github.amanshuraikwar.portfolio.model.ThemeData
 import io.github.amanshuraikwar.portfolio.network.PortfolioApi
-import kotlinx.coroutines.*
+import kotlinx.coroutines.CoroutineExceptionHandler
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.plus
+import kotlinx.coroutines.withContext
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
@@ -145,6 +158,72 @@ class PortfolioRepository {
             }
         }
         return themeData
+    }
+
+    suspend fun getBlogData(): List<MdNode> {
+        return MdDataStore().getData()
+        /*
+        return portfolioApi
+            .getBlog()
+            .decodeToString(
+                throwOnInvalidSequence = true
+            )
+            .split("\n")
+            .also {
+                print(it)
+            }
+            .map { line ->
+                when {
+                    line.startsWith("!Btn[") -> {
+                        val (label, url) = line
+                            .drop(4)
+                            .trim()
+                            .split("]", "(", ")")
+                            .take(2)
+
+                        MdNode.Btn(
+                            text = label.trim(),
+                            url = url.trim(),
+                        )
+                    }
+                    line.startsWith("![") -> {
+                        val (label, url) = line
+                            .drop(2)
+                            .trim()
+                            .split("]", "(", ")")
+                            .take(2)
+
+                        MdNode.Img(
+                            label = label.trim(),
+                            url = url.trim(),
+                        )
+                    }
+                    line.startsWith("###") -> {
+                        MdNode.H3(
+                            text = line.drop(3).trim()
+                        )
+                    }
+                    line.startsWith("#Date") -> {
+                        MdNode.Date(
+                            text = line.drop(5).trim()
+                        )
+                    }
+                    line.startsWith("#") -> {
+                        MdNode.H1(
+                            text = line.drop(1).trim()
+                        )
+                    }
+                    line.trim().isNotBlank() -> {
+                        MdNode.P(
+                            text = line.trim()
+                        )
+                    }
+                    else -> {
+                        MdNode.Spacer
+                    }
+                }
+            }
+         */
     }
 
     companion object {

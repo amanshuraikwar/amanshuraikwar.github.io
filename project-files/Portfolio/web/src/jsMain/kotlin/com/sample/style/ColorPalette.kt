@@ -3,13 +3,6 @@ package com.sample.style
 import org.jetbrains.compose.web.css.CSSColorValue
 import org.jetbrains.compose.web.css.Color
 
-data class ColorPalette(
-    val colorBackground: Color,
-    val colorOnBackground: Color,
-    val colorPrimary: Color,
-    val colorOnPrimary: Color,
-)
-
 fun CSSColorValue.copy(alpha: Float): CSSColorValue {
     val colorStr = this.toString()
     console.log("yoyo", colorStr, colorStr.matches(Regex("#[0-9A-Fa-f]{6}")))

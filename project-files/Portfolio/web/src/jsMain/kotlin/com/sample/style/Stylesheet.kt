@@ -2,21 +2,20 @@ package com.sample.style
 
 import io.github.amanshuraikwar.portfolio.model.ThemeColorsData
 import org.jetbrains.compose.web.css.*
-import org.jetbrains.compose.web.css.selectors.CSSSelector
 
-object AppCSSVariables : CSSVariables {
-    val colorBackground by variable<Color>()
-    val colorOnBackground by variable<Color>()
-    val colorOnBackgroundSecondary by variable<Color>()
-    val colorOnBackgroundDisabled by variable<Color>()
-    val colorPrimary by variable<Color>()
-    val colorOnPrimary by variable<Color>()
+object AppCSSVariables {
+    val colorBackground by variable<CSSColorValue>()
+    val colorOnBackground by variable<CSSColorValue>()
+    val colorOnBackgroundSecondary by variable<CSSColorValue>()
+    val colorOnBackgroundDisabled by variable<CSSColorValue>()
+    val colorPrimary by variable<CSSColorValue>()
+    val colorOnPrimary by variable<CSSColorValue>()
 
-    val colorChipBg by variable<Color>()
-    val colorHr by variable<Color>()
+    val colorChipBg by variable<CSSColorValue>()
+    val colorHr by variable<CSSColorValue>()
 
-    val outlineBtnBgHover by variable<Color>()
-    val outlineBtnBgActive by variable<Color>()
+    val outlineBtnBgHover by variable<CSSColorValue>()
+    val outlineBtnBgActive by variable<CSSColorValue>()
 
     val wtOffsetTopUnit by variable<CSSUnitValue>()
     val wtHorizontalLayoutGutter by variable<CSSUnitValue>()
@@ -51,7 +50,7 @@ fun String.dropAlphaHex(): String {
 object AppStylesheet : StyleSheet() {
 
     fun updateColors(themeColorsData: ThemeColorsData) {
-        CSSSelector.Universal style {
+        universal style {
             console.log(themeColorsData.toString())
             AppCSSVariables.colorBackground(Color(themeColorsData.surfaceColor.dropAlphaHex()))
             AppCSSVariables.colorOnBackground(Color(themeColorsData.onSurfaceColor.dropAlphaHex()))
@@ -67,7 +66,7 @@ object AppStylesheet : StyleSheet() {
     }
 
     init {
-        CSSSelector.Universal style {
+        universal style {
             AppCSSVariables.wtOffsetTopUnit(24.px)
 
             margin(0.px)
@@ -77,17 +76,21 @@ object AppStylesheet : StyleSheet() {
             backgroundColor(AppCSSVariables.colorBackground.value())
         }
 
-        media(maxWidth(649.px)) {
-            CSSSelector.Universal style {
+        "a" style {
+            textDecoration("none")
+            color(AppCSSVariables.colorPrimary.value())
+        }
+
+        media(mediaMaxWidth(649.px)) {
+            universal style {
                 AppCSSVariables.wtOffsetTopUnit(16.px)
                 AppCSSVariables.wtFlowUnit(16.px)
             }
         }
 
-        CSSSelector.Attribute(
+        attrContains(
             name = "class",
             value = "wtCol",
-            operator = CSSSelector.Attribute.Operator.Contains
         ) style {
             property("margin-right", AppCSSVariables.wtHorizontalLayoutGutter.value())
             property("margin-left", AppCSSVariables.wtHorizontalLayoutGutter.value())

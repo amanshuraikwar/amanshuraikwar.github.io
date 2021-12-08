@@ -7,7 +7,7 @@ object WtContent : StyleSheet(AppStylesheet) {
         marginLeft(6.px)
         marginTop(16.px)
 
-        media(maxWidth(750.px)) {
+        media(mediaMaxWidth(750.px)) {
             self style {
                 marginLeft(4.px)
                 marginTop(8.px)
@@ -25,7 +25,7 @@ object WtContent : StyleSheet(AppStylesheet) {
         }
         borderRadius(2.px)
 
-        media(maxWidth(750.px)) {
+        media(mediaMaxWidth(750.px)) {
             self style {
                 marginTop(6.px)
                 width(48.px)
@@ -42,7 +42,7 @@ object WtContent : StyleSheet(AppStylesheet) {
     val projectRightPadding by style {
         paddingRight(12.px)
 
-        media(maxWidth(750.px)) {
+        media(mediaMaxWidth(750.px)) {
             self style {
                 padding(0.px)
             }
@@ -52,7 +52,7 @@ object WtContent : StyleSheet(AppStylesheet) {
     val projectLeftPadding by style {
         paddingLeft(12.px)
 
-        media(maxWidth(750.px)) {
+        media(mediaMaxWidth(750.px)) {
             self style {
                 padding(0.px)
             }
@@ -62,7 +62,7 @@ object WtContent : StyleSheet(AppStylesheet) {
     val projectBottomPadding by style {
         paddingBottom(36.px)
 
-        media(maxWidth(750.px)) {
+        media(mediaMaxWidth(750.px)) {
             self style {
                 paddingBottom(36.px)
             }
@@ -77,7 +77,7 @@ object WtContent : StyleSheet(AppStylesheet) {
         }
         borderRadius(2.px)
 
-        media(maxWidth(750.px)) {
+        media(mediaMaxWidth(750.px)) {
             self style {
                 border {
                     width = 1.px

@@ -12,6 +12,6 @@ object WtSections : StyleSheet(AppStylesheet) {
             propertyName = "padding-bottom",
             value = "calc(4*${AppCSSVariables.wtOffsetTopUnit.value(24.px)})"
         )
-        backgroundColor("#fff")
+        backgroundColor(Color("#fff"))
     }
 }
