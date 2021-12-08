@@ -5,7 +5,6 @@ import io.github.amanshuraikwar.portfolio.markdown.MdNode
 import io.github.amanshuraikwar.portfolio.model.AppData
 import io.github.amanshuraikwar.portfolio.model.AppLink
 import io.github.amanshuraikwar.portfolio.model.ExperienceData
-import io.github.amanshuraikwar.portfolio.model.HomePageData
 import io.github.amanshuraikwar.portfolio.model.LinkData
 import io.github.amanshuraikwar.portfolio.model.PortfolioData
 import io.github.amanshuraikwar.portfolio.model.ThemeColorsData
@@ -61,28 +60,6 @@ class PortfolioRepository {
     fun setDarkThemeEnabled(enabled: Boolean) {
         isDarkThemeEnabled = enabled
         settings.putBoolean(PREFS_DARK_THEME_ENABLED, enabled)
-    }
-
-    fun getHomePageDataList(): List<HomePageData> {
-        return listOf(
-            HomePageData.Heading(
-                name = "Amanshu Raikwar",
-                intro = "I'm a Software Engineer, building stuff for the lil green droid."
-            ),
-
-            HomePageData.MyLinks(
-                heading = "You can find me at...",
-                linkDataList = links
-            ),
-
-            HomePageData.LastUpdated(
-                message = "Last updated on 20 July 2021 :)"
-            ),
-
-            HomePageData.MadeWith(
-                message = "Made with Kotlin Multiplatform Mobile & Jetpack Compose"
-            )
-        )
     }
 
     suspend fun getPortfolioData(): PortfolioData {
@@ -160,70 +137,12 @@ class PortfolioRepository {
         return themeData
     }
 
-    suspend fun getBlogData(): List<MdNode> {
+    fun isMdEnabled(): Boolean {
+        return MdDataStore().mdEnabled()
+    }
+
+    fun getMdData(): List<MdNode> {
         return MdDataStore().getData()
-        /*
-        return portfolioApi
-            .getBlog()
-            .decodeToString(
-                throwOnInvalidSequence = true
-            )
-            .split("\n")
-            .also {
-                print(it)
-            }
-            .map { line ->
-                when {
-                    line.startsWith("!Btn[") -> {
-                        val (label, url) = line
-                            .drop(4)
-                            .trim()
-                            .split("]", "(", ")")
-                            .take(2)
-
-                        MdNode.Btn(
-                            text = label.trim(),
-                            url = url.trim(),
-                        )
-                    }
-                    line.startsWith("![") -> {
-                        val (label, url) = line
-                            .drop(2)
-                            .trim()
-                            .split("]", "(", ")")
-                            .take(2)
-
-                        MdNode.Img(
-                            label = label.trim(),
-                            url = url.trim(),
-                        )
-                    }
-                    line.startsWith("###") -> {
-                        MdNode.H3(
-                            text = line.drop(3).trim()
-                        )
-                    }
-                    line.startsWith("#Date") -> {
-                        MdNode.Date(
-                            text = line.drop(5).trim()
-                        )
-                    }
-                    line.startsWith("#") -> {
-                        MdNode.H1(
-                            text = line.drop(1).trim()
-                        )
-                    }
-                    line.trim().isNotBlank() -> {
-                        MdNode.P(
-                            text = line.trim()
-                        )
-                    }
-                    else -> {
-                        MdNode.Spacer
-                    }
-                }
-            }
-         */
     }
 
     companion object {
@@ -247,41 +166,6 @@ class PortfolioRepository {
                 errorColor = "#FFE57373",
                 onErrorColor = "#FF212121",
             )
-        )
-
-        private val links = listOf<LinkData>(
-//            LinkData(
-//                title = "RESUME",
-//                url = "https://amanshuraikwar.github.io/assets/resume/Resume-7-Aug-2019.pdf",
-//            ),
-//            LinkData(
-//                title = "GITHUB",
-//                url = "https://github.com/amanshuraikwar",
-//            ),
-//            LinkData(
-//                title = "LINKEDIN",
-//                url = "https://www.linkedin.com/in/amanshu-raikwar-36b534103/",
-//            ),
-//            LinkData(
-//                title = "MEDIUM",
-//                url = "https://medium.com/@amanshuraikwar.in/",
-//            ),
-//            LinkData(
-//                title = "PLAY STORE",
-//                url = "https://play.google.com/store/apps/developer?id=Amanshu%20Raikwar&hl=en",
-//            ),
-//            LinkData(
-//                title = "INSTAGRAM",
-//                url = "https://instagram.com/amanshuraikwar",
-//            ),
-//            LinkData(
-//                title = "UNSPLASH",
-//                url = "https://unsplash.com/@amanshuraikwar",
-//            ),
-//            LinkData(
-//                title = "TWITTER",
-//                url = "https://twitter.com/amanshuraikwar_",
-//            ),
         )
     }
 }

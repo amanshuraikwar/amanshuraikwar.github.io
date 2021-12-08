@@ -2,14 +2,10 @@ package com.sample
 
 import androidx.compose.runtime.Composable
 import com.sample.components.ThemeSwitch
-import com.sample.content.Experience
-import com.sample.content.Hero
 import com.sample.content.Links
-import com.sample.content.Projects
 import com.sample.markdown.MdLayout
 import io.github.amanshuraikwar.portfolio.markdown.MdNode
 import com.sample.style.AppCSSVariables
-import com.sample.style.WtCols
 import com.sample.style.WtContainer
 import com.sample.style.WtContent
 import com.sample.style.WtOffsets
@@ -27,8 +23,9 @@ import org.jetbrains.compose.web.dom.Hr
 import org.jetbrains.compose.web.dom.Text
 
 @Composable
-fun Home(
+fun Md(
     porfolioData: PortfolioData,
+    mdData: List<MdNode>,
     isDarkTheme: Boolean,
     onThemeBtnClick: (isDarkTheme: Boolean) -> Unit,
 ) {
@@ -46,53 +43,11 @@ fun Home(
                 )
             }
         ) {
-
-            if (isDarkTheme) {
-                Hero(
-                    attrs = {
-                        classes(
-                            WtCols.wtCol12
-                        )
-                    },
-                    name = porfolioData.name,
-                    jobTitle = porfolioData.intro,
-                    true,
-                    onThemeBtnClick
-                )
-            } else {
-                Hero(
-                    attrs = {
-                        classes(
-                            WtCols.wtCol12
-                        )
-                    },
-                    name = porfolioData.name,
-                    jobTitle = porfolioData.intro,
-                    false,
-                    onThemeBtnClick
-                )
-            }
+            MdLayout(
+                nodes = mdData,
+            )
         }
 
-        Projects(
-            isDarkTheme = isDarkTheme,
-            apps = porfolioData.apps
-        )
-
-        Hr(
-            attrs = {
-                classes(
-                    WtContent.sectionDividerHr,
-                    WtOffsets.wtTopOffset96,
-                    WtOffsets.wtTopOffsetSm48,
-                )
-            }
-        )
-
-        Experience(
-            experience = porfolioData.experience,
-            isDarkTheme = isDarkTheme,
-        )
         Hr(
             attrs = {
                 classes(
