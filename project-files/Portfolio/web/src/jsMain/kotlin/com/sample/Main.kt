@@ -21,10 +21,12 @@ sealed class NavigationDestination {
 
     data class Home(
         val portfolioData: PortfolioData,
-        val blogData: List<MdNode>,
     ) : NavigationDestination()
 
-    object NextBus : NavigationDestination()
+    data class Md(
+        val portfolioData: PortfolioData,
+        val mdData: List<MdNode>,
+    ) : NavigationDestination()
 }
 
 fun main() {
@@ -36,10 +38,16 @@ fun main() {
     var themeData: ThemeData by mutableStateOf(portfolioRepository.getThemeData().value)
 
     coroutineScope.launch {
-        navigationDestination = NavigationDestination.Home(
-            portfolioRepository.getPortfolioData(),
-            portfolioRepository.getBlogData()
-        )
+        navigationDestination = if (portfolioRepository.isMdEnabled()) {
+            NavigationDestination.Md(
+                portfolioRepository.getPortfolioData(),
+                portfolioRepository.getMdData(),
+            )
+        } else {
+            NavigationDestination.Home(
+                portfolioRepository.getPortfolioData(),
+            )
+        }
     }
 
     coroutineScope.launch {
@@ -63,8 +71,17 @@ fun main() {
                         }
                     )
                 }
-                NavigationDestination.NextBus -> {
-                    //AppStylesheet.updateColors(colorPalette = nextBusColorPalette)
+                NavigationDestination.Fetching -> {
+                    // do nothing
+                }
+                is NavigationDestination.Md -> {
+                    AppStylesheet.updateColors(
+                        if (isDarkTheme) {
+                            themeData.darkTheme
+                        } else {
+                            themeData.lightTheme
+                        }
+                    )
                 }
             }
         }
@@ -74,10 +91,6 @@ fun main() {
                 is NavigationDestination.Home -> {
                     Home(
                         (navigationDestination as NavigationDestination.Home).portfolioData,
-                        (navigationDestination as NavigationDestination.Home).blogData,
-                        onNextBusClick = {
-                            navigationDestination = NavigationDestination.NextBus
-                        },
                         isDarkTheme = isDarkTheme,
                         onThemeBtnClick = {
                             portfolioRepository.setDarkThemeEnabled(it)
@@ -85,10 +98,20 @@ fun main() {
                         },
                     )
                 }
-                NavigationDestination.NextBus -> {
-                    NextBus {
-                        //navigationDestination = NavigationDestination.Home
-                    }
+                NavigationDestination.Fetching -> {
+                    // do nothing
+                }
+                is NavigationDestination.Md -> {
+                    Md(
+                        porfolioData =
+                        (navigationDestination as NavigationDestination.Md).portfolioData,
+                        mdData = (navigationDestination as NavigationDestination.Md).mdData,
+                        isDarkTheme = isDarkTheme,
+                        onThemeBtnClick = {
+                            portfolioRepository.setDarkThemeEnabled(it)
+                            isDarkTheme = it
+                        },
+                    )
                 }
             }
         }

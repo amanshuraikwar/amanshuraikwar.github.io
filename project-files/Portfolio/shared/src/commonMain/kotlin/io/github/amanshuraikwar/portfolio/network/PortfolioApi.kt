@@ -26,9 +26,6 @@ class PortfolioApi(
     suspend fun getThemeData() =
         client.get<ThemeDataResponse>("$baseUrl/theme.json")
 
-    suspend fun getBlog() =
-        client.get<ByteArray>("$baseUrl/blog.md")
-
     companion object {
         fun createHttpClient(
             json: Json = createJson(),
