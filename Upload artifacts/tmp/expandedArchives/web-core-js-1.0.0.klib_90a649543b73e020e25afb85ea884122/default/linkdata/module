@@ -1,0 +1,2 @@
+
+$<org.jetbrains.compose.web:web-core>:androidx.compose.web.attributes:androidx.compose.web.events:org.jetbrains.compose.web:$org.jetbrains.compose.web.attributes:-org.jetbrains.compose.web.attributes.builders:org.jetbrains.compose.web.css:&org.jetbrains.compose.web.css.keywords:'org.jetbrains.compose.web.css.selectors:org.jetbrains.compose.web.dom: org.jetbrains.compose.web.events
