@@ -57,7 +57,12 @@ jobs:
 #         run: |
 #           cd project-files/Portfolio
 #           kotlinc -script generateWebComposeMdLayouts.kts
-      
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: Upload artifacts
+          path: docs
+          
       - uses: actions/download-artifact@v2
         with:
           path: docs
