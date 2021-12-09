@@ -139,7 +139,7 @@ class PortfolioRepository {
 
     suspend fun getPageData(): PageData {
         return when (GeneratedDataStore().getPageType()) {
-            PageType.HOME -> PageData.Home(getPortfolioData())
+            PageType.HOME -> PageData.Home(getPortfolioData(), BlogListDataStore().getBlogListData())
             PageType.MD -> PageData.Md(getPortfolioData(), GeneratedDataStore().getData())
             PageType.PROJECTS -> PageData.Projects(getPortfolioData())
             PageType.BACKGROUND -> PageData.Background(getPortfolioData())

@@ -1,5 +1,5 @@
 # Introducing Next Bus SG
-#Date DECEMBER 8, 2021
+#Date December 8, 2021
 
 After working on it for more than a year, I present to you Next Bus SG. Next Bus SG is a minimal & light app to see bus arrival timings in Singapore. Scroll down to the bottom for download links.
 

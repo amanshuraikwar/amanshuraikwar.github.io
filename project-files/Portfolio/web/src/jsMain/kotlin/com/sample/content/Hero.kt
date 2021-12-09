@@ -164,7 +164,7 @@ fun Hero(
                             onClick = {
                                 displayLinks = !displayLinks
                             },
-                            buttonStyle = ButtonStyle.SOLID,
+                            buttonStyle = ButtonStyle.OUTLINE,
                             buttonSize = ButtonSize.SMALL
                         )
                     }

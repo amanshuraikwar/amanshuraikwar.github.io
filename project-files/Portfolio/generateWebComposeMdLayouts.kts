@@ -1,8 +1,13 @@
 import java.io.File
 import java.util.concurrent.TimeUnit
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
 
-generateEmptyDataStoreFile("PageType.HOME")
-File(".") exec "./exportForGithubPages"
+println("Deleting build...")
+File(".") exec "rm -rf build"
+
+println("Creating build...")
+File(".") exec "mkdir build"
 
 generateEmptyDataStoreFile("PageType.PROJECTS")
 buildAndCopyDirectoryContents("projects")
@@ -13,29 +18,114 @@ buildAndCopyDirectoryContents("background")
 generateEmptyDataStoreFile("PageType.ABOUT_ME")
 buildAndCopyDirectoryContents("me")
 
-val file = File("markdown")
+val blogListEntryList = mutableListOf<BlogListEntry>()
+
+println("Parsing markdown files...")
+
+val mdFilesDir = File("markdown")
 try {
-    file
-    .listFiles { file -> 
+    val mdFileList = mdFilesDir.listFiles { file -> 
         !file.isDirectory() 
     }
-    .forEach { file ->
-        println("generating for ${file.name}")
-        generateHtml(file)
+
+    println("${mdFileList.size} markdown files found...")
+
+    mdFileList
+        .forEach { file ->
+            println("Parsing ${file.name}...")
+            blogListEntryList.add(generateBlogMdSource(file))
+        }
+} catch (e: Exception) {
+    println("Exception while parsing markdown files!")
+    println("${e.message}")
+}
+
+println("Creating blog list file...")
+createBlogListFile(blogListEntryList)
+
+generateEmptyDataStoreFile("PageType.HOME")
+buildAndCopyDirectoryContents("home")
+
+println("Copying contents of build/home/* to build/...")
+File(".") exec "cp -R build/home/ build/"
+
+println("Deleting build/home...")
+File(".") exec "rm -rf build/home"
+
+data class BlogListEntry(
+    val title: String,
+    val date: String,
+    val firstParagraph: String,
+    val link: String
+)
+
+fun createBlogListFile(blogListEntryList: List<BlogListEntry>): File {
+    val outputFile = File("shared/src/commonMain/kotlin/io/github/amanshuraikwar/portfolio/BlogListDataStore.kt")
+    outputFile.delete()
+
+    outputFile.bufferedWriter().use { out -> 
+        out.write("package io.github.amanshuraikwar.portfolio\n")
+        
+        out.write("\n")
+        
+        out.write("import io.github.amanshuraikwar.portfolio.markdown.BlogListDataItem\n")
+        
+        out.write("\n")
+        
+        out.write("class BlogListDataStore {\n")
+
+        out.write("\n")
+
+        out.write("\tfun getBlogListData(): List<BlogListDataItem> {\n")
+
+        out.write("\t\treturn listOf(\n")
+
+        blogListEntryList
+            .sortedByDescending {
+                var formatter = DateTimeFormatter.ofPattern("MMMM d, yyyy")
+                LocalDate.parse(
+                    it.date,
+                    formatter
+                )
+            }
+            .forEach { entry ->
+                println("Creating blog entry for ${entry.link}")
+                out.write(
+                    """
+                    BlogListDataItem(
+                        title = "${entry.title}",
+                        date = "${entry.date}",
+                        firstParagraph = "${entry.firstParagraph}",
+                        link = "${entry.link}",
+                    ),
+                    """.trimIndent()
+                    .split("\n")
+                    .map {
+                        it.prependIndent().prependIndent().prependIndent()
+                    }
+                    .reduce { acc, s -> "$acc\n$s" }
+                )
+
+                out.write("\n")
+            }
+
+        out.write("\t\t)\n")
+        out.write("\t}\n")
+        out.write("}")
     }
-} finally {
-    generateEmptyDataStoreFile("PageType.HOME")
+
+    return outputFile
 }
 
 fun buildAndCopyDirectoryContents(dirName: String) {
     println("Building for $dirName...")
     File(".") exec "./gradlew :web:jsBrowserDistribution"
-    println("Deleting existing directory ../../docs/$dirName...")
-    File(".") exec "rm -rf ../../docs/$dirName"
-    println("Creating directory ../../docs/$dirName...")
-    File(".") exec "mkdir ../../docs/$dirName"
-    println("Copying contents from web/build/distributions/ to ../../docs/$dirName/...")
-    File(".") exec "cp -R web/build/distributions/ ../../docs/$dirName/"
+    println("Deleting existing directory build/$dirName...")
+    File(".") exec "rm -rf build/$dirName"
+    println("Creating directory build/$dirName...")
+    File(".") exec "mkdir build/$dirName"
+    println("Copying contents from web/build/distributions/ to build/$dirName/...")
+    File(".") exec "cp -R web/build/distributions/ build/$dirName/"
 }
 
 fun generateEmptyDataStoreFile(pageType: String) {
@@ -69,7 +159,11 @@ fun generateEmptyDataStoreFile(pageType: String) {
     }
 }
 
-fun generateHtml(file: File) {
+fun generateBlogMdSource(file: File): BlogListEntry {
+    var title = ""
+    var date = ""
+    var firstParagraph = ""
+
     val outputFile = File("shared/src/commonMain/kotlin/io/github/amanshuraikwar/portfolio/GeneratedDataStore.kt")
     outputFile.delete()
 
@@ -179,6 +273,10 @@ fun generateHtml(file: File) {
                         .reduce { acc, s -> "$acc\n$s" }
                     )
                     out.write("\n")
+
+                    if (date == "") {
+                        date = line.drop(5).trim()
+                    }
                 }
                 line.startsWith("#") -> {
                     out.write(
@@ -194,6 +292,10 @@ fun generateHtml(file: File) {
                         .reduce { acc, s -> "$acc\n$s" }
                     )
                     out.write("\n")
+
+                    if (title == "") {
+                        title = line.drop(1).trim()
+                    }
                 }
                 line.trim().isNotBlank() -> {
                     out.write(
@@ -209,6 +311,10 @@ fun generateHtml(file: File) {
                         .reduce { acc, s -> "$acc\n$s" }
                     )
                     out.write("\n")
+
+                    if (firstParagraph == "") {
+                        firstParagraph = line.trim()
+                    }
                 }
                 else -> {
                     out.write(
@@ -232,6 +338,13 @@ fun generateHtml(file: File) {
 
     val dirName = file.name.dropLast(3)
     buildAndCopyDirectoryContents(dirName)
+
+    return BlogListEntry(
+        title = title,
+        date = date,
+        firstParagraph = firstParagraph,
+        link = "https://amanshuraikwar.github.io/$dirName"
+    )
 }
 
 /**
