@@ -1,8 +1,0 @@
-builtins_platform=JS
-unique_name=org.jetbrains.compose.web\:web-core
-compiler_version=1.5.31
-depends=org.jetbrains.compose.web\:internal-web-core-runtime androidx.compose.runtime\:runtime org.jetbrains.kotlinx\:kotlinx-coroutines-core org.jetbrains.kotlinx\:atomicfu kotlin
-jsOutputName=web-web-core
-abi_version=1.5.0
-metadata_version=1.4.1
-ir_version=1.0.0
