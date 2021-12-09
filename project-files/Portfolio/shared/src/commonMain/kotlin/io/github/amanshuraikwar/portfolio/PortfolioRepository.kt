@@ -137,12 +137,14 @@ class PortfolioRepository {
         return themeData
     }
 
-    fun isMdEnabled(): Boolean {
-        return MdDataStore().mdEnabled()
-    }
-
-    fun getMdData(): List<MdNode> {
-        return MdDataStore().getData()
+    suspend fun getPageData(): PageData {
+        return when (GeneratedDataStore().getPageType()) {
+            PageType.HOME -> PageData.Home(getPortfolioData())
+            PageType.MD -> PageData.Md(getPortfolioData(), GeneratedDataStore().getData())
+            PageType.PROJECTS -> PageData.Projects(getPortfolioData())
+            PageType.BACKGROUND -> PageData.Background(getPortfolioData())
+            PageType.ABOUT_ME -> PageData.AboutMe(getPortfolioData())
+        }
     }
 
     companion object {

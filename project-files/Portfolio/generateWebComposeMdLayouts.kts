@@ -1,8 +1,19 @@
 import java.io.File
 import java.util.concurrent.TimeUnit
 
-val file = File("markdown")
+generateEmptyDataStoreFile("PageType.HOME")
+File(".") exec "./exportForGithubPages"
 
+generateEmptyDataStoreFile("PageType.PROJECTS")
+buildAndCopyDirectoryContents("projects")
+
+generateEmptyDataStoreFile("PageType.BACKGROUND")
+buildAndCopyDirectoryContents("background")
+
+generateEmptyDataStoreFile("PageType.ABOUT_ME")
+buildAndCopyDirectoryContents("me")
+
+val file = File("markdown")
 try {
     file
     .listFiles { file -> 
@@ -13,11 +24,22 @@ try {
         generateHtml(file)
     }
 } finally {
-    generateEmptyMdDataStoreFile()
+    generateEmptyDataStoreFile("PageType.HOME")
 }
 
-fun generateEmptyMdDataStoreFile() {
-    val outputFile = File("shared/src/commonMain/kotlin/io/github/amanshuraikwar/portfolio/MdDataStore.kt")
+fun buildAndCopyDirectoryContents(dirName: String) {
+    println("Building for $dirName...")
+    File(".") exec "./gradlew :web:jsBrowserDistribution"
+    println("Deleting existing directory ../../docs/$dirName...")
+    File(".") exec "rm -rf ../../docs/$dirName"
+    println("Creating directory ../../docs/$dirName...")
+    File(".") exec "mkdir ../../docs/$dirName"
+    println("Copying contents from web/build/distributions/ to ../../docs/$dirName/...")
+    File(".") exec "cp -R web/build/distributions/ ../../docs/$dirName/"
+}
+
+fun generateEmptyDataStoreFile(pageType: String) {
+    val outputFile = File("shared/src/commonMain/kotlin/io/github/amanshuraikwar/portfolio/GeneratedDataStore.kt")
     outputFile.delete()
     
     outputFile.bufferedWriter().use { out -> 
@@ -29,12 +51,12 @@ fun generateEmptyMdDataStoreFile() {
         
         out.write("\n")
         
-        out.write("class MdDataStore {\n")
+        out.write("class GeneratedDataStore {\n")
         
         out.write("\n")
         
-        out.write("\tfun mdEnabled(): Boolean {\n")
-        out.write("\t\treturn false\n")
+        out.write("\tfun getPageType(): PageType {\n")
+        out.write("\t\treturn $pageType\n")
         out.write("\t}\n")
 
         out.write("\n")
@@ -48,7 +70,7 @@ fun generateEmptyMdDataStoreFile() {
 }
 
 fun generateHtml(file: File) {
-    val outputFile = File("shared/src/commonMain/kotlin/io/github/amanshuraikwar/portfolio/MdDataStore.kt")
+    val outputFile = File("shared/src/commonMain/kotlin/io/github/amanshuraikwar/portfolio/GeneratedDataStore.kt")
     outputFile.delete()
 
     outputFile.bufferedWriter().use { out -> 
@@ -60,12 +82,12 @@ fun generateHtml(file: File) {
         
         out.write("\n")
         
-        out.write("class MdDataStore {\n")
+        out.write("class GeneratedDataStore {\n")
         
         out.write("\n")
 
-        out.write("\tfun mdEnabled(): Boolean {\n")
-        out.write("\t\treturn true\n")
+        out.write("\tfun getPageType(): PageType {\n")
+        out.write("\t\treturn PageType.MD\n")
         out.write("\t}\n")
 
         out.write("\n")
@@ -209,14 +231,7 @@ fun generateHtml(file: File) {
     }
 
     val dirName = file.name.dropLast(3)
-    println("Building...")
-    File(".") exec "./gradlew :web:jsBrowserDistribution"
-    println("Deleting existing directory ../../docs/$dirName...")
-    File(".") exec "rm -rf ../../docs/$dirName"
-    println("Creating directory ../../docs/$dirName...")
-    File(".") exec "mkdir ../../docs/$dirName"
-    println("Copying contents from web/build/distributions/ to ../../docs/$dirName/...")
-    File(".") exec "cp -R web/build/distributions/ ../../docs/$dirName/"
+    buildAndCopyDirectoryContents(dirName)
 }
 
 /**
@@ -247,7 +262,7 @@ fun File.execute(vararg arguments: String): String {
     val process = ProcessBuilder(*arguments)
         .directory(this)
         .start()
-        .also { it.waitFor(20, TimeUnit.SECONDS) }
+        .also { it.waitFor() }
 
     if (process.exitValue() != 0) {
         throw Exception(process.errorStream.bufferedReader().readText())

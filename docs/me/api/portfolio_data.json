@@ -1,0 +1,179 @@
+{
+  "name": "Amanshu Raikwar",
+  "intro": "Software Engineer / Amateur Photographer",
+  "links": [
+    {
+      "id": "resume",
+      "title": "Resume",
+      "url": "https://amanshuraikwar.github.io/assets/resume/Resume-7-Aug-2019.pdf"
+    },
+    {
+      "id": "github",
+      "title": "Github",
+      "url": "https://github.com/amanshuraikwar"
+    },
+    {
+      "id": "linkedin",
+      "title": "Linkedin",
+      "url": "https://www.linkedin.com/in/amanshu-raikwar-36b534103/"
+    },
+    {
+      "id": "medium",
+      "title": "Medium",
+      "url": "https://medium.com/@amanshuraikwar.in/"
+    },
+    {
+      "id": "playstore",
+      "title": "Play Store",
+      "url": "https://play.google.com/store/apps/developer?id=Amanshu%20Raikwar&hl=en"
+    },
+    {
+      "id": "instagram",
+      "title": "Instagram",
+      "url": "https://instagram.com/amanshuraikwar"
+    },
+    {
+      "id": "unsplash",
+      "title": "Unsplash",
+      "url": "https://unsplash.com/@amanshuraikwar"
+    },
+    {
+      "id": "twitter",
+      "title": "Twitter",
+      "url": "https://twitter.com/amanshuraikwar_"
+    }
+  ],
+  "apps": [
+    {
+      "id": "portfolio",
+      "title": "My Portfolio",
+      "description": "This beautiful webpage you are on right now. Built using KMM.",
+      "appLinks": [
+        {
+          "type": "github",
+          "url": "https://github.com/amanshuraikwar/amanshuraikwar.github.io"
+        }
+      ],
+      "maintained": true,
+      "art": "https://amanshuraikwar.github.io/assets/portfolio_art_3_2.png"
+    },
+    {
+      "id": "nextbus",
+      "title": "Next Bus SG",
+      "description": "A beautiful bus timing app for Singapore built with Jetpack Compose",
+      "appLinks": [
+        {
+          "type": "playstore",
+          "url": "https://play.google.com/store/apps/details?id=io.github.amanshuraikwar.nxtbuz.release"
+        }
+      ],
+      "maintained": true,
+      "art": "https://amanshuraikwar.github.io/assets/nextbus_art_3_2.png"
+    },
+    {
+      "id": "splash",
+      "title": "Splash",
+      "description": "A minimal android client for Unsplash",
+      "appLinks": [
+        {
+          "type": "github",
+          "url": "https://github.com/amanshuraikwar/splash"
+        },
+        {
+          "type": "download",
+          "url": "https://amanshuraikwar.github.io/assets/splash/splash-0.0.5.apk"
+        }
+      ],
+      "maintained": false,
+      "art": "https://amanshuraikwar.github.io/assets/generic_art_3_2.png"
+    },
+    {
+      "id": "howmuch",
+      "title": "How Much",
+      "description": "A expense tracker which uses google sheets as a DB",
+      "appLinks": [
+        {
+          "type": "github",
+          "url": "https://github.com/amanshuraikwar/howmuch"
+        }
+      ],
+      "maintained": false,
+      "art": "https://amanshuraikwar.github.io/assets/howmuch_art_3_2.png"
+    },
+    {
+      "id": "materialstepper",
+      "title": "Material Stepper",
+      "description": "Android library which provides a View as an implementation for Material Stepper.",
+      "appLinks": [
+        {
+          "type": "github",
+          "url": "https://github.com/amanshuraikwar/MaterialStepper"
+        }
+      ],
+      "maintained": false,
+      "art": "https://amanshuraikwar.github.io/assets/generic_art_3_2.png"
+    },
+    {
+      "id": "cassette",
+      "title": "Cassette Music Player",
+      "description": "A Material Designed Music Player for Android.",
+      "appLinks": [
+        {
+          "type": "github",
+          "url": "https://github.com/amanshuraikwar/musicplayer"
+        }
+      ],
+      "maintained": false,
+      "art": "https://amanshuraikwar.github.io/assets/generic_art_3_2.png"
+    }
+  ],
+  "experience": [
+    {
+      "title": "Software Engineer at Shopee",
+      "location": "Singapore",
+      "dateRange": "January, 2020 - Present",
+      "content": [
+        "Working on the Shopee Android App :)"
+      ]
+    },
+    {
+      "title": "Software Engineer at Khosla Labs",
+      "location": "Bangalore, India",
+      "dateRange": "July, 2018 - December 2019",
+      "content": [
+        "Worked in a team to develop a physical identity document scanner which classifies if the correct document is being scanned and extracts the person's details (key-value pairs) from the document by running OCR on the document image and later parsing it.",
+        "Lead the development of a challenge based selfie capturer which captures the selfie of a person while ensuring that the person is live by asking the person to perform random challenges like blink eyes, turn face left, turn face right.",
+        "Lead the development of a multi-module, code pluggable, JSON driven workflow framework to render dynamic Android screen flows to meet varying requirements of around 200 B2B clients. Worked with Dagger-2, RxJava, OkHttp, Retrofit, Espresso while using MVP pattern and SOLID principles.",
+        "Handled technical queries and provided on-site technical/integration support for the products I was involved in.",
+        "Worked in a team handling a set of multi-tenant microservices using MySQL. Develop new microservices, enhanced database schemas to accommodate new use cases and built RESTful APIs, and CRON jobs in fairly complex modules like subscription and billing."
+      ]
+    },
+    {
+      "title": "Teaching Assistant at IIT Mandi",
+      "location": "Mandi, Himachal Pradesh, India",
+      "dateRange": "February, 2018 - June 2018",
+      "content": [
+        "I was a teaching assistant in course Software Design Patterns under professor Bansidhar Choudhary.",
+        "My work was to design assignments and projects along with the professor and evaluate the submissions, observe, and suggest improvements in the course content and structure."
+      ]
+    },
+    {
+      "title": "Software Engineering Intern at Khosla Labs",
+      "location": "Bangalore, India",
+      "dateRange": "December, 2016 - February 2017",
+      "content": [
+        "Improved performance, UI, UX and added new features to an Android App."
+      ]
+    },
+    {
+      "title": "Android & Web Intern at Spiderz Lab",
+      "location": "Remote, India",
+      "dateRange": "June, 2015 - August 2015",
+      "content": [
+        "Developed Android Apps using Android Studio, Parse Android API, Google Maps API, Google Location Services API, Google Geocoder API.",
+        "Developed a Website using JavaScript, Parse JS API, Google Maps Embed API."
+      ]
+    }
+  ],
+  "madeWith": "Made with Kotlin Multiplatform, Jetpack Compose & Swift UI"
+}
