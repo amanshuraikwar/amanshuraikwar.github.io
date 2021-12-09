@@ -53,7 +53,9 @@ jobs:
           version: 1.6.0
           
       - name: Build web resources
-        run: kotlinc -script project-files/Portfolio/generateWebComposeMdLayouts.kts
+        run: |
+          cd project-files/Portfolio
+          kotlinc -script generateWebComposeMdLayouts.kts
 #         run: |
 #           npm ci
 #           npm run build
