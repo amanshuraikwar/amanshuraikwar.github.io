@@ -25,20 +25,33 @@ import org.jetbrains.compose.web.dom.Hr
 import org.jetbrains.compose.web.dom.Text
 
 @Composable
-fun Md(
+fun MdView(
     porfolioData: PortfolioData,
     mdData: List<MdNode>,
     isDarkTheme: Boolean,
     onThemeBtnClick: (isDarkTheme: Boolean) -> Unit,
 ) {
-    Hero(
-        attrs = {
-            classes(
-                WtCols.wtCol12
-            )
-        },
-        name = porfolioData.name,
-    )
+    if (isDarkTheme) {
+        Hero(
+            attrs = {
+                classes(
+                    WtCols.wtCol12
+                )
+            },
+            name = porfolioData.name,
+            isDarkTheme = true
+        )
+    } else {
+        Hero(
+            attrs = {
+                classes(
+                    WtCols.wtCol12
+                )
+            },
+            name = porfolioData.name,
+            isDarkTheme = false
+        )
+    }
 
     Div(
         attrs = {

@@ -6,7 +6,13 @@ import com.sample.style.WtButton
 import com.sample.style.WtTexts
 import org.jetbrains.compose.web.attributes.ATarget
 import org.jetbrains.compose.web.attributes.target
+import org.jetbrains.compose.web.css.AlignItems
+import org.jetbrains.compose.web.css.DisplayStyle
+import org.jetbrains.compose.web.css.JustifyContent
+import org.jetbrains.compose.web.css.alignItems
 import org.jetbrains.compose.web.css.color
+import org.jetbrains.compose.web.css.display
+import org.jetbrains.compose.web.css.justifyContent
 import org.jetbrains.compose.web.css.margin
 import org.jetbrains.compose.web.css.value
 import org.jetbrains.compose.web.dom.*
@@ -109,6 +115,7 @@ fun TextHrefButton(
     href: String,
     buttonStyle: ButtonStyle = ButtonStyle.SOLID,
     buttonSize: ButtonSize = ButtonSize.NORMAL,
+    openInNewTab: Boolean = true
 ) {
     A(
         attrs = {
@@ -116,7 +123,9 @@ fun TextHrefButton(
             classes(
                 WtTexts.wtButton
             )
-            target(ATarget.Blank)
+            if (openInNewTab) {
+                target(ATarget.Blank)
+            }
             style {
                 color(AppCSSVariables.colorOnPrimary.value())
             }
@@ -133,6 +142,11 @@ fun TextHrefButton(
                 when (buttonSize) {
                     ButtonSize.NORMAL -> classes(WtButton.wtTextButtonNormal)
                     ButtonSize.SMALL -> classes(WtButton.wtTextButtonSmall)
+                }
+                style {
+                    display(DisplayStyle.Flex)
+                    alignItems(AlignItems.Center)
+                    justifyContent(JustifyContent.Center)
                 }
             }
         ) {

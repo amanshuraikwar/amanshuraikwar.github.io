@@ -2,10 +2,10 @@ package io.github.amanshuraikwar.portfolio
 
 import io.github.amanshuraikwar.portfolio.markdown.MdNode
 
-class MdDataStore {
+class GeneratedDataStore {
 
-	fun mdEnabled(): Boolean {
-		return false
+	fun getPageType(): PageType {
+		return PageType.HOME
 	}
 
 	fun getData(): List<MdNode> {

@@ -11,12 +11,10 @@ import com.sample.style.WtCols
 import com.sample.style.WtContainer
 import com.sample.style.WtContent
 import com.sample.style.WtOffsets
-import com.sample.style.WtRows
 import com.sample.style.WtTexts
 import io.github.amanshuraikwar.portfolio.model.PortfolioData
 import org.jetbrains.compose.web.css.DisplayStyle
 import org.jetbrains.compose.web.css.JustifyContent
-import org.jetbrains.compose.web.css.backgroundColor
 import org.jetbrains.compose.web.css.color
 import org.jetbrains.compose.web.css.display
 import org.jetbrains.compose.web.css.justifyContent
@@ -26,64 +24,43 @@ import org.jetbrains.compose.web.dom.Hr
 import org.jetbrains.compose.web.dom.Text
 
 @Composable
-fun Home(
+fun BackgroundView(
     porfolioData: PortfolioData,
     isDarkTheme: Boolean,
     onThemeBtnClick: (isDarkTheme: Boolean) -> Unit,
 ) {
-//    Div(
-//        attrs = {
-//            classes(WtContainer.wtContainerWide)
-//            style {
-//                backgroundColor(AppCSSVariables.colorHeroBg.value())
-//            }
-//        }
-//    ) {
-//        Div(
-//            attrs = {
-//                classes(
-//                    WtRows.wtRow,
-//                    WtOffsets.wtTopOffset48,
-//                    WtOffsets.wtTopOffsetSm24,
-//                )
-//            }
-//        ) {
-            Hero(
-                attrs = {
-                    classes(
-                        WtCols.wtCol12
-                    )
-                },
-                name = porfolioData.name,
-//                jobTitle = porfolioData.intro,
-            )
-//        }
-//    }
+    if (isDarkTheme) {
+        Hero(
+            attrs = {
+                classes(
+                    WtCols.wtCol12
+                )
+            },
+            name = porfolioData.name,
+            isDarkTheme = true
+        )
+    } else {
+        Hero(
+            attrs = {
+                classes(
+                    WtCols.wtCol12
+                )
+            },
+            name = porfolioData.name,
+            isDarkTheme = false
+        )
+    }
 
     Div(
         attrs = {
             classes(WtContainer.wtContainerSm)
         }
     ) {
-        Projects(
-            isDarkTheme = isDarkTheme,
-            apps = porfolioData.apps
-        )
-
-        Hr(
-            attrs = {
-                classes(
-                    WtContent.sectionDividerHr,
-                    WtOffsets.wtTopOffset96,
-                    WtOffsets.wtTopOffsetSm48,
-                )
-            }
-        )
-
         Experience(
             experience = porfolioData.experience,
             isDarkTheme = isDarkTheme,
         )
+
         Hr(
             attrs = {
                 classes(
