@@ -60,8 +60,8 @@ fun MdLayout(
                     Div(
                         attrs = {
                             classes(
-                                WtOffsets.wtTopOffset48,
-                                WtOffsets.wtTopOffsetSm24,
+                                WtOffsets.wtTopOffset96,
+                                WtOffsets.wtTopOffsetSm48,
                             )
                         }
                     )
@@ -97,25 +97,25 @@ fun MdLayout(
                                 WtOffsets.wtTopOffsetSm16,
                             )
                         }
-                    )
-
-                    P(
-                        attrs = {
-                            classes(
-                                WtTexts.wtBody,
-                            )
-                            style {
-                                color(AppCSSVariables.colorOnBackground.value())
-                            }
-                        }
                     ) {
-                        Text(node.text)
+                        P(
+                            attrs = {
+                                classes(
+                                    WtTexts.wtBody,
+                                )
+                                style {
+                                    color(AppCSSVariables.colorOnBackground.value())
+                                }
+                            }
+                        ) {
+                            Text(node.text)
+                        }
                     }
                 }
                 is MdNode.Img -> {
                     Div(
                         attrs = {
-                            attrs?.invoke(this)
+
                             style {
                                 display(DisplayStyle.Flex)
                                 flexDirection(FlexDirection.Column)
@@ -155,19 +155,19 @@ fun MdLayout(
                     }
                 }
                 is MdNode.Spacer -> {
-                    Div(
-                        attrs = {
-                            classes(
-                                WtOffsets.wtTopOffset48,
-                                WtOffsets.wtTopOffsetSm24,
-                            )
-                        }
-                    )
+//                    Div(
+//                        attrs = {
+//                            classes(
+//                                WtOffsets.wtTopOffset48,
+//                                WtOffsets.wtTopOffsetSm24,
+//                            )
+//                        }
+//                    )
                 }
                 is MdNode.Date -> {
                     Div(
                         attrs = {
-                            attrs?.invoke(this)
+
                             style {
                                 display(DisplayStyle.Flex)
                                 justifyContent(JustifyContent.FlexStart)
@@ -193,7 +193,7 @@ fun MdLayout(
                 is MdNode.Btn -> {
                     Div(
                         attrs = {
-                            attrs?.invoke(this)
+
                             style {
                                 display(DisplayStyle.Flex)
                                 flexDirection(FlexDirection.Column)

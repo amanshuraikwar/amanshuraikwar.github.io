@@ -6,8 +6,6 @@ import com.sample.content.Experience
 import com.sample.content.Hero
 import com.sample.content.Links
 import com.sample.content.Projects
-import com.sample.markdown.MdLayout
-import io.github.amanshuraikwar.portfolio.markdown.MdNode
 import com.sample.style.AppCSSVariables
 import com.sample.style.WtCols
 import com.sample.style.WtContainer
@@ -18,6 +16,7 @@ import com.sample.style.WtTexts
 import io.github.amanshuraikwar.portfolio.model.PortfolioData
 import org.jetbrains.compose.web.css.DisplayStyle
 import org.jetbrains.compose.web.css.JustifyContent
+import org.jetbrains.compose.web.css.backgroundColor
 import org.jetbrains.compose.web.css.color
 import org.jetbrains.compose.web.css.display
 import org.jetbrains.compose.web.css.justifyContent
@@ -32,48 +31,40 @@ fun Home(
     isDarkTheme: Boolean,
     onThemeBtnClick: (isDarkTheme: Boolean) -> Unit,
 ) {
+//    Div(
+//        attrs = {
+//            classes(WtContainer.wtContainerWide)
+//            style {
+//                backgroundColor(AppCSSVariables.colorHeroBg.value())
+//            }
+//        }
+//    ) {
+//        Div(
+//            attrs = {
+//                classes(
+//                    WtRows.wtRow,
+//                    WtOffsets.wtTopOffset48,
+//                    WtOffsets.wtTopOffsetSm24,
+//                )
+//            }
+//        ) {
+            Hero(
+                attrs = {
+                    classes(
+                        WtCols.wtCol12
+                    )
+                },
+                name = porfolioData.name,
+//                jobTitle = porfolioData.intro,
+            )
+//        }
+//    }
+
     Div(
         attrs = {
             classes(WtContainer.wtContainerSm)
         }
     ) {
-        Div(
-            attrs = {
-                classes(
-                    WtRows.wtRow,
-                    WtOffsets.wtTopOffset96,
-                    WtOffsets.wtTopOffsetSm48,
-                )
-            }
-        ) {
-
-            if (isDarkTheme) {
-                Hero(
-                    attrs = {
-                        classes(
-                            WtCols.wtCol12
-                        )
-                    },
-                    name = porfolioData.name,
-                    jobTitle = porfolioData.intro,
-                    true,
-                    onThemeBtnClick
-                )
-            } else {
-                Hero(
-                    attrs = {
-                        classes(
-                            WtCols.wtCol12
-                        )
-                    },
-                    name = porfolioData.name,
-                    jobTitle = porfolioData.intro,
-                    false,
-                    onThemeBtnClick
-                )
-            }
-        }
-
         Projects(
             isDarkTheme = isDarkTheme,
             apps = porfolioData.apps

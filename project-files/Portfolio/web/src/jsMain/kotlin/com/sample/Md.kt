@@ -2,10 +2,12 @@ package com.sample
 
 import androidx.compose.runtime.Composable
 import com.sample.components.ThemeSwitch
+import com.sample.content.Hero
 import com.sample.content.Links
 import com.sample.markdown.MdLayout
 import io.github.amanshuraikwar.portfolio.markdown.MdNode
 import com.sample.style.AppCSSVariables
+import com.sample.style.WtCols
 import com.sample.style.WtContainer
 import com.sample.style.WtContent
 import com.sample.style.WtOffsets
@@ -29,6 +31,15 @@ fun Md(
     isDarkTheme: Boolean,
     onThemeBtnClick: (isDarkTheme: Boolean) -> Unit,
 ) {
+    Hero(
+        attrs = {
+            classes(
+                WtCols.wtCol12
+            )
+        },
+        name = porfolioData.name,
+    )
+
     Div(
         attrs = {
             classes(WtContainer.wtContainerSm)

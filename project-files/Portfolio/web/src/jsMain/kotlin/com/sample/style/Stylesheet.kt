@@ -14,6 +14,8 @@ object AppCSSVariables {
     val colorChipBg by variable<CSSColorValue>()
     val colorHr by variable<CSSColorValue>()
 
+    val colorHeroBg by variable<CSSColorValue>()
+
     val outlineBtnBgHover by variable<CSSColorValue>()
     val outlineBtnBgActive by variable<CSSColorValue>()
 
@@ -62,6 +64,7 @@ object AppStylesheet : StyleSheet() {
             AppCSSVariables.colorHr(Color(themeColorsData.onSurfaceColor.dropAlphaHex()).copy(alpha = 0.08f))
             AppCSSVariables.outlineBtnBgHover(Color(themeColorsData.onSurfaceColor.dropAlphaHex()).copy(alpha = 0.08f))
             AppCSSVariables.outlineBtnBgActive(Color(themeColorsData.onSurfaceColor.dropAlphaHex()).copy(alpha = 0.16f))
+            AppCSSVariables.colorHeroBg(Color(themeColorsData.primaryColor.dropAlphaHex()).copy(alpha = 0.08f))
         }
     }
 

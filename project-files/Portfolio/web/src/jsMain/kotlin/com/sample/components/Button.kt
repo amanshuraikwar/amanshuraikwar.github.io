@@ -7,6 +7,7 @@ import com.sample.style.WtTexts
 import org.jetbrains.compose.web.attributes.ATarget
 import org.jetbrains.compose.web.attributes.target
 import org.jetbrains.compose.web.css.color
+import org.jetbrains.compose.web.css.margin
 import org.jetbrains.compose.web.css.value
 import org.jetbrains.compose.web.dom.*
 import org.w3c.dom.HTMLAnchorElement
