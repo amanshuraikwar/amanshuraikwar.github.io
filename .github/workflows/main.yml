@@ -1,11 +1,7 @@
-# # This is a basic workflow to help you get started with Actions
-
-name: CI
+name: Deploy Github Pages
 
 on:
   workflow_dispatch:
-  push:
-    branches: [ trunk ]
 
 jobs:
   build-and-deploy:
@@ -33,22 +29,22 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: Upload artifacts
-          path: docs
+          path: project-files/Portfolio/build
       
       - name: Download Artifacts
         uses: actions/download-artifact@v2
         with:
-          path: docs
+          path: project-files/Portfolio/build
 
       - name: Display structure of Downloaded Diles
         run: ls -R
-        working-directory: docs
+        working-directory: project-files/Portfolio/build
 
       - name: Deploy to Github Pages
         uses: JamesIves/github-pages-deploy-action@3.7.1
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages # The branch the action should deploy to.
-          FOLDER: docs # The folder the action should deploy.
+          FOLDER: project-files/Portfolio/build # The folder the action should deploy.
           CLEAN: true # Automatically remove deleted files from the deploy branch
           
