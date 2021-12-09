@@ -52,6 +52,7 @@ fun main() {
                 is PageData.Home -> {
                     HomeView(
                         (pageData as PageData.Home).portfolioData,
+                        (pageData as PageData.Home).blogData,
                         isDarkTheme = isDarkTheme,
                         onThemeBtnClick = {
                             portfolioRepository.setDarkThemeEnabled(it)

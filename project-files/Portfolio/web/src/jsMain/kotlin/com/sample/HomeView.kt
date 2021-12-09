@@ -2,6 +2,7 @@ package com.sample
 
 import androidx.compose.runtime.Composable
 import com.sample.components.ThemeSwitch
+import com.sample.content.BlogView
 import com.sample.content.Hero
 import com.sample.content.Links
 import com.sample.style.AppCSSVariables
@@ -10,6 +11,7 @@ import com.sample.style.WtContainer
 import com.sample.style.WtContent
 import com.sample.style.WtOffsets
 import com.sample.style.WtTexts
+import io.github.amanshuraikwar.portfolio.markdown.BlogListDataItem
 import io.github.amanshuraikwar.portfolio.model.PortfolioData
 import org.jetbrains.compose.web.css.DisplayStyle
 import org.jetbrains.compose.web.css.JustifyContent
@@ -24,6 +26,7 @@ import org.jetbrains.compose.web.dom.Text
 @Composable
 fun HomeView(
     porfolioData: PortfolioData,
+    blogData: List<BlogListDataItem>,
     isDarkTheme: Boolean,
     onThemeBtnClick: (isDarkTheme: Boolean) -> Unit,
 ) {
@@ -54,30 +57,7 @@ fun HomeView(
             classes(WtContainer.wtContainerSm)
         }
     ) {
-        Div(
-            attrs = {
-                classes(
-                    WtTexts.wtBody,
-                    WtOffsets.wtTopOffset96,
-                    WtOffsets.wtTopOffsetSm48,
-                )
-                style {
-                    color(AppCSSVariables.colorOnBackgroundSecondary.value())
-                }
-            }
-        ) {
-            Text(porfolioData.intro)
-        }
-
-        Hr(
-            attrs = {
-                classes(
-                    WtContent.sectionDividerHr,
-                    WtOffsets.wtTopOffset96,
-                    WtOffsets.wtTopOffsetSm48,
-                )
-            }
-        )
+        BlogView(blogData)
 
         Links(
             porfolioData.links,

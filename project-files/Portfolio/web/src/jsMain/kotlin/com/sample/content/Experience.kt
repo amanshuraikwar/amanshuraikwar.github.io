@@ -23,7 +23,7 @@ fun Experience(
                 WtOffsets.wtTopOffsetSm48,
             )
         },
-        title = "Experience"
+        title = "My Background"
     )
 
     Div(

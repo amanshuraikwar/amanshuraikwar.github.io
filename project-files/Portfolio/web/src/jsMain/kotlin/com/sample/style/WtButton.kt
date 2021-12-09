@@ -81,4 +81,19 @@ object WtButton : StyleSheet(AppStylesheet) {
         borderRadius(12.px)
         cursor("pointer")
     }
+
+    val wtButtonBlog by style {
+        transition("all 0.2s")
+
+        hover(self) style {
+            backgroundColor(AppCSSVariables.outlineBtnBgHover.value())
+            property("transform", "scale(1.02)")
+        }
+
+
+        self + active style {
+            backgroundColor(AppCSSVariables.outlineBtnBgActive.value())
+            property("transform", "scale(0.98)")
+        }
+    }
 }

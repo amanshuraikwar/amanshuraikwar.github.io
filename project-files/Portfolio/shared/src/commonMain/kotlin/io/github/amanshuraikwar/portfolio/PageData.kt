@@ -1,10 +1,14 @@
 package io.github.amanshuraikwar.portfolio
 
+import io.github.amanshuraikwar.portfolio.markdown.BlogListDataItem
 import io.github.amanshuraikwar.portfolio.markdown.MdNode
 import io.github.amanshuraikwar.portfolio.model.PortfolioData
 
 sealed class PageData {
-    data class Home(val portfolioData: PortfolioData) : PageData()
+    data class Home(
+        val portfolioData: PortfolioData,
+        val blogData: List<BlogListDataItem>,
+    ) : PageData()
 
     data class Md(
         val portfolioData: PortfolioData,

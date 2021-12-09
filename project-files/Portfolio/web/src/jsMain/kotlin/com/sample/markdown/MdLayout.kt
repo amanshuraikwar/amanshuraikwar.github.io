@@ -21,6 +21,7 @@ import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.css.value
 import org.jetbrains.compose.web.css.width
 import org.jetbrains.compose.web.dom.AttrBuilderContext
+import org.jetbrains.compose.web.dom.B
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.H1
 import org.jetbrains.compose.web.dom.H3
@@ -167,7 +168,6 @@ fun MdLayout(
                 is MdNode.Date -> {
                     Div(
                         attrs = {
-
                             style {
                                 display(DisplayStyle.Flex)
                                 justifyContent(JustifyContent.FlexStart)
@@ -180,13 +180,15 @@ fun MdLayout(
                     ) {
                         H6(
                             attrs = {
-                                classes(WtTexts.wtH6)
+                                classes(WtTexts.wtBody)
                                 style {
                                     color(AppCSSVariables.colorOnBackgroundSecondary.value())
                                 }
                             }
                         ) {
-                            Text(node.text)
+                            B {
+                                Text(node.text)
+                            }
                         }
                     }
                 }
