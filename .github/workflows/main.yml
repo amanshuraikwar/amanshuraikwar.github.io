@@ -56,6 +56,14 @@ jobs:
         run: |
           cd project-files/Portfolio
           kotlinc -script generateWebComposeMdLayouts.kts
+      
+      - uses: actions/download-artifact@v2
+        with:
+          path: ~/docs
+
+      - name: Display structure of downloaded files
+        run: ls -R
+        working-directory: ~/docs
 #         run: |
 #           npm ci
 #           npm run build
