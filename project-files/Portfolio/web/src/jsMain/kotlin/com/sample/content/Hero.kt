@@ -7,7 +7,8 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import com.sample.components.ButtonSize
 import com.sample.components.ButtonStyle
-import com.sample.components.ImgButton
+import com.sample.components.HeroImgButton
+import com.sample.components.HeroTextHrefButton
 import com.sample.components.TextHrefButton
 import com.sample.style.AppCSSVariables
 import com.sample.style.WtContainer
@@ -19,7 +20,6 @@ import org.jetbrains.compose.web.css.DisplayStyle
 import org.jetbrains.compose.web.css.FlexDirection
 import org.jetbrains.compose.web.css.JustifyContent
 import org.jetbrains.compose.web.css.alignItems
-import org.jetbrains.compose.web.css.backgroundColor
 import org.jetbrains.compose.web.css.color
 import org.jetbrains.compose.web.css.display
 import org.jetbrains.compose.web.css.flexDirection
@@ -45,7 +45,10 @@ fun Hero(
                 WtContainer.wtContainerWide,
             )
             style {
-                backgroundColor(AppCSSVariables.colorHeroBg.value())
+                property(
+                    "border-bottom",
+                    "1px solid " + AppCSSVariables.colorPrimary.value().toString()
+                )
             }
         }
     ) {
@@ -64,19 +67,14 @@ fun Hero(
                 }
             ) {
                 Div {
-                    H1(
-                        attrs = {
-                            classes(WtTexts.wtHero)
-                            style {
-                                color(AppCSSVariables.colorPrimary.value())
-                            }
-                        }
-                    ) {
-                        A(
+                    A(href = "https://amanshuraikwar.github.io/") {
+                        H1(
                             attrs = {
-                                style {}
-                            },
-                            href = "https://amanshuraikwar.github.io/",
+                                classes(WtTexts.wtHero)
+                                style {
+                                    color(AppCSSVariables.colorOnBackground.value())
+                                }
+                            }
                         ) {
                             Text(name)
                         }
@@ -88,26 +86,23 @@ fun Hero(
                         classes(WtOffsets.wtTopOffsetSm16, WtContainer.wtContainerHeroLinks)
                     }
                 ) {
-                    TextHrefButton(
+                    HeroTextHrefButton(
                         text = "Projects",
                         href = "https://amanshuraikwar.github.io/projects/",
-                        buttonStyle = ButtonStyle.OUTLINE,
                         buttonSize = ButtonSize.SMALL,
                         openInNewTab = false
                     )
 
-                    TextHrefButton(
+                    HeroTextHrefButton(
                         text = "My Background",
                         href = "https://amanshuraikwar.github.io/background/",
-                        buttonStyle = ButtonStyle.OUTLINE,
                         buttonSize = ButtonSize.SMALL,
                         openInNewTab = false
                     )
 
-                    TextHrefButton(
+                    HeroTextHrefButton(
                         text = "About Me",
                         href = "https://amanshuraikwar.github.io/me",
-                        buttonStyle = ButtonStyle.OUTLINE,
                         buttonSize = ButtonSize.SMALL,
                         openInNewTab = false
                     )
@@ -128,7 +123,6 @@ fun Hero(
                         attrs = {
                             classes(WtTexts.wtHero)
                             style {
-                                color(AppCSSVariables.colorPrimary.value())
                                 display(DisplayStyle.Flex)
                                 flexDirection(FlexDirection.Row)
                                 justifyContent(JustifyContent.SpaceBetween)
@@ -136,35 +130,35 @@ fun Hero(
                             }
                         }
                     ) {
-                        A(
-                            attrs = {
-                                style {}
-                            },
-                            href = "https://amanshuraikwar.github.io/",
-                        ) {
-                            Div {
+                        A(href = "https://amanshuraikwar.github.io/") {
+                            Div(
+                                attrs = {
+                                    style {
+                                        color(AppCSSVariables.colorOnBackground.value())
+                                    }
+                                }
+                            ) {
                                 Text(name)
                             }
                         }
 
-                        ImgButton(
+                        HeroImgButton(
                             if (displayLinks) {
                                 if (isDarkTheme) {
-                                    "assets/expand_less_black_24dp.svg"
-                                } else {
                                     "assets/expand_less_white_24dp.svg"
+                                } else {
+                                    "assets/expand_less_black_24dp.svg"
                                 }
                             } else {
                                 if (isDarkTheme) {
-                                    "assets/expand_more_black_24dp.svg"
-                                } else {
                                     "assets/expand_more_white_24dp.svg"
+                                } else {
+                                    "assets/expand_more_black_24dp.svg"
                                 }
                             },
                             onClick = {
                                 displayLinks = !displayLinks
                             },
-                            buttonStyle = ButtonStyle.OUTLINE,
                             buttonSize = ButtonSize.SMALL
                         )
                     }
@@ -174,31 +168,28 @@ fun Hero(
                     Div(
                         attrs = {
                             classes(
-                                WtOffsets.wtTopOffsetSm24,
+                                WtOffsets.wtTopOffsetSm16,
                                 WtContainer.wtContainerHeroLinks
                             )
                         }
                     ) {
-                        TextHrefButton(
+                        HeroTextHrefButton(
                             text = "Projects",
                             href = "https://amanshuraikwar.github.io/projects/",
-                            buttonStyle = ButtonStyle.OUTLINE,
                             buttonSize = ButtonSize.SMALL,
                             openInNewTab = false
                         )
 
-                        TextHrefButton(
+                        HeroTextHrefButton(
                             text = "My Background",
                             href = "https://amanshuraikwar.github.io/background/",
-                            buttonStyle = ButtonStyle.OUTLINE,
                             buttonSize = ButtonSize.SMALL,
                             openInNewTab = false
                         )
 
-                        TextHrefButton(
+                        HeroTextHrefButton(
                             text = "About Me",
                             href = "https://amanshuraikwar.github.io/me",
-                            buttonStyle = ButtonStyle.OUTLINE,
                             buttonSize = ButtonSize.SMALL,
                             openInNewTab = false
                         )
