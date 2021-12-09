@@ -1,0 +1,18 @@
+{
+  "darkTheme": {
+    "primaryColor": "#FFFFCDD2",
+    "onPrimaryColor": "#FF4E342E",
+    "surfaceColor": "#FF212121",
+    "onSurfaceColor": "#FFffffff",
+    "errorColor": "#FFE57373",
+    "onErrorColor": "#FF4E342E"
+  },
+  "lightTheme": {
+    "primaryColor": "#ffEA5C5A",
+    "onPrimaryColor": "#FFffffff",
+    "surfaceColor": "#ffCDECF9",
+    "onSurfaceColor": "#FF030204",
+    "errorColor": "#FFE57373",
+    "onErrorColor": "#FF212121"
+  }
+}
