@@ -24,21 +24,6 @@ jobs:
         run: |
           cd project-files/Portfolio
           kotlinc -script generateWebComposeMdLayouts.kts
-          
-      - name: Upload Artifacts
-        uses: actions/upload-artifact@v2
-        with:
-          name: Upload artifacts
-          path: project-files/Portfolio/build
-      
-      - name: Download Artifacts
-        uses: actions/download-artifact@v2
-        with:
-          path: project-files/Portfolio/build
-
-      - name: Display structure of Downloaded Diles
-        run: ls -R
-        working-directory: project-files/Portfolio/build
 
       - name: Deploy to Github Pages
         uses: JamesIves/github-pages-deploy-action@3.7.1
@@ -46,5 +31,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages # The branch the action should deploy to.
           FOLDER: project-files/Portfolio/build # The folder the action should deploy.
-          CLEAN: true # Automatically remove deleted files from the deploy branch
           
