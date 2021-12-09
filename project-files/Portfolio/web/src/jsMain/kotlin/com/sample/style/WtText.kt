@@ -97,15 +97,15 @@ object WtTexts : StyleSheet(AppStylesheet) {
 
     val wtHero by style {
         color(AppCSSVariables.colorOnBackground.value())
-        fontSize(AppCSSVariables.wtH4FontSize.value(34.px))
+        fontSize(AppCSSVariables.wtH4FontSize.value(24.px))
         fontWeight(FontWeight.Medium)
-        lineHeight(AppCSSVariables.wtH4LineHeight.value(36.px))
+        lineHeight(AppCSSVariables.wtH4LineHeight.value(28.px))
         fontFamily(rubikFontStr)
 
         media(mediaMaxWidth(750.px)) {
             self style {
-                AppCSSVariables.wtH4FontSize(30.px)
-                AppCSSVariables.wtH4LineHeight(32.px)
+                AppCSSVariables.wtH4FontSize(18.px)
+                AppCSSVariables.wtH4LineHeight(22.px)
             }
         }
     }

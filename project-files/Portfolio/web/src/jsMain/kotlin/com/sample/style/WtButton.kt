@@ -3,6 +3,22 @@ package com.sample.style
 import org.jetbrains.compose.web.css.*
 
 object WtButton : StyleSheet(AppStylesheet) {
+    val wtButtonHero by style {
+        color(AppCSSVariables.colorOnBackground.value())
+        transition("all 0.2s")
+
+        hover(self) style {
+            property("transform", "scale(1.02)")
+            backgroundColor(AppCSSVariables.outlineBtnBgHover.value())
+        }
+
+
+        self + active style {
+            property("transform", "scale(0.98)")
+            backgroundColor(AppCSSVariables.outlineBtnBgHover.value())
+        }
+    }
+
     val wtButtonSolid by style {
         backgroundColor(AppCSSVariables.colorPrimary.value())
         color(AppCSSVariables.colorOnPrimary.value())

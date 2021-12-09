@@ -13,9 +13,12 @@ import org.jetbrains.compose.web.css.alignItems
 import org.jetbrains.compose.web.css.color
 import org.jetbrains.compose.web.css.display
 import org.jetbrains.compose.web.css.justifyContent
-import org.jetbrains.compose.web.css.margin
 import org.jetbrains.compose.web.css.value
-import org.jetbrains.compose.web.dom.*
+import org.jetbrains.compose.web.dom.A
+import org.jetbrains.compose.web.dom.AttrBuilderContext
+import org.jetbrains.compose.web.dom.Div
+import org.jetbrains.compose.web.dom.Img
+import org.jetbrains.compose.web.dom.Text
 import org.w3c.dom.HTMLAnchorElement
 
 enum class ButtonStyle {
@@ -153,4 +156,66 @@ fun TextHrefButton(
             Text(text.uppercase())
         }
     }
+}
+
+@Composable
+fun HeroTextHrefButton(
+    attrs: AttrBuilderContext<HTMLAnchorElement>? = null,
+    text: String,
+    href: String,
+    buttonSize: ButtonSize = ButtonSize.NORMAL,
+    openInNewTab: Boolean = true
+) {
+    A(
+        attrs = {
+            attrs?.invoke(this)
+            classes(
+                WtTexts.wtButton
+            )
+            if (openInNewTab) {
+                target(ATarget.Blank)
+            }
+            style {
+                color(AppCSSVariables.colorOnPrimary.value())
+            }
+        },
+        href = href,
+    ) {
+        Div(
+            attrs = {
+                classes(WtTexts.wtButton)
+                classes(WtButton.wtButtonHero)
+                when (buttonSize) {
+                    ButtonSize.NORMAL -> classes(WtButton.wtTextButtonNormal)
+                    ButtonSize.SMALL -> classes(WtButton.wtTextButtonSmall)
+                }
+                style {
+                    display(DisplayStyle.Flex)
+                    alignItems(AlignItems.Center)
+                    justifyContent(JustifyContent.Center)
+                }
+            }
+        ) {
+            Text(text.uppercase())
+        }
+    }
+}
+
+@Composable
+fun HeroImgButton(
+    src: String,
+    onClick: () -> Unit,
+    buttonSize: ButtonSize = ButtonSize.NORMAL,
+) {
+    Img(
+        src = src,
+        attrs = {
+            classes(WtButton.wtButtonHero)
+            when (buttonSize) {
+                ButtonSize.NORMAL -> classes(WtButton.wtImgButtonNormal)
+                ButtonSize.SMALL -> classes(WtButton.wtImgButtonSmall)
+            }
+            onClick { onClick() }
+        }
+    )
 }
