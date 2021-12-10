@@ -1,5 +1,4 @@
 import java.io.File
-import java.util.concurrent.TimeUnit
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
@@ -24,8 +23,8 @@ println("Parsing markdown files...")
 
 val mdFilesDir = File("markdown")
 try {
-    val mdFileList = mdFilesDir.listFiles { file -> 
-        !file.isDirectory() 
+    val mdFileList = mdFilesDir.listFiles { file ->
+        !file.isDirectory()
     }
 
     println("${mdFileList.size} markdown files found...")
@@ -60,18 +59,20 @@ data class BlogListEntry(
 )
 
 fun createBlogListFile(blogListEntryList: List<BlogListEntry>): File {
-    val outputFile = File("shared/src/commonMain/kotlin/io/github/amanshuraikwar/portfolio/BlogListDataStore.kt")
+    val outputFile = File(
+        "shared/src/commonMain/kotlin/io/github/amanshuraikwar/portfolio/BlogListDataStore.kt"
+    )
     outputFile.delete()
 
-    outputFile.bufferedWriter().use { out -> 
+    outputFile.bufferedWriter().use { out ->
         out.write("package io.github.amanshuraikwar.portfolio\n")
-        
+
         out.write("\n")
-        
+
         out.write("import io.github.amanshuraikwar.portfolio.markdown.BlogListDataItem\n")
-        
+
         out.write("\n")
-        
+
         out.write("class BlogListDataStore {\n")
 
         out.write("\n")
@@ -99,11 +100,11 @@ fun createBlogListFile(blogListEntryList: List<BlogListEntry>): File {
                         link = "${entry.link}",
                     ),
                     """.trimIndent()
-                    .split("\n")
-                    .map {
-                        it.prependIndent().prependIndent().prependIndent()
-                    }
-                    .reduce { acc, s -> "$acc\n$s" }
+                        .split("\n")
+                        .map {
+                            it.prependIndent().prependIndent().prependIndent()
+                        }
+                        .reduce { acc, s -> "$acc\n$s" }
                 )
 
                 out.write("\n")
@@ -129,22 +130,23 @@ fun buildAndCopyDirectoryContents(dirName: String) {
 }
 
 fun generateEmptyDataStoreFile(pageType: String) {
-    val outputFile = File("shared/src/commonMain/kotlin/io/github/amanshuraikwar/portfolio/GeneratedDataStore.kt")
+    val outputFile =
+        File("shared/src/commonMain/kotlin/io/github/amanshuraikwar/portfolio/GeneratedDataStore.kt")
     outputFile.delete()
-    
-    outputFile.bufferedWriter().use { out -> 
+
+    outputFile.bufferedWriter().use { out ->
         out.write("package io.github.amanshuraikwar.portfolio\n")
-        
+
         out.write("\n")
-        
+
         out.write("import io.github.amanshuraikwar.portfolio.markdown.MdNode\n")
-        
+
         out.write("\n")
-        
+
         out.write("class GeneratedDataStore {\n")
-        
+
         out.write("\n")
-        
+
         out.write("\tfun getPageType(): PageType {\n")
         out.write("\t\treturn $pageType\n")
         out.write("\t}\n")
@@ -164,20 +166,21 @@ fun generateBlogMdSource(file: File): BlogListEntry {
     var date = ""
     var firstParagraph = ""
 
-    val outputFile = File("shared/src/commonMain/kotlin/io/github/amanshuraikwar/portfolio/GeneratedDataStore.kt")
+    val outputFile =
+        File("shared/src/commonMain/kotlin/io/github/amanshuraikwar/portfolio/GeneratedDataStore.kt")
     outputFile.delete()
 
-    outputFile.bufferedWriter().use { out -> 
+    outputFile.bufferedWriter().use { out ->
         out.write("package io.github.amanshuraikwar.portfolio\n")
-        
+
         out.write("\n")
-        
+
         out.write("import io.github.amanshuraikwar.portfolio.markdown.MdNode\n")
-        
+
         out.write("\n")
-        
+
         out.write("class GeneratedDataStore {\n")
-        
+
         out.write("\n")
 
         out.write("\tfun getPageType(): PageType {\n")
@@ -185,12 +188,16 @@ fun generateBlogMdSource(file: File): BlogListEntry {
         out.write("\t}\n")
 
         out.write("\n")
-        
+
         out.write("\tfun getData(): List<MdNode> {\n")
 
         out.write("\t\treturn listOf(\n")
 
-        file.forEachLine { line ->
+        val lines = file.readLines()
+
+        var i = 0
+        while (i < lines.size) {
+            val line = lines[i]
             when {
                 line.startsWith("!Btn[") -> {
                     val (label, url) = line
@@ -209,11 +216,11 @@ fun generateBlogMdSource(file: File): BlogListEntry {
                             url = "${url.trim()}",
                         ),
                         """.trimIndent()
-                        .split("\n")
-                        .map {
-                            it.prependIndent().prependIndent().prependIndent()
-                        }
-                        .reduce { acc, s -> "$acc\n$s" }
+                            .split("\n")
+                            .map {
+                                it.prependIndent().prependIndent().prependIndent()
+                            }
+                            .reduce { acc, s -> "$acc\n$s" }
                     )
 
                     out.write("\n")
@@ -235,11 +242,11 @@ fun generateBlogMdSource(file: File): BlogListEntry {
                             url = "${url.trim()}",
                         ),
                         """.trimIndent()
-                        .split("\n")
-                        .map {
-                            it.prependIndent().prependIndent().prependIndent()
-                        }
-                        .reduce { acc, s -> "$acc\n$s" }
+                            .split("\n")
+                            .map {
+                                it.prependIndent().prependIndent().prependIndent()
+                            }
+                            .reduce { acc, s -> "$acc\n$s" }
                     )
 
                     out.write("\n")
@@ -251,11 +258,11 @@ fun generateBlogMdSource(file: File): BlogListEntry {
                             text = "${line.drop(3).trim()}"
                         ),
                         """.trimIndent()
-                        .split("\n")
-                        .map {
-                            it.prependIndent().prependIndent().prependIndent()
-                        }
-                        .reduce { acc, s -> "$acc\n$s" }
+                            .split("\n")
+                            .map {
+                                it.prependIndent().prependIndent().prependIndent()
+                            }
+                            .reduce { acc, s -> "$acc\n$s" }
                     )
                     out.write("\n")
                 }
@@ -266,11 +273,11 @@ fun generateBlogMdSource(file: File): BlogListEntry {
                             text = "${line.drop(5).trim()}"
                         ),
                         """.trimIndent()
-                        .split("\n")
-                        .map {
-                            it.prependIndent().prependIndent().prependIndent()
-                        }
-                        .reduce { acc, s -> "$acc\n$s" }
+                            .split("\n")
+                            .map {
+                                it.prependIndent().prependIndent().prependIndent()
+                            }
+                            .reduce { acc, s -> "$acc\n$s" }
                     )
                     out.write("\n")
 
@@ -285,17 +292,32 @@ fun generateBlogMdSource(file: File): BlogListEntry {
                             text = "${line.drop(1).trim()}"
                         ),
                         """.trimIndent()
-                        .split("\n")
-                        .map {
-                            it.prependIndent().prependIndent().prependIndent()
-                        }
-                        .reduce { acc, s -> "$acc\n$s" }
+                            .split("\n")
+                            .map {
+                                it.prependIndent().prependIndent().prependIndent()
+                            }
+                            .reduce { acc, s -> "$acc\n$s" }
                     )
                     out.write("\n")
 
                     if (title == "") {
                         title = line.drop(1).trim()
                     }
+                }
+                line.startsWith("```") -> {
+                    var codeBlockLines = mutableListOf<String>()
+                    while (++i < lines.size && !lines[i].startsWith("```")) {
+                        val lastLine = lines[i]
+                        codeBlockLines.add(lastLine)
+                    }
+
+                    out.write("\t\t\tMdNode.Code(\n")
+                    out.write("\t\t\t\tlines = listOf(\n")
+                    codeBlockLines.forEach {
+                        out.write("\t\t\t\t\t\"$it\",\n")
+                    }
+                    out.write("\t\t\t\t)\n")
+                    out.write("\t\t\t),\n")
                 }
                 line.trim().isNotBlank() -> {
                     out.write(
@@ -304,11 +326,11 @@ fun generateBlogMdSource(file: File): BlogListEntry {
                             text = "${line.trim()}"
                         ),
                         """.trimIndent()
-                        .split("\n")
-                        .map {
-                            it.prependIndent().prependIndent().prependIndent()
-                        }
-                        .reduce { acc, s -> "$acc\n$s" }
+                            .split("\n")
+                            .map {
+                                it.prependIndent().prependIndent().prependIndent()
+                            }
+                            .reduce { acc, s -> "$acc\n$s" }
                     )
                     out.write("\n")
 
@@ -316,20 +338,25 @@ fun generateBlogMdSource(file: File): BlogListEntry {
                         firstParagraph = line.trim()
                     }
                 }
-                else -> {
+                i != lines.size - 1 && lines[i + 1].trim().isBlank() -> {
                     out.write(
                         """
                         MdNode.Spacer,
                         """.trimIndent()
-                        .split("\n")
-                        .map {
-                            it.prependIndent().prependIndent().prependIndent()
-                        }
-                        .reduce { acc, s -> "$acc\n$s" }
+                            .split("\n")
+                            .map {
+                                it.prependIndent().prependIndent().prependIndent()
+                            }
+                            .reduce { acc, s -> "$acc\n$s" }
                     )
                     out.write("\n")
+                    i++
+                }
+                else -> {
+                    // do nothing if its a single empty line
                 }
             }
+            i++
         }
         out.write("\t\t)\n")
         out.write("\t}\n")

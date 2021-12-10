@@ -35,6 +35,12 @@ object WtOffsets : StyleSheet(AppStylesheet) {
 //        )
     }
 
+    val mdSpacer by style {
+        height(48.px)
+        media(mediaMaxWidth(750.px)) {
+            height(24.px)
+        }
+    }
     val wtTopOffset48 by style {
         marginTop(48.px)
 //        property(

@@ -19,6 +19,7 @@ object WtTexts : StyleSheet(AppStylesheet) {
     const val nunitoFontStr = "Nunito,Rubik,system-ui,-apple-system,Arial,serif,sans-serif"
     const val nunitoSansFontStr = "Nunito Sans,Rubik,system-ui,-apple-system,Arial,serif,sans-serif"
     const val sourceCodeProFontStr = "Source Code Pro,Rubik,system-ui,-apple-system,Arial,serif,sans-serif"
+    const val jetbrainsMonoFontStr = "'JetBrains Mono',monospace,system-ui,-apple-system,Arial,serif,sans-serif"
 
     val wtH1 by style {
         color(AppCSSVariables.colorOnBackground.value())
@@ -145,7 +146,6 @@ object WtTexts : StyleSheet(AppStylesheet) {
         fontSize(AppCSSVariables.wtBodyFontSize.value(18.px))
         fontWeight(FontWeight.Normal)
         lineHeight("1.7")
-        //AppCSSVariables.wtBodyLineHeight.value(24.px))
         fontFamily(nunitoSansFontStr)
     }
 
@@ -163,5 +163,13 @@ object WtTexts : StyleSheet(AppStylesheet) {
         fontWeight(FontWeight.Medium)
         lineHeight(AppCSSVariables.wtCaptionLineHeight.value(16.px))
         fontFamily(sourceCodeProFontStr)
+    }
+
+    val wtCode by style {
+        color(AppCSSVariables.colorOnBackground.value())
+        fontSize(AppCSSVariables.wtBodyFontSize.value(16.px))
+        fontWeight(FontWeight.Medium)
+        lineHeight("1.7")
+        fontFamily(jetbrainsMonoFontStr)
     }
 }

@@ -70,6 +70,7 @@ fun AboutMeView(
                 MdNode.Date(
                     "Updated December 10, 2021"
                 ),
+                MdNode.Spacer,
                 MdNode.P(
                     "Your neighbourhood Software Engineer who likes to builds apps for himself and hopefully others. I will not fix your printer for you unless you buy me food :)"
                 ),
