@@ -11,17 +11,20 @@ import org.jetbrains.compose.web.css.DisplayStyle
 import org.jetbrains.compose.web.css.FlexDirection
 import org.jetbrains.compose.web.css.JustifyContent
 import org.jetbrains.compose.web.css.alignItems
+import org.jetbrains.compose.web.css.backgroundColor
 import org.jetbrains.compose.web.css.borderRadius
 import org.jetbrains.compose.web.css.color
 import org.jetbrains.compose.web.css.display
 import org.jetbrains.compose.web.css.flexDirection
 import org.jetbrains.compose.web.css.justifyContent
+import org.jetbrains.compose.web.css.padding
 import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.css.value
 import org.jetbrains.compose.web.css.width
 import org.jetbrains.compose.web.dom.AttrBuilderContext
 import org.jetbrains.compose.web.dom.B
+import org.jetbrains.compose.web.dom.Br
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.H1
 import org.jetbrains.compose.web.dom.H3
@@ -29,6 +32,7 @@ import org.jetbrains.compose.web.dom.H5
 import org.jetbrains.compose.web.dom.H6
 import org.jetbrains.compose.web.dom.Img
 import org.jetbrains.compose.web.dom.P
+import org.jetbrains.compose.web.dom.Pre
 import org.jetbrains.compose.web.dom.Text
 import org.w3c.dom.HTMLDivElement
 
@@ -156,14 +160,13 @@ fun MdLayout(
                     }
                 }
                 is MdNode.Spacer -> {
-//                    Div(
-//                        attrs = {
-//                            classes(
-//                                WtOffsets.wtTopOffset48,
-//                                WtOffsets.wtTopOffsetSm24,
-//                            )
-//                        }
-//                    )
+                    Div(
+                        attrs = {
+                            classes(
+                                WtOffsets.mdSpacer,
+                            )
+                        }
+                    )
                 }
                 is MdNode.Date -> {
                     Div(
@@ -212,6 +215,29 @@ fun MdLayout(
                             text = node.text,
                             href = node.url,
                         )
+                    }
+                }
+                is MdNode.Code -> {
+                    Div(
+                        attrs = {
+                            classes(WtTexts.wtCode)
+                            classes(
+                                WtOffsets.wtTopOffset48,
+                                WtOffsets.wtTopOffsetSm24,
+                            )
+                            style {
+                                padding(8.px)
+                                backgroundColor(AppCSSVariables.outlineBtnBgHover.value())
+                                borderRadius(4.px)
+                            }
+                        }
+                    ) {
+                        Pre {
+                            node.lines.forEach {
+                                Text(it)
+                                Br()
+                            }
+                        }
                     }
                 }
             }

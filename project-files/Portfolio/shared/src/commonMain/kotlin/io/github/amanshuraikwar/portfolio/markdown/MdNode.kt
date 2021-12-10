@@ -9,4 +9,5 @@ sealed class MdNode {
     object Spacer: MdNode()
     data class Date(val text: String): MdNode()
     data class Btn(val text: String, val url: String) : MdNode()
+    data class Code(val lines: List<String>) : MdNode()
 }
