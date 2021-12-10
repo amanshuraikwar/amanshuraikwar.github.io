@@ -7,7 +7,7 @@ on:
       - trunk
 
 jobs:
-  web-build-html-js:
+  build-html-js:
     runs-on: macos-11
     steps:
       - name: Checkout
