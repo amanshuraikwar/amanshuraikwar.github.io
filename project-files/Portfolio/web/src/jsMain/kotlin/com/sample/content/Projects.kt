@@ -2,7 +2,6 @@ package com.sample.content
 
 import androidx.compose.runtime.Composable
 import com.sample.components.Project
-import com.sample.components.SectionHeader
 import com.sample.style.WtCols
 import com.sample.style.WtContent
 import com.sample.style.WtOffsets
@@ -15,16 +14,6 @@ fun Projects(
     isDarkTheme: Boolean,
     apps: List<AppData>
 ) {
-    SectionHeader(
-        attrs = {
-            classes(
-                WtOffsets.wtTopOffset96,
-                WtOffsets.wtTopOffsetSm48,
-            )
-        },
-        title = "Projects"
-    )
-
     Div(
         attrs = {
             classes(

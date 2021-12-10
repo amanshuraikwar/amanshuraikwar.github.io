@@ -1,12 +1,24 @@
 package com.sample.content
 
-import androidx.compose.runtime.*
-import com.sample.components.*
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+import com.sample.components.ButtonSize
+import com.sample.components.ButtonStyle
+import com.sample.components.ExperienceItem
+import com.sample.components.TextButton
 import com.sample.style.WtCols
 import com.sample.style.WtOffsets
 import com.sample.style.WtRows
 import io.github.amanshuraikwar.portfolio.model.ExperienceData
-import org.jetbrains.compose.web.css.*
+import org.jetbrains.compose.web.css.AlignItems
+import org.jetbrains.compose.web.css.DisplayStyle
+import org.jetbrains.compose.web.css.JustifyContent
+import org.jetbrains.compose.web.css.alignItems
+import org.jetbrains.compose.web.css.display
+import org.jetbrains.compose.web.css.justifyContent
 import org.jetbrains.compose.web.dom.Div
 
 @Composable
@@ -15,16 +27,6 @@ fun Experience(
     isDarkTheme: Boolean,
 ) {
     var displayedList by remember { mutableStateOf(experience.take(2)) }
-
-    SectionHeader(
-        attrs = {
-            classes(
-                WtOffsets.wtTopOffset96,
-                WtOffsets.wtTopOffsetSm48,
-            )
-        },
-        title = "My Background"
-    )
 
     Div(
         attrs = {

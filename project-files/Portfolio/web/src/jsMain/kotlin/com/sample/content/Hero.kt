@@ -6,10 +6,8 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import com.sample.components.ButtonSize
-import com.sample.components.ButtonStyle
 import com.sample.components.HeroImgButton
 import com.sample.components.HeroTextHrefButton
-import com.sample.components.TextHrefButton
 import com.sample.style.AppCSSVariables
 import com.sample.style.WtContainer
 import com.sample.style.WtOffsets
@@ -47,7 +45,7 @@ fun Hero(
             style {
                 property(
                     "border-bottom",
-                    "1px solid " + AppCSSVariables.colorPrimary.value().toString()
+                    "2px solid " + AppCSSVariables.colorHr.value().toString()
                 )
             }
         }

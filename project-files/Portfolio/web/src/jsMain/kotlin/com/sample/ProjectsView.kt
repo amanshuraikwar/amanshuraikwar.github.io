@@ -2,16 +2,17 @@ package com.sample
 
 import androidx.compose.runtime.Composable
 import com.sample.components.ThemeSwitch
-import com.sample.content.Experience
 import com.sample.content.Hero
 import com.sample.content.Links
 import com.sample.content.Projects
+import com.sample.markdown.MdLayout
 import com.sample.style.AppCSSVariables
 import com.sample.style.WtCols
 import com.sample.style.WtContainer
 import com.sample.style.WtContent
 import com.sample.style.WtOffsets
 import com.sample.style.WtTexts
+import io.github.amanshuraikwar.portfolio.markdown.MdNode
 import io.github.amanshuraikwar.portfolio.model.PortfolioData
 import org.jetbrains.compose.web.css.DisplayStyle
 import org.jetbrains.compose.web.css.JustifyContent
@@ -56,6 +57,20 @@ fun ProjectsView(
             classes(WtContainer.wtContainerSm)
         }
     ) {
+        MdLayout(
+            attrs = {
+                classes(
+                    WtOffsets.wtTopOffset96,
+                    WtOffsets.wtTopOffsetSm48,
+                )
+            },
+            nodes = listOf(
+                MdNode.H1(
+                    "Projects"
+                ),
+            )
+        )
+
         Projects(
             isDarkTheme = isDarkTheme,
             apps = porfolioData.apps
