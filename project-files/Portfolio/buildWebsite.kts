@@ -43,7 +43,7 @@ println("Creating blog list file...")
 createBlogListFile(blogListEntryList)
 
 generateEmptyDataStoreFile("PageType.HOME")
-buildAndCopyDirectoryContents("home")
+buildAndCopyDirectoryContents("home", deleteAssets = false)
 
 println("Copying contents of build/home/* to build/...")
 File(".") exec "cp -R build/home/ build/"
@@ -118,7 +118,7 @@ fun createBlogListFile(blogListEntryList: List<BlogListEntry>): File {
     return outputFile
 }
 
-fun buildAndCopyDirectoryContents(dirName: String) {
+fun buildAndCopyDirectoryContents(dirName: String, deleteAssets: Boolean = true) {
     println("Building for $dirName...")
     File(".") exec "./gradlew :web:jsBrowserDistribution"
     println("Deleting existing directory build/$dirName...")
@@ -127,10 +127,13 @@ fun buildAndCopyDirectoryContents(dirName: String) {
     File(".") exec "mkdir build/$dirName"
     println("Copying contents from web/build/distributions/ to build/$dirName/...")
     File(".") exec "cp -R web/build/distributions/ build/$dirName/"
-    println("Deleting directory build/$dirName/assets...")
-    File(".") exec "rm -rf build/$dirName/assets"
-    println("Deleting directory build/$dirName/api...")
-    File(".") exec "rm -rf build/$dirName/api"
+
+    if (deleteAssets) {
+        println("Deleting directory build/$dirName/assets...")
+        File(".") exec "rm -rf build/$dirName/assets"
+        println("Deleting directory build/$dirName/api...")
+        File(".") exec "rm -rf build/$dirName/api"
+    }
 }
 
 fun generateEmptyDataStoreFile(pageType: String) {
