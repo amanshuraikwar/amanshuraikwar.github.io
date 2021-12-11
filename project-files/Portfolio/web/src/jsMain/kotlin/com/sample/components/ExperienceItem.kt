@@ -51,9 +51,9 @@ fun ExperienceItem(
         ) {
             Img(
                 src = if (isDarkTheme) {
-                    "assets/place_white_24.svg"
+                    "https://amanshuraikwar.github.io/assets/place_white_24.svg"
                 } else {
-                    "assets/place_black_24.svg"
+                    "https://amanshuraikwar.github.io/assets/place_black_24.svg"
                 },
                 attrs = {
                     style {
@@ -88,9 +88,9 @@ fun ExperienceItem(
         ) {
             Img(
                 src = if (isDarkTheme) {
-                    "assets/date_range_white_24.svg"
+                    "https://amanshuraikwar.github.io/assets/date_range_white_24.svg"
                 } else {
-                    "assets/date_range_black_24.svg"
+                    "https://amanshuraikwar.github.io/assets/date_range_black_24.svg"
                 },
                 attrs = {
                     style {
@@ -135,9 +135,9 @@ fun ExperienceItem(
                 ) {
                     Img(
                         src = if (isDarkTheme) {
-                            "assets/arrow_right_alt_white_24.svg"
+                            "https://amanshuraikwar.github.io/assets/arrow_right_alt_white_24.svg"
                         } else {
-                            "assets/arrow_right_alt_black_24.svg"
+                            "https://amanshuraikwar.github.io/assets/arrow_right_alt_black_24.svg"
                         },
                         attrs = {
                             style {

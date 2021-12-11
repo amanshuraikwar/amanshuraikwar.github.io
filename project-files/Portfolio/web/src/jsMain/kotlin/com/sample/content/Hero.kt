@@ -143,15 +143,15 @@ fun Hero(
                         HeroImgButton(
                             if (displayLinks) {
                                 if (isDarkTheme) {
-                                    "assets/expand_less_white_24dp.svg"
+                                    "https://amanshuraikwar.github.io/assets/expand_less_white_24dp.svg"
                                 } else {
-                                    "assets/expand_less_black_24dp.svg"
+                                    "https://amanshuraikwar.github.io/assets/expand_less_black_24dp.svg"
                                 }
                             } else {
                                 if (isDarkTheme) {
-                                    "assets/expand_more_white_24dp.svg"
+                                    "https://amanshuraikwar.github.io/assets/expand_more_white_24dp.svg"
                                 } else {
-                                    "assets/expand_more_black_24dp.svg"
+                                    "https://amanshuraikwar.github.io/assets/expand_more_black_24dp.svg"
                                 }
                             },
                             onClick = {

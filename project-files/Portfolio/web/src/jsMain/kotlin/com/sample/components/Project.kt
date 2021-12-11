@@ -79,15 +79,15 @@ fun Project(
             Chip(
                 src = if (appData.maintained) {
                     if (isDarkTheme) {
-                        "assets/code_white_24.svg"
+                        "https://amanshuraikwar.github.io/assets/code_white_24.svg"
                     } else {
-                        "assets/code_black_24.svg"
+                        "https://amanshuraikwar.github.io/assets/code_black_24.svg"
                     }
                 } else {
                     if (isDarkTheme) {
-                        "assets/code_off_white_24.svg"
+                        "https://amanshuraikwar.github.io/assets/code_off_white_24.svg"
                     } else {
-                        "assets/code_off_black_24.svg"
+                        "https://amanshuraikwar.github.io/assets/code_off_black_24.svg"
                     }
                 },
                 text = if (appData.maintained) {
@@ -120,30 +120,30 @@ fun Project(
                     src = when (appLink) {
                         is AppLink.Github -> {
                             if (isDarkTheme) {
-                                "assets/github_white_24.svg"
+                                "https://amanshuraikwar.github.io/assets/github_white_24.svg"
                             } else {
-                                "assets/github_black_24.svg"
+                                "https://amanshuraikwar.github.io/assets/github_black_24.svg"
                             }
                         }
                         is AppLink.PlayStore -> {
                             if (isDarkTheme) {
-                                "assets/google_play_white_24.svg"
+                                "https://amanshuraikwar.github.io/assets/google_play_white_24.svg"
                             } else {
-                                "assets/google_play_black_24.svg"
+                                "https://amanshuraikwar.github.io/assets/google_play_black_24.svg"
                             }
                         }
                         is AppLink.Download -> {
                             if (isDarkTheme) {
-                                "assets/get_app_white_24.svg"
+                                "https://amanshuraikwar.github.io/assets/get_app_white_24.svg"
                             } else {
-                                "assets/get_app_black_24.svg"
+                                "https://amanshuraikwar.github.io/assets/get_app_black_24.svg"
                             }
                         }
                         is AppLink.Other -> {
                             if (isDarkTheme) {
-                                "assets/link_white_24.svg"
+                                "https://amanshuraikwar.github.io/assets/link_white_24.svg"
                             } else {
-                                "assets/link_black_24.svg"
+                                "https://amanshuraikwar.github.io/assets/link_black_24.svg"
                             }
                         }
                     },

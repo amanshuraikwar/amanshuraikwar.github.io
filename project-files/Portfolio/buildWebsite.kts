@@ -127,6 +127,10 @@ fun buildAndCopyDirectoryContents(dirName: String) {
     File(".") exec "mkdir build/$dirName"
     println("Copying contents from web/build/distributions/ to build/$dirName/...")
     File(".") exec "cp -R web/build/distributions/ build/$dirName/"
+    println("Deleting directory build/$dirName/assets...")
+    File(".") exec "rm -rf build/$dirName/assets"
+    println("Deleting directory build/$dirName/api...")
+    File(".") exec "rm -rf build/$dirName/api"
 }
 
 fun generateEmptyDataStoreFile(pageType: String) {
