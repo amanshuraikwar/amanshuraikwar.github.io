@@ -65182,7 +65182,7 @@
   function BlogListDataStore() {
   }
   BlogListDataStore.prototype.getBlogListData_0_k$ = function () {
-    return listOf([new BlogListDataItem('Jetpack Compose to Github Pages via Github Actions', 'December 10, 2021', 'Here is the Github Action workflow file I used to deploy my project written in Jetpack Compose for Web to Github Pages', 'https://amanshuraikwar.github.io/portfolio-deploy'), new BlogListDataItem('My New Portfolio Website', 'December 9, 2021', 'This is my new portfolio website built with KMM & Jetpack Compose.', 'https://amanshuraikwar.github.io/portfolio'), new BlogListDataItem('Introducing Next Bus SG', 'December 8, 2021', 'After working on it for more than a year, I present to you Next Bus SG. Next Bus SG is a minimal & light app to see bus arrival timings in Singapore. Scroll down to the bottom for download links.', 'https://amanshuraikwar.github.io/nextbus')]);
+    return listOf([new BlogListDataItem('My Portfolio', 'December 11, 2021', 'This is my portfolio. It is a KMM project which runs on Web, Android, iOS.', 'https://amanshuraikwar.github.io/portfolio'), new BlogListDataItem('Introducing Next Bus SG', 'December 8, 2021', 'After working on it for more than a year, I present to you Next Bus SG. Next Bus SG is a minimal & light app to see bus arrival timings in Singapore. Scroll down to the bottom for download links.', 'https://amanshuraikwar.github.io/nextbus')]);
   };
   BlogListDataStore.$metadata$ = {
     simpleName: 'BlogListDataStore',
