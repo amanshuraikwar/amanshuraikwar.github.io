@@ -26,11 +26,11 @@ jobs:
       - name: Build Web HTML & JS Files
         run: |
           cd project-files/Portfolio
-          kotlinc -script generateWebComposeMdLayouts.kts
+          kotlinc -script buildWebsite.kts
 
       - name: Deploy to Github Pages
         uses: JamesIves/github-pages-deploy-action@3.7.1
         with:
-          branch: gh-pages # The branch the action should deploy to.
-          folder: project-files/Portfolio/build # The folder the action should deploy.
+          branch: gh-pages
+          folder: project-files/Portfolio/build
           
