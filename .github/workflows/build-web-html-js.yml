@@ -26,4 +26,4 @@ jobs:
       - name: Build Web HTML & JS Files
         run: |
           cd project-files/Portfolio
-          kotlinc -script generateWebComposeMdLayouts.kts
+          kotlinc -script buildWebsite.kts
