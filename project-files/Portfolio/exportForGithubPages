@@ -1,4 +1,0 @@
-./gradlew :web:jsBrowserDistribution
-rm -rf ../../docs/*
-mkdir ../../docs
-cp -R web/build/distributions/ ../../docs/

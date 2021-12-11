@@ -74,49 +74,49 @@ fun Links(
 fun getLinkIconUrl(id: String, isDarkTheme: Boolean): String {
     return when (id) {
         "resume" -> if (isDarkTheme) {
-            "assets/article_black_24.svg"
+            "https://amanshuraikwar.github.io/assets/article_black_24.svg"
         } else {
-            "assets/article_white_24.svg"
+            "https://amanshuraikwar.github.io/assets/article_white_24.svg"
         }
         "playstore" -> if (isDarkTheme) {
-            "assets/google_play_black_24.svg"
+            "https://amanshuraikwar.github.io/assets/google_play_black_24.svg"
         } else {
-            "assets/google_play_white_24.svg"
+            "https://amanshuraikwar.github.io/assets/google_play_white_24.svg"
         }
         "unsplash" -> if (isDarkTheme) {
-            "assets/unsplash_black_24.svg"
+            "https://amanshuraikwar.github.io/assets/unsplash_black_24.svg"
         } else {
-            "assets/unsplash_white_24.svg"
+            "https://amanshuraikwar.github.io/assets/unsplash_white_24.svg"
         }
         "github" -> if (isDarkTheme) {
-            "assets/github_black_24.svg"
+            "https://amanshuraikwar.github.io/assets/github_black_24.svg"
         } else {
-            "assets/github_white_24.svg"
+            "https://amanshuraikwar.github.io/assets/github_white_24.svg"
         }
         "linkedin" -> if (isDarkTheme) {
-            "assets/linkedin_black_24.svg"
+            "https://amanshuraikwar.github.io/assets/linkedin_black_24.svg"
         } else {
-            "assets/linkedin_white_24.svg"
+            "https://amanshuraikwar.github.io/assets/linkedin_white_24.svg"
         }
         "medium" -> if (isDarkTheme) {
-            "assets/medium_black_24.svg"
+            "https://amanshuraikwar.github.io/assets/medium_black_24.svg"
         } else {
-            "assets/medium_white_24.svg"
+            "https://amanshuraikwar.github.io/assets/medium_white_24.svg"
         }
         "twitter" -> if (isDarkTheme) {
-            "assets/twitter_black_24.svg"
+            "https://amanshuraikwar.github.io/assets/twitter_black_24.svg"
         } else {
-            "assets/twitter_white_24.svg"
+            "https://amanshuraikwar.github.io/assets/twitter_white_24.svg"
         }
         "instagram" -> if (isDarkTheme) {
-            "assets/instagram_black_24.svg"
+            "https://amanshuraikwar.github.io/assets/instagram_black_24.svg"
         } else {
-            "assets/instagram_white_24.svg"
+            "https://amanshuraikwar.github.io/assets/instagram_white_24.svg"
         }
         else -> if (isDarkTheme) {
-            "assets/link_black_24.svg"
+            "https://amanshuraikwar.github.io/assets/link_black_24.svg"
         } else {
-            "assets/link_white_24.svg"
+            "https://amanshuraikwar.github.io/assets/link_white_24.svg"
         }
     }
 }
