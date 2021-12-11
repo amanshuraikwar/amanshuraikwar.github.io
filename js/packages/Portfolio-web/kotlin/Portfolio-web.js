@@ -94006,15 +94006,15 @@
     if (!(($changed & 81 ^ 16) === 0) ? true : !$composer_20._get_skipping__0_k$()) {
       var tmp;
       if (this._$isDarkTheme_14) {
-        tmp = 'assets/arrow_right_alt_white_24.svg';
+        tmp = 'https://amanshuraikwar.github.io/assets/arrow_right_alt_white_24.svg';
       } else {
-        tmp = 'assets/arrow_right_alt_black_24.svg';
+        tmp = 'https://amanshuraikwar.github.io/assets/arrow_right_alt_black_24.svg';
       }
       var tmp_0 = tmp;
       Img$composable(tmp_0, null, _no_name_provided_$factory_467(), $composer_20, 384, 2);
       var tmp_1 = _no_name_provided_$factory_468();
       var tmp_2 = $composer_20;
-      Div$composable(tmp_1, composableLambda(tmp_2, -819890573, true, _no_name_provided_$factory_469(this._$item_3_0)), $composer_20, 54, 0);
+      Div$composable(tmp_1, composableLambda(tmp_2, -819890355, true, _no_name_provided_$factory_469(this._$item_3_0)), $composer_20, 54, 0);
     } else
       $composer_20.skipToGroupEnd_sv8swh_k$();
   };
@@ -94099,15 +94099,15 @@
     if (!(($changed & 81 ^ 16) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
       var tmp;
       if (this._$isDarkTheme_15) {
-        tmp = 'assets/place_white_24.svg';
+        tmp = 'https://amanshuraikwar.github.io/assets/place_white_24.svg';
       } else {
-        tmp = 'assets/place_black_24.svg';
+        tmp = 'https://amanshuraikwar.github.io/assets/place_black_24.svg';
       }
       var tmp_0 = tmp;
       Img$composable(tmp_0, null, _no_name_provided_$factory_452(), $composer_0, 384, 2);
       var tmp_1 = _no_name_provided_$factory_453();
       var tmp_2 = $composer_0;
-      Div$composable(tmp_1, composableLambda(tmp_2, -819896041, true, _no_name_provided_$factory_454(this._$data_3)), $composer_0, 54, 0);
+      Div$composable(tmp_1, composableLambda(tmp_2, -819895979, true, _no_name_provided_$factory_454(this._$data_3)), $composer_0, 54, 0);
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
   };
@@ -94144,15 +94144,15 @@
     if (!(($changed & 81 ^ 16) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
       var tmp;
       if (this._$isDarkTheme_16) {
-        tmp = 'assets/date_range_white_24.svg';
+        tmp = 'https://amanshuraikwar.github.io/assets/date_range_white_24.svg';
       } else {
-        tmp = 'assets/date_range_black_24.svg';
+        tmp = 'https://amanshuraikwar.github.io/assets/date_range_black_24.svg';
       }
       var tmp_0 = tmp;
       Img$composable(tmp_0, null, _no_name_provided_$factory_458(), $composer_0, 384, 2);
       var tmp_1 = _no_name_provided_$factory_459();
       var tmp_2 = $composer_0;
-      Div$composable(tmp_1, composableLambda(tmp_2, -819892788, true, _no_name_provided_$factory_460(this._$data_4)), $composer_0, 54, 0);
+      Div$composable(tmp_1, composableLambda(tmp_2, -819892920, true, _no_name_provided_$factory_460(this._$data_4)), $composer_0, 54, 0);
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
   };
@@ -94240,7 +94240,7 @@
             }
             var tmp_1 = tmp$ret$3;
             var tmp_2 = $composer_0;
-            Div$composable(tmp_1, composableLambda(tmp_2, -819894100, true, _no_name_provided_$factory_465(this._$isDarkTheme_17, item_3)), $composer_0, 48, 0);
+            Div$composable(tmp_1, composableLambda(tmp_2, -819894232, true, _no_name_provided_$factory_465(this._$isDarkTheme_17, item_3)), $composer_0, 48, 0);
           }
         }
       }
@@ -94272,10 +94272,10 @@
       Div$composable(tmp_1, composableLambda(tmp_2, -819895300, true, _no_name_provided_$factory_445(this._$isDarkTheme_18, this._$data_6)), $composer_0, 54, 0);
       var tmp_3 = _no_name_provided_$factory_446();
       var tmp_4 = $composer_0;
-      Div$composable(tmp_3, composableLambda(tmp_4, -819892321, true, _no_name_provided_$factory_447(this._$isDarkTheme_18, this._$data_6)), $composer_0, 54, 0);
+      Div$composable(tmp_3, composableLambda(tmp_4, -819892259, true, _no_name_provided_$factory_447(this._$isDarkTheme_18, this._$data_6)), $composer_0, 54, 0);
       var tmp_5 = _no_name_provided_$factory_448();
       var tmp_6 = $composer_0;
-      Div$composable(tmp_5, composableLambda(tmp_6, -819893548, true, _no_name_provided_$factory_449(this._$data_6, this._$isDarkTheme_18)), $composer_0, 54, 0);
+      Div$composable(tmp_5, composableLambda(tmp_6, -819893680, true, _no_name_provided_$factory_449(this._$data_6, this._$isDarkTheme_18)), $composer_0, 54, 0);
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
   };
@@ -95213,17 +95213,17 @@
       if (this._$appData_1._maintained) {
         var tmp_0;
         if (this._$isDarkTheme_20) {
-          tmp_0 = 'assets/code_white_24.svg';
+          tmp_0 = 'https://amanshuraikwar.github.io/assets/code_white_24.svg';
         } else {
-          tmp_0 = 'assets/code_black_24.svg';
+          tmp_0 = 'https://amanshuraikwar.github.io/assets/code_black_24.svg';
         }
         tmp = tmp_0;
       } else {
         var tmp_1;
         if (this._$isDarkTheme_20) {
-          tmp_1 = 'assets/code_off_white_24.svg';
+          tmp_1 = 'https://amanshuraikwar.github.io/assets/code_off_white_24.svg';
         } else {
-          tmp_1 = 'assets/code_off_black_24.svg';
+          tmp_1 = 'https://amanshuraikwar.github.io/assets/code_off_black_24.svg';
         }
         tmp = tmp_1;
       }
@@ -95301,36 +95301,36 @@
             if (tmp0_subject_7 instanceof Github) {
               var tmp_1;
               if (this._$isDarkTheme_21) {
-                tmp_1 = 'assets/github_white_24.svg';
+                tmp_1 = 'https://amanshuraikwar.github.io/assets/github_white_24.svg';
               } else {
-                tmp_1 = 'assets/github_black_24.svg';
+                tmp_1 = 'https://amanshuraikwar.github.io/assets/github_black_24.svg';
               }
               tmp_0 = tmp_1;
             } else {
               if (tmp0_subject_7 instanceof PlayStore) {
                 var tmp_2;
                 if (this._$isDarkTheme_21) {
-                  tmp_2 = 'assets/google_play_white_24.svg';
+                  tmp_2 = 'https://amanshuraikwar.github.io/assets/google_play_white_24.svg';
                 } else {
-                  tmp_2 = 'assets/google_play_black_24.svg';
+                  tmp_2 = 'https://amanshuraikwar.github.io/assets/google_play_black_24.svg';
                 }
                 tmp_0 = tmp_2;
               } else {
                 if (tmp0_subject_7 instanceof Download) {
                   var tmp_3;
                   if (this._$isDarkTheme_21) {
-                    tmp_3 = 'assets/get_app_white_24.svg';
+                    tmp_3 = 'https://amanshuraikwar.github.io/assets/get_app_white_24.svg';
                   } else {
-                    tmp_3 = 'assets/get_app_black_24.svg';
+                    tmp_3 = 'https://amanshuraikwar.github.io/assets/get_app_black_24.svg';
                   }
                   tmp_0 = tmp_3;
                 } else {
                   if (tmp0_subject_7 instanceof Other) {
                     var tmp_4;
                     if (this._$isDarkTheme_21) {
-                      tmp_4 = 'assets/link_white_24.svg';
+                      tmp_4 = 'https://amanshuraikwar.github.io/assets/link_white_24.svg';
                     } else {
-                      tmp_4 = 'assets/link_black_24.svg';
+                      tmp_4 = 'https://amanshuraikwar.github.io/assets/link_black_24.svg';
                     }
                     tmp_0 = tmp_4;
                   } else {
@@ -95380,7 +95380,7 @@
       Div$composable(tmp_3, composableLambda(tmp_4, -819892608, true, _no_name_provided_$factory_488(this._$appData_3, this._$isDarkTheme_22)), $composer_0, 54, 0);
       var tmp_5 = _no_name_provided_$factory_489();
       var tmp_6 = $composer_0;
-      Div$composable(tmp_5, composableLambda(tmp_6, -819892876, true, _no_name_provided_$factory_490(this._$appData_3, this._$isDarkTheme_22)), $composer_0, 54, 0);
+      Div$composable(tmp_5, composableLambda(tmp_6, -819893520, true, _no_name_provided_$factory_490(this._$appData_3, this._$isDarkTheme_22)), $composer_0, 54, 0);
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
   };
@@ -95676,9 +95676,9 @@
     if (!(($dirty & 91 ^ 18) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
       var tmp;
       if (isDarkTheme) {
-        tmp = 'assets/dark_mode_black_24.svg';
+        tmp = 'https://amanshuraikwar.github.io/assets/dark_mode_black_24.svg';
       } else {
-        tmp = 'assets/light_mode_white_24.svg';
+        tmp = 'https://amanshuraikwar.github.io/assets/light_mode_white_24.svg';
       }
       var tmp_0 = tmp;
       var tmp$ret$3;
@@ -96457,7 +96457,7 @@
     var tmp = this;
     tmp._lambda_1_0 = composableLambdaInstance(-985531478, false, _no_name_provided_$factory_520());
     var tmp_0 = this;
-    tmp_0._lambda_2_0 = composableLambdaInstance(-985536256, false, _no_name_provided_$factory_521());
+    tmp_0._lambda_2_0 = composableLambdaInstance(-985536124, false, _no_name_provided_$factory_521());
   }
   ComposableSingletons$HeroKt.$metadata$ = {
     simpleName: 'ComposableSingletons$HeroKt',
@@ -96896,17 +96896,17 @@
       if (invoke$lambda_4(this._$displayLinks$delegate_1)) {
         var tmp_1;
         if (this._$isDarkTheme_29) {
-          tmp_1 = 'assets/expand_less_white_24dp.svg';
+          tmp_1 = 'https://amanshuraikwar.github.io/assets/expand_less_white_24dp.svg';
         } else {
-          tmp_1 = 'assets/expand_less_black_24dp.svg';
+          tmp_1 = 'https://amanshuraikwar.github.io/assets/expand_less_black_24dp.svg';
         }
         tmp_0 = tmp_1;
       } else {
         var tmp_2;
         if (this._$isDarkTheme_29) {
-          tmp_2 = 'assets/expand_more_white_24dp.svg';
+          tmp_2 = 'https://amanshuraikwar.github.io/assets/expand_more_white_24dp.svg';
         } else {
-          tmp_2 = 'assets/expand_more_black_24dp.svg';
+          tmp_2 = 'https://amanshuraikwar.github.io/assets/expand_more_black_24dp.svg';
         }
         tmp_0 = tmp_2;
       }
@@ -97474,9 +97474,9 @@
       case 'resume':
         var tmp_0;
         if (isDarkTheme) {
-          tmp_0 = 'assets/article_black_24.svg';
+          tmp_0 = 'https://amanshuraikwar.github.io/assets/article_black_24.svg';
         } else {
-          tmp_0 = 'assets/article_white_24.svg';
+          tmp_0 = 'https://amanshuraikwar.github.io/assets/article_white_24.svg';
         }
 
         tmp = tmp_0;
@@ -97484,9 +97484,9 @@
       case 'playstore':
         var tmp_1;
         if (isDarkTheme) {
-          tmp_1 = 'assets/google_play_black_24.svg';
+          tmp_1 = 'https://amanshuraikwar.github.io/assets/google_play_black_24.svg';
         } else {
-          tmp_1 = 'assets/google_play_white_24.svg';
+          tmp_1 = 'https://amanshuraikwar.github.io/assets/google_play_white_24.svg';
         }
 
         tmp = tmp_1;
@@ -97494,9 +97494,9 @@
       case 'unsplash':
         var tmp_2;
         if (isDarkTheme) {
-          tmp_2 = 'assets/unsplash_black_24.svg';
+          tmp_2 = 'https://amanshuraikwar.github.io/assets/unsplash_black_24.svg';
         } else {
-          tmp_2 = 'assets/unsplash_white_24.svg';
+          tmp_2 = 'https://amanshuraikwar.github.io/assets/unsplash_white_24.svg';
         }
 
         tmp = tmp_2;
@@ -97504,9 +97504,9 @@
       case 'github':
         var tmp_3;
         if (isDarkTheme) {
-          tmp_3 = 'assets/github_black_24.svg';
+          tmp_3 = 'https://amanshuraikwar.github.io/assets/github_black_24.svg';
         } else {
-          tmp_3 = 'assets/github_white_24.svg';
+          tmp_3 = 'https://amanshuraikwar.github.io/assets/github_white_24.svg';
         }
 
         tmp = tmp_3;
@@ -97514,9 +97514,9 @@
       case 'linkedin':
         var tmp_4;
         if (isDarkTheme) {
-          tmp_4 = 'assets/linkedin_black_24.svg';
+          tmp_4 = 'https://amanshuraikwar.github.io/assets/linkedin_black_24.svg';
         } else {
-          tmp_4 = 'assets/linkedin_white_24.svg';
+          tmp_4 = 'https://amanshuraikwar.github.io/assets/linkedin_white_24.svg';
         }
 
         tmp = tmp_4;
@@ -97524,9 +97524,9 @@
       case 'medium':
         var tmp_5;
         if (isDarkTheme) {
-          tmp_5 = 'assets/medium_black_24.svg';
+          tmp_5 = 'https://amanshuraikwar.github.io/assets/medium_black_24.svg';
         } else {
-          tmp_5 = 'assets/medium_white_24.svg';
+          tmp_5 = 'https://amanshuraikwar.github.io/assets/medium_white_24.svg';
         }
 
         tmp = tmp_5;
@@ -97534,9 +97534,9 @@
       case 'twitter':
         var tmp_6;
         if (isDarkTheme) {
-          tmp_6 = 'assets/twitter_black_24.svg';
+          tmp_6 = 'https://amanshuraikwar.github.io/assets/twitter_black_24.svg';
         } else {
-          tmp_6 = 'assets/twitter_white_24.svg';
+          tmp_6 = 'https://amanshuraikwar.github.io/assets/twitter_white_24.svg';
         }
 
         tmp = tmp_6;
@@ -97544,18 +97544,18 @@
       case 'instagram':
         var tmp_7;
         if (isDarkTheme) {
-          tmp_7 = 'assets/instagram_black_24.svg';
+          tmp_7 = 'https://amanshuraikwar.github.io/assets/instagram_black_24.svg';
         } else {
-          tmp_7 = 'assets/instagram_white_24.svg';
+          tmp_7 = 'https://amanshuraikwar.github.io/assets/instagram_white_24.svg';
         }
 
         tmp = tmp_7;
         break;
       default:var tmp_8;
         if (isDarkTheme) {
-          tmp_8 = 'assets/link_black_24.svg';
+          tmp_8 = 'https://amanshuraikwar.github.io/assets/link_black_24.svg';
         } else {
-          tmp_8 = 'assets/link_white_24.svg';
+          tmp_8 = 'https://amanshuraikwar.github.io/assets/link_white_24.svg';
         }
 
         tmp = tmp_8;
