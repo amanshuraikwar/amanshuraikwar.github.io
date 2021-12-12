@@ -3,6 +3,7 @@ package com.sample.content
 import androidx.compose.runtime.Composable
 import com.sample.markdown.MdLayout
 import com.sample.style.WtButton
+import com.sample.style.WtCols
 import com.sample.style.WtContent
 import com.sample.style.WtOffsets
 import com.sample.style.WtRows
@@ -24,23 +25,27 @@ fun BlogView(
         attrs = {
             classes(
                 WtRows.wtRow,
+                WtOffsets.wtTopOffset96,
+                WtOffsets.wtTopOffsetSm48,
             )
         }
     ) {
         blogData.forEach { blogListDataItem ->
             A(
                 attrs = {
-                    target(ATarget.Blank)
                     classes(
-                        WtOffsets.wtTopOffset96,
-                        WtOffsets.wtTopOffsetSm48
+                        WtButton.wtButtonBlog,
+                        WtCols.wtCol12
                     )
                 },
                 href = blogListDataItem.link,
             ) {
                 MdLayout(
                     attrs = {
-                        classes(WtButton.wtButtonBlog)
+                        classes(
+                            WtOffsets.wtTopOffset48,
+                            WtOffsets.wtTopOffsetSm24,
+                        )
                     },
                     nodes = listOf(
                         MdNode.H1(
@@ -54,14 +59,23 @@ fun BlogView(
                         ),
                     )
                 )
+
+                Div(
+                    attrs = {
+                        classes(
+                            WtOffsets.wtTopOffset48,
+                            WtOffsets.wtTopOffsetSm24,
+                        )
+                    }
+                )
             }
 
             Hr(
                 attrs = {
                     classes(
                         WtContent.sectionDividerHr,
-                        WtOffsets.wtTopOffset96,
-                        WtOffsets.wtTopOffsetSm48,
+//                        WtOffsets.wtTopOffset96,
+//                        WtOffsets.wtTopOffsetSm48,
                     )
 
                     style {
