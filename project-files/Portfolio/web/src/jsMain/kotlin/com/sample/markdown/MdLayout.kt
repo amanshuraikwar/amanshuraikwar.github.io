@@ -3,6 +3,7 @@ package com.sample.markdown
 import androidx.compose.runtime.Composable
 import com.sample.components.TextHrefButton
 import com.sample.style.AppCSSVariables
+import com.sample.style.WtCols
 import com.sample.style.WtOffsets
 import com.sample.style.WtTexts
 import io.github.amanshuraikwar.portfolio.markdown.MdNode
@@ -25,6 +26,7 @@ import org.jetbrains.compose.web.css.width
 import org.jetbrains.compose.web.dom.AttrBuilderContext
 import org.jetbrains.compose.web.dom.B
 import org.jetbrains.compose.web.dom.Br
+import org.jetbrains.compose.web.dom.Code
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.H1
 import org.jetbrains.compose.web.dom.H3
@@ -52,7 +54,7 @@ fun MdLayout(
                 is MdNode.H1 -> {
                     H1(
                         attrs = {
-                            classes(WtTexts.wtH1)
+                            classes(WtTexts.wtH1Blog)
                             style {
                                 color(AppCSSVariables.colorPrimary.value())
                             }
@@ -73,7 +75,7 @@ fun MdLayout(
 
                     H3(
                         attrs = {
-                            classes(WtTexts.wtH3)
+                            classes(WtTexts.wtH3Blog)
                             style {
                                 color(AppCSSVariables.colorOnBackground.value())
                             }
@@ -224,6 +226,7 @@ fun MdLayout(
                             classes(
                                 WtOffsets.wtTopOffset48,
                                 WtOffsets.wtTopOffsetSm24,
+                                WtCols.wtCol12
                             )
                             style {
                                 padding(8.px)
@@ -232,10 +235,18 @@ fun MdLayout(
                             }
                         }
                     ) {
-                        Pre {
-                            node.lines.forEach {
-                                Text(it)
-                                Br()
+                        Pre(
+                            attrs = {
+                                classes(
+                                    WtCols.wtCol12
+                                )
+                            }
+                        ) {
+                            Code {
+                                node.lines.forEach {
+                                    Text(it)
+                                    Br()
+                                }
                             }
                         }
                     }

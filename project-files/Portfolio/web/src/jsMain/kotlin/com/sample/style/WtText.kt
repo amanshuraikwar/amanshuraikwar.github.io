@@ -172,4 +172,34 @@ object WtTexts : StyleSheet(AppStylesheet) {
         lineHeight("1.7")
         fontFamily(jetbrainsMonoFontStr)
     }
+
+    val wtH1Blog by style {
+        color(AppCSSVariables.colorOnBackground.value())
+        fontSize(AppCSSVariables.wtH1FontSize.value(48.px))
+        fontWeight(FontWeight.Bold)
+        lineHeight(AppCSSVariables.wtH1LineHeight.value(56.px))
+        fontFamily(rubikFontStr)
+
+        media(mediaMaxWidth(750.px)) {
+            self style {
+                AppCSSVariables.wtH1FontSize(28.px)
+                AppCSSVariables.wtH1LineHeight(36.px)
+            }
+        }
+    }
+
+    val wtH3Blog by style {
+        color(AppCSSVariables.colorOnBackground.value())
+        fontSize(AppCSSVariables.wtH3FontSize.value(24.px))
+        fontWeight(FontWeight.Bold)
+        lineHeight(AppCSSVariables.wtH3LineHeight.value(28.px))
+        fontFamily(nunitoFontStr)
+
+        media(mediaMaxWidth(750.px)) {
+            self style {
+                AppCSSVariables.wtH3FontSize(18.px)
+                AppCSSVariables.wtH3LineHeight(22.px)
+            }
+        }
+    }
 }
