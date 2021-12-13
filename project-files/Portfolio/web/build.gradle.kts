@@ -22,6 +22,7 @@ kotlin {
             dependencies {
                 implementation(compose.web.core)
                 implementation(compose.runtime)
+                implementation(npm("highlight.js", "11.3.1"))
 
                 implementation(project(":shared"))
             }

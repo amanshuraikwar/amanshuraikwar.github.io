@@ -38,6 +38,20 @@ object WtContainer : StyleSheet(AppStylesheet) {
         }
     }
 
+    val wtContainerSmCode by style {
+        property("margin-left", "auto")
+        property("margin-right", "auto")
+        property("box-sizing", "border-box")
+        property("max-width", 750.px)
+        property("width", 750.px)
+
+        media(mediaMaxWidth(750.px)) {
+            self style {
+                property("max-width", 100.vw - 24.px)
+            }
+        }
+    }
+
     val wtContainerWide by style {
         property("box-sizing", "border-box")
         property("padding", "3% 6%")

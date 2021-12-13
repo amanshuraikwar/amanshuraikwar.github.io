@@ -54,23 +54,26 @@ fun ProjectsView(
 
     Div(
         attrs = {
+            classes(
+                WtOffsets.wtTopOffset96,
+                WtOffsets.wtTopOffsetSm48,
+            )
+        }
+    )
+
+    MdLayout(
+        nodes = listOf(
+            MdNode.H1(
+                "Projects"
+            ),
+        )
+    )
+
+    Div(
+        attrs = {
             classes(WtContainer.wtContainerSm)
         }
     ) {
-        MdLayout(
-            attrs = {
-                classes(
-                    WtOffsets.wtTopOffset96,
-                    WtOffsets.wtTopOffsetSm48,
-                )
-            },
-            nodes = listOf(
-                MdNode.H1(
-                    "Projects"
-                ),
-            )
-        )
-
         Projects(
             isDarkTheme = isDarkTheme,
             apps = porfolioData.apps

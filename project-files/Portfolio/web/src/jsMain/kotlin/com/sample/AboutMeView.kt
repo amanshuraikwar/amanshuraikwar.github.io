@@ -53,53 +53,60 @@ fun AboutMeView(
 
     Div(
         attrs = {
-            classes(WtContainer.wtContainerSm)
+            classes(
+                WtContainer.wtContainerSm,
+                WtOffsets.wtTopOffset96,
+                WtOffsets.wtTopOffsetSm48,
+            )
+        }
+    )
+
+    MdLayout(
+        nodes = listOf(
+            MdNode.H1(
+                "About Me :)"
+            ),
+            MdNode.Date(
+                "Updated December 10, 2021"
+            ),
+            MdNode.Spacer,
+            MdNode.P(
+                "Your neighbourhood Software Engineer who likes to builds apps for himself and hopefully others. I will not fix your printer for you unless you buy me food :)"
+            ),
+            MdNode.P(
+                "I also click photos sometimes."
+            ),
+            MdNode.P(
+                "I am trying to write more, however slowly ;)"
+            ),
+            MdNode.Img(
+                label = "Me",
+                url = "../../assets/me.jpeg"
+            ),
+            porfolioData.links
+                .find {
+                    it.id == "twitter"
+                }
+                .let { twitterLinkData ->
+                    MdNode.Btn(
+                        text = if (twitterLinkData != null) {
+                            "Follow me on Twitter"
+                        } else {
+                            "Go to Home Page"
+                        },
+                        url = twitterLinkData?.url ?: "https://amanshuraikwar.github.io"
+                    )
+                }
+        )
+    )
+
+    Div(
+        attrs = {
+            classes(
+                WtContainer.wtContainerSm,
+            )
         }
     ) {
-        MdLayout(
-            attrs = {
-                classes(
-                    WtOffsets.wtTopOffset96,
-                    WtOffsets.wtTopOffsetSm48,
-                )
-            },
-            nodes = listOf(
-                MdNode.H1(
-                    "About Me :)"
-                ),
-                MdNode.Date(
-                    "Updated December 10, 2021"
-                ),
-                MdNode.Spacer,
-                MdNode.P(
-                    "Your neighbourhood Software Engineer who likes to builds apps for himself and hopefully others. I will not fix your printer for you unless you buy me food :)"
-                ),
-                MdNode.P(
-                    "I also click photos sometimes."
-                ),
-                MdNode.P(
-                    "I am trying to write more, however slowly ;)"
-                ),
-                MdNode.Img(
-                    label = "Me",
-                    url = "../../assets/me.jpeg"
-                ),
-                porfolioData.links
-                    .find {
-                        it.id == "twitter"
-                    }
-                    .let { twitterLinkData ->
-                        MdNode.Btn(
-                            text = if (twitterLinkData != null) {
-                                "Follow me on Twitter"
-                            } else {
-                                "Go to Home Page"
-                            },
-                            url = twitterLinkData?.url ?: "https://amanshuraikwar.github.io"
-                        )
-                    }
-            )
-        )
 
         Hr(
             attrs = {

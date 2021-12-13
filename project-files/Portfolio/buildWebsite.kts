@@ -312,6 +312,11 @@ fun generateBlogMdSource(file: File): BlogListEntry {
                     }
                 }
                 line.startsWith("```") -> {
+                    val language = if (line.trim().length > 3) {
+                        line.trim().drop(3).trim()
+                    } else {
+                        ""
+                    }
                     var codeBlockLines = mutableListOf<String>()
                     while (++i < lines.size && !lines[i].startsWith("```")) {
                         val lastLine = lines[i]
@@ -319,11 +324,12 @@ fun generateBlogMdSource(file: File): BlogListEntry {
                     }
 
                     out.write("\t\t\tMdNode.Code(\n")
-                    out.write("\t\t\t\tlines = listOf(\n")
+                    out.write("\t\t\t\tlanguage = \"$language\",\n")
+                    out.write("\t\t\t\tcode = \"\"\"\n")
                     codeBlockLines.forEach {
-                        out.write("\t\t\t\t\t\"$it\",\n")
+                        out.write("\t\t\t\t\t$it\n")
                     }
-                    out.write("\t\t\t\t)\n")
+                    out.write("\t\t\t\t\"\"\".trimIndent()\n")
                     out.write("\t\t\t),\n")
                 }
                 line.trim().isNotBlank() -> {

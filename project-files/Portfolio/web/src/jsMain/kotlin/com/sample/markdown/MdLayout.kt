@@ -1,9 +1,10 @@
 package com.sample.markdown
 
 import androidx.compose.runtime.Composable
+import com.sample.HighlightJs
 import com.sample.components.TextHrefButton
 import com.sample.style.AppCSSVariables
-import com.sample.style.WtCols
+import com.sample.style.WtContainer
 import com.sample.style.WtOffsets
 import com.sample.style.WtTexts
 import io.github.amanshuraikwar.portfolio.markdown.MdNode
@@ -18,14 +19,13 @@ import org.jetbrains.compose.web.css.color
 import org.jetbrains.compose.web.css.display
 import org.jetbrains.compose.web.css.flexDirection
 import org.jetbrains.compose.web.css.justifyContent
+import org.jetbrains.compose.web.css.overflow
 import org.jetbrains.compose.web.css.padding
 import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.css.value
 import org.jetbrains.compose.web.css.width
-import org.jetbrains.compose.web.dom.AttrBuilderContext
 import org.jetbrains.compose.web.dom.B
-import org.jetbrains.compose.web.dom.Br
 import org.jetbrains.compose.web.dom.Code
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.H1
@@ -36,22 +36,21 @@ import org.jetbrains.compose.web.dom.Img
 import org.jetbrains.compose.web.dom.P
 import org.jetbrains.compose.web.dom.Pre
 import org.jetbrains.compose.web.dom.Text
-import org.w3c.dom.HTMLDivElement
 
 @Composable
 fun MdLayout(
-    attrs: AttrBuilderContext<HTMLDivElement>? = null,
     nodes: List<MdNode>,
 ) {
-    Div(
-        attrs = {
-            attrs?.invoke(this)
-            style {}
-        }
-    ) {
-        nodes.forEach { node ->
-            when (node) {
-                is MdNode.H1 -> {
+    nodes.forEach { node ->
+        when (node) {
+            is MdNode.H1 -> {
+                Div(
+                    attrs = {
+                        classes(
+                            WtContainer.wtContainerSm,
+                        )
+                    }
+                ) {
                     H1(
                         attrs = {
                             classes(WtTexts.wtH1Blog)
@@ -63,7 +62,15 @@ fun MdLayout(
                         Text(node.text)
                     }
                 }
-                is MdNode.H3 -> {
+            }
+            is MdNode.H3 -> {
+                Div(
+                    attrs = {
+                        classes(
+                            WtContainer.wtContainerSm,
+                        )
+                    }
+                ) {
                     Div(
                         attrs = {
                             classes(
@@ -84,7 +91,15 @@ fun MdLayout(
                         Text(node.text)
                     }
                 }
-                is MdNode.H5 -> {
+            }
+            is MdNode.H5 -> {
+                Div(
+                    attrs = {
+                        classes(
+                            WtContainer.wtContainerSm,
+                        )
+                    }
+                ) {
                     H5(
                         attrs = {
                             classes(WtTexts.wtH5)
@@ -96,7 +111,15 @@ fun MdLayout(
                         Text(node.text)
                     }
                 }
-                is MdNode.P -> {
+            }
+            is MdNode.P -> {
+                Div(
+                    attrs = {
+                        classes(
+                            WtContainer.wtContainerSm,
+                        )
+                    }
+                ) {
                     Div(
                         attrs = {
                             classes(
@@ -119,7 +142,15 @@ fun MdLayout(
                         }
                     }
                 }
-                is MdNode.Img -> {
+            }
+            is MdNode.Img -> {
+                Div(
+                    attrs = {
+                        classes(
+                            WtContainer.wtContainerSm,
+                        )
+                    }
+                ) {
                     Div(
                         attrs = {
 
@@ -161,7 +192,15 @@ fun MdLayout(
                         }
                     }
                 }
-                is MdNode.Spacer -> {
+            }
+            is MdNode.Spacer -> {
+                Div(
+                    attrs = {
+                        classes(
+                            WtContainer.wtContainerSm,
+                        )
+                    }
+                ) {
                     Div(
                         attrs = {
                             classes(
@@ -170,7 +209,15 @@ fun MdLayout(
                         }
                     )
                 }
-                is MdNode.Date -> {
+            }
+            is MdNode.Date -> {
+                Div(
+                    attrs = {
+                        classes(
+                            WtContainer.wtContainerSm,
+                        )
+                    }
+                ) {
                     Div(
                         attrs = {
                             style {
@@ -197,7 +244,15 @@ fun MdLayout(
                         }
                     }
                 }
-                is MdNode.Btn -> {
+            }
+            is MdNode.Btn -> {
+                Div(
+                    attrs = {
+                        classes(
+                            WtContainer.wtContainerSm,
+                        )
+                    }
+                ) {
                     Div(
                         attrs = {
 
@@ -219,35 +274,37 @@ fun MdLayout(
                         )
                     }
                 }
-                is MdNode.Code -> {
-                    Div(
+            }
+            is MdNode.Code -> {
+                Pre(
+                    attrs = {
+                        classes(WtTexts.wtCode)
+                        classes(
+                            WtOffsets.wtTopOffset48,
+                            WtOffsets.wtTopOffsetSm24,
+                            WtContainer.wtContainerSmCode,
+                        )
+                        style {
+                            overflow("auto")
+                            backgroundColor(AppCSSVariables.outlineBtnBgHover.value())
+                            borderRadius(4.px)
+                        }
+                    }
+                ) {
+                    Code(
                         attrs = {
-                            classes(WtTexts.wtCode)
-                            classes(
-                                WtOffsets.wtTopOffset48,
-                                WtOffsets.wtTopOffsetSm24,
-                                WtCols.wtCol12
-                            )
+                            classes("language-${node.language}", "hljs")
                             style {
                                 padding(8.px)
-                                backgroundColor(AppCSSVariables.outlineBtnBgHover.value())
-                                borderRadius(4.px)
                             }
                         }
                     ) {
-                        Pre(
-                            attrs = {
-                                classes(
-                                    WtCols.wtCol12
-                                )
-                            }
-                        ) {
-                            Code {
-                                node.lines.forEach {
-                                    Text(it)
-                                    Br()
-                                }
-                            }
+                        node.code.split("\n").forEach {
+                            Text(it + "\n")
+                        }
+
+                        DomSideEffect(node.code) {
+                            HighlightJs.highlightElement(it)
                         }
                     }
                 }

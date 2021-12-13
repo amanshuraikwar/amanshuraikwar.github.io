@@ -9,10 +9,10 @@ PS: MockK does not support Kotlin/Native as of now.
 
 When I was integrating MockK in my project, like any down to earth developer :), I added the gradle dependency with the latest version 1.12.1. After I synced gradle, I found out that the run button disappeared from my test classes and test functions.
 
-```
+```kotlin
 val commonTest by getting {
     dependencies {
-        implementation(\"io.mockk:mockk:1.12.1\")
+        implementation("io.mockk:mockk:1.12.1")
     }
 }
 ```
@@ -25,10 +25,10 @@ The issue here is that, even though gradle synced sucessfully, when I looked int
 
 To fix this issue, I needed to use the version suffixed with .kotlinxx, where x is a number. So I used the lastest version matching this pattern, which was 1.9.3.kotlin12.
 
-```
+```kotlin
 val commonTest by getting {
     dependencies {
-        implementation(\"io.mockk:mockk:1.9.3.kotlin12\")
+        implementation("io.mockk:mockk:1.9.3.kotlin12")
     }
 }
 ```
@@ -47,10 +47,10 @@ This is because the library versions suffixed with kotlin12 are meant for kotlin
 
 To fix the issue, I needed to use the library version suffixed with kotlin13.
 
-```
+```kotlin
 val commonTest by getting {
     dependencies {
-        implementation(\"io.mockk:mockk:1.8.13.kotlin13\")
+        implementation("io.mockk:mockk:1.8.13.kotlin13")
     }
 }
 ```
