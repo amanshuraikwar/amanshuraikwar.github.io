@@ -52,13 +52,13 @@ fun HomeView(
         )
     }
 
+    BlogView(blogData)
+
     Div(
         attrs = {
             classes(WtContainer.wtContainerSm)
         }
     ) {
-        BlogView(blogData)
-
         Links(
             porfolioData.links,
             isDarkTheme = isDarkTheme

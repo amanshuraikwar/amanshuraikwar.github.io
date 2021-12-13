@@ -54,23 +54,27 @@ fun BackgroundView(
 
     Div(
         attrs = {
+            classes(
+                WtContainer.wtContainerSm,
+                WtOffsets.wtTopOffset96,
+                WtOffsets.wtTopOffsetSm48,
+            )
+        }
+    )
+
+    MdLayout(
+        nodes = listOf(
+            MdNode.H1(
+                "My Background"
+            ),
+        )
+    )
+
+    Div(
+        attrs = {
             classes(WtContainer.wtContainerSm)
         }
     ) {
-        MdLayout(
-            attrs = {
-                classes(
-                    WtOffsets.wtTopOffset96,
-                    WtOffsets.wtTopOffsetSm48,
-                )
-            },
-            nodes = listOf(
-                MdNode.H1(
-                    "My Background"
-                ),
-            )
-        )
-
         Experience(
             experience = porfolioData.experience,
             isDarkTheme = isDarkTheme,

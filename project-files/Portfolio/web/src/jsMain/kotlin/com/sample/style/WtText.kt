@@ -166,7 +166,6 @@ object WtTexts : StyleSheet(AppStylesheet) {
     }
 
     val wtCode by style {
-        color(AppCSSVariables.colorOnBackground.value())
         fontSize(AppCSSVariables.wtBodyFontSize.value(16.px))
         fontWeight(FontWeight.Medium)
         lineHeight("1.7")
