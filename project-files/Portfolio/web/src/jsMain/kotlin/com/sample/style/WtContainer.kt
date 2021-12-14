@@ -104,6 +104,7 @@ object WtContainer : StyleSheet(AppStylesheet) {
             self style {
                 flexDirection(FlexDirection.Column)
                 alignItems(AlignItems.Stretch)
+                gap(0.px)
             }
         }
     }
