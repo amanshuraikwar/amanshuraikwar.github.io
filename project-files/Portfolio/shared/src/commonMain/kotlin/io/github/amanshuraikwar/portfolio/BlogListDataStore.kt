@@ -7,6 +7,12 @@ class BlogListDataStore {
 	fun getBlogListData(): List<BlogListDataItem> {
 		return listOf(
             BlogListDataItem(
+                title = "How to use highlight.js in your Jetpack Compose Web project",
+                date = "December 14, 2021",
+                firstParagraph = "If you are building your web app using Jetpack Compose for Web and want to use highlight.js, this is the blog for you.",
+                link = "https://amanshuraikwar.github.io/jetpack-compose-web-highlight-js",
+            ),
+            BlogListDataItem(
                 title = "Issues using MockK in a KMM shared module",
                 date = "December 12, 2021",
                 firstParagraph = "If you are writing unit tests for your Kotlin project and need to mock certain objects, there is high chance that you are using MockK. Here are a couple of issues that I faced while using MockK in my KMM project. The project has Android and iOS apps with business logic written in shared KMM modules, I was writing unit tests to test this business logic.",

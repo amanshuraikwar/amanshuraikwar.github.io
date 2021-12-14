@@ -4,15 +4,21 @@ import androidx.compose.runtime.Composable
 import com.sample.style.AppCSSVariables
 import com.sample.style.WtButton
 import com.sample.style.WtTexts
+import com.sample.style.paddingBottom
+import com.sample.style.paddingLeft
+import com.sample.style.paddingRight
+import com.sample.style.paddingTop
 import org.jetbrains.compose.web.attributes.ATarget
 import org.jetbrains.compose.web.attributes.target
 import org.jetbrains.compose.web.css.AlignItems
 import org.jetbrains.compose.web.css.DisplayStyle
 import org.jetbrains.compose.web.css.JustifyContent
 import org.jetbrains.compose.web.css.alignItems
+import org.jetbrains.compose.web.css.borderRadius
 import org.jetbrains.compose.web.css.color
 import org.jetbrains.compose.web.css.display
 import org.jetbrains.compose.web.css.justifyContent
+import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.css.value
 import org.jetbrains.compose.web.dom.A
 import org.jetbrains.compose.web.dom.AttrBuilderContext
@@ -191,8 +197,54 @@ fun HeroTextHrefButton(
                 }
                 style {
                     display(DisplayStyle.Flex)
-                    alignItems(AlignItems.Center)
-                    justifyContent(JustifyContent.Center)
+                    alignItems(AlignItems.FlexStart)
+                    justifyContent(JustifyContent.FlexStart)
+                }
+            }
+        ) {
+            Text(text.uppercase())
+        }
+    }
+}
+
+@Composable
+fun HeroTextHrefButtonSmall(
+    attrs: AttrBuilderContext<HTMLAnchorElement>? = null,
+    text: String,
+    href: String,
+    buttonSize: ButtonSize = ButtonSize.NORMAL,
+    openInNewTab: Boolean = true
+) {
+    A(
+        attrs = {
+            attrs?.invoke(this)
+            classes(
+                WtTexts.wtButton
+            )
+            if (openInNewTab) {
+                target(ATarget.Blank)
+            }
+            style {
+                color(AppCSSVariables.colorOnPrimary.value())
+            }
+        },
+        href = href,
+    ) {
+        Div(
+            attrs = {
+                classes(WtTexts.wtButton)
+                classes(WtButton.wtButtonHero)
+                when (buttonSize) {
+                    ButtonSize.NORMAL -> classes(WtButton.wtTextButtonNormal)
+                    ButtonSize.SMALL -> classes(WtButton.wtTextButtonSmall)
+                }
+                style {
+                    borderRadius(0.px)
+                    paddingLeft(0.px)
+                    paddingRight(0.px)
+                    display(DisplayStyle.Flex)
+                    alignItems(AlignItems.FlexStart)
+                    justifyContent(JustifyContent.FlexStart)
                 }
             }
         ) {

@@ -8,6 +8,7 @@ import androidx.compose.runtime.setValue
 import com.sample.components.ButtonSize
 import com.sample.components.HeroImgButton
 import com.sample.components.HeroTextHrefButton
+import com.sample.components.HeroTextHrefButtonSmall
 import com.sample.style.AppCSSVariables
 import com.sample.style.WtContainer
 import com.sample.style.WtOffsets
@@ -171,21 +172,21 @@ fun Hero(
                             )
                         }
                     ) {
-                        HeroTextHrefButton(
+                        HeroTextHrefButtonSmall(
                             text = "Projects",
                             href = "https://amanshuraikwar.github.io/projects/",
                             buttonSize = ButtonSize.SMALL,
                             openInNewTab = false
                         )
 
-                        HeroTextHrefButton(
+                        HeroTextHrefButtonSmall(
                             text = "My Background",
                             href = "https://amanshuraikwar.github.io/background/",
                             buttonSize = ButtonSize.SMALL,
                             openInNewTab = false
                         )
 
-                        HeroTextHrefButton(
+                        HeroTextHrefButtonSmall(
                             text = "About Me",
                             href = "https://amanshuraikwar.github.io/me",
                             buttonSize = ButtonSize.SMALL,
