@@ -13,8 +13,11 @@ import com.sample.style.WtOffsets
 import com.sample.style.WtTexts
 import io.github.amanshuraikwar.portfolio.markdown.MdNode
 import io.github.amanshuraikwar.portfolio.model.PortfolioData
+import io.github.amanshuraikwar.portfolio.model.ThemeData
+import org.jetbrains.compose.web.css.AlignItems
 import org.jetbrains.compose.web.css.DisplayStyle
 import org.jetbrains.compose.web.css.JustifyContent
+import org.jetbrains.compose.web.css.alignItems
 import org.jetbrains.compose.web.css.color
 import org.jetbrains.compose.web.css.display
 import org.jetbrains.compose.web.css.justifyContent
@@ -27,7 +30,9 @@ import org.jetbrains.compose.web.dom.Text
 fun AboutMeView(
     porfolioData: PortfolioData,
     isDarkTheme: Boolean,
-    onThemeBtnClick: (isDarkTheme: Boolean) -> Unit,
+    themeColorsName: String,
+    themeData: ThemeData,
+    onThemeBtnClick: (selectedThemeColors: String) -> Unit,
 ) {
     if (isDarkTheme) {
         Hero(
@@ -156,21 +161,16 @@ fun AboutMeView(
                 )
                 style {
                     display(DisplayStyle.Flex)
-                    justifyContent(JustifyContent.FlexEnd)
+                    justifyContent(JustifyContent.Center)
+                    alignItems(AlignItems.Center)
                 }
             }
         ) {
-            if (isDarkTheme) {
-                ThemeSwitch(
-                    true,
-                    onThemeBtnClick
-                )
-            } else {
-                ThemeSwitch(
-                    false,
-                    onThemeBtnClick
-                )
-            }
+            ThemeSwitch(
+                themeColorsName,
+                themeData,
+                onThemeChange = onThemeBtnClick
+            )
         }
 
         Div(

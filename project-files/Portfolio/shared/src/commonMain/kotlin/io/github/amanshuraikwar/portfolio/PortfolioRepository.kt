@@ -1,7 +1,8 @@
+@file:Suppress("EXPERIMENTAL_API_USAGE")
+
 package io.github.amanshuraikwar.portfolio
 
 import com.russhwolf.settings.Settings
-import io.github.amanshuraikwar.portfolio.markdown.MdNode
 import io.github.amanshuraikwar.portfolio.model.AppData
 import io.github.amanshuraikwar.portfolio.model.AppLink
 import io.github.amanshuraikwar.portfolio.model.ExperienceData
@@ -33,33 +34,139 @@ class PortfolioRepository {
     )
 
     private val settings = Settings()
-    private var isDarkThemeEnabled =
-        settings.getBoolean(PREFS_DARK_THEME_ENABLED, true)
 
-    private val themeData = MutableStateFlow(
-        settings
-            .getString(
-                PREFS_THEME_DATA,
-                ""
+    private var themeColorsName: String
+        get() {
+            return settings.getString(
+                PREFS_THEME_COLORS_NAME,
+                DEFAULT_THEME_COLORS_NAME
             )
-            .takeIf {
-                it.isNotEmpty()
-            }
-            ?.let {
-                Json.decodeFromString<ThemeData>(
-                    it
-                )
-            }
-            ?: DEFAULT_THEME_DATA
-    )
+        }
+        set(value) {
+            settings.putString(
+                PREFS_THEME_COLORS_NAME,
+                value
+            )
+        }
 
-    fun isDarkThemeEnabled(): Boolean {
-        return isDarkThemeEnabled
+    private val themeColorsNameFlow = MutableStateFlow(themeColorsName)
+
+    private var themeData: ThemeData
+        get() {
+            return try {
+                Json.decodeFromString(
+                    settings.getString(
+                        PREFS_THEME_DATA,
+                        Json.encodeToString(DEFAULT_THEME_DATA)
+                    )
+                )
+            } catch (e: Exception) {
+                settings.putString(
+                    PREFS_THEME_DATA,
+                    Json.encodeToString(DEFAULT_THEME_DATA)
+                )
+                DEFAULT_THEME_DATA
+            }
+        }
+        set(value) {
+            settings.putString(
+                PREFS_THEME_DATA,
+                Json.encodeToString(value)
+            )
+        }
+
+    private val themeDataFlow = MutableStateFlow(themeData)
+
+    private val themeColors: MutableStateFlow<ThemeColorsData>
+
+    init {
+        val initThemeColors: ThemeColorsData
+
+        while (true) {
+            val selectedThemeColors = themeData.getThemeColors(themeColorsName)
+            if (selectedThemeColors != null) {
+                initThemeColors = selectedThemeColors
+                break
+            }
+            val parsedName = themeData.themes[0]
+                .name
+                .replace(" ", "")
+                .lowercase()
+            themeColorsName = parsedName
+        }
+
+        themeColors = MutableStateFlow(initThemeColors)
     }
 
-    fun setDarkThemeEnabled(enabled: Boolean) {
-        isDarkThemeEnabled = enabled
-        settings.putBoolean(PREFS_DARK_THEME_ENABLED, enabled)
+    private fun ThemeData.getThemeColors(name: String): ThemeColorsData? {
+        return themes.find {
+            it.name.replace(" ", "").lowercase() == name
+        }
+    }
+
+    fun getSelectedThemeColors(): StateFlow<ThemeColorsData> {
+        repositoryScope.launch {
+            //fetchThemeDataFromRemote()
+        }
+
+        return themeColors
+    }
+
+    fun getThemeData(): StateFlow<ThemeData> {
+        repositoryScope.launch {
+            //fetchThemeDataFromRemote()
+        }
+
+        return themeDataFlow
+    }
+
+    private suspend fun fetchThemeDataFromRemote() {
+        portfolioApi.getThemeData().let { response ->
+            val newThemeData = ThemeData(
+                response.themes.map { themeColors ->
+                    ThemeColorsData(
+                        name = themeColors.name,
+                        isDark = themeColors.isDark,
+                        primaryColor = themeColors.primaryColor,
+                        onPrimaryColor = themeColors.onPrimaryColor,
+                        surfaceColor = themeColors.surfaceColor,
+                        onSurfaceColor = themeColors.onSurfaceColor,
+                        errorColor = themeColors.errorColor,
+                        onErrorColor = themeColors.onErrorColor,
+                    )
+                }
+            )
+
+            themeData = newThemeData
+            themeDataFlow.value = themeData
+
+            while (true) {
+                val newThemeColors = themeData.getThemeColors(themeColorsName)
+                if (newThemeColors != null) {
+                    themeColors.value = newThemeColors
+                    break
+                }
+                val parsedName = themeData.themes[0]
+                    .name
+                    .replace(" ", "")
+                    .lowercase()
+                themeColorsName = parsedName
+            }
+        }
+    }
+
+    fun getSelectedThemeColorsName(): StateFlow<String> {
+        return themeColorsNameFlow
+    }
+
+    fun setSelectedThemeColorsName(name: String) {
+        val parsedName = name.replace(" ", "").lowercase()
+        val selectedThemeColors = themeData.getThemeColors(parsedName)
+        if (selectedThemeColors != null) {
+            themeColorsName = parsedName
+            themeColorsNameFlow.value = themeColorsName
+            themeColors.value = selectedThemeColors
+        }
     }
 
     suspend fun getPortfolioData(): PortfolioData {
@@ -109,37 +216,12 @@ class PortfolioRepository {
         }
     }
 
-    fun getThemeData(): StateFlow<ThemeData> {
-        repositoryScope.launch {
-            portfolioApi.getThemeData().let { response ->
-                val newThemeData = ThemeData(
-                    darkTheme = ThemeColorsData(
-                        primaryColor = response.darkTheme.primaryColor,
-                        onPrimaryColor = response.darkTheme.onPrimaryColor,
-                        surfaceColor = response.darkTheme.surfaceColor,
-                        onSurfaceColor = response.darkTheme.onSurfaceColor,
-                        errorColor = response.darkTheme.errorColor,
-                        onErrorColor = response.darkTheme.onErrorColor,
-                    ),
-                    lightTheme = ThemeColorsData(
-                        primaryColor = response.lightTheme.primaryColor,
-                        onPrimaryColor = response.lightTheme.onPrimaryColor,
-                        surfaceColor = response.lightTheme.surfaceColor,
-                        onSurfaceColor = response.lightTheme.onSurfaceColor,
-                        errorColor = response.lightTheme.errorColor,
-                        onErrorColor = response.lightTheme.onErrorColor,
-                    )
-                )
-                themeData.value = newThemeData
-                settings.putString(PREFS_THEME_DATA, Json.encodeToString(newThemeData))
-            }
-        }
-        return themeData
-    }
-
     suspend fun getPageData(): PageData {
         return when (GeneratedDataStore().getPageType()) {
-            PageType.HOME -> PageData.Home(getPortfolioData(), BlogListDataStore().getBlogListData())
+            PageType.HOME -> PageData.Home(
+                getPortfolioData(),
+                BlogListDataStore().getBlogListData()
+            )
             PageType.MD -> PageData.Md(getPortfolioData(), GeneratedDataStore().getData())
             PageType.PROJECTS -> PageData.Projects(getPortfolioData())
             PageType.BACKGROUND -> PageData.Background(getPortfolioData())
@@ -148,25 +230,44 @@ class PortfolioRepository {
     }
 
     companion object {
-        private const val PREFS_DARK_THEME_ENABLED = "dark_theme_enabled"
+        private const val PREFS_THEME_COLORS_NAME = "theme_colors_name"
         private const val PREFS_THEME_DATA = "theme_data"
 
+        private val DEFAULT_THEME_COLORS_NAME =
+            "Dark Salmon".replace(" ", "").lowercase()
+
         private val DEFAULT_THEME_DATA = ThemeData(
-            darkTheme = ThemeColorsData(
-                primaryColor = "#FFFFCDD2",
-                onPrimaryColor = "#FF4E342E",
-                surfaceColor = "#FF212121",
-                onSurfaceColor = "#FFffffff",
-                errorColor = "#FFE57373",
-                onErrorColor = "#FF4E342E",
-            ),
-            lightTheme = ThemeColorsData(
-                primaryColor = "#ffBD4B4B",
-                onPrimaryColor = "#FFFFCDD2",
-                surfaceColor = "#ffEEEEEE",
-                onSurfaceColor = "#FF212121",
-                errorColor = "#FFE57373",
-                onErrorColor = "#FF212121",
+            listOf(
+                ThemeColorsData(
+                    name = "Dark Salmon".replace(" ", "").lowercase(),
+                    isDark = true,
+                    primaryColor = "#FFFFCDD2",
+                    onPrimaryColor = "#FF4E342E",
+                    surfaceColor = "#FF212121",
+                    onSurfaceColor = "#FFffffff",
+                    errorColor = "#FFE57373",
+                    onErrorColor = "#FF4E342E",
+                ),
+                ThemeColorsData(
+                    name = "Light Blue".replace(" ", "").lowercase(),
+                    isDark = false,
+                    primaryColor = "#ffEA5C5A",
+                    onPrimaryColor = "#FFffffff",
+                    surfaceColor = "#ffCDECF9",
+                    onSurfaceColor = "#FF030204",
+                    errorColor = "#FFE57373",
+                    onErrorColor = "#FF212121",
+                ),
+                ThemeColorsData(
+                    name = "Matt D'av Ella".replace(" ", "").lowercase(),
+                    isDark = false,
+                    primaryColor = "#ffE35638",
+                    onPrimaryColor = "#FFFADACA",
+                    surfaceColor = "#ffFBF8EC",
+                    onSurfaceColor = "#FF24242C",
+                    errorColor = "#FFE57373",
+                    onErrorColor = "#FF212121",
+                )
             )
         )
     }

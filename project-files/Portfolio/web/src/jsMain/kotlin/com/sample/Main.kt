@@ -1,6 +1,7 @@
 package com.sample
 
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
@@ -8,9 +9,9 @@ import com.sample.components.Layout
 import com.sample.style.AppStylesheet
 import io.github.amanshuraikwar.portfolio.PageData
 import io.github.amanshuraikwar.portfolio.PortfolioRepository
+import io.github.amanshuraikwar.portfolio.model.ThemeColorsData
 import io.github.amanshuraikwar.portfolio.model.ThemeData
 import kotlinx.coroutines.MainScope
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import org.jetbrains.compose.web.css.Style
 import org.jetbrains.compose.web.renderComposable
@@ -18,33 +19,29 @@ import org.jetbrains.compose.web.renderComposable
 fun main() {
     val portfolioRepository = PortfolioRepository()
     val coroutineScope = MainScope()
-
     var pageData: PageData? by mutableStateOf(null)
-    var isDarkTheme: Boolean by mutableStateOf(portfolioRepository.isDarkThemeEnabled())
-    var themeData: ThemeData by mutableStateOf(portfolioRepository.getThemeData().value)
 
     coroutineScope.launch {
         pageData = portfolioRepository.getPageData()
     }
 
-    coroutineScope.launch {
-        portfolioRepository
-            .getThemeData()
-            .collect {
-                themeData = it
-            }
-    }
-
     renderComposable(rootElementId = "root") {
+        val themeColors: ThemeColorsData by portfolioRepository
+            .getSelectedThemeColors()
+            .collectAsState()
+
+        val themeColorsName: String by portfolioRepository
+            .getSelectedThemeColorsName()
+            .collectAsState()
+
+        val themeData: ThemeData by portfolioRepository
+            .getThemeData()
+            .collectAsState()
+
         Style(AppStylesheet)
-        LaunchedEffect(key1 = pageData, key2 = isDarkTheme) {
-            AppStylesheet.updateColors(
-                if (isDarkTheme) {
-                    themeData.darkTheme
-                } else {
-                    themeData.lightTheme
-                }
-            )
+
+        LaunchedEffect(key1 = pageData, key2 = themeColors) {
+            AppStylesheet.updateColors(themeColors)
         }
 
         Layout {
@@ -53,44 +50,49 @@ fun main() {
                     HomeView(
                         (pageData as PageData.Home).portfolioData,
                         (pageData as PageData.Home).blogData,
-                        isDarkTheme = isDarkTheme,
+                        themeColorsName = themeColorsName,
+                        isDarkTheme = themeColors.isDark,
+                        themeData = themeData,
                         onThemeBtnClick = {
-                            portfolioRepository.setDarkThemeEnabled(it)
-                            isDarkTheme = it
+                            portfolioRepository.setSelectedThemeColorsName(it)
                         },
                     )
                 }
                 is PageData.Md -> MdView(
                     (pageData as PageData.Md).portfolioData,
                     (pageData as PageData.Md).mdData,
-                    isDarkTheme = isDarkTheme,
+                    themeColorsName = themeColorsName,
+                    isDarkTheme = themeColors.isDark,
+                    themeData = themeData,
                     onThemeBtnClick = {
-                        portfolioRepository.setDarkThemeEnabled(it)
-                        isDarkTheme = it
+                        portfolioRepository.setSelectedThemeColorsName(it)
                     },
                 )
                 is PageData.Projects -> ProjectsView(
                     (pageData as PageData.Projects).portfolioData,
-                    isDarkTheme = isDarkTheme,
+                    themeColorsName = themeColorsName,
+                    isDarkTheme = themeColors.isDark,
+                    themeData = themeData,
                     onThemeBtnClick = {
-                        portfolioRepository.setDarkThemeEnabled(it)
-                        isDarkTheme = it
+                        portfolioRepository.setSelectedThemeColorsName(it)
                     },
                 )
                 is PageData.Background -> BackgroundView(
                     (pageData as PageData.Background).portfolioData,
-                    isDarkTheme = isDarkTheme,
+                    themeColorsName = themeColorsName,
+                    isDarkTheme = themeColors.isDark,
+                    themeData = themeData,
                     onThemeBtnClick = {
-                        portfolioRepository.setDarkThemeEnabled(it)
-                        isDarkTheme = it
+                        portfolioRepository.setSelectedThemeColorsName(it)
                     },
                 )
                 is PageData.AboutMe -> AboutMeView(
                     (pageData as PageData.AboutMe).portfolioData,
-                    isDarkTheme = isDarkTheme,
+                    themeColorsName = themeColorsName,
+                    isDarkTheme = themeColors.isDark,
+                    themeData = themeData,
                     onThemeBtnClick = {
-                        portfolioRepository.setDarkThemeEnabled(it)
-                        isDarkTheme = it
+                        portfolioRepository.setSelectedThemeColorsName(it)
                     },
                 )
                 null -> {

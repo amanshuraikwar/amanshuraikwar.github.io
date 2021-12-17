@@ -4,6 +4,5 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class ThemeData(
-    val darkTheme: ThemeColorsData,
-    val lightTheme: ThemeColorsData
+    val themes: List<ThemeColorsData>
 )
