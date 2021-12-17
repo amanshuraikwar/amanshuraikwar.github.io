@@ -4,28 +4,33 @@ import androidx.compose.runtime.Composable
 import com.sample.style.AppCSSVariables
 import com.sample.style.WtButton
 import com.sample.style.WtTexts
-import com.sample.style.paddingBottom
 import com.sample.style.paddingLeft
 import com.sample.style.paddingRight
-import com.sample.style.paddingTop
 import org.jetbrains.compose.web.attributes.ATarget
 import org.jetbrains.compose.web.attributes.target
 import org.jetbrains.compose.web.css.AlignItems
+import org.jetbrains.compose.web.css.CSSColorValue
 import org.jetbrains.compose.web.css.DisplayStyle
 import org.jetbrains.compose.web.css.JustifyContent
+import org.jetbrains.compose.web.css.LineStyle
 import org.jetbrains.compose.web.css.alignItems
+import org.jetbrains.compose.web.css.backgroundColor
+import org.jetbrains.compose.web.css.border
 import org.jetbrains.compose.web.css.borderRadius
 import org.jetbrains.compose.web.css.color
 import org.jetbrains.compose.web.css.display
+import org.jetbrains.compose.web.css.height
 import org.jetbrains.compose.web.css.justifyContent
 import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.css.value
+import org.jetbrains.compose.web.css.width
 import org.jetbrains.compose.web.dom.A
 import org.jetbrains.compose.web.dom.AttrBuilderContext
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.Img
 import org.jetbrains.compose.web.dom.Text
 import org.w3c.dom.HTMLAnchorElement
+import org.w3c.dom.css.CSS
 
 enum class ButtonStyle {
     SOLID,
@@ -54,6 +59,35 @@ fun ImgButton(
             when (buttonSize) {
                 ButtonSize.NORMAL -> classes(WtButton.wtImgButtonNormal)
                 ButtonSize.SMALL -> classes(WtButton.wtImgButtonSmall)
+            }
+            onClick { onClick() }
+        }
+    )
+}
+
+@Composable
+fun ThemeColorButton(
+    color: CSSColorValue,
+    borderColor: CSSColorValue,
+    onClick: () -> Unit,
+    buttonSize: ButtonSize = ButtonSize.NORMAL,
+) {
+    Div(
+        attrs = {
+            style {
+                backgroundColor(color)
+            }
+            classes(WtButton.wtButtonSolid)
+            when (buttonSize) {
+                ButtonSize.NORMAL -> classes(WtButton.wtImgButtonNormal)
+                ButtonSize.SMALL -> classes(WtButton.wtImgButtonSmall)
+            }
+            style {
+                border {
+                    width = 2.px
+                    style = LineStyle.Solid
+                    color(borderColor)
+                }
             }
             onClick { onClick() }
         }

@@ -4,6 +4,8 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class ThemeColorsData(
+    val name: String,
+    val isDark: Boolean,
     val primaryColor: String,
     val onPrimaryColor: String,
     val surfaceColor: String,

@@ -1,5 +1,7 @@
-{
-  "darkTheme": {
+[
+  {
+    "name": "Dark Salmon",
+    "isDark": true,
     "primaryColor": "#FFFFCDD2",
     "onPrimaryColor": "#FF4E342E",
     "surfaceColor": "#FF212121",
@@ -7,12 +9,24 @@
     "errorColor": "#FFE57373",
     "onErrorColor": "#FF4E342E"
   },
-  "lightTheme": {
+  {
+    "name": "Light Blue",
+    "isDark": false,
     "primaryColor": "#ffEA5C5A",
     "onPrimaryColor": "#FFffffff",
     "surfaceColor": "#ffCDECF9",
     "onSurfaceColor": "#FF030204",
     "errorColor": "#FFE57373",
     "onErrorColor": "#FF212121"
+  },
+  {
+    "name": "Matt D'av Ella",
+    "isDark": false,
+    "primaryColor": "#ffE35638",
+    "onPrimaryColor": "#FFFADACA",
+    "surfaceColor": "#ffFBF8EC",
+    "onSurfaceColor": "#FF24242C",
+    "errorColor": "#FFE57373",
+    "onErrorColor": "#FF212121"
   }
-}
+]
