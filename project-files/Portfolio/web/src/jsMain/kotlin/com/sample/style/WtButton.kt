@@ -103,7 +103,7 @@ object WtButton : StyleSheet(AppStylesheet) {
 
         hover(self) style {
             backgroundColor(AppCSSVariables.outlineBtnBgHover.value())
-            property("transform", "scale(1.02)")
+//            property("transform", "scaleY(1.02)")
         }
 
 

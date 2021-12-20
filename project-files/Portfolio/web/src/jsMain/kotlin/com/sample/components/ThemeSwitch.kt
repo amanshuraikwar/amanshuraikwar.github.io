@@ -35,16 +35,20 @@ fun ThemeSwitch(
     ) {
         themeData.themes.forEach {
             ThemeColorButton(
+                src =  if (it.name == themeColorsName) {
+                    if (it.isDark) {
+                        "https://amanshuraikwar.github.io/assets/dark_mode_black_24.svg"
+                    } else {
+                        "https://amanshuraikwar.github.io/assets/light_mode_white_24.svg"
+                    }
+                } else {
+                    null
+                },
                 color = Color(it.primaryColor.dropAlphaHex()),
-                borderColor = Color(it.onPrimaryColor.dropAlphaHex()),
                 onClick = {
                     onThemeChange(it.name)
                 },
-                buttonSize = if (it.name == themeColorsName) {
-                    ButtonSize.NORMAL
-                } else {
-                    ButtonSize.SMALL
-                }
+                buttonSize = ButtonSize.SMALL
             )
         }
     }
