@@ -12,25 +12,20 @@ import org.jetbrains.compose.web.css.AlignItems
 import org.jetbrains.compose.web.css.CSSColorValue
 import org.jetbrains.compose.web.css.DisplayStyle
 import org.jetbrains.compose.web.css.JustifyContent
-import org.jetbrains.compose.web.css.LineStyle
 import org.jetbrains.compose.web.css.alignItems
 import org.jetbrains.compose.web.css.backgroundColor
-import org.jetbrains.compose.web.css.border
 import org.jetbrains.compose.web.css.borderRadius
 import org.jetbrains.compose.web.css.color
 import org.jetbrains.compose.web.css.display
-import org.jetbrains.compose.web.css.height
 import org.jetbrains.compose.web.css.justifyContent
 import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.css.value
-import org.jetbrains.compose.web.css.width
 import org.jetbrains.compose.web.dom.A
 import org.jetbrains.compose.web.dom.AttrBuilderContext
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.Img
 import org.jetbrains.compose.web.dom.Text
 import org.w3c.dom.HTMLAnchorElement
-import org.w3c.dom.css.CSS
 
 enum class ButtonStyle {
     SOLID,
@@ -67,8 +62,8 @@ fun ImgButton(
 
 @Composable
 fun ThemeColorButton(
+    src: String? = null,
     color: CSSColorValue,
-    borderColor: CSSColorValue,
     onClick: () -> Unit,
     buttonSize: ButtonSize = ButtonSize.NORMAL,
 ) {
@@ -83,15 +78,25 @@ fun ThemeColorButton(
                 ButtonSize.SMALL -> classes(WtButton.wtImgButtonSmall)
             }
             style {
-                border {
-                    width = 2.px
-                    style = LineStyle.Solid
-                    color(borderColor)
-                }
+                display(DisplayStyle.Flex)
+                alignItems(AlignItems.Center)
+                justifyContent(JustifyContent.Center)
             }
             onClick { onClick() }
         }
-    )
+    ) {
+        if (src != null) {
+            Img(
+                src = src,
+                attrs = {
+                    when (buttonSize) {
+                        ButtonSize.NORMAL -> classes(WtButton.wtImgButtonNormal)
+                        ButtonSize.SMALL -> classes(WtButton.wtImgButtonSmall)
+                    }
+                }
+            )
+        }
+    }
 }
 
 @Composable

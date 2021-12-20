@@ -17,7 +17,7 @@ import org.jetbrains.compose.web.dom.Hr
 fun BlogView(
     blogData: List<BlogListDataItem>,
 ) {
-    blogData.forEach { blogListDataItem ->
+    blogData.forEachIndexed { index, blogListDataItem ->
         A(
             attrs = {
                 classes(
@@ -62,13 +62,15 @@ fun BlogView(
             )
         }
 
-        Hr(
-            attrs = {
-                classes(
-                    WtContainer.wtContainerSm,
-                    WtContent.sectionDividerHr,
-                )
-            }
-        )
+        if (index != blogData.size - 1) {
+            Hr(
+                attrs = {
+                    classes(
+                        WtContainer.wtContainerSm,
+                        WtContent.sectionDividerHr,
+                    )
+                }
+            )
+        }
     }
 }

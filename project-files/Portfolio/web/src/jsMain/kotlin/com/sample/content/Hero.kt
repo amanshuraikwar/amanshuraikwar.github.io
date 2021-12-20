@@ -10,6 +10,7 @@ import com.sample.components.HeroImgButton
 import com.sample.components.HeroTextHrefButton
 import com.sample.components.HeroTextHrefButtonSmall
 import com.sample.style.AppCSSVariables
+import com.sample.style.WtCols
 import com.sample.style.WtContainer
 import com.sample.style.WtOffsets
 import com.sample.style.WtRows
@@ -33,6 +34,27 @@ import org.w3c.dom.HTMLDivElement
 
 @Composable
 fun Hero(
+    attrs: AttrBuilderContext<HTMLDivElement>? = null,
+    name: String,
+    isDarkTheme: Boolean
+) {
+    if (isDarkTheme) {
+        HeroActual(
+            attrs = attrs,
+            name = name,
+            isDarkTheme = true
+        )
+    } else {
+        HeroActual(
+            attrs = attrs,
+            name = name,
+            isDarkTheme = false
+        )
+    }
+}
+
+@Composable
+fun HeroActual(
     attrs: AttrBuilderContext<HTMLDivElement>? = null,
     name: String,
     isDarkTheme: Boolean
