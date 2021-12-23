@@ -22,6 +22,7 @@ object Libs {
         const val clientIos = "io.ktor:ktor-client-ios:$version"
         const val clientCio = "io.ktor:ktor-client-cio:$version"
         const val clientJs = "io.ktor:ktor-client-js:$version"
+        const val clientMock = "io.ktor:ktor-client-mock:$version"
     }
 
     object Kotlinx {
@@ -51,7 +52,7 @@ object Libs {
     }
 
     object Coroutines {
-        private const val version = "1.4.2"
+        private const val version = "1.5.2-native-mt"
         const val core = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$version"
         const val android = "org.jetbrains.kotlinx:kotlinx-coroutines-android:$version"
     }

@@ -50,12 +50,15 @@ kotlin {
                     implementation(serializationCore)
                     implementation(serializationJson)
                 }
+
+                implementation(Libs.Coroutines.core)
             }
         }
         val commonTest by getting {
             dependencies {
                 implementation(kotlin("test-common"))
                 implementation(kotlin("test-annotations-common"))
+                implementation(Libs.Ktor.clientMock)
             }
         }
         val androidMain by getting {
@@ -78,6 +81,12 @@ kotlin {
         val jsMain by getting {
             dependencies {
                 implementation(Libs.Ktor.clientJs)
+            }
+        }
+        val jsTest by getting {
+            dependencies {
+                implementation(kotlin("test-js"))
+//                implementation("org.jetbrains.kotlin:kotlin-test-js")
             }
         }
     }

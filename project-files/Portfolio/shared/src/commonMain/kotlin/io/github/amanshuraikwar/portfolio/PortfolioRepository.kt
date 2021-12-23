@@ -23,15 +23,15 @@ import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 
-class PortfolioRepository {
+class PortfolioRepository(
+    private val portfolioApi: PortfolioApi = PortfolioApi(
+        client = PortfolioApi.createHttpClient(enableNetworkLogs = true)
+    )
+) {
     private val errorHandler = CoroutineExceptionHandler { _, th ->
         // do nothing
     }
     private val repositoryScope = MainScope() + Dispatchers.Default + errorHandler
-
-    private val portfolioApi = PortfolioApi(
-        client = PortfolioApi.createHttpClient(enableNetworkLogs = true)
-    )
 
     private val settings = Settings()
 
@@ -114,7 +114,7 @@ class PortfolioRepository {
 
     fun getThemeData(): StateFlow<ThemeData> {
         repositoryScope.launch {
-            //fetchThemeDataFromRemote()
+            fetchThemeDataFromRemote()
         }
 
         return themeDataFlow
