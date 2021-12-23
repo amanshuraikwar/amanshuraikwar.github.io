@@ -906,6 +906,8 @@
   _no_name_provided__240.prototype.constructor = _no_name_provided__240;
   _no_name_provided__241.prototype = Object.create(CoroutineImpl_0.prototype);
   _no_name_provided__241.prototype.constructor = _no_name_provided__241;
+  $fetchThemeDataFromRemoteCOROUTINE$0.prototype = Object.create(CoroutineImpl_0.prototype);
+  $fetchThemeDataFromRemoteCOROUTINE$0.prototype.constructor = $fetchThemeDataFromRemoteCOROUTINE$0;
   $getPageDataCOROUTINE$1.prototype = Object.create(CoroutineImpl_0.prototype);
   $getPageDataCOROUTINE$1.prototype.constructor = $getPageDataCOROUTINE$1;
   H1.prototype = Object.create(MdNode.prototype);
@@ -936,6 +938,8 @@
   Other.prototype.constructor = Other;
   $getPortfolioDataCOROUTINE$2.prototype = Object.create(CoroutineImpl_0.prototype);
   $getPortfolioDataCOROUTINE$2.prototype.constructor = $getPortfolioDataCOROUTINE$2;
+  $getThemeDataCOROUTINE$4.prototype = Object.create(CoroutineImpl_0.prototype);
+  $getThemeDataCOROUTINE$4.prototype.constructor = $getThemeDataCOROUTINE$4;
   InvalidationResult.prototype = Object.create(Enum.prototype);
   InvalidationResult.prototype.constructor = InvalidationResult;
   ProvidableCompositionLocal.prototype = Object.create(CompositionLocal.prototype);
@@ -59473,8 +59477,8 @@
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__219($serializer_6) {
-    this._$serializer = $serializer_6;
+  function _no_name_provided__219($serializer_8) {
+    this._$serializer = $serializer_8;
   }
   _no_name_provided__219.prototype.invoke_lkp9i7_k$ = function (it) {
     return this._$serializer;
@@ -59496,8 +59500,8 @@
     kind: 'interface',
     interfaces: []
   };
-  function _no_name_provided_$factory_179($serializer_6) {
-    var i = new _no_name_provided__219($serializer_6);
+  function _no_name_provided_$factory_179($serializer_8) {
+    var i = new _no_name_provided__219($serializer_8);
     return function (p1) {
       return i.invoke_lkp9i7_k$(p1);
     };
@@ -65522,6 +65526,17 @@
     PageType_initEntries();
     return PageType_ABOUT_ME_instance;
   }
+  function PortfolioRepository_init_$Init$(portfolioApi, $mask0, $marker, $this) {
+    if (!(($mask0 & 1) === 0)) {
+      var tmp = Companion_getInstance_60();
+      var tmp_0 = tmp.createHttpClient$default_3b9j03_k$(null, true, 1, null);
+      portfolioApi = PortfolioApi_init_$Create$(tmp_0, null, 2, null);
+    }PortfolioRepository.call($this, portfolioApi);
+    return $this;
+  }
+  function PortfolioRepository_init_$Create$(portfolioApi, $mask0, $marker) {
+    return PortfolioRepository_init_$Init$(portfolioApi, $mask0, $marker, Object.create(PortfolioRepository.prototype));
+  }
   function _set_themeColorsName_($this, value_1) {
     Companion_getInstance_57();
     $this._settings.putString_wbz76b_k$('theme_colors_name', value_1);
@@ -65529,6 +65544,28 @@
   function _get_themeColorsName_($this) {
     Companion_getInstance_57();
     return $this._settings.getString_jg38oy_k$('theme_colors_name', Companion_getInstance_57()._DEFAULT_THEME_COLORS_NAME);
+  }
+  function _set_themeData_($this, value_1) {
+    Companion_getInstance_57();
+    var tmp$ret$2;
+    $l$block_1: {
+      var tmp0_encodeToString_0 = Default_getInstance();
+      var tmp$ret$1;
+      $l$block_0: {
+        var tmp1_serializer_0_1 = tmp0_encodeToString_0._get_serializersModule__0_k$();
+        var tmp$ret$0;
+        $l$block: {
+          var tmp0_cast_0_2 = serializer_1(tmp1_serializer_0_1, createKType_0(getKClass_0(ThemeData), [], false));
+          tmp$ret$0 = isInterface(tmp0_cast_0_2, KSerializer) ? tmp0_cast_0_2 : THROW_CCE();
+          break $l$block;
+        }
+        tmp$ret$1 = tmp$ret$0;
+        break $l$block_0;
+      }
+      tmp$ret$2 = tmp0_encodeToString_0.encodeToString_onvojc_k$(tmp$ret$1, value_1);
+      break $l$block_1;
+    }
+    $this._settings.putString_wbz76b_k$('theme_data', tmp$ret$2);
   }
   function _get_themeData_($this) {
     var tmp;
@@ -65645,6 +65682,12 @@
       break $l$block_4;
     }
     return tmp$ret$4;
+  }
+  function fetchThemeDataFromRemote($this, $cont) {
+    var tmp = new $fetchThemeDataFromRemoteCOROUTINE$0($this, $cont);
+    tmp._result_0 = Unit_getInstance();
+    tmp._exception_0 = null;
+    return tmp.doResume_0_k$();
   }
   function Companion_58() {
     Companion_instance_57 = this;
@@ -65769,7 +65812,8 @@
     interfaces: [],
     suspendArity: 1
   };
-  function _no_name_provided__240(resultContinuation) {
+  function _no_name_provided__240(this$0, resultContinuation) {
+    this._this$0_62 = this$0;
     CoroutineImpl_0.call(this, resultContinuation);
   }
   _no_name_provided__240.prototype.invoke_2i3g7c_k$ = function ($this$launch, $cont) {
@@ -65787,18 +65831,32 @@
     $sm: do
       try {
         var tmp = this._state_1;
-        if (tmp === 0) {
-          this._exceptionState = 1;
-          return Unit_getInstance();
-        } else if (tmp === 1) {
-          throw this._exception_0;
-        }} catch ($p) {
-        throw $p;
+        switch (tmp) {
+          case 0:
+            this._exceptionState = 2;
+            this._state_1 = 1;
+            suspendResult = fetchThemeDataFromRemote(this._this$0_62, this);
+            if (suspendResult === _get_COROUTINE_SUSPENDED_()) {
+              return suspendResult;
+            }
+            continue $sm;
+          case 1:
+            return Unit_getInstance();
+          case 2:
+            throw this._exception_0;
+        }
+      } catch ($p) {
+        if (this._exceptionState === 2) {
+          throw $p;
+        } else {
+          this._state_1 = this._exceptionState;
+          this._exception_0 = $p;
+        }
       }
      while (true);
   };
   _no_name_provided__240.prototype.create_y6imfn_k$ = function ($this$launch, completion) {
-    var i = new _no_name_provided__240(completion);
+    var i = new _no_name_provided__240(this._this$0_62, completion);
     i._$this$launch_9 = $this$launch;
     return i;
   };
@@ -65808,7 +65866,7 @@
     suspendArity: 1
   };
   function _no_name_provided__241(this$0, resultContinuation) {
-    this._this$0_62 = this$0;
+    this._this$0_63 = this$0;
     CoroutineImpl_0.call(this, resultContinuation);
   }
   _no_name_provided__241.prototype.invoke_mzru1z_k$ = function ($this$withContext, $cont) {
@@ -65829,7 +65887,7 @@
           case 0:
             this._exceptionState = 2;
             this._state_1 = 1;
-            suspendResult = this._this$0_62._portfolioApi.getPortfolioData_0_k$(this);
+            suspendResult = this._this$0_63._portfolioApi.getPortfolioData_0_k$(this);
             if (suspendResult === _get_COROUTINE_SUSPENDED_()) {
               return suspendResult;
             }
@@ -65890,7 +65948,7 @@
      while (true);
   };
   _no_name_provided__241.prototype.create_y6imfn_k$ = function ($this$withContext, completion) {
-    var i = new _no_name_provided__241(this._this$0_62, completion);
+    var i = new _no_name_provided__241(this._this$0_63, completion);
     i._$this$withContext = $this$withContext;
     return i;
   };
@@ -65899,9 +65957,71 @@
     interfaces: [],
     suspendArity: 1
   };
-  function $getPageDataCOROUTINE$1(_this_, resultContinuation) {
+  function $fetchThemeDataFromRemoteCOROUTINE$0(_this_, resultContinuation) {
     CoroutineImpl_0.call(this, resultContinuation);
     this.__this__44 = _this_;
+  }
+  $fetchThemeDataFromRemoteCOROUTINE$0.prototype.doResume_0_k$ = function () {
+    var suspendResult = this._result_0;
+    $sm: do
+      try {
+        var tmp = this._state_1;
+        switch (tmp) {
+          case 0:
+            this._exceptionState = 2;
+            this._state_1 = 1;
+            suspendResult = this.__this__44._portfolioApi.getThemeData_0_k$(this);
+            if (suspendResult === _get_COROUTINE_SUSPENDED_()) {
+              return suspendResult;
+            }
+            continue $sm;
+          case 1:
+            var tmp0_let_0 = suspendResult;
+            var tmp0_map_0_3 = tmp0_let_0._themes_0;
+            var tmp0_mapTo_0_1_4 = ArrayList_init_$Create$_0(collectionSizeOrDefault(tmp0_map_0_3, 10));
+            var tmp0_iterator_1_2_5 = tmp0_map_0_3.iterator_0_k$();
+            while (tmp0_iterator_1_2_5.hasNext_0_k$()) {
+              var item_2_3_6 = tmp0_iterator_1_2_5.next_0_k$();
+              tmp0_mapTo_0_1_4.add_2bq_k$(new ThemeColorsData(item_2_3_6._name_11, item_2_3_6._isDark_0, item_2_3_6._primaryColor_0, item_2_3_6._onPrimaryColor_0, item_2_3_6._surfaceColor_0, item_2_3_6._onSurfaceColor_0, item_2_3_6._errorColor_0, item_2_3_6._onErrorColor_0));
+              Unit_getInstance();
+            }
+
+            var newThemeData_2 = new ThemeData(tmp0_mapTo_0_1_4);
+            _set_themeData_(this.__this__44, newThemeData_2);
+            this.__this__44._themeDataFlow._set_value__iav7o_k$(_get_themeData_(this.__this__44));
+            $l$break: while (true) {
+              var newThemeColors_7 = getThemeColors(_get_themeData_(this.__this__44), this.__this__44, _get_themeColorsName_(this.__this__44));
+              if (!(newThemeColors_7 == null)) {
+                this.__this__44._themeColors._set_value__iav7o_k$(newThemeColors_7);
+                break $l$break;
+              }var tmp_0 = _get_themeData_(this.__this__44)._themes.get_ha5a7z_k$(0)._name_9;
+              var tmp1_lowercase_0_9 = replace$default_0(tmp_0, ' ', '', false, 4, null);
+              var parsedName_8 = tmp1_lowercase_0_9.toLowerCase();
+              _set_themeColorsName_(this.__this__44, parsedName_8);
+            }
+
+            return Unit_getInstance();
+          case 2:
+            throw this._exception_0;
+        }
+      } catch ($p) {
+        if (this._exceptionState === 2) {
+          throw $p;
+        } else {
+          this._state_1 = this._exceptionState;
+          this._exception_0 = $p;
+        }
+      }
+     while (true);
+  };
+  $fetchThemeDataFromRemoteCOROUTINE$0.$metadata$ = {
+    simpleName: '$fetchThemeDataFromRemoteCOROUTINE$0',
+    kind: 'class',
+    interfaces: []
+  };
+  function $getPageDataCOROUTINE$1(_this_, resultContinuation) {
+    CoroutineImpl_0.call(this, resultContinuation);
+    this.__this__45 = _this_;
   }
   $getPageDataCOROUTINE$1.prototype.doResume_0_k$ = function () {
     var suspendResult = this._result_0;
@@ -65914,35 +66034,35 @@
             this._tmp0_subject0_0 = (new GeneratedDataStore()).getPageType_0_k$();
             if (this._tmp0_subject0_0.equals(PageType_HOME_getInstance())) {
               this._state_1 = 5;
-              suspendResult = this.__this__44.getPortfolioData_0_k$(this);
+              suspendResult = this.__this__45.getPortfolioData_0_k$(this);
               if (suspendResult === _get_COROUTINE_SUSPENDED_()) {
                 return suspendResult;
               }continue $sm;
             } else {
               if (this._tmp0_subject0_0.equals(PageType_MD_getInstance())) {
                 this._state_1 = 4;
-                suspendResult = this.__this__44.getPortfolioData_0_k$(this);
+                suspendResult = this.__this__45.getPortfolioData_0_k$(this);
                 if (suspendResult === _get_COROUTINE_SUSPENDED_()) {
                   return suspendResult;
                 }continue $sm;
               } else {
                 if (this._tmp0_subject0_0.equals(PageType_PROJECTS_getInstance())) {
                   this._state_1 = 3;
-                  suspendResult = this.__this__44.getPortfolioData_0_k$(this);
+                  suspendResult = this.__this__45.getPortfolioData_0_k$(this);
                   if (suspendResult === _get_COROUTINE_SUSPENDED_()) {
                     return suspendResult;
                   }continue $sm;
                 } else {
                   if (this._tmp0_subject0_0.equals(PageType_BACKGROUND_getInstance())) {
                     this._state_1 = 2;
-                    suspendResult = this.__this__44.getPortfolioData_0_k$(this);
+                    suspendResult = this.__this__45.getPortfolioData_0_k$(this);
                     if (suspendResult === _get_COROUTINE_SUSPENDED_()) {
                       return suspendResult;
                     }continue $sm;
                   } else {
                     if (this._tmp0_subject0_0.equals(PageType_ABOUT_ME_getInstance())) {
                       this._state_1 = 1;
-                      suspendResult = this.__this__44.getPortfolioData_0_k$(this);
+                      suspendResult = this.__this__45.getPortfolioData_0_k$(this);
                       if (suspendResult === _get_COROUTINE_SUSPENDED_()) {
                         return suspendResult;
                       }continue $sm;
@@ -66005,8 +66125,9 @@
     kind: 'class',
     interfaces: []
   };
-  function PortfolioRepository() {
+  function PortfolioRepository(portfolioApi) {
     Companion_getInstance_57();
+    this._portfolioApi = portfolioApi;
     var tmp = this;
     var tmp$ret$0;
     $l$block: {
@@ -66015,10 +66136,6 @@
     }
     tmp._errorHandler = tmp$ret$0;
     this._repositoryScope = plus_5(plus_5(MainScope(), Dispatchers_getInstance()._Default), this._errorHandler);
-    var tmp_0 = this;
-    var tmp_1 = Companion_getInstance_60();
-    var tmp_2 = tmp_1.createHttpClient$default_3b9j03_k$(null, true, 1, null);
-    tmp_0._portfolioApi = PortfolioApi_init_$Create$(tmp_2, null, 2, null);
     this._settings = Settings_0();
     this._themeColorsNameFlow = MutableStateFlow_0(_get_themeColorsName_(this));
     this._themeDataFlow = MutableStateFlow_0(_get_themeData_(this));
@@ -66030,8 +66147,8 @@
         break $l$break;
       }var tmp$ret$2;
       $l$block_1: {
-        var tmp_3 = _get_themeData_(this)._themes.get_ha5a7z_k$(0)._name_9;
-        var tmp0_lowercase_0 = replace$default_0(tmp_3, ' ', '', false, 4, null);
+        var tmp_0 = _get_themeData_(this)._themes.get_ha5a7z_k$(0)._name_9;
+        var tmp0_lowercase_0 = replace$default_0(tmp_0, ' ', '', false, 4, null);
         var tmp$ret$1;
         $l$block_0: {
           tmp$ret$1 = tmp0_lowercase_0;
@@ -66051,7 +66168,7 @@
     return this._themeColors;
   };
   PortfolioRepository.prototype.getThemeData_0_k$ = function () {
-    launch$default(this._repositoryScope, null, null, _no_name_provided_$factory_199(null), 3, null);
+    launch$default(this._repositoryScope, null, null, _no_name_provided_$factory_199(this, null), 3, null);
     Unit_getInstance();
     return this._themeDataFlow;
   };
@@ -66100,8 +66217,8 @@
     l.$arity = 1;
     return l;
   }
-  function _no_name_provided_$factory_199(resultContinuation) {
-    var i = new _no_name_provided__240(resultContinuation);
+  function _no_name_provided_$factory_199(this$0, resultContinuation) {
+    var i = new _no_name_provided__240(this$0, resultContinuation);
     var l = function (p1, $cont) {
       return i.invoke_2i3g7c_k$(p1, $cont);
     };
@@ -67074,7 +67191,7 @@
   }
   function $getPortfolioDataCOROUTINE$2(_this_, resultContinuation) {
     CoroutineImpl_0.call(this, resultContinuation);
-    this.__this__45 = _this_;
+    this.__this__46 = _this_;
   }
   $getPortfolioDataCOROUTINE$2.prototype.doResume_0_k$ = function () {
     var suspendResult = this._result_0;
@@ -67085,9 +67202,9 @@
           case 0:
             this._exceptionState = 8;
             var tmp_0 = this;
-            tmp_0._tmp0_get_00 = this.__this__45._client_1;
+            tmp_0._tmp0_get_00 = this.__this__46._client_1;
             var tmp_1 = this;
-            tmp_1._tmp1_get_01 = '' + this.__this__45._baseUrl + '/portfolio_data.json';
+            tmp_1._tmp1_get_01 = '' + this.__this__46._baseUrl + '/portfolio_data.json';
             var tmp_2 = this;
             tmp_2._tmp3_get_0_22 = 0;
             var tmp_3 = this;
@@ -67195,6 +67312,129 @@
     kind: 'class',
     interfaces: []
   };
+  function $getThemeDataCOROUTINE$4(_this_, resultContinuation) {
+    CoroutineImpl_0.call(this, resultContinuation);
+    this.__this__47 = _this_;
+  }
+  $getThemeDataCOROUTINE$4.prototype.doResume_0_k$ = function () {
+    var suspendResult = this._result_0;
+    $sm: do
+      try {
+        var tmp = this._state_1;
+        switch (tmp) {
+          case 0:
+            this._exceptionState = 8;
+            var tmp_0 = this;
+            tmp_0._tmp0_get_00_0 = this.__this__47._client_1;
+            var tmp_1 = this;
+            tmp_1._tmp1_get_01_0 = '' + this.__this__47._baseUrl + '/theme.json';
+            var tmp_2 = this;
+            tmp_2._tmp3_get_0_22_0 = 0;
+            var tmp_3 = this;
+            tmp_3._tmp4_get_0_33_0 = EmptyContent_getInstance();
+            var tmp_4 = this;
+            var tmp0_apply_0_5 = new HttpRequestBuilder();
+            url$default(tmp0_apply_0_5, 'http', 'localhost', this._tmp3_get_0_22_0, '/', null, 16, null);
+            tmp0_apply_0_5._method_0 = Companion_getInstance_34()._Get;
+            tmp0_apply_0_5._body_0 = this._tmp4_get_0_33_0;
+            takeFrom(tmp0_apply_0_5._url_0, this._tmp1_get_01_0);
+            Unit_getInstance();
+            Unit_getInstance();
+            Unit_getInstance();
+            tmp_4._tmp2_request_0_44_0 = tmp0_apply_0_5;
+            var tmp_5 = this;
+            tmp_5._tmp1_receive_0_65_0 = new HttpStatement(this._tmp2_request_0_44_0, this._tmp0_get_00_0);
+            this._tmp0_subject_1_76_0 = getKClass_0(ThemeDataResponse);
+            if (this._tmp0_subject_1_76_0.equals(getKClass_0(HttpStatement))) {
+              var tmp_6 = this;
+              var tmp_7 = this._tmp1_receive_0_65_0;
+              tmp_6._WHEN_RESULT7_0 = tmp_7 instanceof ThemeDataResponse ? tmp_7 : THROW_CCE();
+              this._state_1 = 7;
+              continue $sm;
+            } else {
+              if (this._tmp0_subject_1_76_0.equals(getKClass_0(HttpResponse))) {
+                this._state_1 = 6;
+                suspendResult = this._tmp1_receive_0_65_0.execute_0_k$(this);
+                if (suspendResult === _get_COROUTINE_SUSPENDED_()) {
+                  return suspendResult;
+                }continue $sm;
+              } else {
+                this._state_1 = 1;
+                suspendResult = this._tmp1_receive_0_65_0.executeUnsafe_0_k$(this);
+                if (suspendResult === _get_COROUTINE_SUSPENDED_()) {
+                  return suspendResult;
+                }continue $sm;
+              }
+              Unit_getInstance();
+            }
+
+            break;
+          case 1:
+            this._response_2_88_0 = suspendResult;
+            this._state_1 = 2;
+            continue $sm;
+          case 2:
+            this._exceptionState = 5;
+            this._state_1 = 3;
+            var tmp_8 = this._response_2_88_0._get_call__0_k$();
+            var tmp_9;
+            try {
+              tmp_9 = typeInfoImpl(JsType_getInstance(), getKClass_0(ThemeDataResponse), createKType_0(getKClass_0(ThemeDataResponse), [], false));
+            } catch ($p) {
+              var tmp_10;
+              {
+                tmp_10 = typeInfoImpl(JsType_getInstance(), getKClass_0(ThemeDataResponse), null);
+              }
+              tmp_9 = tmp_10;
+            }
+
+            suspendResult = tmp_8.receive_8q86pg_k$(tmp_9, this);
+            if (suspendResult === _get_COROUTINE_SUSPENDED_()) {
+              return suspendResult;
+            }
+            continue $sm;
+          case 3:
+            var tmp_11 = this;
+            tmp_11._tmp$ret$09_0 = suspendResult instanceof ThemeDataResponse ? suspendResult : THROW_CCE();
+            this._exceptionState = 8;
+            this._state_1 = 4;
+            continue $sm;
+          case 4:
+            var tmp_12 = this._tmp$ret$09_0;
+            complete(this._response_2_88_0);
+            this._WHEN_RESULT7_0 = tmp_12;
+            this._state_1 = 7;
+            continue $sm;
+          case 5:
+            this._exceptionState = 8;
+            var t = this._exception_0;
+            complete(this._response_2_88_0);
+            throw t;
+          case 6:
+            var tmp_13 = this;
+            tmp_13._WHEN_RESULT7_0 = suspendResult instanceof ThemeDataResponse ? suspendResult : THROW_CCE();
+            this._state_1 = 7;
+            continue $sm;
+          case 7:
+            return this._WHEN_RESULT7_0;
+          case 8:
+            throw this._exception_0;
+        }
+      } catch ($p_0) {
+        if (this._exceptionState === 8) {
+          throw $p_0;
+        } else {
+          this._state_1 = this._exceptionState;
+          this._exception_0 = $p_0;
+        }
+      }
+     while (true);
+  };
+  $getThemeDataCOROUTINE$4.$metadata$ = {
+    simpleName: '$getThemeDataCOROUTINE$4',
+    kind: 'class',
+    interfaces: []
+  };
   function PortfolioApi(client, baseUrl) {
     Companion_getInstance_60();
     this._client_1 = client;
@@ -67202,6 +67442,12 @@
   }
   PortfolioApi.prototype.getPortfolioData_0_k$ = function ($cont) {
     var tmp = new $getPortfolioDataCOROUTINE$2(this, $cont);
+    tmp._result_0 = Unit_getInstance();
+    tmp._exception_0 = null;
+    return tmp.doResume_0_k$();
+  };
+  PortfolioApi.prototype.getThemeData_0_k$ = function ($cont) {
+    var tmp = new $getThemeDataCOROUTINE$4(this, $cont);
     tmp._result_0 = Unit_getInstance();
     tmp._exception_0 = null;
     return tmp.doResume_0_k$();
@@ -68032,6 +68278,334 @@
     interfaces: [],
     associatedObjects: {0: $serializer_getInstance_5}
   };
+  function $serializer_6() {
+    $serializer_instance_6 = this;
+    var tmp0_serialDesc = new PluginGeneratedSerialDescriptor('io.github.amanshuraikwar.portfolio.network.model.ThemeColorsDataResponse', this, 8);
+    tmp0_serialDesc.addElement_5xhc52_k$('name', false);
+    tmp0_serialDesc.addElement_5xhc52_k$('isDark', false);
+    tmp0_serialDesc.addElement_5xhc52_k$('primaryColor', false);
+    tmp0_serialDesc.addElement_5xhc52_k$('onPrimaryColor', false);
+    tmp0_serialDesc.addElement_5xhc52_k$('surfaceColor', false);
+    tmp0_serialDesc.addElement_5xhc52_k$('onSurfaceColor', false);
+    tmp0_serialDesc.addElement_5xhc52_k$('errorColor', false);
+    tmp0_serialDesc.addElement_5xhc52_k$('onErrorColor', false);
+    this._descriptor_38 = tmp0_serialDesc;
+  }
+  $serializer_6.prototype._get_descriptor__0_k$ = function () {
+    return this._descriptor_38;
+  };
+  $serializer_6.prototype.childSerializers_0_k$ = function () {
+    var tmp$ret$2;
+    $l$block_1: {
+      var tmp0_arrayOf_0 = [StringSerializer_getInstance(), BooleanSerializer_getInstance(), StringSerializer_getInstance(), StringSerializer_getInstance(), StringSerializer_getInstance(), StringSerializer_getInstance(), StringSerializer_getInstance(), StringSerializer_getInstance()];
+      var tmp$ret$1;
+      $l$block_0: {
+        var tmp$ret$0;
+        $l$block: {
+          tmp$ret$0 = tmp0_arrayOf_0;
+          break $l$block;
+        }
+        tmp$ret$1 = tmp$ret$0;
+        break $l$block_0;
+      }
+      tmp$ret$2 = tmp$ret$1;
+      break $l$block_1;
+    }
+    return tmp$ret$2;
+  };
+  $serializer_6.prototype.deserialize_u9oizh_k$ = function (decoder) {
+    var tmp0_desc = this._descriptor_38;
+    var tmp1_flag = true;
+    var tmp2_index = 0;
+    var tmp3_bitMask0 = 0;
+    var tmp4_local0 = null;
+    var tmp5_local1 = false;
+    var tmp6_local2 = null;
+    var tmp7_local3 = null;
+    var tmp8_local4 = null;
+    var tmp9_local5 = null;
+    var tmp10_local6 = null;
+    var tmp11_local7 = null;
+    var tmp12_input = decoder.beginStructure_6qhf5t_k$(tmp0_desc);
+    if (tmp12_input.decodeSequentially_0_k$()) {
+      tmp4_local0 = tmp12_input.decodeStringElement_5vyt7k_k$(tmp0_desc, 0);
+      tmp3_bitMask0 = tmp3_bitMask0 | 1;
+      tmp5_local1 = tmp12_input.decodeBooleanElement_5vyt7k_k$(tmp0_desc, 1);
+      tmp3_bitMask0 = tmp3_bitMask0 | 2;
+      tmp6_local2 = tmp12_input.decodeStringElement_5vyt7k_k$(tmp0_desc, 2);
+      tmp3_bitMask0 = tmp3_bitMask0 | 4;
+      tmp7_local3 = tmp12_input.decodeStringElement_5vyt7k_k$(tmp0_desc, 3);
+      tmp3_bitMask0 = tmp3_bitMask0 | 8;
+      tmp8_local4 = tmp12_input.decodeStringElement_5vyt7k_k$(tmp0_desc, 4);
+      tmp3_bitMask0 = tmp3_bitMask0 | 16;
+      tmp9_local5 = tmp12_input.decodeStringElement_5vyt7k_k$(tmp0_desc, 5);
+      tmp3_bitMask0 = tmp3_bitMask0 | 32;
+      tmp10_local6 = tmp12_input.decodeStringElement_5vyt7k_k$(tmp0_desc, 6);
+      tmp3_bitMask0 = tmp3_bitMask0 | 64;
+      tmp11_local7 = tmp12_input.decodeStringElement_5vyt7k_k$(tmp0_desc, 7);
+      tmp3_bitMask0 = tmp3_bitMask0 | 128;
+    } else
+      while (tmp1_flag) {
+        tmp2_index = tmp12_input.decodeElementIndex_6qhf5t_k$(tmp0_desc);
+        switch (tmp2_index) {
+          case -1:
+            tmp1_flag = false;
+            break;
+          case 0:
+            tmp4_local0 = tmp12_input.decodeStringElement_5vyt7k_k$(tmp0_desc, 0);
+            tmp3_bitMask0 = tmp3_bitMask0 | 1;
+            break;
+          case 1:
+            tmp5_local1 = tmp12_input.decodeBooleanElement_5vyt7k_k$(tmp0_desc, 1);
+            tmp3_bitMask0 = tmp3_bitMask0 | 2;
+            break;
+          case 2:
+            tmp6_local2 = tmp12_input.decodeStringElement_5vyt7k_k$(tmp0_desc, 2);
+            tmp3_bitMask0 = tmp3_bitMask0 | 4;
+            break;
+          case 3:
+            tmp7_local3 = tmp12_input.decodeStringElement_5vyt7k_k$(tmp0_desc, 3);
+            tmp3_bitMask0 = tmp3_bitMask0 | 8;
+            break;
+          case 4:
+            tmp8_local4 = tmp12_input.decodeStringElement_5vyt7k_k$(tmp0_desc, 4);
+            tmp3_bitMask0 = tmp3_bitMask0 | 16;
+            break;
+          case 5:
+            tmp9_local5 = tmp12_input.decodeStringElement_5vyt7k_k$(tmp0_desc, 5);
+            tmp3_bitMask0 = tmp3_bitMask0 | 32;
+            break;
+          case 6:
+            tmp10_local6 = tmp12_input.decodeStringElement_5vyt7k_k$(tmp0_desc, 6);
+            tmp3_bitMask0 = tmp3_bitMask0 | 64;
+            break;
+          case 7:
+            tmp11_local7 = tmp12_input.decodeStringElement_5vyt7k_k$(tmp0_desc, 7);
+            tmp3_bitMask0 = tmp3_bitMask0 | 128;
+            break;
+          default:throw UnknownFieldException_init_$Create$(tmp2_index);
+        }
+      }
+    tmp12_input.endStructure_g940c0_k$(tmp0_desc);
+    return ThemeColorsDataResponse_init_$Create$(tmp3_bitMask0, tmp4_local0, tmp5_local1, tmp6_local2, tmp7_local3, tmp8_local4, tmp9_local5, tmp10_local6, tmp11_local7, null);
+  };
+  $serializer_6.prototype.serialize_9ep8fr_k$ = function (encoder, value_1) {
+    var tmp0_desc = this._descriptor_38;
+    var tmp1_output = encoder.beginStructure_6qhf5t_k$(tmp0_desc);
+    tmp1_output.encodeStringElement_mom8tu_k$(tmp0_desc, 0, value_1._name_11);
+    tmp1_output.encodeBooleanElement_9280p5_k$(tmp0_desc, 1, value_1._isDark_0);
+    tmp1_output.encodeStringElement_mom8tu_k$(tmp0_desc, 2, value_1._primaryColor_0);
+    tmp1_output.encodeStringElement_mom8tu_k$(tmp0_desc, 3, value_1._onPrimaryColor_0);
+    tmp1_output.encodeStringElement_mom8tu_k$(tmp0_desc, 4, value_1._surfaceColor_0);
+    tmp1_output.encodeStringElement_mom8tu_k$(tmp0_desc, 5, value_1._onSurfaceColor_0);
+    tmp1_output.encodeStringElement_mom8tu_k$(tmp0_desc, 6, value_1._errorColor_0);
+    tmp1_output.encodeStringElement_mom8tu_k$(tmp0_desc, 7, value_1._onErrorColor_0);
+    tmp1_output.endStructure_g940c0_k$(tmp0_desc);
+  };
+  $serializer_6.prototype.serialize_whawnb_k$ = function (encoder, value_1) {
+    return this.serialize_9ep8fr_k$(encoder, value_1 instanceof ThemeColorsDataResponse ? value_1 : THROW_CCE());
+  };
+  $serializer_6.$metadata$ = {
+    simpleName: '$serializer',
+    kind: 'object',
+    interfaces: [GeneratedSerializer]
+  };
+  var $serializer_instance_6;
+  function $serializer_getInstance_6() {
+    if ($serializer_instance_6 == null)
+      new $serializer_6();
+    return $serializer_instance_6;
+  }
+  function ThemeColorsDataResponse_init_$Init$(seen1, name, isDark, primaryColor, onPrimaryColor, surfaceColor, onSurfaceColor, errorColor, onErrorColor, serializationConstructorMarker, $this) {
+    if (!(255 === (255 & seen1)))
+      throwMissingFieldException(seen1, 255, $serializer_getInstance_6()._descriptor_38);
+    $this._name_11 = name;
+    $this._isDark_0 = isDark;
+    $this._primaryColor_0 = primaryColor;
+    $this._onPrimaryColor_0 = onPrimaryColor;
+    $this._surfaceColor_0 = surfaceColor;
+    $this._onSurfaceColor_0 = onSurfaceColor;
+    $this._errorColor_0 = errorColor;
+    $this._onErrorColor_0 = onErrorColor;
+    return $this;
+  }
+  function ThemeColorsDataResponse_init_$Create$(seen1, name, isDark, primaryColor, onPrimaryColor, surfaceColor, onSurfaceColor, errorColor, onErrorColor, serializationConstructorMarker) {
+    return ThemeColorsDataResponse_init_$Init$(seen1, name, isDark, primaryColor, onPrimaryColor, surfaceColor, onSurfaceColor, errorColor, onErrorColor, serializationConstructorMarker, Object.create(ThemeColorsDataResponse.prototype));
+  }
+  function ThemeColorsDataResponse() {
+  }
+  ThemeColorsDataResponse.prototype.toString = function () {
+    return '' + 'ThemeColorsDataResponse(name=' + this._name_11 + ', isDark=' + this._isDark_0 + ', primaryColor=' + this._primaryColor_0 + ', onPrimaryColor=' + this._onPrimaryColor_0 + ', surfaceColor=' + this._surfaceColor_0 + ', onSurfaceColor=' + this._onSurfaceColor_0 + ', errorColor=' + this._errorColor_0 + ', onErrorColor=' + this._onErrorColor_0 + ')';
+  };
+  ThemeColorsDataResponse.prototype.hashCode = function () {
+    var result = getStringHashCode(this._name_11);
+    result = imul(result, 31) + (this._isDark_0 | 0) | 0;
+    result = imul(result, 31) + getStringHashCode(this._primaryColor_0) | 0;
+    result = imul(result, 31) + getStringHashCode(this._onPrimaryColor_0) | 0;
+    result = imul(result, 31) + getStringHashCode(this._surfaceColor_0) | 0;
+    result = imul(result, 31) + getStringHashCode(this._onSurfaceColor_0) | 0;
+    result = imul(result, 31) + getStringHashCode(this._errorColor_0) | 0;
+    result = imul(result, 31) + getStringHashCode(this._onErrorColor_0) | 0;
+    return result;
+  };
+  ThemeColorsDataResponse.prototype.equals = function (other) {
+    if (this === other)
+      return true;
+    if (!(other instanceof ThemeColorsDataResponse))
+      return false;
+    else {
+    }
+    var tmp0_other_with_cast = other instanceof ThemeColorsDataResponse ? other : THROW_CCE();
+    if (!(this._name_11 === tmp0_other_with_cast._name_11))
+      return false;
+    if (!(this._isDark_0 === tmp0_other_with_cast._isDark_0))
+      return false;
+    if (!(this._primaryColor_0 === tmp0_other_with_cast._primaryColor_0))
+      return false;
+    if (!(this._onPrimaryColor_0 === tmp0_other_with_cast._onPrimaryColor_0))
+      return false;
+    if (!(this._surfaceColor_0 === tmp0_other_with_cast._surfaceColor_0))
+      return false;
+    if (!(this._onSurfaceColor_0 === tmp0_other_with_cast._onSurfaceColor_0))
+      return false;
+    if (!(this._errorColor_0 === tmp0_other_with_cast._errorColor_0))
+      return false;
+    if (!(this._onErrorColor_0 === tmp0_other_with_cast._onErrorColor_0))
+      return false;
+    return true;
+  };
+  ThemeColorsDataResponse.$metadata$ = {
+    simpleName: 'ThemeColorsDataResponse',
+    kind: 'class',
+    interfaces: [],
+    associatedObjects: {0: $serializer_getInstance_6}
+  };
+  function Companion_63() {
+    Companion_instance_62 = this;
+  }
+  Companion_63.$metadata$ = {
+    simpleName: 'Companion',
+    kind: 'object',
+    interfaces: []
+  };
+  var Companion_instance_62;
+  function Companion_getInstance_62() {
+    if (Companion_instance_62 == null)
+      new Companion_63();
+    return Companion_instance_62;
+  }
+  function $serializer_7() {
+    $serializer_instance_7 = this;
+    var tmp0_serialDesc = new PluginGeneratedSerialDescriptor('io.github.amanshuraikwar.portfolio.network.model.ThemeDataResponse', this, 1);
+    tmp0_serialDesc.addElement_5xhc52_k$('themes', false);
+    this._descriptor_39 = tmp0_serialDesc;
+  }
+  $serializer_7.prototype._get_descriptor__0_k$ = function () {
+    return this._descriptor_39;
+  };
+  $serializer_7.prototype.childSerializers_0_k$ = function () {
+    var tmp$ret$2;
+    $l$block_1: {
+      var tmp0_arrayOf_0 = [new ArrayListSerializer($serializer_getInstance_6())];
+      var tmp$ret$1;
+      $l$block_0: {
+        var tmp$ret$0;
+        $l$block: {
+          tmp$ret$0 = tmp0_arrayOf_0;
+          break $l$block;
+        }
+        tmp$ret$1 = tmp$ret$0;
+        break $l$block_0;
+      }
+      tmp$ret$2 = tmp$ret$1;
+      break $l$block_1;
+    }
+    return tmp$ret$2;
+  };
+  $serializer_7.prototype.deserialize_u9oizh_k$ = function (decoder) {
+    var tmp0_desc = this._descriptor_39;
+    var tmp1_flag = true;
+    var tmp2_index = 0;
+    var tmp3_bitMask0 = 0;
+    var tmp4_local0 = null;
+    var tmp5_input = decoder.beginStructure_6qhf5t_k$(tmp0_desc);
+    if (tmp5_input.decodeSequentially_0_k$()) {
+      tmp4_local0 = tmp5_input.decodeSerializableElement_fgxyly_k$(tmp0_desc, 0, new ArrayListSerializer($serializer_getInstance_6()), tmp4_local0);
+      tmp3_bitMask0 = tmp3_bitMask0 | 1;
+    } else
+      while (tmp1_flag) {
+        tmp2_index = tmp5_input.decodeElementIndex_6qhf5t_k$(tmp0_desc);
+        switch (tmp2_index) {
+          case -1:
+            tmp1_flag = false;
+            break;
+          case 0:
+            tmp4_local0 = tmp5_input.decodeSerializableElement_fgxyly_k$(tmp0_desc, 0, new ArrayListSerializer($serializer_getInstance_6()), tmp4_local0);
+            tmp3_bitMask0 = tmp3_bitMask0 | 1;
+            break;
+          default:throw UnknownFieldException_init_$Create$(tmp2_index);
+        }
+      }
+    tmp5_input.endStructure_g940c0_k$(tmp0_desc);
+    return ThemeDataResponse_init_$Create$(tmp3_bitMask0, tmp4_local0, null);
+  };
+  $serializer_7.prototype.serialize_1ttn15_k$ = function (encoder, value_1) {
+    var tmp0_desc = this._descriptor_39;
+    var tmp1_output = encoder.beginStructure_6qhf5t_k$(tmp0_desc);
+    tmp1_output.encodeSerializableElement_r6n13r_k$(tmp0_desc, 0, new ArrayListSerializer($serializer_getInstance_6()), value_1._themes_0);
+    tmp1_output.endStructure_g940c0_k$(tmp0_desc);
+  };
+  $serializer_7.prototype.serialize_whawnb_k$ = function (encoder, value_1) {
+    return this.serialize_1ttn15_k$(encoder, value_1 instanceof ThemeDataResponse ? value_1 : THROW_CCE());
+  };
+  $serializer_7.$metadata$ = {
+    simpleName: '$serializer',
+    kind: 'object',
+    interfaces: [GeneratedSerializer]
+  };
+  var $serializer_instance_7;
+  function $serializer_getInstance_7() {
+    if ($serializer_instance_7 == null)
+      new $serializer_7();
+    return $serializer_instance_7;
+  }
+  function ThemeDataResponse_init_$Init$(seen1, themes, serializationConstructorMarker, $this) {
+    if (!(1 === (1 & seen1)))
+      throwMissingFieldException(seen1, 1, $serializer_getInstance_7()._descriptor_39);
+    $this._themes_0 = themes;
+    return $this;
+  }
+  function ThemeDataResponse_init_$Create$(seen1, themes, serializationConstructorMarker) {
+    return ThemeDataResponse_init_$Init$(seen1, themes, serializationConstructorMarker, Object.create(ThemeDataResponse.prototype));
+  }
+  function ThemeDataResponse(themes) {
+    Companion_getInstance_62();
+    this._themes_0 = themes;
+  }
+  ThemeDataResponse.prototype.toString = function () {
+    return '' + 'ThemeDataResponse(themes=' + this._themes_0 + ')';
+  };
+  ThemeDataResponse.prototype.hashCode = function () {
+    return hashCode(this._themes_0);
+  };
+  ThemeDataResponse.prototype.equals = function (other) {
+    if (this === other)
+      return true;
+    if (!(other instanceof ThemeDataResponse))
+      return false;
+    else {
+    }
+    var tmp0_other_with_cast = other instanceof ThemeDataResponse ? other : THROW_CCE();
+    if (!equals_1(this._themes_0, tmp0_other_with_cast._themes_0))
+      return false;
+    return true;
+  };
+  ThemeDataResponse.$metadata$ = {
+    simpleName: 'ThemeDataResponse',
+    kind: 'class',
+    interfaces: [],
+    associatedObjects: {0: $serializer_getInstance_7}
+  };
   function Applier() {
   }
   Applier.prototype.onBeginChanges_sv8swh_k$ = function () {
@@ -68189,14 +68763,14 @@
     }
   }
   function _no_name_provided__246(this$0, $awaiter_4) {
-    this._this$0_63 = this$0;
+    this._this$0_64 = this$0;
     this._$awaiter_4 = $awaiter_4;
   }
   _no_name_provided__246.prototype.invoke_houul8_k$ = function (it) {
     var tmp$ret$0;
     $l$block: {
-      var tmp0_synchronized_0_12 = this._this$0_63._lock_3;
-      var tmp = this._this$0_63._awaiters;
+      var tmp0_synchronized_0_12 = this._this$0_64._lock_3;
+      var tmp = this._this$0_64._awaiters;
       var tmp_0;
       if (this._$awaiter_4._v == null) {
         throwUninitializedPropertyAccessException('awaiter');
@@ -68499,15 +69073,15 @@
       $this._reader.beginEmpty_sv8swh_k$();
       var startIndex = $this._writer._currentGroup;
       if (isNode_0)
-        $this._writer.startNode_qi8yb4_k$(Companion_getInstance_62()._Empty_4);
+        $this._writer.startNode_qi8yb4_k$(Companion_getInstance_63()._Empty_4);
       else if (!(data == null)) {
         var tmp = $this._writer;
         var tmp0_elvis_lhs = objectKey_0;
-        tmp.startData_sdxrn6_k$(key_0, tmp0_elvis_lhs == null ? Companion_getInstance_62()._Empty_4 : tmp0_elvis_lhs, data);
+        tmp.startData_sdxrn6_k$(key_0, tmp0_elvis_lhs == null ? Companion_getInstance_63()._Empty_4 : tmp0_elvis_lhs, data);
       } else {
         var tmp_0 = $this._writer;
         var tmp1_elvis_lhs = objectKey_0;
-        tmp_0.startGroup_d6z93j_k$(key_0, tmp1_elvis_lhs == null ? Companion_getInstance_62()._Empty_4 : tmp1_elvis_lhs);
+        tmp_0.startGroup_d6z93j_k$(key_0, tmp1_elvis_lhs == null ? Companion_getInstance_63()._Empty_4 : tmp1_elvis_lhs);
       }
       var tmp2_safe_receiver = $this._pending;
       if (tmp2_safe_receiver == null)
@@ -68562,15 +69136,15 @@
         $this._writer.beginInsert_sv8swh_k$();
         var startIndex_0 = $this._writer._currentGroup;
         if (isNode_0)
-          $this._writer.startNode_qi8yb4_k$(Companion_getInstance_62()._Empty_4);
+          $this._writer.startNode_qi8yb4_k$(Companion_getInstance_63()._Empty_4);
         else if (!(data == null)) {
           var tmp_1 = $this._writer;
           var tmp3_elvis_lhs = objectKey_0;
-          tmp_1.startData_sdxrn6_k$(key_0, tmp3_elvis_lhs == null ? Companion_getInstance_62()._Empty_4 : tmp3_elvis_lhs, data);
+          tmp_1.startData_sdxrn6_k$(key_0, tmp3_elvis_lhs == null ? Companion_getInstance_63()._Empty_4 : tmp3_elvis_lhs, data);
         } else {
           var tmp_2 = $this._writer;
           var tmp4_elvis_lhs = objectKey_0;
-          tmp_2.startGroup_d6z93j_k$(key_0, tmp4_elvis_lhs == null ? Companion_getInstance_62()._Empty_4 : tmp4_elvis_lhs);
+          tmp_2.startGroup_d6z93j_k$(key_0, tmp4_elvis_lhs == null ? Companion_getInstance_63()._Empty_4 : tmp4_elvis_lhs);
         }
         $this._insertAnchor = $this._writer.anchor_ha5a7z_k$(startIndex_0);
         var insertKeyInfo = new KeyInfo(key_0, -1, insertedGroupVirtualIndex($this, startIndex_0), -1, 0);
@@ -69001,7 +69575,7 @@
                 }
                 var tmp$ret$2;
                 $l$block_1: {
-                  tmp$ret$2 = equals_1(tmp0_safe_receiver_3, Companion_getInstance_62()._Empty_4) ? tmp0_let_0 : hashCode(tmp0_safe_receiver_3);
+                  tmp$ret$2 = equals_1(tmp0_safe_receiver_3, Companion_getInstance_63()._Empty_4) ? tmp0_let_0 : hashCode(tmp0_safe_receiver_3);
                   break $l$block_1;
                 }
                 tmp$ret$3 = tmp$ret$2;
@@ -69316,7 +69890,7 @@
     }}
   function updateCompoundKeyWhenWeEnterGroup($this, groupKey, dataKey, data) {
     if (dataKey == null)
-      if ((!(data == null) ? groupKey === 207 : false) ? !equals_1(data, Companion_getInstance_62()._Empty_4) : false)
+      if ((!(data == null) ? groupKey === 207 : false) ? !equals_1(data, Companion_getInstance_63()._Empty_4) : false)
         updateCompoundKeyWhenWeEnterGroupKeyHash($this, hashCode(data));
       else
         updateCompoundKeyWhenWeEnterGroupKeyHash($this, groupKey);
@@ -69340,7 +69914,7 @@
   }
   function updateCompoundKeyWhenWeExitGroup($this, groupKey, dataKey, data) {
     if (dataKey == null)
-      if ((!(data == null) ? groupKey === 207 : false) ? !equals_1(data, Companion_getInstance_62()._Empty_4) : false)
+      if ((!(data == null) ? groupKey === 207 : false) ? !equals_1(data, Companion_getInstance_63()._Empty_4) : false)
         updateCompoundKeyWhenWeExitGroupKeyHash($this, hashCode(data));
       else
         updateCompoundKeyWhenWeExitGroupKeyHash($this, groupKey);
@@ -69616,10 +70190,10 @@
   };
   function _no_name_provided__255($tmp2_safe_receiver, this$0) {
     this._$tmp2_safe_receiver = $tmp2_safe_receiver;
-    this._this$0_64 = this$0;
+    this._this$0_65 = this$0;
   }
   _no_name_provided__255.prototype.invoke_472icx_k$ = function (_anonymous_parameter_0_, _anonymous_parameter_1_, _anonymous_parameter_2_) {
-    this._$tmp2_safe_receiver(this._this$0_64._composition);
+    this._$tmp2_safe_receiver(this._this$0_65._composition);
   };
   _no_name_provided__255.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
     var tmp = (!(p1 == null) ? isInterface(p1, Applier) : false) ? p1 : THROW_CCE();
@@ -69864,10 +70438,10 @@
     interfaces: []
   };
   function _no_name_provided__265(this$0) {
-    this._this$0_65 = this$0;
+    this._this$0_66 = this$0;
   }
   _no_name_provided__265.prototype.invoke_b33xhi_k$ = function (it) {
-    var tmp0_this_14 = this._this$0_65;
+    var tmp0_this_14 = this._this$0_66;
     var tmp1_15 = tmp0_this_14._childrenComposing;
     tmp0_this_14._childrenComposing = tmp1_15 + 1 | 0;
     Unit_getInstance();
@@ -69881,10 +70455,10 @@
     interfaces: []
   };
   function _no_name_provided__266(this$0) {
-    this._this$0_66 = this$0;
+    this._this$0_67 = this$0;
   }
   _no_name_provided__266.prototype.invoke_b33xhi_k$ = function (it) {
-    var tmp0_this_17 = this._this$0_66;
+    var tmp0_this_17 = this._this$0_67;
     var tmp1_18 = tmp0_this_17._childrenComposing;
     tmp0_this_17._childrenComposing = tmp1_18 - 1 | 0;
     Unit_getInstance();
@@ -69899,15 +70473,15 @@
   };
   function _no_name_provided__267($content, this$0) {
     this._$content_1 = $content;
-    this._this$0_67 = this$0;
+    this._this$0_68 = this$0;
   }
   _no_name_provided__267.prototype.invoke_sv8swh_k$ = function () {
     if (!(this._$content_1 == null)) {
-      startGroup_0(this._this$0_67, 200, invocation);
-      invokeComposable$composable(this._this$0_67, this._$content_1);
-      endGroup(this._this$0_67);
+      startGroup_0(this._this$0_68, 200, invocation);
+      invokeComposable$composable(this._this$0_68, this._$content_1);
+      endGroup(this._this$0_68);
     } else {
-      this._this$0_67.skipCurrentGroup_sv8swh_k$();
+      this._this$0_68.skipCurrentGroup_sv8swh_k$();
     }
   };
   _no_name_provided__267.prototype.invoke_0_k$ = function () {
@@ -70118,7 +70692,7 @@
     var tmp;
     if (this._inserting) {
       validateNodeNotExpected(this);
-      tmp = Companion_getInstance_62()._Empty_4;
+      tmp = Companion_getInstance_63()._Empty_4;
     } else {
       var tmp$ret$1;
       $l$block_0: {
@@ -70127,7 +70701,7 @@
         }
         var tmp$ret$0;
         $l$block: {
-          tmp$ret$0 = this._reusing ? Companion_getInstance_62()._Empty_4 : tmp0_let_0;
+          tmp$ret$0 = this._reusing ? Companion_getInstance_63()._Empty_4 : tmp0_let_0;
           break $l$block;
         }
         tmp$ret$1 = tmp$ret$0;
@@ -70404,21 +70978,21 @@
     kind: 'class',
     interfaces: []
   };
-  function Companion_63() {
-    Companion_instance_62 = this;
+  function Companion_64() {
+    Companion_instance_63 = this;
     var tmp = this;
     tmp._Empty_4 = new _no_name_provided__268();
   }
-  Companion_63.$metadata$ = {
+  Companion_64.$metadata$ = {
     simpleName: 'Companion',
     kind: 'object',
     interfaces: []
   };
-  var Companion_instance_62;
-  function Companion_getInstance_62() {
-    if (Companion_instance_62 == null)
-      new Companion_63();
-    return Companion_instance_62;
+  var Companion_instance_63;
+  function Companion_getInstance_63() {
+    if (Companion_instance_63 == null)
+      new Companion_64();
+    return Companion_instance_63;
   }
   function Composer_0() {
   }
@@ -70475,7 +71049,7 @@
     }return tmp;
   }
   function _no_name_provided__269(this$0) {
-    this._this$0_68 = this$0;
+    this._this$0_69 = this$0;
   }
   _no_name_provided__269.prototype.invoke_0_k$ = function () {
     var tmp$ret$0;
@@ -70485,12 +71059,12 @@
       }
       {
         var inductionVariable = 0;
-        var last_1 = this._this$0_68._keyInfos._get_size__0_k$();
+        var last_1 = this._this$0_69._keyInfos._get_size__0_k$();
         if (inductionVariable < last_1)
           do {
             var index_3 = inductionVariable;
             inductionVariable = inductionVariable + 1 | 0;
-            var keyInfo_4 = this._this$0_68._keyInfos.get_ha5a7z_k$(index_3);
+            var keyInfo_4 = this._this$0_69._keyInfos.get_ha5a7z_k$(index_3);
             put(tmp0_also_0, _get_joinedKey_(keyInfo_4), keyInfo_4);
             Unit_getInstance();
           }
@@ -72507,7 +73081,7 @@
           var tmp$ret$1;
           $l$block_0: {
             var tmp;
-            if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_62()._Empty_4) {
+            if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_63()._Empty_4) {
               var tmp$ret$0;
               $l$block: {
                 var tmp0_return_8 = new LaunchedEffectImpl(applyContext, block);
@@ -72605,7 +73179,7 @@
           var tmp$ret$1;
           $l$block_0: {
             var tmp;
-            if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_62()._Empty_4) {
+            if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_63()._Empty_4) {
               var tmp$ret$0;
               $l$block: {
                 var tmp0_return_8 = new DisposableEffectImpl(effect);
@@ -72792,7 +73366,7 @@
           var tmp$ret$1;
           $l$block_0: {
             var tmp;
-            if (false ? true : tmp0_let_0_4 === Companion_getInstance_62()._Empty_4) {
+            if (false ? true : tmp0_let_0_4 === Companion_getInstance_63()._Empty_4) {
               var tmp$ret$0;
               $l$block: {
                 var tmp0_return_7 = mutableStateOf$default(initialValue, null, 2, null);
@@ -72931,13 +73505,13 @@
     }
   }
   function _no_name_provided__276(this$0, $token, $tmp0_safe_receiver) {
-    this._this$0_69 = this$0;
+    this._this$0_70 = this$0;
     this._$token = $token;
     this._$tmp0_safe_receiver = $tmp0_safe_receiver;
   }
   _no_name_provided__276.prototype.invoke_tsesdd_k$ = function (composition) {
     var tmp;
-    if (this._this$0_69._currentToken === this._$token ? equals_1(this._$tmp0_safe_receiver, this._this$0_69._trackedInstances) : false) {
+    if (this._this$0_70._currentToken === this._$token ? equals_1(this._$tmp0_safe_receiver, this._this$0_70._trackedInstances) : false) {
       tmp = composition instanceof CompositionImpl;
     } else {
       tmp = false;
@@ -72963,7 +73537,7 @@
                 }
                 {
                   if (tmp0_also_0_10_12) {
-                    composition.removeObservation_7j9hyy_k$(key_4_10, this._this$0_69);
+                    composition.removeObservation_7j9hyy_k$(key_4_10, this._this$0_70);
                     var tmp0_safe_receiver_2_11_13 = isInterface(key_4_10, DerivedState) ? key_4_10 : null;
                     if (tmp0_safe_receiver_2_11_13 == null)
                       null;
@@ -72974,7 +73548,7 @@
                         }
                         var tmp$ret$1;
                         $l$block_0: {
-                          var tmp0_safe_receiver_2_3_12_14 = this._this$0_69._trackedDependencies;
+                          var tmp0_safe_receiver_2_3_12_14 = this._this$0_70._trackedDependencies;
                           var tmp_1;
                           if (tmp0_safe_receiver_2_3_12_14 == null) {
                             tmp_1 = null;
@@ -72987,7 +73561,7 @@
                               Unit_getInstance();
                               var tmp_2;
                               if (tmp0_safe_receiver_2_3_12_14._size_8 === 0) {
-                                this._this$0_69._trackedDependencies = null;
+                                this._this$0_70._trackedDependencies = null;
                                 tmp_2 = Unit_getInstance();
                               }tmp$ret$0 = tmp_2;
                               break $l$block;
@@ -73032,7 +73606,7 @@
         this._$tmp0_safe_receiver._size_7 = destinationIndex_1_7;
       }
       if (this._$tmp0_safe_receiver._size_7 === 0)
-        this._this$0_69._trackedInstances = null;
+        this._this$0_70._trackedInstances = null;
     } else {
     }
   };
@@ -73425,14 +73999,14 @@
     }
   }
   function _no_name_provided__277(this$0, $throwable) {
-    this._this$0_70 = this$0;
+    this._this$0_71 = this$0;
     this._$throwable = $throwable;
   }
   _no_name_provided__277.prototype.invoke_houul8_k$ = function (runnerJobCause) {
     var tmp$ret$4;
     $l$block_3: {
-      var tmp0_synchronized_0_4_8 = this._this$0_70._stateLock;
-      var tmp = this._this$0_70;
+      var tmp0_synchronized_0_4_8 = this._this$0_71._stateLock;
+      var tmp = this._this$0_71;
       var tmp0_safe_receiver_2_5_9 = this._$throwable;
       var tmp_0;
       if (tmp0_safe_receiver_2_5_9 == null) {
@@ -73491,7 +74065,7 @@
         tmp_0 = tmp$ret$3;
       }
       tmp._closeCause_0 = tmp_0;
-      tmp$ret$4 = this._this$0_70.__state_5._set_value__iav7o_k$(State_ShutDown_getInstance());
+      tmp$ret$4 = this._this$0_71.__state_5._set_value__iav7o_k$(State_ShutDown_getInstance());
       break $l$block_3;
     }
   };
@@ -73504,18 +74078,18 @@
     interfaces: []
   };
   function _no_name_provided__278(this$0, $toRecompose, $toApply) {
-    this._this$0_71 = this$0;
+    this._this$0_72 = this$0;
     this._$toRecompose = $toRecompose;
     this._$toApply = $toApply;
   }
   _no_name_provided__278.prototype.invoke_wiekkq_k$ = function (frameTime) {
-    if (this._this$0_71._broadcastFrameClock._get_hasAwaiters__0_k$()) {
+    if (this._this$0_72._broadcastFrameClock._get_hasAwaiters__0_k$()) {
       var tmp$ret$0;
       $l$block: {
         var token_1 = Trace_getInstance().beginSection_6wfw3l_k$('Recomposer:animation');
         try {
-          this._this$0_71._broadcastFrameClock.sendFrame_kdfck9_k$(frameTime);
-          tmp$ret$0 = Companion_getInstance_68().sendApplyNotifications_sv8swh_k$();
+          this._this$0_72._broadcastFrameClock.sendFrame_kdfck9_k$(frameTime);
+          tmp$ret$0 = Companion_getInstance_69().sendApplyNotifications_sv8swh_k$();
           break $l$block;
         }finally {
           Trace_getInstance().endSection_qi8yb4_k$(token_1);
@@ -73529,10 +74103,10 @@
         $l$block_7: {
           var tmp$ret$1;
           $l$block_0: {
-            var tmp0_synchronized_0_3 = this._this$0_71._stateLock;
-            recordComposerModificationsLocked(this._this$0_71);
+            var tmp0_synchronized_0_3 = this._this$0_72._stateLock;
+            recordComposerModificationsLocked(this._this$0_72);
             {
-              var tmp0_fastForEach_0_2_4 = this._this$0_71._compositionInvalidations;
+              var tmp0_fastForEach_0_2_4 = this._this$0_72._compositionInvalidations;
               {
               }
               var inductionVariable = 0;
@@ -73551,7 +74125,7 @@
                 }
                  while (inductionVariable <= last_1);
             }
-            tmp$ret$1 = this._this$0_71._compositionInvalidations.clear_sv8swh_k$();
+            tmp$ret$1 = this._this$0_72._compositionInvalidations.clear_sv8swh_k$();
             break $l$block_0;
           }
           var modifiedValues_8 = new IdentityArraySet();
@@ -73578,7 +74152,7 @@
                     {
                       alreadyComposed_9.add_2c5_k$(item_4_12);
                       Unit_getInstance();
-                      var tmp0_safe_receiver_6_13 = performRecompose(this._this$0_71, item_4_12, modifiedValues_8);
+                      var tmp0_safe_receiver_6_13 = performRecompose(this._this$0_72, item_4_12, modifiedValues_8);
                       if (tmp0_safe_receiver_6_13 == null)
                         null;
                       else {
@@ -73603,8 +74177,8 @@
             if (modifiedValues_8.isNotEmpty_0_k$()) {
               var tmp$ret$4;
               $l$block_3: {
-                var tmp1_synchronized_0_14 = this._this$0_71._stateLock;
-                var tmp0_fastForEach_0_2_15 = this._this$0_71._knownCompositions;
+                var tmp1_synchronized_0_14 = this._this$0_72._stateLock;
+                var tmp0_fastForEach_0_2_15 = this._this$0_72._knownCompositions;
                 {
                 }
                 var inductionVariable_1 = 0;
@@ -73635,7 +74209,7 @@
             break $l$block_4;
           }
           if (tmp$ret$5) {
-            var tmp0_this_19 = this._this$0_71;
+            var tmp0_this_19 = this._this$0_72;
             var tmp1_20 = tmp0_this_19._changeCount;
             tmp0_this_19._changeCount = tmp1_20.inc_0_k$();
             Unit_getInstance();
@@ -73663,10 +74237,10 @@
           }
           var tmp$ret$7;
           $l$block_6: {
-            var tmp2_synchronized_0_24 = this._this$0_71._stateLock;
+            var tmp2_synchronized_0_24 = this._this$0_72._stateLock;
             var tmp$ret$6;
             $l$block_5: {
-              tmp$ret$6 = deriveStateLocked(this._this$0_71);
+              tmp$ret$6 = deriveStateLocked(this._this$0_72);
               break $l$block_5;
             }
             tmp$ret$7 = tmp$ret$6;
@@ -73691,23 +74265,23 @@
     interfaces: []
   };
   function _no_name_provided__279(this$0) {
-    this._this$0_72 = this$0;
+    this._this$0_73 = this$0;
   }
   _no_name_provided__279.prototype.invoke_a24q54_k$ = function (changed, _anonymous_parameter_1_) {
     var tmp$ret$1;
     $l$block_0: {
-      var tmp0_synchronized_0 = this._this$0_72._stateLock;
+      var tmp0_synchronized_0 = this._this$0_73._stateLock;
       var tmp$ret$0;
       $l$block: {
         var tmp;
-        if (this._this$0_72.__state_5._get_value__0_k$().compareTo_2bq_k$(State_Idle_getInstance()) >= 0) {
-          var tmp0_this_2 = this._this$0_72;
+        if (this._this$0_73.__state_5._get_value__0_k$().compareTo_2bq_k$(State_Idle_getInstance()) >= 0) {
+          var tmp0_this_2 = this._this$0_73;
           {
             var tmp0_plusAssign_0_3 = tmp0_this_2._snapshotInvalidations;
             tmp0_plusAssign_0_3.add_2bq_k$(changed);
             Unit_getInstance();
           }
-          tmp = deriveStateLocked(this._this$0_72);
+          tmp = deriveStateLocked(this._this$0_73);
         } else {
           tmp = null;
         }
@@ -74100,7 +74674,7 @@
     var tmp;
     var tmp$ret$2;
     $l$block_1: {
-      var snapshot_1 = Companion_getInstance_68().takeMutableSnapshot_sefk9o_k$(readObserverOf($this, composition), writeObserverOf($this, composition, modifiedValues));
+      var snapshot_1 = Companion_getInstance_69().takeMutableSnapshot_sefk9o_k$(readObserverOf($this, composition), writeObserverOf($this, composition, modifiedValues));
       try {
         var tmp$ret$1;
         $l$block_0: {
@@ -74174,38 +74748,38 @@
     }
     return tmp;
   }
-  function Companion_64() {
-    Companion_instance_63 = this;
+  function Companion_65() {
+    Companion_instance_64 = this;
     this.__runningRecomposers = MutableStateFlow_0(persistentSetOf());
   }
-  Companion_64.$metadata$ = {
+  Companion_65.$metadata$ = {
     simpleName: 'Companion',
     kind: 'object',
     interfaces: []
   };
-  var Companion_instance_63;
-  function Companion_getInstance_63() {
-    if (Companion_instance_63 == null)
-      new Companion_64();
-    return Companion_instance_63;
+  var Companion_instance_64;
+  function Companion_getInstance_64() {
+    if (Companion_instance_64 == null)
+      new Companion_65();
+    return Companion_instance_64;
   }
   function _no_name_provided__281(this$0) {
-    this._this$0_73 = this$0;
+    this._this$0_74 = this$0;
   }
   _no_name_provided__281.prototype.invoke_sv8swh_k$ = function () {
     var tmp$ret$2;
     $l$block_1: {
-      var tmp0_synchronized_0 = this._this$0_73._stateLock;
+      var tmp0_synchronized_0 = this._this$0_74._stateLock;
       var tmp$ret$1;
       $l$block_0: {
         var tmp$ret$0;
         $l$block: {
-          var tmp0_also_0_2 = deriveStateLocked(this._this$0_73);
+          var tmp0_also_0_2 = deriveStateLocked(this._this$0_74);
           {
           }
           {
-            if (this._this$0_73.__state_5._get_value__0_k$().compareTo_2bq_k$(State_ShuttingDown_getInstance()) <= 0)
-              throw CancellationException_init_$Create$_0('Recomposer shutdown; frame clock awaiter will never resume', this._this$0_73._closeCause_0);
+            if (this._this$0_74.__state_5._get_value__0_k$().compareTo_2bq_k$(State_ShuttingDown_getInstance()) <= 0)
+              throw CancellationException_init_$Create$_0('Recomposer shutdown; frame clock awaiter will never resume', this._this$0_74._closeCause_0);
           }
           tmp$ret$0 = tmp0_also_0_2;
           break $l$block;
@@ -74244,29 +74818,29 @@
     interfaces: []
   };
   function _no_name_provided__282(this$0) {
-    this._this$0_74 = this$0;
+    this._this$0_75 = this$0;
   }
   _no_name_provided__282.prototype.invoke_houul8_k$ = function (throwable) {
     var cancellation_3 = CancellationException_init_$Create$_0('Recomposer effect job completed', throwable);
     var continuationToResume_4 = null;
     var tmp$ret$1;
     $l$block_0: {
-      var tmp0_synchronized_0_5 = this._this$0_74._stateLock;
+      var tmp0_synchronized_0_5 = this._this$0_75._stateLock;
       var tmp$ret$0;
       $l$block: {
-        var runnerJob_2_6 = this._this$0_74._runnerJob;
+        var runnerJob_2_6 = this._this$0_75._runnerJob;
         var tmp;
         if (!(runnerJob_2_6 == null)) {
-          this._this$0_74.__state_5._set_value__iav7o_k$(State_ShuttingDown_getInstance());
-          if (!this._this$0_74._isClosed) {
+          this._this$0_75.__state_5._set_value__iav7o_k$(State_ShuttingDown_getInstance());
+          if (!this._this$0_75._isClosed) {
             runnerJob_2_6.cancel_fnv408_k$(cancellation_3);
-          } else if (!(this._this$0_74._workContinuation == null)) {
-            continuationToResume_4 = this._this$0_74._workContinuation;
-          }this._this$0_74._workContinuation = null;
-          tmp = runnerJob_2_6.invokeOnCompletion_wjzpsu_k$(_no_name_provided_$factory_242(this._this$0_74, throwable));
+          } else if (!(this._this$0_75._workContinuation == null)) {
+            continuationToResume_4 = this._this$0_75._workContinuation;
+          }this._this$0_75._workContinuation = null;
+          tmp = runnerJob_2_6.invokeOnCompletion_wjzpsu_k$(_no_name_provided_$factory_242(this._this$0_75, throwable));
         } else {
-          this._this$0_74._closeCause_0 = cancellation_3;
-          this._this$0_74.__state_5._set_value__iav7o_k$(State_ShutDown_getInstance());
+          this._this$0_75._closeCause_0 = cancellation_3;
+          this._this$0_75.__state_5._set_value__iav7o_k$(State_ShutDown_getInstance());
           tmp = Unit_getInstance();
         }
         tmp$ret$0 = tmp;
@@ -74304,7 +74878,7 @@
     interfaces: []
   };
   function _no_name_provided__283(this$0, resultContinuation) {
-    this._this$0_75 = this$0;
+    this._this$0_76 = this$0;
     CoroutineImpl_0.call(this, resultContinuation);
   }
   _no_name_provided__283.prototype.invoke_2a5bfb_k$ = function ($this$recompositionRunner, parentFrameClock, $cont) {
@@ -74333,23 +74907,23 @@
             this._state_1 = 1;
             continue $sm;
           case 1:
-            if (!_get_shouldKeepRecomposing_(this._this$0_75)) {
+            if (!_get_shouldKeepRecomposing_(this._this$0_76)) {
               this._state_1 = 5;
               continue $sm;
             }
             this._state_1 = 2;
-            suspendResult = awaitWorkAvailable(this._this$0_75, this);
+            suspendResult = awaitWorkAvailable(this._this$0_76, this);
             if (suspendResult === _get_COROUTINE_SUSPENDED_()) {
               return suspendResult;
             }
             continue $sm;
           case 2:
             var tmp_2 = this;
-            tmp_2._tmp0_synchronized_02 = this._this$0_75._stateLock;
+            tmp_2._tmp0_synchronized_02 = this._this$0_76._stateLock;
             var tmp_3;
-            if (!_get_hasFrameWorkLocked_(this._this$0_75)) {
-              recordComposerModificationsLocked(this._this$0_75);
-              tmp_3 = !_get_hasFrameWorkLocked_(this._this$0_75);
+            if (!_get_hasFrameWorkLocked_(this._this$0_76)) {
+              recordComposerModificationsLocked(this._this$0_76);
+              tmp_3 = !_get_hasFrameWorkLocked_(this._this$0_76);
             } else {
               tmp_3 = false;
             }
@@ -74367,7 +74941,7 @@
             break;
           case 3:
             this._state_1 = 4;
-            suspendResult = this._parentFrameClock.withFrameNanos_j5kvya_k$(_no_name_provided_$factory_243(this._this$0_75, this._toRecompose0, this._toApply1), this);
+            suspendResult = this._parentFrameClock.withFrameNanos_j5kvya_k$(_no_name_provided_$factory_243(this._this$0_76, this._toRecompose0, this._toApply1), this);
             if (suspendResult === _get_COROUTINE_SUSPENDED_()) {
               return suspendResult;
             }
@@ -74392,7 +74966,7 @@
      while (true);
   };
   _no_name_provided__283.prototype.create_ofhv6_k$ = function ($this$recompositionRunner, parentFrameClock, completion) {
-    var i = new _no_name_provided__283(this._this$0_75, completion);
+    var i = new _no_name_provided__283(this._this$0_76, completion);
     i._$this$recompositionRunner = $this$recompositionRunner;
     i._parentFrameClock = parentFrameClock;
     return i;
@@ -74403,7 +74977,7 @@
     suspendArity: 2
   };
   function _no_name_provided__284(this$0, $block, $parentFrameClock, resultContinuation) {
-    this._this$0_76 = this$0;
+    this._this$0_77 = this$0;
     this._$block_4 = $block;
     this._$parentFrameClock_0 = $parentFrameClock;
     CoroutineImpl_0.call(this, resultContinuation);
@@ -74427,19 +75001,19 @@
           case 0:
             this._exceptionState = 5;
             this._callingJob0 = _get_job_(this._$this$withContext_0._get_coroutineContext__0_k$());
-            registerRunnerJob(this._this$0_76, this._callingJob0);
+            registerRunnerJob(this._this$0_77, this._callingJob0);
             var tmp_0 = this;
-            var tmp_1 = Companion_getInstance_68();
-            tmp_0._unregisterApplyObserver1 = tmp_1.registerApplyObserver_ja8wvw_k$(_no_name_provided_$factory_244(this._this$0_76));
-            addRunning(Companion_getInstance_63(), this._this$0_76._recomposerInfo);
+            var tmp_1 = Companion_getInstance_69();
+            tmp_0._unregisterApplyObserver1 = tmp_1.registerApplyObserver_ja8wvw_k$(_no_name_provided_$factory_244(this._this$0_77));
+            addRunning(Companion_getInstance_64(), this._this$0_77._recomposerInfo);
             this._state_1 = 1;
             continue $sm;
           case 1:
             this._exceptionState = 4;
             var tmp_2 = this;
-            tmp_2._tmp0_synchronized_03 = this._this$0_76._stateLock;
+            tmp_2._tmp0_synchronized_03 = this._this$0_77._stateLock;
             var tmp_3 = this;
-            tmp_3._tmp0_fastForEach_0_24 = this._this$0_76._knownCompositions;
+            tmp_3._tmp0_fastForEach_0_24 = this._this$0_77._knownCompositions;
             var inductionVariable = 0;
             var last_1 = this._tmp0_fastForEach_0_24._get_size__0_k$() - 1 | 0;
             if (inductionVariable <= last_1)
@@ -74463,25 +75037,25 @@
             continue $sm;
           case 3:
             this._unregisterApplyObserver1.dispose_sv8swh_k$();
-            var tmp1_synchronized_0 = this._this$0_76._stateLock;
-            if (this._this$0_76._runnerJob === this._callingJob0) {
-              this._this$0_76._runnerJob = null;
+            var tmp1_synchronized_0 = this._this$0_77._stateLock;
+            if (this._this$0_77._runnerJob === this._callingJob0) {
+              this._this$0_77._runnerJob = null;
             }
-            deriveStateLocked(this._this$0_76);
+            deriveStateLocked(this._this$0_77);
             Unit_getInstance();
-            removeRunning(Companion_getInstance_63(), this._this$0_76._recomposerInfo);
+            removeRunning(Companion_getInstance_64(), this._this$0_77._recomposerInfo);
             return Unit_getInstance();
           case 4:
             this._exceptionState = 5;
             var t = this._exception_0;
             this._unregisterApplyObserver1.dispose_sv8swh_k$();
-            var tmp1_synchronized_0_0 = this._this$0_76._stateLock;
-            if (this._this$0_76._runnerJob === this._callingJob0) {
-              this._this$0_76._runnerJob = null;
+            var tmp1_synchronized_0_0 = this._this$0_77._stateLock;
+            if (this._this$0_77._runnerJob === this._callingJob0) {
+              this._this$0_77._runnerJob = null;
             }
-            deriveStateLocked(this._this$0_76);
+            deriveStateLocked(this._this$0_77);
             Unit_getInstance();
-            removeRunning(Companion_getInstance_63(), this._this$0_76._recomposerInfo);
+            removeRunning(Companion_getInstance_64(), this._this$0_77._recomposerInfo);
             throw t;
           case 5:
             throw this._exception_0;
@@ -74497,7 +75071,7 @@
      while (true);
   };
   _no_name_provided__284.prototype.create_y6imfn_k$ = function ($this$withContext, completion) {
-    var i = new _no_name_provided__284(this._this$0_76, this._$block_4, this._$parentFrameClock_0, completion);
+    var i = new _no_name_provided__284(this._this$0_77, this._$block_4, this._$parentFrameClock_0, completion);
     i._$this$withContext_0 = $this$withContext;
     return i;
   };
@@ -74590,7 +75164,7 @@
   }
   function $awaitWorkAvailableCOROUTINE$2(_this_, resultContinuation) {
     CoroutineImpl_0.call(this, resultContinuation);
-    this.__this__46 = _this_;
+    this.__this__48 = _this_;
   }
   $awaitWorkAvailableCOROUTINE$2.prototype.doResume_0_k$ = function () {
     var suspendResult = this._result_0;
@@ -74600,19 +75174,19 @@
         switch (tmp) {
           case 0:
             this._exceptionState = 3;
-            if (!_get_hasSchedulingWork_(this.__this__46)) {
+            if (!_get_hasSchedulingWork_(this.__this__48)) {
               this._state_1 = 1;
               var tmp_0 = this;
               tmp_0._tmp0__anonymous__1_10 = this;
               this._cancellable_2_21 = new CancellableContinuationImpl(intercepted(this._tmp0__anonymous__1_10), 1);
               this._cancellable_2_21.initCancellability_sv8swh_k$();
               var tmp_1 = this;
-              tmp_1._tmp0_synchronized_0_42 = this.__this__46._stateLock;
-              if (_get_hasSchedulingWork_(this.__this__46)) {
+              tmp_1._tmp0_synchronized_0_42 = this.__this__48._stateLock;
+              if (_get_hasSchedulingWork_(this.__this__48)) {
                 var tmp0_success_0_1_2_5 = Companion_getInstance_3();
                 this._cancellable_2_21.resumeWith_bnunh2_k$(_Result___init__impl_(Unit_getInstance()));
               } else {
-                this.__this__46._workContinuation = this._cancellable_2_21;
+                this.__this__48._workContinuation = this._cancellable_2_21;
               }
               suspendResult = this._cancellable_2_21.getResult_0_k$();
               if (suspendResult === _get_COROUTINE_SUSPENDED_()) {
@@ -74648,7 +75222,7 @@
     interfaces: []
   };
   function Recomposer(effectCoroutineContext) {
-    Companion_getInstance_63();
+    Companion_getInstance_64();
     CompositionContext.call(this);
     this._changeCount = new Long(0, 0);
     var tmp = this;
@@ -74767,7 +75341,7 @@
     var composerWasComposing = composition._get_isComposing__0_k$();
     var tmp$ret$1;
     $l$block_0: {
-      var snapshot_1 = Companion_getInstance_68().takeMutableSnapshot_sefk9o_k$(readObserverOf(this, composition), writeObserverOf(this, composition, null));
+      var snapshot_1 = Companion_getInstance_69().takeMutableSnapshot_sefk9o_k$(readObserverOf(this, composition), writeObserverOf(this, composition, null));
       try {
         var tmp$ret$0;
         $l$block: {
@@ -74786,7 +75360,7 @@
       }
     }
     if (!composerWasComposing) {
-      Companion_getInstance_68().notifyObjectsInitialized_sv8swh_k$();
+      Companion_getInstance_69().notifyObjectsInitialized_sv8swh_k$();
     }var tmp$ret$2;
     $l$block_1: {
       var tmp0_synchronized_0 = this._stateLock;
@@ -74804,7 +75378,7 @@
     }
     composition.applyChanges_sv8swh_k$();
     if (!composerWasComposing) {
-      Companion_getInstance_68().notifyObjectsInitialized_sv8swh_k$();
+      Companion_getInstance_69().notifyObjectsInitialized_sv8swh_k$();
     }};
   Recomposer.$metadata$ = {
     simpleName: 'Recomposer',
@@ -74913,8 +75487,8 @@
       insertGroups($this, 1);
       var current_0 = $this._currentGroup;
       var currentAddress = groupIndexToAddress($this, current_0);
-      var hasObjectKey_0 = !(objectKey_0 === Companion_getInstance_62()._Empty_4);
-      var hasAux_0 = !isNode_0 ? !(aux_0 === Companion_getInstance_62()._Empty_4) : false;
+      var hasObjectKey_0 = !(objectKey_0 === Companion_getInstance_63()._Empty_4);
+      var hasAux_0 = !isNode_0 ? !(aux_0 === Companion_getInstance_63()._Empty_4) : false;
       initGroup($this._groups, currentAddress, key_0, isNode_0, hasObjectKey_0, hasAux_0, $this._parent_1, $this._currentSlot);
       $this._currentSlotEnd = $this._currentSlot;
       var dataSlotsNeeded = ((isNode_0 ? 1 : 0) + (hasObjectKey_0 ? 1 : 0) | 0) + (hasAux_0 ? 1 : 0) | 0;
@@ -74946,7 +75520,7 @@
       saveCurrentGroupEnd($this);
       var currentGroup = $this._currentGroup;
       var currentGroupAddress = groupIndexToAddress($this, currentGroup);
-      if (!equals_1(aux_0, Companion_getInstance_62()._Empty_4)) {
+      if (!equals_1(aux_0, Companion_getInstance_63()._Empty_4)) {
         if (isNode_0)
           $this.updateNode_qi8yb4_k$(aux_0);
         else
@@ -75578,7 +76152,7 @@
   function _no_name_provided__288($start, $end, this$0) {
     this._$start = $start;
     this._$end = $end;
-    this._this$0_77 = this$0;
+    this._this$0_78 = this$0;
     this._current_0 = this._$start;
   }
   _no_name_provided__288.prototype.hasNext_0_k$ = function () {
@@ -75587,11 +76161,11 @@
   _no_name_provided__288.prototype.next_0_k$ = function () {
     var tmp;
     if (this.hasNext_0_k$()) {
-      var tmp_0 = this._this$0_77._slots_0;
+      var tmp_0 = this._this$0_78._slots_0;
       var tmp0_this = this;
       var tmp1 = tmp0_this._current_0;
       tmp0_this._current_0 = tmp1 + 1 | 0;
-      tmp = tmp_0[dataIndexToDataAddress(this._this$0_77, tmp1)];
+      tmp = tmp_0[dataIndexToDataAddress(this._this$0_78, tmp1)];
     } else {
       tmp = null;
     }
@@ -75635,7 +76209,7 @@
   };
   SlotWriter.prototype.groupAux_ha5a7z_k$ = function (index) {
     var address = groupIndexToAddress(this, index);
-    return hasAux(this._groups, address) ? this._slots_0[auxIndex(this._groups, this, address)] : Companion_getInstance_62()._Empty_4;
+    return hasAux(this._groups, address) ? this._slots_0[auxIndex(this._groups, this, address)] : Companion_getInstance_63()._Empty_4;
   };
   SlotWriter.prototype.node_ha5a7z_k$ = function (index) {
     var address = groupIndexToAddress(this, index);
@@ -75881,13 +76455,13 @@
         var message_1 = tmp$ret$0;
         throw IllegalArgumentException_init_$Create$_0(toString_1(message_1));
       }}
-    startGroup_1(this, 0, Companion_getInstance_62()._Empty_4, false, Companion_getInstance_62()._Empty_4);
+    startGroup_1(this, 0, Companion_getInstance_63()._Empty_4, false, Companion_getInstance_63()._Empty_4);
   };
   SlotWriter.prototype.startGroup_d6z93j_k$ = function (key_0, dataKey) {
-    return startGroup_1(this, key_0, dataKey, false, Companion_getInstance_62()._Empty_4);
+    return startGroup_1(this, key_0, dataKey, false, Companion_getInstance_63()._Empty_4);
   };
   SlotWriter.prototype.startNode_qi8yb4_k$ = function (key_0) {
-    return startGroup_1(this, 125, key_0, true, Companion_getInstance_62()._Empty_4);
+    return startGroup_1(this, 125, key_0, true, Companion_getInstance_63()._Empty_4);
   };
   SlotWriter.prototype.startData_sdxrn6_k$ = function (key_0, objectKey_0, aux_0) {
     return startGroup_1(this, key_0, objectKey_0, false, aux_0);
@@ -76785,7 +77359,7 @@
     if (isNode(_this_, index)) {
       tmp = $this._slots_2[nodeIndex_0(_this_, index)];
     } else {
-      tmp = Companion_getInstance_62()._Empty_4;
+      tmp = Companion_getInstance_63()._Empty_4;
     }
     return tmp;
   }
@@ -76794,7 +77368,7 @@
     if (hasAux(_this_, index)) {
       tmp = $this._slots_2[auxIndex_0(_this_, index)];
     } else {
-      tmp = Companion_getInstance_62()._Empty_4;
+      tmp = Companion_getInstance_63()._Empty_4;
     }
     return tmp;
   }
@@ -76888,7 +77462,7 @@
   };
   SlotReader.prototype.next_0_k$ = function () {
     if (this._emptyCount > 0 ? true : this._currentSlot_0 >= this._currentSlotEnd_0)
-      return Companion_getInstance_62()._Empty_4;
+      return Companion_getInstance_63()._Empty_4;
     var tmp0_this = this;
     var tmp1 = tmp0_this._currentSlot_0;
     tmp0_this._currentSlot_0 = tmp1 + 1 | 0;
@@ -77168,12 +77742,12 @@
       throw ConcurrentModificationException_init_$Create$();
     }}
   function _no_name_provided__289(this$0, $group) {
-    this._this$0_78 = this$0;
+    this._this$0_79 = this$0;
     this._$group = $group;
   }
   _no_name_provided__289.prototype.iterator_0_k$ = function () {
-    validateRead(this._this$0_78);
-    return new GroupIterator(this._this$0_78._table_1, this._$group + 1 | 0, this._$group + groupSize(this._this$0_78._table_1._groups_0, this._$group) | 0);
+    validateRead(this._this$0_79);
+    return new GroupIterator(this._this$0_79._table_1, this._$group + 1 | 0, this._$group + groupSize(this._this$0_79._table_1._groups_0, this._$group) | 0);
   };
   _no_name_provided__289.$metadata$ = {
     kind: 'class',
@@ -77488,7 +78062,7 @@
     var tmp$ret$5;
     $l$block_4: {
       var tmp0_withCurrent_0 = this._next_4;
-      var tmp1__anonymous__1 = current(tmp0_withCurrent_0, Companion_getInstance_68()._get_current__0_k$());
+      var tmp1__anonymous__1 = current(tmp0_withCurrent_0, Companion_getInstance_69()._get_current__0_k$());
       var tmp;
       if (!this._get_policy__0_k$().equivalent_1qgdm_k$(tmp1__anonymous__1._value_24, value_1)) {
         var tmp$ret$4;
@@ -77504,7 +78078,7 @@
                 var tmp0_synchronized_0_5 = lock;
                 var tmp$ret$0;
                 $l$block: {
-                  snapshot_1_3 = Companion_getInstance_68()._get_current__0_k$();
+                  snapshot_1_3 = Companion_getInstance_69()._get_current__0_k$();
                   var tmp3__anonymous__4_6 = overwritableRecord(tmp2_overwritable_0_2, this, snapshot_1_3, tmp1__anonymous__1);
                   tmp3__anonymous__4_6._value_24 = value_1;
                   tmp$ret$0 = Unit_getInstance();
@@ -77580,7 +78154,7 @@
       var tmp0_withCurrent_0 = this._next_4;
       var tmp$ret$0;
       $l$block: {
-        var tmp1__anonymous__1 = current(tmp0_withCurrent_0, Companion_getInstance_68()._get_current__0_k$());
+        var tmp1__anonymous__1 = current(tmp0_withCurrent_0, Companion_getInstance_69()._get_current__0_k$());
         tmp$ret$0 = '' + 'MutableState(value=' + tmp1__anonymous__1._value_24 + ')@' + hashCode(this);
         break $l$block;
       }
@@ -78180,14 +78754,14 @@
     return -($this._size_9 + 1 | 0) | 0;
   }
   function _no_name_provided__292(this$0) {
-    this._this$0_79 = this$0;
+    this._this$0_80 = this$0;
     this._index_9 = 0;
   }
   _no_name_provided__292.prototype.hasNext_0_k$ = function () {
-    return this._index_9 < this._this$0_79._size_9;
+    return this._index_9 < this._this$0_80._size_9;
   };
   _no_name_provided__292.prototype.next_0_k$ = function () {
-    var tmp = this._this$0_79._values_3;
+    var tmp = this._this$0_80._values_3;
     var tmp0_this = this;
     var tmp1 = tmp0_this._index_9;
     tmp0_this._index_9 = tmp1 + 1 | 0;
@@ -78736,10 +79310,10 @@
     interfaces: [Set, ImmutableCollection]
   };
   function persistentHashMapOf() {
-    return Companion_getInstance_65().emptyOf_7dfbla_k$();
+    return Companion_getInstance_66().emptyOf_7dfbla_k$();
   }
   function persistentSetOf() {
-    return Companion_getInstance_67().emptyOf_1gxw8l_k$();
+    return Companion_getInstance_68().emptyOf_1gxw8l_k$();
   }
   function persistentListOf() {
     return persistentVectorOf();
@@ -78961,8 +79535,8 @@
     kind: 'class',
     interfaces: []
   };
-  function Companion_65() {
-    Companion_instance_64 = this;
+  function Companion_66() {
+    Companion_instance_65 = this;
     var tmp = this;
     var tmp$ret$0;
     $l$block: {
@@ -78971,19 +79545,19 @@
     }
     tmp._EMPTY_1 = new SmallPersistentVector(tmp$ret$0);
   }
-  Companion_65.$metadata$ = {
+  Companion_66.$metadata$ = {
     simpleName: 'Companion',
     kind: 'object',
     interfaces: []
   };
-  var Companion_instance_64;
-  function Companion_getInstance_64() {
-    if (Companion_instance_64 == null)
-      new Companion_65();
-    return Companion_instance_64;
+  var Companion_instance_65;
+  function Companion_getInstance_65() {
+    if (Companion_instance_65 == null)
+      new Companion_66();
+    return Companion_instance_65;
   }
   function SmallPersistentVector(buffer) {
-    Companion_getInstance_64();
+    Companion_getInstance_65();
     AbstractPersistentList.call(this);
     this._buffer_10 = buffer;
     assert(this._buffer_10.length <= 32);
@@ -79076,7 +79650,7 @@
     interfaces: []
   };
   function persistentVectorOf() {
-    return Companion_getInstance_64()._EMPTY_1;
+    return Companion_getInstance_65()._EMPTY_1;
   }
   function presizedBufferWith(element) {
     var tmp$ret$0;
@@ -79098,27 +79672,27 @@
   function createEntries($this) {
     return new PersistentHashMapEntries($this);
   }
-  function Companion_66() {
-    Companion_instance_65 = this;
-    this._EMPTY_2 = new PersistentHashMap(Companion_getInstance_66()._EMPTY_3, 0);
+  function Companion_67() {
+    Companion_instance_66 = this;
+    this._EMPTY_2 = new PersistentHashMap(Companion_getInstance_67()._EMPTY_3, 0);
   }
-  Companion_66.prototype.emptyOf_7dfbla_k$ = function () {
+  Companion_67.prototype.emptyOf_7dfbla_k$ = function () {
     var tmp = this._EMPTY_2;
     return tmp instanceof PersistentHashMap ? tmp : THROW_CCE();
   };
-  Companion_66.$metadata$ = {
+  Companion_67.$metadata$ = {
     simpleName: 'Companion',
     kind: 'object',
     interfaces: []
   };
-  var Companion_instance_65;
-  function Companion_getInstance_65() {
-    if (Companion_instance_65 == null)
-      new Companion_66();
-    return Companion_instance_65;
+  var Companion_instance_66;
+  function Companion_getInstance_66() {
+    if (Companion_instance_66 == null)
+      new Companion_67();
+    return Companion_instance_66;
   }
   function PersistentHashMap(node_0, size_0) {
-    Companion_getInstance_65();
+    Companion_getInstance_66();
     AbstractMap.call(this);
     this._node_0 = node_0;
     this._size_13 = size_0;
@@ -79185,7 +79759,7 @@
     if (this._node_0 === newNode) {
       return this;
     }if (newNode == null) {
-      return Companion_getInstance_65().emptyOf_7dfbla_k$();
+      return Companion_getInstance_66().emptyOf_7dfbla_k$();
     }return new PersistentHashMap(newNode, this._size_13 - 1 | 0);
   };
   PersistentHashMap.$metadata$ = {
@@ -79272,7 +79846,7 @@
     interfaces: []
   };
   function TrieNodeBaseIterator() {
-    this._buffer_11 = Companion_getInstance_66()._EMPTY_3._buffer_12;
+    this._buffer_11 = Companion_getInstance_67()._EMPTY_3._buffer_12;
     this._dataSize = 0;
     this._index_11 = 0;
   }
@@ -79380,7 +79954,7 @@
           return Unit_getInstance();
         }if (i > 0) {
           $this._path_0[i - 1 | 0].moveToNextNode_sv8swh_k$();
-        }$this._path_0[i].reset_tvwza9_k$(Companion_getInstance_66()._EMPTY_3._buffer_12, 0);
+        }$this._path_0[i].reset_tvwza9_k$(Companion_getInstance_67()._EMPTY_3._buffer_12, 0);
       }
        while (0 <= inductionVariable);
     $this._hasNext_1 = false;
@@ -79850,8 +80424,8 @@
   function replaceNode($this, targetNode, newNode, nodeIndex_1, positionMask) {
     return newNode == null ? removeNodeAtIndex($this, nodeIndex_1, positionMask) : !(targetNode === newNode) ? updateNodeAtIndex($this, nodeIndex_1, positionMask, newNode) : $this;
   }
-  function Companion_67() {
-    Companion_instance_66 = this;
+  function Companion_68() {
+    Companion_instance_67 = this;
     var tmp = this;
     var tmp$ret$0;
     $l$block: {
@@ -79860,19 +80434,19 @@
     }
     tmp._EMPTY_3 = TrieNode_init_$Create$(0, 0, tmp$ret$0);
   }
-  Companion_67.$metadata$ = {
+  Companion_68.$metadata$ = {
     simpleName: 'Companion',
     kind: 'object',
     interfaces: []
   };
-  var Companion_instance_66;
-  function Companion_getInstance_66() {
-    if (Companion_instance_66 == null)
-      new Companion_67();
-    return Companion_instance_66;
+  var Companion_instance_67;
+  function Companion_getInstance_67() {
+    if (Companion_instance_67 == null)
+      new Companion_68();
+    return Companion_instance_67;
   }
   function TrieNode(dataMap, nodeMap, buffer, ownedBy) {
-    Companion_getInstance_66();
+    Companion_getInstance_67();
     this._dataMap = dataMap;
     this._nodeMap = nodeMap;
     this._ownedBy = ownedBy;
@@ -80145,26 +80719,26 @@
     Unit_getInstance();
     return newBuffer;
   }
-  function Companion_68() {
-    Companion_instance_67 = this;
-    this._EMPTY_4 = new PersistentOrderedSet(EndOfChain_getInstance(), EndOfChain_getInstance(), Companion_getInstance_65().emptyOf_7dfbla_k$());
+  function Companion_69() {
+    Companion_instance_68 = this;
+    this._EMPTY_4 = new PersistentOrderedSet(EndOfChain_getInstance(), EndOfChain_getInstance(), Companion_getInstance_66().emptyOf_7dfbla_k$());
   }
-  Companion_68.prototype.emptyOf_1gxw8l_k$ = function () {
+  Companion_69.prototype.emptyOf_1gxw8l_k$ = function () {
     return this._EMPTY_4;
   };
-  Companion_68.$metadata$ = {
+  Companion_69.$metadata$ = {
     simpleName: 'Companion',
     kind: 'object',
     interfaces: []
   };
-  var Companion_instance_67;
-  function Companion_getInstance_67() {
-    if (Companion_instance_67 == null)
-      new Companion_68();
-    return Companion_instance_67;
+  var Companion_instance_68;
+  function Companion_getInstance_68() {
+    if (Companion_instance_68 == null)
+      new Companion_69();
+    return Companion_instance_68;
   }
   function PersistentOrderedSet(firstElement, lastElement, hashMap) {
-    Companion_getInstance_67();
+    Companion_getInstance_68();
     AbstractSet.call(this);
     this._firstElement = firstElement;
     this._lastElement = lastElement;
@@ -80402,7 +80976,7 @@
     composer.startReplaceableGroup_majfzk_k$(key_0);
     var slot = composer.rememberedValue_0_k$();
     var tmp;
-    if (slot === Companion_getInstance_62()._Empty_4) {
+    if (slot === Companion_getInstance_63()._Empty_4) {
       var value_1 = new ComposableLambdaImpl(key_0, tracked);
       composer.updateRememberedValue_qi8yb4_k$(value_1);
       tmp = value_1;
@@ -80582,13 +81156,13 @@
     kind: 'class',
     interfaces: [ObserverHandle]
   };
-  function Companion_69() {
-    Companion_instance_68 = this;
+  function Companion_70() {
+    Companion_instance_69 = this;
   }
-  Companion_69.prototype._get_current__0_k$ = function () {
+  Companion_70.prototype._get_current__0_k$ = function () {
     return currentSnapshot();
   };
-  Companion_69.prototype.takeMutableSnapshot_sefk9o_k$ = function (readObserver, writeObserver) {
+  Companion_70.prototype.takeMutableSnapshot_sefk9o_k$ = function (readObserver, writeObserver) {
     var tmp = currentSnapshot();
     var tmp0_safe_receiver = tmp instanceof MutableSnapshot ? tmp : null;
     var tmp1_elvis_lhs = tmp0_safe_receiver == null ? null : tmp0_safe_receiver.takeNestedMutableSnapshot_sefk9o_k$(readObserver, writeObserver);
@@ -80600,7 +81174,7 @@
     }
     return tmp_0;
   };
-  Companion_69.prototype.registerApplyObserver_ja8wvw_k$ = function (observer) {
+  Companion_70.prototype.registerApplyObserver_ja8wvw_k$ = function (observer) {
     advanceGlobalSnapshot(emptyLambda);
     var tmp$ret$2;
     $l$block_1: {
@@ -80621,7 +81195,7 @@
     Unit_getInstance();
     return new _no_name_provided__293(observer);
   };
-  Companion_69.prototype.registerGlobalWriteObserver_ejofcn_k$ = function (observer) {
+  Companion_70.prototype.registerGlobalWriteObserver_ejofcn_k$ = function (observer) {
     var tmp$ret$2;
     $l$block_1: {
       var tmp$ret$1;
@@ -80642,10 +81216,10 @@
     advanceGlobalSnapshot_0();
     return new _no_name_provided__294(observer);
   };
-  Companion_69.prototype.notifyObjectsInitialized_sv8swh_k$ = function () {
+  Companion_70.prototype.notifyObjectsInitialized_sv8swh_k$ = function () {
     return currentSnapshot().notifyObjectsInitialized_sv8swh_k$();
   };
-  Companion_69.prototype.sendApplyNotifications_sv8swh_k$ = function () {
+  Companion_70.prototype.sendApplyNotifications_sv8swh_k$ = function () {
     var tmp$ret$3;
     $l$block_2: {
       var tmp$ret$2;
@@ -80678,19 +81252,19 @@
     if (changes)
       advanceGlobalSnapshot_0();
   };
-  Companion_69.$metadata$ = {
+  Companion_70.$metadata$ = {
     simpleName: 'Companion',
     kind: 'object',
     interfaces: []
   };
-  var Companion_instance_68;
-  function Companion_getInstance_68() {
-    if (Companion_instance_68 == null)
-      new Companion_69();
-    return Companion_instance_68;
+  var Companion_instance_69;
+  function Companion_getInstance_69() {
+    if (Companion_instance_69 == null)
+      new Companion_70();
+    return Companion_instance_69;
   }
   function Snapshot(id, invalid) {
-    Companion_getInstance_68();
+    Companion_getInstance_69();
     this._invalid = invalid;
     this._id_3 = id;
     this._disposed_0 = false;
@@ -80772,7 +81346,7 @@
     this._readObserver = readObserver;
     this._writeObserver = writeObserver;
     this._modified = null;
-    this._previousIds = Companion_getInstance_69()._EMPTY_5;
+    this._previousIds = Companion_getInstance_70()._EMPTY_5;
     this._snapshots = 1;
     this._applied = false;
     this._$stable_5 = 8;
@@ -82108,7 +82682,7 @@
     $l$block: {
       var tmp0 = nextSnapshotId;
       nextSnapshotId = tmp0 + 1 | 0;
-      var tmp0_also_0 = new GlobalSnapshot(tmp0, Companion_getInstance_69()._EMPTY_5);
+      var tmp0_also_0 = new GlobalSnapshot(tmp0, Companion_getInstance_70()._EMPTY_5);
       {
       }
       {
@@ -82119,23 +82693,23 @@
     }
     return new AtomicReference(tmp$ret$0);
   }
-  function Companion_70() {
-    Companion_instance_69 = this;
+  function Companion_71() {
+    Companion_instance_70 = this;
     this._EMPTY_5 = new SnapshotIdSet(new Long(0, 0), new Long(0, 0), 0, null);
   }
-  Companion_70.$metadata$ = {
+  Companion_71.$metadata$ = {
     simpleName: 'Companion',
     kind: 'object',
     interfaces: []
   };
-  var Companion_instance_69;
-  function Companion_getInstance_69() {
-    if (Companion_instance_69 == null)
-      new Companion_70();
-    return Companion_instance_69;
+  var Companion_instance_70;
+  function Companion_getInstance_70() {
+    if (Companion_instance_70 == null)
+      new Companion_71();
+    return Companion_instance_70;
   }
   function _no_name_provided__302(this$0, resultContinuation) {
-    this._this$0_80 = this$0;
+    this._this$0_81 = this$0;
     CoroutineImpl_0.call(this, resultContinuation);
   }
   _no_name_provided__302.prototype.invoke_rbl5so_k$ = function ($this$sequence, $cont) {
@@ -82156,7 +82730,7 @@
         switch (tmp) {
           case 0:
             this._exceptionState = 15;
-            this._belowBound0 = this._this$0_80._belowBound;
+            this._belowBound0 = this._this$0_81._belowBound;
             if (!(this._belowBound0 == null)) {
               this._tmp0_iterator1 = intArrayIterator(this._belowBound0);
               this._state_1 = 1;
@@ -82186,7 +82760,7 @@
             this._state_1 = 4;
             continue $sm;
           case 4:
-            if (!this._this$0_80._lowerSet.equals(new Long(0, 0))) {
+            if (!this._this$0_81._lowerSet.equals(new Long(0, 0))) {
               var tmp_0 = this;
               Companion_getInstance_15();
               tmp_0._tmp1_iterator3 = until(0, 64).iterator_0_k$();
@@ -82204,9 +82778,9 @@
               continue $sm;
             }
             this._index4 = this._tmp1_iterator3.next_0_k$();
-            if (!this._this$0_80._lowerSet.and_wiekkq_k$((new Long(1, 0)).shl_ha5a7z_k$(this._index4)).equals(new Long(0, 0))) {
+            if (!this._this$0_81._lowerSet.and_wiekkq_k$((new Long(1, 0)).shl_ha5a7z_k$(this._index4)).equals(new Long(0, 0))) {
               this._state_1 = 6;
-              suspendResult = this._$this$sequence_0.yield_iav7o_k$(this._index4 + this._this$0_80._lowerBound | 0, this);
+              suspendResult = this._$this$sequence_0.yield_iav7o_k$(this._index4 + this._this$0_81._lowerBound | 0, this);
               if (suspendResult === _get_COROUTINE_SUSPENDED_()) {
                 return suspendResult;
               }continue $sm;
@@ -82226,7 +82800,7 @@
             this._state_1 = 9;
             continue $sm;
           case 9:
-            if (!this._this$0_80._upperSet.equals(new Long(0, 0))) {
+            if (!this._this$0_81._upperSet.equals(new Long(0, 0))) {
               var tmp_1 = this;
               Companion_getInstance_15();
               tmp_1._tmp2_iterator5 = until(0, 64).iterator_0_k$();
@@ -82244,10 +82818,10 @@
               continue $sm;
             }
             this._index6 = this._tmp2_iterator5.next_0_k$();
-            if (!this._this$0_80._upperSet.and_wiekkq_k$((new Long(1, 0)).shl_ha5a7z_k$(this._index6)).equals(new Long(0, 0))) {
+            if (!this._this$0_81._upperSet.and_wiekkq_k$((new Long(1, 0)).shl_ha5a7z_k$(this._index6)).equals(new Long(0, 0))) {
               this._state_1 = 11;
               Companion_getInstance_15();
-              suspendResult = this._$this$sequence_0.yield_iav7o_k$((this._index6 + 64 | 0) + this._this$0_80._lowerBound | 0, this);
+              suspendResult = this._$this$sequence_0.yield_iav7o_k$((this._index6 + 64 | 0) + this._this$0_81._lowerBound | 0, this);
               if (suspendResult === _get_COROUTINE_SUSPENDED_()) {
                 return suspendResult;
               }continue $sm;
@@ -82282,7 +82856,7 @@
      while (true);
   };
   _no_name_provided__302.prototype.create_6ug3er_k$ = function ($this$sequence, completion) {
-    var i = new _no_name_provided__302(this._this$0_80, completion);
+    var i = new _no_name_provided__302(this._this$0_81, completion);
     i._$this$sequence_0 = $this$sequence;
     return i;
   };
@@ -82292,7 +82866,7 @@
     suspendArity: 1
   };
   function SnapshotIdSet(upperSet, lowerSet, lowerBound, belowBound) {
-    Companion_getInstance_69();
+    Companion_getInstance_70();
     this._upperSet = upperSet;
     this._lowerSet = lowerSet;
     this._lowerBound = lowerBound;
@@ -82670,10 +83244,10 @@
     return this;
   };
   SnapshotIdSet.prototype.andNot_b6l5po_k$ = function (bits) {
-    if (bits === Companion_getInstance_69()._EMPTY_5)
+    if (bits === Companion_getInstance_70()._EMPTY_5)
       return this;
-    if (this === Companion_getInstance_69()._EMPTY_5)
-      return Companion_getInstance_69()._EMPTY_5;
+    if (this === Companion_getInstance_70()._EMPTY_5)
+      return Companion_getInstance_70()._EMPTY_5;
     var tmp;
     if (bits._lowerBound === this._lowerBound ? bits._belowBound === this._belowBound : false) {
       tmp = new SnapshotIdSet(this._upperSet.and_wiekkq_k$(bits._upperSet.inv_0_k$()), this._lowerSet.and_wiekkq_k$(bits._lowerSet.inv_0_k$()), this._lowerBound, this._belowBound);
@@ -82700,9 +83274,9 @@
     return tmp;
   };
   SnapshotIdSet.prototype.or_b6l5po_k$ = function (bits) {
-    if (bits === Companion_getInstance_69()._EMPTY_5)
+    if (bits === Companion_getInstance_70()._EMPTY_5)
       return this;
-    if (this === Companion_getInstance_69()._EMPTY_5)
+    if (this === Companion_getInstance_70()._EMPTY_5)
       return bits;
     var tmp;
     if (bits._lowerBound === this._lowerBound ? bits._belowBound === this._belowBound : false) {
@@ -82985,7 +83559,7 @@
   };
   function $withFrameNanosCOROUTINE$5(_this_, onFrame, resultContinuation) {
     CoroutineImpl_0.call(this, resultContinuation);
-    this.__this__47 = _this_;
+    this.__this__49 = _this_;
     this._onFrame_0 = onFrame;
   }
   $withFrameNanosCOROUTINE$5.prototype.doResume_0_k$ = function () {
@@ -83182,12 +83756,12 @@
     interfaces: []
   };
   function _no_name_provided__306(this$0, $p1, $changed) {
-    this._this$0_81 = this$0;
+    this._this$0_82 = this$0;
     this._$p1 = $p1;
     this._$changed = $changed;
   }
   _no_name_provided__306.prototype.invoke_xtxync_k$ = function (nc, _anonymous_parameter_1_) {
-    this._this$0_81.invoke_oku154_k$(this._$p1, nc, this._$changed | 1);
+    this._this$0_82.invoke_oku154_k$(this._$p1, nc, this._$changed | 1);
     Unit_getInstance();
   };
   _no_name_provided__306.prototype.invoke_osx4an_k$ = function (p1, p2) {
@@ -83442,7 +84016,7 @@
   }
   _no_name_provided__307.prototype.invoke_sv8swh_k$ = function () {
     GlobalSnapshotManager_getInstance()._commitPending = false;
-    Companion_getInstance_68().sendApplyNotifications_sv8swh_k$();
+    Companion_getInstance_69().sendApplyNotifications_sv8swh_k$();
   };
   _no_name_provided__307.prototype.invoke_0_k$ = function () {
     this.invoke_sv8swh_k$();
@@ -83552,7 +84126,7 @@
   GlobalSnapshotManager.prototype.ensureStarted_sv8swh_k$ = function () {
     if (!this._started) {
       this._started = true;
-      this._removeWriteObserver = Companion_getInstance_68().registerGlobalWriteObserver_ejofcn_k$(this._globalWriteObserver);
+      this._removeWriteObserver = Companion_getInstance_69().registerGlobalWriteObserver_ejofcn_k$(this._globalWriteObserver);
     }};
   GlobalSnapshotManager.$metadata$ = {
     simpleName: 'GlobalSnapshotManager',
@@ -83834,8 +84408,8 @@
     return _no_name_provided_$factory_268();
   }
   var setClassList;
-  function Companion_71() {
-    Companion_instance_70 = this;
+  function Companion_72() {
+    Companion_instance_71 = this;
     this._CLASS = 'class';
     this._ID = 'id';
     this._HIDDEN = 'hidden';
@@ -83847,19 +84421,19 @@
     this._TAB_INDEX = 'tabindex';
     this._SPELLCHECK = 'spellcheck';
   }
-  Companion_71.$metadata$ = {
+  Companion_72.$metadata$ = {
     simpleName: 'Companion',
     kind: 'object',
     interfaces: []
   };
-  var Companion_instance_70;
-  function Companion_getInstance_70() {
-    if (Companion_instance_70 == null)
-      new Companion_71();
-    return Companion_instance_70;
+  var Companion_instance_71;
+  function Companion_getInstance_71() {
+    if (Companion_instance_71 == null)
+      new Companion_72();
+    return Companion_instance_71;
   }
   function AttrsBuilder() {
-    Companion_getInstance_70();
+    Companion_getInstance_71();
     EventsListenerBuilder.call(this);
     var tmp = this;
     var tmp$ret$0;
@@ -83946,8 +84520,8 @@
   function setClassList$init$() {
     return _no_name_provided_$factory_269();
   }
-  function Companion_72() {
-    Companion_instance_71 = this;
+  function Companion_73() {
+    Companion_instance_72 = this;
     this._COPY = 'copy';
     this._CUT = 'cut';
     this._PASTE = 'paste';
@@ -83992,19 +84566,19 @@
     this._SUBMIT = 'submit';
     this._RESET = 'reset';
   }
-  Companion_72.$metadata$ = {
+  Companion_73.$metadata$ = {
     simpleName: 'Companion',
     kind: 'object',
     interfaces: []
   };
-  var Companion_instance_71;
-  function Companion_getInstance_71() {
-    if (Companion_instance_71 == null)
-      new Companion_72();
-    return Companion_instance_71;
+  var Companion_instance_72;
+  function Companion_getInstance_72() {
+    if (Companion_instance_72 == null)
+      new Companion_73();
+    return Companion_instance_72;
   }
   function EventsListenerBuilder() {
-    Companion_getInstance_71();
+    Companion_getInstance_72();
     var tmp = this;
     var tmp$ret$0;
     $l$block: {
@@ -84015,7 +84589,7 @@
     this._$stable_17 = 8;
   }
   EventsListenerBuilder.prototype.onClick_hxe0av_k$ = function (listener) {
-    Companion_getInstance_71();
+    Companion_getInstance_72();
     this._listeners.add_2bq_k$(new MouseEventListener('click', listener));
     Unit_getInstance();
   };
@@ -84383,10 +84957,10 @@
     kind: 'class',
     interfaces: []
   };
-  function Companion_73() {
-    Companion_instance_72 = this;
+  function Companion_74() {
+    Companion_instance_73 = this;
   }
-  Companion_73.prototype.fromString_6wfw3l_k$ = function (type) {
+  Companion_74.prototype.fromString_6wfw3l_k$ = function (type) {
     var tmp0_subject = type;
     var tmp;
     switch (tmp0_subject) {
@@ -84455,19 +85029,19 @@
     }
     return tmp;
   };
-  Companion_73.$metadata$ = {
+  Companion_74.$metadata$ = {
     simpleName: 'Companion',
     kind: 'object',
     interfaces: []
   };
-  var Companion_instance_72;
-  function Companion_getInstance_72() {
-    if (Companion_instance_72 == null)
-      new Companion_73();
-    return Companion_instance_72;
+  var Companion_instance_73;
+  function Companion_getInstance_73() {
+    if (Companion_instance_73 == null)
+      new Companion_74();
+    return Companion_instance_73;
   }
   function InputType(typeStr) {
-    Companion_getInstance_72();
+    Companion_getInstance_73();
     this._typeStr = typeStr;
     this._$stable_42 = 0;
   }
@@ -84504,14 +85078,14 @@
   function SyntheticEventListener(event, listener) {
     this._event = event;
     this._listener_0 = listener;
-    this._name_11 = this._event;
+    this._name_12 = this._event;
     this._$stable_45 = 0;
   }
   SyntheticEventListener.prototype._get_listener__0_k$ = function () {
     return this._listener_0;
   };
   SyntheticEventListener.prototype._get_name__0_k$ = function () {
-    return this._name_11;
+    return this._name_12;
   };
   SyntheticEventListener.prototype.handleEvent_xfv2uo_k$ = function (event) {
     var tmp$ret$1;
@@ -84607,7 +85181,7 @@
       element.value = toString_0(controlledInputsValuesWeakMap.get(element));
     }}
   function restoreControlledInputState(inputElement) {
-    var type = Companion_getInstance_72().fromString_6wfw3l_k$(inputElement.type);
+    var type = Companion_getInstance_73().fromString_6wfw3l_k$(inputElement.type);
     if (controlledInputsValuesWeakMap.has(inputElement)) {
       if (equals_1(type, Radio_getInstance())) {
         var tmp0_safe_receiver = controlledRadioGroups.get_2bw_k$(inputElement.name);
@@ -84722,20 +85296,6 @@
     kind: 'class',
     interfaces: [CSSBuilder, CSSRulesHolder]
   };
-  function Companion_74() {
-    Companion_instance_73 = this;
-  }
-  Companion_74.$metadata$ = {
-    simpleName: 'Companion',
-    kind: 'object',
-    interfaces: []
-  };
-  var Companion_instance_73;
-  function Companion_getInstance_73() {
-    if (Companion_instance_73 == null)
-      new Companion_74();
-    return Companion_instance_73;
-  }
   function Companion_75() {
     Companion_instance_74 = this;
   }
@@ -84806,6 +85366,20 @@
       new Companion_79();
     return Companion_instance_78;
   }
+  function Companion_80() {
+    Companion_instance_79 = this;
+  }
+  Companion_80.$metadata$ = {
+    simpleName: 'Companion',
+    kind: 'object',
+    interfaces: []
+  };
+  var Companion_instance_79;
+  function Companion_getInstance_79() {
+    if (Companion_instance_79 == null)
+      new Companion_80();
+    return Companion_instance_79;
+  }
   function CSSNamedKeyframes() {
   }
   CSSNamedKeyframes.$metadata$ = {
@@ -84846,14 +85420,14 @@
     interfaces: [Invertible, Combinable]
   };
   function MediaFeature(name, value_1) {
-    this._name_12 = name;
+    this._name_13 = name;
     this._value_28 = value_1;
     this._$stable_47 = 8;
   }
   MediaFeature.prototype.equals = function (other) {
     var tmp;
     if (other instanceof MediaFeature) {
-      tmp = this._name_12 === other._name_12 ? toString_0(this._value_28) === toString_0(other._value_28) : false;
+      tmp = this._name_13 === other._name_13 ? toString_0(this._value_28) === toString_0(other._value_28) : false;
     } else {
       {
         tmp = false;
@@ -84882,7 +85456,7 @@
       tmp = tmp$ret$1;
     }
     var tmp1_elvis_lhs = tmp;
-    return '' + '(' + this._name_12 + (tmp1_elvis_lhs == null ? '' : tmp1_elvis_lhs);
+    return '' + '(' + this._name_13 + (tmp1_elvis_lhs == null ? '' : tmp1_elvis_lhs);
   };
   MediaFeature.$metadata$ = {
     simpleName: 'MediaFeature',
@@ -85067,25 +85641,25 @@
     kind: 'class',
     interfaces: [CSSStyleRuleBuilder]
   };
-  function Companion_80() {
-    Companion_instance_79 = this;
+  function Companion_81() {
+    Companion_instance_80 = this;
   }
-  Companion_80.$metadata$ = {
+  Companion_81.$metadata$ = {
     simpleName: 'Companion',
     kind: 'object',
     interfaces: []
   };
-  var Companion_instance_79;
-  function Companion_getInstance_79() {
-    if (Companion_instance_79 == null)
-      new Companion_80();
-    return Companion_instance_79;
+  var Companion_instance_80;
+  function Companion_getInstance_80() {
+    if (Companion_instance_80 == null)
+      new Companion_81();
+    return Companion_instance_80;
   }
   function _get_px_(_this_) {
     var tmp = numberToDouble(_this_);
     var tmp$ret$2;
     $l$block_1: {
-      var tmp0__get_px__0 = Companion_getInstance_79();
+      var tmp0__get_px__0 = Companion_getInstance_80();
       var tmp$ret$1;
       $l$block_0: {
         var tmp$ret$0;
@@ -85105,7 +85679,7 @@
     var tmp = numberToDouble(_this_);
     var tmp$ret$2;
     $l$block_1: {
-      var tmp0__get_percent__0 = Companion_getInstance_79();
+      var tmp0__get_percent__0 = Companion_getInstance_80();
       var tmp$ret$1;
       $l$block_0: {
         var tmp$ret$0;
@@ -85125,7 +85699,7 @@
     var tmp = numberToDouble(_this_);
     var tmp$ret$2;
     $l$block_1: {
-      var tmp0__get_vw__0 = Companion_getInstance_79();
+      var tmp0__get_vw__0 = Companion_getInstance_80();
       var tmp$ret$1;
       $l$block_0: {
         var tmp$ret$0;
@@ -85369,10 +85943,10 @@
     return this.variable_t4iuxv_k$(variableName, tmp$ret$2);
   };
   StyleBuilder.prototype.invoke_ad0lsb_k$ = function (_this__0, value_1) {
-    this.variable_wbz76b_k$(_this__0._name_13, toString_1(value_1));
+    this.variable_wbz76b_k$(_this__0._name_14, toString_1(value_1));
   };
   StyleBuilder.prototype.invoke_s31tg6_k$ = function (_this__0, value_1) {
-    this.variable_qkzl0l_k$(_this__0._name_13, value_1);
+    this.variable_qkzl0l_k$(_this__0._name_14, value_1);
   };
   StyleBuilder.$metadata$ = {
     simpleName: 'StyleBuilder',
@@ -85384,7 +85958,7 @@
     $l$block_8: {
       var tmp$ret$2;
       $l$block_1: {
-        var tmp0_variableValue_0 = _this_._name_13;
+        var tmp0_variableValue_0 = _this_._name_14;
         var tmp0_safe_receiver_2 = fallback;
         var tmp;
         if (tmp0_safe_receiver_2 == null) {
@@ -85451,7 +86025,7 @@
     return value(_this_, fallback);
   }
   function CSSStyleVariable(name) {
-    this._name_13 = name;
+    this._name_14 = name;
     this._$stable_55 = 0;
   }
   CSSStyleVariable.$metadata$ = {
@@ -85467,7 +86041,7 @@
     $l$block_8: {
       var tmp$ret$2;
       $l$block_1: {
-        var tmp0_variableValue_0 = _this_._name_13;
+        var tmp0_variableValue_0 = _this_._name_14;
         var tmp0_safe_receiver_2 = fallback;
         var tmp;
         if (tmp0_safe_receiver_2 == null) {
@@ -85595,21 +86169,21 @@
     interfaces: []
   };
   function StylePropertyDeclaration(name, value_1) {
-    this._name_14 = name;
+    this._name_15 = name;
     this._value_30 = value_1;
     this._$stable_57 = 8;
   }
   StylePropertyDeclaration.prototype.component1_0_k$ = function () {
-    return this._name_14;
+    return this._name_15;
   };
   StylePropertyDeclaration.prototype.component2_0_k$ = function () {
     return this._value_30;
   };
   StylePropertyDeclaration.prototype.toString = function () {
-    return '' + 'StylePropertyDeclaration(name=' + this._name_14 + ', value=' + this._value_30 + ')';
+    return '' + 'StylePropertyDeclaration(name=' + this._name_15 + ', value=' + this._value_30 + ')';
   };
   StylePropertyDeclaration.prototype.hashCode = function () {
-    var result = getStringHashCode(this._name_14);
+    var result = getStringHashCode(this._name_15);
     result = imul(result, 31) + hashCode(this._value_30) | 0;
     return result;
   };
@@ -85621,7 +86195,7 @@
     else {
     }
     var tmp0_other_with_cast = other instanceof StylePropertyDeclaration ? other : THROW_CCE();
-    if (!(this._name_14 === tmp0_other_with_cast._name_14))
+    if (!(this._name_15 === tmp0_other_with_cast._name_15))
       return false;
     if (!equals_1(this._value_30, tmp0_other_with_cast._value_30))
       return false;
@@ -85659,7 +86233,7 @@
           var tmp0_5 = index;
           index = tmp0_5 + 1 | 0;
           var otherProp_4 = properties.get_ha5a7z_k$(tmp0_5);
-          tmp$ret$1 = element_2._name_14 === otherProp_4._name_14 ? toString_1(element_2._value_30) === toString_1(otherProp_4._value_30) : false;
+          tmp$ret$1 = element_2._name_15 === otherProp_4._name_15 ? toString_1(element_2._value_30) === toString_1(otherProp_4._value_30) : false;
           break $l$block_0;
         }
         if (!tmp$ret$1) {
@@ -85709,20 +86283,20 @@
   function StyleSheet_init_$Create$(rulesHolder, usePrefix, $mask0, $marker) {
     return StyleSheet_init_$Init$(rulesHolder, usePrefix, $mask0, $marker, Object.create(StyleSheet_0.prototype));
   }
-  function Companion_81() {
-    Companion_instance_80 = this;
+  function Companion_82() {
+    Companion_instance_81 = this;
     this._counter_0 = 0;
   }
-  Companion_81.$metadata$ = {
+  Companion_82.$metadata$ = {
     simpleName: 'Companion',
     kind: 'object',
     interfaces: []
   };
-  var Companion_instance_80;
-  function Companion_getInstance_80() {
-    if (Companion_instance_80 == null)
-      new Companion_81();
-    return Companion_instance_80;
+  var Companion_instance_81;
+  function Companion_getInstance_81() {
+    if (Companion_instance_81 == null)
+      new Companion_82();
+    return Companion_instance_81;
   }
   function CSSSelfSelector(selector) {
     CSSSelector.call(this);
@@ -85778,7 +86352,7 @@
     interfaces: []
   };
   function StyleSheet_0(rulesHolder, usePrefix) {
-    Companion_getInstance_80();
+    Companion_getInstance_81();
     this._rulesHolder = rulesHolder;
     this._usePrefix_0 = usePrefix;
     var tmp = this;
@@ -86312,7 +86886,7 @@
   };
   function AttributeInternal(name, value_1, operator, caseSensitive) {
     CSSSelector.call(this);
-    this._name_15 = name;
+    this._name_16 = name;
     this._value_32 = value_1;
     this._operator = operator;
     this._caseSensitive = caseSensitive;
@@ -86339,10 +86913,10 @@
     }
     var tmp1_elvis_lhs = tmp;
     var valueStr = tmp1_elvis_lhs == null ? '' : tmp1_elvis_lhs;
-    return '' + '[' + this._name_15 + valueStr + ']';
+    return '' + '[' + this._name_16 + valueStr + ']';
   };
   AttributeInternal.prototype.hashCode = function () {
-    var result = getStringHashCode(this._name_15);
+    var result = getStringHashCode(this._name_16);
     result = imul(result, 31) + (this._value_32 == null ? 0 : getStringHashCode(this._value_32)) | 0;
     result = imul(result, 31) + this._operator.hashCode() | 0;
     result = imul(result, 31) + (this._caseSensitive | 0) | 0;
@@ -86356,7 +86930,7 @@
     else {
     }
     var tmp0_other_with_cast = other instanceof AttributeInternal ? other : THROW_CCE();
-    if (!(this._name_15 === tmp0_other_with_cast._name_15))
+    if (!(this._name_16 === tmp0_other_with_cast._name_16))
       return false;
     if (!(this._value_32 == tmp0_other_with_cast._value_32))
       return false;
@@ -86444,12 +87018,12 @@
   };
   function PseudoClassInternal(name) {
     CSSSelector.call(this);
-    this._name_16 = name;
+    this._name_17 = name;
   }
   PseudoClassInternal.prototype.equals = function (other) {
     var tmp;
     if (other instanceof PseudoClassInternal) {
-      tmp = this._name_16 === other._name_16 ? this.argsStr_0_k$() == other.argsStr_0_k$() : false;
+      tmp = this._name_17 === other._name_17 ? this.argsStr_0_k$() == other.argsStr_0_k$() : false;
     } else {
       {
         tmp = false;
@@ -86481,7 +87055,7 @@
       tmp = tmp$ret$1;
     }
     var tmp1_elvis_lhs = tmp;
-    return '' + ':' + this._name_16 + (tmp1_elvis_lhs == null ? '' : tmp1_elvis_lhs);
+    return '' + ':' + this._name_17 + (tmp1_elvis_lhs == null ? '' : tmp1_elvis_lhs);
   };
   PseudoClassInternal.$metadata$ = {
     simpleName: 'PseudoClassInternal',
@@ -86597,7 +87171,7 @@
             var tmp$ret$1;
             $l$block_0: {
               var tmp;
-              if (false ? true : tmp0_let_0_4 === Companion_getInstance_62()._Empty_4) {
+              if (false ? true : tmp0_let_0_4 === Companion_getInstance_63()._Empty_4) {
                 var tmp$ret$0;
                 $l$block: {
                   var tmp0_return_7 = new ElementScopeImpl();
@@ -87052,11 +87626,11 @@
     this._$changed_0 = $changed;
     this._$effect_0 = $effect;
     this._$effectHolder = $effectHolder;
-    this._this$0_82 = this$0;
+    this._this$0_83 = this$0;
   }
   _no_name_provided__329.prototype.invoke_sv8swh_k$ = function () {
     if (this._$changed_0)
-      this._$effect_0(this._$effectHolder, this._this$0_82._get_element__0_k$());
+      this._$effect_0(this._$effectHolder, this._this$0_83._get_element__0_k$());
   };
   _no_name_provided__329.prototype.invoke_0_k$ = function () {
     this.invoke_sv8swh_k$();
@@ -87094,7 +87668,7 @@
           var tmp$ret$1;
           $l$block_0: {
             var tmp;
-            if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_62()._Empty_4) {
+            if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_63()._Empty_4) {
               var tmp$ret$0;
               $l$block: {
                 var tmp0_return_8 = new DomDisposableEffectHolder(this);
@@ -87247,10 +87821,10 @@
     return tmp$ret$0;
   }
   function _no_name_provided__330(this$0) {
-    this._this$0_83 = this$0;
+    this._this$0_84 = this$0;
   }
   _no_name_provided__330.prototype.invoke_0_k$ = function () {
-    return document.createElement(this._this$0_83._tagName);
+    return document.createElement(this._this$0_84._tagName);
   };
   _no_name_provided__330.$metadata$ = {
     kind: 'class',
@@ -87346,7 +87920,7 @@
             var tmp$ret$0;
             $l$block: {
               var tmp;
-              if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_62()._Empty_4) {
+              if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_63()._Empty_4) {
                 var value_2_2_6 = tmp2_remember$composable_0();
                 tmp1_cache_0_3.updateRememberedValue_qi8yb4_k$(value_2_2_6);
                 tmp = value_2_2_6;
@@ -87469,7 +88043,7 @@
             var tmp$ret$0;
             $l$block: {
               var tmp;
-              if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_62()._Empty_4) {
+              if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_63()._Empty_4) {
                 var value_2_2_6 = tmp2_remember$composable_0();
                 tmp1_cache_0_3.updateRememberedValue_qi8yb4_k$(value_2_2_6);
                 tmp = value_2_2_6;
@@ -87802,7 +88376,7 @@
             var tmp$ret$0;
             $l$block: {
               var tmp;
-              if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_62()._Empty_4) {
+              if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_63()._Empty_4) {
                 var value_2_2_6 = tmp1_remember$composable_0();
                 tmp1_cache_0_3.updateRememberedValue_qi8yb4_k$(value_2_2_6);
                 tmp = value_2_2_6;
@@ -89316,7 +89890,7 @@
     };
   }
   function main() {
-    var portfolioRepository = new PortfolioRepository();
+    var portfolioRepository = PortfolioRepository_init_$Create$(null, 1, null);
     var coroutineScope_0 = MainScope();
     var pageData$delegate = mutableStateOf$default(null, null, 2, null);
     launch$default(coroutineScope_0, null, null, _no_name_provided_$factory_321(portfolioRepository, pageData$delegate, null), 3, null);
@@ -89687,7 +90261,7 @@
             var tmp$ret$0;
             $l$block: {
               var tmp_4;
-              if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_62()._Empty_4) {
+              if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_63()._Empty_4) {
                 var value_2_2_6 = tmp2_remember$composable_0();
                 tmp1_cache_0_3.updateRememberedValue_qi8yb4_k$(value_2_2_6);
                 tmp_4 = value_2_2_6;
@@ -89849,7 +90423,7 @@
   _no_name_provided__382.prototype.invoke_k9hshx_k$ = function ($this$style) {
     var tmp$ret$3;
     $l$block_2: {
-      var tmp0__get_Flex__0 = Companion_getInstance_73();
+      var tmp0__get_Flex__0 = Companion_getInstance_74();
       var tmp$ret$2;
       $l$block_1: {
         var tmp$ret$1;
@@ -89871,7 +90445,7 @@
     display($this$style, tmp$ret$3);
     var tmp$ret$7;
     $l$block_6: {
-      var tmp1__get_Column__0 = Companion_getInstance_74();
+      var tmp1__get_Column__0 = Companion_getInstance_75();
       var tmp$ret$6;
       $l$block_5: {
         var tmp$ret$5;
@@ -90269,7 +90843,7 @@
             var tmp$ret$0;
             $l$block: {
               var tmp;
-              if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_62()._Empty_4) {
+              if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_63()._Empty_4) {
                 var value_2_2_6 = tmp2_remember$composable_0();
                 tmp1_cache_0_3.updateRememberedValue_qi8yb4_k$(value_2_2_6);
                 tmp = value_2_2_6;
@@ -90359,7 +90933,7 @@
             var tmp$ret$0;
             $l$block: {
               var tmp;
-              if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_62()._Empty_4) {
+              if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_63()._Empty_4) {
                 var value_2_2_6 = tmp1_remember$composable_0();
                 tmp1_cache_0_3.updateRememberedValue_qi8yb4_k$(value_2_2_6);
                 tmp = value_2_2_6;
@@ -90457,7 +91031,7 @@
             var tmp$ret$0;
             $l$block: {
               var tmp;
-              if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_62()._Empty_4) {
+              if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_63()._Empty_4) {
                 var value_2_2_6 = tmp2_remember$composable_0();
                 tmp1_cache_0_3.updateRememberedValue_qi8yb4_k$(value_2_2_6);
                 tmp = value_2_2_6;
@@ -90548,7 +91122,7 @@
             var tmp$ret$0;
             $l$block: {
               var tmp;
-              if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_62()._Empty_4) {
+              if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_63()._Empty_4) {
                 var value_2_2_6 = tmp2_remember$composable_0();
                 tmp1_cache_0_3.updateRememberedValue_qi8yb4_k$(value_2_2_6);
                 tmp = value_2_2_6;
@@ -90639,7 +91213,7 @@
             var tmp$ret$0;
             $l$block: {
               var tmp;
-              if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_62()._Empty_4) {
+              if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_63()._Empty_4) {
                 var value_2_2_6 = tmp2_remember$composable_0();
                 tmp1_cache_0_3.updateRememberedValue_qi8yb4_k$(value_2_2_6);
                 tmp = value_2_2_6;
@@ -90715,7 +91289,7 @@
             var tmp$ret$0;
             $l$block: {
               var tmp;
-              if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_62()._Empty_4) {
+              if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_63()._Empty_4) {
                 var value_2_2_6 = tmp1_remember$composable_0();
                 tmp1_cache_0_3.updateRememberedValue_qi8yb4_k$(value_2_2_6);
                 tmp = value_2_2_6;
@@ -90805,7 +91379,7 @@
   _no_name_provided__392.prototype.invoke_k9hshx_k$ = function ($this$style) {
     var tmp$ret$3;
     $l$block_2: {
-      var tmp0__get_Flex__0 = Companion_getInstance_73();
+      var tmp0__get_Flex__0 = Companion_getInstance_74();
       var tmp$ret$2;
       $l$block_1: {
         var tmp$ret$1;
@@ -90827,7 +91401,7 @@
     display($this$style, tmp$ret$3);
     var tmp$ret$7;
     $l$block_6: {
-      var tmp1__get_Center__0 = Companion_getInstance_75();
+      var tmp1__get_Center__0 = Companion_getInstance_76();
       var tmp$ret$6;
       $l$block_5: {
         var tmp$ret$5;
@@ -90849,7 +91423,7 @@
     alignItems($this$style, tmp$ret$7);
     var tmp$ret$11;
     $l$block_10: {
-      var tmp2__get_Center__0 = Companion_getInstance_76();
+      var tmp2__get_Center__0 = Companion_getInstance_77();
       var tmp$ret$10;
       $l$block_9: {
         var tmp$ret$9;
@@ -90978,7 +91552,7 @@
               var tmp$ret$0;
               $l$block: {
                 var tmp_0;
-                if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_62()._Empty_4) {
+                if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_63()._Empty_4) {
                   var value_2_2_6 = tmp1_remember$composable_0();
                   tmp1_cache_0_3.updateRememberedValue_qi8yb4_k$(value_2_2_6);
                   tmp_0 = value_2_2_6;
@@ -91166,7 +91740,7 @@
             var tmp$ret$0;
             $l$block: {
               var tmp;
-              if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_62()._Empty_4) {
+              if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_63()._Empty_4) {
                 var value_2_2_6 = tmp2_remember$composable_0();
                 tmp1_cache_0_3.updateRememberedValue_qi8yb4_k$(value_2_2_6);
                 tmp = value_2_2_6;
@@ -91239,7 +91813,7 @@
   _no_name_provided__408.prototype.invoke_k9hshx_k$ = function ($this$style) {
     var tmp$ret$3;
     $l$block_2: {
-      var tmp0__get_Flex__0 = Companion_getInstance_73();
+      var tmp0__get_Flex__0 = Companion_getInstance_74();
       var tmp$ret$2;
       $l$block_1: {
         var tmp$ret$1;
@@ -91261,7 +91835,7 @@
     display($this$style, tmp$ret$3);
     var tmp$ret$7;
     $l$block_6: {
-      var tmp1__get_Center__0 = Companion_getInstance_75();
+      var tmp1__get_Center__0 = Companion_getInstance_76();
       var tmp$ret$6;
       $l$block_5: {
         var tmp$ret$5;
@@ -91283,7 +91857,7 @@
     alignItems($this$style, tmp$ret$7);
     var tmp$ret$11;
     $l$block_10: {
-      var tmp2__get_Center__0 = Companion_getInstance_76();
+      var tmp2__get_Center__0 = Companion_getInstance_77();
       var tmp$ret$10;
       $l$block_9: {
         var tmp$ret$9;
@@ -91413,7 +91987,7 @@
             var tmp$ret$0;
             $l$block: {
               var tmp;
-              if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_62()._Empty_4) {
+              if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_63()._Empty_4) {
                 var value_2_2_6 = tmp2_remember$composable_0();
                 tmp1_cache_0_3.updateRememberedValue_qi8yb4_k$(value_2_2_6);
                 tmp = value_2_2_6;
@@ -91489,7 +92063,7 @@
   _no_name_provided__415.prototype.invoke_k9hshx_k$ = function ($this$style) {
     var tmp$ret$3;
     $l$block_2: {
-      var tmp0__get_Flex__0 = Companion_getInstance_73();
+      var tmp0__get_Flex__0 = Companion_getInstance_74();
       var tmp$ret$2;
       $l$block_1: {
         var tmp$ret$1;
@@ -91511,7 +92085,7 @@
     display($this$style, tmp$ret$3);
     var tmp$ret$7;
     $l$block_6: {
-      var tmp1__get_FlexStart__0 = Companion_getInstance_75();
+      var tmp1__get_FlexStart__0 = Companion_getInstance_76();
       var tmp$ret$6;
       $l$block_5: {
         var tmp$ret$5;
@@ -91533,7 +92107,7 @@
     alignItems($this$style, tmp$ret$7);
     var tmp$ret$11;
     $l$block_10: {
-      var tmp2__get_FlexStart__0 = Companion_getInstance_76();
+      var tmp2__get_FlexStart__0 = Companion_getInstance_77();
       var tmp$ret$10;
       $l$block_9: {
         var tmp$ret$9;
@@ -91655,7 +92229,7 @@
             var tmp$ret$0;
             $l$block: {
               var tmp;
-              if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_62()._Empty_4) {
+              if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_63()._Empty_4) {
                 var value_2_2_6 = tmp1_remember$composable_0();
                 tmp1_cache_0_3.updateRememberedValue_qi8yb4_k$(value_2_2_6);
                 tmp = value_2_2_6;
@@ -91733,7 +92307,7 @@
     paddingRight($this$style, _get_px_(0));
     var tmp$ret$3;
     $l$block_2: {
-      var tmp0__get_Flex__0 = Companion_getInstance_73();
+      var tmp0__get_Flex__0 = Companion_getInstance_74();
       var tmp$ret$2;
       $l$block_1: {
         var tmp$ret$1;
@@ -91755,7 +92329,7 @@
     display($this$style, tmp$ret$3);
     var tmp$ret$7;
     $l$block_6: {
-      var tmp1__get_FlexStart__0 = Companion_getInstance_75();
+      var tmp1__get_FlexStart__0 = Companion_getInstance_76();
       var tmp$ret$6;
       $l$block_5: {
         var tmp$ret$5;
@@ -91777,7 +92351,7 @@
     alignItems($this$style, tmp$ret$7);
     var tmp$ret$11;
     $l$block_10: {
-      var tmp2__get_FlexStart__0 = Companion_getInstance_76();
+      var tmp2__get_FlexStart__0 = Companion_getInstance_77();
       var tmp$ret$10;
       $l$block_9: {
         var tmp$ret$9;
@@ -91899,7 +92473,7 @@
             var tmp$ret$0;
             $l$block: {
               var tmp;
-              if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_62()._Empty_4) {
+              if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_63()._Empty_4) {
                 var value_2_2_6 = tmp1_remember$composable_0();
                 tmp1_cache_0_3.updateRememberedValue_qi8yb4_k$(value_2_2_6);
                 tmp = value_2_2_6;
@@ -92588,7 +93162,7 @@
   _no_name_provided__441.prototype.invoke_k9hshx_k$ = function ($this$style) {
     var tmp$ret$3;
     $l$block_2: {
-      var tmp0__get_Flex__0 = Companion_getInstance_73();
+      var tmp0__get_Flex__0 = Companion_getInstance_74();
       var tmp$ret$2;
       $l$block_1: {
         var tmp$ret$1;
@@ -92610,7 +93184,7 @@
     display($this$style, tmp$ret$3);
     var tmp$ret$7;
     $l$block_6: {
-      var tmp1__get_Center__0 = Companion_getInstance_75();
+      var tmp1__get_Center__0 = Companion_getInstance_76();
       var tmp$ret$6;
       $l$block_5: {
         var tmp$ret$5;
@@ -92880,7 +93454,7 @@
             var tmp$ret$0;
             $l$block: {
               var tmp;
-              if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_62()._Empty_4) {
+              if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_63()._Empty_4) {
                 var value_2_2_6 = tmp1_remember$composable_0();
                 tmp1_cache_0_3.updateRememberedValue_qi8yb4_k$(value_2_2_6);
                 tmp = value_2_2_6;
@@ -92949,7 +93523,7 @@
   _no_name_provided__452.prototype.invoke_k9hshx_k$ = function ($this$style) {
     var tmp$ret$3;
     $l$block_2: {
-      var tmp0__get_Flex__0 = Companion_getInstance_73();
+      var tmp0__get_Flex__0 = Companion_getInstance_74();
       var tmp$ret$2;
       $l$block_1: {
         var tmp$ret$1;
@@ -92971,7 +93545,7 @@
     display($this$style, tmp$ret$3);
     var tmp$ret$7;
     $l$block_6: {
-      var tmp1__get_Center__0 = Companion_getInstance_75();
+      var tmp1__get_Center__0 = Companion_getInstance_76();
       var tmp$ret$6;
       $l$block_5: {
         var tmp$ret$5;
@@ -93079,7 +93653,7 @@
   _no_name_provided__458.prototype.invoke_k9hshx_k$ = function ($this$style) {
     var tmp$ret$3;
     $l$block_2: {
-      var tmp0__get_Flex__0 = Companion_getInstance_73();
+      var tmp0__get_Flex__0 = Companion_getInstance_74();
       var tmp$ret$2;
       $l$block_1: {
         var tmp$ret$1;
@@ -93101,7 +93675,7 @@
     display($this$style, tmp$ret$3);
     var tmp$ret$7;
     $l$block_6: {
-      var tmp1__get_Center__0 = Companion_getInstance_75();
+      var tmp1__get_Center__0 = Companion_getInstance_76();
       var tmp$ret$6;
       $l$block_5: {
         var tmp$ret$5;
@@ -93296,7 +93870,7 @@
   _no_name_provided__470.prototype.invoke_k9hshx_k$ = function ($this$style) {
     var tmp$ret$3;
     $l$block_2: {
-      var tmp0__get_Flex__0_10 = Companion_getInstance_73();
+      var tmp0__get_Flex__0_10 = Companion_getInstance_74();
       var tmp$ret$2;
       $l$block_1: {
         var tmp$ret$1;
@@ -93318,7 +93892,7 @@
     display($this$style, tmp$ret$3);
     var tmp$ret$7;
     $l$block_6: {
-      var tmp1__get_FlexStart__0_11 = Companion_getInstance_75();
+      var tmp1__get_FlexStart__0_11 = Companion_getInstance_76();
       var tmp$ret$6;
       $l$block_5: {
         var tmp$ret$5;
@@ -93581,7 +94155,7 @@
                   var tmp$ret$0;
                   $l$block: {
                     var tmp;
-                    if (tmp2_cache_0_4_16 ? true : tmp0_let_0_5_17 === Companion_getInstance_62()._Empty_4) {
+                    if (tmp2_cache_0_4_16 ? true : tmp0_let_0_5_17 === Companion_getInstance_63()._Empty_4) {
                       var value_2_2_6_18 = tmp0_remember$composable_0_6();
                       tmp1_cache_0_3_15.updateRememberedValue_qi8yb4_k$(value_2_2_6_18);
                       tmp = value_2_2_6_18;
@@ -93678,7 +94252,7 @@
   _no_name_provided__484.prototype.invoke_k9hshx_k$ = function ($this$style) {
     var tmp$ret$3;
     $l$block_2: {
-      var tmp0__get_Flex__0 = Companion_getInstance_73();
+      var tmp0__get_Flex__0 = Companion_getInstance_74();
       var tmp$ret$2;
       $l$block_1: {
         var tmp$ret$1;
@@ -93700,7 +94274,7 @@
     display($this$style, tmp$ret$3);
     var tmp$ret$7;
     $l$block_6: {
-      var tmp1__get_Column__0 = Companion_getInstance_74();
+      var tmp1__get_Column__0 = Companion_getInstance_75();
       var tmp$ret$6;
       $l$block_5: {
         var tmp$ret$5;
@@ -93722,7 +94296,7 @@
     flexDirection($this$style, tmp$ret$7);
     var tmp$ret$11;
     $l$block_10: {
-      var tmp2__get_FlexStart__0 = Companion_getInstance_75();
+      var tmp2__get_FlexStart__0 = Companion_getInstance_76();
       var tmp$ret$10;
       $l$block_9: {
         var tmp$ret$9;
@@ -94049,7 +94623,7 @@
   _no_name_provided__486.prototype.invoke_k9hshx_k$ = function ($this$style) {
     var tmp$ret$3;
     $l$block_2: {
-      var tmp0__get_Flex__0 = Companion_getInstance_73();
+      var tmp0__get_Flex__0 = Companion_getInstance_74();
       var tmp$ret$2;
       $l$block_1: {
         var tmp$ret$1;
@@ -94071,7 +94645,7 @@
     display($this$style, tmp$ret$3);
     var tmp$ret$7;
     $l$block_6: {
-      var tmp1__get_Column__0 = Companion_getInstance_74();
+      var tmp1__get_Column__0 = Companion_getInstance_75();
       var tmp$ret$6;
       $l$block_5: {
         var tmp$ret$5;
@@ -94228,7 +94802,7 @@
             var tmp$ret$0;
             $l$block: {
               var tmp;
-              if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_62()._Empty_4) {
+              if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_63()._Empty_4) {
                 var value_2_2_6 = tmp1_remember$composable_0();
                 tmp1_cache_0_3.updateRememberedValue_qi8yb4_k$(value_2_2_6);
                 tmp = value_2_2_6;
@@ -94324,7 +94898,7 @@
     marginTop($this$style, _get_px_(16));
     var tmp$ret$3;
     $l$block_2: {
-      var tmp0__get_Flex__0 = Companion_getInstance_73();
+      var tmp0__get_Flex__0 = Companion_getInstance_74();
       var tmp$ret$2;
       $l$block_1: {
         var tmp$ret$1;
@@ -94346,7 +94920,7 @@
     display($this$style, tmp$ret$3);
     var tmp$ret$7;
     $l$block_6: {
-      var tmp1__get_Start__0 = Companion_getInstance_75();
+      var tmp1__get_Start__0 = Companion_getInstance_76();
       var tmp$ret$6;
       $l$block_5: {
         var tmp$ret$5;
@@ -94394,7 +94968,7 @@
   _no_name_provided__496.prototype.invoke_k9hshx_k$ = function ($this$style) {
     var tmp$ret$3;
     $l$block_2: {
-      var tmp0__get_Flex__0 = Companion_getInstance_73();
+      var tmp0__get_Flex__0 = Companion_getInstance_74();
       var tmp$ret$2;
       $l$block_1: {
         var tmp$ret$1;
@@ -94416,7 +94990,7 @@
     display($this$style, tmp$ret$3);
     var tmp$ret$7;
     $l$block_6: {
-      var tmp1__get_FlexEnd__0 = Companion_getInstance_76();
+      var tmp1__get_FlexEnd__0 = Companion_getInstance_77();
       var tmp$ret$6;
       $l$block_5: {
         var tmp$ret$5;
@@ -94783,7 +95357,7 @@
   _no_name_provided__510.prototype.invoke_k9hshx_k$ = function ($this$style) {
     var tmp$ret$3;
     $l$block_2: {
-      var tmp0__get_Flex__0 = Companion_getInstance_73();
+      var tmp0__get_Flex__0 = Companion_getInstance_74();
       var tmp$ret$2;
       $l$block_1: {
         var tmp$ret$1;
@@ -94805,7 +95379,7 @@
     display($this$style, tmp$ret$3);
     var tmp$ret$7;
     $l$block_6: {
-      var tmp1__get_Column__0 = Companion_getInstance_74();
+      var tmp1__get_Column__0 = Companion_getInstance_75();
       var tmp$ret$6;
       $l$block_5: {
         var tmp$ret$5;
@@ -94827,7 +95401,7 @@
     flexDirection($this$style, tmp$ret$7);
     var tmp$ret$11;
     $l$block_10: {
-      var tmp2__get_Stretch__0 = Companion_getInstance_75();
+      var tmp2__get_Stretch__0 = Companion_getInstance_76();
       var tmp$ret$10;
       $l$block_9: {
         var tmp$ret$9;
@@ -95061,7 +95635,7 @@
   _no_name_provided__512.prototype.invoke_k9hshx_k$ = function ($this$style) {
     var tmp$ret$3;
     $l$block_2: {
-      var tmp0__get_Flex__0 = Companion_getInstance_73();
+      var tmp0__get_Flex__0 = Companion_getInstance_74();
       var tmp$ret$2;
       $l$block_1: {
         var tmp$ret$1;
@@ -95083,7 +95657,7 @@
     display($this$style, tmp$ret$3);
     var tmp$ret$7;
     $l$block_6: {
-      var tmp1__get_Row__0 = Companion_getInstance_74();
+      var tmp1__get_Row__0 = Companion_getInstance_75();
       var tmp$ret$6;
       $l$block_5: {
         var tmp$ret$5;
@@ -95105,7 +95679,7 @@
     flexDirection($this$style, tmp$ret$7);
     var tmp$ret$11;
     $l$block_10: {
-      var tmp2__get_Center__0 = Companion_getInstance_76();
+      var tmp2__get_Center__0 = Companion_getInstance_77();
       var tmp$ret$10;
       $l$block_9: {
         var tmp$ret$9;
@@ -95127,7 +95701,7 @@
     justifyContent($this$style, tmp$ret$11);
     var tmp$ret$15;
     $l$block_14: {
-      var tmp3__get_Center__0 = Companion_getInstance_75();
+      var tmp3__get_Center__0 = Companion_getInstance_76();
       var tmp$ret$14;
       $l$block_13: {
         var tmp$ret$13;
@@ -95248,7 +95822,7 @@
                   var tmp$ret$0;
                   $l$block: {
                     var tmp_3;
-                    if (tmp2_cache_0_4_12 ? true : tmp0_let_0_5_13 === Companion_getInstance_62()._Empty_4) {
+                    if (tmp2_cache_0_4_12 ? true : tmp0_let_0_5_13 === Companion_getInstance_63()._Empty_4) {
                       var value_2_2_6_14 = tmp0_remember$composable_0_4();
                       tmp1_cache_0_3_11.updateRememberedValue_qi8yb4_k$(value_2_2_6_14);
                       tmp_3 = value_2_2_6_14;
@@ -95545,7 +96119,7 @@
             var tmp$ret$1;
             $l$block_0: {
               var tmp;
-              if (false ? true : tmp0_let_0_4 === Companion_getInstance_62()._Empty_4) {
+              if (false ? true : tmp0_let_0_4 === Companion_getInstance_63()._Empty_4) {
                 var tmp$ret$0;
                 $l$block: {
                   var tmp_0 = take(experience, 2);
@@ -95625,7 +96199,7 @@
   _no_name_provided__525.prototype.invoke_k9hshx_k$ = function ($this$style) {
     var tmp$ret$3;
     $l$block_2: {
-      var tmp0__get_Flex__0 = Companion_getInstance_73();
+      var tmp0__get_Flex__0 = Companion_getInstance_74();
       var tmp$ret$2;
       $l$block_1: {
         var tmp$ret$1;
@@ -95647,7 +96221,7 @@
     display($this$style, tmp$ret$3);
     var tmp$ret$7;
     $l$block_6: {
-      var tmp1__get_Center__0 = Companion_getInstance_76();
+      var tmp1__get_Center__0 = Companion_getInstance_77();
       var tmp$ret$6;
       $l$block_5: {
         var tmp$ret$5;
@@ -95669,7 +96243,7 @@
     justifyContent($this$style, tmp$ret$7);
     var tmp$ret$11;
     $l$block_10: {
-      var tmp2__get_Center__0 = Companion_getInstance_75();
+      var tmp2__get_Center__0 = Companion_getInstance_76();
       var tmp$ret$10;
       $l$block_9: {
         var tmp$ret$9;
@@ -95986,7 +96560,7 @@
   _no_name_provided__536.prototype.invoke_k9hshx_k$ = function ($this$style) {
     var tmp$ret$3;
     $l$block_2: {
-      var tmp0__get_Flex__0 = Companion_getInstance_73();
+      var tmp0__get_Flex__0 = Companion_getInstance_74();
       var tmp$ret$2;
       $l$block_1: {
         var tmp$ret$1;
@@ -96008,7 +96582,7 @@
     display($this$style, tmp$ret$3);
     var tmp$ret$7;
     $l$block_6: {
-      var tmp1__get_FlexEnd__0 = Companion_getInstance_76();
+      var tmp1__get_FlexEnd__0 = Companion_getInstance_77();
       var tmp$ret$6;
       $l$block_5: {
         var tmp$ret$5;
@@ -96030,7 +96604,7 @@
     justifyContent($this$style, tmp$ret$7);
     var tmp$ret$11;
     $l$block_10: {
-      var tmp2__get_Center__0 = Companion_getInstance_75();
+      var tmp2__get_Center__0 = Companion_getInstance_76();
       var tmp$ret$10;
       $l$block_9: {
         var tmp$ret$9;
@@ -96465,7 +97039,7 @@
             var tmp$ret$0;
             $l$block: {
               var tmp;
-              if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_62()._Empty_4) {
+              if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_63()._Empty_4) {
                 var value_2_2_6 = tmp1_remember$composable_0();
                 tmp1_cache_0_3.updateRememberedValue_qi8yb4_k$(value_2_2_6);
                 tmp = value_2_2_6;
@@ -96649,7 +97223,7 @@
   _no_name_provided__556.prototype.invoke_k9hshx_k$ = function ($this$style) {
     var tmp$ret$3;
     $l$block_2: {
-      var tmp0__get_Flex__0 = Companion_getInstance_73();
+      var tmp0__get_Flex__0 = Companion_getInstance_74();
       var tmp$ret$2;
       $l$block_1: {
         var tmp$ret$1;
@@ -96671,7 +97245,7 @@
     display($this$style, tmp$ret$3);
     var tmp$ret$7;
     $l$block_6: {
-      var tmp1__get_Row__0 = Companion_getInstance_74();
+      var tmp1__get_Row__0 = Companion_getInstance_75();
       var tmp$ret$6;
       $l$block_5: {
         var tmp$ret$5;
@@ -96693,7 +97267,7 @@
     flexDirection($this$style, tmp$ret$7);
     var tmp$ret$11;
     $l$block_10: {
-      var tmp2__get_SpaceBetween__0 = Companion_getInstance_76();
+      var tmp2__get_SpaceBetween__0 = Companion_getInstance_77();
       var tmp$ret$10;
       $l$block_9: {
         var tmp$ret$9;
@@ -96715,7 +97289,7 @@
     justifyContent($this$style, tmp$ret$11);
     var tmp$ret$15;
     $l$block_14: {
-      var tmp3__get_Center__0 = Companion_getInstance_75();
+      var tmp3__get_Center__0 = Companion_getInstance_76();
       var tmp$ret$14;
       $l$block_13: {
         var tmp$ret$13;
@@ -96905,7 +97479,7 @@
             var tmp$ret$0;
             $l$block: {
               var tmp_4;
-              if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_62()._Empty_4) {
+              if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_63()._Empty_4) {
                 var value_2_2_6 = tmp0_remember$composable_0();
                 tmp1_cache_0_3.updateRememberedValue_qi8yb4_k$(value_2_2_6);
                 tmp_4 = value_2_2_6;
@@ -97070,7 +97644,7 @@
             var tmp$ret$1;
             $l$block_0: {
               var tmp;
-              if (false ? true : tmp0_let_0_4 === Companion_getInstance_62()._Empty_4) {
+              if (false ? true : tmp0_let_0_4 === Companion_getInstance_63()._Empty_4) {
                 var tmp$ret$0;
                 $l$block: {
                   var tmp0_return_7 = mutableStateOf$default(false, null, 2, null);
@@ -98186,7 +98760,7 @@
   _no_name_provided__608.prototype.invoke_k9hshx_k$ = function ($this$style) {
     var tmp$ret$3;
     $l$block_2: {
-      var tmp0__get_Flex__0_42 = Companion_getInstance_73();
+      var tmp0__get_Flex__0_42 = Companion_getInstance_74();
       var tmp$ret$2;
       $l$block_1: {
         var tmp$ret$1;
@@ -98208,7 +98782,7 @@
     display($this$style, tmp$ret$3);
     var tmp$ret$7;
     $l$block_6: {
-      var tmp1__get_Column__0_43 = Companion_getInstance_74();
+      var tmp1__get_Column__0_43 = Companion_getInstance_75();
       var tmp$ret$6;
       $l$block_5: {
         var tmp$ret$5;
@@ -98230,7 +98804,7 @@
     flexDirection($this$style, tmp$ret$7);
     var tmp$ret$11;
     $l$block_10: {
-      var tmp2__get_Center__0_44 = Companion_getInstance_76();
+      var tmp2__get_Center__0_44 = Companion_getInstance_77();
       var tmp$ret$10;
       $l$block_9: {
         var tmp$ret$9;
@@ -98252,7 +98826,7 @@
     justifyContent($this$style, tmp$ret$11);
     var tmp$ret$15;
     $l$block_14: {
-      var tmp3__get_Center__0_45 = Companion_getInstance_75();
+      var tmp3__get_Center__0_45 = Companion_getInstance_76();
       var tmp$ret$14;
       $l$block_13: {
         var tmp$ret$13;
@@ -98446,7 +99020,7 @@
   _no_name_provided__619.prototype.invoke_k9hshx_k$ = function ($this$style) {
     var tmp$ret$3;
     $l$block_2: {
-      var tmp0__get_Flex__0_60 = Companion_getInstance_73();
+      var tmp0__get_Flex__0_60 = Companion_getInstance_74();
       var tmp$ret$2;
       $l$block_1: {
         var tmp$ret$1;
@@ -98468,7 +99042,7 @@
     display($this$style, tmp$ret$3);
     var tmp$ret$7;
     $l$block_6: {
-      var tmp1__get_FlexStart__0_61 = Companion_getInstance_76();
+      var tmp1__get_FlexStart__0_61 = Companion_getInstance_77();
       var tmp$ret$6;
       $l$block_5: {
         var tmp$ret$5;
@@ -98490,7 +99064,7 @@
     justifyContent($this$style, tmp$ret$7);
     var tmp$ret$11;
     $l$block_10: {
-      var tmp2__get_FlexStart__0_62 = Companion_getInstance_75();
+      var tmp2__get_FlexStart__0_62 = Companion_getInstance_76();
       var tmp$ret$10;
       $l$block_9: {
         var tmp$ret$9;
@@ -98664,7 +99238,7 @@
   _no_name_provided__628.prototype.invoke_k9hshx_k$ = function ($this$style) {
     var tmp$ret$3;
     $l$block_2: {
-      var tmp0__get_Flex__0_76 = Companion_getInstance_73();
+      var tmp0__get_Flex__0_76 = Companion_getInstance_74();
       var tmp$ret$2;
       $l$block_1: {
         var tmp$ret$1;
@@ -98686,7 +99260,7 @@
     display($this$style, tmp$ret$3);
     var tmp$ret$7;
     $l$block_6: {
-      var tmp1__get_Column__0_77 = Companion_getInstance_74();
+      var tmp1__get_Column__0_77 = Companion_getInstance_75();
       var tmp$ret$6;
       $l$block_5: {
         var tmp$ret$5;
@@ -98708,7 +99282,7 @@
     flexDirection($this$style, tmp$ret$7);
     var tmp$ret$11;
     $l$block_10: {
-      var tmp2__get_Center__0_78 = Companion_getInstance_76();
+      var tmp2__get_Center__0_78 = Companion_getInstance_77();
       var tmp$ret$10;
       $l$block_9: {
         var tmp$ret$9;
@@ -98730,7 +99304,7 @@
     justifyContent($this$style, tmp$ret$11);
     var tmp$ret$15;
     $l$block_14: {
-      var tmp3__get_Center__0_79 = Companion_getInstance_75();
+      var tmp3__get_Center__0_79 = Companion_getInstance_76();
       var tmp$ret$14;
       $l$block_13: {
         var tmp$ret$13;
@@ -98961,7 +99535,7 @@
             var tmp$ret$0;
             $l$block: {
               var tmp;
-              if (tmp2_cache_0_4_94 ? true : tmp0_let_0_5_95 === Companion_getInstance_62()._Empty_4) {
+              if (tmp2_cache_0_4_94 ? true : tmp0_let_0_5_95 === Companion_getInstance_63()._Empty_4) {
                 var value_2_2_6_96 = tmp0_remember$composable_0_86();
                 tmp1_cache_0_3_93.updateRememberedValue_qi8yb4_k$(value_2_2_6_96);
                 tmp = value_2_2_6_96;
@@ -100246,7 +100820,7 @@
           var tmp = tmp0_apply_0_1;
           var tmp$ret$3;
           $l$block_2: {
-            var tmp0__get_Solid__0_3 = Companion_getInstance_78();
+            var tmp0__get_Solid__0_3 = Companion_getInstance_79();
             var tmp$ret$2;
             $l$block_1: {
               var tmp$ret$1;
@@ -101982,7 +102556,7 @@
   _no_name_provided__715.prototype.invoke_nj0yvr_k$ = function ($this$null) {
     var tmp$ret$3;
     $l$block_2: {
-      var tmp0__get_None__0 = Companion_getInstance_73();
+      var tmp0__get_None__0 = Companion_getInstance_74();
       var tmp$ret$2;
       $l$block_1: {
         var tmp$ret$1;
@@ -102032,7 +102606,7 @@
     width($this$null, _get_percent_(100));
     var tmp$ret$3;
     $l$block_2: {
-      var tmp0__get_Flex__0 = Companion_getInstance_73();
+      var tmp0__get_Flex__0 = Companion_getInstance_74();
       var tmp$ret$2;
       $l$block_1: {
         var tmp$ret$1;
@@ -102054,7 +102628,7 @@
     display($this$null, tmp$ret$3);
     var tmp$ret$7;
     $l$block_6: {
-      var tmp1__get_Column__0 = Companion_getInstance_74();
+      var tmp1__get_Column__0 = Companion_getInstance_75();
       var tmp$ret$6;
       $l$block_5: {
         var tmp$ret$5;
@@ -102076,7 +102650,7 @@
     flexDirection($this$null, tmp$ret$7);
     var tmp$ret$11;
     $l$block_10: {
-      var tmp2__get_FlexStart__0 = Companion_getInstance_75();
+      var tmp2__get_FlexStart__0 = Companion_getInstance_76();
       var tmp$ret$10;
       $l$block_9: {
         var tmp$ret$9;
@@ -102098,7 +102672,7 @@
     alignItems($this$null, tmp$ret$11);
     var tmp$ret$15;
     $l$block_14: {
-      var tmp3__get_Stretch__0 = Companion_getInstance_75();
+      var tmp3__get_Stretch__0 = Companion_getInstance_76();
       var tmp$ret$14;
       $l$block_13: {
         var tmp$ret$13;
@@ -102147,7 +102721,7 @@
   _no_name_provided__719.prototype.invoke_nj0yvr_k$ = function ($this$null) {
     var tmp$ret$3;
     $l$block_2: {
-      var tmp0__get_Column__0 = Companion_getInstance_74();
+      var tmp0__get_Column__0 = Companion_getInstance_75();
       var tmp$ret$2;
       $l$block_1: {
         var tmp$ret$1;
@@ -102169,7 +102743,7 @@
     flexDirection($this$null, tmp$ret$3);
     var tmp$ret$7;
     $l$block_6: {
-      var tmp1__get_Stretch__0 = Companion_getInstance_75();
+      var tmp1__get_Stretch__0 = Companion_getInstance_76();
       var tmp$ret$6;
       $l$block_5: {
         var tmp$ret$5;
@@ -102297,7 +102871,7 @@
   _no_name_provided__725.prototype.invoke_nj0yvr_k$ = function ($this$style) {
     var tmp$ret$3;
     $l$block_2: {
-      var tmp0__get_Flex__0 = Companion_getInstance_73();
+      var tmp0__get_Flex__0 = Companion_getInstance_74();
       var tmp$ret$2;
       $l$block_1: {
         var tmp$ret$1;
@@ -102319,7 +102893,7 @@
     display($this$style, tmp$ret$3);
     var tmp$ret$7;
     $l$block_6: {
-      var tmp1__get_Row__0 = Companion_getInstance_74();
+      var tmp1__get_Row__0 = Companion_getInstance_75();
       var tmp$ret$6;
       $l$block_5: {
         var tmp$ret$5;
@@ -102341,7 +102915,7 @@
     flexDirection($this$style, tmp$ret$7);
     var tmp$ret$11;
     $l$block_10: {
-      var tmp2__get_SpaceBetween__0 = Companion_getInstance_76();
+      var tmp2__get_SpaceBetween__0 = Companion_getInstance_77();
       var tmp$ret$10;
       $l$block_9: {
         var tmp$ret$9;
@@ -102363,7 +102937,7 @@
     justifyContent($this$style, tmp$ret$11);
     var tmp$ret$15;
     $l$block_14: {
-      var tmp3__get_Center__0 = Companion_getInstance_75();
+      var tmp3__get_Center__0 = Companion_getInstance_76();
       var tmp$ret$14;
       $l$block_13: {
         var tmp$ret$13;
@@ -102400,7 +102974,7 @@
   _no_name_provided__726.prototype.invoke_nj0yvr_k$ = function ($this$style) {
     var tmp$ret$3;
     $l$block_2: {
-      var tmp0__get_None__0 = Companion_getInstance_73();
+      var tmp0__get_None__0 = Companion_getInstance_74();
       var tmp$ret$2;
       $l$block_1: {
         var tmp$ret$1;
@@ -102436,7 +103010,7 @@
   _no_name_provided__727.prototype.invoke_nj0yvr_k$ = function ($this$style) {
     var tmp$ret$3;
     $l$block_2: {
-      var tmp0__get_Flex__0 = Companion_getInstance_73();
+      var tmp0__get_Flex__0 = Companion_getInstance_74();
       var tmp$ret$2;
       $l$block_1: {
         var tmp$ret$1;
@@ -102458,7 +103032,7 @@
     display($this$style, tmp$ret$3);
     var tmp$ret$7;
     $l$block_6: {
-      var tmp1__get_Row__0 = Companion_getInstance_74();
+      var tmp1__get_Row__0 = Companion_getInstance_75();
       var tmp$ret$6;
       $l$block_5: {
         var tmp$ret$5;
@@ -102807,7 +103381,7 @@
           var tmp = tmp0_apply_0_1;
           var tmp$ret$3;
           $l$block_2: {
-            var tmp0__get_Solid__0_3 = Companion_getInstance_78();
+            var tmp0__get_Solid__0_3 = Companion_getInstance_79();
             var tmp$ret$2;
             $l$block_1: {
               var tmp$ret$1;
@@ -102959,7 +103533,7 @@
           var tmp = tmp0_apply_0_1;
           var tmp$ret$3;
           $l$block_2: {
-            var tmp0__get_Solid__0_3 = Companion_getInstance_78();
+            var tmp0__get_Solid__0_3 = Companion_getInstance_79();
             var tmp$ret$2;
             $l$block_1: {
               var tmp$ret$1;
@@ -103045,7 +103619,7 @@
           var tmp = tmp0_apply_0_1;
           var tmp$ret$3;
           $l$block_2: {
-            var tmp0__get_Solid__0_3 = Companion_getInstance_78();
+            var tmp0__get_Solid__0_3 = Companion_getInstance_79();
             var tmp$ret$2;
             $l$block_1: {
               var tmp$ret$1;
@@ -103145,7 +103719,7 @@
           var tmp = tmp0_apply_0_1;
           var tmp$ret$3;
           $l$block_2: {
-            var tmp0__get_Solid__0_3 = Companion_getInstance_78();
+            var tmp0__get_Solid__0_3 = Companion_getInstance_79();
             var tmp$ret$2;
             $l$block_1: {
               var tmp$ret$1;
@@ -104105,7 +104679,7 @@
   _no_name_provided__769.prototype.invoke_nj0yvr_k$ = function ($this$null) {
     var tmp$ret$3;
     $l$block_2: {
-      var tmp0__get_Center__0 = Companion_getInstance_75();
+      var tmp0__get_Center__0 = Companion_getInstance_76();
       var tmp$ret$2;
       $l$block_1: {
         var tmp$ret$1;
@@ -104140,7 +104714,7 @@
     $this$style.invoke_ad0lsb_k$(AppCSSVariables_getInstance()._get_wtHorizontalLayoutGutter__0_k$(), _get_px_(0));
     var tmp$ret$3;
     $l$block_2: {
-      var tmp0__get_Flex__0 = Companion_getInstance_73();
+      var tmp0__get_Flex__0 = Companion_getInstance_74();
       var tmp$ret$2;
       $l$block_1: {
         var tmp$ret$1;
@@ -104162,7 +104736,7 @@
     display($this$style, tmp$ret$3);
     var tmp$ret$7;
     $l$block_6: {
-      var tmp1__get_Wrap__0 = Companion_getInstance_77();
+      var tmp1__get_Wrap__0 = Companion_getInstance_78();
       var tmp$ret$6;
       $l$block_5: {
         var tmp$ret$5;
@@ -105705,6 +106279,8 @@
   $serializer_3.prototype.typeParametersSerializers_0_k$ = GeneratedSerializer.prototype.typeParametersSerializers_0_k$;
   $serializer_4.prototype.typeParametersSerializers_0_k$ = GeneratedSerializer.prototype.typeParametersSerializers_0_k$;
   $serializer_5.prototype.typeParametersSerializers_0_k$ = GeneratedSerializer.prototype.typeParametersSerializers_0_k$;
+  $serializer_6.prototype.typeParametersSerializers_0_k$ = GeneratedSerializer.prototype.typeParametersSerializers_0_k$;
+  $serializer_7.prototype.typeParametersSerializers_0_k$ = GeneratedSerializer.prototype.typeParametersSerializers_0_k$;
   AbstractApplier.prototype.onBeginChanges_sv8swh_k$ = Applier.prototype.onBeginChanges_sv8swh_k$;
   AbstractApplier.prototype.onEndChanges_sv8swh_k$ = Applier.prototype.onEndChanges_sv8swh_k$;
   AbstractApplier.prototype.insertTopDown_kb9kjj_k$ = Applier.prototype.insertTopDown_kb9kjj_k$;
@@ -106003,7 +106579,7 @@
   emptyLambda = emptyLambda$init$();
   threadSnapshot = new SnapshotThreadLocal();
   lock = new Object();
-  openSnapshots = Companion_getInstance_69()._EMPTY_5;
+  openSnapshots = Companion_getInstance_70()._EMPTY_5;
   nextSnapshotId = 1;
   applyObservers = applyObservers$init$();
   globalWriteObservers = globalWriteObservers$init$();

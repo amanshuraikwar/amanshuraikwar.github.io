@@ -30,11 +30,11 @@
     "3758061e2a8df22155057d8e7033715d": {
       "src": "/Users/runner/.gradle/caches/modules-2/files-2.1/io.ktor/ktor-io-js/1.6.1/b5108daba52b5e7c733bd1cc2ec460a363b978bc/ktor-io-jsir-1.6.1.klib"
     },
-    "034586290fce6277eddb457665ffb33e": {
-      "src": "/Users/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-core-js/1.5.0-native-mt/d78e15a891f70826323a7138a5fccb65412fa171/kotlinx-coroutines-core-jsir-1.5.0-native-mt.klib"
+    "cdfd06bf190c19bd4b8be5ca8f8d8f62": {
+      "src": "/Users/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-core-js/1.5.2-native-mt/3faf5d8898c8128838fdcf5708b2b0bc01fa9d36/kotlinx-coroutines-core-jsir-1.5.2-native-mt.klib"
     },
-    "de526995f2d5b3f2adcec5ff451757e9": {
-      "src": "/Users/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/atomicfu-js/0.16.1/a462e9d32ae4d38851d2c831025981198f10f75b/atomicfu-jsir-0.16.1.klib"
+    "95ae823c20132b21a1079fd103feed1d": {
+      "src": "/Users/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/atomicfu-js/0.16.3/5820096bcb0d08c0c3e8301e8a45c92868c03dd1/atomicfu-jsir-0.16.3.klib"
     },
     "8e498cd7d7a7140b35aaef5aaa215b79": {
       "src": "/Users/runner/.gradle/caches/modules-2/files-2.1/io.ktor/ktor-client-json-js/1.6.1/1ba78428ecb7cfa888aab8b2a777ef7008b037b5/ktor-client-json-jsir-1.6.1.klib"
@@ -73,9 +73,6 @@
     },
     "26327138d0779eaead01598dcab215eb": {
       "src": "/Users/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-core-js/1.5.2/4e4c0735ba5c2c9e7226fcd724a6bebd82cbd0c8/kotlinx-coroutines-core-jsir-1.5.2.klib"
-    },
-    "95ae823c20132b21a1079fd103feed1d": {
-      "src": "/Users/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/atomicfu-js/0.16.3/5820096bcb0d08c0c3e8301e8a45c92868c03dd1/atomicfu-jsir-0.16.3.klib"
     }
   }
 }

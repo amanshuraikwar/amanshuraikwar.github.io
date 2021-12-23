@@ -36,7 +36,7 @@
       "primaryColor": "#ff4285F4",
       "onPrimaryColor": "#FFffffff",
       "surfaceColor": "#ffffffff",
-      "onSurfaceColor": "#FF212121",
+      "onSurfaceColor": "#FF000000",
       "errorColor": "#FFE57373",
       "onErrorColor": "#FF212121"
     },
@@ -44,8 +44,8 @@
       "name": "Spotify",
       "isDark": true,
       "primaryColor": "#ff1FDF64",
-      "onPrimaryColor": "#FF212121",
-      "surfaceColor": "#ff212121",
+      "onPrimaryColor": "#FF000000",
+      "surfaceColor": "#ff000000",
       "onSurfaceColor": "#FFFFFFFF",
       "errorColor": "#FFE57373",
       "onErrorColor": "#FF212121"
