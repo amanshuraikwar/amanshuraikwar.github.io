@@ -7,6 +7,8 @@
 ![](https://github.com/amanshuraikwar/amanshuraikwar.github.io/actions/workflows/build-web-html-js.yml/badge.svg)
 &nbsp; &nbsp; &nbsp; &nbsp;
 <a href="https://amanshuraikwar.github.io/tests/shared/android-jvm/">![](https://github.com/amanshuraikwar/amanshuraikwar.github.io/actions/workflows/shared-tests-android-jvm.yml/badge.svg)</a>
+&nbsp; &nbsp; &nbsp; &nbsp;
+<a href="https://amanshuraikwar.github.io/tests/shared/js-browser/">![](https://github.com/amanshuraikwar/amanshuraikwar.github.io/actions/workflows/shared-tests-js-browser.yml/badge.svg)</a>
 
 </p>
 

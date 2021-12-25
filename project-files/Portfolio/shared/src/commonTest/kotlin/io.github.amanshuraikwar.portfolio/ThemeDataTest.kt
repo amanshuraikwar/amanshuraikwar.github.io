@@ -151,6 +151,7 @@ class ThemeDataTest {
     }
 
     @Test
+    @JsName("defaultSelectedThemeColorsNameAndTheThemeExists")
     fun `default selected theme colors name and the theme exists`() {
         val portfolioRepository = PortfolioRepository(
             settings = MockSettings(),
@@ -167,6 +168,7 @@ class ThemeDataTest {
     }
 
     @Test
+    @JsName("defaultSelectedThemeColorsNameIsFirstFromTheDefaultThemeDataWhenTheThemeDoesNotExist")
     fun `default selected theme colors name is first from the default theme data when the theme does not exist`() {
         val portfolioRepository = PortfolioRepository(
             settings = MockSettings(),
@@ -187,6 +189,7 @@ class ThemeDataTest {
     }
 
     @Test
+    @JsName("setSelectedThemeColorsNameFlowEmitIsCorrect")
     fun `set selected theme colors name flow emit is correct`() {
         val portfolioRepository = PortfolioRepository(
             settings = MockSettings(),
@@ -211,6 +214,7 @@ class ThemeDataTest {
     }
 
     @Test
+    @JsName("setSelectedThemeColorsNameCorrespondingThemeDoesNotExist")
     fun `set selected theme colors name corresponding theme does not exist`() {
         val portfolioRepository = PortfolioRepository(
             settings = MockSettings(),
