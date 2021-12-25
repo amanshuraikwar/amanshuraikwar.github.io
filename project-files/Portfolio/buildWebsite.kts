@@ -53,10 +53,14 @@ File(".") exec "rm -rf build/home"
 
 println("Running theme data tests in :shared for Android/JVM target...")
 File(".") exec "./gradlew :shared:cleanTestDebugUnitTest :shared:testDebugUnitTest"
-println("Creating directory build/theme-data-tests-shared-android-jvm...")
-File(".") exec "mkdir build/theme-data-tests-shared-android-jvm"
-println("Copying contents from shared/build/reports/tests/testDebugUnitTest/ to build/theme-data-tests-shared-android-jvm/...")
-File(".") exec "cp -R shared/build/reports/tests/testDebugUnitTest/ build/theme-data-tests-shared-android-jvm/"
+println("Creating directory build/tests...")
+File(".") exec "mkdir build/tests"
+println("Creating directory build/tests/shared...")
+File(".") exec "mkdir build/tests/shared"
+println("Creating directory build/tests/shared/android-jvm...")
+File(".") exec "mkdir build/tests/shared/android-jvm"
+println("Copying contents from shared/build/reports/tests/testDebugUnitTest/ to build/tests/shared/android-jvm/...")
+File(".") exec "cp -R shared/build/reports/tests/testDebugUnitTest/ build/tests/shared/android-jvm/"
 
 data class BlogListEntry(
     val title: String,

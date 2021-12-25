@@ -1,4 +1,4 @@
-name: Theme Data Tests :shared Android/JVM
+name: :shared Tests Android/JVM
 
 on:
   workflow_dispatch:
@@ -18,7 +18,7 @@ jobs:
         with:
           java-version: 11
           
-      - name: Theme Data Tests
+      - name: :shared Tests
         run: |
           cd project-files/Portfolio
           ./gradlew :shared:cleanTestDebugUnitTest :shared:testDebugUnitTest
