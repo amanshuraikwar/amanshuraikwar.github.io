@@ -21,4 +21,4 @@ jobs:
       - name: Theme Data Tests
         run: |
           cd project-files/Portfolio
-          
+          ./gradlew :shared:cleanTestDebugUnitTest :shared:testDebugUnitTest
