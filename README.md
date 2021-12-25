@@ -1,5 +1,18 @@
 # My Portfolio
 
+<p align="center">
+
+![](https://github.com/amanshuraikwar/amanshuraikwar.github.io/actions/workflows/build-web-html-js.yml/badge.svg?branch=trunk)
+&nbsp; &nbsp; &nbsp; &nbsp;
+![](https://github.com/amanshuraikwar/amanshuraikwar.github.io/actions/workflows/main.yml/badge.svg?branch=trunk)
+&nbsp; &nbsp; &nbsp; &nbsp;
+![](https://github.com/amanshuraikwar/amanshuraikwar.github.io/actions/workflows/theme-data-tests.yml/badge.svg?branch=trunk)
+</p>
+
+
+
+
+
 This is my portfolio. It is a KMM project which runs on Web, Android, iOS.
 
 The business logic is written in Kotlin.
