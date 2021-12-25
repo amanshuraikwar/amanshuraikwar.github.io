@@ -1,4 +1,4 @@
-name: :shared Tests Android/JVM
+name: Tests :shared Android/JVM
 
 on:
   workflow_dispatch:
@@ -18,7 +18,7 @@ jobs:
         with:
           java-version: 11
           
-      - name: :shared Tests
+      - name: Tests :shared
         run: |
           cd project-files/Portfolio
           ./gradlew :shared:cleanTestDebugUnitTest :shared:testDebugUnitTest
