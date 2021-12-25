@@ -2,11 +2,11 @@
 
 <p align="center">
 
-![](https://github.com/amanshuraikwar/amanshuraikwar.github.io/actions/workflows/build-web-html-js.yml/badge.svg?branch=trunk)
-&nbsp; &nbsp; &nbsp; &nbsp;
 ![](https://github.com/amanshuraikwar/amanshuraikwar.github.io/actions/workflows/main.yml/badge.svg?branch=trunk)
 &nbsp; &nbsp; &nbsp; &nbsp;
-![](https://github.com/amanshuraikwar/amanshuraikwar.github.io/actions/workflows/theme-data-tests.yml/badge.svg?branch=trunk)
+![](https://github.com/amanshuraikwar/amanshuraikwar.github.io/actions/workflows/build-web-html-js.yml/badge.svg)
+&nbsp; &nbsp; &nbsp; &nbsp;
+![](https://github.com/amanshuraikwar/amanshuraikwar.github.io/actions/workflows/theme-data-tests.yml/badge.svg)
 </p>
 
 
