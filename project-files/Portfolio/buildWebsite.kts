@@ -51,6 +51,13 @@ File(".") exec "cp -R build/home/ build/"
 println("Deleting build/home...")
 File(".") exec "rm -rf build/home"
 
+println("Running theme data tests in :shared for Android/JVM target...")
+File(".") exec "./gradlew :shared:cleanTestDebugUnitTest :shared:testDebugUnitTest"
+println("Creating directory build/theme-data-tests-android-jvm...")
+File(".") exec "mkdir build/theme-data-tests-android-jvm"
+println("Copying contents from shared/build/reports/tests/testDebugUnitTest/ to build/theme-data-tests-shared-android-jvm/...")
+File(".") exec "cp -R shared/build/reports/tests/testDebugUnitTest/ build/theme-data-tests-shared-android-jvm/"
+
 data class BlogListEntry(
     val title: String,
     val date: String,

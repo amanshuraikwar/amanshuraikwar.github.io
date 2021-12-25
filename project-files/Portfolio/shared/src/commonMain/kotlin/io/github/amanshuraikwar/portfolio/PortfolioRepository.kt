@@ -26,20 +26,21 @@ import kotlinx.serialization.json.Json
 class PortfolioRepository(
     private val portfolioApi: PortfolioApi = PortfolioApi(
         client = PortfolioApi.createHttpClient(enableNetworkLogs = true)
-    )
+    ),
+    private val settings: Settings = Settings(),
+    private val defaultThemeColorsName: String = DEFAULT_THEME_COLORS_NAME,
+    private val defaultThemeData: ThemeData = DEFAULT_THEME_DATA
 ) {
     private val errorHandler = CoroutineExceptionHandler { _, th ->
         // do nothing
     }
     private val repositoryScope = MainScope() + Dispatchers.Default + errorHandler
 
-    private val settings = Settings()
-
     private var themeColorsName: String
         get() {
             return settings.getString(
                 PREFS_THEME_COLORS_NAME,
-                DEFAULT_THEME_COLORS_NAME
+                defaultThemeColorsName.replace(" ", "").lowercase()
             )
         }
         set(value) {
@@ -49,7 +50,7 @@ class PortfolioRepository(
             )
         }
 
-    private val themeColorsNameFlow = MutableStateFlow(themeColorsName)
+    private val themeColorsNameFlow: MutableStateFlow<String>
 
     private var themeData: ThemeData
         get() {
@@ -57,13 +58,13 @@ class PortfolioRepository(
                 Json.decodeFromString(
                     settings.getString(
                         PREFS_THEME_DATA,
-                        Json.encodeToString(DEFAULT_THEME_DATA)
+                        Json.encodeToString(defaultThemeData)
                     )
                 )
             } catch (e: Exception) {
                 settings.putString(
                     PREFS_THEME_DATA,
-                    Json.encodeToString(DEFAULT_THEME_DATA)
+                    Json.encodeToString(defaultThemeData)
                 )
                 DEFAULT_THEME_DATA
             }
@@ -95,6 +96,7 @@ class PortfolioRepository(
             themeColorsName = parsedName
         }
 
+        themeColorsNameFlow = MutableStateFlow(themeColorsName)
         themeColors = MutableStateFlow(initThemeColors)
     }
 
@@ -233,13 +235,10 @@ class PortfolioRepository(
         private const val PREFS_THEME_COLORS_NAME = "theme_colors_name"
         private const val PREFS_THEME_DATA = "theme_data"
 
-        private val DEFAULT_THEME_COLORS_NAME =
-            "Dark Salmon".replace(" ", "").lowercase()
-
         private val DEFAULT_THEME_DATA = ThemeData(
             listOf(
                 ThemeColorsData(
-                    name = "Dark Salmon".replace(" ", "").lowercase(),
+                    name = "Dark Salmon",
                     isDark = true,
                     primaryColor = "#FFFFCDD2",
                     onPrimaryColor = "#FF4E342E",
@@ -249,7 +248,7 @@ class PortfolioRepository(
                     onErrorColor = "#FF4E342E",
                 ),
                 ThemeColorsData(
-                    name = "Light Blue".replace(" ", "").lowercase(),
+                    name = "Light Blue",
                     isDark = false,
                     primaryColor = "#ffEA5C5A",
                     onPrimaryColor = "#FFffffff",
@@ -259,7 +258,7 @@ class PortfolioRepository(
                     onErrorColor = "#FF212121",
                 ),
                 ThemeColorsData(
-                    name = "Matt D'av Ella".replace(" ", "").lowercase(),
+                    name = "Matt D'av Ella",
                     isDark = false,
                     primaryColor = "#ffE35638",
                     onPrimaryColor = "#FFFADACA",
@@ -270,5 +269,8 @@ class PortfolioRepository(
                 )
             )
         )
+
+        private val DEFAULT_THEME_COLORS_NAME =
+            DEFAULT_THEME_DATA.themes[0].name.replace(" ", "").lowercase()
     }
 }

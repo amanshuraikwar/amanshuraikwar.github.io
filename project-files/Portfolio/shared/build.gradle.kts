@@ -58,6 +58,7 @@ kotlin {
             dependencies {
                 implementation(kotlin("test"))
                 implementation(Libs.Ktor.clientMock)
+                implementation(Libs.multiplatformSettingsTest)
             }
         }
         val androidMain by getting {
