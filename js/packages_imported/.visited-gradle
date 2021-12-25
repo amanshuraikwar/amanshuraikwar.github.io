@@ -73,6 +73,12 @@
     },
     "26327138d0779eaead01598dcab215eb": {
       "src": "/Users/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-core-js/1.5.2/4e4c0735ba5c2c9e7226fcd724a6bebd82cbd0c8/kotlinx-coroutines-core-jsir-1.5.2.klib"
+    },
+    "79cf3aa4f5768e1389ca1b1c065dfe08": {
+      "src": "/Users/runner/.gradle/caches/modules-2/files-2.1/io.ktor/ktor-client-mock-js/1.6.1/63ceddf4c6dc7e9735ba8439a92936a35da5e419/ktor-client-mock-jsir-1.6.1.klib"
+    },
+    "3e5de38c7cb07b35a85c1f49dbb970e4": {
+      "src": "/Users/runner/.gradle/caches/modules-2/files-2.1/com.russhwolf/multiplatform-settings-test-js/0.8.1/6c720fcc450953acd8e41857ac1304cb1bfd0470/multiplatform-settings-test-jsir-0.8.1.klib"
     }
   }
 }
