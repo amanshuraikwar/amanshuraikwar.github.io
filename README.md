@@ -2,7 +2,7 @@
 
 <p align="center">
 
-![](https://github.com/amanshuraikwar/amanshuraikwar.github.io/actions/workflows/main.yml/badge.svg?branch=trunk)
+<a href="https://github.com/amanshuraikwar/amanshuraikwar.github.io/tree/gh-pages">![](https://github.com/amanshuraikwar/amanshuraikwar.github.io/actions/workflows/build-web-html-js-deploy-github-pages.yml/badge.svg?branch=trunk)</a>
 &nbsp; &nbsp; &nbsp; &nbsp;
 ![](https://github.com/amanshuraikwar/amanshuraikwar.github.io/actions/workflows/build-web-html-js.yml/badge.svg)
 &nbsp; &nbsp; &nbsp; &nbsp;
