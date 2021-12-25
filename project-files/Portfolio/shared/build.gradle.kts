@@ -1,5 +1,5 @@
-import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 import io.github.amanshuraikwar.nxtbuz.buildSrc.Libs
+import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 
 plugins {
     kotlin("multiplatform")
@@ -13,12 +13,12 @@ version = "1.0"
 kotlin {
     android()
 
-    val iosTarget: (String, KotlinNativeTarget.() -> Unit) -> KotlinNativeTarget =
-        if (System.getenv("SDK_NAME")?.startsWith("iphoneos") == true)
-            ::iosArm64
-        else
-            ::iosX64
-
+    val iosTarget: (String, KotlinNativeTarget.() -> Unit) -> KotlinNativeTarget = when {
+        System.getenv("SDK_NAME")?.startsWith("iphoneos") == true -> ::iosArm64
+        System.getenv("NATIVE_ARCH")
+            ?.startsWith("arm") == true -> ::iosSimulatorArm64 // available to KT 1.5.30
+        else -> ::iosX64
+    }
     iosTarget("ios") {}
 
     cocoapods {
@@ -33,7 +33,7 @@ kotlin {
         useCommonJs()
         browser()
     }
-    
+
     sourceSets {
         val commonMain by getting {
             dependencies {
@@ -56,8 +56,7 @@ kotlin {
         }
         val commonTest by getting {
             dependencies {
-                implementation(kotlin("test-common"))
-                implementation(kotlin("test-annotations-common"))
+                implementation(kotlin("test"))
                 implementation(Libs.Ktor.clientMock)
             }
         }
@@ -86,7 +85,6 @@ kotlin {
         val jsTest by getting {
             dependencies {
                 implementation(kotlin("test-js"))
-//                implementation("org.jetbrains.kotlin:kotlin-test-js")
             }
         }
     }
