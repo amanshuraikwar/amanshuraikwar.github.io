@@ -1,4 +1,4 @@
-name: Theme Data Tests
+name: Theme Data Tests :shared Android/JVM
 
 on:
   workflow_dispatch:

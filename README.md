@@ -6,12 +6,9 @@
 &nbsp; &nbsp; &nbsp; &nbsp;
 ![](https://github.com/amanshuraikwar/amanshuraikwar.github.io/actions/workflows/build-web-html-js.yml/badge.svg)
 &nbsp; &nbsp; &nbsp; &nbsp;
-![](https://github.com/amanshuraikwar/amanshuraikwar.github.io/actions/workflows/theme-data-tests.yml/badge.svg)
+<a href="https://amanshuraikwar.github.io/theme-data-tests-shared-android-jvm/">![](https://github.com/amanshuraikwar/amanshuraikwar.github.io/actions/workflows/theme-data-tests-shared-android-jvm.yml/badge.svg)</a>
+
 </p>
-
-
-
-
 
 This is my portfolio. It is a KMM project which runs on Web, Android, iOS.
 
