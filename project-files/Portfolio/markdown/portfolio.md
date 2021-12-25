@@ -1,5 +1,5 @@
 # My Portfolio
-#Date December 11, 2021
+#Date December 25, 2021
 
 This is my portfolio. It is a KMM project which runs on Web, Android, iOS. The business logic is written in Kotlin. The Web app is written in Kotlin, built using Jetpack Compose for Web. The Android app is written in Kotlin, built using Jetpack Compose. The iOS app UI is written in Swift, built using Swift UI and it uses the KMM shared module for business logic.
 
@@ -19,7 +19,10 @@ Coming soon...
 
 ### Building the iOS App
 
-Coming soon...
+Run tests for shared module:
+```
+./gradlew :shared:cleanTestDebugUnitTest :shared:testDebugUnitTest
+```
 
 ### Get the App
 
