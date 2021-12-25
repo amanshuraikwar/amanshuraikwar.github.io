@@ -65526,16 +65526,22 @@
     PageType_initEntries();
     return PageType_ABOUT_ME_instance;
   }
-  function PortfolioRepository_init_$Init$(portfolioApi, $mask0, $marker, $this) {
+  function PortfolioRepository_init_$Init$(portfolioApi, settings, defaultThemeColorsName, defaultThemeData, $mask0, $marker, $this) {
     if (!(($mask0 & 1) === 0)) {
       var tmp = Companion_getInstance_60();
       var tmp_0 = tmp.createHttpClient$default_3b9j03_k$(null, true, 1, null);
       portfolioApi = PortfolioApi_init_$Create$(tmp_0, null, 2, null);
-    }PortfolioRepository.call($this, portfolioApi);
+    }if (!(($mask0 & 2) === 0))
+      settings = Settings_0();
+    if (!(($mask0 & 4) === 0))
+      defaultThemeColorsName = Companion_getInstance_57()._DEFAULT_THEME_COLORS_NAME;
+    if (!(($mask0 & 8) === 0))
+      defaultThemeData = Companion_getInstance_57()._DEFAULT_THEME_DATA;
+    PortfolioRepository.call($this, portfolioApi, settings, defaultThemeColorsName, defaultThemeData);
     return $this;
   }
-  function PortfolioRepository_init_$Create$(portfolioApi, $mask0, $marker) {
-    return PortfolioRepository_init_$Init$(portfolioApi, $mask0, $marker, Object.create(PortfolioRepository.prototype));
+  function PortfolioRepository_init_$Create$(portfolioApi, settings, defaultThemeColorsName, defaultThemeData, $mask0, $marker) {
+    return PortfolioRepository_init_$Init$(portfolioApi, settings, defaultThemeColorsName, defaultThemeData, $mask0, $marker, Object.create(PortfolioRepository.prototype));
   }
   function _set_themeColorsName_($this, value_1) {
     Companion_getInstance_57();
@@ -65543,7 +65549,18 @@
   }
   function _get_themeColorsName_($this) {
     Companion_getInstance_57();
-    return $this._settings.getString_jg38oy_k$('theme_colors_name', Companion_getInstance_57()._DEFAULT_THEME_COLORS_NAME);
+    var tmp$ret$1;
+    $l$block_0: {
+      var tmp0_lowercase_0 = replace$default_0($this._defaultThemeColorsName, ' ', '', false, 4, null);
+      var tmp$ret$0;
+      $l$block: {
+        tmp$ret$0 = tmp0_lowercase_0;
+        break $l$block;
+      }
+      tmp$ret$1 = tmp$ret$0.toLowerCase();
+      break $l$block_0;
+    }
+    return $this._settings.getString_jg38oy_k$('theme_colors_name', tmp$ret$1);
   }
   function _set_themeData_($this, value_1) {
     Companion_getInstance_57();
@@ -65577,7 +65594,7 @@
         var tmp$ret$2;
         $l$block_1: {
           var tmp0_encodeToString_0 = Default_getInstance();
-          var tmp1_encodeToString_0 = Companion_getInstance_57()._DEFAULT_THEME_DATA;
+          var tmp1_encodeToString_0 = $this._defaultThemeData;
           var tmp$ret$1;
           $l$block_0: {
             var tmp1_serializer_0_1 = tmp0_encodeToString_0._get_serializersModule__0_k$();
@@ -65617,7 +65634,7 @@
         var tmp$ret$8;
         $l$block_7: {
           var tmp4_encodeToString_0 = Default_getInstance();
-          var tmp5_encodeToString_0 = Companion_getInstance_57()._DEFAULT_THEME_DATA;
+          var tmp5_encodeToString_0 = $this._defaultThemeData;
           var tmp$ret$7;
           $l$block_6: {
             var tmp1_serializer_0_1_1 = tmp4_encodeToString_0._get_serializersModule__0_k$();
@@ -65693,10 +65710,12 @@
     Companion_instance_57 = this;
     this._PREFS_THEME_COLORS_NAME = 'theme_colors_name';
     this._PREFS_THEME_DATA = 'theme_data';
+    this._DEFAULT_THEME_DATA = new ThemeData(listOf([new ThemeColorsData('Dark Salmon', true, '#FFFFCDD2', '#FF4E342E', '#FF212121', '#FFffffff', '#FFE57373', '#FF4E342E'), new ThemeColorsData('Light Blue', false, '#ffEA5C5A', '#FFffffff', '#ffCDECF9', '#FF030204', '#FFE57373', '#FF212121'), new ThemeColorsData("Matt D'av Ella", false, '#ffE35638', '#FFFADACA', '#ffFBF8EC', '#FF24242C', '#FFE57373', '#FF212121')]));
     var tmp = this;
     var tmp$ret$1;
     $l$block_0: {
-      var tmp0_lowercase_0 = replace$default_0('Dark Salmon', ' ', '', false, 4, null);
+      var tmp_0 = this._DEFAULT_THEME_DATA._themes.get_ha5a7z_k$(0)._name_9;
+      var tmp0_lowercase_0 = replace$default_0(tmp_0, ' ', '', false, 4, null);
       var tmp$ret$0;
       $l$block: {
         tmp$ret$0 = tmp0_lowercase_0;
@@ -65706,43 +65725,6 @@
       break $l$block_0;
     }
     tmp._DEFAULT_THEME_COLORS_NAME = tmp$ret$1;
-    var tmp_0 = this;
-    var tmp$ret$3;
-    $l$block_2: {
-      var tmp0_lowercase_0_0 = replace$default_0('Dark Salmon', ' ', '', false, 4, null);
-      var tmp$ret$2;
-      $l$block_1: {
-        tmp$ret$2 = tmp0_lowercase_0_0;
-        break $l$block_1;
-      }
-      tmp$ret$3 = tmp$ret$2.toLowerCase();
-      break $l$block_2;
-    }
-    var tmp_1 = new ThemeColorsData(tmp$ret$3, true, '#FFFFCDD2', '#FF4E342E', '#FF212121', '#FFffffff', '#FFE57373', '#FF4E342E');
-    var tmp$ret$5;
-    $l$block_4: {
-      var tmp1_lowercase_0 = replace$default_0('Light Blue', ' ', '', false, 4, null);
-      var tmp$ret$4;
-      $l$block_3: {
-        tmp$ret$4 = tmp1_lowercase_0;
-        break $l$block_3;
-      }
-      tmp$ret$5 = tmp$ret$4.toLowerCase();
-      break $l$block_4;
-    }
-    var tmp_2 = new ThemeColorsData(tmp$ret$5, false, '#ffEA5C5A', '#FFffffff', '#ffCDECF9', '#FF030204', '#FFE57373', '#FF212121');
-    var tmp$ret$7;
-    $l$block_6: {
-      var tmp2_lowercase_0 = replace$default_0("Matt D'av Ella", ' ', '', false, 4, null);
-      var tmp$ret$6;
-      $l$block_5: {
-        tmp$ret$6 = tmp2_lowercase_0;
-        break $l$block_5;
-      }
-      tmp$ret$7 = tmp$ret$6.toLowerCase();
-      break $l$block_6;
-    }
-    tmp_0._DEFAULT_THEME_DATA = new ThemeData(listOf([tmp_1, tmp_2, new ThemeColorsData(tmp$ret$7, false, '#ffE35638', '#FFFADACA', '#ffFBF8EC', '#FF24242C', '#FFE57373', '#FF212121')]));
   }
   Companion_58.$metadata$ = {
     simpleName: 'Companion',
@@ -66125,9 +66107,12 @@
     kind: 'class',
     interfaces: []
   };
-  function PortfolioRepository(portfolioApi) {
+  function PortfolioRepository(portfolioApi, settings, defaultThemeColorsName, defaultThemeData) {
     Companion_getInstance_57();
     this._portfolioApi = portfolioApi;
+    this._settings = settings;
+    this._defaultThemeColorsName = defaultThemeColorsName;
+    this._defaultThemeData = defaultThemeData;
     var tmp = this;
     var tmp$ret$0;
     $l$block: {
@@ -66136,8 +66121,6 @@
     }
     tmp._errorHandler = tmp$ret$0;
     this._repositoryScope = plus_5(plus_5(MainScope(), Dispatchers_getInstance()._Default), this._errorHandler);
-    this._settings = Settings_0();
-    this._themeColorsNameFlow = MutableStateFlow_0(_get_themeColorsName_(this));
     this._themeDataFlow = MutableStateFlow_0(_get_themeData_(this));
     var initThemeColors;
     $l$break: while (true) {
@@ -66160,6 +66143,7 @@
       var parsedName = tmp$ret$2;
       _set_themeColorsName_(this, parsedName);
     }
+    this._themeColorsNameFlow = MutableStateFlow_0(_get_themeColorsName_(this));
     this._themeColors = MutableStateFlow_0(initThemeColors);
   }
   PortfolioRepository.prototype.getSelectedThemeColors_0_k$ = function () {
@@ -89890,7 +89874,7 @@
     };
   }
   function main() {
-    var portfolioRepository = PortfolioRepository_init_$Create$(null, 1, null);
+    var portfolioRepository = PortfolioRepository_init_$Create$(null, null, null, null, 15, null);
     var coroutineScope_0 = MainScope();
     var pageData$delegate = mutableStateOf$default(null, null, 2, null);
     launch$default(coroutineScope_0, null, null, _no_name_provided_$factory_321(portfolioRepository, pageData$delegate, null), 3, null);
