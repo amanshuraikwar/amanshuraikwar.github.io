@@ -7,6 +7,12 @@ class BlogListDataStore {
 	fun getBlogListData(): List<BlogListDataItem> {
 		return listOf(
             BlogListDataItem(
+                title = "My Portfolio",
+                date = "December 25, 2021",
+                firstParagraph = "This is my portfolio. It is a KMM project which runs on Web, Android, iOS. The business logic is written in Kotlin. The Web app is written in Kotlin, built using Jetpack Compose for Web. The Android app is written in Kotlin, built using Jetpack Compose. The iOS app UI is written in Swift, built using Swift UI and it uses the KMM shared module for business logic.",
+                link = "https://amanshuraikwar.github.io/portfolio",
+            ),
+            BlogListDataItem(
                 title = "How to use highlight.js in your Jetpack Compose Web project",
                 date = "December 14, 2021",
                 firstParagraph = "If you are building your web app using Jetpack Compose for Web and want to use highlight.js, this is the blog for you.",
@@ -17,12 +23,6 @@ class BlogListDataStore {
                 date = "December 12, 2021",
                 firstParagraph = "If you are writing unit tests for your Kotlin project and need to mock certain objects, there is high chance that you are using MockK. Here are a couple of issues that I faced while using MockK in my KMM project. The project has Android and iOS apps with business logic written in shared KMM modules, I was writing unit tests to test this business logic.",
                 link = "https://amanshuraikwar.github.io/mockk-kmm-issues",
-            ),
-            BlogListDataItem(
-                title = "My Portfolio",
-                date = "December 11, 2021",
-                firstParagraph = "This is my portfolio. It is a KMM project which runs on Web, Android, iOS. The business logic is written in Kotlin. The Web app is written in Kotlin, built using Jetpack Compose for Web. The Android app is written in Kotlin, built using Jetpack Compose. The iOS app UI is written in Swift, built using Swift UI and it uses the KMM shared module for business logic.",
-                link = "https://amanshuraikwar.github.io/portfolio",
             ),
             BlogListDataItem(
                 title = "Introducing Next Bus SG",
