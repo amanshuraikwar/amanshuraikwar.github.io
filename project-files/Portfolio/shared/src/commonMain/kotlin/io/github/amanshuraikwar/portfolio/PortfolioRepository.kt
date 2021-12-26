@@ -29,7 +29,8 @@ class PortfolioRepository(
     ),
     private val settings: Settings = Settings(),
     private val defaultThemeColorsName: String = DEFAULT_THEME_COLORS_NAME,
-    private val defaultThemeData: ThemeData = DEFAULT_THEME_DATA
+    private val defaultThemeData: ThemeData = DEFAULT_THEME_DATA,
+    private val dataStore: DataStore = GeneratedDataStore(),
 ) {
     private val errorHandler = CoroutineExceptionHandler { _, th ->
         // do nothing
@@ -100,63 +101,6 @@ class PortfolioRepository(
         themeColors = MutableStateFlow(initThemeColors)
     }
 
-    private fun ThemeData.getThemeColors(name: String): ThemeColorsData? {
-        return themes.find {
-            it.name.replace(" ", "").lowercase() == name
-        }
-    }
-
-    fun getSelectedThemeColors(): StateFlow<ThemeColorsData> {
-        repositoryScope.launch {
-            //fetchThemeDataFromRemote()
-        }
-
-        return themeColors
-    }
-
-    fun getThemeData(): StateFlow<ThemeData> {
-        repositoryScope.launch {
-            fetchThemeDataFromRemote()
-        }
-
-        return themeDataFlow
-    }
-
-    private suspend fun fetchThemeDataFromRemote() {
-        portfolioApi.getThemeData().let { response ->
-            val newThemeData = ThemeData(
-                response.themes.map { themeColors ->
-                    ThemeColorsData(
-                        name = themeColors.name,
-                        isDark = themeColors.isDark,
-                        primaryColor = themeColors.primaryColor,
-                        onPrimaryColor = themeColors.onPrimaryColor,
-                        surfaceColor = themeColors.surfaceColor,
-                        onSurfaceColor = themeColors.onSurfaceColor,
-                        errorColor = themeColors.errorColor,
-                        onErrorColor = themeColors.onErrorColor,
-                    )
-                }
-            )
-
-            themeData = newThemeData
-            themeDataFlow.value = themeData
-
-            while (true) {
-                val newThemeColors = themeData.getThemeColors(themeColorsName)
-                if (newThemeColors != null) {
-                    themeColors.value = newThemeColors
-                    break
-                }
-                val parsedName = themeData.themes[0]
-                    .name
-                    .replace(" ", "")
-                    .lowercase()
-                themeColorsName = parsedName
-            }
-        }
-    }
-
     fun getSelectedThemeColorsName(): StateFlow<String> {
         return themeColorsNameFlow
     }
@@ -171,7 +115,59 @@ class PortfolioRepository(
         }
     }
 
-    suspend fun getPortfolioData(): PortfolioData {
+    fun getSelectedThemeColors(): StateFlow<ThemeColorsData> {
+        return themeColors
+    }
+
+    fun getThemeData(): StateFlow<ThemeData> {
+        repositoryScope.launch {
+            fetchThemeDataFromRemote()
+        }
+
+        return themeDataFlow
+    }
+
+    private suspend fun fetchThemeDataFromRemote() {
+        portfolioApi.getThemeData()
+            .takeIf {
+                it.themes.isNotEmpty()
+            }
+            ?.let { response ->
+                val newThemeData = ThemeData(
+                    response.themes.map { themeColors ->
+                        ThemeColorsData(
+                            name = themeColors.name,
+                            isDark = themeColors.isDark,
+                            primaryColor = themeColors.primaryColor,
+                            onPrimaryColor = themeColors.onPrimaryColor,
+                            surfaceColor = themeColors.surfaceColor,
+                            onSurfaceColor = themeColors.onSurfaceColor,
+                            errorColor = themeColors.errorColor,
+                            onErrorColor = themeColors.onErrorColor,
+                        )
+                    }
+                )
+
+                themeData = newThemeData
+                themeDataFlow.value = themeData
+
+                while (true) {
+                    val newThemeColors = themeData.getThemeColors(themeColorsName)
+                    if (newThemeColors != null) {
+                        themeColorsNameFlow.value = themeColorsName
+                        themeColors.value = newThemeColors
+                        break
+                    }
+                    val parsedName = themeData.themes[0]
+                        .name
+                        .replace(" ", "")
+                        .lowercase()
+                    themeColorsName = parsedName
+                }
+            }
+    }
+
+    private suspend fun getPortfolioData(): PortfolioData {
         return withContext(Dispatchers.Default) {
             portfolioApi.getPortfolioData().let { response ->
                 PortfolioData(
@@ -211,20 +207,13 @@ class PortfolioRepository(
         }
     }
 
-    // to be called from Kotlin/Native client
-    fun getPortfolioData(callback: (PortfolioData) -> Unit) {
-        repositoryScope.launch {
-            callback(getPortfolioData())
-        }
-    }
-
     suspend fun getPageData(): PageData {
-        return when (GeneratedDataStore().getPageType()) {
+        return when (dataStore.getPageType()) {
             PageType.HOME -> PageData.Home(
                 getPortfolioData(),
                 BlogListDataStore().getBlogListData()
             )
-            PageType.MD -> PageData.Md(getPortfolioData(), GeneratedDataStore().getData())
+            PageType.MD -> PageData.Md(getPortfolioData(), dataStore.getData())
             PageType.PROJECTS -> PageData.Projects(getPortfolioData())
             PageType.BACKGROUND -> PageData.Background(getPortfolioData())
             PageType.ABOUT_ME -> PageData.AboutMe(getPortfolioData())
@@ -232,6 +221,12 @@ class PortfolioRepository(
     }
 
     companion object {
+        private fun ThemeData.getThemeColors(name: String): ThemeColorsData? {
+            return themes.find {
+                it.name.replace(" ", "").lowercase() == name
+            }
+        }
+
         private const val PREFS_THEME_COLORS_NAME = "theme_colors_name"
         private const val PREFS_THEME_DATA = "theme_data"
 
