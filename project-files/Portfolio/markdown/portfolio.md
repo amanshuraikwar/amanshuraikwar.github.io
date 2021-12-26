@@ -1,32 +1,41 @@
 # My Portfolio
-#Date December 25, 2021
+#Date December 27, 2021
 
-This is my portfolio. It is a KMM project which runs on Web, Android, iOS. The business logic is written in Kotlin. The Web app is written in Kotlin, built using Jetpack Compose for Web. The Android app is written in Kotlin, built using Jetpack Compose. The iOS app UI is written in Swift, built using Swift UI and it uses the KMM shared module for business logic.
+This is my portfolio. It is a KMM project which currently supports Web, Android & iOS clients coming soon. The Web app is written in Kotlin, built using Jetpack Compose for Web and it has a KMM shared module for business logic.
 
-### Building the Web App
+### Web App
 
 Just run the kotlin script file buildWebsite.kts, it will spit out the built website in build/ folder.
 
-```
+```shell
 kotlinc -script buildWebsite.kts
 ```
 
-Make sure you have Kotlin 1.6.0 CLI and Java 11 installed. Or, just run the Build Web HTML & JS Files workflow and download the artifacts.
-
-### Building the Android App
-
-Coming soon...
-
-### Building the iOS App
+Make sure you have Kotlin 1.6.0 CLI and Java 11 installed.
 
 Run tests for shared module:
+
+```shell
+./gradlew :shared:cleanJsBrowserTest :shared:jsBrowserTest
 ```
+
+### Android App
+
+Run tests for shared module:
+
+```shell
 ./gradlew :shared:cleanTestDebugUnitTest :shared:testDebugUnitTest
 ```
+
+### iOS App
+
+Coming soon...
 
 ### Get the App
 
 !Btn[Go to the Web App](https://amanshuraikwar.github.io)
+
+!Btn[Go to the source code](https://github.com/amanshuraikwar/amanshuraikwar.github.io)
 
 ### Special Thanks :)
 

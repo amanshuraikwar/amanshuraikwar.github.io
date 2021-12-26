@@ -47,7 +47,7 @@
     {
       "id": "portfolio",
       "title": "My Portfolio",
-      "description": "This beautiful webpage you are on right now. Built using KMM.",
+      "description": "This beautiful webpage you are on right now. Built using KMM & Jetpack Compose.",
       "appLinks": [
         {
           "type": "github",
@@ -60,11 +60,15 @@
     {
       "id": "nextbus",
       "title": "Next Bus SG",
-      "description": "A beautiful bus timing app for Singapore built with Jetpack Compose",
+      "description": "A beautiful bus timing app for Singapore built with Jetpack Compose, Swift UI & KMM",
       "appLinks": [
         {
           "type": "playstore",
           "url": "https://play.google.com/store/apps/details?id=io.github.amanshuraikwar.nxtbuz.release"
+        },
+        {
+          "type": "other",
+          "url": "https://amanshuraikwar.github.io/nextbus/"
         }
       ],
       "maintained": true,

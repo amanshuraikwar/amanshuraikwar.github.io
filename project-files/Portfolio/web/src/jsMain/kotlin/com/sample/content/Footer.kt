@@ -59,15 +59,6 @@ fun Footer(
                 classes(WtContainer.wtContainerSm)
             }
         ) {
-            GithubBuildStatus(
-                attrs = {
-                    classes(
-                        WtOffsets.wtTopOffset96,
-                        WtOffsets.wtTopOffsetSm48,
-                    )
-                }
-            )
-
             Div(
                 attrs = {
                     classes(
@@ -83,11 +74,20 @@ fun Footer(
                 Text(madeWith)
             }
 
+            GithubBuildStatus(
+                attrs = {
+                    classes(
+                        WtOffsets.wtTopOffset24,
+                        WtOffsets.wtTopOffsetSm12,
+                    )
+                }
+            )
+
             Div(
                 attrs = {
                     classes(
-                        WtOffsets.wtTopOffset48,
-                        WtOffsets.wtTopOffsetSm24,
+                        WtOffsets.wtTopOffset96,
+                        WtOffsets.wtTopOffsetSm48,
                     )
                     style {
                         display(DisplayStyle.Flex)
