@@ -7,18 +7,30 @@ import com.sample.style.WtContainer
 import com.sample.style.WtOffsets
 import com.sample.style.WtTexts
 import io.github.amanshuraikwar.portfolio.model.ThemeData
+import org.jetbrains.compose.web.attributes.ATarget
+import org.jetbrains.compose.web.attributes.target
 import org.jetbrains.compose.web.css.AlignItems
 import org.jetbrains.compose.web.css.Color
 import org.jetbrains.compose.web.css.DisplayStyle
+import org.jetbrains.compose.web.css.FlexDirection
+import org.jetbrains.compose.web.css.FlexWrap
 import org.jetbrains.compose.web.css.JustifyContent
 import org.jetbrains.compose.web.css.alignItems
 import org.jetbrains.compose.web.css.background
 import org.jetbrains.compose.web.css.color
 import org.jetbrains.compose.web.css.display
+import org.jetbrains.compose.web.css.flexDirection
+import org.jetbrains.compose.web.css.flexWrap
+import org.jetbrains.compose.web.css.gap
 import org.jetbrains.compose.web.css.justifyContent
+import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.css.value
+import org.jetbrains.compose.web.dom.A
+import org.jetbrains.compose.web.dom.AttrBuilderContext
 import org.jetbrains.compose.web.dom.Div
+import org.jetbrains.compose.web.dom.Img
 import org.jetbrains.compose.web.dom.Text
+import org.w3c.dom.HTMLDivElement
 
 @Composable
 fun Footer(
@@ -47,6 +59,15 @@ fun Footer(
                 classes(WtContainer.wtContainerSm)
             }
         ) {
+            GithubBuildStatus(
+                attrs = {
+                    classes(
+                        WtOffsets.wtTopOffset96,
+                        WtOffsets.wtTopOffsetSm48,
+                    )
+                }
+            )
+
             Div(
                 attrs = {
                     classes(
@@ -90,6 +111,69 @@ fun Footer(
                     )
                 }
             )
+        }
+    }
+}
+
+@Composable
+fun GithubBuildStatus(
+    attrs: AttrBuilderContext<HTMLDivElement>? = null,
+) {
+    Div(
+        attrs = {
+            attrs?.invoke(this)
+            style {
+                display(DisplayStyle.Flex)
+                flexDirection(FlexDirection.Row)
+                justifyContent(JustifyContent.FlexStart)
+                alignItems(AlignItems.Center)
+                flexWrap(FlexWrap.Wrap)
+                gap(12.px)
+            }
+        }
+    ) {
+        A(
+            href = "https://github.com/amanshuraikwar/amanshuraikwar.github.io/tree/gh-pages",
+            {
+                style {
+                    target(ATarget.Blank)
+                }
+            }
+        ) {
+            Img(src = "https://github.com/amanshuraikwar/amanshuraikwar.github.io/actions/workflows/build-web-html-js-deploy-github-pages.yml/badge.svg?branch=trunk")
+        }
+
+        A(
+            href = "",
+            {
+                style {
+                    target(ATarget.Blank)
+                }
+            }
+        ) {
+            Img(src = "https://github.com/amanshuraikwar/amanshuraikwar.github.io/actions/workflows/build-web-html-js.yml/badge.svg")
+        }
+
+        A(
+            href = "https://amanshuraikwar.github.io/tests/shared/android-jvm/",
+            {
+                style {
+                    target(ATarget.Blank)
+                }
+            }
+        ) {
+            Img(src = "https://github.com/amanshuraikwar/amanshuraikwar.github.io/actions/workflows/shared-tests-android-jvm.yml/badge.svg")
+        }
+
+        A(
+            href = "https://amanshuraikwar.github.io/tests/shared/js-browser/",
+            {
+                style {
+                    target(ATarget.Blank)
+                }
+            }
+        ) {
+            Img(src = "https://github.com/amanshuraikwar/amanshuraikwar.github.io/actions/workflows/shared-tests-js-browser.yml/badge.svg")
         }
     }
 }
