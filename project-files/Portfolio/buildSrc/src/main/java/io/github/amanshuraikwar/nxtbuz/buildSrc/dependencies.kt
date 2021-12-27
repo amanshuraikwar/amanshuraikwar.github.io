@@ -3,7 +3,6 @@
 package io.github.amanshuraikwar.nxtbuz.buildSrc
 
 object Libs {
-    const val androidGradlePlugin = "com.android.tools.build:gradle:7.0.0-beta04"
     const val threeTenAbp = "com.jakewharton.threetenabp:threetenabp:1.2.4"
 
     const val multiplatformSettings = "com.russhwolf:multiplatform-settings:0.8.1"
@@ -49,9 +48,8 @@ object Libs {
     }
 
     object Kotlin {
-        private const val version = "1.6.0"
+        private const val version = "1.6.10"
         const val stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$version"
-        const val gradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$version"
         const val extensions = "org.jetbrains.kotlin:kotlin-android-extensions:$version"
     }
 
