@@ -1,4 +1,4 @@
-package io.github.amanshuraikwar.portfolio.model
+package io.github.amanshuraikwar.portfolio.theme.model
 
 import kotlinx.serialization.Serializable
 

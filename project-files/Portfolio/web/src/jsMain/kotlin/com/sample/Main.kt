@@ -9,8 +9,8 @@ import com.sample.components.Layout
 import com.sample.style.AppStylesheet
 import io.github.amanshuraikwar.portfolio.PageData
 import io.github.amanshuraikwar.portfolio.PortfolioRepository
-import io.github.amanshuraikwar.portfolio.model.ThemeColorsData
-import io.github.amanshuraikwar.portfolio.model.ThemeData
+import io.github.amanshuraikwar.portfolio.theme.model.ThemeColorsData
+import io.github.amanshuraikwar.portfolio.theme.model.ThemeData
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
 import org.jetbrains.compose.web.css.Style

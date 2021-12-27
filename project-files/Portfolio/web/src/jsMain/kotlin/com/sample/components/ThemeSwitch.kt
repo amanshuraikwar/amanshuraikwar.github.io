@@ -2,7 +2,7 @@ package com.sample.components
 
 import androidx.compose.runtime.Composable
 import com.sample.style.dropAlphaHex
-import io.github.amanshuraikwar.portfolio.model.ThemeData
+import io.github.amanshuraikwar.portfolio.theme.model.ThemeData
 import org.jetbrains.compose.web.css.AlignItems
 import org.jetbrains.compose.web.css.Color
 import org.jetbrains.compose.web.css.DisplayStyle

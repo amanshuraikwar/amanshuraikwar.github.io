@@ -7,7 +7,7 @@ import com.sample.content.Hero
 import com.sample.style.WtCols
 import io.github.amanshuraikwar.portfolio.markdown.BlogListDataItem
 import io.github.amanshuraikwar.portfolio.model.PortfolioData
-import io.github.amanshuraikwar.portfolio.model.ThemeData
+import io.github.amanshuraikwar.portfolio.theme.model.ThemeData
 
 @Composable
 fun HomeView(
