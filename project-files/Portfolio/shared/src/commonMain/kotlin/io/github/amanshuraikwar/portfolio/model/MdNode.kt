@@ -1,4 +1,4 @@
-package io.github.amanshuraikwar.portfolio.markdown
+package io.github.amanshuraikwar.portfolio.model
 
 sealed class MdNode {
     data class H1(val text: String): MdNode()

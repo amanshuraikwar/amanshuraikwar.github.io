@@ -7,8 +7,8 @@ import com.sample.style.WtCols
 import com.sample.style.WtContainer
 import com.sample.style.WtContent
 import com.sample.style.WtOffsets
-import io.github.amanshuraikwar.portfolio.markdown.BlogListDataItem
-import io.github.amanshuraikwar.portfolio.markdown.MdNode
+import io.github.amanshuraikwar.portfolio.blog.BlogListDataItem
+import io.github.amanshuraikwar.portfolio.model.MdNode
 import org.jetbrains.compose.web.dom.A
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.Hr

@@ -11,13 +11,12 @@ import io.github.amanshuraikwar.portfolio.network.PortfolioApi
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
-class PortfolioRepository(
+open class PortfolioRepository(
     private val portfolioApi: PortfolioApi = PortfolioApi(
         client = Factory.createHttpClient(enableNetworkLogs = true)
     ),
-    private val dataStore: DataStore = GeneratedDataStore(),
 ) {
-    private suspend fun getPortfolioData(): PortfolioData {
+    protected suspend fun getPortfolioData(): PortfolioData {
         return withContext(Dispatchers.Default) {
             portfolioApi.getPortfolioData().let { response ->
                 PortfolioData(
@@ -54,19 +53,6 @@ class PortfolioRepository(
                     madeWith = response.madeWith
                 )
             }
-        }
-    }
-
-    suspend fun getPageData(): PageData {
-        return when (dataStore.getPageType()) {
-            PageType.HOME -> PageData.Home(
-                getPortfolioData(),
-                BlogListDataStore().getBlogListData()
-            )
-            PageType.MD -> PageData.Md(getPortfolioData(), dataStore.getData())
-            PageType.PROJECTS -> PageData.Projects(getPortfolioData())
-            PageType.BACKGROUND -> PageData.Background(getPortfolioData())
-            PageType.ABOUT_ME -> PageData.AboutMe(getPortfolioData())
         }
     }
 }

@@ -1,8 +1,6 @@
-package io.github.amanshuraikwar.portfolio
+package io.github.amanshuraikwar.portfolio.model
 
-import io.github.amanshuraikwar.portfolio.markdown.BlogListDataItem
-import io.github.amanshuraikwar.portfolio.markdown.MdNode
-import io.github.amanshuraikwar.portfolio.model.PortfolioData
+import io.github.amanshuraikwar.portfolio.blog.BlogListDataItem
 
 sealed class PageData {
     data class Home(

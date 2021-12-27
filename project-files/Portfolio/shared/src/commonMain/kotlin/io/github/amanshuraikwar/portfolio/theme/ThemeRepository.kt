@@ -3,6 +3,7 @@
 package io.github.amanshuraikwar.portfolio.theme
 
 import com.russhwolf.settings.Settings
+import io.github.amanshuraikwar.portfolio.Factory
 import io.github.amanshuraikwar.portfolio.theme.model.ThemeColorsData
 import io.github.amanshuraikwar.portfolio.theme.model.ThemeData
 import io.github.amanshuraikwar.portfolio.theme.network.ThemeApi
@@ -18,8 +19,10 @@ import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 
 class ThemeRepository(
-    private val themeApi: ThemeApi,
-    private val settings: Settings,
+    private val themeApi: ThemeApi = ThemeApi(
+        Factory.createHttpClient(enableNetworkLogs = true)
+    ),
+    private val settings: Settings = Settings(),
     private val defaultThemeColorsName: String = DEFAULT_THEME_COLORS_NAME,
     private val defaultThemeData: ThemeData = DEFAULT_THEME_DATA,
 ) {

@@ -7,7 +7,7 @@ import com.sample.style.AppCSSVariables
 import com.sample.style.WtContainer
 import com.sample.style.WtOffsets
 import com.sample.style.WtTexts
-import io.github.amanshuraikwar.portfolio.markdown.MdNode
+import io.github.amanshuraikwar.portfolio.model.MdNode
 import org.jetbrains.compose.web.css.AlignItems
 import org.jetbrains.compose.web.css.DisplayStyle
 import org.jetbrains.compose.web.css.FlexDirection
