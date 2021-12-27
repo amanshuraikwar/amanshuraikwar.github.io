@@ -6,7 +6,7 @@ import com.sample.style.AppCSSVariables
 import com.sample.style.WtContainer
 import com.sample.style.WtOffsets
 import com.sample.style.WtTexts
-import io.github.amanshuraikwar.portfolio.model.ThemeData
+import io.github.amanshuraikwar.portfolio.theme.model.ThemeData
 import org.jetbrains.compose.web.attributes.ATarget
 import org.jetbrains.compose.web.attributes.target
 import org.jetbrains.compose.web.css.AlignItems

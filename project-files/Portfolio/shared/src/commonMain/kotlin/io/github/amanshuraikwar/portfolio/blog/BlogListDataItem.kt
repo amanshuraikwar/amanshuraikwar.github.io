@@ -1,4 +1,4 @@
-package io.github.amanshuraikwar.portfolio.markdown
+package io.github.amanshuraikwar.portfolio.blog
 
 data class BlogListDataItem(
     val title: String,

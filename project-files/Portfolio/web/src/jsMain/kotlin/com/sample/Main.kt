@@ -7,17 +7,19 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import com.sample.components.Layout
 import com.sample.style.AppStylesheet
-import io.github.amanshuraikwar.portfolio.PageData
-import io.github.amanshuraikwar.portfolio.PortfolioRepository
-import io.github.amanshuraikwar.portfolio.model.ThemeColorsData
-import io.github.amanshuraikwar.portfolio.model.ThemeData
+import io.github.amanshuraikwar.portfolio.WebPageBuildPortfolioRepository
+import io.github.amanshuraikwar.portfolio.model.PageData
+import io.github.amanshuraikwar.portfolio.theme.ThemeRepository
+import io.github.amanshuraikwar.portfolio.theme.model.ThemeColorsData
+import io.github.amanshuraikwar.portfolio.theme.model.ThemeData
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
 import org.jetbrains.compose.web.css.Style
 import org.jetbrains.compose.web.renderComposable
 
 fun main() {
-    val portfolioRepository = PortfolioRepository()
+    val portfolioRepository = WebPageBuildPortfolioRepository()
+    val themeRepository = ThemeRepository()
     val coroutineScope = MainScope()
     var pageData: PageData? by mutableStateOf(null)
 
@@ -26,15 +28,15 @@ fun main() {
     }
 
     renderComposable(rootElementId = "root") {
-        val themeColors: ThemeColorsData by portfolioRepository
+        val themeColors: ThemeColorsData by themeRepository
             .getSelectedThemeColors()
             .collectAsState()
 
-        val themeColorsName: String by portfolioRepository
+        val themeColorsName: String by themeRepository
             .getSelectedThemeColorsName()
             .collectAsState()
 
-        val themeData: ThemeData by portfolioRepository
+        val themeData: ThemeData by themeRepository
             .getThemeData()
             .collectAsState()
 
@@ -54,7 +56,7 @@ fun main() {
                         isDarkTheme = themeColors.isDark,
                         themeData = themeData,
                         onThemeBtnClick = {
-                            portfolioRepository.setSelectedThemeColorsName(it)
+                            themeRepository.setSelectedThemeColorsName(it)
                         },
                     )
                 }
@@ -65,7 +67,7 @@ fun main() {
                     isDarkTheme = themeColors.isDark,
                     themeData = themeData,
                     onThemeBtnClick = {
-                        portfolioRepository.setSelectedThemeColorsName(it)
+                        themeRepository.setSelectedThemeColorsName(it)
                     },
                 )
                 is PageData.Projects -> ProjectsView(
@@ -74,7 +76,7 @@ fun main() {
                     isDarkTheme = themeColors.isDark,
                     themeData = themeData,
                     onThemeBtnClick = {
-                        portfolioRepository.setSelectedThemeColorsName(it)
+                        themeRepository.setSelectedThemeColorsName(it)
                     },
                 )
                 is PageData.Background -> BackgroundView(
@@ -83,7 +85,7 @@ fun main() {
                     isDarkTheme = themeColors.isDark,
                     themeData = themeData,
                     onThemeBtnClick = {
-                        portfolioRepository.setSelectedThemeColorsName(it)
+                        themeRepository.setSelectedThemeColorsName(it)
                     },
                 )
                 is PageData.AboutMe -> AboutMeView(
@@ -92,7 +94,7 @@ fun main() {
                     isDarkTheme = themeColors.isDark,
                     themeData = themeData,
                     onThemeBtnClick = {
-                        portfolioRepository.setSelectedThemeColorsName(it)
+                        themeRepository.setSelectedThemeColorsName(it)
                     },
                 )
                 null -> {

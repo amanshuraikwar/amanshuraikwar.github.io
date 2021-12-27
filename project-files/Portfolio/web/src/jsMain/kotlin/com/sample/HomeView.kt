@@ -5,9 +5,9 @@ import com.sample.content.BlogView
 import com.sample.content.Footer
 import com.sample.content.Hero
 import com.sample.style.WtCols
-import io.github.amanshuraikwar.portfolio.markdown.BlogListDataItem
+import io.github.amanshuraikwar.portfolio.blog.BlogListDataItem
 import io.github.amanshuraikwar.portfolio.model.PortfolioData
-import io.github.amanshuraikwar.portfolio.model.ThemeData
+import io.github.amanshuraikwar.portfolio.theme.model.ThemeData
 
 @Composable
 fun HomeView(

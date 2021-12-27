@@ -3,11 +3,12 @@
 package io.github.amanshuraikwar.portfolio
 
 import com.russhwolf.settings.MockSettings
-import io.github.amanshuraikwar.portfolio.model.ThemeColorsData
-import io.github.amanshuraikwar.portfolio.model.ThemeData
-import io.github.amanshuraikwar.portfolio.network.PortfolioApi
-import io.github.amanshuraikwar.portfolio.network.model.ThemeColorsDataResponse
-import io.github.amanshuraikwar.portfolio.network.model.ThemeDataResponse
+import io.github.amanshuraikwar.portfolio.theme.ThemeRepository
+import io.github.amanshuraikwar.portfolio.theme.model.ThemeColorsData
+import io.github.amanshuraikwar.portfolio.theme.model.ThemeData
+import io.github.amanshuraikwar.portfolio.theme.network.ThemeApi
+import io.github.amanshuraikwar.portfolio.theme.network.model.ThemeColorsDataResponse
+import io.github.amanshuraikwar.portfolio.theme.network.model.ThemeDataResponse
 import io.ktor.client.engine.mock.MockEngine
 import io.ktor.client.engine.mock.respond
 import io.ktor.http.HttpHeaders
@@ -35,12 +36,16 @@ class ThemeDataTest {
                     headers = headersOf(HttpHeaders.ContentType, "application/json")
                 )
             } else {
-                respond(content = ByteReadChannel(""))
+                respond(
+                    content = ByteReadChannel(""),
+                    status = HttpStatusCode.OK,
+                    headers = headersOf(HttpHeaders.ContentType, "application/json")
+                )
             }
         }
 
-        val portfolioApi = PortfolioApi(
-            PortfolioApi.createHttpClient(
+        val themeApi = ThemeApi(
+            Factory.createHttpClient(
                 engine = mockEngine,
                 enableNetworkLogs = true
             )
@@ -49,7 +54,7 @@ class ThemeDataTest {
         runTest {
             assertEquals(
                 DEFAULT_THEME_DATA_RESPONSE,
-                portfolioApi.getThemeData()
+                themeApi.getThemeData()
             )
         }
     }
@@ -57,14 +62,14 @@ class ThemeDataTest {
     @Test
     @JsName("verifyRemoteJsonSerializationIsWorking")
     fun `verify remote json serialization is working`() {
-        val portfolioApi = PortfolioApi(
-            PortfolioApi.createHttpClient(enableNetworkLogs = true)
+        val themeApi = ThemeApi(
+            Factory.createHttpClient(enableNetworkLogs = true)
         )
 
         runTest {
             assertEquals(
                 true,
-                portfolioApi.getThemeData().themes.isNotEmpty()
+                themeApi.getThemeData().themes.isNotEmpty()
             )
         }
     }
@@ -72,14 +77,14 @@ class ThemeDataTest {
     @Test
     @JsName("verifyRemoteJsonColorStringsAreAccurate")
     fun `verify remote json color strings are accurate`() {
-        val portfolioApi = PortfolioApi(
-            PortfolioApi.createHttpClient(enableNetworkLogs = true)
+        val themeApi = ThemeApi(
+            Factory.createHttpClient(enableNetworkLogs = true)
         )
 
         runTest {
             assertEquals(
                 true,
-                portfolioApi
+                themeApi
                     .getThemeData()
                     .themes
                     .fold(true) { acc, cur ->
@@ -101,7 +106,10 @@ class ThemeDataTest {
     @Test
     @JsName("defaultSelectedThemeColorsNameAndTheThemeExists")
     fun `default selected theme colors name and the theme exists`() {
-        val portfolioRepository = PortfolioRepository(
+        val themeRepository = ThemeRepository(
+            ThemeApi(
+                Factory.createHttpClient(enableNetworkLogs = true)
+            ),
             settings = MockSettings(),
             defaultThemeColorsName = DEFAULT_THEME_DATA.themes[0].name,
             defaultThemeData = DEFAULT_THEME_DATA
@@ -110,7 +118,7 @@ class ThemeDataTest {
         runTest {
             assertEquals(
                 DEFAULT_THEME_DATA.themes[0].name.replace(" ", "").lowercase(),
-                portfolioRepository.getSelectedThemeColorsName().value
+                themeRepository.getSelectedThemeColorsName().value
             )
         }
     }
@@ -118,7 +126,10 @@ class ThemeDataTest {
     @Test
     @JsName("defaultSelectedThemeColorsNameIsFirstFromTheDefaultThemeDataWhenTheThemeDoesNotExist")
     fun `default selected theme colors name is first from the default theme data when the theme does not exist`() {
-        val portfolioRepository = PortfolioRepository(
+        val themeRepository = ThemeRepository(
+            ThemeApi(
+                Factory.createHttpClient(enableNetworkLogs = true)
+            ),
             settings = MockSettings(),
             defaultThemeColorsName = "Halufaluja Theme",
             defaultThemeData = DEFAULT_THEME_DATA
@@ -127,11 +138,11 @@ class ThemeDataTest {
         runTest {
             assertNotEquals(
                 "halufalujatheme",
-                portfolioRepository.getSelectedThemeColorsName().value
+                themeRepository.getSelectedThemeColorsName().value
             )
             assertEquals(
                 DEFAULT_THEME_DATA.themes[0].name.replace(" ", "").lowercase(),
-                portfolioRepository.getSelectedThemeColorsName().value
+                themeRepository.getSelectedThemeColorsName().value
             )
         }
     }
@@ -177,16 +188,16 @@ class ThemeDataTest {
             )
         }
 
-        val portfolioApi = PortfolioApi(
-            PortfolioApi.createHttpClient(
+        val themeApi = ThemeApi(
+            Factory.createHttpClient(
                 engine = mockEngine,
                 enableNetworkLogs = true
             )
         )
 
-        val portfolioRepository = PortfolioRepository(
+        val themeRepository = ThemeRepository(
             settings = MockSettings(),
-            portfolioApi = portfolioApi,
+            themeApi = themeApi,
             defaultThemeColorsName = DEFAULT_THEME_DATA.themes[0].name,
             defaultThemeData = DEFAULT_THEME_DATA
         )
@@ -197,7 +208,7 @@ class ThemeDataTest {
                     .name
                     .replace(" ", "")
                     .lowercase(),
-                portfolioRepository.getSelectedThemeColorsName().first()
+                themeRepository.getSelectedThemeColorsName().first()
             )
         }
     }
@@ -205,7 +216,10 @@ class ThemeDataTest {
     @Test
     @JsName("setSelectedThemeColorsNameFlowEmitIsCorrect")
     fun `set selected theme colors name flow emit is correct`() {
-        val portfolioRepository = PortfolioRepository(
+        val themeRepository = ThemeRepository(
+            ThemeApi(
+                Factory.createHttpClient(enableNetworkLogs = true)
+            ),
             settings = MockSettings(),
             defaultThemeColorsName = DEFAULT_THEME_DATA.themes[0].name,
             defaultThemeData = DEFAULT_THEME_DATA
@@ -217,10 +231,10 @@ class ThemeDataTest {
                     DEFAULT_THEME_DATA.themes[2]
                         .name
                         .replace(" ", "").lowercase(),
-                    portfolioRepository.getSelectedThemeColorsName().first()
+                    themeRepository.getSelectedThemeColorsName().first()
                 )
             }
-            portfolioRepository.setSelectedThemeColorsName(
+            themeRepository.setSelectedThemeColorsName(
                 DEFAULT_THEME_DATA.themes[2].name
             )
             job.join()
@@ -230,23 +244,26 @@ class ThemeDataTest {
     @Test
     @JsName("setSelectedThemeColorsNameCorrespondingThemeDoesNotExist")
     fun `set selected theme colors name corresponding theme does not exist`() {
-        val portfolioRepository = PortfolioRepository(
+        val themeRepository = ThemeRepository(
+            ThemeApi(
+                Factory.createHttpClient(enableNetworkLogs = true)
+            ),
             settings = MockSettings(),
             defaultThemeColorsName = DEFAULT_THEME_DATA.themes[0].name,
             defaultThemeData = DEFAULT_THEME_DATA
         )
 
         runTest {
-            portfolioRepository.setSelectedThemeColorsName(
+            themeRepository.setSelectedThemeColorsName(
                 "Halufaluja Theme"
             )
             assertNotEquals(
                 "halufalujatheme",
-                portfolioRepository.getSelectedThemeColorsName().value
+                themeRepository.getSelectedThemeColorsName().value
             )
             assertEquals(
                 DEFAULT_THEME_DATA.themes[0].name.replace(" ", "").lowercase(),
-                portfolioRepository.getSelectedThemeColorsName().value
+                themeRepository.getSelectedThemeColorsName().value
             )
         }
     }
@@ -256,7 +273,10 @@ class ThemeDataTest {
     @Test
     @JsName("defaultSelectedThemeColorsAndTheThemeExists")
     fun `default selected theme colors and the theme exists`() {
-        val portfolioRepository = PortfolioRepository(
+        val themeRepository = ThemeRepository(
+            ThemeApi(
+                Factory.createHttpClient(enableNetworkLogs = true)
+            ),
             settings = MockSettings(),
             defaultThemeColorsName = DEFAULT_THEME_DATA.themes[0].name,
             defaultThemeData = DEFAULT_THEME_DATA
@@ -265,7 +285,7 @@ class ThemeDataTest {
         runTest {
             assertEquals(
                 DEFAULT_THEME_DATA.themes[0],
-                portfolioRepository.getSelectedThemeColors().value
+                themeRepository.getSelectedThemeColors().value
             )
         }
     }
@@ -273,7 +293,10 @@ class ThemeDataTest {
     @Test
     @JsName("defaultSelectedThemeColorsIsFirstFromTheDefaultThemeDataWhenTheThemeDoesNotExist")
     fun `default selected theme colors is first from the default theme data when the theme does not exist`() {
-        val portfolioRepository = PortfolioRepository(
+        val themeRepository = ThemeRepository(
+            ThemeApi(
+                Factory.createHttpClient(enableNetworkLogs = true)
+            ),
             settings = MockSettings(),
             defaultThemeColorsName = "Halufaluja Theme",
             defaultThemeData = DEFAULT_THEME_DATA
@@ -282,11 +305,11 @@ class ThemeDataTest {
         runTest {
             assertNotEquals(
                 "halufalujatheme",
-                portfolioRepository.getSelectedThemeColorsName().value
+                themeRepository.getSelectedThemeColorsName().value
             )
             assertEquals(
                 DEFAULT_THEME_DATA.themes[0],
-                portfolioRepository.getSelectedThemeColors().value
+                themeRepository.getSelectedThemeColors().value
             )
         }
     }
@@ -332,16 +355,16 @@ class ThemeDataTest {
             )
         }
 
-        val portfolioApi = PortfolioApi(
-            PortfolioApi.createHttpClient(
+        val themeApi = ThemeApi(
+            Factory.createHttpClient(
                 engine = mockEngine,
                 enableNetworkLogs = true
             )
         )
 
-        val portfolioRepository = PortfolioRepository(
+        val themeRepository = ThemeRepository(
             settings = MockSettings(),
-            portfolioApi = portfolioApi,
+            themeApi = themeApi,
             defaultThemeColorsName = DEFAULT_THEME_DATA.themes[0].name,
             defaultThemeData = DEFAULT_THEME_DATA
         )
@@ -349,7 +372,7 @@ class ThemeDataTest {
         runTest {
             assertEquals(
                 DEFAULT_THEME_DATA.themes[0],
-                portfolioRepository.getSelectedThemeColors().first()
+                themeRepository.getSelectedThemeColors().first()
             )
         }
     }
@@ -357,7 +380,10 @@ class ThemeDataTest {
     @Test
     @JsName("setSelectedThemeColorsFlowEmitIsCorrect")
     fun `set selected theme colors flow emit is correct`() {
-        val portfolioRepository = PortfolioRepository(
+        val themeRepository = ThemeRepository(
+            ThemeApi(
+                Factory.createHttpClient(enableNetworkLogs = true)
+            ),
             settings = MockSettings(),
             defaultThemeColorsName = DEFAULT_THEME_DATA.themes[0].name,
             defaultThemeData = DEFAULT_THEME_DATA
@@ -367,10 +393,10 @@ class ThemeDataTest {
             val job = launch {
                 assertEquals(
                     DEFAULT_THEME_DATA.themes[2],
-                    portfolioRepository.getSelectedThemeColors().first()
+                    themeRepository.getSelectedThemeColors().first()
                 )
             }
-            portfolioRepository.setSelectedThemeColorsName(
+            themeRepository.setSelectedThemeColorsName(
                 DEFAULT_THEME_DATA.themes[2].name
             )
             job.join()
@@ -380,19 +406,22 @@ class ThemeDataTest {
     @Test
     @JsName("setSelectedThemeColorsCorrespondingThemeDoesNotExist")
     fun `set selected theme colors corresponding theme does not exist`() {
-        val portfolioRepository = PortfolioRepository(
+        val themeRepository = ThemeRepository(
+            ThemeApi(
+                Factory.createHttpClient(enableNetworkLogs = true)
+            ),
             settings = MockSettings(),
             defaultThemeColorsName = DEFAULT_THEME_DATA.themes[0].name,
             defaultThemeData = DEFAULT_THEME_DATA
         )
 
         runTest {
-            portfolioRepository.setSelectedThemeColorsName(
+            themeRepository.setSelectedThemeColorsName(
                 "Halufaluja Theme"
             )
             assertEquals(
                 DEFAULT_THEME_DATA.themes[0],
-                portfolioRepository.getSelectedThemeColors().value
+                themeRepository.getSelectedThemeColors().value
             )
         }
     }
@@ -410,16 +439,16 @@ class ThemeDataTest {
             )
         }
 
-        val portfolioApi = PortfolioApi(
-            PortfolioApi.createHttpClient(
+        val themeApi = ThemeApi(
+            Factory.createHttpClient(
                 engine = mockEngine,
                 enableNetworkLogs = true
             )
         )
 
-        val portfolioRepository = PortfolioRepository(
+        val themeRepository = ThemeRepository(
             settings = MockSettings(),
-            portfolioApi = portfolioApi,
+            themeApi = themeApi,
             defaultThemeColorsName = DEFAULT_THEME_DATA.themes[0].name,
             defaultThemeData = DEFAULT_THEME_DATA
         )
@@ -427,7 +456,7 @@ class ThemeDataTest {
         runTest {
             assertEquals(
                 DEFAULT_THEME_DATA,
-                portfolioRepository.getThemeData().value
+                themeRepository.getThemeData().value
             )
         }
     }
@@ -453,22 +482,22 @@ class ThemeDataTest {
             }
         }
 
-        val portfolioApi = PortfolioApi(
-            PortfolioApi.createHttpClient(
+        val themeApi = ThemeApi(
+            Factory.createHttpClient(
                 engine = mockEngine,
                 enableNetworkLogs = true
             )
         )
 
-        val portfolioRepository = PortfolioRepository(
+        val themeRepository = ThemeRepository(
             settings = MockSettings(),
-            portfolioApi = portfolioApi,
+            themeApi = themeApi,
             defaultThemeColorsName = DEFAULT_THEME_DATA.themes[0].name,
             defaultThemeData = DEFAULT_THEME_DATA
         )
 
         runTest {
-            val themeDataFlow = portfolioRepository.getThemeData()
+            val themeDataFlow = themeRepository.getThemeData()
             while (true) {
                 if (apiResponded) {
                     delay(300)
@@ -524,16 +553,16 @@ class ThemeDataTest {
             )
         }
 
-        val portfolioApi = PortfolioApi(
-            PortfolioApi.createHttpClient(
+        val themeApi = ThemeApi(
+            Factory.createHttpClient(
                 engine = mockEngine,
                 enableNetworkLogs = true
             )
         )
 
-        val portfolioRepository = PortfolioRepository(
+        val themeRepository = ThemeRepository(
             settings = MockSettings(),
-            portfolioApi = portfolioApi,
+            themeApi = themeApi,
             defaultThemeColorsName = DEFAULT_THEME_DATA.themes[0].name,
             defaultThemeData = DEFAULT_THEME_DATA
         )
@@ -554,7 +583,7 @@ class ThemeDataTest {
                         )
                     }
                 ),
-                portfolioRepository.getThemeData().first { it != DEFAULT_THEME_DATA }
+                themeRepository.getThemeData().first { it != DEFAULT_THEME_DATA }
             )
 
             assertEquals(
@@ -562,7 +591,7 @@ class ThemeDataTest {
                     .name
                     .replace(" ", "")
                     .lowercase(),
-                portfolioRepository.getSelectedThemeColorsName().first()
+                themeRepository.getSelectedThemeColorsName().first()
             )
         }
     }
@@ -598,16 +627,16 @@ class ThemeDataTest {
             )
         }
 
-        val portfolioApi = PortfolioApi(
-            PortfolioApi.createHttpClient(
+        val themeApi = ThemeApi(
+            Factory.createHttpClient(
                 engine = mockEngine,
                 enableNetworkLogs = true
             )
         )
 
-        val portfolioRepository = PortfolioRepository(
+        val themeRepository = ThemeRepository(
             settings = MockSettings(),
-            portfolioApi = portfolioApi,
+            themeApi = themeApi,
             defaultThemeColorsName = DEFAULT_THEME_DATA.themes[0].name,
             defaultThemeData = DEFAULT_THEME_DATA
         )
@@ -628,7 +657,7 @@ class ThemeDataTest {
                         )
                     }
                 ),
-                portfolioRepository.getThemeData().first { it != DEFAULT_THEME_DATA }
+                themeRepository.getThemeData().first { it != DEFAULT_THEME_DATA }
             )
 
             assertEquals(
@@ -636,7 +665,7 @@ class ThemeDataTest {
                     .name
                     .replace(" ", "")
                     .lowercase(),
-                portfolioRepository.getSelectedThemeColorsName().first {
+                themeRepository.getSelectedThemeColorsName().first {
                     it != DEFAULT_THEME_DATA.themes[0]
                         .name
                         .replace(" ", "")

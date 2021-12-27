@@ -8,9 +8,9 @@ import com.sample.markdown.MdLayout
 import com.sample.style.WtCols
 import com.sample.style.WtContainer
 import com.sample.style.WtOffsets
-import io.github.amanshuraikwar.portfolio.markdown.MdNode
+import io.github.amanshuraikwar.portfolio.model.MdNode
 import io.github.amanshuraikwar.portfolio.model.PortfolioData
-import io.github.amanshuraikwar.portfolio.model.ThemeData
+import io.github.amanshuraikwar.portfolio.theme.model.ThemeData
 import org.jetbrains.compose.web.dom.Div
 
 @Composable

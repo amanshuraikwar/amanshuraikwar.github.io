@@ -1,9 +1,9 @@
-package io.github.amanshuraikwar.portfolio.network.model
+package io.github.amanshuraikwar.portfolio.theme.model
 
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class ThemeColorsDataResponse(
+data class ThemeColorsData(
     val name: String,
     val isDark: Boolean,
     val primaryColor: String,

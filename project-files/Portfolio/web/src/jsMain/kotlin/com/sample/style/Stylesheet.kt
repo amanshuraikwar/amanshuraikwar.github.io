@@ -1,6 +1,6 @@
 package com.sample.style
 
-import io.github.amanshuraikwar.portfolio.model.ThemeColorsData
+import io.github.amanshuraikwar.portfolio.theme.model.ThemeColorsData
 import org.jetbrains.compose.web.css.*
 
 object AppCSSVariables {
