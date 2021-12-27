@@ -13,7 +13,9 @@ object Libs {
     const val coilCompose = "io.coil-kt:coil-compose:1.3.1"
 
     object Ktor {
-        private const val version = "1.6.1"
+        private const val version = "2.0.0-beta-1"
+        const val json = "io.ktor:ktor-serialization-kotlinx-json:$version"
+        const val contentNegotiation = "io.ktor:ktor-client-content-negotiation:$version"
         const val clientCore = "io.ktor:ktor-client-core:$version"
         const val clientJson = "io.ktor:ktor-client-json:$version"
         const val clientLogging = "io.ktor:ktor-client-logging:$version"
@@ -27,8 +29,9 @@ object Libs {
     }
 
     object Kotlinx {
-        const val serializationCore = "org.jetbrains.kotlinx:kotlinx-serialization-core:1.2.1"
-        const val serializationJson = "org.jetbrains.kotlinx:kotlinx-serialization-json:1.2.1"
+        private const val version = "1.3.2"
+        const val serializationCore = "org.jetbrains.kotlinx:kotlinx-serialization-core:$version"
+        const val serializationJson = "org.jetbrains.kotlinx:kotlinx-serialization-json:$version"
     }
 
     object Google {
@@ -46,15 +49,16 @@ object Libs {
     }
 
     object Kotlin {
-        private const val version = "1.5.31"
+        private const val version = "1.6.0"
         const val stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$version"
         const val gradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$version"
         const val extensions = "org.jetbrains.kotlin:kotlin-android-extensions:$version"
     }
 
     object Coroutines {
-        private const val version = "1.5.2-native-mt"
+        private const val version = "1.6.0-native-mt"
         const val core = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$version"
+        const val test = "org.jetbrains.kotlinx:kotlinx-coroutines-test:$version"
         const val android = "org.jetbrains.kotlinx:kotlinx-coroutines-android:$version"
     }
 

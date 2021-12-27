@@ -44,6 +44,8 @@ kotlin {
                     implementation(clientJson)
                     implementation(clientLogging)
                     implementation(clientSerialization)
+                    implementation(contentNegotiation)
+                    implementation(json)
                 }
 
                 with(Libs.Kotlinx) {
@@ -59,6 +61,7 @@ kotlin {
                 implementation(kotlin("test"))
                 implementation(Libs.Ktor.clientMock)
                 implementation(Libs.multiplatformSettingsTest)
+                implementation(Libs.Coroutines.test)
             }
         }
         val androidMain by getting {
