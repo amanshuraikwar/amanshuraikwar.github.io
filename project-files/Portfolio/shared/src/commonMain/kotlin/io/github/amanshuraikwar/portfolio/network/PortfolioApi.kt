@@ -1,7 +1,9 @@
 package io.github.amanshuraikwar.portfolio.network
 
+import io.github.amanshuraikwar.portfolio.network.model.AppDataResponse
 import io.github.amanshuraikwar.portfolio.network.model.PortfolioDataResponse
 import io.ktor.client.HttpClient
+import io.ktor.client.call.body
 import io.ktor.client.request.get
 
 class PortfolioApi(
@@ -9,8 +11,8 @@ class PortfolioApi(
     private val baseUrl: String = "https://amanshuraikwar.github.io/api",
 ) {
     suspend fun getPortfolioData() =
-        client.get<PortfolioDataResponse>("$baseUrl/portfolio_data.json")
+        client.get("$baseUrl/portfolio_data.json").body<PortfolioDataResponse>()
 
     suspend fun getAppData(appId: String) =
-        client.get<PortfolioDataResponse>("$baseUrl/app_data_$appId.json")
+        client.get("$baseUrl/app_data_$appId.json").body<AppDataResponse>()
 }

@@ -15,14 +15,17 @@ import io.ktor.http.HttpHeaders
 import io.ktor.http.HttpStatusCode
 import io.ktor.http.headersOf
 import io.ktor.utils.io.ByteReadChannel
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.test.runTest
 import kotlinx.serialization.json.Json
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertNotEquals
 
+@ExperimentalCoroutinesApi
 class ThemeDataTest {
     //region api
     @Test
@@ -50,6 +53,7 @@ class ThemeDataTest {
                 enableNetworkLogs = true
             )
         )
+
 
         runTest {
             assertEquals(

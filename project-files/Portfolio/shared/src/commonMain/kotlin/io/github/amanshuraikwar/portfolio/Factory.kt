@@ -2,12 +2,12 @@ package io.github.amanshuraikwar.portfolio
 
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.HttpClientEngine
-import io.ktor.client.features.json.JsonFeature
-import io.ktor.client.features.json.serializer.KotlinxSerializer
-import io.ktor.client.features.logging.DEFAULT
-import io.ktor.client.features.logging.LogLevel
-import io.ktor.client.features.logging.Logger
-import io.ktor.client.features.logging.Logging
+import io.ktor.client.plugins.ContentNegotiation
+import io.ktor.client.plugins.logging.DEFAULT
+import io.ktor.client.plugins.logging.LogLevel
+import io.ktor.client.plugins.logging.Logger
+import io.ktor.client.plugins.logging.Logging
+import io.ktor.serialization.kotlinx.json.json
 import kotlinx.serialization.json.Json
 
 object Factory {
@@ -16,8 +16,8 @@ object Factory {
         json: Json = createJson(),
         enableNetworkLogs: Boolean
     ) = HttpClient(engine) {
-        install(JsonFeature) {
-            serializer = KotlinxSerializer(json)
+        install(ContentNegotiation) {
+            json(json)
         }
         if (enableNetworkLogs) {
             install(Logging) {
@@ -31,8 +31,8 @@ object Factory {
         json: Json = createJson(),
         enableNetworkLogs: Boolean
     ) = HttpClient {
-        install(JsonFeature) {
-            serializer = KotlinxSerializer(json)
+        install(ContentNegotiation) {
+            json(json)
         }
         if (enableNetworkLogs) {
             install(Logging) {

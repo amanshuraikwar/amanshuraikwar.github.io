@@ -1,7 +1,4 @@
 package io.github.amanshuraikwar.portfolio
 
-import kotlinx.coroutines.CoroutineScope
-
-expect fun runTest(block: suspend CoroutineScope.() -> Unit)
-
+@Suppress("NO_ACTUAL_FOR_EXPECT")
 expect annotation class JsName constructor(val name: String)
