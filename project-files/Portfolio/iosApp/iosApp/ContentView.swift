@@ -2,13 +2,16 @@ import SwiftUI
 import shared
 
 struct ContentView: View {
-	let homePageDataList = PortfolioRepository().getHomePageDataList()
-    @StateObject var viewModel = ViewModel(repository: PortfolioRepository())
+    @StateObject var viewModel = ViewModel()
     
     var body: some View {
         HomePageView(screenState: $viewModel.screenState)
             .onAppear {
-                viewModel.getPortfolioData()
+                Task.init {
+                    //do {
+                        await viewModel.getPortfolioData()
+                    //}
+                }
             }
 	}
 }

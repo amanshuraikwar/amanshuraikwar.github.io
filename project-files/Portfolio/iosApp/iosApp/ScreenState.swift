@@ -11,5 +11,5 @@ import shared
 
 enum ScreenState {
     case fetching
-    case success(data: PortfolioData)
+    case success(data: [BlogListDataItem])
 }

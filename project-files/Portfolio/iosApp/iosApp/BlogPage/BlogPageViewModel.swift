@@ -1,17 +1,17 @@
 //
-//  ViewModel.swift
+//  BlogPageViewModel.swift
 //  iosApp
 //
-//  Created by amanshu raikwar on 17/08/21.
+//  Created by Amanshu Raikwar on 30/12/21.
 //  Copyright © 2021 orgName. All rights reserved.
 //
 
 import Foundation
 import shared
 
-class ViewModel: ObservableObject {
-    @Published var screenState: ScreenState = ScreenState.fetching
-    
+class BlogPageViewModel: ObservableObject {
+    @Published var screenState: BlogPageScreenState = .fetching
+
     private let repository: PortfolioRepository = PortfolioRepository(
         portfolioApi: PortfolioApi(
             client: Factory.shared.createHttpClient(
@@ -22,15 +22,20 @@ class ViewModel: ObservableObject {
         )
     )
     
-    func getPortfolioData() async {
+    func getBlogPageData(_ pageId: String) async {
         do {
-            let blogListData = try await repository.getBlogListData()
+            let blogPageData = try await repository.getBlogPageData(pageId: pageId)
             DispatchQueue.main.sync {
-                self.screenState = .success(data: blogListData)
+                self.screenState = .success(data: blogPageData)
             }
         }
         catch {
             print("Task error: \(error)")
         }
     }
+}
+
+enum BlogPageScreenState {
+    case fetching
+    case success(data: [MdNode])
 }

@@ -2,10 +2,12 @@
 
 package io.github.amanshuraikwar.portfolio
 
+import io.github.amanshuraikwar.portfolio.blog.BlogListDataItem
 import io.github.amanshuraikwar.portfolio.model.AppData
 import io.github.amanshuraikwar.portfolio.model.AppLink
 import io.github.amanshuraikwar.portfolio.model.ExperienceData
 import io.github.amanshuraikwar.portfolio.model.LinkData
+import io.github.amanshuraikwar.portfolio.model.MdNode
 import io.github.amanshuraikwar.portfolio.model.PortfolioData
 import io.github.amanshuraikwar.portfolio.network.PortfolioApi
 import kotlinx.coroutines.Dispatchers
@@ -53,6 +55,96 @@ open class PortfolioRepository(
                     madeWith = response.madeWith
                 )
             }
+        }
+    }
+
+    suspend fun getBlogListData(): List<BlogListDataItem> {
+        return withContext(Dispatchers.Default) {
+            portfolioApi.getBlogListData().blogList.map {
+                BlogListDataItem(
+                    title = it.title,
+                    date = it.date,
+                    firstParagraph = it.firstParagraph,
+                    link = it.link,
+                    id = it.id
+                )
+            }
+        }
+    }
+
+    suspend fun getBlogPageData(pageId: String): List<MdNode> {
+        return withContext(Dispatchers.Default) {
+            val mdNodeList = mutableListOf<MdNode>()
+            portfolioApi.getBlogPageData(pageId)
+                .blogData
+                .forEach { map ->
+                    when (map["type"]) {
+                        "H1" -> {
+                            mdNodeList.add(
+                                MdNode.H1(
+                                    text = map["text"] ?: ""
+                                )
+                            )
+                        }
+                        "H3" -> {
+                            mdNodeList.add(
+                                MdNode.H3(
+                                    text = map["text"] ?: ""
+                                )
+                            )
+                        }
+                        "P" -> {
+                            mdNodeList.add(
+                                MdNode.P(
+                                    text = map["text"] ?: ""
+                                )
+                            )
+                        }
+                        "IMG" -> {
+                            mdNodeList.add(
+                                MdNode.Img(
+                                    label = map["label"] ?: "",
+                                    url = map["url"]?.let {
+                                        if (it.startsWith("../")) {
+                                            "https://amanshuraikwar.github.io/${it.drop(3)}"
+                                        } else {
+                                            it
+                                        }
+                                    } ?: ""
+                                )
+                            )
+                        }
+                        "Spacer" -> {
+                            mdNodeList.add(
+                                MdNode.Spacer
+                            )
+                        }
+                        "DATE" -> {
+                            mdNodeList.add(
+                                MdNode.Date(
+                                    text = map["text"] ?: ""
+                                )
+                            )
+                        }
+                        "BTN" -> {
+                            mdNodeList.add(
+                                MdNode.Btn(
+                                    text = map["text"] ?: "",
+                                    url = map["url"] ?: ""
+                                )
+                            )
+                        }
+                        "CODE" -> {
+                            mdNodeList.add(
+                                MdNode.Code(
+                                    code = map["code"] ?: "",
+                                    language = map["language"] ?: ""
+                                )
+                            )
+                        }
+                    }
+                }
+            mdNodeList
         }
     }
 }
