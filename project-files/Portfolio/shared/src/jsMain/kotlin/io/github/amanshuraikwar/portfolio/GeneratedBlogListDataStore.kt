@@ -8,6 +8,31 @@ import io.github.amanshuraikwar.portfolio.blog.BlogListDataItem
 class GeneratedBlogListDataStore {
 
 	fun getBlogListData(): List<BlogListDataItem> {
-		return listOf()
+		return listOf(
+            BlogListDataItem(
+                title = "My Portfolio",
+                date = "December 27, 2021",
+                firstParagraph = "This is my portfolio. It is a KMM project which currently supports Web, Android & iOS clients coming soon. The Web app is written in Kotlin, built using Jetpack Compose for Web and it has a KMM shared module for business logic.",
+                link = "https://amanshuraikwar.github.io/portfolio",
+            ),
+            BlogListDataItem(
+                title = "How to use highlight.js in your Jetpack Compose Web project",
+                date = "December 14, 2021",
+                firstParagraph = "If you are building your web app using Jetpack Compose for Web and want to use highlight.js, this is the blog for you.",
+                link = "https://amanshuraikwar.github.io/jetpack-compose-web-highlight-js",
+            ),
+            BlogListDataItem(
+                title = "Issues using MockK in a KMM shared module",
+                date = "December 12, 2021",
+                firstParagraph = "If you are writing unit tests for your Kotlin project and need to mock certain objects, there is high chance that you are using MockK. Here are a couple of issues that I faced while using MockK in my KMM project. The project has Android and iOS apps with business logic written in shared KMM modules, I was writing unit tests to test this business logic.",
+                link = "https://amanshuraikwar.github.io/mockk-kmm-issues",
+            ),
+            BlogListDataItem(
+                title = "Introducing Next Bus SG",
+                date = "December 8, 2021",
+                firstParagraph = "After working on it for more than a year, I present to you Next Bus SG. Next Bus SG is a minimal & light app to see bus arrival timings in Singapore. Scroll down to the bottom for download links.",
+                link = "https://amanshuraikwar.github.io/nextbus",
+            ),
+		)
 	}
 }

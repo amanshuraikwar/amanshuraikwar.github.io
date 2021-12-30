@@ -8,7 +8,7 @@ import io.github.amanshuraikwar.portfolio.model.MdNode
 class GeneratedWebPageBuildDataStore : WebPageBuildDataStore {
 
 	override fun getPageType(): PageType {
-		return PageType.PROJECTS
+		return PageType.HOME
 	}
 
 	override fun getData(): List<MdNode> {
