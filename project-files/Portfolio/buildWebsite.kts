@@ -9,6 +9,7 @@ println("Creating build...")
 File(".") exec "mkdir build"
 
 generateEmptyBlogListFile()
+generateEmptyBlogListFileJson()
 
 generateEmptyDataStoreFile("PageType.PROJECTS")
 buildAndCopyDirectoryContents("projects")
@@ -35,6 +36,7 @@ try {
         .forEach { file ->
             println("Parsing ${file.name}...")
             blogListEntryList.add(generateBlogMdSource(file))
+            generateBlogMdSourceJson(file)
         }
 } catch (e: Exception) {
     println("Exception while parsing markdown files!")
@@ -43,6 +45,9 @@ try {
 
 println("Creating blog list file...")
 createBlogListFile(blogListEntryList)
+
+println("Creating blog list json file...")
+createBlogListFileJson(blogListEntryList)
 
 generateEmptyDataStoreFile("PageType.HOME")
 buildAndCopyDirectoryContents("home", deleteAssets = false)
@@ -93,6 +98,71 @@ data class BlogListEntry(
     val firstParagraph: String,
     val link: String
 )
+
+fun createBlogListFileJson(blogListEntryList: List<BlogListEntry>): File {
+    val outputFile = File(
+        "web/src/jsMain/resources/api/blog_list.json"
+    )
+    if (outputFile.exists()) {
+        outputFile.delete()
+    }
+
+    outputFile.bufferedWriter().use { out ->
+        out.write("{\n")
+        out.write("\t\"blog_list\":[\n")
+
+        blogListEntryList
+            .sortedByDescending {
+                var formatter = DateTimeFormatter.ofPattern("MMMM d, yyyy")
+                LocalDate.parse(
+                    it.date,
+                    formatter
+                )
+            }
+            .forEachIndexed { index, entry ->
+                println("Creating blog entry for ${entry.link}")
+                out.write(
+                    """
+                    {
+                        "title": "${entry.title}",
+                        "date": "${entry.date}",
+                        "firstParagraph": "${entry.firstParagraph}",
+                        "link": "${entry.link}",
+                        "id": "${entry.link.split("/").last()}"
+                    }${if (index == blogListEntryList.size - 1) "" else ","}
+                    """.trimIndent()
+                        .split("\n")
+                        .map {
+                            it.prependIndent().prependIndent()
+                        }
+                        .reduce { acc, s -> "$acc\n$s" }
+                )
+
+                out.write("\n")
+            }
+        out.write("\t]\n")
+        out.write("}\n")
+    }
+
+    return outputFile
+}
+
+fun generateEmptyBlogListFileJson(): File {
+    val outputFile = File(
+        "web/src/jsMain/resources/api/blog_list.json"
+    )
+    if (outputFile.exists()) {
+        outputFile.delete()
+    }
+
+    outputFile.bufferedWriter().use { out ->
+        out.write("{\n")
+        out.write("\t\"blog_list\": []\n")
+        out.write("}\n")
+    }
+
+    return outputFile
+}
 
 fun generateEmptyBlogListFile(): File {
     val outputFile = File(
@@ -454,6 +524,215 @@ fun generateBlogMdSource(file: File): BlogListEntry {
         firstParagraph = firstParagraph,
         link = "https://amanshuraikwar.github.io/$dirName"
     )
+}
+
+fun generateBlogMdSourceJson(file: File) {
+    var title = ""
+    var date = ""
+    var firstParagraph = ""
+
+    val dirName = file.name.dropLast(3)
+
+    val outputFile =
+        File("web/src/jsMain/resources/api/$dirName.json")
+    outputFile.delete()
+
+    outputFile.bufferedWriter().use { out ->
+        out.write("{\n")
+
+        out.write("\t\"blog_data\": [\n")
+
+        val lines = file.readLines()
+
+        var i = 0
+        while (i < lines.size) {
+            val line = lines[i]
+            when {
+                line.startsWith("!Btn[") -> {
+                    val (label, url) = line
+                        .drop(5)
+                        .trim()
+                        .split("]", "(", ")")
+                        .filter {
+                            it.trim().isNotBlank()
+                        }
+                        .take(2)
+
+                    out.write(
+                        """
+                        {
+                            "text": "${label.trim()}",
+                            "url": "${url.trim()}",
+                            "type": "BTN"
+                        }${if (i == lines.size - 1) "" else ","}
+                        """.trimIndent()
+                            .split("\n")
+                            .map {
+                                it.prependIndent().prependIndent().prependIndent()
+                            }
+                            .reduce { acc, s -> "$acc\n$s" }
+                    )
+
+                    out.write("\n")
+                }
+                line.startsWith("![") -> {
+                    val (label, url) = line
+                        .drop(2)
+                        .trim()
+                        .split("]", "(", ")")
+                        .filter {
+                            it.trim().isNotBlank()
+                        }
+                        .take(2)
+
+                    out.write(
+                        """
+                        {
+                            "label": "${label.trim()}",
+                            "url": "${url.trim()}",
+                            "type": "IMG"
+                        }${if (i == lines.size - 1) "" else ","}
+                        """.trimIndent()
+                            .split("\n")
+                            .map {
+                                it.prependIndent().prependIndent().prependIndent()
+                            }
+                            .reduce { acc, s -> "$acc\n$s" }
+                    )
+
+                    out.write("\n")
+                }
+                line.startsWith("###") -> {
+                    out.write(
+                        """
+                        {
+                            "text": "${line.drop(3).trim()}",
+                            "type": "H3"
+                        }${if (i == lines.size - 1) "" else ","}
+                        """.trimIndent()
+                            .split("\n")
+                            .map {
+                                it.prependIndent().prependIndent().prependIndent()
+                            }
+                            .reduce { acc, s -> "$acc\n$s" }
+                    )
+                    out.write("\n")
+                }
+                line.startsWith("#Date") -> {
+                    out.write(
+                        """
+                        {
+                            "text": "${line.drop(5).trim()}",
+                            "type": "DATE"
+                        }${if (i == lines.size - 1) "" else ","}
+                        """.trimIndent()
+                            .split("\n")
+                            .map {
+                                it.prependIndent().prependIndent().prependIndent()
+                            }
+                            .reduce { acc, s -> "$acc\n$s" }
+                    )
+                    out.write("\n")
+
+                    if (date == "") {
+                        date = line.drop(5).trim()
+                    }
+                }
+                line.startsWith("#") -> {
+                    out.write(
+                        """
+                        {
+                            "text": "${line.drop(1).trim()}",
+                            "type": "H1"
+                        }${if (i == lines.size - 1) "" else ","}
+                        """.trimIndent()
+                            .split("\n")
+                            .map {
+                                it.prependIndent().prependIndent().prependIndent()
+                            }
+                            .reduce { acc, s -> "$acc\n$s" }
+                    )
+                    out.write("\n")
+
+                    if (title == "") {
+                        title = line.drop(1).trim()
+                    }
+                }
+                line.startsWith("```") -> {
+                    val language = if (line.trim().length > 3) {
+                        line.trim().drop(3).trim()
+                    } else {
+                        ""
+                    }
+                    var codeBlockLines = mutableListOf<String>()
+                    while (++i < lines.size && !lines[i].startsWith("```")) {
+                        val lastLine = lines[i]
+                        codeBlockLines.add(lastLine)
+                    }
+                    val codeBlockString = codeBlockLines.fold("") { acc, cur ->
+                        "$acc$cur\\n".trimIndent()
+                    }.replace("\"", "\\\"")
+
+                    out.write(
+                        """
+                        {
+                            "language": "$language",
+                            "type": "CODE",
+                            "code": "$codeBlockString"
+                        }${if (i == lines.size - 1) "" else ","}
+                        """.trimIndent()
+                            .split("\n")
+                            .map {
+                                it.prependIndent().prependIndent().prependIndent()
+                            }
+                            .reduce { acc, s -> "$acc\n$s" }
+                    )
+                }
+                line.trim().isNotBlank() -> {
+                    out.write(
+                        """
+                        {
+                            "text": "${line.trim()}",
+                            "type": "P"
+                        }${if (i == lines.size - 1) "" else ","}
+                        """.trimIndent()
+                            .split("\n")
+                            .map {
+                                it.prependIndent().prependIndent().prependIndent()
+                            }
+                            .reduce { acc, s -> "$acc\n$s" }
+                    )
+                    out.write("\n")
+
+                    if (firstParagraph == "") {
+                        firstParagraph = line.trim()
+                    }
+                }
+                i != lines.size - 1 && lines[i + 1].trim().isBlank() -> {
+                    out.write(
+                        """
+                        {
+                            "type": "SPACER"
+                        }${if (i == lines.size - 1) "" else ","}
+                        """.trimIndent()
+                            .split("\n")
+                            .map {
+                                it.prependIndent().prependIndent().prependIndent()
+                            }
+                            .reduce { acc, s -> "$acc\n$s" }
+                    )
+                    out.write("\n")
+                    i++
+                }
+                else -> {
+                    // do nothing if its a single empty line
+                }
+            }
+            i++
+        }
+        out.write("\t]\n")
+        out.write("}\n")
+    }
 }
 
 /**
