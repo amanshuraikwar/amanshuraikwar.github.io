@@ -107,13 +107,13 @@ fun HomeScreen(
                     }
                 }
 
-                screenState.portfolioData.apps.forEach { appData ->
+                screenState.portfolioData.projects.forEach { appData ->
                     item {
                         ProjectView(
                             Modifier
                                 .padding(vertical = 16.dp)
                                 .padding(horizontal = 16.dp),
-                            appData = appData,
+                            projectData = appData,
                             onAppLinkClick = onLinkClick
                         )
                     }
@@ -124,7 +124,7 @@ fun HomeScreen(
                         modifier = Modifier.fillMaxWidth(),
                         color = MaterialTheme.colors.surface,
                         elevation = rememberStickyHeaderElevation(
-                            screenState.portfolioData.apps.size + 2,
+                            screenState.portfolioData.projects.size + 2,
                             listState
                         )
                     ) {
@@ -143,13 +143,13 @@ fun HomeScreen(
                     }
                 }
 
-                screenState.portfolioData.experience.forEach { experienceData ->
+                screenState.portfolioData.background.forEach { experienceData ->
                     item {
                         ExperienceItemView(
                             modifier = Modifier
                                 .padding(horizontal = 16.dp)
                                 .padding(vertical = 16.dp),
-                            experienceData = experienceData,
+                            backgroundData = experienceData,
                         )
                     }
                 }
@@ -159,8 +159,8 @@ fun HomeScreen(
                         modifier = Modifier.fillMaxWidth(),
                         color = MaterialTheme.colors.surface,
                         elevation = rememberStickyHeaderElevation(
-                            screenState.portfolioData.experience.size +
-                                    screenState.portfolioData.apps.size + 3,
+                            screenState.portfolioData.background.size +
+                                    screenState.portfolioData.projects.size + 3,
                             listState
                         )
                     ) {

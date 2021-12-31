@@ -11,65 +11,62 @@ import shared
 import URLImage
 
 struct HomePageView: View {
-    @Binding var screenState: ScreenState
-    
     var body: some View {
-        switch screenState {
-        case .fetching:
-            ProgressView()
-        case .success(let data):
-            NavigationView {
-                List {
-                    ForEach(Array(data.enumerated()), id: \.1) { index, project in
-                        NavigationLink(
-                            destination: BlogPageView(pageId: project.id)
-                        ) {
-                            VStack(
-                                alignment: .leading,
-                                spacing: 0
-                            ) {
-                                Text(project.title)
-                                    .font(PortfolioFonts.title)
-                                    .fontWeight(.bold)
-                                    .multilineTextAlignment(.leading)
-                                    .frame(
-                                        maxWidth: .infinity,
-                                        alignment: .leading
-                                    )
-                                    .fixedSize(horizontal: false, vertical: true)
-                                    .padding(.top, 12)
-                                
-                                Text(project.firstParagraph)
-                                    .font(PortfolioFonts.body)
-                                    .fontWeight(.regular)
-                                    .multilineTextAlignment(.leading)
-                                    .lineLimit(3)
-                                    .frame(
-                                        maxWidth: .infinity,
-                                        alignment: .leading
-                                    )
-                                    .padding(.top, 8)
-                                
-                                Text(project.date)
-                                    .font(PortfolioFonts.footnote)
-                                    .foregroundColor(.accentColor)
-                                    .fontWeight(.medium)
-                                    .frame(
-                                        maxWidth: .infinity,
-                                        alignment: .leading
-                                    )
-                                    .padding(.top, 12)
-                                    .padding(.bottom, 12)
-                            }
-                            .frame(
-                                maxWidth: .infinity,
-                                alignment: .leading
-                            )
-                        }
-                    }
-                }
-                .listStyle(InsetGroupedListStyle())
-                .navigationTitle("Blog")
+        TabView {
+            PortfolioNavigationView(
+                AnyView(
+                    BlogView()
+                ),
+                title: "Blog"
+            )
+            .ignoresSafeArea()
+            .tabItem {
+                Label(
+                    "Blog",
+                    systemImage: "doc.text.image.fill"
+                )
+            }
+            
+            PortfolioNavigationView(
+                AnyView(
+                    Text("projecs")
+                ),
+                title: "Projects"
+            )
+            .ignoresSafeArea()
+            .tabItem {
+                Label(
+                    "Projects",
+                    systemImage: "hammer.fill"
+                )
+            }
+            
+            PortfolioNavigationView(
+                AnyView(
+                    Text("background")
+                ),
+                title: "Background"
+            )
+            .ignoresSafeArea()
+            .tabItem {
+                Label(
+                    "Background",
+                    systemImage: "building.2.fill"
+                )
+            }
+            
+            PortfolioNavigationView(
+                AnyView(
+                    Text("me")
+                ),
+                title: "Me"
+            )
+            .ignoresSafeArea()
+            .tabItem {
+                Label(
+                    "About Me",
+                    systemImage: "person.crop.circle.fill"
+                )
             }
         }
     }

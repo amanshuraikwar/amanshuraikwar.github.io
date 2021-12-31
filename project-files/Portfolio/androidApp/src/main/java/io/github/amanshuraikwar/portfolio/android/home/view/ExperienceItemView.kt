@@ -18,16 +18,16 @@ import androidx.compose.ui.graphics.BlendMode
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.unit.dp
 import io.github.amanshuraikwar.portfolio.android.theme.secondary
-import io.github.amanshuraikwar.portfolio.model.ExperienceData
+import io.github.amanshuraikwar.portfolio.model.BackgroundData
 
 @Composable
 fun ExperienceItemView(
     modifier: Modifier = Modifier,
-    experienceData: ExperienceData
+    backgroundData: BackgroundData
 ) {
     Column(modifier) {
         Text(
-            text = experienceData.title,
+            text = backgroundData.title,
             style = MaterialTheme.typography.h6
         )
 
@@ -45,7 +45,7 @@ fun ExperienceItemView(
 
             Text(
                 modifier = Modifier.padding(start = 16.dp),
-                text = experienceData.location,
+                text = backgroundData.location,
                 style = MaterialTheme.typography.body1,
                 color = MaterialTheme.colors.onSurface.secondary
             )
@@ -64,13 +64,13 @@ fun ExperienceItemView(
 
             Text(
                 modifier = Modifier.padding(start = 16.dp),
-                text = experienceData.dateRange,
+                text = backgroundData.dateRange,
                 style = MaterialTheme.typography.body1,
                 color = MaterialTheme.colors.onSurface.secondary
             )
         }
 
-        experienceData.content.forEach { contentItem ->
+        backgroundData.content.forEach { contentItem ->
             Row(
                 modifier = Modifier.padding(top = 16.dp),
                 verticalAlignment = Alignment.Top

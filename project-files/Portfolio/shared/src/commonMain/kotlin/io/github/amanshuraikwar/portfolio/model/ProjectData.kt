@@ -1,6 +1,6 @@
 package io.github.amanshuraikwar.portfolio.model
 
-data class AppData(
+data class ProjectData(
     val id: String,
     val title: String,
     val description: String,

@@ -3,7 +3,7 @@ package com.sample.components
 import androidx.compose.runtime.Composable
 import com.sample.style.WtContent
 import com.sample.style.WtTexts
-import io.github.amanshuraikwar.portfolio.model.AppData
+import io.github.amanshuraikwar.portfolio.model.ProjectData
 import io.github.amanshuraikwar.portfolio.model.AppLink
 import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.dom.AttrBuilderContext
@@ -15,7 +15,7 @@ import org.w3c.dom.HTMLDivElement
 @Composable
 fun Project(
     attrs: AttrBuilderContext<HTMLDivElement>? = null,
-    appData: AppData,
+    projectData: ProjectData,
     isDarkTheme: Boolean,
 ) {
     Div(
@@ -29,7 +29,7 @@ fun Project(
         }
     ) {
         Img(
-            src = appData.artUrl,
+            src = projectData.artUrl,
             attrs = {
                 classes(WtContent.projectArt)
                 style {
@@ -51,7 +51,7 @@ fun Project(
                 }
             }
         ) {
-            Text(appData.title)
+            Text(projectData.title)
         }
 
         Div(
@@ -64,7 +64,7 @@ fun Project(
                 }
             }
         ) {
-            Text(appData.description)
+            Text(projectData.description)
         }
 
         Div(
@@ -77,7 +77,7 @@ fun Project(
             }
         ) {
             Chip(
-                src = if (appData.maintained) {
+                src = if (projectData.maintained) {
                     if (isDarkTheme) {
                         "https://amanshuraikwar.github.io/assets/code_white_24.svg"
                     } else {
@@ -90,7 +90,7 @@ fun Project(
                         "https://amanshuraikwar.github.io/assets/code_off_black_24.svg"
                     }
                 },
-                text = if (appData.maintained) {
+                text = if (projectData.maintained) {
                     "ACTIVELY MAINTAINED"
                 } else {
                     "NO LONGER MAINTAINED"
@@ -109,7 +109,7 @@ fun Project(
                 }
             }
         ) {
-            appData.appLinks.forEach { appLink ->
+            projectData.appLinks.forEach { appLink ->
                 ImgHrefButton(
                     href = when (appLink) {
                         is AppLink.Github -> appLink.repoUrl

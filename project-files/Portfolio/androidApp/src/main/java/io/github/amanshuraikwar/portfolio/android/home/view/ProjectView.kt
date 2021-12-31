@@ -19,14 +19,14 @@ import coil.compose.rememberImagePainter
 import io.github.amanshuraikwar.portfolio.R
 import io.github.amanshuraikwar.portfolio.android.theme.secondary
 import io.github.amanshuraikwar.portfolio.android.ui.ProjectLinkButton
-import io.github.amanshuraikwar.portfolio.model.AppData
+import io.github.amanshuraikwar.portfolio.model.ProjectData
 import io.github.amanshuraikwar.portfolio.model.AppLink
 import java.util.*
 
 @Composable
 fun ProjectView(
     modifier: Modifier = Modifier,
-    appData: AppData,
+    projectData: ProjectData,
     onAppLinkClick: (url: String) -> Unit
 ) {
     Column(
@@ -35,7 +35,7 @@ fun ProjectView(
 
         Image(
             painter = rememberImagePainter(
-                data = appData.artUrl,
+                data = projectData.artUrl,
                 builder = {
                     crossfade(true)
                 }
@@ -56,7 +56,7 @@ fun ProjectView(
         Text(
             modifier = Modifier
                 .padding(top = 16.dp),
-            text = appData.title
+            text = projectData.title
                 .replaceFirstChar {
                     if (it.isLowerCase())
                         it.titlecase(Locale.getDefault())
@@ -70,7 +70,7 @@ fun ProjectView(
         Text(
             modifier = Modifier
                 .padding(top = 12.dp),
-            text = appData.description,
+            text = projectData.description,
             color = MaterialTheme.colors.onSurface.secondary,
             style = MaterialTheme.typography.body1
         )
@@ -80,7 +80,7 @@ fun ProjectView(
                 .align(Alignment.End)
                 .padding(top = 16.dp),
         ) {
-            appData.appLinks.forEach { appLink ->
+            projectData.appLinks.forEach { appLink ->
                 ProjectLinkButton(
                     modifier = Modifier.padding(start = 8.dp),
                     icon = when (appLink) {

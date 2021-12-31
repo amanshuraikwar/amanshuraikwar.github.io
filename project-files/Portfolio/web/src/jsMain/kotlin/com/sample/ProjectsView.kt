@@ -55,7 +55,7 @@ fun ProjectsView(
     ) {
         Projects(
             isDarkTheme = isDarkTheme,
-            apps = porfolioData.apps
+            projects = porfolioData.projects
         )
     }
 

@@ -1,6 +1,6 @@
 package io.github.amanshuraikwar.portfolio.model
 
-data class ExperienceData(
+data class BackgroundData(
     val title: String,
     val location: String,
     val dateRange: String,

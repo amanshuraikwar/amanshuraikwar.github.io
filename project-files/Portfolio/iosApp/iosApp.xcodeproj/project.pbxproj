@@ -20,6 +20,12 @@
 		A5775EF826DF86D80031FB78 /* ProjectMaintainedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5775EF726DF86D80031FB78 /* ProjectMaintainedView.swift */; };
 		A5775EFA26DFAE080031FB78 /* ExperienceItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5775EF926DFAE080031FB78 /* ExperienceItemView.swift */; };
 		A59EBF6F277E133100E60F43 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59EBF6E277E133100E60F43 /* PrimaryButton.swift */; };
+		A59EBF72277ECF6300E60F43 /* BlogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59EBF71277ECF6200E60F43 /* BlogView.swift */; };
+		A59EBF74277ECF9700E60F43 /* BlogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59EBF73277ECF9700E60F43 /* BlogViewModel.swift */; };
+		A59EBF76277ED08100E60F43 /* Di.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59EBF75277ED08100E60F43 /* Di.swift */; };
+		A59EBF78277ED15F00E60F43 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59EBF77277ED15F00E60F43 /* Util.swift */; };
+		A59EBF7A277ED19D00E60F43 /* BlogListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59EBF79277ED19D00E60F43 /* BlogListItemView.swift */; };
+		A59EBF7C277ED52800E60F43 /* PortfolioNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59EBF7B277ED52800E60F43 /* PortfolioNavigationView.swift */; };
 		A5AD9CF3277DF3F0003772B8 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AD9CF2277DF3F0003772B8 /* Font.swift */; };
 		A5AD9CF5277DF897003772B8 /* BlogPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AD9CF4277DF897003772B8 /* BlogPageView.swift */; };
 		A5AD9CF8277DF8D0003772B8 /* BlogPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AD9CF7277DF8D0003772B8 /* BlogPageViewModel.swift */; };
@@ -44,6 +50,12 @@
 		A5775EF726DF86D80031FB78 /* ProjectMaintainedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectMaintainedView.swift; sourceTree = "<group>"; };
 		A5775EF926DFAE080031FB78 /* ExperienceItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceItemView.swift; sourceTree = "<group>"; };
 		A59EBF6E277E133100E60F43 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
+		A59EBF71277ECF6200E60F43 /* BlogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogView.swift; sourceTree = "<group>"; };
+		A59EBF73277ECF9700E60F43 /* BlogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogViewModel.swift; sourceTree = "<group>"; };
+		A59EBF75277ED08100E60F43 /* Di.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Di.swift; sourceTree = "<group>"; };
+		A59EBF77277ED15F00E60F43 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		A59EBF79277ED19D00E60F43 /* BlogListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogListItemView.swift; sourceTree = "<group>"; };
+		A59EBF7B277ED52800E60F43 /* PortfolioNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioNavigationView.swift; sourceTree = "<group>"; };
 		A5AD9CF2277DF3F0003772B8 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		A5AD9CF4277DF897003772B8 /* BlogPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogPageView.swift; sourceTree = "<group>"; };
 		A5AD9CF7277DF8D0003772B8 /* BlogPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogPageViewModel.swift; sourceTree = "<group>"; };
@@ -100,6 +112,7 @@
 		7555FF7D242A565900829871 /* iosApp */ = {
 			isa = PBXGroup;
 			children = (
+				A59EBF70277ECF5900E60F43 /* Blog */,
 				A5AD9CF6277DF8AB003772B8 /* BlogPage */,
 				2152FB032600AC8F00CF470E /* iOSApp.swift */,
 				7555FF82242A565900829871 /* ContentView.swift */,
@@ -115,8 +128,21 @@
 				A5775EF926DFAE080031FB78 /* ExperienceItemView.swift */,
 				A5AD9CF2277DF3F0003772B8 /* Font.swift */,
 				A59EBF6E277E133100E60F43 /* PrimaryButton.swift */,
+				A59EBF75277ED08100E60F43 /* Di.swift */,
+				A59EBF77277ED15F00E60F43 /* Util.swift */,
+				A59EBF7B277ED52800E60F43 /* PortfolioNavigationView.swift */,
 			);
 			path = iosApp;
+			sourceTree = "<group>";
+		};
+		A59EBF70277ECF5900E60F43 /* Blog */ = {
+			isa = PBXGroup;
+			children = (
+				A59EBF71277ECF6200E60F43 /* BlogView.swift */,
+				A59EBF73277ECF9700E60F43 /* BlogViewModel.swift */,
+				A59EBF79277ED19D00E60F43 /* BlogListItemView.swift */,
+			);
+			path = Blog;
 			sourceTree = "<group>";
 		};
 		A5AD9CF6277DF8AB003772B8 /* BlogPage */ = {
@@ -230,15 +256,21 @@
 			files = (
 				A5775EF826DF86D80031FB78 /* ProjectMaintainedView.swift in Sources */,
 				A5775EFA26DFAE080031FB78 /* ExperienceItemView.swift in Sources */,
+				A59EBF76277ED08100E60F43 /* Di.swift in Sources */,
+				A59EBF7A277ED19D00E60F43 /* BlogListItemView.swift in Sources */,
+				A59EBF7C277ED52800E60F43 /* PortfolioNavigationView.swift in Sources */,
 				A506BBE1269DA81500F1C1CF /* PortfolioLinkButton.swift in Sources */,
 				A5AD9CF8277DF8D0003772B8 /* BlogPageViewModel.swift in Sources */,
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
 				A5775EF626DF85C50031FB78 /* ProjectView.swift in Sources */,
 				A506BBDB269C830700F1C1CF /* HomePageView.swift in Sources */,
 				7555FF83242A565900829871 /* ContentView.swift in Sources */,
+				A59EBF72277ECF6300E60F43 /* BlogView.swift in Sources */,
 				A5AD9CF5277DF897003772B8 /* BlogPageView.swift in Sources */,
 				A506BBDF269C895800F1C1CF /* HeadingView.swift in Sources */,
+				A59EBF78277ED15F00E60F43 /* Util.swift in Sources */,
 				A5AD9CF3277DF3F0003772B8 /* Font.swift in Sources */,
+				A59EBF74277ECF9700E60F43 /* BlogViewModel.swift in Sources */,
 				A5775EF426DE7D390031FB78 /* SectionHeader.swift in Sources */,
 				A59EBF6F277E133100E60F43 /* PrimaryButton.swift in Sources */,
 				A56F477526CB8B0A0052858A /* ScreenState.swift in Sources */,

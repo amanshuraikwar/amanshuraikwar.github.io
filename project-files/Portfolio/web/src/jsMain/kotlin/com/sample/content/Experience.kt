@@ -12,7 +12,7 @@ import com.sample.components.TextButton
 import com.sample.style.WtCols
 import com.sample.style.WtOffsets
 import com.sample.style.WtRows
-import io.github.amanshuraikwar.portfolio.model.ExperienceData
+import io.github.amanshuraikwar.portfolio.model.BackgroundData
 import org.jetbrains.compose.web.css.AlignItems
 import org.jetbrains.compose.web.css.DisplayStyle
 import org.jetbrains.compose.web.css.JustifyContent
@@ -23,10 +23,10 @@ import org.jetbrains.compose.web.dom.Div
 
 @Composable
 fun Experience(
-    experience: List<ExperienceData>,
+    background: List<BackgroundData>,
     isDarkTheme: Boolean,
 ) {
-    var displayedList by remember { mutableStateOf(experience.take(2)) }
+    var displayedList by remember { mutableStateOf(background.take(2)) }
 
     Div(
         attrs = {
@@ -61,13 +61,13 @@ fun Experience(
                 }
             }
         ) {
-            if (displayedList.size == experience.size) {
+            if (displayedList.size == background.size) {
                 TextButton(
                     text = "SHOW LESS",
                     buttonStyle = ButtonStyle.SOLID,
                     buttonSize = ButtonSize.NORMAL,
                     onClick = {
-                        displayedList = experience.take(2)
+                        displayedList = background.take(2)
                     }
                 )
             } else {
@@ -76,7 +76,7 @@ fun Experience(
                     buttonStyle = ButtonStyle.SOLID,
                     buttonSize = ButtonSize.NORMAL,
                     onClick = {
-                        displayedList = experience
+                        displayedList = background
                     }
                 )
             }

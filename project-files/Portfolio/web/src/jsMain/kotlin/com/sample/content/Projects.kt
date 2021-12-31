@@ -6,13 +6,13 @@ import com.sample.style.WtCols
 import com.sample.style.WtContent
 import com.sample.style.WtOffsets
 import com.sample.style.WtRows
-import io.github.amanshuraikwar.portfolio.model.AppData
+import io.github.amanshuraikwar.portfolio.model.ProjectData
 import org.jetbrains.compose.web.dom.Div
 
 @Composable
 fun Projects(
     isDarkTheme: Boolean,
-    apps: List<AppData>
+    projects: List<ProjectData>
 ) {
     Div(
         attrs = {
@@ -24,7 +24,7 @@ fun Projects(
         }
     ) {
         if (isDarkTheme) {
-            apps.forEachIndexed { index, appData ->
+            projects.forEachIndexed { index, appData ->
                 Project(
                     attrs = {
                         classes(
@@ -44,18 +44,18 @@ fun Projects(
                             )
                         }
 
-                        if (index != apps.size - 1) {
+                        if (index != projects.size - 1) {
                             classes(
                                 WtContent.projectBottomPadding
                             )
                         }
                     },
-                    appData = appData,
+                    projectData = appData,
                     isDarkTheme = true,
                 )
             }
         } else {
-            apps.forEachIndexed { index, appData ->
+            projects.forEachIndexed { index, appData ->
                 Project(
                     attrs = {
                         classes(
@@ -75,13 +75,13 @@ fun Projects(
                             )
                         }
 
-                        if (index != apps.size - 1) {
+                        if (index != projects.size - 1) {
                             classes(
                                 WtContent.projectBottomPadding
                             )
                         }
                     },
-                    appData = appData,
+                    projectData = appData,
                     isDarkTheme = false,
                 )
             }

@@ -55,7 +55,7 @@ fun BackgroundView(
         }
     ) {
         Experience(
-            experience = porfolioData.experience,
+            background = porfolioData.background,
             isDarkTheme = isDarkTheme,
         )
     }
