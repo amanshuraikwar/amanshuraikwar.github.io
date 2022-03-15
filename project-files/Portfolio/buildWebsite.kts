@@ -83,6 +83,8 @@ try {
     println(e)
 }
 
+File(".") exec "cp -R html/ build/"
+
 println("Deleting build/js...")
 File(".") exec "rm -rf build/js"
 
