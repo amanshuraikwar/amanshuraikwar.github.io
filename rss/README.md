@@ -15,6 +15,12 @@ Generate all feeds locally:
 python3 rss/generate.py
 ```
 
+Run the offline parser tests (the same command used by the nightly workflow):
+
+```sh
+python3 -m unittest discover -s rss/tests -v
+```
+
 The first feed is available at:
 
 `https://amanshuraikwar.github.io/rss/inspiration-grid-photography.xml`

@@ -27,6 +27,9 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Test RSS source parsers
+        run: python3 -m unittest discover -s rss/tests -v
+
       - name: Generate RSS feeds
         run: python3 rss/generate.py
 
