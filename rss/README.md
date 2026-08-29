@@ -16,10 +16,12 @@ The first feed is available at:
 
 ## Add another source
 
-Add a new entry to `sources.json`. It currently supports sources that expose a
-JSON document: `item_path` locates the list of entries, and each value in
-`fields` is a dotted path inside an entry. Set `output_path` beneath the web
-resources `rss` folder, then run the generator and commit the resulting XML.
+Add a new entry to `sources.json`. JSON sources use `item_path` to locate the
+list of entries, and each value in `fields` is a dotted path inside an entry.
+Set `output_path` beneath the web resources `rss` folder, then run the
+generator and commit the resulting XML.
 
-For an HTML-only source, add a small source adapter to `generate.py` rather
-than relying on page-specific selectors in the workflow.
+The Site of Sites feed uses the built-in `wix_repeater_html` parser for its
+server-rendered catalogue. For another HTML-only source, add a small source
+adapter to `generate.py` rather than placing page-specific selectors in the
+workflow.
