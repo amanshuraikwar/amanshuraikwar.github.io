@@ -22,7 +22,7 @@ Just run the kotlin script file buildWebsite.kts, it will spit out the built web
 kotlinc -script buildWebsite.kts
 ```
 
-Make sure you have Kotlin 1.6.0 CLI and Java 11 installed. Or, just run the Build Web HTML & JS Files workflow and download the artifacts.
+Make sure you have Kotlin 1.6.0 CLI and Java 17 installed. Or, just run the Build Web HTML & JS Files workflow and download the artifacts.
 
 ## Building the Android App
 
