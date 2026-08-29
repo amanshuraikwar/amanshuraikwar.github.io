@@ -68,7 +68,7 @@ File(".") exec "./gradlew :shared:cleanTestDebugUnitTest :shared:testDebugUnitTe
 println("Creating directory build/tests/shared/android-jvm...")
 File(".") exec "mkdir build/tests/shared/android-jvm"
 println("Copying contents from shared/build/reports/tests/testDebugUnitTest/ to build/tests/shared/android-jvm/...")
-File(".") exec "cp -R shared/build/reports/tests/testDebugUnitTest/ build/tests/shared/android-jvm/"
+File(".") exec "cp -R shared/build/reports/tests/testDebugUnitTest/. build/tests/shared/android-jvm/"
 
 try {
     println("Running tests in :shared for Js Browser...")
@@ -76,14 +76,14 @@ try {
     println("Creating directory build/tests/shared/js-browser...")
     File(".") exec "mkdir build/tests/shared/js-browser"
     println("Copying contents from shared/build/reports/tests/jsBrowserTest/ to build/tests/shared/js-browser/...")
-    File(".") exec "cp -R shared/build/reports/tests/jsBrowserTest/ build/tests/shared/js-browser/"
+    File(".") exec "cp -R shared/build/reports/tests/jsBrowserTest/. build/tests/shared/js-browser/"
 } catch (e: Exception) {
     // do nothing
     println("Something went wrong while running tests in :shared for Js Browser.")
     println(e)
 }
 
-File(".") exec "cp -R html/ build/"
+File(".") exec "cp -R html/. build/"
 
 println("Deleting build/js...")
 File(".") exec "rm -rf build/js"
@@ -261,7 +261,7 @@ fun buildAndCopyDirectoryContents(dirName: String, deleteAssets: Boolean = true)
     println("Creating directory build/$dirName...")
     File(".") exec "mkdir build/$dirName"
     println("Copying contents from web/build/distributions/ to build/$dirName/...")
-    File(".") exec "cp -R web/build/distributions/ build/$dirName/"
+    File(".") exec "cp -R web/build/distributions/. build/$dirName/"
 
     if (deleteAssets) {
         println("Deleting directory build/$dirName/assets...")
