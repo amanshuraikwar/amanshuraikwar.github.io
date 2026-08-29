@@ -79,6 +79,15 @@ fun main() {
                         themeRepository.setSelectedThemeColorsName(it)
                     },
                 )
+                is PageData.RssFeeds -> RssFeedsView(
+                    (pageData as PageData.RssFeeds).portfolioData,
+                    themeColorsName = themeColorsName,
+                    isDarkTheme = themeColors.isDark,
+                    themeData = themeData,
+                    onThemeBtnClick = {
+                        themeRepository.setSelectedThemeColorsName(it)
+                    },
+                )
                 is PageData.Background -> BackgroundView(
                     (pageData as PageData.Background).portfolioData,
                     themeColorsName = themeColorsName,

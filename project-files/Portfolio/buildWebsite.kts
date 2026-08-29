@@ -14,6 +14,9 @@ generateEmptyBlogListFileJson()
 generateEmptyDataStoreFile("PageType.PROJECTS")
 buildAndCopyDirectoryContents("projects")
 
+generateEmptyDataStoreFile("PageType.RSS_FEEDS")
+buildAndCopyDirectoryContents("feeds")
+
 generateEmptyDataStoreFile("PageType.BACKGROUND")
 buildAndCopyDirectoryContents("background")
 

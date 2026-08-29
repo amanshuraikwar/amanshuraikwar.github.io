@@ -19,6 +19,7 @@ class WebPageBuildPortfolioRepository(
             )
             PageType.MD -> PageData.Md(getPortfolioData(), dataStore.getData())
             PageType.PROJECTS -> PageData.Projects(getPortfolioData())
+            PageType.RSS_FEEDS -> PageData.RssFeeds(getPortfolioData())
             PageType.BACKGROUND -> PageData.Background(getPortfolioData())
             PageType.ABOUT_ME -> PageData.AboutMe(getPortfolioData())
         }

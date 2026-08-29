@@ -17,6 +17,10 @@ sealed class PageData {
         val portfolioData: PortfolioData,
     ) : PageData()
 
+    data class RssFeeds(
+        val portfolioData: PortfolioData,
+    ) : PageData()
+
     data class Background(
         val portfolioData: PortfolioData,
     ) : PageData()
