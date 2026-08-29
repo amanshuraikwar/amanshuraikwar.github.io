@@ -1,0 +1,23 @@
+{
+  "feeds": [
+    {
+      "id": "inspiration-grid-photography",
+      "title": "Inspiration Grid — Photography",
+      "description": "Recent photography inspiration selected by Inspiration Grid.",
+      "site_url": "https://theinspirationgrid.com/category/photography/",
+      "feed_url": "https://amanshuraikwar.github.io/rss/inspiration-grid-photography.xml",
+      "source_url": "https://theinspirationgrid.com/page-data/category/photography/page-data.json",
+      "item_path": "result.pageContext.postsAndEditorials.nodes",
+      "link_base_url": "https://theinspirationgrid.com",
+      "output_path": "project-files/Portfolio/web/src/jsMain/resources/rss/inspiration-grid-photography.xml",
+      "fields": {
+        "title": "title",
+        "link": "link",
+        "description": "excerpt",
+        "categories": "categories.nodes",
+        "category_name": "name",
+        "image": "featuredImage.sourceUrl"
+      }
+    }
+  ]
+}

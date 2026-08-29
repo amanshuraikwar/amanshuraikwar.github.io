@@ -39,5 +39,14 @@ Coming soon...
 
 [Go to the Web App](https://amanshuraikwar.github.io)
 
+## RSS feeds
+
+Static RSS feeds are published under [`/rss/`](https://amanshuraikwar.github.io/rss/).
+The current photography feed is available at
+[`/rss/inspiration-grid-photography.xml`](https://amanshuraikwar.github.io/rss/inspiration-grid-photography.xml).
+See [`rss/README.md`](rss/README.md) to generate it locally or add another
+JSON source. GitHub Actions checks all configured feeds every six hours and
+deploys the website when an item changes.
+
 ## Special Thanks :)
 Special thanks to [John O'Reilly's](https://github.com/joreilly) [People in Space repo](https://github.com/joreilly/PeopleInSpace), which I found extremely helpful for getting started with KMM.
