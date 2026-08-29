@@ -53,7 +53,7 @@ generateEmptyDataStoreFile("PageType.HOME")
 buildAndCopyDirectoryContents("home", deleteAssets = false)
 
 println("Copying contents of build/home/* to build/...")
-File(".") exec "cp -R build/home/ build/"
+File(".") exec "cp -R build/home/. build/"
 
 println("Deleting build/home...")
 File(".") exec "rm -rf build/home"
