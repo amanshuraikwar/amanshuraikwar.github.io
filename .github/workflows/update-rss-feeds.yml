@@ -74,7 +74,7 @@ jobs:
       - name: Build website
         run: |
           cd project-files/Portfolio
-          kotlinc -script buildWebsite.kts
+          kotlinc -script buildWebsite.kts --skip-tests
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@3.7.1

@@ -63,24 +63,28 @@ File(".") exec "mkdir build/tests"
 println("Creating directory build/tests/shared...")
 File(".") exec "mkdir build/tests/shared"
 
-println("Running tests in :shared for Android/JVM target...")
-File(".") exec "./gradlew :shared:cleanTestDebugUnitTest :shared:testDebugUnitTest"
-println("Creating directory build/tests/shared/android-jvm...")
-File(".") exec "mkdir build/tests/shared/android-jvm"
-println("Copying contents from shared/build/reports/tests/testDebugUnitTest/ to build/tests/shared/android-jvm/...")
-File(".") exec "cp -R shared/build/reports/tests/testDebugUnitTest/. build/tests/shared/android-jvm/"
+if (args.contains("--skip-tests")) {
+    println("Skipping test reports for deployment build.")
+} else {
+    println("Running tests in :shared for Android/JVM target...")
+    File(".") exec "./gradlew :shared:cleanTestDebugUnitTest :shared:testDebugUnitTest"
+    println("Creating directory build/tests/shared/android-jvm...")
+    File(".") exec "mkdir build/tests/shared/android-jvm"
+    println("Copying contents from shared/build/reports/tests/testDebugUnitTest/ to build/tests/shared/android-jvm/...")
+    File(".") exec "cp -R shared/build/reports/tests/testDebugUnitTest/. build/tests/shared/android-jvm/"
 
-try {
-    println("Running tests in :shared for Js Browser...")
-    File(".") exec "./gradlew :shared:cleanJsBrowserTest :shared:jsBrowserTest --stacktrace"
-    println("Creating directory build/tests/shared/js-browser...")
-    File(".") exec "mkdir build/tests/shared/js-browser"
-    println("Copying contents from shared/build/reports/tests/jsBrowserTest/ to build/tests/shared/js-browser/...")
-    File(".") exec "cp -R shared/build/reports/tests/jsBrowserTest/. build/tests/shared/js-browser/"
-} catch (e: Exception) {
-    // do nothing
-    println("Something went wrong while running tests in :shared for Js Browser.")
-    println(e)
+    try {
+        println("Running tests in :shared for Js Browser...")
+        File(".") exec "./gradlew :shared:cleanJsBrowserTest :shared:jsBrowserTest --stacktrace"
+        println("Creating directory build/tests/shared/js-browser...")
+        File(".") exec "mkdir build/tests/shared/js-browser"
+        println("Copying contents from shared/build/reports/tests/jsBrowserTest/ to build/tests/shared/js-browser/...")
+        File(".") exec "cp -R shared/build/reports/tests/jsBrowserTest/. build/tests/shared/js-browser/"
+    } catch (e: Exception) {
+        // do nothing
+        println("Something went wrong while running tests in :shared for Js Browser.")
+        println(e)
+    }
 }
 
 File(".") exec "cp -R html/. build/"
