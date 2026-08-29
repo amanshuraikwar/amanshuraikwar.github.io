@@ -1,0 +1,123 @@
+{
+	"blog_data": [
+            {
+                "text": "How to use highlight.js in your Jetpack Compose Web project",
+                "type": "H1"
+            },
+            {
+                "text": "December 14, 2021",
+                "type": "DATE"
+            },
+            {
+                "text": "If you are building your web app using Jetpack Compose for Web and want to use highlight.js, this is the blog for you.",
+                "type": "P"
+            },
+            {
+                "text": "Integrating in the index.html file",
+                "type": "H3"
+            },
+            {
+                "text": "If we follow the official documentation if highlight.js, it instructs us to add the following lines in our html file.",
+                "type": "P"
+            },
+            {
+                "language": "html",
+                "type": "CODE",
+                "code": "<link rel=\"stylesheet\"\n      href=\"//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/default.min.css\">\n<script src=\"//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js\"></script>\n<script>hljs.highlightAll();</script>\n"
+            },            {
+                "text": "In out Jetpack Compose Web project, this file is usually located here:",
+                "type": "P"
+            },
+            {
+                "language": "shell",
+                "type": "CODE",
+                "code": "path_to_you_web_module_root/src/jsMain/resources/index.html\n"
+            },            {
+                "text": "After adding this in our index.html file, it should automatically style our html code elements. We can also add a language specific class to the code block. In Jetpack Compose Web you can do it like this:",
+                "type": "P"
+            },
+            {
+                "language": "kotlin",
+                "type": "CODE",
+                "code": "Pre {\n    Code(\n        attrs = {\n            classes(\"language-kotlin\")\n        }\n    ) {\n        Text(\"val x = 4\n\")\n        Text(\"more code here...\n\")\n    }\n}\n"
+            },            {
+                "text": "No changes to the web page?",
+                "type": "H3"
+            },
+            {
+                "text": "Ideally, after doing this, highlight.js should work, but you will observe that this change anything to your content. The reason being, above integration steps are for static web pages.",
+                "type": "P"
+            },
+            {
+                "text": "For any dynamically generated web pages, we need to call this function manually after the code DOM element is added to the web page:",
+                "type": "P"
+            },
+            {
+                "language": "js",
+                "type": "CODE",
+                "code": "hljs.highlightElement(el);\n"
+            },            {
+                "text": "Or if we wanna do it for all of the code elements at once, we can do something like this as mentioned in the official documentation:",
+                "type": "P"
+            },
+            {
+                "language": "js",
+                "type": "CODE",
+                "code": "document.addEventListener('DOMContentLoaded', (event) => {\n  document.querySelectorAll('pre code').forEach((el) => {\n    hljs.highlightElement(el);\n  });\n});\n"
+            },            {
+                "text": "But since we are using Jetpack Compose for Web, our DOM tree is managed by the compose runtime, so we need to call this js function everytime our code UI element re-composes.",
+                "type": "P"
+            },
+            {
+                "text": "Calling highlight.js from our Compose code",
+                "type": "H3"
+            },
+            {
+                "text": "To be able to call highlight.js from our Compose code, we first need add it as a gradle dependency. In your web module's build.gradle(.kts) file, add the following npm dependency.",
+                "type": "P"
+            },
+            {
+                "language": "kotlin",
+                "type": "CODE",
+                "code": "kotlin {\n    sourceSets {\n        val jsMain by getting {\n            dependencies {\n                implementation(npm(\"highlight.js\", \"11.3.1\"))\n            }\n        }\n    }\n}\n"
+            },            {
+                "text": "Since we have added it as an npm dependency, we no longer need to add the scripts in our index.html file. To be able to call the js code from this dependency, we need to define a JsModule in our code. Create the following class in your web module.",
+                "type": "P"
+            },
+            {
+                "language": "kotlin",
+                "type": "CODE",
+                "code": "import org.w3c.dom.HTMLElement\n\n@JsName(\"hljs\")\n@JsModule(\"highlight.js\")\n@JsNonModule\nexternal class HighlightJs {\n    companion object {\n        fun highlightElement(block: HTMLElement)\n    }\n}\n"
+            },            {
+                "text": "Now, we need to call this function everytime our code dom element re-composes. Update the previous compose code like below:",
+                "type": "P"
+            },
+            {
+                "language": "kotlin",
+                "type": "CODE",
+                "code": "@Composable\nfun HighlightedCode(code: String) {\n    Pre {\n        Code(\n            attrs = {\n                classes(\"language-kotlin\", \"hljs\")\n            }\n        ) {\n            Text(code)\n\n            // A side effect of composition \n            // that runs on every successful recomposition \n            // if key changes.\n            DomSideEffect(code) {\n                HighlightJs.highlightElement(it)\n            }\n        }\n    }\n}\n"
+            },            {
+                "text": "References",
+                "type": "H3"
+            },
+            {
+                "text": "If I got something wrong, feel free to DM me on twitter to correct me. Here are some of the references, happy composing :)",
+                "type": "P"
+            },
+            {
+                "text": "Highlight.js",
+                "url": "https://highlightjs.org/",
+                "type": "BTN"
+            },
+            {
+                "text": "compose-jb example",
+                "url": "https://github.com/JetBrains/compose-jb/tree/master/examples/web-landing",
+                "type": "BTN"
+            },
+            {
+                "text": "Go To My Twitter",
+                "url": "https://twitter.com/amanshuraikwar_",
+                "type": "BTN"
+            }
+	]
+}
