@@ -1,0 +1,20 @@
+name: Nightly RSS refresh
+
+on:
+  schedule:
+    # GitHub Actions schedules use UTC. This runs once each night at 02:23 UTC.
+    - cron: "23 2 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: nightly-rss-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh-and-deploy:
+    name: Refresh feeds and deploy Pages
+    uses: ./.github/workflows/update-rss-feeds.yml
+    secrets: inherit

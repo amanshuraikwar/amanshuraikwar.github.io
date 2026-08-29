@@ -1,4 +1,36 @@
 {
+  "source_catalog": [
+    {
+      "id": "inspiration-grid-photography",
+      "source_url": "https://theinspirationgrid.com/category/photography/",
+      "feed_url": "https://amanshuraikwar.github.io/rss/inspiration-grid-photography.xml",
+      "status": "active"
+    },
+    {
+      "id": "inspiration-grid-illustration",
+      "source_url": "https://theinspirationgrid.com/category/illustration/",
+      "feed_url": "https://amanshuraikwar.github.io/rss/inspiration-grid-illustration.xml",
+      "status": "active"
+    },
+    {
+      "id": "instagram-steve-mccurry-official",
+      "source_url": "https://www.instagram.com/stevemccurryofficial/",
+      "status": "requires_authenticated_source",
+      "note": "Instagram does not expose this profile's posts to the unauthenticated generator. Configure an authorized Instagram Graph API source before enabling this feed."
+    },
+    {
+      "id": "site-of-sites-websites",
+      "source_url": "https://www.siteofsites.co/?p=1",
+      "feed_url": "https://amanshuraikwar.github.io/rss/site-of-sites-websites.xml",
+      "status": "active"
+    },
+    {
+      "id": "inspiration-grid-industrial-design",
+      "source_url": "https://theinspirationgrid.com/category/industrial-design/",
+      "feed_url": "https://amanshuraikwar.github.io/rss/inspiration-grid-industrial-design.xml",
+      "status": "active"
+    }
+  ],
   "feeds": [
     {
       "id": "inspiration-grid-photography",

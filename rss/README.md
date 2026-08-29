@@ -4,6 +4,11 @@
 generated files live in `project-files/Portfolio/web/src/jsMain/resources/rss/`,
 which means the website build publishes them at `/rss/`.
 
+`sources.json` is also the repository's source catalogue. Its `source_catalog`
+array records every requested website, including sources that cannot currently
+be generated automatically (for example, an Instagram account without an
+authorized API source). Only entries in `feeds` are generated.
+
 Generate all feeds locally:
 
 ```sh

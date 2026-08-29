@@ -1,9 +1,8 @@
 name: Update RSS feeds
 
 on:
-  schedule:
-    - cron: "17 */6 * * *"
   workflow_dispatch:
+  workflow_call:
 
 permissions:
   contents: write
@@ -52,7 +51,7 @@ jobs:
 
   deploy:
     needs: update-feeds
-    if: needs.update-feeds.outputs.changed == 'true'
+    if: ${{ !failure() && !cancelled() }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout updated source

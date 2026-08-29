@@ -51,8 +51,9 @@ The industrial design feed is available at
 The Site of Sites feed is available at
 [`/rss/site-of-sites-websites.xml`](https://amanshuraikwar.github.io/rss/site-of-sites-websites.xml).
 See [`rss/README.md`](rss/README.md) to generate it locally or add another
-JSON source. GitHub Actions checks all configured feeds every six hours and
-deploys the website when an item changes.
+JSON source. The repository's `rss/sources.json` catalogue records every
+requested website. GitHub Actions refreshes all active feeds and deploys the
+website nightly at 02:23 UTC.
 
 ## Special Thanks :)
 Special thanks to [John O'Reilly's](https://github.com/joreilly) [People in Space repo](https://github.com/joreilly/PeopleInSpace), which I found extremely helpful for getting started with KMM.
