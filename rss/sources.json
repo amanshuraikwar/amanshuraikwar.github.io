@@ -56,6 +56,25 @@
         "category_name": "name",
         "image": "image"
       }
+    },
+    {
+      "id": "inspiration-grid-industrial-design",
+      "title": "Inspiration Grid — Industrial Design",
+      "description": "Recent industrial design inspiration selected by Inspiration Grid.",
+      "site_url": "https://theinspirationgrid.com/category/industrial-design/",
+      "feed_url": "https://amanshuraikwar.github.io/rss/inspiration-grid-industrial-design.xml",
+      "source_url": "https://theinspirationgrid.com/page-data/category/industrial-design/page-data.json",
+      "item_path": "result.pageContext.postsAndEditorials.nodes",
+      "link_base_url": "https://theinspirationgrid.com",
+      "output_path": "project-files/Portfolio/web/src/jsMain/resources/rss/inspiration-grid-industrial-design.xml",
+      "fields": {
+        "title": "title",
+        "link": "link",
+        "description": "excerpt",
+        "categories": "categories.nodes",
+        "category_name": "name",
+        "image": "featuredImage.sourceUrl"
+      }
     }
   ]
 }

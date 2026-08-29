@@ -46,6 +46,8 @@ The current photography feed is available at
 [`/rss/inspiration-grid-photography.xml`](https://amanshuraikwar.github.io/rss/inspiration-grid-photography.xml).
 The illustration feed is available at
 [`/rss/inspiration-grid-illustration.xml`](https://amanshuraikwar.github.io/rss/inspiration-grid-illustration.xml).
+The industrial design feed is available at
+[`/rss/inspiration-grid-industrial-design.xml`](https://amanshuraikwar.github.io/rss/inspiration-grid-industrial-design.xml).
 The Site of Sites feed is available at
 [`/rss/site-of-sites-websites.xml`](https://amanshuraikwar.github.io/rss/site-of-sites-websites.xml).
 See [`rss/README.md`](rss/README.md) to generate it locally or add another

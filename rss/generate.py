@@ -14,6 +14,7 @@ import sys
 import urllib.error
 import urllib.request
 import xml.etree.ElementTree as ET
+from html import unescape
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urljoin
@@ -190,7 +191,7 @@ def source_items(feed: dict[str, object]) -> list[object]:
 
 def add_text(parent: ET.Element, tag: str, value: object | None) -> ET.Element:
     element = ET.SubElement(parent, tag)
-    element.text = "" if value is None else str(value).strip()
+    element.text = "" if value is None else unescape(str(value).strip())
     return element
 
 
