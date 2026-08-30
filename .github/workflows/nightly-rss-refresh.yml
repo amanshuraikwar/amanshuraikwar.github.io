@@ -2,8 +2,9 @@ name: Nightly RSS refresh
 
 on:
   schedule:
-    # GitHub Actions schedules use UTC. This runs once each night at 02:23 UTC.
-    - cron: "23 2 * * *"
+    # GitHub Actions schedules use UTC. First run: 2026-08-30 06:50 UTC;
+    # subsequent runs occur every 24 hours at the same time.
+    - cron: "50 6 * * *"
   workflow_dispatch:
 
 permissions:
