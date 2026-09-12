@@ -6,32 +6,11 @@ on:
     branches:
       - trunk
 
+permissions:
+  contents: write
+
 jobs:
-  web-build-and-deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2.3.1
-        
-      - name: Set up JDK 17
-        uses: actions/setup-java@v4
-        with:
-          distribution: temurin
-          java-version: "17"
-
-      - name: Set up Kotlin 1.6.0
-        uses: fwilhe2/setup-kotlin@main
-        with:
-          version: 1.6.0
-          
-      - name: Build Web HTML & JS Files
-        run: |
-          cd project-files/Portfolio
-          kotlinc -script buildWebsite.kts -- --skip-tests
-
-      - name: Deploy to Github Pages
-        uses: JamesIves/github-pages-deploy-action@3.7.1
-        with:
-          branch: gh-pages
-          folder: project-files/Portfolio/build
-          
+  refresh-and-deploy:
+    name: Refresh feeds and deploy Pages
+    uses: ./.github/workflows/update-rss-feeds.yml
+    secrets: inherit
