@@ -5,7 +5,7 @@ on:
   workflow_call:
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
   group: update-rss-feeds
@@ -14,13 +14,11 @@ concurrency:
 jobs:
   update-feeds:
     runs-on: ubuntu-latest
-    outputs:
-      changed: ${{ steps.changes.outputs.changed }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          ref: trunk
+          ref: ${{ github.sha }}
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -33,34 +31,30 @@ jobs:
       - name: Generate RSS feeds
         run: python3 rss/generate.py
 
-      - name: Check for feed changes
-        id: changes
-        run: |
-          if git diff --quiet -- project-files/Portfolio/web/src/jsMain/resources/rss; then
-            echo "changed=false" >> "$GITHUB_OUTPUT"
-          else
-            echo "changed=true" >> "$GITHUB_OUTPUT"
-          fi
-
-      - name: Commit updated feeds
-        if: steps.changes.outputs.changed == 'true'
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add project-files/Portfolio/web/src/jsMain/resources/rss
-          git commit -m "chore: update RSS feeds"
-          git pull --rebase origin trunk
-          git push origin HEAD:trunk
+      - name: Upload generated feeds
+        uses: actions/upload-artifact@v4
+        with:
+          name: rss-feeds
+          path: project-files/Portfolio/web/src/jsMain/resources/rss/*.xml
+          if-no-files-found: error
+          retention-days: 1
 
   deploy:
     needs: update-feeds
-    if: ${{ !failure() && !cancelled() }}
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
-      - name: Checkout updated source
+      - name: Checkout source
         uses: actions/checkout@v4
         with:
-          ref: trunk
+          ref: ${{ github.sha }}
+
+      - name: Download generated feeds
+        uses: actions/download-artifact@v4
+        with:
+          name: rss-feeds
+          path: project-files/Portfolio/web/src/jsMain/resources/rss
 
       - name: Set up JDK 17
         uses: actions/setup-java@v4
@@ -77,6 +71,13 @@ jobs:
         run: |
           cd project-files/Portfolio
           kotlinc -script buildWebsite.kts -- --skip-tests
+
+      - name: Verify generated feeds are included in the website
+        run: |
+          test -s project-files/Portfolio/build/index.html
+          for feed in project-files/Portfolio/web/src/jsMain/resources/rss/*.xml; do
+            cmp "$feed" "project-files/Portfolio/build/rss/$(basename "$feed")"
+          done
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@3.7.1

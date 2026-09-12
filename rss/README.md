@@ -21,6 +21,21 @@ Run the offline parser tests (the same command used by the nightly workflow):
 python3 -m unittest discover -s rss/tests -v
 ```
 
+## Automated refresh and deployment
+
+The nightly workflow runs daily at 06:50 UTC (GitHub may delay scheduled runs).
+It tests the parsers, generates all feeds, and uploads the XML as a workflow
+artifact. The deployment job downloads those feeds before building the website,
+checks that the built feeds match the generated files, and publishes to
+`gh-pages`. Both jobs check out the same source commit.
+
+Generated updates are not committed to `trunk`, so the workflow works with
+pull-request-only branch protection. The checked-in XML remains a snapshot for
+local builds. Deployments triggered by a push to `trunk` or a manual Pages
+deployment use the same refresh workflow to avoid republishing old snapshots.
+Refresh and deployment runs share a concurrency group to prevent overlapping
+publishes. If feed generation fails, deployment is skipped.
+
 The first feed is available at:
 
 `https://amanshuraikwar.github.io/rss/inspiration-grid-photography.xml`
