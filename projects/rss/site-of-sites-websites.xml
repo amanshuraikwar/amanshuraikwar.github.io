@@ -385,5 +385,16 @@
       <media:content url="https://static.wixstatic.com/media/ef5d4a_6756e40ca3734690aa82cdb01343a1dc~mv2.png" medium="image" />
       <media:thumbnail url="https://static.wixstatic.com/media/ef5d4a_6756e40ca3734690aa82cdb01343a1dc~mv2.png" />
     </item>
+    <item>
+      <title>Craftworkds</title>
+      <link>https://www.siteofsites.co/websites/craftworkds</link>
+      <guid isPermaLink="true">https://www.siteofsites.co/websites/craftworkds</guid>
+      <description>Featured by Site of Sites in 06/2026. Original website: https://studio-craftworks.com/</description>
+      <category>Design</category>
+      <category>Portfolio</category>
+      <category>Creative coding</category>
+      <media:content url="https://static.wixstatic.com/media/ef5d4a_c27a39618f55434089406233ca52634a~mv2.png" medium="image" />
+      <media:thumbnail url="https://static.wixstatic.com/media/ef5d4a_c27a39618f55434089406233ca52634a~mv2.png" />
+    </item>
   </channel>
 </rss>

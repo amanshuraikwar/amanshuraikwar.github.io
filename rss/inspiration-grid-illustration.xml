@@ -7,6 +7,26 @@
     <generator>amanshuraikwar.github.io RSS generator</generator>
     <atom:link href="https://amanshuraikwar.github.io/rss/inspiration-grid-illustration.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Visual Overload: Editorial Illustrations by DAQ</title>
+      <link>https://theinspirationgrid.com/visual-overload-editorial-illustrations-by-daq/</link>
+      <guid isPermaLink="true">https://theinspirationgrid.com/visual-overload-editorial-illustrations-by-daq/</guid>
+      <description>Barcelona-based image-making studio DAQ creates bold editorial illustrations packed with saturated color, surreal forms and visual ideas that demand attention.</description>
+      <category>Art</category>
+      <category>Illustration</category>
+      <media:content url="https://inspgr.id/app/uploads/2026/09/illustration-daq-studio-feature.jpg" medium="image" />
+      <media:thumbnail url="https://inspgr.id/app/uploads/2026/09/illustration-daq-studio-feature.jpg" />
+    </item>
+    <item>
+      <title>Bold, Bouncy Lettering Creations by Mickt Flior</title>
+      <link>https://theinspirationgrid.com/bold-bouncy-lettering-creations-by-mickt-flior/</link>
+      <guid isPermaLink="true">https://theinspirationgrid.com/bold-bouncy-lettering-creations-by-mickt-flior/</guid>
+      <description>Brazilian-born illustrator and multidisciplinary designer Mickt Flior has a real talent for turning words into bold visual pieces.</description>
+      <category>Illustration</category>
+      <category>Typography</category>
+      <media:content url="https://inspgr.id/app/uploads/2026/09/lettering-mickt-flior-feature.jpg" medium="image" />
+      <media:thumbnail url="https://inspgr.id/app/uploads/2026/09/lettering-mickt-flior-feature.jpg" />
+    </item>
+    <item>
       <title>Soft Shapes and Silly Situations: 3D Illustrations by Qingyu Du</title>
       <link>https://theinspirationgrid.com/soft-shapes-and-silly-situations-3d-illustrations-by-qingyu-du/</link>
       <guid isPermaLink="true">https://theinspirationgrid.com/soft-shapes-and-silly-situations-3d-illustrations-by-qingyu-du/</guid>
@@ -306,26 +326,6 @@
       <category>Pop Culture</category>
       <media:content url="https://inspgr.id/app/uploads/2026/07/illustration-hanna-marchanka-feature.jpg" medium="image" />
       <media:thumbnail url="https://inspgr.id/app/uploads/2026/07/illustration-hanna-marchanka-feature.jpg" />
-    </item>
-    <item>
-      <title>Quirky Inflated 3D Characters by Josh McKenna</title>
-      <link>https://theinspirationgrid.com/quirky-inflated-3d-characters-by-josh-mckenna/</link>
-      <guid isPermaLink="true">https://theinspirationgrid.com/quirky-inflated-3d-characters-by-josh-mckenna/</guid>
-      <description>After more than a decade working as a freelance illustrator, London-based artist and designer Josh McKenna is embracing a playful new direction.</description>
-      <category>Art</category>
-      <category>Illustration</category>
-      <media:content url="https://inspgr.id/app/uploads/2026/07/3d-josh-mckenna-feature.jpg" medium="image" />
-      <media:thumbnail url="https://inspgr.id/app/uploads/2026/07/3d-josh-mckenna-feature.jpg" />
-    </item>
-    <item>
-      <title>Handcrafted Worlds: Layered Papercut Art by Owen Gildersleeve</title>
-      <link>https://theinspirationgrid.com/handcrafted-worlds-layered-papercut-art-by-owen-gildersleeve/</link>
-      <guid isPermaLink="true">https://theinspirationgrid.com/handcrafted-worlds-layered-papercut-art-by-owen-gildersleeve/</guid>
-      <description>UK-based artist and designer Owen Gildersleeve has spent more than 15 years pushing the possibilities of paper, transforming simple sheets of card into layered illustrations filled with depth, texture and light.</description>
-      <category>Art</category>
-      <category>Illustration</category>
-      <media:content url="https://inspgr.id/app/uploads/2026/07/art-owen-gildersleeve-feature.jpg" medium="image" />
-      <media:thumbnail url="https://inspgr.id/app/uploads/2026/07/art-owen-gildersleeve-feature.jpg" />
     </item>
   </channel>
 </rss>
