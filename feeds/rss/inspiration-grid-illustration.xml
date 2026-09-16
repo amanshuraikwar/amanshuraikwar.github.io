@@ -7,6 +7,16 @@
     <generator>amanshuraikwar.github.io RSS generator</generator>
     <atom:link href="https://amanshuraikwar.github.io/rss/inspiration-grid-illustration.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Trace City: Imaginary Architecture by Takaaki Yagi</title>
+      <link>https://theinspirationgrid.com/trace-city-imaginary-architecture-by-takaaki-yagi/</link>
+      <guid isPermaLink="true">https://theinspirationgrid.com/trace-city-imaginary-architecture-by-takaaki-yagi/</guid>
+      <description>Tokyo-based artist and designer Takaaki Yagi builds cities that don’t exist, using nothing but the surface of paper that’s already been used up.</description>
+      <category>Art</category>
+      <category>Illustration</category>
+      <media:content url="https://inspgr.id/app/uploads/2026/09/art-takaaki-yagi-feature.jpg" medium="image" />
+      <media:thumbnail url="https://inspgr.id/app/uploads/2026/09/art-takaaki-yagi-feature.jpg" />
+    </item>
+    <item>
       <title>Visual Overload: Editorial Illustrations by DAQ</title>
       <link>https://theinspirationgrid.com/visual-overload-editorial-illustrations-by-daq/</link>
       <guid isPermaLink="true">https://theinspirationgrid.com/visual-overload-editorial-illustrations-by-daq/</guid>
@@ -315,17 +325,6 @@
       <category>Illustration</category>
       <media:content url="https://inspgr.id/app/uploads/2026/07/art-andre-calvo-feature.jpg" medium="image" />
       <media:thumbnail url="https://inspgr.id/app/uploads/2026/07/art-andre-calvo-feature.jpg" />
-    </item>
-    <item>
-      <title>Fragmented Portraits and Noir Symbolism: Illustrations by Hanna Marchanka</title>
-      <link>https://theinspirationgrid.com/fragmented-portraits-and-noir-symbolism-illustrations-by-hanna-marchanka/</link>
-      <guid isPermaLink="true">https://theinspirationgrid.com/fragmented-portraits-and-noir-symbolism-illustrations-by-hanna-marchanka/</guid>
-      <description>Belarusian illustrator and poster artist Hanna Marchanka creates powerful images where beauty, tension and symbolism often occupy the same frame.</description>
-      <category>Art</category>
-      <category>Illustration</category>
-      <category>Pop Culture</category>
-      <media:content url="https://inspgr.id/app/uploads/2026/07/illustration-hanna-marchanka-feature.jpg" medium="image" />
-      <media:thumbnail url="https://inspgr.id/app/uploads/2026/07/illustration-hanna-marchanka-feature.jpg" />
     </item>
   </channel>
 </rss>
