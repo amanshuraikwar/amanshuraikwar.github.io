@@ -7,6 +7,16 @@
     <generator>amanshuraikwar.github.io RSS generator</generator>
     <atom:link href="https://amanshuraikwar.github.io/rss/inspiration-grid-illustration.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Botanical Studies: Intricate Floral Illustrations by Lina Kusaite</title>
+      <link>https://theinspirationgrid.com/botanical-studies-intricate-floral-illustrations-by-lina-kusaite/</link>
+      <guid isPermaLink="true">https://theinspirationgrid.com/botanical-studies-intricate-floral-illustrations-by-lina-kusaite/</guid>
+      <description>Brussels-based illustrator and eco-artist Lina Kusaite creates layered botanical compositions that transform flowers, leaves and seed pods into intricate studies of color, texture and rhythm.</description>
+      <category>Art</category>
+      <category>Illustration</category>
+      <media:content url="https://inspgr.id/app/uploads/2026/09/illustration-lina-kusaite-feature.jpg" medium="image" />
+      <media:thumbnail url="https://inspgr.id/app/uploads/2026/09/illustration-lina-kusaite-feature.jpg" />
+    </item>
+    <item>
       <title>Trace City: Imaginary Architecture by Takaaki Yagi</title>
       <link>https://theinspirationgrid.com/trace-city-imaginary-architecture-by-takaaki-yagi/</link>
       <guid isPermaLink="true">https://theinspirationgrid.com/trace-city-imaginary-architecture-by-takaaki-yagi/</guid>
@@ -315,16 +325,6 @@
       <category>Vehicle Design</category>
       <media:content url="https://inspgr.id/app/uploads/2026/07/3d-auhapwrd-feature.jpg" medium="image" />
       <media:thumbnail url="https://inspgr.id/app/uploads/2026/07/3d-auhapwrd-feature.jpg" />
-    </item>
-    <item>
-      <title>Surreal Collages and Visual Explorations by André Calvo</title>
-      <link>https://theinspirationgrid.com/surreal-collages-and-visual-explorations-by-andre-calvo/</link>
-      <guid isPermaLink="true">https://theinspirationgrid.com/surreal-collages-and-visual-explorations-by-andre-calvo/</guid>
-      <description>Brazilian designer, director and visual artist André Calvo brings together vintage engravings, botanical studies, scientific diagrams and contemporary imagery to create intricate collages.</description>
-      <category>Art</category>
-      <category>Illustration</category>
-      <media:content url="https://inspgr.id/app/uploads/2026/07/art-andre-calvo-feature.jpg" medium="image" />
-      <media:thumbnail url="https://inspgr.id/app/uploads/2026/07/art-andre-calvo-feature.jpg" />
     </item>
   </channel>
 </rss>
