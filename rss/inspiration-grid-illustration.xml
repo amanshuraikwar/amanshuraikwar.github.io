@@ -7,6 +7,16 @@
     <generator>amanshuraikwar.github.io RSS generator</generator>
     <atom:link href="https://amanshuraikwar.github.io/rss/inspiration-grid-illustration.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Fantastic Frontiers: Illustrations by Alexandre Roy</title>
+      <link>https://theinspirationgrid.com/fantastic-frontiers-illustrations-by-alexandre-roy/</link>
+      <guid isPermaLink="true">https://theinspirationgrid.com/fantastic-frontiers-illustrations-by-alexandre-roy/</guid>
+      <description>French illustrator Alexandre Roy, also known as Royalex, creates sprawling imaginary worlds filled with strange creatures, towering plants, distant planets and lone travelers moving through unfamiliar landscapes.</description>
+      <category>Art</category>
+      <category>Illustration</category>
+      <media:content url="https://inspgr.id/app/uploads/2026/09/illustration-alexandre-roy-feature.jpg" medium="image" />
+      <media:thumbnail url="https://inspgr.id/app/uploads/2026/09/illustration-alexandre-roy-feature.jpg" />
+    </item>
+    <item>
       <title>Botanical Studies: Intricate Floral Illustrations by Lina Kusaite</title>
       <link>https://theinspirationgrid.com/botanical-studies-intricate-floral-illustrations-by-lina-kusaite/</link>
       <guid isPermaLink="true">https://theinspirationgrid.com/botanical-studies-intricate-floral-illustrations-by-lina-kusaite/</guid>
@@ -315,16 +325,6 @@
       <category>Illustration</category>
       <media:content url="https://inspgr.id/app/uploads/2026/07/art-henrique-de-franca-feature.jpg" medium="image" />
       <media:thumbnail url="https://inspgr.id/app/uploads/2026/07/art-henrique-de-franca-feature.jpg" />
-    </item>
-    <item>
-      <title>Micro Machines: Mini Vehicle Renders by Auhapwrd</title>
-      <link>https://theinspirationgrid.com/micro-machines-mini-vehicle-renders-by-auhapwrd/</link>
-      <guid isPermaLink="true">https://theinspirationgrid.com/micro-machines-mini-vehicle-renders-by-auhapwrd/</guid>
-      <description>Digital artist Dhehaivan transforms familiar cars and motorcycles into playful pocket-sized machines through his ongoing project, Auhapwrd.</description>
-      <category>Illustration</category>
-      <category>Vehicle Design</category>
-      <media:content url="https://inspgr.id/app/uploads/2026/07/3d-auhapwrd-feature.jpg" medium="image" />
-      <media:thumbnail url="https://inspgr.id/app/uploads/2026/07/3d-auhapwrd-feature.jpg" />
     </item>
   </channel>
 </rss>

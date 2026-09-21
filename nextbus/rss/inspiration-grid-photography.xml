@@ -7,6 +7,15 @@
     <generator>amanshuraikwar.github.io RSS generator</generator>
     <atom:link href="https://amanshuraikwar.github.io/rss/inspiration-grid-photography.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Where Oil Becomes Landscape: Aerial Images by Kevin Krautgartner</title>
+      <link>https://theinspirationgrid.com/where-oil-becomes-landscape-aerial-images-by-kevin-krautgartner/</link>
+      <guid isPermaLink="true">https://theinspirationgrid.com/where-oil-becomes-landscape-aerial-images-by-kevin-krautgartner/</guid>
+      <description>Kevin Krautgartner is no stranger to Inspiration Grid, and his latest series, Where Oil Becomes Landscape, gives us a bird’s-eye view of Alberta’s oil sands, where resource extraction has transformed huge stretches of land into an industrial terrain of pits, ponds, roads and machinery.</description>
+      <category>Photography</category>
+      <media:content url="https://inspgr.id/app/uploads/2026/09/photography-kevin-krautgartner-feature.jpg" medium="image" />
+      <media:thumbnail url="https://inspgr.id/app/uploads/2026/09/photography-kevin-krautgartner-feature.jpg" />
+    </item>
+    <item>
       <title>Feathered Personalities: Bird Photos by Marc Thevissen</title>
       <link>https://theinspirationgrid.com/feathered-personalities-bird-photos-by-marc-thevissen/</link>
       <guid isPermaLink="true">https://theinspirationgrid.com/feathered-personalities-bird-photos-by-marc-thevissen/</guid>
@@ -315,16 +324,6 @@
       <category>Print Design</category>
       <media:content url="https://inspgr.id/app/uploads/2026/05/a-design-winners-2026-cover-01.jpg" medium="image" />
       <media:thumbnail url="https://inspgr.id/app/uploads/2026/05/a-design-winners-2026-cover-01.jpg" />
-    </item>
-    <item>
-      <title>Luminous Macro Worlds: Insect Wings Captured by Chris Perani</title>
-      <link>https://theinspirationgrid.com/luminous-macro-worlds-insect-wings-captured-by-chris-perani/</link>
-      <guid isPermaLink="true">https://theinspirationgrid.com/luminous-macro-worlds-insect-wings-captured-by-chris-perani/</guid>
-      <description>Back in 2018, we featured Chris Perani’s astonishing macro photographs of butterfly wings, and his ongoing Wings series continues to push that process into even more intricate territory.</description>
-      <category>Art</category>
-      <category>Photography</category>
-      <media:content url="https://inspgr.id/app/uploads/2026/05/photography-chris-perani-feature.jpg" medium="image" />
-      <media:thumbnail url="https://inspgr.id/app/uploads/2026/05/photography-chris-perani-feature.jpg" />
     </item>
   </channel>
 </rss>
