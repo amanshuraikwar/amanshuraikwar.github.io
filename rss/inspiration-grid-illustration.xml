@@ -7,6 +7,16 @@
     <generator>amanshuraikwar.github.io RSS generator</generator>
     <atom:link href="https://amanshuraikwar.github.io/rss/inspiration-grid-illustration.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Wild at Heart: The Surreal Worlds of Dulk</title>
+      <link>https://theinspirationgrid.com/wild-at-heart-the-surreal-worlds-of-dulk/</link>
+      <guid isPermaLink="true">https://theinspirationgrid.com/wild-at-heart-the-surreal-worlds-of-dulk/</guid>
+      <description>Spanish artist Antonio Segura, aka Dulk, creates detailed worlds where animals, plants and unexpected objects merge into dense, surreal ecosystems.</description>
+      <category>Art</category>
+      <category>Illustration</category>
+      <media:content url="https://inspgr.id/app/uploads/2026/09/art-dulk-feature.jpg" medium="image" />
+      <media:thumbnail url="https://inspgr.id/app/uploads/2026/09/art-dulk-feature.jpg" />
+    </item>
+    <item>
       <title>Fantastic Frontiers: Illustrations by Alexandre Roy</title>
       <link>https://theinspirationgrid.com/fantastic-frontiers-illustrations-by-alexandre-roy/</link>
       <guid isPermaLink="true">https://theinspirationgrid.com/fantastic-frontiers-illustrations-by-alexandre-roy/</guid>
@@ -315,16 +325,6 @@
       <category>Pop Culture</category>
       <media:content url="https://inspgr.id/app/uploads/2026/07/illustration-leo-chiola-feature.jpg" medium="image" />
       <media:thumbnail url="https://inspgr.id/app/uploads/2026/07/illustration-leo-chiola-feature.jpg" />
-    </item>
-    <item>
-      <title>Hand-Drawn Stories: Atmospheric Scenes by Henrique de França</title>
-      <link>https://theinspirationgrid.com/hand-drawn-stories-atmospheric-graphite-drawings-by-henrique-de-franca/</link>
-      <guid isPermaLink="true">https://theinspirationgrid.com/hand-drawn-stories-atmospheric-graphite-drawings-by-henrique-de-franca/</guid>
-      <description>Brazilian artist Henrique de França creates intriguing, unsettling worlds through graphite on paper.</description>
-      <category>Art</category>
-      <category>Illustration</category>
-      <media:content url="https://inspgr.id/app/uploads/2026/07/art-henrique-de-franca-feature.jpg" medium="image" />
-      <media:thumbnail url="https://inspgr.id/app/uploads/2026/07/art-henrique-de-franca-feature.jpg" />
     </item>
   </channel>
 </rss>

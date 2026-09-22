@@ -7,6 +7,17 @@
     <generator>amanshuraikwar.github.io RSS generator</generator>
     <atom:link href="https://amanshuraikwar.github.io/rss/inspiration-grid-photography.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Through a Painter’s Lens: Portraits by Andrey Yakovlev &amp; Lili Aleeva</title>
+      <link>https://theinspirationgrid.com/through-a-painters-lens-portraits-by-andrey-yakovlev-lili-aleeva/</link>
+      <guid isPermaLink="true">https://theinspirationgrid.com/through-a-painters-lens-portraits-by-andrey-yakovlev-lili-aleeva/</guid>
+      <description>We’ve featured the work of photographer Andrey Yakovlev and art director Lili Aleeva a few times before, and one of the duo’s greatest strengths is their ability to make photography feel remarkably close to painting.</description>
+      <category>Art</category>
+      <category>Fashion &amp; Beauty</category>
+      <category>Photography</category>
+      <media:content url="https://inspgr.id/app/uploads/2026/09/photography-yakovlev-aleeva-feature.jpg" medium="image" />
+      <media:thumbnail url="https://inspgr.id/app/uploads/2026/09/photography-yakovlev-aleeva-feature.jpg" />
+    </item>
+    <item>
       <title>Where Oil Becomes Landscape: Aerial Images by Kevin Krautgartner</title>
       <link>https://theinspirationgrid.com/where-oil-becomes-landscape-aerial-images-by-kevin-krautgartner/</link>
       <guid isPermaLink="true">https://theinspirationgrid.com/where-oil-becomes-landscape-aerial-images-by-kevin-krautgartner/</guid>
@@ -306,24 +317,6 @@
       <category>Photography</category>
       <media:content url="https://inspgr.id/app/uploads/2026/05/photography-alexey-kozhenkov-feature.jpg" medium="image" />
       <media:thumbnail url="https://inspgr.id/app/uploads/2026/05/photography-alexey-kozhenkov-feature.jpg" />
-    </item>
-    <item>
-      <title>The Year’s Most Inspiring Designs: 2026 A’ Design Award Winners</title>
-      <link>https://theinspirationgrid.com/editorial/the-years-most-inspiring-designs-2026-a-design-award-winners/</link>
-      <guid isPermaLink="true">https://theinspirationgrid.com/editorial/the-years-most-inspiring-designs-2026-a-design-award-winners/</guid>
-      <description>From groundbreaking architecture and visionary interiors to packaging, furniture, technology and conceptual works pushing the boundaries of creativity, the A’ Design Award &amp; Competition continues to spotlight the projects defining the future of global design.</description>
-      <category>Architecture</category>
-      <category>Art</category>
-      <category>Fashion &amp; Beauty</category>
-      <category>Graphic Design</category>
-      <category>Illustration</category>
-      <category>Industrial Design</category>
-      <category>Interior Design</category>
-      <category>Packaging Design</category>
-      <category>Photography</category>
-      <category>Print Design</category>
-      <media:content url="https://inspgr.id/app/uploads/2026/05/a-design-winners-2026-cover-01.jpg" medium="image" />
-      <media:thumbnail url="https://inspgr.id/app/uploads/2026/05/a-design-winners-2026-cover-01.jpg" />
     </item>
   </channel>
 </rss>
