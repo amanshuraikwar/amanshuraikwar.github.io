@@ -7,6 +7,16 @@
     <generator>amanshuraikwar.github.io RSS generator</generator>
     <atom:link href="https://amanshuraikwar.github.io/rss/inspiration-grid-illustration.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Battle-Scarred Character Illustrations by Kawa Rhim</title>
+      <link>https://theinspirationgrid.com/battle-scarred-character-illustrations-by-kawa-rhim/</link>
+      <guid isPermaLink="true">https://theinspirationgrid.com/battle-scarred-character-illustrations-by-kawa-rhim/</guid>
+      <description>Seoul-based freelance illustrator Kawa Rhim creates expressive characters shaped by manga aesthetics, streetwear and a love of slightly strange details.</description>
+      <category>Art</category>
+      <category>Illustration</category>
+      <media:content url="https://inspgr.id/app/uploads/2026/09/illustration-kawa-rhim-feature.jpg" medium="image" />
+      <media:thumbnail url="https://inspgr.id/app/uploads/2026/09/illustration-kawa-rhim-feature.jpg" />
+    </item>
+    <item>
       <title>Wild at Heart: The Surreal Worlds of Dulk</title>
       <link>https://theinspirationgrid.com/wild-at-heart-the-surreal-worlds-of-dulk/</link>
       <guid isPermaLink="true">https://theinspirationgrid.com/wild-at-heart-the-surreal-worlds-of-dulk/</guid>
@@ -314,17 +324,6 @@
       <category>Illustration</category>
       <media:content url="https://inspgr.id/app/uploads/2026/07/illustration-harol-bustos-feature.jpg" medium="image" />
       <media:thumbnail url="https://inspgr.id/app/uploads/2026/07/illustration-harol-bustos-feature.jpg" />
-    </item>
-    <item>
-      <title>Heavy Hitters: Sharp Character Art by Léo Chiola</title>
-      <link>https://theinspirationgrid.com/heavy-hitters-sharp-character-art-by-leo-chiola/</link>
-      <guid isPermaLink="true">https://theinspirationgrid.com/heavy-hitters-sharp-character-art-by-leo-chiola/</guid>
-      <description>Quebec-based comic artist and illustrator Léo Chiola returns to the grid with his dynamic, high-impact character art.</description>
-      <category>Art</category>
-      <category>Illustration</category>
-      <category>Pop Culture</category>
-      <media:content url="https://inspgr.id/app/uploads/2026/07/illustration-leo-chiola-feature.jpg" medium="image" />
-      <media:thumbnail url="https://inspgr.id/app/uploads/2026/07/illustration-leo-chiola-feature.jpg" />
     </item>
   </channel>
 </rss>
