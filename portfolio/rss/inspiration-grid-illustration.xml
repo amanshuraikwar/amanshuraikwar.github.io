@@ -7,6 +7,16 @@
     <generator>amanshuraikwar.github.io RSS generator</generator>
     <atom:link href="https://amanshuraikwar.github.io/rss/inspiration-grid-illustration.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>The Journey: A Retro-Futuristic Animation by Toss &amp; Suess Studio</title>
+      <link>https://theinspirationgrid.com/the-journey-a-retro-futuristic-animation-by-toss-suess-studio/</link>
+      <guid isPermaLink="true">https://theinspirationgrid.com/the-journey-a-retro-futuristic-animation-by-toss-suess-studio/</guid>
+      <description>Created to introduce a major rebrand for Korean financial platform Toss, The Journey is a short animation that transforms the company’s new three-dimensional logo into the protagonist of a surreal sci-fi adventure.</description>
+      <category>Illustration</category>
+      <category>Video &amp; Motion</category>
+      <media:content url="https://inspgr.id/app/uploads/2026/09/motion-toss-the-journey-feature.jpg" medium="image" />
+      <media:thumbnail url="https://inspgr.id/app/uploads/2026/09/motion-toss-the-journey-feature.jpg" />
+    </item>
+    <item>
       <title>Battle-Scarred Character Illustrations by Kawa Rhim</title>
       <link>https://theinspirationgrid.com/battle-scarred-character-illustrations-by-kawa-rhim/</link>
       <guid isPermaLink="true">https://theinspirationgrid.com/battle-scarred-character-illustrations-by-kawa-rhim/</guid>
@@ -314,16 +324,6 @@
       <category>Typography</category>
       <media:content url="https://inspgr.id/app/uploads/2026/08/typography-kissmiklos-feature.jpg" medium="image" />
       <media:thumbnail url="https://inspgr.id/app/uploads/2026/08/typography-kissmiklos-feature.jpg" />
-    </item>
-    <item>
-      <title>Illustrator Harol Bustos Renders Power and Myth in Screen-Printed Color</title>
-      <link>https://theinspirationgrid.com/illustrator-harol-bustos-renders-power-and-myth-in-screen-printed-color/</link>
-      <guid isPermaLink="true">https://theinspirationgrid.com/illustrator-harol-bustos-renders-power-and-myth-in-screen-printed-color/</guid>
-      <description>Chilean artist Harol Bustos creates atmospheric illustrations that turn complex stories into bold, cinematic images.</description>
-      <category>Art</category>
-      <category>Illustration</category>
-      <media:content url="https://inspgr.id/app/uploads/2026/07/illustration-harol-bustos-feature.jpg" medium="image" />
-      <media:thumbnail url="https://inspgr.id/app/uploads/2026/07/illustration-harol-bustos-feature.jpg" />
     </item>
   </channel>
 </rss>

@@ -7,6 +7,17 @@
     <generator>amanshuraikwar.github.io RSS generator</generator>
     <atom:link href="https://amanshuraikwar.github.io/rss/inspiration-grid-photography.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Timeless Lines: Sam Chick Captures the Beauty of a 1960 Mercedes-Benz 300SL</title>
+      <link>https://theinspirationgrid.com/timeless-lines-sam-chick-captures-the-beauty-of-a-1960-mercedes-benz-300sl/</link>
+      <guid isPermaLink="true">https://theinspirationgrid.com/timeless-lines-sam-chick-captures-the-beauty-of-a-1960-mercedes-benz-300sl/</guid>
+      <description>UK-based photographer Sam Chick is back on the grid with another beautifully shot automotive series, this time turning his lens toward a rare 1960 Mercedes-Benz 300SL Roadster for classic car specialist Hilton &amp; Moss.</description>
+      <category>Industrial Design</category>
+      <category>Photography</category>
+      <category>Vehicle Design</category>
+      <media:content url="https://inspgr.id/app/uploads/2026/09/photography-sam-chick-feature.jpg" medium="image" />
+      <media:thumbnail url="https://inspgr.id/app/uploads/2026/09/photography-sam-chick-feature.jpg" />
+    </item>
+    <item>
       <title>Through a Painter’s Lens: Portraits by Andrey Yakovlev &amp; Lili Aleeva</title>
       <link>https://theinspirationgrid.com/through-a-painters-lens-portraits-by-andrey-yakovlev-lili-aleeva/</link>
       <guid isPermaLink="true">https://theinspirationgrid.com/through-a-painters-lens-portraits-by-andrey-yakovlev-lili-aleeva/</guid>
@@ -307,16 +318,6 @@
       <category>Photography</category>
       <media:content url="https://inspgr.id/app/uploads/2026/05/photography-riccardo-magherini-feature.jpg" medium="image" />
       <media:thumbnail url="https://inspgr.id/app/uploads/2026/05/photography-riccardo-magherini-feature.jpg" />
-    </item>
-    <item>
-      <title>Atmospheric Architectural Photos by Alexey Kozhenkov</title>
-      <link>https://theinspirationgrid.com/atmospheric-architectural-photos-by-alexey-kozhenkov/</link>
-      <guid isPermaLink="true">https://theinspirationgrid.com/atmospheric-architectural-photos-by-alexey-kozhenkov/</guid>
-      <description>Latvian photographer Alexey Kozhenkov captures architecture with a sharp eye for scale, symmetry and mood, focusing on buildings that feel both monumental and strangely detached from their surroundings.</description>
-      <category>Architecture</category>
-      <category>Photography</category>
-      <media:content url="https://inspgr.id/app/uploads/2026/05/photography-alexey-kozhenkov-feature.jpg" medium="image" />
-      <media:thumbnail url="https://inspgr.id/app/uploads/2026/05/photography-alexey-kozhenkov-feature.jpg" />
     </item>
   </channel>
 </rss>

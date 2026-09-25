@@ -7,6 +7,17 @@
     <generator>amanshuraikwar.github.io RSS generator</generator>
     <atom:link href="https://amanshuraikwar.github.io/rss/inspiration-grid-industrial-design.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Timeless Lines: Sam Chick Captures the Beauty of a 1960 Mercedes-Benz 300SL</title>
+      <link>https://theinspirationgrid.com/timeless-lines-sam-chick-captures-the-beauty-of-a-1960-mercedes-benz-300sl/</link>
+      <guid isPermaLink="true">https://theinspirationgrid.com/timeless-lines-sam-chick-captures-the-beauty-of-a-1960-mercedes-benz-300sl/</guid>
+      <description>UK-based photographer Sam Chick is back on the grid with another beautifully shot automotive series, this time turning his lens toward a rare 1960 Mercedes-Benz 300SL Roadster for classic car specialist Hilton &amp; Moss.</description>
+      <category>Industrial Design</category>
+      <category>Photography</category>
+      <category>Vehicle Design</category>
+      <media:content url="https://inspgr.id/app/uploads/2026/09/photography-sam-chick-feature.jpg" medium="image" />
+      <media:thumbnail url="https://inspgr.id/app/uploads/2026/09/photography-sam-chick-feature.jpg" />
+    </item>
+    <item>
       <title>Your Work Deserves a Bigger Stage: A’ Design Award &amp; Competition Call for Submissions</title>
       <link>https://theinspirationgrid.com/editorial/your-work-deserves-a-bigger-stage-a-design-award-competition-call-for-submissions/</link>
       <guid isPermaLink="true">https://theinspirationgrid.com/editorial/your-work-deserves-a-bigger-stage-a-design-award-competition-call-for-submissions/</guid>
@@ -361,18 +372,6 @@
       <category>Interior Design</category>
       <media:content url="https://inspgr.id/app/uploads/2026/06/adesign-award-cover-26.jpg" medium="image" />
       <media:thumbnail url="https://inspgr.id/app/uploads/2026/06/adesign-award-cover-26.jpg" />
-    </item>
-    <item>
-      <title>AYANEO Pocket AIR Mini x Arcade Home Hands-On: A Budget Retro Handheld With Real Arcade Soul</title>
-      <link>https://theinspirationgrid.com/editorial/ayaneo-pocket-air-mini-x-arcade-home-hands-on-a-budget-retro-handheld-with-real-arcade-soul/</link>
-      <guid isPermaLink="true">https://theinspirationgrid.com/editorial/ayaneo-pocket-air-mini-x-arcade-home-hands-on-a-budget-retro-handheld-with-real-arcade-soul/</guid>
-      <description>The AYANEO Pocket AIR Mini x Arcade Home IGS Limited Edition gives a familiar budget handheld a bolder identity, pairing its striking new colorway with officially licensed arcade classics.</description>
-      <category>Gaming</category>
-      <category>Industrial Design</category>
-      <category>Product Design</category>
-      <category>Technology</category>
-      <media:content url="https://inspgr.id/app/uploads/2026/06/ayaneo-pocket-air-mini-arcade-feature-main.jpg" medium="image" />
-      <media:thumbnail url="https://inspgr.id/app/uploads/2026/06/ayaneo-pocket-air-mini-arcade-feature-main.jpg" />
     </item>
   </channel>
 </rss>
