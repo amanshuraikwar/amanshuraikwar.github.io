@@ -7,6 +7,19 @@
     <generator>amanshuraikwar.github.io RSS generator</generator>
     <atom:link href="https://amanshuraikwar.github.io/rss/inspiration-grid-industrial-design.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>UUNA TEK ArtStation 1824 Review: Falling Down the Generative Art Rabbit Hole</title>
+      <link>https://theinspirationgrid.com/editorial/uuna-tek-artstation-1824-review-turning-code-into-art/</link>
+      <guid isPermaLink="true">https://theinspirationgrid.com/editorial/uuna-tek-artstation-1824-review-turning-code-into-art/</guid>
+      <description>My first proper dive into generative art turned into weeks of code, pens, paper and one very addictive pen plotter.</description>
+      <category>Art</category>
+      <category>Illustration</category>
+      <category>Industrial Design</category>
+      <category>Product Design</category>
+      <category>Technology</category>
+      <media:content url="https://inspgr.id/app/uploads/2026/09/uuna-tek-artstation-1824-review-cover.jpg" medium="image" />
+      <media:thumbnail url="https://inspgr.id/app/uploads/2026/09/uuna-tek-artstation-1824-review-cover.jpg" />
+    </item>
+    <item>
       <title>Timeless Lines: Sam Chick Captures the Beauty of a 1960 Mercedes-Benz 300SL</title>
       <link>https://theinspirationgrid.com/timeless-lines-sam-chick-captures-the-beauty-of-a-1960-mercedes-benz-300sl/</link>
       <guid isPermaLink="true">https://theinspirationgrid.com/timeless-lines-sam-chick-captures-the-beauty-of-a-1960-mercedes-benz-300sl/</guid>
@@ -354,24 +367,6 @@
       <category>Technology</category>
       <media:content url="https://inspgr.id/app/uploads/2026/06/anicorn-stellar-watch-feature.jpg" medium="image" />
       <media:thumbnail url="https://inspgr.id/app/uploads/2026/06/anicorn-stellar-watch-feature.jpg" />
-    </item>
-    <item>
-      <title>A’ Design Award &amp; Competition 2026/2027 Early Entry Now Open</title>
-      <link>https://theinspirationgrid.com/editorial/a-design-awards-competition-2026-2027-early-entry-now-open/</link>
-      <guid isPermaLink="true">https://theinspirationgrid.com/editorial/a-design-awards-competition-2026-2027-early-entry-now-open/</guid>
-      <description>The early entry period for the 2026–2027 edition of the A’ Design Awards &amp; Competition is now open, with an early submission deadline of June 30.</description>
-      <category>Advertising</category>
-      <category>Architecture</category>
-      <category>Art</category>
-      <category>Branding</category>
-      <category>Fashion &amp; Beauty</category>
-      <category>Gaming</category>
-      <category>Graphic Design</category>
-      <category>Illustration</category>
-      <category>Industrial Design</category>
-      <category>Interior Design</category>
-      <media:content url="https://inspgr.id/app/uploads/2026/06/adesign-award-cover-26.jpg" medium="image" />
-      <media:thumbnail url="https://inspgr.id/app/uploads/2026/06/adesign-award-cover-26.jpg" />
     </item>
   </channel>
 </rss>

@@ -7,6 +7,19 @@
     <generator>amanshuraikwar.github.io RSS generator</generator>
     <atom:link href="https://amanshuraikwar.github.io/rss/inspiration-grid-illustration.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>UUNA TEK ArtStation 1824 Review: Falling Down the Generative Art Rabbit Hole</title>
+      <link>https://theinspirationgrid.com/editorial/uuna-tek-artstation-1824-review-turning-code-into-art/</link>
+      <guid isPermaLink="true">https://theinspirationgrid.com/editorial/uuna-tek-artstation-1824-review-turning-code-into-art/</guid>
+      <description>My first proper dive into generative art turned into weeks of code, pens, paper and one very addictive pen plotter.</description>
+      <category>Art</category>
+      <category>Illustration</category>
+      <category>Industrial Design</category>
+      <category>Product Design</category>
+      <category>Technology</category>
+      <media:content url="https://inspgr.id/app/uploads/2026/09/uuna-tek-artstation-1824-review-cover.jpg" medium="image" />
+      <media:thumbnail url="https://inspgr.id/app/uploads/2026/09/uuna-tek-artstation-1824-review-cover.jpg" />
+    </item>
+    <item>
       <title>The Journey: A Retro-Futuristic Animation by Toss &amp; Suess Studio</title>
       <link>https://theinspirationgrid.com/the-journey-a-retro-futuristic-animation-by-toss-suess-studio/</link>
       <guid isPermaLink="true">https://theinspirationgrid.com/the-journey-a-retro-futuristic-animation-by-toss-suess-studio/</guid>
@@ -312,18 +325,6 @@
       <category>Illustration</category>
       <media:content url="https://inspgr.id/app/uploads/2026/08/illustration-leah-han-feature.jpg" medium="image" />
       <media:thumbnail url="https://inspgr.id/app/uploads/2026/08/illustration-leah-han-feature.jpg" />
-    </item>
-    <item>
-      <title>Hype&amp;Hyper: A Magazine Shaped by Its Own Typography</title>
-      <link>https://theinspirationgrid.com/hypehyper-a-magazine-shaped-by-its-own-typography/</link>
-      <guid isPermaLink="true">https://theinspirationgrid.com/hypehyper-a-magazine-shaped-by-its-own-typography/</guid>
-      <description>Budapest-based designer and visual artist Miklós Kiss, aka kissmiklos, crafted a bold, highly graphic identity for Hype&amp;Hyper, a Central and Eastern European magazine covering trends across strategy, business, design and lifestyle.</description>
-      <category>Graphic Design</category>
-      <category>Illustration</category>
-      <category>Print Design</category>
-      <category>Typography</category>
-      <media:content url="https://inspgr.id/app/uploads/2026/08/typography-kissmiklos-feature.jpg" medium="image" />
-      <media:thumbnail url="https://inspgr.id/app/uploads/2026/08/typography-kissmiklos-feature.jpg" />
     </item>
   </channel>
 </rss>
