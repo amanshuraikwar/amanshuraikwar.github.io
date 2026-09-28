@@ -7,6 +7,16 @@
     <generator>amanshuraikwar.github.io RSS generator</generator>
     <atom:link href="https://amanshuraikwar.github.io/rss/inspiration-grid-photography.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Ndebele Superhero: The Vibrant Art of Zana Masombuka</title>
+      <link>https://theinspirationgrid.com/ndebele-superhero-the-vibrant-art-of-zana-masombuka/</link>
+      <guid isPermaLink="true">https://theinspirationgrid.com/ndebele-superhero-the-vibrant-art-of-zana-masombuka/</guid>
+      <description>South African artist Zana Masombuka, also known as Ndebele Superhero, stages striking portraits that carry her heritage and visual culture into the present.</description>
+      <category>Art</category>
+      <category>Photography</category>
+      <media:content url="https://inspgr.id/app/uploads/2026/09/art-zana-masombuka-feature.jpg" medium="image" />
+      <media:thumbnail url="https://inspgr.id/app/uploads/2026/09/art-zana-masombuka-feature.jpg" />
+    </item>
+    <item>
       <title>Timeless Lines: Sam Chick Captures the Beauty of a 1960 Mercedes-Benz 300SL</title>
       <link>https://theinspirationgrid.com/timeless-lines-sam-chick-captures-the-beauty-of-a-1960-mercedes-benz-300sl/</link>
       <guid isPermaLink="true">https://theinspirationgrid.com/timeless-lines-sam-chick-captures-the-beauty-of-a-1960-mercedes-benz-300sl/</guid>
@@ -308,16 +318,6 @@
       <category>Video &amp; Motion</category>
       <media:content url="https://inspgr.id/app/uploads/2026/05/stills-figma-plugin-feature.jpg" medium="image" />
       <media:thumbnail url="https://inspgr.id/app/uploads/2026/05/stills-figma-plugin-feature.jpg" />
-    </item>
-    <item>
-      <title>The Shape of Memories: Riccardo Magherini’s Layered Visions of Hanoi</title>
-      <link>https://theinspirationgrid.com/the-shape-of-memories-riccardo-magherinis-layered-visions-of-hanoi/</link>
-      <guid isPermaLink="true">https://theinspirationgrid.com/the-shape-of-memories-riccardo-magherinis-layered-visions-of-hanoi/</guid>
-      <description>Italian photographer Riccardo Magherini returns with a new chapter of The Shape of Memories, an ongoing photographic body of work we first featured in 2016 through his Bangkok series.</description>
-      <category>Art</category>
-      <category>Photography</category>
-      <media:content url="https://inspgr.id/app/uploads/2026/05/photography-riccardo-magherini-feature.jpg" medium="image" />
-      <media:thumbnail url="https://inspgr.id/app/uploads/2026/05/photography-riccardo-magherini-feature.jpg" />
     </item>
   </channel>
 </rss>
