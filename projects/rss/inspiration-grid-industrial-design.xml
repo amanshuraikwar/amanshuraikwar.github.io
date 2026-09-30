@@ -7,6 +7,18 @@
     <generator>amanshuraikwar.github.io RSS generator</generator>
     <atom:link href="https://amanshuraikwar.github.io/rss/inspiration-grid-industrial-design.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>KONKR Pocket Block: AYANEO’s $79 Game Boy-Style Handheld Is Here</title>
+      <link>https://theinspirationgrid.com/editorial/konkr-pocket-block-ayaneos-79-game-boy-style-handheld-is-here/</link>
+      <guid isPermaLink="true">https://theinspirationgrid.com/editorial/konkr-pocket-block-ayaneos-79-game-boy-style-handheld-is-here/</guid>
+      <description>AYANEO has officially launched the KONKR Pocket Block, a vertical Android handheld first teased back in May.</description>
+      <category>Gaming</category>
+      <category>Industrial Design</category>
+      <category>Product Design</category>
+      <category>Technology</category>
+      <media:content url="https://inspgr.id/app/uploads/2026/09/konkr-pocket-block-feature.jpg" medium="image" />
+      <media:thumbnail url="https://inspgr.id/app/uploads/2026/09/konkr-pocket-block-feature.jpg" />
+    </item>
+    <item>
       <title>UUNA TEK ArtStation 1824 Review: Falling Down the Generative Art Rabbit Hole</title>
       <link>https://theinspirationgrid.com/editorial/uuna-tek-artstation-1824-review-turning-code-into-art/</link>
       <guid isPermaLink="true">https://theinspirationgrid.com/editorial/uuna-tek-artstation-1824-review-turning-code-into-art/</guid>
@@ -356,17 +368,6 @@
       <category>Technology</category>
       <media:content url="https://inspgr.id/app/uploads/2026/06/ayaneo-pocket-micro-2-feature.jpg" medium="image" />
       <media:thumbnail url="https://inspgr.id/app/uploads/2026/06/ayaneo-pocket-micro-2-feature.jpg" />
-    </item>
-    <item>
-      <title>STELLAR: A Graphic Take on Time by Raw Color</title>
-      <link>https://theinspirationgrid.com/stellar-a-graphic-take-on-time-by-ttt-and-raw-color/</link>
-      <guid isPermaLink="true">https://theinspirationgrid.com/stellar-a-graphic-take-on-time-by-ttt-and-raw-color/</guid>
-      <description>The Trio of Time, Anicorn Watches’ experimental collaboration platform, has teamed up with Eindhoven-based design studio Raw Color to create STELLAR, a playful new watch that turns timekeeping into a shifting graphic composition.</description>
-      <category>Industrial Design</category>
-      <category>Product Design</category>
-      <category>Technology</category>
-      <media:content url="https://inspgr.id/app/uploads/2026/06/anicorn-stellar-watch-feature.jpg" medium="image" />
-      <media:thumbnail url="https://inspgr.id/app/uploads/2026/06/anicorn-stellar-watch-feature.jpg" />
     </item>
   </channel>
 </rss>
