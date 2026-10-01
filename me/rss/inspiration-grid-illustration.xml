@@ -7,6 +7,16 @@
     <generator>amanshuraikwar.github.io RSS generator</generator>
     <atom:link href="https://amanshuraikwar.github.io/rss/inspiration-grid-illustration.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Walls of Wonder: Murals by Regina Yafasova</title>
+      <link>https://theinspirationgrid.com/walls-of-wonder-murals-by-regina-yafasova/</link>
+      <guid isPermaLink="true">https://theinspirationgrid.com/walls-of-wonder-murals-by-regina-yafasova/</guid>
+      <description>Russian artist Regina Yafasova creates large-scale murals filled with graceful figures, lush botanical elements and carefully layered color.</description>
+      <category>Art</category>
+      <category>Illustration</category>
+      <media:content url="https://inspgr.id/app/uploads/2026/09/art-regina-yafasova-feature.jpg" medium="image" />
+      <media:thumbnail url="https://inspgr.id/app/uploads/2026/09/art-regina-yafasova-feature.jpg" />
+    </item>
+    <item>
       <title>Drawing New Connections: Illustrations by Kateryna Bielobrova</title>
       <link>https://theinspirationgrid.com/drawing-new-connections-illustrations-by-kateryna-bielobrova/</link>
       <guid isPermaLink="true">https://theinspirationgrid.com/drawing-new-connections-illustrations-by-kateryna-bielobrova/</guid>
@@ -313,18 +323,6 @@
       <category>Illustration</category>
       <media:content url="https://inspgr.id/app/uploads/2026/08/illustration-yogi-fahmi-riandito-feature.jpg" medium="image" />
       <media:thumbnail url="https://inspgr.id/app/uploads/2026/08/illustration-yogi-fahmi-riandito-feature.jpg" />
-    </item>
-    <item>
-      <title>Wild Encounters: Nick Liefhebber’s Colorful Campaign for ARTIS Zoo</title>
-      <link>https://theinspirationgrid.com/wild-encounters-nick-liefhebbers-colorful-campaign-for-artis-zoo/</link>
-      <guid isPermaLink="true">https://theinspirationgrid.com/wild-encounters-nick-liefhebbers-colorful-campaign-for-artis-zoo/</guid>
-      <description>Dutch designer and illustrator Nick Liefhebber created a vibrant visual world for Summer Nights at ARTIS Zoo in Amsterdam.</description>
-      <category>Art</category>
-      <category>Graphic Design</category>
-      <category>Illustration</category>
-      <category>Print Design</category>
-      <media:content url="https://inspgr.id/app/uploads/2026/08/illustration-nick-liefhebber-feature.jpg" medium="image" />
-      <media:thumbnail url="https://inspgr.id/app/uploads/2026/08/illustration-nick-liefhebber-feature.jpg" />
     </item>
   </channel>
 </rss>

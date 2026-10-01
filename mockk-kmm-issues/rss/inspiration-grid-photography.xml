@@ -7,6 +7,15 @@
     <generator>amanshuraikwar.github.io RSS generator</generator>
     <atom:link href="https://amanshuraikwar.github.io/rss/inspiration-grid-photography.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Where Light Falls: Landscape Photography by Martin Rak</title>
+      <link>https://theinspirationgrid.com/where-light-falls-landscape-photography-by-martin-rak/</link>
+      <guid isPermaLink="true">https://theinspirationgrid.com/where-light-falls-landscape-photography-by-martin-rak/</guid>
+      <description>Prague-based photographer Martin Rak returns to the grid with a new selection of images exploring the shifting moods of the natural world.</description>
+      <category>Photography</category>
+      <media:content url="https://inspgr.id/app/uploads/2026/09/photography-martin-rak-feature.jpg" medium="image" />
+      <media:thumbnail url="https://inspgr.id/app/uploads/2026/09/photography-martin-rak-feature.jpg" />
+    </item>
+    <item>
       <title>Ndebele Superhero: The Vibrant Art of Zana Masombuka</title>
       <link>https://theinspirationgrid.com/ndebele-superhero-the-vibrant-art-of-zana-masombuka/</link>
       <guid isPermaLink="true">https://theinspirationgrid.com/ndebele-superhero-the-vibrant-art-of-zana-masombuka/</guid>
@@ -305,19 +314,6 @@
       <category>Photography</category>
       <media:content url="https://inspgr.id/app/uploads/2026/05/photography-kavaliauskas-feature.jpg" medium="image" />
       <media:thumbnail url="https://inspgr.id/app/uploads/2026/05/photography-kavaliauskas-feature.jpg" />
-    </item>
-    <item>
-      <title>Stills Launches a Figma Plugin That Keeps Image Licensing Inside the Creative Workflow</title>
-      <link>https://theinspirationgrid.com/editorial/stills-launches-a-figma-plugin-that-keeps-image-licensing-inside-the-creative-workflow/</link>
-      <guid isPermaLink="true">https://theinspirationgrid.com/editorial/stills-launches-a-figma-plugin-that-keeps-image-licensing-inside-the-creative-workflow/</guid>
-      <description>Photo licensing platform Stills has launched a new Figma plugin, giving designers a more direct way to search, test and organize licensed imagery without leaving their working files.</description>
-      <category>Graphic Design</category>
-      <category>Photography</category>
-      <category>Technology</category>
-      <category>UX &amp; UI Design</category>
-      <category>Video &amp; Motion</category>
-      <media:content url="https://inspgr.id/app/uploads/2026/05/stills-figma-plugin-feature.jpg" medium="image" />
-      <media:thumbnail url="https://inspgr.id/app/uploads/2026/05/stills-figma-plugin-feature.jpg" />
     </item>
   </channel>
 </rss>
