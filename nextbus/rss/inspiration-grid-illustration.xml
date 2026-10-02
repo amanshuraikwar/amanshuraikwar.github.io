@@ -7,6 +7,16 @@
     <generator>amanshuraikwar.github.io RSS generator</generator>
     <atom:link href="https://amanshuraikwar.github.io/rss/inspiration-grid-illustration.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Expressive Geometric Characters by Ilker Türe</title>
+      <link>https://theinspirationgrid.com/expressive-geometric-characters-by-ilker-ture/</link>
+      <guid isPermaLink="true">https://theinspirationgrid.com/expressive-geometric-characters-by-ilker-ture/</guid>
+      <description>Turkey-based illustrator and art director Ilker Türe has spent 25 years developing his distinctive visual language, one that is shaped by bold geometry, expressive characters and playful storytelling.</description>
+      <category>Art</category>
+      <category>Illustration</category>
+      <media:content url="https://inspgr.id/app/uploads/2026/10/illustration-ilker-ture-feature.jpg" medium="image" />
+      <media:thumbnail url="https://inspgr.id/app/uploads/2026/10/illustration-ilker-ture-feature.jpg" />
+    </item>
+    <item>
       <title>Walls of Wonder: Murals by Regina Yafasova</title>
       <link>https://theinspirationgrid.com/walls-of-wonder-murals-by-regina-yafasova/</link>
       <guid isPermaLink="true">https://theinspirationgrid.com/walls-of-wonder-murals-by-regina-yafasova/</guid>
@@ -313,16 +323,6 @@
       <category>Illustration</category>
       <media:content url="https://inspgr.id/app/uploads/2026/08/illustration-kyrellos-maximos-feature.jpg" medium="image" />
       <media:thumbnail url="https://inspgr.id/app/uploads/2026/08/illustration-kyrellos-maximos-feature.jpg" />
-    </item>
-    <item>
-      <title>Between Motion and Memory: Illustrations by Yogi Fahmi Riandito</title>
-      <link>https://theinspirationgrid.com/between-motion-and-memory-illustrations-by-yogi-fahmi-riandito/</link>
-      <guid isPermaLink="true">https://theinspirationgrid.com/between-motion-and-memory-illustrations-by-yogi-fahmi-riandito/</guid>
-      <description>Yogi Fahmi Riandito is a Jakarta-based artist who creates expressive illustrations exploring a wide range of themes, from high-energy sports imagery and character-driven sketches to more peaceful, dreamlike landscapes.</description>
-      <category>Art</category>
-      <category>Illustration</category>
-      <media:content url="https://inspgr.id/app/uploads/2026/08/illustration-yogi-fahmi-riandito-feature.jpg" medium="image" />
-      <media:thumbnail url="https://inspgr.id/app/uploads/2026/08/illustration-yogi-fahmi-riandito-feature.jpg" />
     </item>
   </channel>
 </rss>
