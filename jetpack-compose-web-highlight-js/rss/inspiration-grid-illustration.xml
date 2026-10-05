@@ -7,6 +7,16 @@
     <generator>amanshuraikwar.github.io RSS generator</generator>
     <atom:link href="https://amanshuraikwar.github.io/rss/inspiration-grid-illustration.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Everyday Cinema: Illustrator Nin Nin Turns Ordinary Moments Into Film Stills</title>
+      <link>https://theinspirationgrid.com/everyday-cinema-illustrator-nin-nin-turns-ordinary-moments-into-film-stills/</link>
+      <guid isPermaLink="true">https://theinspirationgrid.com/everyday-cinema-illustrator-nin-nin-turns-ordinary-moments-into-film-stills/</guid>
+      <description>LA-based illustrator Nin Nin, also known as banahsuan, finds narrative in stillness, creating atmospheric slice-of-life scenes centered on quiet, everyday moments.</description>
+      <category>Art</category>
+      <category>Illustration</category>
+      <media:content url="https://inspgr.id/app/uploads/2026/10/illustration-nin-nin-feature.jpg" medium="image" />
+      <media:thumbnail url="https://inspgr.id/app/uploads/2026/10/illustration-nin-nin-feature.jpg" />
+    </item>
+    <item>
       <title>Expressive Geometric Characters by Ilker Türe</title>
       <link>https://theinspirationgrid.com/expressive-geometric-characters-by-ilker-ture/</link>
       <guid isPermaLink="true">https://theinspirationgrid.com/expressive-geometric-characters-by-ilker-ture/</guid>
@@ -313,16 +323,6 @@
       <category>Illustration</category>
       <media:content url="https://inspgr.id/app/uploads/2026/08/illustrations-shirley-gong-feature.jpg" medium="image" />
       <media:thumbnail url="https://inspgr.id/app/uploads/2026/08/illustrations-shirley-gong-feature.jpg" />
-    </item>
-    <item>
-      <title>Geometric Figures Cast in Dramatic Light: Illustrations by Kyrellos Maximos</title>
-      <link>https://theinspirationgrid.com/geometric-figures-cast-in-dramatic-light-illustrations-by-kyrellos-maximos/</link>
-      <guid isPermaLink="true">https://theinspirationgrid.com/geometric-figures-cast-in-dramatic-light-illustrations-by-kyrellos-maximos/</guid>
-      <description>Cairo-based illustrator and designer Kyrellos Maximos uses simple forms, dramatic lighting and a strong sense of visual storytelling to craft ethereal images.</description>
-      <category>Art</category>
-      <category>Illustration</category>
-      <media:content url="https://inspgr.id/app/uploads/2026/08/illustration-kyrellos-maximos-feature.jpg" medium="image" />
-      <media:thumbnail url="https://inspgr.id/app/uploads/2026/08/illustration-kyrellos-maximos-feature.jpg" />
     </item>
   </channel>
 </rss>

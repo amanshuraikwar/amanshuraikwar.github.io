@@ -7,6 +7,17 @@
     <generator>amanshuraikwar.github.io RSS generator</generator>
     <atom:link href="https://amanshuraikwar.github.io/rss/site-of-sites-websites.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>letude.group</title>
+      <link>https://www.siteofsites.co/websites/letude.group</link>
+      <guid isPermaLink="true">https://www.siteofsites.co/websites/letude.group</guid>
+      <description>Featured by Site of Sites in Nov 2023. Original website: https://letude.group/</description>
+      <category>Art &amp; Design</category>
+      <category>Readymag</category>
+      <category>Experimental</category>
+      <media:content url="https://static.wixstatic.com/media/ef5d4a_0024df358b53409fb02b66e800368c3c~mv2.png" medium="image" />
+      <media:thumbnail url="https://static.wixstatic.com/media/ef5d4a_0024df358b53409fb02b66e800368c3c~mv2.png" />
+    </item>
+    <item>
       <title>Brik.space</title>
       <link>https://www.siteofsites.co/websites/brik.space</link>
       <guid isPermaLink="true">https://www.siteofsites.co/websites/brik.space</guid>
@@ -381,19 +392,6 @@
       <category>Culture &amp; Entertainment</category>
       <media:content url="https://static.wixstatic.com/media/ef5d4a_0542ac4033e1478c80e474274f563eb0~mv2.png" medium="image" />
       <media:thumbnail url="https://static.wixstatic.com/media/ef5d4a_0542ac4033e1478c80e474274f563eb0~mv2.png" />
-    </item>
-    <item>
-      <title>Liya Kedar</title>
-      <link>https://www.siteofsites.co/websites/liya-kedar</link>
-      <guid isPermaLink="true">https://www.siteofsites.co/websites/liya-kedar</guid>
-      <description>Featured by Site of Sites in 06/2026. Original website: https://www.liyakedar.com/</description>
-      <category>Wix/Wix Studio</category>
-      <category>Grid</category>
-      <category>Retro</category>
-      <category>Photography &amp; Video</category>
-      <category>Portfolio</category>
-      <media:content url="https://static.wixstatic.com/media/ef5d4a_0363183de7cb45ada18a7422af008359~mv2.png" medium="image" />
-      <media:thumbnail url="https://static.wixstatic.com/media/ef5d4a_0363183de7cb45ada18a7422af008359~mv2.png" />
     </item>
   </channel>
 </rss>
