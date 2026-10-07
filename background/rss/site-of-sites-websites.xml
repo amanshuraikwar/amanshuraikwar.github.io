@@ -7,6 +7,42 @@
     <generator>amanshuraikwar.github.io RSS generator</generator>
     <atom:link href="https://amanshuraikwar.github.io/rss/site-of-sites-websites.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Betteroff</title>
+      <link>https://www.siteofsites.co/websites/betteroff</link>
+      <guid isPermaLink="true">https://www.siteofsites.co/websites/betteroff</guid>
+      <description>Featured by Site of Sites in 10/2026. Original website: https://tlb.betteroff.studio/surf</description>
+      <category>Scrollitelling</category>
+      <category>Experimental</category>
+      <media:content url="https://static.wixstatic.com/media/ef5d4a_2a731f7bc9394ee4b2e921826ac7f001~mv2.png" medium="image" />
+      <media:thumbnail url="https://static.wixstatic.com/media/ef5d4a_2a731f7bc9394ee4b2e921826ac7f001~mv2.png" />
+    </item>
+    <item>
+      <title>BTay</title>
+      <link>https://www.siteofsites.co/websites/btay</link>
+      <guid isPermaLink="true">https://www.siteofsites.co/websites/btay</guid>
+      <description>Featured by Site of Sites in 10/2026. Original website: https://btay.ca/</description>
+      <category>Creative Arts</category>
+      <category>Design</category>
+      <category>Illustrative</category>
+      <category>Illustration</category>
+      <category>Portfolio</category>
+      <media:content url="https://static.wixstatic.com/media/ef5d4a_9d8eb529c92d4023978517ef5b826668~mv2.png" medium="image" />
+      <media:thumbnail url="https://static.wixstatic.com/media/ef5d4a_9d8eb529c92d4023978517ef5b826668~mv2.png" />
+    </item>
+    <item>
+      <title>Odyssee</title>
+      <link>https://www.siteofsites.co/websites/odyssee</link>
+      <guid isPermaLink="true">https://www.siteofsites.co/websites/odyssee</guid>
+      <description>Featured by Site of Sites in 10/2026. Original website: https://www.odysseeclinic.com.au/</description>
+      <category>Company / Brand website</category>
+      <category>Design</category>
+      <category>Fashion &amp; Beauty</category>
+      <category>Minimal</category>
+      <category>Photography &amp; Video</category>
+      <media:content url="https://static.wixstatic.com/media/ef5d4a_2ecb8d8ef50e4a8294076d0fdbbfa951~mv2.png" medium="image" />
+      <media:thumbnail url="https://static.wixstatic.com/media/ef5d4a_2ecb8d8ef50e4a8294076d0fdbbfa951~mv2.png" />
+    </item>
+    <item>
       <title>letude.group</title>
       <link>https://www.siteofsites.co/websites/letude.group</link>
       <guid isPermaLink="true">https://www.siteofsites.co/websites/letude.group</guid>
@@ -359,39 +395,6 @@
       <category>Design</category>
       <media:content url="https://static.wixstatic.com/media/ef5d4a_2df4fe49f7a94d0d9623ab40beb2c9c8~mv2.png" medium="image" />
       <media:thumbnail url="https://static.wixstatic.com/media/ef5d4a_2df4fe49f7a94d0d9623ab40beb2c9c8~mv2.png" />
-    </item>
-    <item>
-      <title>Wwake</title>
-      <link>https://www.siteofsites.co/websites/wwake</link>
-      <guid isPermaLink="true">https://www.siteofsites.co/websites/wwake</guid>
-      <description>Featured by Site of Sites in 07/2026. Original website: https://wwake.com/</description>
-      <media:content url="https://static.wixstatic.com/media/ef5d4a_3dfdf59fd1c7419a9dba14174be27316~mv2.png" medium="image" />
-      <media:thumbnail url="https://static.wixstatic.com/media/ef5d4a_3dfdf59fd1c7419a9dba14174be27316~mv2.png" />
-    </item>
-    <item>
-      <title>TILToooTILT - Everything Has Weight</title>
-      <link>https://www.siteofsites.co/websites/-tiltoootilt---everything-has-weight</link>
-      <guid isPermaLink="true">https://www.siteofsites.co/websites/-tiltoootilt---everything-has-weight</guid>
-      <description>Featured by Site of Sites in 07/2026. Original website: https://tiltoootilt.tote.co.jp/</description>
-      <category>Creative Arts</category>
-      <category>Custom Code</category>
-      <category>Interactive</category>
-      <category>Experimental</category>
-      <media:content url="https://static.wixstatic.com/media/ef5d4a_da00e4fad50f46898618b23fd4d72340~mv2.png" medium="image" />
-      <media:thumbnail url="https://static.wixstatic.com/media/ef5d4a_da00e4fad50f46898618b23fd4d72340~mv2.png" />
-    </item>
-    <item>
-      <title>Casa Portufornia</title>
-      <link>https://www.siteofsites.co/websites/casa-portufornia</link>
-      <guid isPermaLink="true">https://www.siteofsites.co/websites/casa-portufornia</guid>
-      <description>Featured by Site of Sites in 07/2026. Original website: https://casaportufornia.com/#get-in-touch</description>
-      <category>Travel &amp; Tourism</category>
-      <category>Wordpress</category>
-      <category>Photography &amp; Video</category>
-      <category>Design</category>
-      <category>Culture &amp; Entertainment</category>
-      <media:content url="https://static.wixstatic.com/media/ef5d4a_0542ac4033e1478c80e474274f563eb0~mv2.png" medium="image" />
-      <media:thumbnail url="https://static.wixstatic.com/media/ef5d4a_0542ac4033e1478c80e474274f563eb0~mv2.png" />
     </item>
   </channel>
 </rss>

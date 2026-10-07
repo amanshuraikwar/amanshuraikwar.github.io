@@ -7,6 +7,17 @@
     <generator>amanshuraikwar.github.io RSS generator</generator>
     <atom:link href="https://amanshuraikwar.github.io/rss/inspiration-grid-photography.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Bodega Cats of New York: Portraits of the City’s Hardest-Working Felines</title>
+      <link>https://theinspirationgrid.com/bodega-cats-of-new-york-portraits-of-the-citys-hardest-working-felines/</link>
+      <guid isPermaLink="true">https://theinspirationgrid.com/bodega-cats-of-new-york-portraits-of-the-citys-hardest-working-felines/</guid>
+      <description>New York writer Dan Rimada and photographer Gulce Kilkis are celebrating one of the city’s most beloved fixtures in Bodega Cats of New York, a new book documenting the feline residents of neighborhood stores across all five boroughs.</description>
+      <category>Graphic Design</category>
+      <category>Photography</category>
+      <category>Print Design</category>
+      <media:content url="https://inspgr.id/app/uploads/2026/10/book-bodega-cats-of-new-york-feature.jpg" medium="image" />
+      <media:thumbnail url="https://inspgr.id/app/uploads/2026/10/book-bodega-cats-of-new-york-feature.jpg" />
+    </item>
+    <item>
       <title>Where Light Falls: Landscape Photography by Martin Rak</title>
       <link>https://theinspirationgrid.com/where-light-falls-landscape-photography-by-martin-rak/</link>
       <guid isPermaLink="true">https://theinspirationgrid.com/where-light-falls-landscape-photography-by-martin-rak/</guid>
@@ -305,15 +316,6 @@
       <category>Photography</category>
       <media:content url="https://inspgr.id/app/uploads/2026/05/photography-nassia-stouraiti-feature.jpg" medium="image" />
       <media:thumbnail url="https://inspgr.id/app/uploads/2026/05/photography-nassia-stouraiti-feature.jpg" />
-    </item>
-    <item>
-      <title>Lepidoptera: Macro Photos of Butterflies and Moths by Eugenijus Kavaliauskas</title>
-      <link>https://theinspirationgrid.com/lepidoptera-macro-photos-of-butterflies-and-moths-by-eugenijus-kavaliauskas/</link>
-      <guid isPermaLink="true">https://theinspirationgrid.com/lepidoptera-macro-photos-of-butterflies-and-moths-by-eugenijus-kavaliauskas/</guid>
-      <description>Lithuanian photographer Eugenijus Kavaliauskas turns butterflies and moths into striking studies of colour, pattern and texture in his macro series Lepidoptera.</description>
-      <category>Photography</category>
-      <media:content url="https://inspgr.id/app/uploads/2026/05/photography-kavaliauskas-feature.jpg" medium="image" />
-      <media:thumbnail url="https://inspgr.id/app/uploads/2026/05/photography-kavaliauskas-feature.jpg" />
     </item>
   </channel>
 </rss>
