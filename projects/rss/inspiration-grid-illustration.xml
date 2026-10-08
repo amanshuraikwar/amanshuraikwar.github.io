@@ -7,6 +7,17 @@
     <generator>amanshuraikwar.github.io RSS generator</generator>
     <atom:link href="https://amanshuraikwar.github.io/rss/inspiration-grid-illustration.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Illustrator Estevan Silveira Turns Pop Culture Icons into Graphic Short Stories</title>
+      <link>https://theinspirationgrid.com/illustrator-estevan-silveira-turns-pop-culture-icons-into-graphic-short-stories/</link>
+      <guid isPermaLink="true">https://theinspirationgrid.com/illustrator-estevan-silveira-turns-pop-culture-icons-into-graphic-short-stories/</guid>
+      <description>São Paulo-based illustrator and graphic designer Estevan Silveira creates powerful illustrations inspired by pop culture, comic books, movies and video games.</description>
+      <category>Art</category>
+      <category>Illustration</category>
+      <category>Pop Culture</category>
+      <media:content url="https://inspgr.id/app/uploads/2026/10/illustration-estevan-silveira-feature.jpg" medium="image" />
+      <media:thumbnail url="https://inspgr.id/app/uploads/2026/10/illustration-estevan-silveira-feature.jpg" />
+    </item>
+    <item>
       <title>Everyday Cinema: Illustrator Nin Nin Turns Ordinary Moments Into Film Stills</title>
       <link>https://theinspirationgrid.com/everyday-cinema-illustrator-nin-nin-turns-ordinary-moments-into-film-stills/</link>
       <guid isPermaLink="true">https://theinspirationgrid.com/everyday-cinema-illustrator-nin-nin-turns-ordinary-moments-into-film-stills/</guid>
@@ -313,16 +324,6 @@
       <category>Technology</category>
       <media:content url="https://inspgr.id/app/uploads/2026/08/ig-feature-images-2.jpg" medium="image" />
       <media:thumbnail url="https://inspgr.id/app/uploads/2026/08/ig-feature-images-2.jpg" />
-    </item>
-    <item>
-      <title>Myths, Monsters and Otherworldly Visions: Illustrations by Shirley Gong</title>
-      <link>https://theinspirationgrid.com/myths-monsters-and-otherworldly-visions-illustrations-by-shirley-gong/</link>
-      <guid isPermaLink="true">https://theinspirationgrid.com/myths-monsters-and-otherworldly-visions-illustrations-by-shirley-gong/</guid>
-      <description>Singapore-based illustrator Shirley Gong crafts intricate scenes packed with mythological creatures, strange spirits and surreal landscapes, blending traditional East Asian influences with a contemporary sensibility.</description>
-      <category>Art</category>
-      <category>Illustration</category>
-      <media:content url="https://inspgr.id/app/uploads/2026/08/illustrations-shirley-gong-feature.jpg" medium="image" />
-      <media:thumbnail url="https://inspgr.id/app/uploads/2026/08/illustrations-shirley-gong-feature.jpg" />
     </item>
   </channel>
 </rss>
