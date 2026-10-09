@@ -7,6 +7,28 @@
     <generator>amanshuraikwar.github.io RSS generator</generator>
     <atom:link href="https://amanshuraikwar.github.io/rss/inspiration-grid-illustration.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Illustrator NoGood Gathers Five Years of Retro-Tech Art in a Self-Published Monograph</title>
+      <link>https://theinspirationgrid.com/illustrator-nogood-gathers-five-years-of-retro-tech-art-in-a-self-published-monograph/</link>
+      <guid isPermaLink="true">https://theinspirationgrid.com/illustrator-nogood-gathers-five-years-of-retro-tech-art-in-a-self-published-monograph/</guid>
+      <description>Amsterdam-based illustrator Thomas Rohlfs, aka NoGood, has released The NoGood Book, a self-published monograph celebrating five years of creative work and the independent philosophy behind it.</description>
+      <category>Art</category>
+      <category>Graphic Design</category>
+      <category>Illustration</category>
+      <category>Print Design</category>
+      <media:content url="https://inspgr.id/app/uploads/2026/10/book-nogood-feature.jpg" medium="image" />
+      <media:thumbnail url="https://inspgr.id/app/uploads/2026/10/book-nogood-feature.jpg" />
+    </item>
+    <item>
+      <title>Wild Glitch: Distorted Animal Portraits by Manuel Cetina</title>
+      <link>https://theinspirationgrid.com/wild-glitch-distorted-animal-portraits-by-manuel-cetina/</link>
+      <guid isPermaLink="true">https://theinspirationgrid.com/wild-glitch-distorted-animal-portraits-by-manuel-cetina/</guid>
+      <description>Wild Glitch is another striking series by Mexican illustrator and art director Manuel Cetina, combining the raw intensity of wildlife with the visual chaos of digital glitches.</description>
+      <category>Art</category>
+      <category>Illustration</category>
+      <media:content url="https://inspgr.id/app/uploads/2026/10/illustration-manuel-cetina-feature.jpg" medium="image" />
+      <media:thumbnail url="https://inspgr.id/app/uploads/2026/10/illustration-manuel-cetina-feature.jpg" />
+    </item>
+    <item>
       <title>Illustrator Estevan Silveira Turns Pop Culture Icons into Graphic Short Stories</title>
       <link>https://theinspirationgrid.com/illustrator-estevan-silveira-turns-pop-culture-icons-into-graphic-short-stories/</link>
       <guid isPermaLink="true">https://theinspirationgrid.com/illustrator-estevan-silveira-turns-pop-culture-icons-into-graphic-short-stories/</guid>
@@ -293,37 +315,6 @@
       <category>Illustration</category>
       <media:content url="https://inspgr.id/app/uploads/2026/08/illustration-gloria-pizzilli-feature.jpg" medium="image" />
       <media:thumbnail url="https://inspgr.id/app/uploads/2026/08/illustration-gloria-pizzilli-feature.jpg" />
-    </item>
-    <item>
-      <title>Back to School: An A+ Collection of Design Assets</title>
-      <link>https://theinspirationgrid.com/editorial/back-to-school-an-a-collection-of-design-assets/</link>
-      <guid isPermaLink="true">https://theinspirationgrid.com/editorial/back-to-school-an-a-collection-of-design-assets/</guid>
-      <description>If there’s one thing I’ve learned from Rodney Dangerfield, it’s that going back to school is a lot more fun when you’re not the one doing the homework. We’ve rounded up a collection of design assets, all ready to go. Minimum effort required.</description>
-      <category>Art</category>
-      <category>Branding</category>
-      <category>Graphic Design</category>
-      <category>Illustration</category>
-      <category>Print Design</category>
-      <media:content url="https://inspgr.id/app/uploads/2026/08/back-to-school-feature.jpg" medium="image" />
-      <media:thumbnail url="https://inspgr.id/app/uploads/2026/08/back-to-school-feature.jpg" />
-    </item>
-    <item>
-      <title>20 Exceptional A’ Design Award Winners Worth Discovering</title>
-      <link>https://theinspirationgrid.com/editorial/20-exceptional-a-design-award-winners-worth-discovering/</link>
-      <guid isPermaLink="true">https://theinspirationgrid.com/editorial/20-exceptional-a-design-award-winners-worth-discovering/</guid>
-      <description>The A’ Design Award &amp; Competition is one of the world’s largest international design competitions, recognizing outstanding work across architecture, product design, furniture, graphics, fashion, digital design, art and many other creative disciplines.</description>
-      <category>Architecture</category>
-      <category>Art</category>
-      <category>Fashion &amp; Beauty</category>
-      <category>Gaming</category>
-      <category>Illustration</category>
-      <category>Industrial Design</category>
-      <category>Interior Design</category>
-      <category>Packaging Design</category>
-      <category>Product Design</category>
-      <category>Technology</category>
-      <media:content url="https://inspgr.id/app/uploads/2026/08/ig-feature-images-2.jpg" medium="image" />
-      <media:thumbnail url="https://inspgr.id/app/uploads/2026/08/ig-feature-images-2.jpg" />
     </item>
   </channel>
 </rss>

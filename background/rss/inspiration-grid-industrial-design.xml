@@ -7,6 +7,17 @@
     <generator>amanshuraikwar.github.io RSS generator</generator>
     <atom:link href="https://amanshuraikwar.github.io/rss/inspiration-grid-industrial-design.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Timekettle LiveTalk Review: Breaking Language Barriers Without Breaking the Bank</title>
+      <link>https://theinspirationgrid.com/editorial/timekettle-livetalk-review-breaking-language-barriers-without-breaking-the-bank/</link>
+      <guid isPermaLink="true">https://theinspirationgrid.com/editorial/timekettle-livetalk-review-breaking-language-barriers-without-breaking-the-bank/</guid>
+      <description>Real-time translation used to feel like science fiction. Now it ships in a clamshell case.</description>
+      <category>Industrial Design</category>
+      <category>Product Design</category>
+      <category>Technology</category>
+      <media:content url="https://inspgr.id/app/uploads/2026/10/review-timekettle-livetalk-feature.jpg" medium="image" />
+      <media:thumbnail url="https://inspgr.id/app/uploads/2026/10/review-timekettle-livetalk-feature.jpg" />
+    </item>
+    <item>
       <title>KONKR Pocket Block: AYANEO’s $79 Game Boy-Style Handheld Is Here</title>
       <link>https://theinspirationgrid.com/editorial/konkr-pocket-block-ayaneos-79-game-boy-style-handheld-is-here/</link>
       <guid isPermaLink="true">https://theinspirationgrid.com/editorial/konkr-pocket-block-ayaneos-79-game-boy-style-handheld-is-here/</guid>
@@ -356,18 +367,6 @@
       <category>Technology</category>
       <media:content url="https://inspgr.id/app/uploads/2026/06/jsaux-energy-station-review-feature.jpg" medium="image" />
       <media:thumbnail url="https://inspgr.id/app/uploads/2026/06/jsaux-energy-station-review-feature.jpg" />
-    </item>
-    <item>
-      <title>AYANEO Pocket Micro 2 Brings Bigger Power and Battery to the Prettiest Pocket-Sized Handheld</title>
-      <link>https://theinspirationgrid.com/editorial/ayaneo-pocket-micro-2-brings-bigger-power-and-battery-to-the-prettiest-pocket-sized-handheld/</link>
-      <guid isPermaLink="true">https://theinspirationgrid.com/editorial/ayaneo-pocket-micro-2-brings-bigger-power-and-battery-to-the-prettiest-pocket-sized-handheld/</guid>
-      <description>The AYANEO Pocket Micro 2 is a refined and more powerful successor to one of the most charming retro handhelds out there.</description>
-      <category>Gaming</category>
-      <category>Industrial Design</category>
-      <category>Product Design</category>
-      <category>Technology</category>
-      <media:content url="https://inspgr.id/app/uploads/2026/06/ayaneo-pocket-micro-2-feature.jpg" medium="image" />
-      <media:thumbnail url="https://inspgr.id/app/uploads/2026/06/ayaneo-pocket-micro-2-feature.jpg" />
     </item>
   </channel>
 </rss>
