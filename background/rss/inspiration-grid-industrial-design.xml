@@ -7,6 +7,17 @@
     <generator>amanshuraikwar.github.io RSS generator</generator>
     <atom:link href="https://amanshuraikwar.github.io/rss/inspiration-grid-industrial-design.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Creality Sermoon P1 Review: Is a $3,299 3D Scanner Actually Beginner-Friendly?</title>
+      <link>https://theinspirationgrid.com/editorial/creality-sermoon-p1-review-is-a-3299-3d-scanner-actually-beginner-friendly/</link>
+      <guid isPermaLink="true">https://theinspirationgrid.com/editorial/creality-sermoon-p1-review-is-a-3299-3d-scanner-actually-beginner-friendly/</guid>
+      <description>Pro-grade scanning, through the eyes of a complete beginner. How approachable is a device like this for someone starting from scratch?</description>
+      <category>Industrial Design</category>
+      <category>Product Design</category>
+      <category>Technology</category>
+      <media:content url="https://inspgr.id/app/uploads/2026/10/creality-sermoon-p1-review-cover.jpg" medium="image" />
+      <media:thumbnail url="https://inspgr.id/app/uploads/2026/10/creality-sermoon-p1-review-cover.jpg" />
+    </item>
+    <item>
       <title>Timekettle LiveTalk Review: Breaking Language Barriers Without Breaking the Bank</title>
       <link>https://theinspirationgrid.com/editorial/timekettle-livetalk-review-breaking-language-barriers-without-breaking-the-bank/</link>
       <guid isPermaLink="true">https://theinspirationgrid.com/editorial/timekettle-livetalk-review-breaking-language-barriers-without-breaking-the-bank/</guid>
@@ -355,18 +366,6 @@
       <category>Technology</category>
       <media:content url="https://inspgr.id/app/uploads/2026/06/inkwon-printer-feature.jpg" medium="image" />
       <media:thumbnail url="https://inspgr.id/app/uploads/2026/06/inkwon-printer-feature.jpg" />
-    </item>
-    <item>
-      <title>JSAUX Multi-Controller Energy Station for Switch 2 Review: One Dock to Charge Your Entire Joy-Con Army</title>
-      <link>https://theinspirationgrid.com/editorial/jsaux-multi-controller-energy-station-for-switch-2-review-one-dock-to-charge-your-entire-joy-con-army/</link>
-      <guid isPermaLink="true">https://theinspirationgrid.com/editorial/jsaux-multi-controller-energy-station-for-switch-2-review-one-dock-to-charge-your-entire-joy-con-army/</guid>
-      <description>If you ever had friends over for a session of Mario Kart World only to realize that some of your controllers are flashing red, you understand the frustration and the exact problem JSAUX is trying to solve with this charging station.</description>
-      <category>Gaming</category>
-      <category>Industrial Design</category>
-      <category>Product Design</category>
-      <category>Technology</category>
-      <media:content url="https://inspgr.id/app/uploads/2026/06/jsaux-energy-station-review-feature.jpg" medium="image" />
-      <media:thumbnail url="https://inspgr.id/app/uploads/2026/06/jsaux-energy-station-review-feature.jpg" />
     </item>
   </channel>
 </rss>

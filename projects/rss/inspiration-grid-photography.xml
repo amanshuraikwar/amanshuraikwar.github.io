@@ -7,6 +7,15 @@
     <generator>amanshuraikwar.github.io RSS generator</generator>
     <atom:link href="https://amanshuraikwar.github.io/rss/inspiration-grid-photography.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Hilarious, Perfectly Timed Finalists from the 2026 Nikon Comedy Wildlife Awards</title>
+      <link>https://theinspirationgrid.com/hilarious-perfectly-timed-finalists-from-the-2026-nikon-comedy-wildlife-awards/</link>
+      <guid isPermaLink="true">https://theinspirationgrid.com/hilarious-perfectly-timed-finalists-from-the-2026-nikon-comedy-wildlife-awards/</guid>
+      <description>The finalists for the 2026 Nikon Comedy Wildlife Awards have been revealed, offering another entertaining glimpse into the wonderfully unpredictable world of wildlife.</description>
+      <category>Photography</category>
+      <media:content url="https://inspgr.id/app/uploads/2026/10/photography-nikon-comedy-wildlife-feature.jpg" medium="image" />
+      <media:thumbnail url="https://inspgr.id/app/uploads/2026/10/photography-nikon-comedy-wildlife-feature.jpg" />
+    </item>
+    <item>
       <title>Bodega Cats of New York: Portraits of the City’s Hardest-Working Felines</title>
       <link>https://theinspirationgrid.com/bodega-cats-of-new-york-portraits-of-the-citys-hardest-working-felines/</link>
       <guid isPermaLink="true">https://theinspirationgrid.com/bodega-cats-of-new-york-portraits-of-the-citys-hardest-working-felines/</guid>
@@ -305,17 +314,6 @@
       <category>Photography</category>
       <media:content url="https://inspgr.id/app/uploads/2026/06/photography-viktor-balaguer-feature.jpg" medium="image" />
       <media:thumbnail url="https://inspgr.id/app/uploads/2026/06/photography-viktor-balaguer-feature.jpg" />
-    </item>
-    <item>
-      <title>Color as a Disguise: Creative Portraits by Nassia Stouraiti</title>
-      <link>https://theinspirationgrid.com/color-as-a-disguise-creative-portraits-by-nassia-stouraiti/</link>
-      <guid isPermaLink="true">https://theinspirationgrid.com/color-as-a-disguise-creative-portraits-by-nassia-stouraiti/</guid>
-      <description>Athens-based freelance photographer Nassia Stouraiti creates portraits that treat the face as a surface for colour, texture and transformation.</description>
-      <category>Art</category>
-      <category>Fashion &amp; Beauty</category>
-      <category>Photography</category>
-      <media:content url="https://inspgr.id/app/uploads/2026/05/photography-nassia-stouraiti-feature.jpg" medium="image" />
-      <media:thumbnail url="https://inspgr.id/app/uploads/2026/05/photography-nassia-stouraiti-feature.jpg" />
     </item>
   </channel>
 </rss>
