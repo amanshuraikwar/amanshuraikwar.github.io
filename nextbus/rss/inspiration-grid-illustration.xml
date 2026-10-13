@@ -7,6 +7,16 @@
     <generator>amanshuraikwar.github.io RSS generator</generator>
     <atom:link href="https://amanshuraikwar.github.io/rss/inspiration-grid-illustration.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>This Book Will Make You Psychic: Mystical Illustrations by Jesús Sotés Vicente</title>
+      <link>https://theinspirationgrid.com/this-book-will-make-you-psychic-mystical-illustrations-by-jesus-sotes-vicente/</link>
+      <guid isPermaLink="true">https://theinspirationgrid.com/this-book-will-make-you-psychic-mystical-illustrations-by-jesus-sotes-vicente/</guid>
+      <description>Spanish illustrator Jesús Sotés Vicente has created a mesmerizing collection of illustrations for This Book Will Make You Psychic, a book by author and tarot expert Kerry Ward.</description>
+      <category>Art</category>
+      <category>Illustration</category>
+      <media:content url="https://inspgr.id/app/uploads/2026/10/illustration-jesus-sotes-vicente-feature.jpg" medium="image" />
+      <media:thumbnail url="https://inspgr.id/app/uploads/2026/10/illustration-jesus-sotes-vicente-feature.jpg" />
+    </item>
+    <item>
       <title>Illustrator NoGood Gathers Five Years of Retro-Tech Art in a Self-Published Monograph</title>
       <link>https://theinspirationgrid.com/illustrator-nogood-gathers-five-years-of-retro-tech-art-in-a-self-published-monograph/</link>
       <guid isPermaLink="true">https://theinspirationgrid.com/illustrator-nogood-gathers-five-years-of-retro-tech-art-in-a-self-published-monograph/</guid>
@@ -305,16 +315,6 @@
       <category>Print Design</category>
       <media:content url="https://inspgr.id/app/uploads/2026/08/design-xtian-miller-sonnet-posters-feature.jpg" medium="image" />
       <media:thumbnail url="https://inspgr.id/app/uploads/2026/08/design-xtian-miller-sonnet-posters-feature.jpg" />
-    </item>
-    <item>
-      <title>Shape-Shifting Figures: Illustrations by Gloria Pizzilli</title>
-      <link>https://theinspirationgrid.com/shape-shifting-figures-illustrations-by-gloria-pizzilli/</link>
-      <guid isPermaLink="true">https://theinspirationgrid.com/shape-shifting-figures-illustrations-by-gloria-pizzilli/</guid>
-      <description>Florence-based illustrator Gloria Pizzilli creates striking images that combine graceful linework, expressive figures and powerful color palettes.</description>
-      <category>Art</category>
-      <category>Illustration</category>
-      <media:content url="https://inspgr.id/app/uploads/2026/08/illustration-gloria-pizzilli-feature.jpg" medium="image" />
-      <media:thumbnail url="https://inspgr.id/app/uploads/2026/08/illustration-gloria-pizzilli-feature.jpg" />
     </item>
   </channel>
 </rss>

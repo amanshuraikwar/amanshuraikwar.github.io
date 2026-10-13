@@ -7,6 +7,17 @@
     <generator>amanshuraikwar.github.io RSS generator</generator>
     <atom:link href="https://amanshuraikwar.github.io/rss/inspiration-grid-industrial-design.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>The Best in Product &amp; Industrial Design: 20 Winners from the A’ Design Award</title>
+      <link>https://theinspirationgrid.com/editorial/the-best-in-product-industrial-design-20-winners-from-the-a-design-award/</link>
+      <guid isPermaLink="true">https://theinspirationgrid.com/editorial/the-best-in-product-industrial-design-20-winners-from-the-a-design-award/</guid>
+      <description>In this feature, we’re turning our attention to industrial and product design, an expansive field covering furniture, lighting, electronics, home appliances, vehicles, watches and countless other objects that shape our everyday lives.</description>
+      <category>Industrial Design</category>
+      <category>Product Design</category>
+      <category>Technology</category>
+      <media:content url="https://inspgr.id/app/uploads/2026/10/adesign-industrial-cover.jpg" medium="image" />
+      <media:thumbnail url="https://inspgr.id/app/uploads/2026/10/adesign-industrial-cover.jpg" />
+    </item>
+    <item>
       <title>Creality Sermoon P1 Review: Is a $3,299 3D Scanner Actually Beginner-Friendly?</title>
       <link>https://theinspirationgrid.com/editorial/creality-sermoon-p1-review-is-a-3299-3d-scanner-actually-beginner-friendly/</link>
       <guid isPermaLink="true">https://theinspirationgrid.com/editorial/creality-sermoon-p1-review-is-a-3299-3d-scanner-actually-beginner-friendly/</guid>
@@ -353,19 +364,6 @@
       <category>Technology</category>
       <media:content url="https://inspgr.id/app/uploads/2026/07/creality-falcon-a1c-feature.jpg" medium="image" />
       <media:thumbnail url="https://inspgr.id/app/uploads/2026/07/creality-falcon-a1c-feature.jpg" />
-    </item>
-    <item>
-      <title>This Pocket-Sized Printer Turns Your Designs Into Tattoos, Stickers and T-Shirt Transfers</title>
-      <link>https://theinspirationgrid.com/editorial/this-pocket-sized-printer-turns-your-designs-into-tattoos-stickers-and-t-shirt-transfers/</link>
-      <guid isPermaLink="true">https://theinspirationgrid.com/editorial/this-pocket-sized-printer-turns-your-designs-into-tattoos-stickers-and-t-shirt-transfers/</guid>
-      <description>Most creative gadgets are one-trick machines, each one taking up space and eating into your hard-earned cash for a single job. The INKWON Tag takes a more flexible approach.</description>
-      <category>Art</category>
-      <category>Illustration</category>
-      <category>Industrial Design</category>
-      <category>Product Design</category>
-      <category>Technology</category>
-      <media:content url="https://inspgr.id/app/uploads/2026/06/inkwon-printer-feature.jpg" medium="image" />
-      <media:thumbnail url="https://inspgr.id/app/uploads/2026/06/inkwon-printer-feature.jpg" />
     </item>
   </channel>
 </rss>
