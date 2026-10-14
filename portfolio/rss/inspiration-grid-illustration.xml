@@ -7,6 +7,16 @@
     <generator>amanshuraikwar.github.io RSS generator</generator>
     <atom:link href="https://amanshuraikwar.github.io/rss/inspiration-grid-illustration.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Colorful Graphic Storytelling by Christoph Frei</title>
+      <link>https://theinspirationgrid.com/colorful-graphic-storytelling-by-christoph-frei/</link>
+      <guid isPermaLink="true">https://theinspirationgrid.com/colorful-graphic-storytelling-by-christoph-frei/</guid>
+      <description>Swiss illustrator and graphic designer Christoph Frei creates vibrant, character-filled illustrations that combine bold geometric shapes, playful compositions and a distinctive sense of storytelling.</description>
+      <category>Art</category>
+      <category>Illustration</category>
+      <media:content url="https://inspgr.id/app/uploads/2026/10/illustration-christoph-frei-feature.jpg" medium="image" />
+      <media:thumbnail url="https://inspgr.id/app/uploads/2026/10/illustration-christoph-frei-feature.jpg" />
+    </item>
+    <item>
       <title>This Book Will Make You Psychic: Mystical Illustrations by Jesús Sotés Vicente</title>
       <link>https://theinspirationgrid.com/this-book-will-make-you-psychic-mystical-illustrations-by-jesus-sotes-vicente/</link>
       <guid isPermaLink="true">https://theinspirationgrid.com/this-book-will-make-you-psychic-mystical-illustrations-by-jesus-sotes-vicente/</guid>
@@ -304,17 +314,6 @@
       <category>Illustration</category>
       <media:content url="https://inspgr.id/app/uploads/2026/08/illustration-pookie-art-feature.jpg" medium="image" />
       <media:thumbnail url="https://inspgr.id/app/uploads/2026/08/illustration-pookie-art-feature.jpg" />
-    </item>
-    <item>
-      <title>Shakespeare in Black &amp; White: Sonnet Posters by Xtian Miller</title>
-      <link>https://theinspirationgrid.com/shakespeare-in-black-white-sonnet-posters-by-xtian-miller/</link>
-      <guid isPermaLink="true">https://theinspirationgrid.com/shakespeare-in-black-white-sonnet-posters-by-xtian-miller/</guid>
-      <description>Last year, we featured Xtian Miller’s experimental typographic posters, and this time we’re diving back into his catalog with Sonnet Posters, a project created between January 2018 and May 2020.</description>
-      <category>Graphic Design</category>
-      <category>Illustration</category>
-      <category>Print Design</category>
-      <media:content url="https://inspgr.id/app/uploads/2026/08/design-xtian-miller-sonnet-posters-feature.jpg" medium="image" />
-      <media:thumbnail url="https://inspgr.id/app/uploads/2026/08/design-xtian-miller-sonnet-posters-feature.jpg" />
     </item>
   </channel>
 </rss>

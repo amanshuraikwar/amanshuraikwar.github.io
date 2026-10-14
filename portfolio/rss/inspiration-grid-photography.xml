@@ -7,6 +7,16 @@
     <generator>amanshuraikwar.github.io RSS generator</generator>
     <atom:link href="https://amanshuraikwar.github.io/rss/inspiration-grid-photography.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Striking Architectural Photography by Seth Powers</title>
+      <link>https://theinspirationgrid.com/striking-architectural-photography-by-seth-powers/</link>
+      <guid isPermaLink="true">https://theinspirationgrid.com/striking-architectural-photography-by-seth-powers/</guid>
+      <description>Shanghai-based photographer Seth Powers specializes in architecture and interiors, capturing contemporary buildings with a keen eye for composition, geometry and light.</description>
+      <category>Architecture</category>
+      <category>Photography</category>
+      <media:content url="https://inspgr.id/app/uploads/2026/10/architecture-seth-powers-feature.jpg" medium="image" />
+      <media:thumbnail url="https://inspgr.id/app/uploads/2026/10/architecture-seth-powers-feature.jpg" />
+    </item>
+    <item>
       <title>Hilarious, Perfectly Timed Finalists from the 2026 Nikon Comedy Wildlife Awards</title>
       <link>https://theinspirationgrid.com/hilarious-perfectly-timed-finalists-from-the-2026-nikon-comedy-wildlife-awards/</link>
       <guid isPermaLink="true">https://theinspirationgrid.com/hilarious-perfectly-timed-finalists-from-the-2026-nikon-comedy-wildlife-awards/</guid>
@@ -305,15 +315,6 @@
       <category>Photography</category>
       <media:content url="https://inspgr.id/app/uploads/2026/06/photography-vincent-versluis-feature.jpg" medium="image" />
       <media:thumbnail url="https://inspgr.id/app/uploads/2026/06/photography-vincent-versluis-feature.jpg" />
-    </item>
-    <item>
-      <title>Snow Over the City: Cinematic Photography by Viktor Balaguer</title>
-      <link>https://theinspirationgrid.com/snow-over-the-city-cinematic-photography-by-viktor-balaguer/</link>
-      <guid isPermaLink="true">https://theinspirationgrid.com/snow-over-the-city-cinematic-photography-by-viktor-balaguer/</guid>
-      <description>French photographer and visual storyteller Viktor Balaguer turns Saint Petersburg into a frozen cinematic stage in Snow Over the City, a series shot across the Russian city in winter.</description>
-      <category>Photography</category>
-      <media:content url="https://inspgr.id/app/uploads/2026/06/photography-viktor-balaguer-feature.jpg" medium="image" />
-      <media:thumbnail url="https://inspgr.id/app/uploads/2026/06/photography-viktor-balaguer-feature.jpg" />
     </item>
   </channel>
 </rss>

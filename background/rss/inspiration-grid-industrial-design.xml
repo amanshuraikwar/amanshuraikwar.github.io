@@ -7,6 +7,18 @@
     <generator>amanshuraikwar.github.io RSS generator</generator>
     <atom:link href="https://amanshuraikwar.github.io/rss/inspiration-grid-industrial-design.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>OneXPlayer Super X Pro Brings AMD’s Ryzen AI Max+ PRO 495 and 192GB of Memory to a 2-in-1</title>
+      <link>https://theinspirationgrid.com/editorial/onexplayer-super-x-pro-brings-amds-ryzen-ai-max-pro-495-and-192gb-of-memory-to-a-2-in-1/</link>
+      <guid isPermaLink="true">https://theinspirationgrid.com/editorial/onexplayer-super-x-pro-brings-amds-ryzen-ai-max-pro-495-and-192gb-of-memory-to-a-2-in-1/</guid>
+      <description>OneXPlayer’s follow-up to the Super X triples the maximum memory capacity, while pairing AMD’s new Gorgon Halo chip with an external liquid-cooling dock for up to 120W of sustained performance.</description>
+      <category>Gaming</category>
+      <category>Industrial Design</category>
+      <category>Product Design</category>
+      <category>Technology</category>
+      <media:content url="https://inspgr.id/app/uploads/2026/10/onexplayer-super-x-pro-feature.jpg" medium="image" />
+      <media:thumbnail url="https://inspgr.id/app/uploads/2026/10/onexplayer-super-x-pro-feature.jpg" />
+    </item>
+    <item>
       <title>The Best in Product &amp; Industrial Design: 20 Winners from the A’ Design Award</title>
       <link>https://theinspirationgrid.com/editorial/the-best-in-product-industrial-design-20-winners-from-the-a-design-award/</link>
       <guid isPermaLink="true">https://theinspirationgrid.com/editorial/the-best-in-product-industrial-design-20-winners-from-the-a-design-award/</guid>
@@ -352,18 +364,6 @@
       <category>Technology</category>
       <media:content url="https://inspgr.id/app/uploads/2026/07/3d-rams-icons-feature.jpg" medium="image" />
       <media:thumbnail url="https://inspgr.id/app/uploads/2026/07/3d-rams-icons-feature.jpg" />
-    </item>
-    <item>
-      <title>Creality Falcon A1C Brings AI-Assisted Laser Engraving to the Desktop, From $199</title>
-      <link>https://theinspirationgrid.com/editorial/creality-falcon-a1c-brings-ai-assisted-laser-engraving-to-the-desktop-from-199/</link>
-      <guid isPermaLink="true">https://theinspirationgrid.com/editorial/creality-falcon-a1c-brings-ai-assisted-laser-engraving-to-the-desktop-from-199/</guid>
-      <description>Creality has launched the Falcon A1C, a compact, fully enclosed, AI-camera-equipped desktop engraver with swappable laser modules, designed to make home engraving feel less intimidating for beginners.</description>
-      <category>Art</category>
-      <category>Industrial Design</category>
-      <category>Product Design</category>
-      <category>Technology</category>
-      <media:content url="https://inspgr.id/app/uploads/2026/07/creality-falcon-a1c-feature.jpg" medium="image" />
-      <media:thumbnail url="https://inspgr.id/app/uploads/2026/07/creality-falcon-a1c-feature.jpg" />
     </item>
   </channel>
 </rss>
