@@ -7,6 +7,17 @@
     <generator>amanshuraikwar.github.io RSS generator</generator>
     <atom:link href="https://amanshuraikwar.github.io/rss/inspiration-grid-photography.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Sculptural Fashion &amp; Beauty Photography by Kamilla Hanapova</title>
+      <link>https://theinspirationgrid.com/sculptural-fashion-beauty-photography-by-kamilla-hanapova/</link>
+      <guid isPermaLink="true">https://theinspirationgrid.com/sculptural-fashion-beauty-photography-by-kamilla-hanapova/</guid>
+      <description>Moscow-based Russian photographer and art director Kamilla Hanapova produces fashion, beauty and fine art images that treat clothing as structure and the studio as a stage for imaginary worlds.</description>
+      <category>Art</category>
+      <category>Fashion &amp; Beauty</category>
+      <category>Photography</category>
+      <media:content url="https://inspgr.id/app/uploads/2026/10/photography-kamilla-hanapova-feature.jpg" medium="image" />
+      <media:thumbnail url="https://inspgr.id/app/uploads/2026/10/photography-kamilla-hanapova-feature.jpg" />
+    </item>
+    <item>
       <title>Striking Architectural Photography by Seth Powers</title>
       <link>https://theinspirationgrid.com/striking-architectural-photography-by-seth-powers/</link>
       <guid isPermaLink="true">https://theinspirationgrid.com/striking-architectural-photography-by-seth-powers/</guid>
@@ -306,15 +317,6 @@
       <category>Interior Design</category>
       <media:content url="https://inspgr.id/app/uploads/2026/06/adesign-award-cover-26.jpg" medium="image" />
       <media:thumbnail url="https://inspgr.id/app/uploads/2026/06/adesign-award-cover-26.jpg" />
-    </item>
-    <item>
-      <title>Somewhere in Japan: Candid Photos by Vincent Versluis</title>
-      <link>https://theinspirationgrid.com/somewhere-in-japan-candid-photos-by-vincent-versluis/</link>
-      <guid isPermaLink="true">https://theinspirationgrid.com/somewhere-in-japan-candid-photos-by-vincent-versluis/</guid>
-      <description>Amsterdam-based photographer and art director Vincent Versluis approaches Japan less like a traveler and more like a director, photographing the country as a series of held, spontaneous moments rather than a checklist of sights.</description>
-      <category>Photography</category>
-      <media:content url="https://inspgr.id/app/uploads/2026/06/photography-vincent-versluis-feature.jpg" medium="image" />
-      <media:thumbnail url="https://inspgr.id/app/uploads/2026/06/photography-vincent-versluis-feature.jpg" />
     </item>
   </channel>
 </rss>
