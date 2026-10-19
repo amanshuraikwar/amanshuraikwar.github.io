@@ -7,6 +7,16 @@
     <generator>amanshuraikwar.github.io RSS generator</generator>
     <atom:link href="https://amanshuraikwar.github.io/rss/inspiration-grid-photography.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>A Beautiful Kind of Strange: Portraits by Elisa Belitskaya</title>
+      <link>https://theinspirationgrid.com/a-beautiful-kind-of-strange-portraits-by-elisa-belitskaya/</link>
+      <guid isPermaLink="true">https://theinspirationgrid.com/a-beautiful-kind-of-strange-portraits-by-elisa-belitskaya/</guid>
+      <description>Georgian photographer and art director Elisa Belitskaya produces captivating images that combine surreal concepts, theatrical styling and imaginative storytelling.</description>
+      <category>Art</category>
+      <category>Photography</category>
+      <media:content url="https://inspgr.id/app/uploads/2026/10/photography-elisa-belitskaya-feature.jpg" medium="image" />
+      <media:thumbnail url="https://inspgr.id/app/uploads/2026/10/photography-elisa-belitskaya-feature.jpg" />
+    </item>
+    <item>
       <title>Sculptural Fashion &amp; Beauty Photography by Kamilla Hanapova</title>
       <link>https://theinspirationgrid.com/sculptural-fashion-beauty-photography-by-kamilla-hanapova/</link>
       <guid isPermaLink="true">https://theinspirationgrid.com/sculptural-fashion-beauty-photography-by-kamilla-hanapova/</guid>
@@ -299,24 +309,6 @@
       <category>Photography</category>
       <media:content url="https://inspgr.id/app/uploads/2026/06/photography-radoslav-sviretsov-feature.jpg" medium="image" />
       <media:thumbnail url="https://inspgr.id/app/uploads/2026/06/photography-radoslav-sviretsov-feature.jpg" />
-    </item>
-    <item>
-      <title>A’ Design Award &amp; Competition 2026/2027 Early Entry Now Open</title>
-      <link>https://theinspirationgrid.com/editorial/a-design-awards-competition-2026-2027-early-entry-now-open/</link>
-      <guid isPermaLink="true">https://theinspirationgrid.com/editorial/a-design-awards-competition-2026-2027-early-entry-now-open/</guid>
-      <description>The early entry period for the 2026–2027 edition of the A’ Design Awards &amp; Competition is now open, with an early submission deadline of June 30.</description>
-      <category>Advertising</category>
-      <category>Architecture</category>
-      <category>Art</category>
-      <category>Branding</category>
-      <category>Fashion &amp; Beauty</category>
-      <category>Gaming</category>
-      <category>Graphic Design</category>
-      <category>Illustration</category>
-      <category>Industrial Design</category>
-      <category>Interior Design</category>
-      <media:content url="https://inspgr.id/app/uploads/2026/06/adesign-award-cover-26.jpg" medium="image" />
-      <media:thumbnail url="https://inspgr.id/app/uploads/2026/06/adesign-award-cover-26.jpg" />
     </item>
   </channel>
 </rss>
