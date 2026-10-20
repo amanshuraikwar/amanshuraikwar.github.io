@@ -7,6 +7,16 @@
     <generator>amanshuraikwar.github.io RSS generator</generator>
     <atom:link href="https://amanshuraikwar.github.io/rss/inspiration-grid-illustration.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Poetic &amp; Surreal Illustrations by Adara Sánchez</title>
+      <link>https://theinspirationgrid.com/poetic-surreal-illustrations-by-adara-sanchez/</link>
+      <guid isPermaLink="true">https://theinspirationgrid.com/poetic-surreal-illustrations-by-adara-sanchez/</guid>
+      <description>Spanish illustrator Adara Sánchez combines delicate drawing, rich textures and vibrant colors with a distinctly surreal sensibility to create captivating artworks.</description>
+      <category>Art</category>
+      <category>Illustration</category>
+      <media:content url="https://inspgr.id/app/uploads/2026/10/illustration-adara-sanchez-feature.jpg" medium="image" />
+      <media:thumbnail url="https://inspgr.id/app/uploads/2026/10/illustration-adara-sanchez-feature.jpg" />
+    </item>
+    <item>
       <title>Colorful Graphic Storytelling by Christoph Frei</title>
       <link>https://theinspirationgrid.com/colorful-graphic-storytelling-by-christoph-frei/</link>
       <guid isPermaLink="true">https://theinspirationgrid.com/colorful-graphic-storytelling-by-christoph-frei/</guid>
@@ -304,16 +314,6 @@
       <category>Illustration</category>
       <media:content url="https://inspgr.id/app/uploads/2026/08/illustration-meme-mx-feature.jpg" medium="image" />
       <media:thumbnail url="https://inspgr.id/app/uploads/2026/08/illustration-meme-mx-feature.jpg" />
-    </item>
-    <item>
-      <title>Contemporary Engravings: Intricate Ink Illustrations by Pookiee</title>
-      <link>https://theinspirationgrid.com/contemporary-engravings-intricate-ink-illustrations-by-pookiee/</link>
-      <guid isPermaLink="true">https://theinspirationgrid.com/contemporary-engravings-intricate-ink-illustrations-by-pookiee/</guid>
-      <description>Thai artist Pookiee creates striking black and white illustrations using ink on paper, stacking thousands of individual strokes into portraits that borrow the density and discipline of classical engraving.</description>
-      <category>Art</category>
-      <category>Illustration</category>
-      <media:content url="https://inspgr.id/app/uploads/2026/08/illustration-pookie-art-feature.jpg" medium="image" />
-      <media:thumbnail url="https://inspgr.id/app/uploads/2026/08/illustration-pookie-art-feature.jpg" />
     </item>
   </channel>
 </rss>
