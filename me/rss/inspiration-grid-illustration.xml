@@ -7,6 +7,26 @@
     <generator>amanshuraikwar.github.io RSS generator</generator>
     <atom:link href="https://amanshuraikwar.github.io/rss/inspiration-grid-illustration.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Visual Wit: Clever Conceptual Illustrations by Stephan Schmitz</title>
+      <link>https://theinspirationgrid.com/visual-wit-clever-conceptual-illustrations-by-stephan-schmitz/</link>
+      <guid isPermaLink="true">https://theinspirationgrid.com/visual-wit-clever-conceptual-illustrations-by-stephan-schmitz/</guid>
+      <description>Stephan Schmitz is a talented Zurich-based artist known for turning complex ideas into instantly memorable images.</description>
+      <category>Art</category>
+      <category>Illustration</category>
+      <media:content url="https://inspgr.id/app/uploads/2026/10/illustration-stephan-schmitz-feature.jpg" medium="image" />
+      <media:thumbnail url="https://inspgr.id/app/uploads/2026/10/illustration-stephan-schmitz-feature.jpg" />
+    </item>
+    <item>
+      <title>Toylike 3D Characters by Marko Vuckovic</title>
+      <link>https://theinspirationgrid.com/toylike-3d-characters-by-marko-vuckovic/</link>
+      <guid isPermaLink="true">https://theinspirationgrid.com/toylike-3d-characters-by-marko-vuckovic/</guid>
+      <description>New York-based artist and designer Marko Vuckovic has a knack for turning ordinary objects and animals into lovable characters bursting with personality.</description>
+      <category>Art</category>
+      <category>Illustration</category>
+      <media:content url="https://inspgr.id/app/uploads/2026/10/3d-marko-vuckovic-feature.jpg" medium="image" />
+      <media:thumbnail url="https://inspgr.id/app/uploads/2026/10/3d-marko-vuckovic-feature.jpg" />
+    </item>
+    <item>
       <title>Poetic &amp; Surreal Illustrations by Adara Sánchez</title>
       <link>https://theinspirationgrid.com/poetic-surreal-illustrations-by-adara-sanchez/</link>
       <guid isPermaLink="true">https://theinspirationgrid.com/poetic-surreal-illustrations-by-adara-sanchez/</guid>
@@ -294,26 +314,6 @@
       <category>Illustration</category>
       <media:content url="https://inspgr.id/app/uploads/2026/08/illustration-irina-kiro-feature.jpg" medium="image" />
       <media:thumbnail url="https://inspgr.id/app/uploads/2026/08/illustration-irina-kiro-feature.jpg" />
-    </item>
-    <item>
-      <title>Handcrafted Paper Illustrations by Mariia Lapitan-Yashchenko</title>
-      <link>https://theinspirationgrid.com/handcrafted-paper-illustrations-by-mariia-lapitan-yashchenko/</link>
-      <guid isPermaLink="true">https://theinspirationgrid.com/handcrafted-paper-illustrations-by-mariia-lapitan-yashchenko/</guid>
-      <description>Ukrainian paper artist Mariia Lapitan-Yashchenko crafts miniature worlds from cut and layered paper, tucking forests, gardens, and floral fields inside silhouettes of heads, eyes, and everyday objects.</description>
-      <category>Art</category>
-      <category>Illustration</category>
-      <media:content url="https://inspgr.id/app/uploads/2026/08/art-mariia-lapitan-yashchenko-feature.jpg" medium="image" />
-      <media:thumbnail url="https://inspgr.id/app/uploads/2026/08/art-mariia-lapitan-yashchenko-feature.jpg" />
-    </item>
-    <item>
-      <title>Controlled Chaos: Psychedelic Illustrations by Meme MX</title>
-      <link>https://theinspirationgrid.com/controlled-chaos-psychedelic-illustrations-by-meme-mx/</link>
-      <guid isPermaLink="true">https://theinspirationgrid.com/controlled-chaos-psychedelic-illustrations-by-meme-mx/</guid>
-      <description>Mexican illustrator Carlos Mario Ochoa, aka Meme MX, creates wildly colorful compositions packed with surreal characters, futuristic machines, distorted architecture and strange objects that seem to collide within the same psychedelic universe.</description>
-      <category>Art</category>
-      <category>Illustration</category>
-      <media:content url="https://inspgr.id/app/uploads/2026/08/illustration-meme-mx-feature.jpg" medium="image" />
-      <media:thumbnail url="https://inspgr.id/app/uploads/2026/08/illustration-meme-mx-feature.jpg" />
     </item>
   </channel>
 </rss>
