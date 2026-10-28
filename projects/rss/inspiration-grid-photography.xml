@@ -7,6 +7,16 @@
     <generator>amanshuraikwar.github.io RSS generator</generator>
     <atom:link href="https://amanshuraikwar.github.io/rss/inspiration-grid-photography.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Effervescence: Surreal Technicolor Photography by Adewale Mayowa</title>
+      <link>https://theinspirationgrid.com/effervescence-surreal-technicolor-photography-by-adewale-mayowa/</link>
+      <guid isPermaLink="true">https://theinspirationgrid.com/effervescence-surreal-technicolor-photography-by-adewale-mayowa/</guid>
+      <description>Lagos-based photographer and multidisciplinary artist Adewale Mayowa invites us into a bizarre, dreamlike universe with Effervescence, a striking photographic series that explores the boundaries between reality, imagination and the subconscious.</description>
+      <category>Art</category>
+      <category>Photography</category>
+      <media:content url="https://inspgr.id/app/uploads/2026/10/photography-adewale-mayowa-feature.jpg" medium="image" />
+      <media:thumbnail url="https://inspgr.id/app/uploads/2026/10/photography-adewale-mayowa-feature.jpg" />
+    </item>
+    <item>
       <title>A Beautiful Kind of Strange: Portraits by Elisa Belitskaya</title>
       <link>https://theinspirationgrid.com/a-beautiful-kind-of-strange-portraits-by-elisa-belitskaya/</link>
       <guid isPermaLink="true">https://theinspirationgrid.com/a-beautiful-kind-of-strange-portraits-by-elisa-belitskaya/</guid>
@@ -300,15 +310,6 @@
       <category>Vehicle Design</category>
       <media:content url="https://inspgr.id/app/uploads/2026/06/photography-sevian-daupi-feature.jpg" medium="image" />
       <media:thumbnail url="https://inspgr.id/app/uploads/2026/06/photography-sevian-daupi-feature.jpg" />
-    </item>
-    <item>
-      <title>Where Roads Disappear: Radoslav Sviretsov’s Journey Through Iceland’s Highlands</title>
-      <link>https://theinspirationgrid.com/where-roads-disappear-radoslav-sviretsovs-journey-through-icelands-highlands/</link>
-      <guid isPermaLink="true">https://theinspirationgrid.com/where-roads-disappear-radoslav-sviretsovs-journey-through-icelands-highlands/</guid>
-      <description>Bulgarian landscape photographer and architect Radoslav Sviretsov, who is now based in Iceland, is back on the grid with a new photo essay that ventures far beyond the country’s familiar waterfalls, beaches and roadside viewpoints.</description>
-      <category>Photography</category>
-      <media:content url="https://inspgr.id/app/uploads/2026/06/photography-radoslav-sviretsov-feature.jpg" medium="image" />
-      <media:thumbnail url="https://inspgr.id/app/uploads/2026/06/photography-radoslav-sviretsov-feature.jpg" />
     </item>
   </channel>
 </rss>

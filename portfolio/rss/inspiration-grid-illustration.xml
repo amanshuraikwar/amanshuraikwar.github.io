@@ -7,6 +7,16 @@
     <generator>amanshuraikwar.github.io RSS generator</generator>
     <atom:link href="https://amanshuraikwar.github.io/rss/inspiration-grid-illustration.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Fashion in Full Color: Illustrations by Magdalena Pankiewicz</title>
+      <link>https://theinspirationgrid.com/fashion-in-full-color-illustrations-by-magdalena-pankiewicz/</link>
+      <guid isPermaLink="true">https://theinspirationgrid.com/fashion-in-full-color-illustrations-by-magdalena-pankiewicz/</guid>
+      <description>Polish artist and illustrator Magdalena Pankiewicz is back on our radar with another collection of striking fashion portraits bursting with color and attitude.</description>
+      <category>Art</category>
+      <category>Illustration</category>
+      <media:content url="https://inspgr.id/app/uploads/2026/10/illustration-magdalena-pankiewicz-feature.jpg" medium="image" />
+      <media:thumbnail url="https://inspgr.id/app/uploads/2026/10/illustration-magdalena-pankiewicz-feature.jpg" />
+    </item>
+    <item>
       <title>Visual Wit: Clever Conceptual Illustrations by Stephan Schmitz</title>
       <link>https://theinspirationgrid.com/visual-wit-clever-conceptual-illustrations-by-stephan-schmitz/</link>
       <guid isPermaLink="true">https://theinspirationgrid.com/visual-wit-clever-conceptual-illustrations-by-stephan-schmitz/</guid>
@@ -304,16 +314,6 @@
       <category>Video &amp; Motion</category>
       <media:content url="https://inspgr.id/app/uploads/2026/09/motion-the-circle-feature.jpg" medium="image" />
       <media:thumbnail url="https://inspgr.id/app/uploads/2026/09/motion-the-circle-feature.jpg" />
-    </item>
-    <item>
-      <title>Everyday in Color: Vibrant Illustrations by Irina Kiro</title>
-      <link>https://theinspirationgrid.com/everyday-in-color-vibrant-illustrations-by-irina-kiro/</link>
-      <guid isPermaLink="true">https://theinspirationgrid.com/everyday-in-color-vibrant-illustrations-by-irina-kiro/</guid>
-      <description>Marseille-based illustrator and graphic designer Irina Kiro captures everyday life through bold colors, simple shapes and carefully observed moments.</description>
-      <category>Art</category>
-      <category>Illustration</category>
-      <media:content url="https://inspgr.id/app/uploads/2026/08/illustration-irina-kiro-feature.jpg" medium="image" />
-      <media:thumbnail url="https://inspgr.id/app/uploads/2026/08/illustration-irina-kiro-feature.jpg" />
     </item>
   </channel>
 </rss>
