@@ -7,6 +7,17 @@
     <generator>amanshuraikwar.github.io RSS generator</generator>
     <atom:link href="https://amanshuraikwar.github.io/rss/inspiration-grid-illustration.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Pop Culture Meets Graffiti in Oleg Pavlov’s Colorful Murals</title>
+      <link>https://theinspirationgrid.com/pop-culture-meets-graffiti-in-oleg-pavlovs-colorful-murals/</link>
+      <guid isPermaLink="true">https://theinspirationgrid.com/pop-culture-meets-graffiti-in-oleg-pavlovs-colorful-murals/</guid>
+      <description>Russian artist Oleg Pavlov has been creating graffiti for nearly two decades, turning unassuming walls into vibrant worlds where cartoon icons and video game heroes clash with dynamic three-dimensional lettering.</description>
+      <category>Art</category>
+      <category>Illustration</category>
+      <category>Pop Culture</category>
+      <media:content url="https://inspgr.id/app/uploads/2026/10/street-art-oleg-pavlov-feature.jpg" medium="image" />
+      <media:thumbnail url="https://inspgr.id/app/uploads/2026/10/street-art-oleg-pavlov-feature.jpg" />
+    </item>
+    <item>
       <title>Fashion in Full Color: Illustrations by Magdalena Pankiewicz</title>
       <link>https://theinspirationgrid.com/fashion-in-full-color-illustrations-by-magdalena-pankiewicz/</link>
       <guid isPermaLink="true">https://theinspirationgrid.com/fashion-in-full-color-illustrations-by-magdalena-pankiewicz/</guid>
@@ -303,17 +314,6 @@
       <category>Illustration</category>
       <media:content url="https://inspgr.id/app/uploads/2026/09/illustration-jason-hateart-feature.jpg" medium="image" />
       <media:thumbnail url="https://inspgr.id/app/uploads/2026/09/illustration-jason-hateart-feature.jpg" />
-    </item>
-    <item>
-      <title>The Circle: A Dreamlike Short Film by Six N. Five</title>
-      <link>https://theinspirationgrid.com/the-circle-a-dreamlike-short-film-by-six-n-five/</link>
-      <guid isPermaLink="true">https://theinspirationgrid.com/the-circle-a-dreamlike-short-film-by-six-n-five/</guid>
-      <description>Barcelona-based Argentinian digital artist Ezequiel Pini, aka Six N. Five, explores time, memory and connection in The Circle, a meditative short film focused on the simplest geometric form.</description>
-      <category>Art</category>
-      <category>Illustration</category>
-      <category>Video &amp; Motion</category>
-      <media:content url="https://inspgr.id/app/uploads/2026/09/motion-the-circle-feature.jpg" medium="image" />
-      <media:thumbnail url="https://inspgr.id/app/uploads/2026/09/motion-the-circle-feature.jpg" />
     </item>
   </channel>
 </rss>
