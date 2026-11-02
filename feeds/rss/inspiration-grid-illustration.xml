@@ -7,6 +7,16 @@
     <generator>amanshuraikwar.github.io RSS generator</generator>
     <atom:link href="https://amanshuraikwar.github.io/rss/inspiration-grid-illustration.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Line: A Pixel Art Short Film by Lucas Etcheverry</title>
+      <link>https://theinspirationgrid.com/line-a-pixel-art-short-film-by-lucas-etcheverry/</link>
+      <guid isPermaLink="true">https://theinspirationgrid.com/line-a-pixel-art-short-film-by-lucas-etcheverry/</guid>
+      <description>Speed, ambition and the nostalgic charm of retro video games collide in Line, a spectacular pixel art short film by animator Lucas Etcheverry.</description>
+      <category>Illustration</category>
+      <category>Video &amp; Motion</category>
+      <media:content url="https://inspgr.id/app/uploads/2026/11/line-luke-etcheverry-feature.jpg" medium="image" />
+      <media:thumbnail url="https://inspgr.id/app/uploads/2026/11/line-luke-etcheverry-feature.jpg" />
+    </item>
+    <item>
       <title>Pop Culture Meets Graffiti in Oleg Pavlov’s Colorful Murals</title>
       <link>https://theinspirationgrid.com/pop-culture-meets-graffiti-in-oleg-pavlovs-colorful-murals/</link>
       <guid isPermaLink="true">https://theinspirationgrid.com/pop-culture-meets-graffiti-in-oleg-pavlovs-colorful-murals/</guid>
@@ -304,16 +314,6 @@
       <category>Illustration</category>
       <media:content url="https://inspgr.id/app/uploads/2026/09/art-alex-kanos-feature.jpg" medium="image" />
       <media:thumbnail url="https://inspgr.id/app/uploads/2026/09/art-alex-kanos-feature.jpg" />
-    </item>
-    <item>
-      <title>Strange Journeys: Illustrated Narratives by Jason Hateart</title>
-      <link>https://theinspirationgrid.com/strange-journeys-illustrated-narratives-by-jason-hateart/</link>
-      <guid isPermaLink="true">https://theinspirationgrid.com/strange-journeys-illustrated-narratives-by-jason-hateart/</guid>
-      <description>LA-based art director, illustrator and comic artist Jason Hateart creates beautifully imagined scenes that feel like fragments from strange, unfinished stories.</description>
-      <category>Art</category>
-      <category>Illustration</category>
-      <media:content url="https://inspgr.id/app/uploads/2026/09/illustration-jason-hateart-feature.jpg" medium="image" />
-      <media:thumbnail url="https://inspgr.id/app/uploads/2026/09/illustration-jason-hateart-feature.jpg" />
     </item>
   </channel>
 </rss>
