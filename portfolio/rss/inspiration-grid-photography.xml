@@ -7,6 +7,16 @@
     <generator>amanshuraikwar.github.io RSS generator</generator>
     <atom:link href="https://amanshuraikwar.github.io/rss/inspiration-grid-photography.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Copenhagen in Shapes &amp; Colors: Urban Fragments by Mariyan Atanasov</title>
+      <link>https://theinspirationgrid.com/copenhagen-in-shapes-colors-urban-fragments-by-mariyan-atanasov/</link>
+      <guid isPermaLink="true">https://theinspirationgrid.com/copenhagen-in-shapes-colors-urban-fragments-by-mariyan-atanasov/</guid>
+      <description>Mariyan Atanasov is bringing his long-running “Urban Fragments” exploration to Copenhagen, revealing a different side of the Danish capital through bold compositions and unexpected perspectives.</description>
+      <category>Architecture</category>
+      <category>Photography</category>
+      <media:content url="https://inspgr.id/app/uploads/2026/11/photography-mariyan-atanasov-feature.jpg" medium="image" />
+      <media:thumbnail url="https://inspgr.id/app/uploads/2026/11/photography-mariyan-atanasov-feature.jpg" />
+    </item>
+    <item>
       <title>Effervescence: Surreal Technicolor Photography by Adewale Mayowa</title>
       <link>https://theinspirationgrid.com/effervescence-surreal-technicolor-photography-by-adewale-mayowa/</link>
       <guid isPermaLink="true">https://theinspirationgrid.com/effervescence-surreal-technicolor-photography-by-adewale-mayowa/</guid>
@@ -300,16 +310,6 @@
       <category>Photography</category>
       <media:content url="https://inspgr.id/app/uploads/2026/07/photography-elliot-mcgucken-feature.jpg" medium="image" />
       <media:thumbnail url="https://inspgr.id/app/uploads/2026/07/photography-elliot-mcgucken-feature.jpg" />
-    </item>
-    <item>
-      <title>Cinematic Car Photography by Sevian Daupi</title>
-      <link>https://theinspirationgrid.com/cinematic-car-photography-by-sevian-daupi/</link>
-      <guid isPermaLink="true">https://theinspirationgrid.com/cinematic-car-photography-by-sevian-daupi/</guid>
-      <description>Modena-based photographer Sevian Daupi captures cars with the eye of a filmmaker, turning automotive shoots into moody scenes filled with atmosphere, movement and style.</description>
-      <category>Photography</category>
-      <category>Vehicle Design</category>
-      <media:content url="https://inspgr.id/app/uploads/2026/06/photography-sevian-daupi-feature.jpg" medium="image" />
-      <media:thumbnail url="https://inspgr.id/app/uploads/2026/06/photography-sevian-daupi-feature.jpg" />
     </item>
   </channel>
 </rss>
