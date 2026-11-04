@@ -7,6 +7,26 @@
     <generator>amanshuraikwar.github.io RSS generator</generator>
     <atom:link href="https://amanshuraikwar.github.io/rss/site-of-sites-websites.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Artists Clothes</title>
+      <link>https://www.siteofsites.co/websites/artists-clothes</link>
+      <guid isPermaLink="true">https://www.siteofsites.co/websites/artists-clothes</guid>
+      <description>Featured by Site of Sites in 11/2026. Original website: https://artists-clothes.russianartarchive.net/#/</description>
+      <category>Concept Website</category>
+      <media:content url="https://static.wixstatic.com/media/ef5d4a_9c4e69416c584e04a71248b43c610f90~mv2.png" medium="image" />
+      <media:thumbnail url="https://static.wixstatic.com/media/ef5d4a_9c4e69416c584e04a71248b43c610f90~mv2.png" />
+    </item>
+    <item>
+      <title>There Are No Gardens on the Internet</title>
+      <link>https://www.siteofsites.co/websites/there-are-no-gardens-on-the-internet</link>
+      <guid isPermaLink="true">https://www.siteofsites.co/websites/there-are-no-gardens-on-the-internet</guid>
+      <description>Featured by Site of Sites in 11/2026. Original website: https://artlab.hyundai.com/commissions/chia-amisola-there-are-no-gardens-on-the-internet</description>
+      <category>Colorful</category>
+      <category>Creative Arts</category>
+      <category>Illustrative</category>
+      <media:content url="https://static.wixstatic.com/media/ef5d4a_d36c1d23501f47fc8c35dcdde702980a~mv2.png" medium="image" />
+      <media:thumbnail url="https://static.wixstatic.com/media/ef5d4a_d36c1d23501f47fc8c35dcdde702980a~mv2.png" />
+    </item>
+    <item>
       <title>Almira kho</title>
       <link>https://www.siteofsites.co/websites/almira-kho</link>
       <guid isPermaLink="true">https://www.siteofsites.co/websites/almira-kho</guid>
@@ -372,34 +392,6 @@
       <category>Agency</category>
       <media:content url="https://static.wixstatic.com/media/ef5d4a_02a502545d5743b7acfe5981d6ad3ddc~mv2.jpg" medium="image" />
       <media:thumbnail url="https://static.wixstatic.com/media/ef5d4a_02a502545d5743b7acfe5981d6ad3ddc~mv2.jpg" />
-    </item>
-    <item>
-      <title>Junyeop lee</title>
-      <link>https://www.siteofsites.co/websites/junyeop-lee</link>
-      <guid isPermaLink="true">https://www.siteofsites.co/websites/junyeop-lee</guid>
-      <description>Featured by Site of Sites in 08/2026. Original website: https://junyeoplee.com/</description>
-      <media:content url="https://static.wixstatic.com/media/ef5d4a_0bd56a82220e4780b348e4341c9f2de9~mv2.png" medium="image" />
-      <media:thumbnail url="https://static.wixstatic.com/media/ef5d4a_0bd56a82220e4780b348e4341c9f2de9~mv2.png" />
-    </item>
-    <item>
-      <title>wndws</title>
-      <link>https://www.siteofsites.co/websites/wndws</link>
-      <guid isPermaLink="true">https://www.siteofsites.co/websites/wndws</guid>
-      <description>Featured by Site of Sites in 08/2026. Original website: https://wndws.space/</description>
-      <category>Culture &amp; Entertainment</category>
-      <category>Concept Website</category>
-      <media:content url="https://static.wixstatic.com/media/ef5d4a_30dc3e758e104d63900c88f1b8b733cc~mv2.png" medium="image" />
-      <media:thumbnail url="https://static.wixstatic.com/media/ef5d4a_30dc3e758e104d63900c88f1b8b733cc~mv2.png" />
-    </item>
-    <item>
-      <title>Partizan</title>
-      <link>https://www.siteofsites.co/websites/partizan</link>
-      <guid isPermaLink="true">https://www.siteofsites.co/websites/partizan</guid>
-      <description>Featured by Site of Sites in 08/2026. Original website: https://partizan.com/works/</description>
-      <category>Photography &amp; Video</category>
-      <category>Portfolio</category>
-      <media:content url="https://static.wixstatic.com/media/ef5d4a_583fb7e41efa47d2a3350f9f5b09fa82~mv2.png" medium="image" />
-      <media:thumbnail url="https://static.wixstatic.com/media/ef5d4a_583fb7e41efa47d2a3350f9f5b09fa82~mv2.png" />
     </item>
   </channel>
 </rss>

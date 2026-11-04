@@ -7,6 +7,16 @@
     <generator>amanshuraikwar.github.io RSS generator</generator>
     <atom:link href="https://amanshuraikwar.github.io/rss/inspiration-grid-illustration.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Bold Lines and Blooming Ink: Striking Portraits by Ekaterina Koroleva</title>
+      <link>https://theinspirationgrid.com/bold-lines-and-blooming-ink-striking-portraits-by-ekaterina-koroleva/</link>
+      <guid isPermaLink="true">https://theinspirationgrid.com/bold-lines-and-blooming-ink-striking-portraits-by-ekaterina-koroleva/</guid>
+      <description>Berlin-based artist and illustrator Ekaterina Koroleva creates striking portraits that combine expressive faces, delicate botanical elements and fluid washes of color.</description>
+      <category>Art</category>
+      <category>Illustration</category>
+      <media:content url="https://inspgr.id/app/uploads/2026/11/art-ekaterina-koroleva-feature.jpg" medium="image" />
+      <media:thumbnail url="https://inspgr.id/app/uploads/2026/11/art-ekaterina-koroleva-feature.jpg" />
+    </item>
+    <item>
       <title>Line: A Pixel Art Short Film by Lucas Etcheverry</title>
       <link>https://theinspirationgrid.com/line-a-pixel-art-short-film-by-lucas-etcheverry/</link>
       <guid isPermaLink="true">https://theinspirationgrid.com/line-a-pixel-art-short-film-by-lucas-etcheverry/</guid>
@@ -304,16 +314,6 @@
       <category>Illustration</category>
       <media:content url="https://inspgr.id/app/uploads/2026/09/3d-mariano-garza-feature.jpg" medium="image" />
       <media:thumbnail url="https://inspgr.id/app/uploads/2026/09/3d-mariano-garza-feature.jpg" />
-    </item>
-    <item>
-      <title>Cybernetic Visions: Futuristic Murals by Alex Kanos</title>
-      <link>https://theinspirationgrid.com/cybernetic-visions-futuristic-murals-by-alex-kanos/</link>
-      <guid isPermaLink="true">https://theinspirationgrid.com/cybernetic-visions-futuristic-murals-by-alex-kanos/</guid>
-      <description>Paris-based street artist Alex Kanos transforms large urban surfaces into striking visions of a future where humans, machines and cities have become intertwined.</description>
-      <category>Art</category>
-      <category>Illustration</category>
-      <media:content url="https://inspgr.id/app/uploads/2026/09/art-alex-kanos-feature.jpg" medium="image" />
-      <media:thumbnail url="https://inspgr.id/app/uploads/2026/09/art-alex-kanos-feature.jpg" />
     </item>
   </channel>
 </rss>

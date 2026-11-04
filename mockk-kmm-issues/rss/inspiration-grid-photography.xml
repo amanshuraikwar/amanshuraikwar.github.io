@@ -7,6 +7,16 @@
     <generator>amanshuraikwar.github.io RSS generator</generator>
     <atom:link href="https://amanshuraikwar.github.io/rss/inspiration-grid-photography.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Flora Incognita: Otherworldly Botanical Studies by Vincent Fournier</title>
+      <link>https://theinspirationgrid.com/flora-incognita-otherworldly-botanical-studies-by-vincent-fournier/</link>
+      <guid isPermaLink="true">https://theinspirationgrid.com/flora-incognita-otherworldly-botanical-studies-by-vincent-fournier/</guid>
+      <description>Vincent Fournier’s “Flora Incognita” is an extraordinary series of botanical studies that reimagine how plants might evolve on distant planets.</description>
+      <category>Art</category>
+      <category>Photography</category>
+      <media:content url="https://inspgr.id/app/uploads/2026/11/art-vincent-fournier-feature.jpg" medium="image" />
+      <media:thumbnail url="https://inspgr.id/app/uploads/2026/11/art-vincent-fournier-feature.jpg" />
+    </item>
+    <item>
       <title>Copenhagen in Shapes &amp; Colors: Urban Fragments by Mariyan Atanasov</title>
       <link>https://theinspirationgrid.com/copenhagen-in-shapes-colors-urban-fragments-by-mariyan-atanasov/</link>
       <guid isPermaLink="true">https://theinspirationgrid.com/copenhagen-in-shapes-colors-urban-fragments-by-mariyan-atanasov/</guid>
@@ -300,16 +310,6 @@
       <category>Photography</category>
       <media:content url="https://inspgr.id/app/uploads/2026/06/leica-galleries-50-years-feature.jpg" medium="image" />
       <media:thumbnail url="https://inspgr.id/app/uploads/2026/06/leica-galleries-50-years-feature.jpg" />
-    </item>
-    <item>
-      <title>Spacetime Light Sculptures by Elliot McGucken</title>
-      <link>https://theinspirationgrid.com/spacetime-light-sculptures-by-elliot-mcgucken/</link>
-      <guid isPermaLink="true">https://theinspirationgrid.com/spacetime-light-sculptures-by-elliot-mcgucken/</guid>
-      <description>American fine art photographer and physicist Dr. Elliot McGucken turns remote landscapes into stages for luminous cosmic events, suspending spiraling forms of light above deserts, rock formations, coastlines and mountain ranges.</description>
-      <category>Art</category>
-      <category>Photography</category>
-      <media:content url="https://inspgr.id/app/uploads/2026/07/photography-elliot-mcgucken-feature.jpg" medium="image" />
-      <media:thumbnail url="https://inspgr.id/app/uploads/2026/07/photography-elliot-mcgucken-feature.jpg" />
     </item>
   </channel>
 </rss>
