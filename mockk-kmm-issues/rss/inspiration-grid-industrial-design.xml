@@ -7,6 +7,18 @@
     <generator>amanshuraikwar.github.io RSS generator</generator>
     <atom:link href="https://amanshuraikwar.github.io/rss/inspiration-grid-industrial-design.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>UUNA TEK Kicks Off Black Friday With 30% Off the iAuto Plus 2.0</title>
+      <link>https://theinspirationgrid.com/editorial/uuna-tek-kicks-off-black-friday-with-30-off-the-iauto-plus-2-0/</link>
+      <guid isPermaLink="true">https://theinspirationgrid.com/editorial/uuna-tek-kicks-off-black-friday-with-30-off-the-iauto-plus-2-0/</guid>
+      <description>UUNA TEK is kicking off their Black Friday promotions with a series of weekly deals throughout November, offering 30% off selected writing machines and pen plotters.</description>
+      <category>Art</category>
+      <category>Industrial Design</category>
+      <category>Product Design</category>
+      <category>Technology</category>
+      <media:content url="https://inspgr.id/app/uploads/2026/11/uuna-tek-black-friday-feature.jpg" medium="image" />
+      <media:thumbnail url="https://inspgr.id/app/uploads/2026/11/uuna-tek-black-friday-feature.jpg" />
+    </item>
+    <item>
       <title>Retro-Futurism on Wheels: The Bertone Runabout</title>
       <link>https://theinspirationgrid.com/retro-futurism-on-wheels-the-bertone-runabout/</link>
       <guid isPermaLink="true">https://theinspirationgrid.com/retro-futurism-on-wheels-the-bertone-runabout/</guid>
@@ -351,18 +363,6 @@
       <category>Technology</category>
       <media:content url="https://inspgr.id/app/uploads/2026/07/product-taehyeong-kim-feature.jpg" medium="image" />
       <media:thumbnail url="https://inspgr.id/app/uploads/2026/07/product-taehyeong-kim-feature.jpg" />
-    </item>
-    <item>
-      <title>Lacoste and Alpine’s Wild One-Off Rally Car</title>
-      <link>https://theinspirationgrid.com/lacoste-and-alpines-wild-one-off-rally-car/</link>
-      <guid isPermaLink="true">https://theinspirationgrid.com/lacoste-and-alpines-wild-one-off-rally-car/</guid>
-      <description>French icons Lacoste and Alpine have joined forces on a one-off electric rally car that brings together motorsport engineering, fashion and a healthy dose of crocodile-inspired drama.</description>
-      <category>Fashion &amp; Beauty</category>
-      <category>Industrial Design</category>
-      <category>Pop Culture</category>
-      <category>Vehicle Design</category>
-      <media:content url="https://inspgr.id/app/uploads/2026/07/lacoste-alpine-a290-feature.jpg" medium="image" />
-      <media:thumbnail url="https://inspgr.id/app/uploads/2026/07/lacoste-alpine-a290-feature.jpg" />
     </item>
   </channel>
 </rss>

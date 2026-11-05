@@ -7,6 +7,15 @@
     <generator>amanshuraikwar.github.io RSS generator</generator>
     <atom:link href="https://amanshuraikwar.github.io/rss/inspiration-grid-photography.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Wild Personalities: Animal Portraits by Marvin Heinzel</title>
+      <link>https://theinspirationgrid.com/wild-personalities-animal-portraits-by-marvin-heinzel/</link>
+      <guid isPermaLink="true">https://theinspirationgrid.com/wild-personalities-animal-portraits-by-marvin-heinzel/</guid>
+      <description>German photographer Marvin Heinzel has a real talent for turning fleeting encounters with wildlife into striking portraits full of personality.</description>
+      <category>Photography</category>
+      <media:content url="https://inspgr.id/app/uploads/2026/11/photography-marvin-heinzel-feature.jpg" medium="image" />
+      <media:thumbnail url="https://inspgr.id/app/uploads/2026/11/photography-marvin-heinzel-feature.jpg" />
+    </item>
+    <item>
       <title>Flora Incognita: Otherworldly Botanical Studies by Vincent Fournier</title>
       <link>https://theinspirationgrid.com/flora-incognita-otherworldly-botanical-studies-by-vincent-fournier/</link>
       <guid isPermaLink="true">https://theinspirationgrid.com/flora-incognita-otherworldly-botanical-studies-by-vincent-fournier/</guid>
@@ -300,16 +309,6 @@
       <category>Pop Culture</category>
       <media:content url="https://inspgr.id/app/uploads/2026/07/photography-david-gilliver-feature.jpg" medium="image" />
       <media:thumbnail url="https://inspgr.id/app/uploads/2026/07/photography-david-gilliver-feature.jpg" />
-    </item>
-    <item>
-      <title>Personal Perspectives: A Curated Show Marking 50 Years of Leica Galleries</title>
-      <link>https://theinspirationgrid.com/editorial/personal-perspectives-a-curated-show-marking-50-years-of-leica-galleries/</link>
-      <guid isPermaLink="true">https://theinspirationgrid.com/editorial/personal-perspectives-a-curated-show-marking-50-years-of-leica-galleries/</guid>
-      <description>Leica Gallery Wetzlar is marking a major milestone with Personal Perspectives, a special exhibition celebrating 50 years of Leica Galleries through 50 photographs selected from across the brand’s international gallery program.</description>
-      <category>Art</category>
-      <category>Photography</category>
-      <media:content url="https://inspgr.id/app/uploads/2026/06/leica-galleries-50-years-feature.jpg" medium="image" />
-      <media:thumbnail url="https://inspgr.id/app/uploads/2026/06/leica-galleries-50-years-feature.jpg" />
     </item>
   </channel>
 </rss>
