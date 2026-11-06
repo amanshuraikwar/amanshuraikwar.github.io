@@ -7,6 +7,16 @@
     <generator>amanshuraikwar.github.io RSS generator</generator>
     <atom:link href="https://amanshuraikwar.github.io/rss/inspiration-grid-photography.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Built to Be Seen: Icelandic Lighthouse Photography by Siggeir Hafsteinsson</title>
+      <link>https://theinspirationgrid.com/built-to-be-seen-icelandic-lighthouse-photography-by-siggeir-hafsteinsson/</link>
+      <guid isPermaLink="true">https://theinspirationgrid.com/built-to-be-seen-icelandic-lighthouse-photography-by-siggeir-hafsteinsson/</guid>
+      <description>Icelandic designer and photographer Siggeir Hafsteinsson, also known as Sig Vicious, has a fascination with the lighthouses scattered along Iceland’s rugged coastline.</description>
+      <category>Architecture</category>
+      <category>Photography</category>
+      <media:content url="https://inspgr.id/app/uploads/2026/11/photography-siggeir-hafsteinsson-feature.jpg" medium="image" />
+      <media:thumbnail url="https://inspgr.id/app/uploads/2026/11/photography-siggeir-hafsteinsson-feature.jpg" />
+    </item>
+    <item>
       <title>Wild Personalities: Animal Portraits by Marvin Heinzel</title>
       <link>https://theinspirationgrid.com/wild-personalities-animal-portraits-by-marvin-heinzel/</link>
       <guid isPermaLink="true">https://theinspirationgrid.com/wild-personalities-animal-portraits-by-marvin-heinzel/</guid>
@@ -298,17 +308,6 @@
       <category>Photography</category>
       <media:content url="https://inspgr.id/app/uploads/2026/07/photography-max-terwindt-feature.jpg" medium="image" />
       <media:thumbnail url="https://inspgr.id/app/uploads/2026/07/photography-max-terwindt-feature.jpg" />
-    </item>
-    <item>
-      <title>Tiny Worlds and Everyday Adventures by David Gilliver</title>
-      <link>https://theinspirationgrid.com/tiny-worlds-and-everyday-adventures-by-david-gilliver/</link>
-      <guid isPermaLink="true">https://theinspirationgrid.com/tiny-worlds-and-everyday-adventures-by-david-gilliver/</guid>
-      <description>Scottish photographer David Gilliver transforms food, household objects and familiar pop-culture references into playful miniature worlds through his ongoing Little People series.</description>
-      <category>Art</category>
-      <category>Photography</category>
-      <category>Pop Culture</category>
-      <media:content url="https://inspgr.id/app/uploads/2026/07/photography-david-gilliver-feature.jpg" medium="image" />
-      <media:thumbnail url="https://inspgr.id/app/uploads/2026/07/photography-david-gilliver-feature.jpg" />
     </item>
   </channel>
 </rss>
