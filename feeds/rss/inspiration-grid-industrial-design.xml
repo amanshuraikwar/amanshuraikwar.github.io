@@ -7,6 +7,18 @@
     <generator>amanshuraikwar.github.io RSS generator</generator>
     <atom:link href="https://amanshuraikwar.github.io/rss/inspiration-grid-industrial-design.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>KONKR Pocket Block Review: A Little Handheld with Big Personality</title>
+      <link>https://theinspirationgrid.com/editorial/konkr-pocket-block-review-a-little-handheld-with-big-personality/</link>
+      <guid isPermaLink="true">https://theinspirationgrid.com/editorial/konkr-pocket-block-review-a-little-handheld-with-big-personality/</guid>
+      <description>It looks like something from an 80s sci-fi movie, but AYANEO’s latest pocket-sized handheld has a lot more going for it than a cool design.</description>
+      <category>Gaming</category>
+      <category>Industrial Design</category>
+      <category>Product Design</category>
+      <category>Technology</category>
+      <media:content url="https://inspgr.id/app/uploads/2026/11/konkr-pocket-block-review-feature.jpg" medium="image" />
+      <media:thumbnail url="https://inspgr.id/app/uploads/2026/11/konkr-pocket-block-review-feature.jpg" />
+    </item>
+    <item>
       <title>UUNA TEK Kicks Off Black Friday With 30% Off the iAuto Plus 2.0</title>
       <link>https://theinspirationgrid.com/editorial/uuna-tek-kicks-off-black-friday-with-30-off-the-iauto-plus-2-0/</link>
       <guid isPermaLink="true">https://theinspirationgrid.com/editorial/uuna-tek-kicks-off-black-friday-with-30-off-the-iauto-plus-2-0/</guid>
@@ -352,17 +364,6 @@
       <category>Technology</category>
       <media:content url="https://inspgr.id/app/uploads/2026/07/jsaux-7-in-1-dock-switch-2-feature.jpg" medium="image" />
       <media:thumbnail url="https://inspgr.id/app/uploads/2026/07/jsaux-7-in-1-dock-switch-2-feature.jpg" />
-    </item>
-    <item>
-      <title>Sleek Device Concepts by Taehyeong Kim</title>
-      <link>https://theinspirationgrid.com/sleek-device-concepts-by-taehyeong-kim/</link>
-      <guid isPermaLink="true">https://theinspirationgrid.com/sleek-device-concepts-by-taehyeong-kim/</guid>
-      <description>South Korean product designer Taehyeong Kim works across an unusually wide range of categories, but a single instinct carries through all of it: exploring how emerging technology can be shaped into intuitive, visually refined products.</description>
-      <category>Industrial Design</category>
-      <category>Product Design</category>
-      <category>Technology</category>
-      <media:content url="https://inspgr.id/app/uploads/2026/07/product-taehyeong-kim-feature.jpg" medium="image" />
-      <media:thumbnail url="https://inspgr.id/app/uploads/2026/07/product-taehyeong-kim-feature.jpg" />
     </item>
   </channel>
 </rss>
