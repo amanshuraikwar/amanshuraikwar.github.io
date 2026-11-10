@@ -393,5 +393,13 @@
       <media:content url="https://static.wixstatic.com/media/ef5d4a_02a502545d5743b7acfe5981d6ad3ddc~mv2.jpg" medium="image" />
       <media:thumbnail url="https://static.wixstatic.com/media/ef5d4a_02a502545d5743b7acfe5981d6ad3ddc~mv2.jpg" />
     </item>
+    <item>
+      <title>Junyeop lee</title>
+      <link>https://www.siteofsites.co/websites/junyeop-lee</link>
+      <guid isPermaLink="true">https://www.siteofsites.co/websites/junyeop-lee</guid>
+      <description>Featured by Site of Sites in 08/2026. Original website: https://junyeoplee.com/</description>
+      <media:content url="https://static.wixstatic.com/media/ef5d4a_0bd56a82220e4780b348e4341c9f2de9~mv2.png" medium="image" />
+      <media:thumbnail url="https://static.wixstatic.com/media/ef5d4a_0bd56a82220e4780b348e4341c9f2de9~mv2.png" />
+    </item>
   </channel>
 </rss>
