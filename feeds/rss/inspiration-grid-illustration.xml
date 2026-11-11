@@ -7,6 +7,16 @@
     <generator>amanshuraikwar.github.io RSS generator</generator>
     <atom:link href="https://amanshuraikwar.github.io/rss/inspiration-grid-illustration.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Future Worlds: 3D Art &amp; Concept Design by Riyahd Cassiem</title>
+      <link>https://theinspirationgrid.com/future-worlds-3d-art-concept-design-by-riyahd-cassiem/</link>
+      <guid isPermaLink="true">https://theinspirationgrid.com/future-worlds-3d-art-concept-design-by-riyahd-cassiem/</guid>
+      <description>Johannesburg-based digital artist Riyahd Cassiem creates incredible 3D illustrations and concept art that take us into futuristic worlds filled with robots, armored warriors and otherworldly creatures.</description>
+      <category>Art</category>
+      <category>Illustration</category>
+      <media:content url="https://inspgr.id/app/uploads/2026/11/3d-riyahd-cassiem-feature.jpg" medium="image" />
+      <media:thumbnail url="https://inspgr.id/app/uploads/2026/11/3d-riyahd-cassiem-feature.jpg" />
+    </item>
+    <item>
       <title>Bold Lines and Blooming Ink: Striking Portraits by Ekaterina Koroleva</title>
       <link>https://theinspirationgrid.com/bold-lines-and-blooming-ink-striking-portraits-by-ekaterina-koroleva/</link>
       <guid isPermaLink="true">https://theinspirationgrid.com/bold-lines-and-blooming-ink-striking-portraits-by-ekaterina-koroleva/</guid>
@@ -304,16 +314,6 @@
       <category>Pop Culture</category>
       <media:content url="https://inspgr.id/app/uploads/2026/09/pixel-art-arthur-vista-feature.jpg" medium="image" />
       <media:thumbnail url="https://inspgr.id/app/uploads/2026/09/pixel-art-arthur-vista-feature.jpg" />
-    </item>
-    <item>
-      <title>Monsters and Creatures: Playful 3D Characters by Mariano Garza</title>
-      <link>https://theinspirationgrid.com/monsters-and-creatures-playful-3d-characters-by-mariano-garza/</link>
-      <guid isPermaLink="true">https://theinspirationgrid.com/monsters-and-creatures-playful-3d-characters-by-mariano-garza/</guid>
-      <description>Monsters and Creatures is a series of 3D illustrations by Monterrey-based designer and illustrator Mariano Garza, set in a strange woodland world filled with a weird and wonderful cast of colorful beings.</description>
-      <category>Art</category>
-      <category>Illustration</category>
-      <media:content url="https://inspgr.id/app/uploads/2026/09/3d-mariano-garza-feature.jpg" medium="image" />
-      <media:thumbnail url="https://inspgr.id/app/uploads/2026/09/3d-mariano-garza-feature.jpg" />
     </item>
   </channel>
 </rss>

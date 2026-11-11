@@ -7,6 +7,15 @@
     <generator>amanshuraikwar.github.io RSS generator</generator>
     <atom:link href="https://amanshuraikwar.github.io/rss/inspiration-grid-photography.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Grounded Giants: Boneyard Photos by Bernhard Lang</title>
+      <link>https://theinspirationgrid.com/grounded-giants-boneyard-photos-by-bernhard-lang/</link>
+      <guid isPermaLink="true">https://theinspirationgrid.com/grounded-giants-boneyard-photos-by-bernhard-lang/</guid>
+      <description>German photographer Bernhard Lang flew over Davis-Monthan Air Force Base in Tucson to capture these incredible images for his Boneyard series, documenting the largest aircraft and missile storage facility in the world.</description>
+      <category>Photography</category>
+      <media:content url="https://inspgr.id/app/uploads/2026/11/photography-bernhard-lang-feature.jpg" medium="image" />
+      <media:thumbnail url="https://inspgr.id/app/uploads/2026/11/photography-bernhard-lang-feature.jpg" />
+    </item>
+    <item>
       <title>Built to Be Seen: Icelandic Lighthouse Photography by Siggeir Hafsteinsson</title>
       <link>https://theinspirationgrid.com/built-to-be-seen-icelandic-lighthouse-photography-by-siggeir-hafsteinsson/</link>
       <guid isPermaLink="true">https://theinspirationgrid.com/built-to-be-seen-icelandic-lighthouse-photography-by-siggeir-hafsteinsson/</guid>
@@ -299,15 +308,6 @@
       <category>Photography</category>
       <media:content url="https://inspgr.id/app/uploads/2026/07/photography-frank-relle-feature.jpg" medium="image" />
       <media:thumbnail url="https://inspgr.id/app/uploads/2026/07/photography-frank-relle-feature.jpg" />
-    </item>
-    <item>
-      <title>Dramatic Global Landscapes: Photos by Max Terwindt</title>
-      <link>https://theinspirationgrid.com/dramatic-global-landscapes-photos-by-max-terwindt/</link>
-      <guid isPermaLink="true">https://theinspirationgrid.com/dramatic-global-landscapes-photos-by-max-terwindt/</guid>
-      <description>Dutch photographer Max Terwindt captures the planet at its most dramatic, travelling from frozen polar regions and volcanic landscapes to deserts, tropical forests and flower-covered fields.</description>
-      <category>Photography</category>
-      <media:content url="https://inspgr.id/app/uploads/2026/07/photography-max-terwindt-feature.jpg" medium="image" />
-      <media:thumbnail url="https://inspgr.id/app/uploads/2026/07/photography-max-terwindt-feature.jpg" />
     </item>
   </channel>
 </rss>
