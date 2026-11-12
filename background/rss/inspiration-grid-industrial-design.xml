@@ -7,6 +7,16 @@
     <generator>amanshuraikwar.github.io RSS generator</generator>
     <atom:link href="https://amanshuraikwar.github.io/rss/inspiration-grid-industrial-design.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Curves &amp; Contrasts: Sculptural Furniture by Brodie Neill</title>
+      <link>https://theinspirationgrid.com/curves-contrasts-sculptural-furniture-by-brodie-neill/</link>
+      <guid isPermaLink="true">https://theinspirationgrid.com/curves-contrasts-sculptural-furniture-by-brodie-neill/</guid>
+      <description>Tasmanian-born, London-based designer Brodie Neill creates extraordinary furniture pieces that blur the line between functional objects and contemporary sculpture.</description>
+      <category>Art</category>
+      <category>Industrial Design</category>
+      <media:content url="https://inspgr.id/app/uploads/2026/11/art-brodie-neill-feature.jpg" medium="image" />
+      <media:thumbnail url="https://inspgr.id/app/uploads/2026/11/art-brodie-neill-feature.jpg" />
+    </item>
+    <item>
       <title>Creality Falcon Black Friday Deals Bring Discounts on Laser Engravers Across Europe</title>
       <link>https://theinspirationgrid.com/editorial/creality-falcon-black-friday-deals-bring-discounts-on-laser-engravers-across-europe/</link>
       <guid isPermaLink="true">https://theinspirationgrid.com/editorial/creality-falcon-black-friday-deals-bring-discounts-on-laser-engravers-across-europe/</guid>
@@ -352,18 +362,6 @@
       <category>Vehicle Design</category>
       <media:content url="https://inspgr.id/app/uploads/2026/07/automotive-design-artur-ryndin-feature.jpg" medium="image" />
       <media:thumbnail url="https://inspgr.id/app/uploads/2026/07/automotive-design-artur-ryndin-feature.jpg" />
-    </item>
-    <item>
-      <title>Hands-On With TTT’s Redundant: A Watch That Tells Time Twice</title>
-      <link>https://theinspirationgrid.com/editorial/hands-on-with-ttts-redundant-a-watch-that-tells-time-twice/</link>
-      <guid isPermaLink="true">https://theinspirationgrid.com/editorial/hands-on-with-ttts-redundant-a-watch-that-tells-time-twice/</guid>
-      <description>We recently featured STELLAR, TTT’s kinetic collaboration with Dutch studio Raw Color, and now we are taking a closer look at another conceptual creation: the Redundant Watch by New York-based designer Ji Lee.</description>
-      <category>Fashion &amp; Beauty</category>
-      <category>Industrial Design</category>
-      <category>Product Design</category>
-      <category>Technology</category>
-      <media:content url="https://inspgr.id/app/uploads/2026/07/ttt-redundant-feature.jpg" medium="image" />
-      <media:thumbnail url="https://inspgr.id/app/uploads/2026/07/ttt-redundant-feature.jpg" />
     </item>
   </channel>
 </rss>
