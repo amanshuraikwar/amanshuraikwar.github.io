@@ -7,6 +7,18 @@
     <generator>amanshuraikwar.github.io RSS generator</generator>
     <atom:link href="https://amanshuraikwar.github.io/rss/inspiration-grid-illustration.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Expressive 3D Characters and Art Toys by Gabriel Soares</title>
+      <link>https://theinspirationgrid.com/expressive-3d-characters-and-art-toys-by-gabriel-soares/</link>
+      <guid isPermaLink="true">https://theinspirationgrid.com/expressive-3d-characters-and-art-toys-by-gabriel-soares/</guid>
+      <description>Brazilian artist Gabriel Soares continues to reimagine film, music and pop culture icons as stylized 3D characters. Many of them even make the jump from digital render to physical art toys.</description>
+      <category>Art</category>
+      <category>Illustration</category>
+      <category>Pop Culture</category>
+      <category>Product Design</category>
+      <media:content url="https://inspgr.id/app/uploads/2026/11/illustration-gabriel-soares-feature.jpg" medium="image" />
+      <media:thumbnail url="https://inspgr.id/app/uploads/2026/11/illustration-gabriel-soares-feature.jpg" />
+    </item>
+    <item>
       <title>Future Worlds: 3D Art &amp; Concept Design by Riyahd Cassiem</title>
       <link>https://theinspirationgrid.com/future-worlds-3d-art-concept-design-by-riyahd-cassiem/</link>
       <guid isPermaLink="true">https://theinspirationgrid.com/future-worlds-3d-art-concept-design-by-riyahd-cassiem/</guid>
@@ -303,17 +315,6 @@
       <category>Typography</category>
       <media:content url="https://inspgr.id/app/uploads/2026/09/street-art-no-entry-design-feature.jpg" medium="image" />
       <media:thumbnail url="https://inspgr.id/app/uploads/2026/09/street-art-no-entry-design-feature.jpg" />
-    </item>
-    <item>
-      <title>Pixel Personalities: Portraits by Arthur Vista</title>
-      <link>https://theinspirationgrid.com/pixel-personalities-portraits-by-arthur-vista/</link>
-      <guid isPermaLink="true">https://theinspirationgrid.com/pixel-personalities-portraits-by-arthur-vista/</guid>
-      <description>Ukrainian digital artist Arthur Vista, now based in Tokyo, brings an impressive amount of personality to the humble pixel.</description>
-      <category>Art</category>
-      <category>Illustration</category>
-      <category>Pop Culture</category>
-      <media:content url="https://inspgr.id/app/uploads/2026/09/pixel-art-arthur-vista-feature.jpg" medium="image" />
-      <media:thumbnail url="https://inspgr.id/app/uploads/2026/09/pixel-art-arthur-vista-feature.jpg" />
     </item>
   </channel>
 </rss>

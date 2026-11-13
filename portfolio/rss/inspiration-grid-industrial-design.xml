@@ -7,6 +7,17 @@
     <generator>amanshuraikwar.github.io RSS generator</generator>
     <atom:link href="https://amanshuraikwar.github.io/rss/inspiration-grid-industrial-design.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Ultrahuman Launches Early Black Friday Deals on Ring AIR and Ring PRO</title>
+      <link>https://theinspirationgrid.com/editorial/ultrahuman-launches-early-black-friday-deals-on-ring-air-and-ring-pro/</link>
+      <guid isPermaLink="true">https://theinspirationgrid.com/editorial/ultrahuman-launches-early-black-friday-deals-on-ring-air-and-ring-pro/</guid>
+      <description>Ultrahuman has kicked off its Black Friday sales early, with great discounts on its popular smart rings, including 35% off Ring AIR and 20% off Ring PRO.</description>
+      <category>Industrial Design</category>
+      <category>Product Design</category>
+      <category>Technology</category>
+      <media:content url="https://inspgr.id/app/uploads/2026/11/ultrahuman-black-friday.jpg" medium="image" />
+      <media:thumbnail url="https://inspgr.id/app/uploads/2026/11/ultrahuman-black-friday.jpg" />
+    </item>
+    <item>
       <title>Curves &amp; Contrasts: Sculptural Furniture by Brodie Neill</title>
       <link>https://theinspirationgrid.com/curves-contrasts-sculptural-furniture-by-brodie-neill/</link>
       <guid isPermaLink="true">https://theinspirationgrid.com/curves-contrasts-sculptural-furniture-by-brodie-neill/</guid>
@@ -351,17 +362,6 @@
       <category>Technology</category>
       <media:content url="https://inspgr.id/app/uploads/2026/07/hound-robot-feature.jpg" medium="image" />
       <media:thumbnail url="https://inspgr.id/app/uploads/2026/07/hound-robot-feature.jpg" />
-    </item>
-    <item>
-      <title>Sharp Automotive Concepts by Artur Ryndin</title>
-      <link>https://theinspirationgrid.com/sharp-automotive-concepts-by-artur-ryndin/</link>
-      <guid isPermaLink="true">https://theinspirationgrid.com/sharp-automotive-concepts-by-artur-ryndin/</guid>
-      <description>London-based automotive designer Artur Ryndin imagines vehicles shaped by extreme proportions, sculptural surfaces and a cinematic vision of the future.</description>
-      <category>Industrial Design</category>
-      <category>Technology</category>
-      <category>Vehicle Design</category>
-      <media:content url="https://inspgr.id/app/uploads/2026/07/automotive-design-artur-ryndin-feature.jpg" medium="image" />
-      <media:thumbnail url="https://inspgr.id/app/uploads/2026/07/automotive-design-artur-ryndin-feature.jpg" />
     </item>
   </channel>
 </rss>
