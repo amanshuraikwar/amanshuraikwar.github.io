@@ -7,6 +7,16 @@
     <generator>amanshuraikwar.github.io RSS generator</generator>
     <atom:link href="https://amanshuraikwar.github.io/rss/inspiration-grid-illustration.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Artist Yu Yiming Puts the Animal Kingdom to Work</title>
+      <link>https://theinspirationgrid.com/artist-yu-yiming-puts-the-animal-kingdom-to-work/</link>
+      <guid isPermaLink="true">https://theinspirationgrid.com/artist-yu-yiming-puts-the-animal-kingdom-to-work/</guid>
+      <description>Guangzhou-based concept artist and designer Yu Yiming, also known as oldfish, creates a cast of animal characters clocking in for the daily grind.</description>
+      <category>Art</category>
+      <category>Illustration</category>
+      <media:content url="https://inspgr.id/app/uploads/2026/11/illustration-yu-yiming-feature.jpg" medium="image" />
+      <media:thumbnail url="https://inspgr.id/app/uploads/2026/11/illustration-yu-yiming-feature.jpg" />
+    </item>
+    <item>
       <title>Paperlike Black Friday Deals Bring Free Accessories for iPad Creators</title>
       <link>https://theinspirationgrid.com/editorial/paperlike-black-friday-deals-bring-free-accessories-for-ipad-creators/</link>
       <guid isPermaLink="true">https://theinspirationgrid.com/editorial/paperlike-black-friday-deals-bring-free-accessories-for-ipad-creators/</guid>
@@ -307,16 +317,6 @@
       <category>Typography</category>
       <media:content url="https://inspgr.id/app/uploads/2026/09/lettering-mickt-flior-feature.jpg" medium="image" />
       <media:thumbnail url="https://inspgr.id/app/uploads/2026/09/lettering-mickt-flior-feature.jpg" />
-    </item>
-    <item>
-      <title>Soft Shapes and Silly Situations: 3D Illustrations by Qingyu Du</title>
-      <link>https://theinspirationgrid.com/soft-shapes-and-silly-situations-3d-illustrations-by-qingyu-du/</link>
-      <guid isPermaLink="true">https://theinspirationgrid.com/soft-shapes-and-silly-situations-3d-illustrations-by-qingyu-du/</guid>
-      <description>Chinese digital artist Qingyu Du creates playful 3D illustrations filled with rounded characters, exaggerated proportions and a cheerful use of color.</description>
-      <category>Art</category>
-      <category>Illustration</category>
-      <media:content url="https://inspgr.id/app/uploads/2026/09/3d-qingyu-du-feature.jpg" medium="image" />
-      <media:thumbnail url="https://inspgr.id/app/uploads/2026/09/3d-qingyu-du-feature.jpg" />
     </item>
   </channel>
 </rss>
