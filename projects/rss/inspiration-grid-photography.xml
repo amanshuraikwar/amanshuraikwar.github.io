@@ -7,6 +7,16 @@
     <generator>amanshuraikwar.github.io RSS generator</generator>
     <atom:link href="https://amanshuraikwar.github.io/rss/inspiration-grid-photography.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Surreal Fine Art Landscapes by Stefano Gardel</title>
+      <link>https://theinspirationgrid.com/surreal-fine-art-landscapes-by-stefano-gardel/</link>
+      <guid isPermaLink="true">https://theinspirationgrid.com/surreal-fine-art-landscapes-by-stefano-gardel/</guid>
+      <description>Switzerland-based artist and photographer Stefano Gardel uses light, color and contrast to transform real locations into seemingly alien worlds.</description>
+      <category>Art</category>
+      <category>Photography</category>
+      <media:content url="https://inspgr.id/app/uploads/2026/11/photography-stefano-gardel-feature.jpg" medium="image" />
+      <media:thumbnail url="https://inspgr.id/app/uploads/2026/11/photography-stefano-gardel-feature.jpg" />
+    </item>
+    <item>
       <title>Grounded Giants: Boneyard Photos by Bernhard Lang</title>
       <link>https://theinspirationgrid.com/grounded-giants-boneyard-photos-by-bernhard-lang/</link>
       <guid isPermaLink="true">https://theinspirationgrid.com/grounded-giants-boneyard-photos-by-bernhard-lang/</guid>
@@ -298,16 +308,6 @@
       <category>Photography</category>
       <media:content url="https://inspgr.id/app/uploads/2026/07/photography-marcin-zajac-feature.jpg" medium="image" />
       <media:thumbnail url="https://inspgr.id/app/uploads/2026/07/photography-marcin-zajac-feature.jpg" />
-    </item>
-    <item>
-      <title>Until the Water: Haunting Portraits of Louisiana’s Changing Landscapes by Frank Relle</title>
-      <link>https://theinspirationgrid.com/until-the-water-frank-relles-haunting-portrait-of-louisianas-changing-landscapes/</link>
-      <guid isPermaLink="true">https://theinspirationgrid.com/until-the-water-frank-relles-haunting-portrait-of-louisianas-changing-landscapes/</guid>
-      <description>For more than six years, Louisiana photographer Frank Relle has explored the state’s bayous, lakes and swamps after dark, creating a collection of images that feels suspended somewhere between documentary photography and a dream.</description>
-      <category>Art</category>
-      <category>Photography</category>
-      <media:content url="https://inspgr.id/app/uploads/2026/07/photography-frank-relle-feature.jpg" medium="image" />
-      <media:thumbnail url="https://inspgr.id/app/uploads/2026/07/photography-frank-relle-feature.jpg" />
     </item>
   </channel>
 </rss>

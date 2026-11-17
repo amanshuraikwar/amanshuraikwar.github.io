@@ -7,6 +7,19 @@
     <generator>amanshuraikwar.github.io RSS generator</generator>
     <atom:link href="https://amanshuraikwar.github.io/rss/site-of-sites-websites.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>kate.fm</title>
+      <link>https://www.siteofsites.co/websites/kate.fm</link>
+      <guid isPermaLink="true">https://www.siteofsites.co/websites/kate.fm</guid>
+      <description>Featured by Site of Sites in 11/2026. Original website: https://kate.fm/</description>
+      <category>Creative Arts</category>
+      <category>Creative coding</category>
+      <category>Design</category>
+      <category>Experimental</category>
+      <category>Portfolio</category>
+      <media:content url="https://static.wixstatic.com/media/ef5d4a_47ff48fbfdd348ae9dfd9bef947985b5~mv2.png" medium="image" />
+      <media:thumbnail url="https://static.wixstatic.com/media/ef5d4a_47ff48fbfdd348ae9dfd9bef947985b5~mv2.png" />
+    </item>
+    <item>
       <title>Amitch.Design</title>
       <link>https://www.siteofsites.co/websites/amitch.design</link>
       <guid isPermaLink="true">https://www.siteofsites.co/websites/amitch.design</guid>
@@ -396,15 +409,6 @@
       <category>Portfolio</category>
       <media:content url="https://static.wixstatic.com/media/ef5d4a_6559554049a54646b7fc32490ee39110~mv2.png" medium="image" />
       <media:thumbnail url="https://static.wixstatic.com/media/ef5d4a_6559554049a54646b7fc32490ee39110~mv2.png" />
-    </item>
-    <item>
-      <title>Estelle Scottsdale</title>
-      <link>https://www.siteofsites.co/websites/estelle-scottsdale</link>
-      <guid isPermaLink="true">https://www.siteofsites.co/websites/estelle-scottsdale</guid>
-      <description>Featured by Site of Sites in 08/2026. Original website: https://www.estellescottsdale.com/</description>
-      <category>Company / Brand website</category>
-      <media:content url="https://static.wixstatic.com/media/ef5d4a_328ad57b491346a9bac49c70147d1a62~mv2.png" medium="image" />
-      <media:thumbnail url="https://static.wixstatic.com/media/ef5d4a_328ad57b491346a9bac49c70147d1a62~mv2.png" />
     </item>
   </channel>
 </rss>
