@@ -7,6 +7,16 @@
     <generator>amanshuraikwar.github.io RSS generator</generator>
     <atom:link href="https://amanshuraikwar.github.io/rss/inspiration-grid-illustration.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Gently Absurd: Illustrated Scenes by Jenna Arts</title>
+      <link>https://theinspirationgrid.com/gently-absurd-illustrated-scenes-by-jenna-arts/</link>
+      <guid isPermaLink="true">https://theinspirationgrid.com/gently-absurd-illustrated-scenes-by-jenna-arts/</guid>
+      <description>Dutch illustrator Jenna Arts has a wonderful eye for the amusing little moments that make us human.</description>
+      <category>Art</category>
+      <category>Illustration</category>
+      <media:content url="https://inspgr.id/app/uploads/2026/11/illustration-jenna-arts-feature.jpg" medium="image" />
+      <media:thumbnail url="https://inspgr.id/app/uploads/2026/11/illustration-jenna-arts-feature.jpg" />
+    </item>
+    <item>
       <title>Artist Yu Yiming Puts the Animal Kingdom to Work</title>
       <link>https://theinspirationgrid.com/artist-yu-yiming-puts-the-animal-kingdom-to-work/</link>
       <guid isPermaLink="true">https://theinspirationgrid.com/artist-yu-yiming-puts-the-animal-kingdom-to-work/</guid>
@@ -307,16 +317,6 @@
       <category>Illustration</category>
       <media:content url="https://inspgr.id/app/uploads/2026/09/illustration-daq-studio-feature.jpg" medium="image" />
       <media:thumbnail url="https://inspgr.id/app/uploads/2026/09/illustration-daq-studio-feature.jpg" />
-    </item>
-    <item>
-      <title>Bold, Bouncy Lettering Creations by Mickt Flior</title>
-      <link>https://theinspirationgrid.com/bold-bouncy-lettering-creations-by-mickt-flior/</link>
-      <guid isPermaLink="true">https://theinspirationgrid.com/bold-bouncy-lettering-creations-by-mickt-flior/</guid>
-      <description>Brazilian-born illustrator and multidisciplinary designer Mickt Flior has a real talent for turning words into bold visual pieces.</description>
-      <category>Illustration</category>
-      <category>Typography</category>
-      <media:content url="https://inspgr.id/app/uploads/2026/09/lettering-mickt-flior-feature.jpg" medium="image" />
-      <media:thumbnail url="https://inspgr.id/app/uploads/2026/09/lettering-mickt-flior-feature.jpg" />
     </item>
   </channel>
 </rss>

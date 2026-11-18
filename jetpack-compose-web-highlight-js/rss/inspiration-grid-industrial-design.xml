@@ -7,6 +7,18 @@
     <generator>amanshuraikwar.github.io RSS generator</generator>
     <atom:link href="https://amanshuraikwar.github.io/rss/inspiration-grid-industrial-design.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Creality Unveils the Falcon T1C, a Compact Dual-Laser Engraver for Creative Makers</title>
+      <link>https://theinspirationgrid.com/editorial/creality-unveils-the-falcon-t1c-a-compact-dual-laser-engraver-for-creative-makers/</link>
+      <guid isPermaLink="true">https://theinspirationgrid.com/editorial/creality-unveils-the-falcon-t1c-a-compact-dual-laser-engraver-for-creative-makers/</guid>
+      <description>Creality Falcon’s latest laser engraver packs two laser sources, high-speed engraving capabilities and a suite of AI-powered creative tools into a portable package.</description>
+      <category>Art</category>
+      <category>Industrial Design</category>
+      <category>Product Design</category>
+      <category>Technology</category>
+      <media:content url="https://inspgr.id/app/uploads/2026/11/creality-falcon-t1c-launch-feature.jpg" medium="image" />
+      <media:thumbnail url="https://inspgr.id/app/uploads/2026/11/creality-falcon-t1c-launch-feature.jpg" />
+    </item>
+    <item>
       <title>Ultrahuman Launches Early Black Friday Deals on Ring AIR and Ring PRO</title>
       <link>https://theinspirationgrid.com/editorial/ultrahuman-launches-early-black-friday-deals-on-ring-air-and-ring-pro/</link>
       <guid isPermaLink="true">https://theinspirationgrid.com/editorial/ultrahuman-launches-early-black-friday-deals-on-ring-air-and-ring-pro/</guid>
@@ -351,17 +363,6 @@
       <category>Technology</category>
       <media:content url="https://inspgr.id/app/uploads/2026/08/ayaneo-konkr-pocket-advance-feature.jpg" medium="image" />
       <media:thumbnail url="https://inspgr.id/app/uploads/2026/08/ayaneo-konkr-pocket-advance-feature.jpg" />
-    </item>
-    <item>
-      <title>Hound: A Robotic System for Safer Forest Management</title>
-      <link>https://theinspirationgrid.com/hound-a-robotic-system-for-safer-forest-management/</link>
-      <guid isPermaLink="true">https://theinspirationgrid.com/hound-a-robotic-system-for-safer-forest-management/</guid>
-      <description>South Korean designer Hyeonggyun Han has envisioned Hound, a multifunctional robotic concept created to manage wild boar populations and respond to emerging risks in forest environments.</description>
-      <category>Industrial Design</category>
-      <category>Product Design</category>
-      <category>Technology</category>
-      <media:content url="https://inspgr.id/app/uploads/2026/07/hound-robot-feature.jpg" medium="image" />
-      <media:thumbnail url="https://inspgr.id/app/uploads/2026/07/hound-robot-feature.jpg" />
     </item>
   </channel>
 </rss>
