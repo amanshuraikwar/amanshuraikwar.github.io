@@ -7,6 +7,29 @@
     <generator>amanshuraikwar.github.io RSS generator</generator>
     <atom:link href="https://amanshuraikwar.github.io/rss/inspiration-grid-illustration.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>A Spin Through the Past: Vintage Carousel Stamps by Paprika</title>
+      <link>https://theinspirationgrid.com/a-spin-through-the-past-vintage-carousel-stamps-by-paprika/</link>
+      <guid isPermaLink="true">https://theinspirationgrid.com/a-spin-through-the-past-vintage-carousel-stamps-by-paprika/</guid>
+      <description>Montreal-based studio Paprika created this delightful series of stamps for Canada Post back in 2022, celebrating five historic carousels from across the country.</description>
+      <category>Graphic Design</category>
+      <category>Illustration</category>
+      <category>Print Design</category>
+      <category>Typography</category>
+      <media:content url="https://inspgr.id/app/uploads/2026/11/design-vintage-carousels-stamps-feature.jpg" medium="image" />
+      <media:thumbnail url="https://inspgr.id/app/uploads/2026/11/design-vintage-carousels-stamps-feature.jpg" />
+    </item>
+    <item>
+      <title>Sanctuary DX: A Charming Game Boy Adventure Gets a Beautiful Remaster</title>
+      <link>https://theinspirationgrid.com/editorial/sanctuary-dx-a-charming-game-boy-adventure-gets-a-beautiful-remaster/</link>
+      <guid isPermaLink="true">https://theinspirationgrid.com/editorial/sanctuary-dx-a-charming-game-boy-adventure-gets-a-beautiful-remaster/</guid>
+      <description>Indie game developer Anthony Wallace is revisiting the world of The Mayor of Sanctuary with a remastered and expanded edition of his debut title, coming this December.</description>
+      <category>Gaming</category>
+      <category>Illustration</category>
+      <category>Pop Culture</category>
+      <media:content url="https://inspgr.id/app/uploads/2026/11/sanctuary-dx-feature.jpg" medium="image" />
+      <media:thumbnail url="https://inspgr.id/app/uploads/2026/11/sanctuary-dx-feature.jpg" />
+    </item>
+    <item>
       <title>Gently Absurd: Illustrated Scenes by Jenna Arts</title>
       <link>https://theinspirationgrid.com/gently-absurd-illustrated-scenes-by-jenna-arts/</link>
       <guid isPermaLink="true">https://theinspirationgrid.com/gently-absurd-illustrated-scenes-by-jenna-arts/</guid>
@@ -297,26 +320,6 @@
       <category>Illustration</category>
       <media:content url="https://inspgr.id/app/uploads/2026/09/illustration-lina-kusaite-feature.jpg" medium="image" />
       <media:thumbnail url="https://inspgr.id/app/uploads/2026/09/illustration-lina-kusaite-feature.jpg" />
-    </item>
-    <item>
-      <title>Trace City: Imaginary Architecture by Takaaki Yagi</title>
-      <link>https://theinspirationgrid.com/trace-city-imaginary-architecture-by-takaaki-yagi/</link>
-      <guid isPermaLink="true">https://theinspirationgrid.com/trace-city-imaginary-architecture-by-takaaki-yagi/</guid>
-      <description>Tokyo-based artist and designer Takaaki Yagi builds cities that don’t exist, using nothing but the surface of paper that’s already been used up.</description>
-      <category>Art</category>
-      <category>Illustration</category>
-      <media:content url="https://inspgr.id/app/uploads/2026/09/art-takaaki-yagi-feature.jpg" medium="image" />
-      <media:thumbnail url="https://inspgr.id/app/uploads/2026/09/art-takaaki-yagi-feature.jpg" />
-    </item>
-    <item>
-      <title>Visual Overload: Editorial Illustrations by DAQ</title>
-      <link>https://theinspirationgrid.com/visual-overload-editorial-illustrations-by-daq/</link>
-      <guid isPermaLink="true">https://theinspirationgrid.com/visual-overload-editorial-illustrations-by-daq/</guid>
-      <description>Barcelona-based image-making studio DAQ creates bold editorial illustrations packed with saturated color, surreal forms and visual ideas that demand attention.</description>
-      <category>Art</category>
-      <category>Illustration</category>
-      <media:content url="https://inspgr.id/app/uploads/2026/09/illustration-daq-studio-feature.jpg" medium="image" />
-      <media:thumbnail url="https://inspgr.id/app/uploads/2026/09/illustration-daq-studio-feature.jpg" />
     </item>
   </channel>
 </rss>
