@@ -7,6 +7,18 @@
     <generator>amanshuraikwar.github.io RSS generator</generator>
     <atom:link href="https://amanshuraikwar.github.io/rss/inspiration-grid-industrial-design.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Creality Falcon Brings Black Friday Savings to North America, With Up to $645 Off Laser Engravers</title>
+      <link>https://theinspirationgrid.com/editorial/creality-falcon-brings-black-friday-savings-to-north-america-with-up-to-645-off-laser-engravers/</link>
+      <guid isPermaLink="true">https://theinspirationgrid.com/editorial/creality-falcon-brings-black-friday-savings-to-north-america-with-up-to-645-off-laser-engravers/</guid>
+      <description>Following the launch of its European Black Friday promotion, Creality Falcon is rolling out a new round of deals across its range of laser engravers and accessories in North America.</description>
+      <category>Art</category>
+      <category>Industrial Design</category>
+      <category>Product Design</category>
+      <category>Technology</category>
+      <media:content url="https://inspgr.id/app/uploads/2026/11/creality-falcon-bf-na.jpg" medium="image" />
+      <media:thumbnail url="https://inspgr.id/app/uploads/2026/11/creality-falcon-bf-na.jpg" />
+    </item>
+    <item>
       <title>Genspark’s SecondBrain VoicePad Is a Sleek Little Gadget for a More Productive Desk</title>
       <link>https://theinspirationgrid.com/editorial/gensparks-secondbrain-voicepad-is-a-sleek-little-gadget-for-a-more-productive-desk/</link>
       <guid isPermaLink="true">https://theinspirationgrid.com/editorial/gensparks-secondbrain-voicepad-is-a-sleek-little-gadget-for-a-more-productive-desk/</guid>
@@ -350,18 +362,6 @@
       <category>Technology</category>
       <media:content url="https://inspgr.id/app/uploads/2026/08/genki-manta-prelaunch-feature.jpg" medium="image" />
       <media:thumbnail url="https://inspgr.id/app/uploads/2026/08/genki-manta-prelaunch-feature.jpg" />
-    </item>
-    <item>
-      <title>Hands-On With TTT’s Hidden Time: A Watch That Makes Time Disappear</title>
-      <link>https://theinspirationgrid.com/editorial/hands-on-with-ttts-hidden-time-a-watch-that-makes-time-disappear/</link>
-      <guid isPermaLink="true">https://theinspirationgrid.com/editorial/hands-on-with-ttts-hidden-time-a-watch-that-makes-time-disappear/</guid>
-      <description>Following our recent hands-on with TTT’s Redundant, we’re taking a closer look at another watch from Anicorn’s experimental design platform, this time heading back to the very beginning of The Trio of Time series.</description>
-      <category>Fashion &amp; Beauty</category>
-      <category>Industrial Design</category>
-      <category>Product Design</category>
-      <category>Technology</category>
-      <media:content url="https://inspgr.id/app/uploads/2026/08/ttt-hidden-time-feature.jpg" medium="image" />
-      <media:thumbnail url="https://inspgr.id/app/uploads/2026/08/ttt-hidden-time-feature.jpg" />
     </item>
   </channel>
 </rss>

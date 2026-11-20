@@ -7,6 +7,17 @@
     <generator>amanshuraikwar.github.io RSS generator</generator>
     <atom:link href="https://amanshuraikwar.github.io/rss/inspiration-grid-illustration.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Architecture Remixed: Landmark Buildings Fused With Design Icons</title>
+      <link>https://theinspirationgrid.com/architecture-remixed-inventive-design-mashups-by-matias-del-castillo/</link>
+      <guid isPermaLink="true">https://theinspirationgrid.com/architecture-remixed-inventive-design-mashups-by-matias-del-castillo/</guid>
+      <description>What would happen if the design of an early Macintosh computer informed the aesthetics of a contemporary house? Or if a Lamborghini Countach inspired the look of a church?</description>
+      <category>Architecture</category>
+      <category>Art</category>
+      <category>Illustration</category>
+      <media:content url="https://inspgr.id/app/uploads/2026/11/3d-remixarch-feature.jpg" medium="image" />
+      <media:thumbnail url="https://inspgr.id/app/uploads/2026/11/3d-remixarch-feature.jpg" />
+    </item>
+    <item>
       <title>A Spin Through the Past: Vintage Carousel Stamps by Paprika</title>
       <link>https://theinspirationgrid.com/a-spin-through-the-past-vintage-carousel-stamps-by-paprika/</link>
       <guid isPermaLink="true">https://theinspirationgrid.com/a-spin-through-the-past-vintage-carousel-stamps-by-paprika/</guid>
@@ -310,16 +321,6 @@
       <category>Illustration</category>
       <media:content url="https://inspgr.id/app/uploads/2026/09/illustration-alexandre-roy-feature.jpg" medium="image" />
       <media:thumbnail url="https://inspgr.id/app/uploads/2026/09/illustration-alexandre-roy-feature.jpg" />
-    </item>
-    <item>
-      <title>Botanical Studies: Intricate Floral Illustrations by Lina Kusaite</title>
-      <link>https://theinspirationgrid.com/botanical-studies-intricate-floral-illustrations-by-lina-kusaite/</link>
-      <guid isPermaLink="true">https://theinspirationgrid.com/botanical-studies-intricate-floral-illustrations-by-lina-kusaite/</guid>
-      <description>Brussels-based illustrator and eco-artist Lina Kusaite creates layered botanical compositions that transform flowers, leaves and seed pods into intricate studies of color, texture and rhythm.</description>
-      <category>Art</category>
-      <category>Illustration</category>
-      <media:content url="https://inspgr.id/app/uploads/2026/09/illustration-lina-kusaite-feature.jpg" medium="image" />
-      <media:thumbnail url="https://inspgr.id/app/uploads/2026/09/illustration-lina-kusaite-feature.jpg" />
     </item>
   </channel>
 </rss>
