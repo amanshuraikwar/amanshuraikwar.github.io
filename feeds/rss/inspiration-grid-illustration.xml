@@ -7,6 +7,16 @@
     <generator>amanshuraikwar.github.io RSS generator</generator>
     <atom:link href="https://amanshuraikwar.github.io/rss/inspiration-grid-illustration.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Colossal Horizons: Epic Concept Art by Jin LH</title>
+      <link>https://theinspirationgrid.com/colossal-horizons-epic-concept-art-by-jin-lh/</link>
+      <guid isPermaLink="true">https://theinspirationgrid.com/colossal-horizons-epic-concept-art-by-jin-lh/</guid>
+      <description>Chinese concept artist Jin LH visualizes places that seem to extend far beyond the boundaries of a single image.</description>
+      <category>Art</category>
+      <category>Illustration</category>
+      <media:content url="https://inspgr.id/app/uploads/2026/11/art-jin-lh-feature.jpg" medium="image" />
+      <media:thumbnail url="https://inspgr.id/app/uploads/2026/11/art-jin-lh-feature.jpg" />
+    </item>
+    <item>
       <title>Architecture Remixed: Landmark Buildings Fused With Design Icons</title>
       <link>https://theinspirationgrid.com/architecture-remixed-inventive-design-mashups-by-matias-del-castillo/</link>
       <guid isPermaLink="true">https://theinspirationgrid.com/architecture-remixed-inventive-design-mashups-by-matias-del-castillo/</guid>
@@ -311,16 +321,6 @@
       <category>Illustration</category>
       <media:content url="https://inspgr.id/app/uploads/2026/09/art-dulk-feature.jpg" medium="image" />
       <media:thumbnail url="https://inspgr.id/app/uploads/2026/09/art-dulk-feature.jpg" />
-    </item>
-    <item>
-      <title>Fantastic Frontiers: Illustrations by Alexandre Roy</title>
-      <link>https://theinspirationgrid.com/fantastic-frontiers-illustrations-by-alexandre-roy/</link>
-      <guid isPermaLink="true">https://theinspirationgrid.com/fantastic-frontiers-illustrations-by-alexandre-roy/</guid>
-      <description>French illustrator Alexandre Roy, also known as Royalex, creates sprawling imaginary worlds filled with strange creatures, towering plants, distant planets and lone travelers moving through unfamiliar landscapes.</description>
-      <category>Art</category>
-      <category>Illustration</category>
-      <media:content url="https://inspgr.id/app/uploads/2026/09/illustration-alexandre-roy-feature.jpg" medium="image" />
-      <media:thumbnail url="https://inspgr.id/app/uploads/2026/09/illustration-alexandre-roy-feature.jpg" />
     </item>
   </channel>
 </rss>
