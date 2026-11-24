@@ -7,6 +7,32 @@
     <generator>amanshuraikwar.github.io RSS generator</generator>
     <atom:link href="https://amanshuraikwar.github.io/rss/inspiration-grid-photography.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Through the Haze: Atmospheric Bay Area Photography by Remo Daut</title>
+      <link>https://theinspirationgrid.com/through-the-haze-atmospheric-photography-by-remo-daut/</link>
+      <guid isPermaLink="true">https://theinspirationgrid.com/through-the-haze-atmospheric-photography-by-remo-daut/</guid>
+      <description>Arizona-based photographer Remo Daut captures the beauty of San Francisco and the surrounding Bay Area in this stunning collection of images.</description>
+      <category>Photography</category>
+      <media:content url="https://inspgr.id/app/uploads/2026/11/photography-remo-daut-feature.jpg" medium="image" />
+      <media:thumbnail url="https://inspgr.id/app/uploads/2026/11/photography-remo-daut-feature.jpg" />
+    </item>
+    <item>
+      <title>Best Black Friday Deals 2026: Creative Gear, Gaming &amp; Tech Picks</title>
+      <link>https://theinspirationgrid.com/editorial/best-black-friday-deals-2026-creative-gear-gaming-tech-picks/</link>
+      <guid isPermaLink="true">https://theinspirationgrid.com/editorial/best-black-friday-deals-2026-creative-gear-gaming-tech-picks/</guid>
+      <description>From drawing tablets and creative software to gaming accessories, maker tools and smart gadgets, we’ve picked out some of the best Black Friday and Cyber Monday deals worth checking out in 2026.</description>
+      <category>Art</category>
+      <category>Gaming</category>
+      <category>Graphic Design</category>
+      <category>Illustration</category>
+      <category>Industrial Design</category>
+      <category>Photography</category>
+      <category>Product Design</category>
+      <category>Technology</category>
+      <category>UX &amp; UI Design</category>
+      <media:content url="https://inspgr.id/app/uploads/2026/11/black-friday-2026-feature.jpg" medium="image" />
+      <media:thumbnail url="https://inspgr.id/app/uploads/2026/11/black-friday-2026-feature.jpg" />
+    </item>
+    <item>
       <title>Surreal Fine Art Landscapes by Stefano Gardel</title>
       <link>https://theinspirationgrid.com/surreal-fine-art-landscapes-by-stefano-gardel/</link>
       <guid isPermaLink="true">https://theinspirationgrid.com/surreal-fine-art-landscapes-by-stefano-gardel/</guid>
@@ -289,25 +315,6 @@
       <category>Photography</category>
       <media:content url="https://inspgr.id/app/uploads/2026/07/photography-mikolaj-gospodarek-feature.jpg" medium="image" />
       <media:thumbnail url="https://inspgr.id/app/uploads/2026/07/photography-mikolaj-gospodarek-feature.jpg" />
-    </item>
-    <item>
-      <title>Vienna Symphonies: Monochromatic Architecture by Thomas de Franzoni</title>
-      <link>https://theinspirationgrid.com/vienna-symphonies-monochromatic-architecture-by-thomas-de-franzoni/</link>
-      <guid isPermaLink="true">https://theinspirationgrid.com/vienna-symphonies-monochromatic-architecture-by-thomas-de-franzoni/</guid>
-      <description>Italian photographer Thomas de Franzoni returns to the grid with Vienna Symphonies, a striking black-and-white study of the city’s architecture as musical notation.</description>
-      <category>Architecture</category>
-      <category>Photography</category>
-      <media:content url="https://inspgr.id/app/uploads/2026/07/photography-thomas-de-franzoni-feature.jpg" medium="image" />
-      <media:thumbnail url="https://inspgr.id/app/uploads/2026/07/photography-thomas-de-franzoni-feature.jpg" />
-    </item>
-    <item>
-      <title>The Extraordinary Framed Landscapes of Marcin Zajac</title>
-      <link>https://theinspirationgrid.com/the-extraordinary-framed-landscapes-of-marcin-zajac/</link>
-      <guid isPermaLink="true">https://theinspirationgrid.com/the-extraordinary-framed-landscapes-of-marcin-zajac/</guid>
-      <description>Polish landscape photographer Marcin Zajac has a remarkable ability to reveal familiar places from entirely unexpected perspectives.</description>
-      <category>Photography</category>
-      <media:content url="https://inspgr.id/app/uploads/2026/07/photography-marcin-zajac-feature.jpg" medium="image" />
-      <media:thumbnail url="https://inspgr.id/app/uploads/2026/07/photography-marcin-zajac-feature.jpg" />
     </item>
   </channel>
 </rss>
