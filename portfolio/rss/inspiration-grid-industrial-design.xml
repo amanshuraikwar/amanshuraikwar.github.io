@@ -7,6 +7,18 @@
     <generator>amanshuraikwar.github.io RSS generator</generator>
     <atom:link href="https://amanshuraikwar.github.io/rss/inspiration-grid-industrial-design.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>The Steam Machine’s Coolest Mod So Far Looks Like a Tiny Sony Trinitron With a Working 1080p Screen</title>
+      <link>https://theinspirationgrid.com/editorial/the-steam-machines-coolest-mod-so-far-looks-like-a-tiny-sony-trinitron-with-a-working-1080p-screen/</link>
+      <guid isPermaLink="true">https://theinspirationgrid.com/editorial/the-steam-machines-coolest-mod-so-far-looks-like-a-tiny-sony-trinitron-with-a-working-1080p-screen/</guid>
+      <description>Valve’s Steam Machine has inspired some incredibly creative customizations, but this clever tribute to Sony’s classic Trinitron monitors might just be the coolest one yet.</description>
+      <category>Gaming</category>
+      <category>Industrial Design</category>
+      <category>Product Design</category>
+      <category>Technology</category>
+      <media:content url="https://inspgr.id/app/uploads/2026/11/steam-machine-retro-pvm-mod-feature.jpg" medium="image" />
+      <media:thumbnail url="https://inspgr.id/app/uploads/2026/11/steam-machine-retro-pvm-mod-feature.jpg" />
+    </item>
+    <item>
       <title>Best Black Friday Deals 2026: Creative Gear, Gaming &amp; Tech Picks</title>
       <link>https://theinspirationgrid.com/editorial/best-black-friday-deals-2026-creative-gear-gaming-tech-picks/</link>
       <guid isPermaLink="true">https://theinspirationgrid.com/editorial/best-black-friday-deals-2026-creative-gear-gaming-tech-picks/</guid>
@@ -349,24 +361,6 @@
       <category>Vehicle Design</category>
       <media:content url="https://inspgr.id/app/uploads/2026/08/porsche-911-electric-feature.jpg" medium="image" />
       <media:thumbnail url="https://inspgr.id/app/uploads/2026/08/porsche-911-electric-feature.jpg" />
-    </item>
-    <item>
-      <title>20 Exceptional A’ Design Award Winners Worth Discovering</title>
-      <link>https://theinspirationgrid.com/editorial/20-exceptional-a-design-award-winners-worth-discovering/</link>
-      <guid isPermaLink="true">https://theinspirationgrid.com/editorial/20-exceptional-a-design-award-winners-worth-discovering/</guid>
-      <description>The A’ Design Award &amp; Competition is one of the world’s largest international design competitions, recognizing outstanding work across architecture, product design, furniture, graphics, fashion, digital design, art and many other creative disciplines.</description>
-      <category>Architecture</category>
-      <category>Art</category>
-      <category>Fashion &amp; Beauty</category>
-      <category>Gaming</category>
-      <category>Illustration</category>
-      <category>Industrial Design</category>
-      <category>Interior Design</category>
-      <category>Packaging Design</category>
-      <category>Product Design</category>
-      <category>Technology</category>
-      <media:content url="https://inspgr.id/app/uploads/2026/08/ig-feature-images-2.jpg" medium="image" />
-      <media:thumbnail url="https://inspgr.id/app/uploads/2026/08/ig-feature-images-2.jpg" />
     </item>
   </channel>
 </rss>
