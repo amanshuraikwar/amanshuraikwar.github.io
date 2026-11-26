@@ -7,6 +7,17 @@
     <generator>amanshuraikwar.github.io RSS generator</generator>
     <atom:link href="https://amanshuraikwar.github.io/rss/inspiration-grid-industrial-design.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>From Physical to Digital and Back: Creality Showcases Its 3D Scanning Ecosystem at Formnext</title>
+      <link>https://theinspirationgrid.com/editorial/from-physical-to-digital-and-back-creality-showcases-its-3d-scanning-ecosystem-at-formnext/</link>
+      <guid isPermaLink="true">https://theinspirationgrid.com/editorial/from-physical-to-digital-and-back-creality-showcases-its-3d-scanning-ecosystem-at-formnext/</guid>
+      <description>Creality recently showcased its growing range of 3D scanning technologies at Formnext 2026 in Frankfurt, highlighting new possibilities for designers, makers and creative professionals.</description>
+      <category>Industrial Design</category>
+      <category>Product Design</category>
+      <category>Technology</category>
+      <media:content url="https://inspgr.id/app/uploads/2026/11/creality-formnext-2026-feature.jpg" medium="image" />
+      <media:thumbnail url="https://inspgr.id/app/uploads/2026/11/creality-formnext-2026-feature.jpg" />
+    </item>
+    <item>
       <title>The Steam Machine’s Coolest Mod So Far Looks Like a Tiny Sony Trinitron With a Working 1080p Screen</title>
       <link>https://theinspirationgrid.com/editorial/the-steam-machines-coolest-mod-so-far-looks-like-a-tiny-sony-trinitron-with-a-working-1080p-screen/</link>
       <guid isPermaLink="true">https://theinspirationgrid.com/editorial/the-steam-machines-coolest-mod-so-far-looks-like-a-tiny-sony-trinitron-with-a-working-1080p-screen/</guid>
@@ -350,17 +361,6 @@
       <category>Technology</category>
       <media:content url="https://inspgr.id/app/uploads/2026/08/nothing-turntable-feature.jpg" medium="image" />
       <media:thumbnail url="https://inspgr.id/app/uploads/2026/08/nothing-turntable-feature.jpg" />
-    </item>
-    <item>
-      <title>Designer Sandor Boldog Reimagines the Porsche 911 for the Electric Era</title>
-      <link>https://theinspirationgrid.com/designer-sandor-boldog-reimagines-the-porsche-911-for-the-electric-era/</link>
-      <guid isPermaLink="true">https://theinspirationgrid.com/designer-sandor-boldog-reimagines-the-porsche-911-for-the-electric-era/</guid>
-      <description>Detroit-based automotive designer Sandor Boldog imagines how one of the world’s most recognizable sports cars could evolve for the electric era with his Porsche 911-E concept.</description>
-      <category>Industrial Design</category>
-      <category>Technology</category>
-      <category>Vehicle Design</category>
-      <media:content url="https://inspgr.id/app/uploads/2026/08/porsche-911-electric-feature.jpg" medium="image" />
-      <media:thumbnail url="https://inspgr.id/app/uploads/2026/08/porsche-911-electric-feature.jpg" />
     </item>
   </channel>
 </rss>

@@ -7,6 +7,16 @@
     <generator>amanshuraikwar.github.io RSS generator</generator>
     <atom:link href="https://amanshuraikwar.github.io/rss/inspiration-grid-illustration.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>The Long Way Home: Nostalgic Automotive Art by Mike Fazbear</title>
+      <link>https://theinspirationgrid.com/the-long-way-home-nostalgic-automotive-art-by-mike-fazbear/</link>
+      <guid isPermaLink="true">https://theinspirationgrid.com/the-long-way-home-nostalgic-automotive-art-by-mike-fazbear/</guid>
+      <description>Concept artist Mike Fazbear takes us on a nostalgic journey through another era with this beautiful collection of cinematic automotive illustrations.</description>
+      <category>Art</category>
+      <category>Illustration</category>
+      <media:content url="https://inspgr.id/app/uploads/2026/11/illustration-mike-fazbear-feature.jpg" medium="image" />
+      <media:thumbnail url="https://inspgr.id/app/uploads/2026/11/illustration-mike-fazbear-feature.jpg" />
+    </item>
+    <item>
       <title>Parallel Realities: Surreal Illustrations by Mostafa Abdelsattar</title>
       <link>https://theinspirationgrid.com/parallel-realities-surreal-illustrations-by-mostafa-abdelsattar/</link>
       <guid isPermaLink="true">https://theinspirationgrid.com/parallel-realities-surreal-illustrations-by-mostafa-abdelsattar/</guid>
@@ -318,16 +328,6 @@
       <category>Technology</category>
       <media:content url="https://inspgr.id/app/uploads/2026/09/uuna-tek-artstation-1824-review-cover.jpg" medium="image" />
       <media:thumbnail url="https://inspgr.id/app/uploads/2026/09/uuna-tek-artstation-1824-review-cover.jpg" />
-    </item>
-    <item>
-      <title>The Journey: A Retro-Futuristic Animation by Toss &amp; Suess Studio</title>
-      <link>https://theinspirationgrid.com/the-journey-a-retro-futuristic-animation-by-toss-suess-studio/</link>
-      <guid isPermaLink="true">https://theinspirationgrid.com/the-journey-a-retro-futuristic-animation-by-toss-suess-studio/</guid>
-      <description>Created to introduce a major rebrand for Korean financial platform Toss, The Journey is a short animation that transforms the company’s new three-dimensional logo into the protagonist of a surreal sci-fi adventure.</description>
-      <category>Illustration</category>
-      <category>Video &amp; Motion</category>
-      <media:content url="https://inspgr.id/app/uploads/2026/09/motion-toss-the-journey-feature.jpg" medium="image" />
-      <media:thumbnail url="https://inspgr.id/app/uploads/2026/09/motion-toss-the-journey-feature.jpg" />
     </item>
   </channel>
 </rss>
