@@ -7,6 +7,17 @@
     <generator>amanshuraikwar.github.io RSS generator</generator>
     <atom:link href="https://amanshuraikwar.github.io/rss/inspiration-grid-illustration.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Beyond the Page: Vibrant Illustrations &amp; Book Covers by Douglas Lopes</title>
+      <link>https://theinspirationgrid.com/beyond-the-page-vibrant-illustrations-book-covers-by-douglas-lopes/</link>
+      <guid isPermaLink="true">https://theinspirationgrid.com/beyond-the-page-vibrant-illustrations-book-covers-by-douglas-lopes/</guid>
+      <description>Brazilian illustrator Douglas Lopes combines his lifelong passion for comics, animation and video games with a love of visual storytelling to create striking illustrations and book covers.</description>
+      <category>Art</category>
+      <category>Graphic Design</category>
+      <category>Illustration</category>
+      <media:content url="https://inspgr.id/app/uploads/2026/11/illustration-douglas-lopes-feature.jpg" medium="image" />
+      <media:thumbnail url="https://inspgr.id/app/uploads/2026/11/illustration-douglas-lopes-feature.jpg" />
+    </item>
+    <item>
       <title>The Long Way Home: Nostalgic Automotive Art by Mike Fazbear</title>
       <link>https://theinspirationgrid.com/the-long-way-home-nostalgic-automotive-art-by-mike-fazbear/</link>
       <guid isPermaLink="true">https://theinspirationgrid.com/the-long-way-home-nostalgic-automotive-art-by-mike-fazbear/</guid>
@@ -315,19 +326,6 @@
       <category>Video &amp; Motion</category>
       <media:content url="https://inspgr.id/app/uploads/2026/09/motion-crtomir-just-feature.jpg" medium="image" />
       <media:thumbnail url="https://inspgr.id/app/uploads/2026/09/motion-crtomir-just-feature.jpg" />
-    </item>
-    <item>
-      <title>UUNA TEK ArtStation 1824 Review: Falling Down the Generative Art Rabbit Hole</title>
-      <link>https://theinspirationgrid.com/editorial/uuna-tek-artstation-1824-review-turning-code-into-art/</link>
-      <guid isPermaLink="true">https://theinspirationgrid.com/editorial/uuna-tek-artstation-1824-review-turning-code-into-art/</guid>
-      <description>My first proper dive into generative art turned into weeks of code, pens, paper and one very addictive pen plotter.</description>
-      <category>Art</category>
-      <category>Illustration</category>
-      <category>Industrial Design</category>
-      <category>Product Design</category>
-      <category>Technology</category>
-      <media:content url="https://inspgr.id/app/uploads/2026/09/uuna-tek-artstation-1824-review-cover.jpg" medium="image" />
-      <media:thumbnail url="https://inspgr.id/app/uploads/2026/09/uuna-tek-artstation-1824-review-cover.jpg" />
     </item>
   </channel>
 </rss>
